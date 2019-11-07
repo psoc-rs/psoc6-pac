@@ -1,3 +1,6 @@
+use self::mpu::MPU_STRUCT;
+use self::smpu::SMPU_STRUCT;
+
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {

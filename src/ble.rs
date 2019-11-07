@@ -1,3 +1,5 @@
+use self::rcb::RCBLL;
+
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
