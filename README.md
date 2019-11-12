@@ -2,7 +2,7 @@
 
 [![crates.io](https://img.shields.io/crates/v/psoc6-pac.svg)](https://crates.io/crates/psoc6-pac)
 [![docs.rs](https://docs.rs/psoc6-pac/badge.svg)](https://docs.rs/psoc6-pac/)
-[![Build Status](https://travis-ci.org/jonas-schievink/psoc6-pac.svg?branch=master)](https://travis-ci.org/jonas-schievink/psoc6-pac)
+[![Build Status](https://travis-ci.org/psoc-rs/psoc6-pac.svg?branch=master)](https://travis-ci.org/psoc-rs/psoc6-pac)
 
 This crate provides svd2rust-generated bindings to the peripherals of [PSoC 6]
 microcontrollers.
