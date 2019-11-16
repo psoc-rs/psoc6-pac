@@ -12,61 +12,45 @@ impl crate::ResetValue for super::CLK_ROOT_SELECT {
 }
 #[doc = "Selects a clock path as the root of HFCLK<k> and for SRSS DSI input <k>. Use CLK_SELECT_PATH\\[i\\] to configure the desired path. Some paths may have FLL or PLL available (product-specific), and the control and bypass mux selections of these are in other registers. Configure the FLL using CLK_FLL_CONFIG register. Configure a PLL using the related CLK_PLL_CONFIG\\[k\\] register. Note that not all products support all clock sources. Selecting a clock source that is not supported will result in undefined behavior.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ROOT_MUX_A {
     #[doc = "0: Select PATH0 (can be configured for FLL)"]
-    PATH0,
+    PATH0 = 0,
     #[doc = "1: Select PATH1 (can be configured for PLL0, if available in the product)"]
-    PATH1,
+    PATH1 = 1,
     #[doc = "2: Select PATH2 (can be configured for PLL1, if available in the product)"]
-    PATH2,
+    PATH2 = 2,
     #[doc = "3: Select PATH3 (can be configured for PLL2, if available in the product)"]
-    PATH3,
+    PATH3 = 3,
     #[doc = "4: Select PATH4 (can be configured for PLL3, if available in the product)"]
-    PATH4,
+    PATH4 = 4,
     #[doc = "5: Select PATH5 (can be configured for PLL4, if available in the product)"]
-    PATH5,
+    PATH5 = 5,
     #[doc = "6: Select PATH6 (can be configured for PLL5, if available in the product)"]
-    PATH6,
+    PATH6 = 6,
     #[doc = "7: Select PATH7 (can be configured for PLL6, if available in the product)"]
-    PATH7,
+    PATH7 = 7,
     #[doc = "8: Select PATH8 (can be configured for PLL7, if available in the product)"]
-    PATH8,
+    PATH8 = 8,
     #[doc = "9: Select PATH9 (can be configured for PLL8, if available in the product)"]
-    PATH9,
+    PATH9 = 9,
     #[doc = "10: Select PATH10 (can be configured for PLL9, if available in the product)"]
-    PATH10,
+    PATH10 = 10,
     #[doc = "11: Select PATH11 (can be configured for PLL10, if available in the product)"]
-    PATH11,
+    PATH11 = 11,
     #[doc = "12: Select PATH12 (can be configured for PLL11, if available in the product)"]
-    PATH12,
+    PATH12 = 12,
     #[doc = "13: Select PATH13 (can be configured for PLL12, if available in the product)"]
-    PATH13,
+    PATH13 = 13,
     #[doc = "14: Select PATH14 (can be configured for PLL13, if available in the product)"]
-    PATH14,
+    PATH14 = 14,
     #[doc = "15: Select PATH15 (can be configured for PLL14, if available in the product)"]
-    PATH15,
+    PATH15 = 15,
 }
 impl From<ROOT_MUX_A> for u8 {
     #[inline(always)]
     fn from(variant: ROOT_MUX_A) -> Self {
-        match variant {
-            ROOT_MUX_A::PATH0 => 0,
-            ROOT_MUX_A::PATH1 => 1,
-            ROOT_MUX_A::PATH2 => 2,
-            ROOT_MUX_A::PATH3 => 3,
-            ROOT_MUX_A::PATH4 => 4,
-            ROOT_MUX_A::PATH5 => 5,
-            ROOT_MUX_A::PATH6 => 6,
-            ROOT_MUX_A::PATH7 => 7,
-            ROOT_MUX_A::PATH8 => 8,
-            ROOT_MUX_A::PATH9 => 9,
-            ROOT_MUX_A::PATH10 => 10,
-            ROOT_MUX_A::PATH11 => 11,
-            ROOT_MUX_A::PATH12 => 12,
-            ROOT_MUX_A::PATH13 => 13,
-            ROOT_MUX_A::PATH14 => 14,
-            ROOT_MUX_A::PATH15 => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ROOT_MUX`"]
@@ -277,25 +261,21 @@ impl<'a> ROOT_MUX_W<'a> {
 }
 #[doc = "Selects predivider value for this clock root and DSI input.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ROOT_DIV_A {
     #[doc = "0: Transparent mode, feed through selected clock source w/o dividing."]
-    NO_DIV,
+    NO_DIV = 0,
     #[doc = "1: Divide selected clock source by 2"]
-    DIV_BY_2,
+    DIV_BY_2 = 1,
     #[doc = "2: Divide selected clock source by 4"]
-    DIV_BY_4,
+    DIV_BY_4 = 2,
     #[doc = "3: Divide selected clock source by 8"]
-    DIV_BY_8,
+    DIV_BY_8 = 3,
 }
 impl From<ROOT_DIV_A> for u8 {
     #[inline(always)]
     fn from(variant: ROOT_DIV_A) -> Self {
-        match variant {
-            ROOT_DIV_A::NO_DIV => 0,
-            ROOT_DIV_A::DIV_BY_2 => 1,
-            ROOT_DIV_A::DIV_BY_4 => 2,
-            ROOT_DIV_A::DIV_BY_8 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ROOT_DIV`"]

@@ -12,25 +12,21 @@ impl crate::ResetValue for super::MCWDT_LOCK {
 }
 #[doc = "Prohibits writing control and configuration registers related to this MCWDT when not equal 0 (as specified in the other register descriptions). Requires at least two different writes to unlock. Note that this field is 2 bits to force multiple writes only. Each MCWDT has a separate local lock. LFCLK settings are locked by the global WDT_LOCK register, and this register has no effect on that.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MCWDT_LOCK_A {
     #[doc = "0: No effect"]
-    NO_CHG,
+    NO_CHG = 0,
     #[doc = "1: Clears bit 0"]
-    CLR0,
+    CLR0 = 1,
     #[doc = "2: Clears bit 1"]
-    CLR1,
+    CLR1 = 2,
     #[doc = "3: Sets both bits 0 and 1"]
-    SET01,
+    SET01 = 3,
 }
 impl From<MCWDT_LOCK_A> for u8 {
     #[inline(always)]
     fn from(variant: MCWDT_LOCK_A) -> Self {
-        match variant {
-            MCWDT_LOCK_A::NO_CHG => 0,
-            MCWDT_LOCK_A::CLR0 => 1,
-            MCWDT_LOCK_A::CLR1 => 2,
-            MCWDT_LOCK_A::SET01 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MCWDT_LOCK`"]

@@ -28,17 +28,14 @@ impl<'a> DATA_COUNT_MSB_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATA_VALID_A {
     #[doc = "0: No ACK'd transactions since bit was last cleared."]
-    DATA_ERROR,
+    DATA_ERROR = 0,
     #[doc = "1: Indicates a transaction ended with an ACK."]
-    DATA_VALID,
+    DATA_VALID = 1,
 }
 impl From<DATA_VALID_A> for bool {
     #[inline(always)]
     fn from(variant: DATA_VALID_A) -> Self {
-        match variant {
-            DATA_VALID_A::DATA_ERROR => false,
-            DATA_VALID_A::DATA_VALID => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DATA_VALID`"]

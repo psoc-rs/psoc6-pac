@@ -54,25 +54,21 @@ impl<'a> SETTLING_COUNT_W<'a> {
 }
 #[doc = "Bypass mux located just after FLL output.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BYPASS_SEL_A {
     #[doc = "0: Automatic using lock indicator.  When unlocked, automatically selects FLL reference input (bypass mode).  When locked, automatically selects FLL output."]
-    AUTO,
+    AUTO = 0,
     #[doc = "1: Same as AUTO"]
-    AUTO1,
+    AUTO1 = 1,
     #[doc = "2: Select FLL reference input (bypass mode).  Ignores lock indicator"]
-    FLL_REF,
+    FLL_REF = 2,
     #[doc = "3: Select FLL output.  Ignores lock indicator."]
-    FLL_OUT,
+    FLL_OUT = 3,
 }
 impl From<BYPASS_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: BYPASS_SEL_A) -> Self {
-        match variant {
-            BYPASS_SEL_A::AUTO => 0,
-            BYPASS_SEL_A::AUTO1 => 1,
-            BYPASS_SEL_A::FLL_REF => 2,
-            BYPASS_SEL_A::FLL_OUT => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BYPASS_SEL`"]

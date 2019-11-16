@@ -12,25 +12,21 @@ impl crate::ResetValue for super::INTR_CFG {
 }
 #[doc = "Sets which edge will trigger an IRQ for IO pin 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EDGE0_SEL_A {
     #[doc = "0: Disabled"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Rising edge"]
-    RISING,
+    RISING = 1,
     #[doc = "2: Falling edge"]
-    FALLING,
+    FALLING = 2,
     #[doc = "3: Both rising and falling edges"]
-    BOTH,
+    BOTH = 3,
 }
 impl From<EDGE0_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: EDGE0_SEL_A) -> Self {
-        match variant {
-            EDGE0_SEL_A::DISABLE => 0,
-            EDGE0_SEL_A::RISING => 1,
-            EDGE0_SEL_A::FALLING => 2,
-            EDGE0_SEL_A::BOTH => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EDGE0_SEL`"]
@@ -207,25 +203,21 @@ impl<'a> EDGE7_SEL_W<'a> {
 }
 #[doc = "Sets which edge will trigger an IRQ for the glitch filtered pin (selected by INTR_CFG.FLT_SEL\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FLT_EDGE_SEL_A {
     #[doc = "0: Disabled"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Rising edge"]
-    RISING,
+    RISING = 1,
     #[doc = "2: Falling edge"]
-    FALLING,
+    FALLING = 2,
     #[doc = "3: Both rising and falling edges"]
-    BOTH,
+    BOTH = 3,
 }
 impl From<FLT_EDGE_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: FLT_EDGE_SEL_A) -> Self {
-        match variant {
-            FLT_EDGE_SEL_A::DISABLE => 0,
-            FLT_EDGE_SEL_A::RISING => 1,
-            FLT_EDGE_SEL_A::FALLING => 2,
-            FLT_EDGE_SEL_A::BOTH => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FLT_EDGE_SEL`"]

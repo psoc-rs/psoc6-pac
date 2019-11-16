@@ -122,25 +122,21 @@ impl<'a> CTDAC_RANGE_W<'a> {
 }
 #[doc = "DAC mode, this determines the Value decoding\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CTDAC_MODE_A {
     #[doc = "0: Unsigned 12-bit VDAC, i.e. no value decoding."]
-    UNSIGNED12,
+    UNSIGNED12 = 0,
     #[doc = "1: Virtual signed 12-bits' VDAC. Value decoding:\nadd 0x800 to the 12-bit Value (=invert MSB), to convert the lowest signed number 0x800 to the lowest unsigned number 0x000. This is the same as the SAR handles 12-bit 'virtual' signed numbers."]
-    VIRT_SIGNED12,
+    VIRT_SIGNED12 = 1,
     #[doc = "2: N/A"]
-    RSVD2,
+    RSVD2 = 2,
     #[doc = "3: N/A"]
-    RSVD3,
+    RSVD3 = 3,
 }
 impl From<CTDAC_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: CTDAC_MODE_A) -> Self {
-        match variant {
-            CTDAC_MODE_A::UNSIGNED12 => 0,
-            CTDAC_MODE_A::VIRT_SIGNED12 => 1,
-            CTDAC_MODE_A::RSVD2 => 2,
-            CTDAC_MODE_A::RSVD3 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CTDAC_MODE`"]

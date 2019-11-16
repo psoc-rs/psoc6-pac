@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CFG_IN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VTRIP_SEL0_0_A {
     #[doc = "0: Input buffer compatible with CMOS and I2C interfaces"]
-    CMOS,
+    CMOS = 0,
     #[doc = "1: Input buffer compatible with TTL and MediaLB interfaces"]
-    TTL,
+    TTL = 1,
 }
 impl From<VTRIP_SEL0_0_A> for bool {
     #[inline(always)]
     fn from(variant: VTRIP_SEL0_0_A) -> Self {
-        match variant {
-            VTRIP_SEL0_0_A::CMOS => false,
-            VTRIP_SEL0_0_A::TTL => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VTRIP_SEL0_0`"]

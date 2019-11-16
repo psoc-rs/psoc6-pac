@@ -26,28 +26,23 @@ impl<'a> CCO_LIMIT_W<'a> {
 }
 #[doc = "Frequency range of CCO\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CCO_RANGE_A {
     #[doc = "0: Target frequency is in range \\[48, 64) MHz"]
-    RANGE0,
+    RANGE0 = 0,
     #[doc = "1: Target frequency is in range \\[64, 85) MHz"]
-    RANGE1,
+    RANGE1 = 1,
     #[doc = "2: Target frequency is in range \\[85, 113) MHz"]
-    RANGE2,
+    RANGE2 = 2,
     #[doc = "3: Target frequency is in range \\[113, 150) MHz"]
-    RANGE3,
+    RANGE3 = 3,
     #[doc = "4: Target frequency is in range \\[150, 200\\] MHz"]
-    RANGE4,
+    RANGE4 = 4,
 }
 impl From<CCO_RANGE_A> for u8 {
     #[inline(always)]
     fn from(variant: CCO_RANGE_A) -> Self {
-        match variant {
-            CCO_RANGE_A::RANGE0 => 0,
-            CCO_RANGE_A::RANGE1 => 1,
-            CCO_RANGE_A::RANGE2 => 2,
-            CCO_RANGE_A::RANGE3 => 3,
-            CCO_RANGE_A::RANGE4 => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CCO_RANGE`"]

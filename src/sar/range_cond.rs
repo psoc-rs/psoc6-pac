@@ -12,25 +12,21 @@ impl crate::ResetValue for super::RANGE_COND {
 }
 #[doc = "Range condition select.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RANGE_COND_A {
     #[doc = "0: result < RANGE_LOW"]
-    BELOW,
+    BELOW = 0,
     #[doc = "1: RANGE_LOW <= result < RANGE_HIGH"]
-    INSIDE,
+    INSIDE = 1,
     #[doc = "2: RANGE_HIGH <= result"]
-    ABOVE,
+    ABOVE = 2,
     #[doc = "3: result < RANGE_LOW || RANGE_HIGH <= result"]
-    OUTSIDE,
+    OUTSIDE = 3,
 }
 impl From<RANGE_COND_A> for u8 {
     #[inline(always)]
     fn from(variant: RANGE_COND_A) -> Self {
-        match variant {
-            RANGE_COND_A::BELOW => 0,
-            RANGE_COND_A::INSIDE => 1,
-            RANGE_COND_A::ABOVE => 2,
-            RANGE_COND_A::OUTSIDE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RANGE_COND`"]

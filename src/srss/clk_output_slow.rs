@@ -12,40 +12,31 @@ impl crate::ResetValue for super::CLK_OUTPUT_SLOW {
 }
 #[doc = "Select signal for slow clock output #0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SLOW_SEL0_A {
     #[doc = "0: Disabled - output is 0.  For power savings, clocks are blocked before entering any muxes."]
-    NC,
+    NC = 0,
     #[doc = "1: Internal Low Speed Oscillator (ILO)"]
-    ILO,
+    ILO = 1,
     #[doc = "2: Watch-Crystal Oscillator (WCO)"]
-    WCO,
+    WCO = 2,
     #[doc = "3: Root of the Backup domain clock tree (BAK)"]
-    BAK,
+    BAK = 3,
     #[doc = "4: Alternate low-frequency clock input to SRSS (ALTLF)"]
-    ALTLF,
+    ALTLF = 4,
     #[doc = "5: Root of the low-speed clock tree (LFCLK)"]
-    LFCLK,
+    LFCLK = 5,
     #[doc = "6: Internal Main Oscillator (IMO).  This is grouped with the slow clocks so it can be observed during DEEPSLEEP entry/exit."]
-    IMO,
+    IMO = 6,
     #[doc = "7: Sleep Controller clock (SLPCTRL).  This is grouped with the slow clocks so it can be observed during DEEPSLEEP entry/exit."]
-    SLPCTRL,
+    SLPCTRL = 7,
     #[doc = "8: Precision Internal Low Speed Oscillator (PILO)"]
-    PILO,
+    PILO = 8,
 }
 impl From<SLOW_SEL0_A> for u8 {
     #[inline(always)]
     fn from(variant: SLOW_SEL0_A) -> Self {
-        match variant {
-            SLOW_SEL0_A::NC => 0,
-            SLOW_SEL0_A::ILO => 1,
-            SLOW_SEL0_A::WCO => 2,
-            SLOW_SEL0_A::BAK => 3,
-            SLOW_SEL0_A::ALTLF => 4,
-            SLOW_SEL0_A::LFCLK => 5,
-            SLOW_SEL0_A::IMO => 6,
-            SLOW_SEL0_A::SLPCTRL => 7,
-            SLOW_SEL0_A::PILO => 8,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SLOW_SEL0`"]
@@ -178,40 +169,31 @@ impl<'a> SLOW_SEL0_W<'a> {
 }
 #[doc = "Select signal for slow clock output #1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SLOW_SEL1_A {
     #[doc = "0: Disabled - output is 0.  For power savings, clocks are blocked before entering any muxes."]
-    NC,
+    NC = 0,
     #[doc = "1: Internal Low Speed Oscillator (ILO)"]
-    ILO,
+    ILO = 1,
     #[doc = "2: Watch-Crystal Oscillator (WCO)"]
-    WCO,
+    WCO = 2,
     #[doc = "3: Root of the Backup domain clock tree (BAK)"]
-    BAK,
+    BAK = 3,
     #[doc = "4: Alternate low-frequency clock input to SRSS (ALTLF)"]
-    ALTLF,
+    ALTLF = 4,
     #[doc = "5: Root of the low-speed clock tree (LFCLK)"]
-    LFCLK,
+    LFCLK = 5,
     #[doc = "6: Internal Main Oscillator (IMO).  This is grouped with the slow clocks so it can be observed during DEEPSLEEP entry/exit."]
-    IMO,
+    IMO = 6,
     #[doc = "7: Sleep Controller clock (SLPCTRL).  This is grouped with the slow clocks so it can be observed during DEEPSLEEP entry/exit."]
-    SLPCTRL,
+    SLPCTRL = 7,
     #[doc = "8: Precision Internal Low Speed Oscillator (PILO)"]
-    PILO,
+    PILO = 8,
 }
 impl From<SLOW_SEL1_A> for u8 {
     #[inline(always)]
     fn from(variant: SLOW_SEL1_A) -> Self {
-        match variant {
-            SLOW_SEL1_A::NC => 0,
-            SLOW_SEL1_A::ILO => 1,
-            SLOW_SEL1_A::WCO => 2,
-            SLOW_SEL1_A::BAK => 3,
-            SLOW_SEL1_A::ALTLF => 4,
-            SLOW_SEL1_A::LFCLK => 5,
-            SLOW_SEL1_A::IMO => 6,
-            SLOW_SEL1_A::SLPCTRL => 7,
-            SLOW_SEL1_A::PILO => 8,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SLOW_SEL1`"]

@@ -26,34 +26,27 @@ impl<'a> SENSE_DIV_W<'a> {
 }
 #[doc = "Selects the length of the LFSR which determines the LFSR repeat period. LFSR_BITS LSB of the LFSR are used for the clock dithering variation on the base period (was PRS in CSDv1). Whenever the LFSR is used (non zero value in this field) the LFSR_CLEAR bit should also be set.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LFSR_SIZE_A {
     #[doc = "0: Don't use clock dithering (=spreadspectrum) (LFSR output value is zero)"]
-    OFF,
+    OFF = 0,
     #[doc = "1: 6-bit LFSR (G(x)=X^6  +X^4+X^3+    X+1, period= 63)"]
-    _6B,
+    _6B = 1,
     #[doc = "2: 7-bit LFSR (G(x)=X^7  +X^4+X^3+X^2+1, period= 127)"]
-    _7B,
+    _7B = 2,
     #[doc = "3: 9-bit LFSR (G(x)=X^9  +X^4+X^3+    X+1, period= 511)"]
-    _9B,
+    _9B = 3,
     #[doc = "4: 10-bit LFSR (G(x)=X^10+X^4+X^3+    X+1, period= 1023)"]
-    _10B,
+    _10B = 4,
     #[doc = "5: 8-bit LFSR (G(x)=X^8+X^4+X^3+X^2+1, period= 255)"]
-    _8B,
+    _8B = 5,
     #[doc = "6: 12-bit LFSR (G(x)=X^12+X^7+X^4+X^3+1, period= 4095)"]
-    _12B,
+    _12B = 6,
 }
 impl From<LFSR_SIZE_A> for u8 {
     #[inline(always)]
     fn from(variant: LFSR_SIZE_A) -> Self {
-        match variant {
-            LFSR_SIZE_A::OFF => 0,
-            LFSR_SIZE_A::_6B => 1,
-            LFSR_SIZE_A::_7B => 2,
-            LFSR_SIZE_A::_9B => 3,
-            LFSR_SIZE_A::_10B => 4,
-            LFSR_SIZE_A::_8B => 5,
-            LFSR_SIZE_A::_12B => 6,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LFSR_SIZE`"]
@@ -226,25 +219,21 @@ impl<'a> SEL_LFSR_MSB_W<'a> {
 }
 #[doc = "Selects the number of LSB bits to use from the LSFR to provide the clock dithering variation on the base period. Caveat make sure that SENSE_DIV > the maximum absolute range (e.g. for 4B SENSE_DIV > 8), otherwise results are undefined.\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LFSR_BITS_A {
     #[doc = "0: use 2 bits: range = \\[-2,1\\]"]
-    _2B,
+    _2B = 0,
     #[doc = "1: use 3 bits: range = \\[-4,3\\]"]
-    _3B,
+    _3B = 1,
     #[doc = "2: use 4 bits: range = \\[-8,7\\]"]
-    _4B,
+    _4B = 2,
     #[doc = "3: use 5 bits: range = \\[-16,15\\] (default)"]
-    _5B,
+    _5B = 3,
 }
 impl From<LFSR_BITS_A> for u8 {
     #[inline(always)]
     fn from(variant: LFSR_BITS_A) -> Self {
-        match variant {
-            LFSR_BITS_A::_2B => 0,
-            LFSR_BITS_A::_3B => 1,
-            LFSR_BITS_A::_4B => 2,
-            LFSR_BITS_A::_5B => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LFSR_BITS`"]

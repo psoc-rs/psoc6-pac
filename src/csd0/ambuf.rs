@@ -12,22 +12,19 @@ impl crate::ResetValue for super::AMBUF {
 }
 #[doc = "Amux buffer power level\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PWR_MODE_A {
     #[doc = "0: Disable buffer"]
-    OFF,
+    OFF = 0,
     #[doc = "1: On, normal or low power level depending on CONFIG.LP_MODE."]
-    NORM,
+    NORM = 1,
     #[doc = "2: On, high or low power level depending on CONFIG.LP_MODE."]
-    HI,
+    HI = 2,
 }
 impl From<PWR_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: PWR_MODE_A) -> Self {
-        match variant {
-            PWR_MODE_A::OFF => 0,
-            PWR_MODE_A::NORM => 1,
-            PWR_MODE_A::HI => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PWR_MODE`"]

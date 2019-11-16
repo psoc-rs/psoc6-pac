@@ -14,17 +14,14 @@ impl crate::ResetValue for super::USBIO_CR0 {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RD_A {
     #[doc = "0: D+ < D- (K state)"]
-    DIFF_LOW,
+    DIFF_LOW = 0,
     #[doc = "1: D+ > D- (J state)"]
-    DIFF_HIGH,
+    DIFF_HIGH = 1,
 }
 impl From<RD_A> for bool {
     #[inline(always)]
     fn from(variant: RD_A) -> Self {
-        match variant {
-            RD_A::DIFF_LOW => false,
-            RD_A::DIFF_HIGH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RD`"]
@@ -53,17 +50,14 @@ impl RD_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TD_A {
     #[doc = "0: Force USB K state (D+ is low D- is high)."]
-    DIFF_K,
+    DIFF_K = 0,
     #[doc = "1: Force USB J state (D+ is high D- is low)."]
-    DIFF_J,
+    DIFF_J = 1,
 }
 impl From<TD_A> for bool {
     #[inline(always)]
     fn from(variant: TD_A) -> Self {
-        match variant {
-            TD_A::DIFF_K => false,
-            TD_A::DIFF_J => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TD`"]

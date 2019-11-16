@@ -12,19 +12,17 @@ impl crate::ResetValue for super::USBIO_CTL {
 }
 #[doc = "The GPIO Drive Mode for DP IO pad. This field only applies if USBIO_CR1.IOMODE =1. Data comes from the corresponding GPIO.DR register.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DM_P_A {
     #[doc = "0: Mode 0: Output buffer off (high Z). Input buffer off."]
-    OFF,
+    OFF = 0,
     #[doc = "1: Mode 1: Output buffer off (high Z). Input buffer on.\n\nOther values, not supported."]
-    INPUT,
+    INPUT = 1,
 }
 impl From<DM_P_A> for u8 {
     #[inline(always)]
     fn from(variant: DM_P_A) -> Self {
-        match variant {
-            DM_P_A::OFF => 0,
-            DM_P_A::INPUT => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DM_P`"]

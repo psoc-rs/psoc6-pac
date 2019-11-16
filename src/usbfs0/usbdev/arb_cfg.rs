@@ -36,22 +36,19 @@ impl<'a> AUTO_MEM_W<'a> {
 }
 #[doc = "DMA Access Configuration.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DMA_CFG_A {
     #[doc = "0: No DMA"]
-    DMA_NONE,
+    DMA_NONE = 0,
     #[doc = "1: Manual DMA"]
-    DMA_MANUAL,
+    DMA_MANUAL = 1,
     #[doc = "2: Auto DMA"]
-    DMA_AUTO,
+    DMA_AUTO = 2,
 }
 impl From<DMA_CFG_A> for u8 {
     #[inline(always)]
     fn from(variant: DMA_CFG_A) -> Self {
-        match variant {
-            DMA_CFG_A::DMA_NONE => 0,
-            DMA_CFG_A::DMA_MANUAL => 1,
-            DMA_CFG_A::DMA_AUTO => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DMA_CFG`"]

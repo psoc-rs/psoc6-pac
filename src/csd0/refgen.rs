@@ -14,17 +14,14 @@ impl crate::ResetValue for super::REFGEN {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum REFGEN_EN_A {
     #[doc = "0: Disable Reference Generator"]
-    OFF,
+    OFF = 0,
     #[doc = "1: On, regular operation. Note that CONFIG.LP_MODE determines the power mode level"]
-    ON,
+    ON = 1,
 }
 impl From<REFGEN_EN_A> for bool {
     #[inline(always)]
     fn from(variant: REFGEN_EN_A) -> Self {
-        match variant {
-            REFGEN_EN_A::OFF => false,
-            REFGEN_EN_A::ON => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `REFGEN_EN`"]

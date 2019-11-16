@@ -78,25 +78,21 @@ impl<'a> PLL_LF_MODE_W<'a> {
 }
 #[doc = "Bypass mux located just after PLL output. This selection is glitch-free and can be changed while the PLL is running.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BYPASS_SEL_A {
     #[doc = "0: Automatic using lock indicator.  When unlocked, automatically selects PLL reference input (bypass mode).  When locked, automatically selects PLL output."]
-    AUTO,
+    AUTO = 0,
     #[doc = "1: Same as AUTO"]
-    AUTO1,
+    AUTO1 = 1,
     #[doc = "2: Select PLL reference input (bypass mode).  Ignores lock indicator"]
-    PLL_REF,
+    PLL_REF = 2,
     #[doc = "3: Select PLL output.  Ignores lock indicator."]
-    PLL_OUT,
+    PLL_OUT = 3,
 }
 impl From<BYPASS_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: BYPASS_SEL_A) -> Self {
-        match variant {
-            BYPASS_SEL_A::AUTO => 0,
-            BYPASS_SEL_A::AUTO1 => 1,
-            BYPASS_SEL_A::PLL_REF => 2,
-            BYPASS_SEL_A::PLL_OUT => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BYPASS_SEL`"]

@@ -12,25 +12,21 @@ impl crate::ResetValue for super::SRSS_INTR_CFG {
 }
 #[doc = "Sets which edge(s) will trigger an IRQ for HVLVD1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HVLVD1_EDGE_SEL_A {
     #[doc = "0: Disabled"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Rising edge"]
-    RISING,
+    RISING = 1,
     #[doc = "2: Falling edge"]
-    FALLING,
+    FALLING = 2,
     #[doc = "3: Both rising and falling edges"]
-    BOTH,
+    BOTH = 3,
 }
 impl From<HVLVD1_EDGE_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: HVLVD1_EDGE_SEL_A) -> Self {
-        match variant {
-            HVLVD1_EDGE_SEL_A::DISABLE => 0,
-            HVLVD1_EDGE_SEL_A::RISING => 1,
-            HVLVD1_EDGE_SEL_A::FALLING => 2,
-            HVLVD1_EDGE_SEL_A::BOTH => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HVLVD1_EDGE_SEL`"]

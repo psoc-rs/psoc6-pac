@@ -153,7 +153,7 @@ pub struct MCWDT_STRUCT {
 #[doc = r"Register block"]
 #[doc = "Multi-Counter Watchdog Timer"]
 pub mod mcwdt_struct;
-#[doc = "Power Mode Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pwr_ctl](pwr_ctl) module"]
+#[doc = "Power Mode Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_ctl](pwr_ctl) module"]
 pub type PWR_CTL = crate::Reg<u32, _PWR_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -164,7 +164,7 @@ impl crate::Readable for PWR_CTL {}
 impl crate::Writable for PWR_CTL {}
 #[doc = "Power Mode Control"]
 pub mod pwr_ctl;
-#[doc = "HIBERNATE Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pwr_hibernate](pwr_hibernate) module"]
+#[doc = "HIBERNATE Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_hibernate](pwr_hibernate) module"]
 pub type PWR_HIBERNATE = crate::Reg<u32, _PWR_HIBERNATE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -175,7 +175,7 @@ impl crate::Readable for PWR_HIBERNATE {}
 impl crate::Writable for PWR_HIBERNATE {}
 #[doc = "HIBERNATE Mode Register"]
 pub mod pwr_hibernate;
-#[doc = "Low Voltage Detector (LVD) Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pwr_lvd_ctl](pwr_lvd_ctl) module"]
+#[doc = "Low Voltage Detector (LVD) Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_lvd_ctl](pwr_lvd_ctl) module"]
 pub type PWR_LVD_CTL = crate::Reg<u32, _PWR_LVD_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -186,7 +186,7 @@ impl crate::Readable for PWR_LVD_CTL {}
 impl crate::Writable for PWR_LVD_CTL {}
 #[doc = "Low Voltage Detector (LVD) Configuration Register"]
 pub mod pwr_lvd_ctl;
-#[doc = "Buck Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pwr_buck_ctl](pwr_buck_ctl) module"]
+#[doc = "Buck Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_buck_ctl](pwr_buck_ctl) module"]
 pub type PWR_BUCK_CTL = crate::Reg<u32, _PWR_BUCK_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -197,7 +197,7 @@ impl crate::Readable for PWR_BUCK_CTL {}
 impl crate::Writable for PWR_BUCK_CTL {}
 #[doc = "Buck Control Register"]
 pub mod pwr_buck_ctl;
-#[doc = "Buck Control Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pwr_buck_ctl2](pwr_buck_ctl2) module"]
+#[doc = "Buck Control Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_buck_ctl2](pwr_buck_ctl2) module"]
 pub type PWR_BUCK_CTL2 = crate::Reg<u32, _PWR_BUCK_CTL2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -208,7 +208,7 @@ impl crate::Readable for PWR_BUCK_CTL2 {}
 impl crate::Writable for PWR_BUCK_CTL2 {}
 #[doc = "Buck Control Register 2"]
 pub mod pwr_buck_ctl2;
-#[doc = "Low Voltage Detector (LVD) Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pwr_lvd_status](pwr_lvd_status) module"]
+#[doc = "Low Voltage Detector (LVD) Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_lvd_status](pwr_lvd_status) module"]
 pub type PWR_LVD_STATUS = crate::Reg<u32, _PWR_LVD_STATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -217,7 +217,7 @@ pub struct _PWR_LVD_STATUS;
 impl crate::Readable for PWR_LVD_STATUS {}
 #[doc = "Low Voltage Detector (LVD) Status Register"]
 pub mod pwr_lvd_status;
-#[doc = "HIBERNATE Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pwr_hib_data](pwr_hib_data) module"]
+#[doc = "HIBERNATE Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_hib_data](pwr_hib_data) module"]
 pub type PWR_HIB_DATA = crate::Reg<u32, _PWR_HIB_DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -228,7 +228,7 @@ impl crate::Readable for PWR_HIB_DATA {}
 impl crate::Writable for PWR_HIB_DATA {}
 #[doc = "HIBERNATE Data Register"]
 pub mod pwr_hib_data;
-#[doc = "Watchdog Counter Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [wdt_ctl](wdt_ctl) module"]
+#[doc = "Watchdog Counter Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdt_ctl](wdt_ctl) module"]
 pub type WDT_CTL = crate::Reg<u32, _WDT_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -239,7 +239,7 @@ impl crate::Readable for WDT_CTL {}
 impl crate::Writable for WDT_CTL {}
 #[doc = "Watchdog Counter Control Register"]
 pub mod wdt_ctl;
-#[doc = "Watchdog Counter Count Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [wdt_cnt](wdt_cnt) module"]
+#[doc = "Watchdog Counter Count Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdt_cnt](wdt_cnt) module"]
 pub type WDT_CNT = crate::Reg<u32, _WDT_CNT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -250,7 +250,7 @@ impl crate::Readable for WDT_CNT {}
 impl crate::Writable for WDT_CNT {}
 #[doc = "Watchdog Counter Count Register"]
 pub mod wdt_cnt;
-#[doc = "Watchdog Counter Match Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [wdt_match](wdt_match) module"]
+#[doc = "Watchdog Counter Match Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [wdt_match](wdt_match) module"]
 pub type WDT_MATCH = crate::Reg<u32, _WDT_MATCH>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -261,7 +261,7 @@ impl crate::Readable for WDT_MATCH {}
 impl crate::Writable for WDT_MATCH {}
 #[doc = "Watchdog Counter Match Register"]
 pub mod wdt_match;
-#[doc = "Clock DSI Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_dsi_select](clk_dsi_select) module"]
+#[doc = "Clock DSI Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_dsi_select](clk_dsi_select) module"]
 pub type CLK_DSI_SELECT = crate::Reg<u32, _CLK_DSI_SELECT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -272,7 +272,7 @@ impl crate::Readable for CLK_DSI_SELECT {}
 impl crate::Writable for CLK_DSI_SELECT {}
 #[doc = "Clock DSI Select Register"]
 pub mod clk_dsi_select;
-#[doc = "Clock Path Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_path_select](clk_path_select) module"]
+#[doc = "Clock Path Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_path_select](clk_path_select) module"]
 pub type CLK_PATH_SELECT = crate::Reg<u32, _CLK_PATH_SELECT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -283,7 +283,7 @@ impl crate::Readable for CLK_PATH_SELECT {}
 impl crate::Writable for CLK_PATH_SELECT {}
 #[doc = "Clock Path Select Register"]
 pub mod clk_path_select;
-#[doc = "Clock Root Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_root_select](clk_root_select) module"]
+#[doc = "Clock Root Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_root_select](clk_root_select) module"]
 pub type CLK_ROOT_SELECT = crate::Reg<u32, _CLK_ROOT_SELECT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -294,7 +294,7 @@ impl crate::Readable for CLK_ROOT_SELECT {}
 impl crate::Writable for CLK_ROOT_SELECT {}
 #[doc = "Clock Root Select Register"]
 pub mod clk_root_select;
-#[doc = "Clock selection register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_select](clk_select) module"]
+#[doc = "Clock selection register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_select](clk_select) module"]
 pub type CLK_SELECT = crate::Reg<u32, _CLK_SELECT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -305,7 +305,7 @@ impl crate::Readable for CLK_SELECT {}
 impl crate::Writable for CLK_SELECT {}
 #[doc = "Clock selection register"]
 pub mod clk_select;
-#[doc = "Timer Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_timer_ctl](clk_timer_ctl) module"]
+#[doc = "Timer Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_timer_ctl](clk_timer_ctl) module"]
 pub type CLK_TIMER_CTL = crate::Reg<u32, _CLK_TIMER_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -316,7 +316,7 @@ impl crate::Readable for CLK_TIMER_CTL {}
 impl crate::Writable for CLK_TIMER_CTL {}
 #[doc = "Timer Clock Control Register"]
 pub mod clk_timer_ctl;
-#[doc = "ILO Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_ilo_config](clk_ilo_config) module"]
+#[doc = "ILO Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_ilo_config](clk_ilo_config) module"]
 pub type CLK_ILO_CONFIG = crate::Reg<u32, _CLK_ILO_CONFIG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -327,7 +327,7 @@ impl crate::Readable for CLK_ILO_CONFIG {}
 impl crate::Writable for CLK_ILO_CONFIG {}
 #[doc = "ILO Configuration"]
 pub mod clk_ilo_config;
-#[doc = "IMO Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_imo_config](clk_imo_config) module"]
+#[doc = "IMO Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_imo_config](clk_imo_config) module"]
 pub type CLK_IMO_CONFIG = crate::Reg<u32, _CLK_IMO_CONFIG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -338,7 +338,7 @@ impl crate::Readable for CLK_IMO_CONFIG {}
 impl crate::Writable for CLK_IMO_CONFIG {}
 #[doc = "IMO Configuration"]
 pub mod clk_imo_config;
-#[doc = "Fast Clock Output Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_output_fast](clk_output_fast) module"]
+#[doc = "Fast Clock Output Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_output_fast](clk_output_fast) module"]
 pub type CLK_OUTPUT_FAST = crate::Reg<u32, _CLK_OUTPUT_FAST>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -349,7 +349,7 @@ impl crate::Readable for CLK_OUTPUT_FAST {}
 impl crate::Writable for CLK_OUTPUT_FAST {}
 #[doc = "Fast Clock Output Select Register"]
 pub mod clk_output_fast;
-#[doc = "Slow Clock Output Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_output_slow](clk_output_slow) module"]
+#[doc = "Slow Clock Output Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_output_slow](clk_output_slow) module"]
 pub type CLK_OUTPUT_SLOW = crate::Reg<u32, _CLK_OUTPUT_SLOW>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -360,7 +360,7 @@ impl crate::Readable for CLK_OUTPUT_SLOW {}
 impl crate::Writable for CLK_OUTPUT_SLOW {}
 #[doc = "Slow Clock Output Select Register"]
 pub mod clk_output_slow;
-#[doc = "Clock Calibration Counter 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_cal_cnt1](clk_cal_cnt1) module"]
+#[doc = "Clock Calibration Counter 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_cal_cnt1](clk_cal_cnt1) module"]
 pub type CLK_CAL_CNT1 = crate::Reg<u32, _CLK_CAL_CNT1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -371,7 +371,7 @@ impl crate::Readable for CLK_CAL_CNT1 {}
 impl crate::Writable for CLK_CAL_CNT1 {}
 #[doc = "Clock Calibration Counter 1"]
 pub mod clk_cal_cnt1;
-#[doc = "Clock Calibration Counter 2\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_cal_cnt2](clk_cal_cnt2) module"]
+#[doc = "Clock Calibration Counter 2\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_cal_cnt2](clk_cal_cnt2) module"]
 pub type CLK_CAL_CNT2 = crate::Reg<u32, _CLK_CAL_CNT2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -380,7 +380,7 @@ pub struct _CLK_CAL_CNT2;
 impl crate::Readable for CLK_CAL_CNT2 {}
 #[doc = "Clock Calibration Counter 2"]
 pub mod clk_cal_cnt2;
-#[doc = "ECO Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_eco_config](clk_eco_config) module"]
+#[doc = "ECO Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_eco_config](clk_eco_config) module"]
 pub type CLK_ECO_CONFIG = crate::Reg<u32, _CLK_ECO_CONFIG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -391,7 +391,7 @@ impl crate::Readable for CLK_ECO_CONFIG {}
 impl crate::Writable for CLK_ECO_CONFIG {}
 #[doc = "ECO Configuration Register"]
 pub mod clk_eco_config;
-#[doc = "ECO Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_eco_status](clk_eco_status) module"]
+#[doc = "ECO Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_eco_status](clk_eco_status) module"]
 pub type CLK_ECO_STATUS = crate::Reg<u32, _CLK_ECO_STATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -400,7 +400,7 @@ pub struct _CLK_ECO_STATUS;
 impl crate::Readable for CLK_ECO_STATUS {}
 #[doc = "ECO Status Register"]
 pub mod clk_eco_status;
-#[doc = "Precision ILO Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_pilo_config](clk_pilo_config) module"]
+#[doc = "Precision ILO Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_pilo_config](clk_pilo_config) module"]
 pub type CLK_PILO_CONFIG = crate::Reg<u32, _CLK_PILO_CONFIG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -411,7 +411,7 @@ impl crate::Readable for CLK_PILO_CONFIG {}
 impl crate::Writable for CLK_PILO_CONFIG {}
 #[doc = "Precision ILO Configuration Register"]
 pub mod clk_pilo_config;
-#[doc = "FLL Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_fll_config](clk_fll_config) module"]
+#[doc = "FLL Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_fll_config](clk_fll_config) module"]
 pub type CLK_FLL_CONFIG = crate::Reg<u32, _CLK_FLL_CONFIG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -422,7 +422,7 @@ impl crate::Readable for CLK_FLL_CONFIG {}
 impl crate::Writable for CLK_FLL_CONFIG {}
 #[doc = "FLL Configuration Register"]
 pub mod clk_fll_config;
-#[doc = "FLL Configuration Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_fll_config2](clk_fll_config2) module"]
+#[doc = "FLL Configuration Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_fll_config2](clk_fll_config2) module"]
 pub type CLK_FLL_CONFIG2 = crate::Reg<u32, _CLK_FLL_CONFIG2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -433,7 +433,7 @@ impl crate::Readable for CLK_FLL_CONFIG2 {}
 impl crate::Writable for CLK_FLL_CONFIG2 {}
 #[doc = "FLL Configuration Register 2"]
 pub mod clk_fll_config2;
-#[doc = "FLL Configuration Register 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_fll_config3](clk_fll_config3) module"]
+#[doc = "FLL Configuration Register 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_fll_config3](clk_fll_config3) module"]
 pub type CLK_FLL_CONFIG3 = crate::Reg<u32, _CLK_FLL_CONFIG3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -444,7 +444,7 @@ impl crate::Readable for CLK_FLL_CONFIG3 {}
 impl crate::Writable for CLK_FLL_CONFIG3 {}
 #[doc = "FLL Configuration Register 3"]
 pub mod clk_fll_config3;
-#[doc = "FLL Configuration Register 4\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_fll_config4](clk_fll_config4) module"]
+#[doc = "FLL Configuration Register 4\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_fll_config4](clk_fll_config4) module"]
 pub type CLK_FLL_CONFIG4 = crate::Reg<u32, _CLK_FLL_CONFIG4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -455,7 +455,7 @@ impl crate::Readable for CLK_FLL_CONFIG4 {}
 impl crate::Writable for CLK_FLL_CONFIG4 {}
 #[doc = "FLL Configuration Register 4"]
 pub mod clk_fll_config4;
-#[doc = "FLL Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_fll_status](clk_fll_status) module"]
+#[doc = "FLL Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_fll_status](clk_fll_status) module"]
 pub type CLK_FLL_STATUS = crate::Reg<u32, _CLK_FLL_STATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -466,7 +466,7 @@ impl crate::Readable for CLK_FLL_STATUS {}
 impl crate::Writable for CLK_FLL_STATUS {}
 #[doc = "FLL Status Register"]
 pub mod clk_fll_status;
-#[doc = "PLL Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_pll_config](clk_pll_config) module"]
+#[doc = "PLL Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_pll_config](clk_pll_config) module"]
 pub type CLK_PLL_CONFIG = crate::Reg<u32, _CLK_PLL_CONFIG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -477,7 +477,7 @@ impl crate::Readable for CLK_PLL_CONFIG {}
 impl crate::Writable for CLK_PLL_CONFIG {}
 #[doc = "PLL Configuration Register"]
 pub mod clk_pll_config;
-#[doc = "PLL Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_pll_status](clk_pll_status) module"]
+#[doc = "PLL Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_pll_status](clk_pll_status) module"]
 pub type CLK_PLL_STATUS = crate::Reg<u32, _CLK_PLL_STATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -488,7 +488,7 @@ impl crate::Readable for CLK_PLL_STATUS {}
 impl crate::Writable for CLK_PLL_STATUS {}
 #[doc = "PLL Status Register"]
 pub mod clk_pll_status;
-#[doc = "SRSS Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [srss_intr](srss_intr) module"]
+#[doc = "SRSS Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srss_intr](srss_intr) module"]
 pub type SRSS_INTR = crate::Reg<u32, _SRSS_INTR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -499,7 +499,7 @@ impl crate::Readable for SRSS_INTR {}
 impl crate::Writable for SRSS_INTR {}
 #[doc = "SRSS Interrupt Register"]
 pub mod srss_intr;
-#[doc = "SRSS Interrupt Set Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [srss_intr_set](srss_intr_set) module"]
+#[doc = "SRSS Interrupt Set Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srss_intr_set](srss_intr_set) module"]
 pub type SRSS_INTR_SET = crate::Reg<u32, _SRSS_INTR_SET>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -510,7 +510,7 @@ impl crate::Readable for SRSS_INTR_SET {}
 impl crate::Writable for SRSS_INTR_SET {}
 #[doc = "SRSS Interrupt Set Register"]
 pub mod srss_intr_set;
-#[doc = "SRSS Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [srss_intr_mask](srss_intr_mask) module"]
+#[doc = "SRSS Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srss_intr_mask](srss_intr_mask) module"]
 pub type SRSS_INTR_MASK = crate::Reg<u32, _SRSS_INTR_MASK>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -521,7 +521,7 @@ impl crate::Readable for SRSS_INTR_MASK {}
 impl crate::Writable for SRSS_INTR_MASK {}
 #[doc = "SRSS Interrupt Mask Register"]
 pub mod srss_intr_mask;
-#[doc = "SRSS Interrupt Masked Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [srss_intr_masked](srss_intr_masked) module"]
+#[doc = "SRSS Interrupt Masked Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srss_intr_masked](srss_intr_masked) module"]
 pub type SRSS_INTR_MASKED = crate::Reg<u32, _SRSS_INTR_MASKED>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -530,7 +530,7 @@ pub struct _SRSS_INTR_MASKED;
 impl crate::Readable for SRSS_INTR_MASKED {}
 #[doc = "SRSS Interrupt Masked Register"]
 pub mod srss_intr_masked;
-#[doc = "SRSS Interrupt Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [srss_intr_cfg](srss_intr_cfg) module"]
+#[doc = "SRSS Interrupt Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srss_intr_cfg](srss_intr_cfg) module"]
 pub type SRSS_INTR_CFG = crate::Reg<u32, _SRSS_INTR_CFG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -541,7 +541,7 @@ impl crate::Readable for SRSS_INTR_CFG {}
 impl crate::Writable for SRSS_INTR_CFG {}
 #[doc = "SRSS Interrupt Configuration Register"]
 pub mod srss_intr_cfg;
-#[doc = "Reset Cause Observation Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [res_cause](res_cause) module"]
+#[doc = "Reset Cause Observation Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [res_cause](res_cause) module"]
 pub type RES_CAUSE = crate::Reg<u32, _RES_CAUSE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -552,7 +552,7 @@ impl crate::Readable for RES_CAUSE {}
 impl crate::Writable for RES_CAUSE {}
 #[doc = "Reset Cause Observation Register"]
 pub mod res_cause;
-#[doc = "Reset Cause Observation Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [res_cause2](res_cause2) module"]
+#[doc = "Reset Cause Observation Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [res_cause2](res_cause2) module"]
 pub type RES_CAUSE2 = crate::Reg<u32, _RES_CAUSE2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -563,7 +563,7 @@ impl crate::Readable for RES_CAUSE2 {}
 impl crate::Writable for RES_CAUSE2 {}
 #[doc = "Reset Cause Observation Register 2"]
 pub mod res_cause2;
-#[doc = "Reference Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pwr_trim_ref_ctl](pwr_trim_ref_ctl) module"]
+#[doc = "Reference Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_trim_ref_ctl](pwr_trim_ref_ctl) module"]
 pub type PWR_TRIM_REF_CTL = crate::Reg<u32, _PWR_TRIM_REF_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -574,7 +574,7 @@ impl crate::Readable for PWR_TRIM_REF_CTL {}
 impl crate::Writable for PWR_TRIM_REF_CTL {}
 #[doc = "Reference Trim Register"]
 pub mod pwr_trim_ref_ctl;
-#[doc = "BOD/OVP Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pwr_trim_bodovp_ctl](pwr_trim_bodovp_ctl) module"]
+#[doc = "BOD/OVP Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_trim_bodovp_ctl](pwr_trim_bodovp_ctl) module"]
 pub type PWR_TRIM_BODOVP_CTL = crate::Reg<u32, _PWR_TRIM_BODOVP_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -585,7 +585,7 @@ impl crate::Readable for PWR_TRIM_BODOVP_CTL {}
 impl crate::Writable for PWR_TRIM_BODOVP_CTL {}
 #[doc = "BOD/OVP Trim Register"]
 pub mod pwr_trim_bodovp_ctl;
-#[doc = "CCO Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_trim_cco_ctl](clk_trim_cco_ctl) module"]
+#[doc = "CCO Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_trim_cco_ctl](clk_trim_cco_ctl) module"]
 pub type CLK_TRIM_CCO_CTL = crate::Reg<u32, _CLK_TRIM_CCO_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -596,7 +596,7 @@ impl crate::Readable for CLK_TRIM_CCO_CTL {}
 impl crate::Writable for CLK_TRIM_CCO_CTL {}
 #[doc = "CCO Trim Register"]
 pub mod clk_trim_cco_ctl;
-#[doc = "CCO Trim Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_trim_cco_ctl2](clk_trim_cco_ctl2) module"]
+#[doc = "CCO Trim Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_trim_cco_ctl2](clk_trim_cco_ctl2) module"]
 pub type CLK_TRIM_CCO_CTL2 = crate::Reg<u32, _CLK_TRIM_CCO_CTL2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -607,7 +607,7 @@ impl crate::Readable for CLK_TRIM_CCO_CTL2 {}
 impl crate::Writable for CLK_TRIM_CCO_CTL2 {}
 #[doc = "CCO Trim Register 2"]
 pub mod clk_trim_cco_ctl2;
-#[doc = "Wakeup Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pwr_trim_wake_ctl](pwr_trim_wake_ctl) module"]
+#[doc = "Wakeup Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_trim_wake_ctl](pwr_trim_wake_ctl) module"]
 pub type PWR_TRIM_WAKE_CTL = crate::Reg<u32, _PWR_TRIM_WAKE_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -618,7 +618,7 @@ impl crate::Readable for PWR_TRIM_WAKE_CTL {}
 impl crate::Writable for PWR_TRIM_WAKE_CTL {}
 #[doc = "Wakeup Trim Register"]
 pub mod pwr_trim_wake_ctl;
-#[doc = "LVD Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pwr_trim_lvd_ctl](pwr_trim_lvd_ctl) module"]
+#[doc = "LVD Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_trim_lvd_ctl](pwr_trim_lvd_ctl) module"]
 pub type PWR_TRIM_LVD_CTL = crate::Reg<u32, _PWR_TRIM_LVD_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -629,7 +629,7 @@ impl crate::Readable for PWR_TRIM_LVD_CTL {}
 impl crate::Writable for PWR_TRIM_LVD_CTL {}
 #[doc = "LVD Trim Register"]
 pub mod pwr_trim_lvd_ctl;
-#[doc = "ILO Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_trim_ilo_ctl](clk_trim_ilo_ctl) module"]
+#[doc = "ILO Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_trim_ilo_ctl](clk_trim_ilo_ctl) module"]
 pub type CLK_TRIM_ILO_CTL = crate::Reg<u32, _CLK_TRIM_ILO_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -640,7 +640,7 @@ impl crate::Readable for CLK_TRIM_ILO_CTL {}
 impl crate::Writable for CLK_TRIM_ILO_CTL {}
 #[doc = "ILO Trim Register"]
 pub mod clk_trim_ilo_ctl;
-#[doc = "Power System Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pwr_trim_pwrsys_ctl](pwr_trim_pwrsys_ctl) module"]
+#[doc = "Power System Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_trim_pwrsys_ctl](pwr_trim_pwrsys_ctl) module"]
 pub type PWR_TRIM_PWRSYS_CTL = crate::Reg<u32, _PWR_TRIM_PWRSYS_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -651,7 +651,7 @@ impl crate::Readable for PWR_TRIM_PWRSYS_CTL {}
 impl crate::Writable for PWR_TRIM_PWRSYS_CTL {}
 #[doc = "Power System Trim Register"]
 pub mod pwr_trim_pwrsys_ctl;
-#[doc = "ECO Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_trim_eco_ctl](clk_trim_eco_ctl) module"]
+#[doc = "ECO Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_trim_eco_ctl](clk_trim_eco_ctl) module"]
 pub type CLK_TRIM_ECO_CTL = crate::Reg<u32, _CLK_TRIM_ECO_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -662,7 +662,7 @@ impl crate::Readable for CLK_TRIM_ECO_CTL {}
 impl crate::Writable for CLK_TRIM_ECO_CTL {}
 #[doc = "ECO Trim Register"]
 pub mod clk_trim_eco_ctl;
-#[doc = "PILO Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_trim_pilo_ctl](clk_trim_pilo_ctl) module"]
+#[doc = "PILO Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_trim_pilo_ctl](clk_trim_pilo_ctl) module"]
 pub type CLK_TRIM_PILO_CTL = crate::Reg<u32, _CLK_TRIM_PILO_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -673,7 +673,7 @@ impl crate::Readable for CLK_TRIM_PILO_CTL {}
 impl crate::Writable for CLK_TRIM_PILO_CTL {}
 #[doc = "PILO Trim Register"]
 pub mod clk_trim_pilo_ctl;
-#[doc = "PILO Trim Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_trim_pilo_ctl2](clk_trim_pilo_ctl2) module"]
+#[doc = "PILO Trim Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_trim_pilo_ctl2](clk_trim_pilo_ctl2) module"]
 pub type CLK_TRIM_PILO_CTL2 = crate::Reg<u32, _CLK_TRIM_PILO_CTL2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -684,7 +684,7 @@ impl crate::Readable for CLK_TRIM_PILO_CTL2 {}
 impl crate::Writable for CLK_TRIM_PILO_CTL2 {}
 #[doc = "PILO Trim Register 2"]
 pub mod clk_trim_pilo_ctl2;
-#[doc = "PILO Trim Register 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clk_trim_pilo_ctl3](clk_trim_pilo_ctl3) module"]
+#[doc = "PILO Trim Register 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_trim_pilo_ctl3](clk_trim_pilo_ctl3) module"]
 pub type CLK_TRIM_PILO_CTL3 = crate::Reg<u32, _CLK_TRIM_PILO_CTL3>;
 #[allow(missing_docs)]
 #[doc(hidden)]

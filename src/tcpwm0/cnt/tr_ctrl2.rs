@@ -12,25 +12,21 @@ impl crate::ResetValue for super::TR_CTRL2 {
 }
 #[doc = "Determines the effect of a compare match event (COUNTER equals CC register) on the 'line_out' output signals. Note that INVERT is especially useful for center aligned pulse width modulation. To generate a duty cycle of 0 percent, the counter CC register should be set to '0'. For a 100 percent duty cycle, the counter CC register should be set to larger than the counter PERIOD register.\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CC_MATCH_MODE_A {
     #[doc = "0: Set to '1'"]
-    SET,
+    SET = 0,
     #[doc = "1: Set to '0'"]
-    CLEAR,
+    CLEAR = 1,
     #[doc = "2: Invert"]
-    INVERT,
+    INVERT = 2,
     #[doc = "3: No Change"]
-    NO_CHANGE,
+    NO_CHANGE = 3,
 }
 impl From<CC_MATCH_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: CC_MATCH_MODE_A) -> Self {
-        match variant {
-            CC_MATCH_MODE_A::SET => 0,
-            CC_MATCH_MODE_A::CLEAR => 1,
-            CC_MATCH_MODE_A::INVERT => 2,
-            CC_MATCH_MODE_A::NO_CHANGE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CC_MATCH_MODE`"]
@@ -109,25 +105,21 @@ impl<'a> CC_MATCH_MODE_W<'a> {
 }
 #[doc = "Determines the effect of a counter overflow event (COUNTER reaches PERIOD) on the 'line_out' output signals.\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum OVERFLOW_MODE_A {
     #[doc = "0: Set to '1'"]
-    SET,
+    SET = 0,
     #[doc = "1: Set to '0'"]
-    CLEAR,
+    CLEAR = 1,
     #[doc = "2: Invert"]
-    INVERT,
+    INVERT = 2,
     #[doc = "3: No Change"]
-    NO_CHANGE,
+    NO_CHANGE = 3,
 }
 impl From<OVERFLOW_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: OVERFLOW_MODE_A) -> Self {
-        match variant {
-            OVERFLOW_MODE_A::SET => 0,
-            OVERFLOW_MODE_A::CLEAR => 1,
-            OVERFLOW_MODE_A::INVERT => 2,
-            OVERFLOW_MODE_A::NO_CHANGE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `OVERFLOW_MODE`"]
@@ -206,25 +198,21 @@ impl<'a> OVERFLOW_MODE_W<'a> {
 }
 #[doc = "Determines the effect of a counter underflow event (COUNTER reaches '0') on the 'line_out' output signals.\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UNDERFLOW_MODE_A {
     #[doc = "0: Set to '1'"]
-    SET,
+    SET = 0,
     #[doc = "1: Set to '0'"]
-    CLEAR,
+    CLEAR = 1,
     #[doc = "2: Invert"]
-    INVERT,
+    INVERT = 2,
     #[doc = "3: No Change"]
-    NO_CHANGE,
+    NO_CHANGE = 3,
 }
 impl From<UNDERFLOW_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: UNDERFLOW_MODE_A) -> Self {
-        match variant {
-            UNDERFLOW_MODE_A::SET => 0,
-            UNDERFLOW_MODE_A::CLEAR => 1,
-            UNDERFLOW_MODE_A::INVERT => 2,
-            UNDERFLOW_MODE_A::NO_CHANGE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UNDERFLOW_MODE`"]

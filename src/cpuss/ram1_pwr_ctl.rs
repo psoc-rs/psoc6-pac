@@ -12,25 +12,21 @@ impl crate::ResetValue for super::RAM1_PWR_CTL {
 }
 #[doc = "Set Power mode for SRAM1\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PWR_MODE_A {
     #[doc = "0: See CM4_PWR_CTL"]
-    OFF,
+    OFF = 0,
     #[doc = "1: undefined"]
-    RSVD,
+    RSVD = 1,
     #[doc = "2: See CM4_PWR_CTL"]
-    RETAINED,
+    RETAINED = 2,
     #[doc = "3: See CM4_PWR_CTL"]
-    ENABLED,
+    ENABLED = 3,
 }
 impl From<PWR_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: PWR_MODE_A) -> Self {
-        match variant {
-            PWR_MODE_A::OFF => 0,
-            PWR_MODE_A::RSVD => 1,
-            PWR_MODE_A::RETAINED => 2,
-            PWR_MODE_A::ENABLED => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PWR_MODE`"]

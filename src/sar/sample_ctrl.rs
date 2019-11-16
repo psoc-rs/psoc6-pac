@@ -38,17 +38,14 @@ impl<'a> LEFT_ALIGN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SINGLE_ENDED_SIGNED_A {
     #[doc = "0: Default: result data is unsigned (zero extended if needed)"]
-    UNSIGNED,
+    UNSIGNED = 0,
     #[doc = "1: result data is signed (sign extended if needed)"]
-    SIGNED,
+    SIGNED = 1,
 }
 impl From<SINGLE_ENDED_SIGNED_A> for bool {
     #[inline(always)]
     fn from(variant: SINGLE_ENDED_SIGNED_A) -> Self {
-        match variant {
-            SINGLE_ENDED_SIGNED_A::UNSIGNED => false,
-            SINGLE_ENDED_SIGNED_A::SIGNED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `SINGLE_ENDED_SIGNED`"]
@@ -116,17 +113,14 @@ impl<'a> SINGLE_ENDED_SIGNED_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DIFFERENTIAL_SIGNED_A {
     #[doc = "0: result data is unsigned (zero extended if needed)"]
-    UNSIGNED,
+    UNSIGNED = 0,
     #[doc = "1: Default: result data is signed (sign extended if needed)"]
-    SIGNED,
+    SIGNED = 1,
 }
 impl From<DIFFERENTIAL_SIGNED_A> for bool {
     #[inline(always)]
     fn from(variant: DIFFERENTIAL_SIGNED_A) -> Self {
-        match variant {
-            DIFFERENTIAL_SIGNED_A::UNSIGNED => false,
-            DIFFERENTIAL_SIGNED_A::SIGNED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DIFFERENTIAL_SIGNED`"]
@@ -232,17 +226,14 @@ impl<'a> AVG_SHIFT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AVG_MODE_A {
     #[doc = "0: Accumulate and Dump (1st order accumulate and dump filter): a channel will be sampled back to back and averaged"]
-    ACCUNDUMP,
+    ACCUNDUMP = 0,
     #[doc = "1: Interleaved: Each scan (trigger) one sample is taken per channel and averaged over several scans."]
-    INTERLEAVED,
+    INTERLEAVED = 1,
 }
 impl From<AVG_MODE_A> for bool {
     #[inline(always)]
     fn from(variant: AVG_MODE_A) -> Self {
-        match variant {
-            AVG_MODE_A::ACCUNDUMP => false,
-            AVG_MODE_A::INTERLEAVED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AVG_MODE`"]
@@ -406,17 +397,14 @@ impl<'a> DSI_SYNC_TRIGGER_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UAB_SCAN_MODE_A {
     #[doc = "0: Unscheduled UABs: one or more of the UABs scanned by the SAR is not scheduled, for each channel that scans a UAB the SAR will wait for a positive edge on the trigger output of that UAB. Caveat: in this mode the length of SAR scan can be variable."]
-    UNSCHEDULED,
+    UNSCHEDULED = 0,
     #[doc = "1: Scheduled UABs: All UABs scanned by the SAR are assumed to be properly scheduled, i.e. their output is assumed to be valid when sampled by the SAR and the SAR does not wait. In this mode the length of the SAR scan is constant.\nThis mode requires that the SAR scans strictly periodically, i.e. the SAR has to either run continuously or has to be triggered by a periodic hardware trigger (TCPWM or UDB timer). It also requires that the end of the UAB valid phase is precisely aligned with the end of the SAR sample period (using UAB.STARTUP_DELAY). Normally this scheduling is done by Creator."]
-    SCHEDULED,
+    SCHEDULED = 1,
 }
 impl From<UAB_SCAN_MODE_A> for bool {
     #[inline(always)]
     fn from(variant: UAB_SCAN_MODE_A) -> Self {
-        match variant {
-            UAB_SCAN_MODE_A::UNSCHEDULED => false,
-            UAB_SCAN_MODE_A::SCHEDULED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `UAB_SCAN_MODE`"]

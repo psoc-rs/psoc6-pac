@@ -36,25 +36,21 @@ impl<'a> WDT_EN_W<'a> {
 }
 #[doc = "Prohibits writing to WDT_*, CLK_ILO_CONFIG, CLK_SELECT.LFCLK_SEL, and CLK_TRIM_ILO_CTL registers when not equal 0. Requires at least two different writes to unlock. A change in WDT_LOCK takes effect beginning with the next write cycle. Note that this field is 2 bits to force multiple writes only. It represents only a single write protect signal protecting all those registers at the same time. WDT will lock on any reset. This field is not retained during DEEPSLEEP or HIBERNATE mode, so the WDT will be locked after wakeup from these modes.\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum WDT_LOCK_A {
     #[doc = "0: No effect"]
-    NO_CHG,
+    NO_CHG = 0,
     #[doc = "1: Clears bit 0"]
-    CLR0,
+    CLR0 = 1,
     #[doc = "2: Clears bit 1"]
-    CLR1,
+    CLR1 = 2,
     #[doc = "3: Sets both bits 0 and 1"]
-    SET01,
+    SET01 = 3,
 }
 impl From<WDT_LOCK_A> for u8 {
     #[inline(always)]
     fn from(variant: WDT_LOCK_A) -> Self {
-        match variant {
-            WDT_LOCK_A::NO_CHG => 0,
-            WDT_LOCK_A::CLR0 => 1,
-            WDT_LOCK_A::CLR1 => 2,
-            WDT_LOCK_A::SET01 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `WDT_LOCK`"]

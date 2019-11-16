@@ -12,25 +12,21 @@ impl crate::ResetValue for super::HOST_LVL2_SEL {
 }
 #[doc = "These bits assign EP1_DRQ interrupt flag to any interrupt signals.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum EP1_DRQ_SEL_A {
     #[doc = "0: High priority interrupt"]
-    HI,
+    HI = 0,
     #[doc = "1: Medium priority interrupt"]
-    MED,
+    MED = 1,
     #[doc = "2: Low priority interrupt"]
-    LO,
+    LO = 2,
     #[doc = "3: illegal"]
-    RSVD,
+    RSVD = 3,
 }
 impl From<EP1_DRQ_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: EP1_DRQ_SEL_A) -> Self {
-        match variant {
-            EP1_DRQ_SEL_A::HI => 0,
-            EP1_DRQ_SEL_A::MED => 1,
-            EP1_DRQ_SEL_A::LO => 2,
-            EP1_DRQ_SEL_A::RSVD => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `EP1_DRQ_SEL`"]

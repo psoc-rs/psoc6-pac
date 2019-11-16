@@ -26,37 +26,29 @@ impl<'a> POS_PIN_ADDR_W<'a> {
 }
 #[doc = "Address of the port that contains the pin to be sampled by this channel (connected to Vplus)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum POS_PORT_ADDR_A {
     #[doc = "0: SARMUX pins."]
-    SARMUX,
+    SARMUX = 0,
     #[doc = "1: CTB0"]
-    CTB0,
+    CTB0 = 1,
     #[doc = "2: CTB1"]
-    CTB1,
+    CTB1 = 2,
     #[doc = "3: CTB2"]
-    CTB2,
+    CTB2 = 3,
     #[doc = "4: CTB3"]
-    CTB3,
+    CTB3 = 4,
     #[doc = "5: AROUTE virtual port2 (VPORT2)"]
-    AROUTE_VIRT2,
+    AROUTE_VIRT2 = 5,
     #[doc = "6: AROUTE virtual port1 (VPORT1)"]
-    AROUTE_VIRT1,
+    AROUTE_VIRT1 = 6,
     #[doc = "7: SARMUX virtual port (VPORT0)"]
-    SARMUX_VIRT,
+    SARMUX_VIRT = 7,
 }
 impl From<POS_PORT_ADDR_A> for u8 {
     #[inline(always)]
     fn from(variant: POS_PORT_ADDR_A) -> Self {
-        match variant {
-            POS_PORT_ADDR_A::SARMUX => 0,
-            POS_PORT_ADDR_A::CTB0 => 1,
-            POS_PORT_ADDR_A::CTB1 => 2,
-            POS_PORT_ADDR_A::CTB2 => 3,
-            POS_PORT_ADDR_A::CTB3 => 4,
-            POS_PORT_ADDR_A::AROUTE_VIRT2 => 5,
-            POS_PORT_ADDR_A::AROUTE_VIRT1 => 6,
-            POS_PORT_ADDR_A::SARMUX_VIRT => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `POS_PORT_ADDR`"]
@@ -255,25 +247,21 @@ impl<'a> NEG_PIN_ADDR_W<'a> {
 }
 #[doc = "Address of the neg port that contains the pin to be sampled by this channel.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum NEG_PORT_ADDR_A {
     #[doc = "0: SARMUX pins."]
-    SARMUX,
+    SARMUX = 0,
     #[doc = "5: AROUTE virtual port2 (VPORT2)"]
-    AROUTE_VIRT2,
+    AROUTE_VIRT2 = 5,
     #[doc = "6: AROUTE virtual port1 (VPORT1)"]
-    AROUTE_VIRT1,
+    AROUTE_VIRT1 = 6,
     #[doc = "7: SARMUX virtual port (VPORT0)"]
-    SARMUX_VIRT,
+    SARMUX_VIRT = 7,
 }
 impl From<NEG_PORT_ADDR_A> for u8 {
     #[inline(always)]
     fn from(variant: NEG_PORT_ADDR_A) -> Self {
-        match variant {
-            NEG_PORT_ADDR_A::SARMUX => 0,
-            NEG_PORT_ADDR_A::AROUTE_VIRT2 => 5,
-            NEG_PORT_ADDR_A::AROUTE_VIRT1 => 6,
-            NEG_PORT_ADDR_A::SARMUX_VIRT => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `NEG_PORT_ADDR`"]

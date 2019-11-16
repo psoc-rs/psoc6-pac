@@ -12,25 +12,21 @@ impl crate::ResetValue for super::HOST_LVL1_SEL {
 }
 #[doc = "These bits assign SOFIRQ interrupt flag to any interrupt signals.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SOFIRQ_SEL_A {
     #[doc = "0: High priority interrupt"]
-    HI,
+    HI = 0,
     #[doc = "1: Medium priority interrupt"]
-    MED,
+    MED = 1,
     #[doc = "2: Low priority interrupt"]
-    LO,
+    LO = 2,
     #[doc = "3: illegal"]
-    RSVD,
+    RSVD = 3,
 }
 impl From<SOFIRQ_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: SOFIRQ_SEL_A) -> Self {
-        match variant {
-            SOFIRQ_SEL_A::HI => 0,
-            SOFIRQ_SEL_A::MED => 1,
-            SOFIRQ_SEL_A::LO => 2,
-            SOFIRQ_SEL_A::RSVD => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SOFIRQ_SEL`"]

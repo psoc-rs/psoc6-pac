@@ -14,17 +14,14 @@ impl crate::ResetValue for super::AREF_CTRL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AREF_MODE_A {
     #[doc = "0: Nominal noise normal startup mode (meets normal mode settling and noise specifications)"]
-    NORMAL,
+    NORMAL = 0,
     #[doc = "1: High noise fast startup mode (meets fast mode settling and noise specifications)"]
-    FAST_START,
+    FAST_START = 1,
 }
 impl From<AREF_MODE_A> for bool {
     #[inline(always)]
     fn from(variant: AREF_MODE_A) -> Self {
-        match variant {
-            AREF_MODE_A::NORMAL => false,
-            AREF_MODE_A::FAST_START => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `AREF_MODE`"]
@@ -158,17 +155,14 @@ impl<'a> CTB_IPTAT_REDIRECT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IZTAT_SEL_A {
     #[doc = "0: Use 250nA IZTAT from SRSS"]
-    SRSS,
+    SRSS = 0,
     #[doc = "1: Use locally generated 250nA"]
-    LOCAL,
+    LOCAL = 1,
 }
 impl From<IZTAT_SEL_A> for bool {
     #[inline(always)]
     fn from(variant: IZTAT_SEL_A) -> Self {
-        match variant {
-            IZTAT_SEL_A::SRSS => false,
-            IZTAT_SEL_A::LOCAL => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IZTAT_SEL`"]
@@ -258,22 +252,19 @@ impl<'a> CLOCK_PUMP_PERI_SEL_W<'a> {
 }
 #[doc = "bandgap voltage select control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum VREF_SEL_A {
     #[doc = "0: Use 0.8V Vref from SRSS"]
-    SRSS,
+    SRSS = 0,
     #[doc = "1: Use locally generated Vref"]
-    LOCAL,
+    LOCAL = 1,
     #[doc = "2: Use externally supplied Vref (aref_ext_vref)"]
-    EXTERNAL,
+    EXTERNAL = 2,
 }
 impl From<VREF_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: VREF_SEL_A) -> Self {
-        match variant {
-            VREF_SEL_A::SRSS => 0,
-            VREF_SEL_A::LOCAL => 1,
-            VREF_SEL_A::EXTERNAL => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `VREF_SEL`"]
@@ -340,25 +331,21 @@ impl<'a> VREF_SEL_W<'a> {
 }
 #[doc = "AREF DeepSleep Operation Modes (only applies if DEEPSLEEP_ON = 1)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DEEPSLEEP_MODE_A {
     #[doc = "0: All blocks 'OFF' in DeepSleep"]
-    OFF,
+    OFF = 0,
     #[doc = "1: IPTAT bias generator 'ON' in DeepSleep (used for fast AREF wakeup only: IPTAT outputs not available)"]
-    IPTAT,
+    IPTAT = 1,
     #[doc = "2: IPTAT bias generator and outputs 'ON' in DeepSleep (used for biasing the CTBm with a PTAT current only in deepsleep)\n\n*Note that this mode also requires that the CTB_IPTAT_REDIRECT be set if the CTBm opamp is to operate in DeepSleep"]
-    IPTAT_IZTAT,
+    IPTAT_IZTAT = 2,
     #[doc = "3: IPTAT, VREF, and IZTAT generators 'ON' in DeepSleep. This mode provides identical AREF functionality in DeepSleep as in the Active mode."]
-    IPTAT_IZTAT_VREF,
+    IPTAT_IZTAT_VREF = 3,
 }
 impl From<DEEPSLEEP_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: DEEPSLEEP_MODE_A) -> Self {
-        match variant {
-            DEEPSLEEP_MODE_A::OFF => 0,
-            DEEPSLEEP_MODE_A::IPTAT => 1,
-            DEEPSLEEP_MODE_A::IPTAT_IZTAT => 2,
-            DEEPSLEEP_MODE_A::IPTAT_IZTAT_VREF => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DEEPSLEEP_MODE`"]

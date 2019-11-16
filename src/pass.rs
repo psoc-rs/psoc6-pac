@@ -33,7 +33,7 @@ pub struct AREF {
 #[doc = r"Register block"]
 #[doc = "AREF configuration"]
 pub mod aref;
-#[doc = "Interrupt cause register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intr_cause](intr_cause) module"]
+#[doc = "Interrupt cause register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_cause](intr_cause) module"]
 pub type INTR_CAUSE = crate::Reg<u32, _INTR_CAUSE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -42,7 +42,7 @@ pub struct _INTR_CAUSE;
 impl crate::Readable for INTR_CAUSE {}
 #[doc = "Interrupt cause register"]
 pub mod intr_cause;
-#[doc = "VREF Trim bits\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [vref_trim0](vref_trim0) module"]
+#[doc = "VREF Trim bits\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [vref_trim0](vref_trim0) module"]
 pub type VREF_TRIM0 = crate::Reg<u32, _VREF_TRIM0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -53,7 +53,7 @@ impl crate::Readable for VREF_TRIM0 {}
 impl crate::Writable for VREF_TRIM0 {}
 #[doc = "VREF Trim bits"]
 pub mod vref_trim0;
-#[doc = "VREF Trim bits\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [vref_trim1](vref_trim1) module"]
+#[doc = "VREF Trim bits\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [vref_trim1](vref_trim1) module"]
 pub type VREF_TRIM1 = crate::Reg<u32, _VREF_TRIM1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -64,7 +64,7 @@ impl crate::Readable for VREF_TRIM1 {}
 impl crate::Writable for VREF_TRIM1 {}
 #[doc = "VREF Trim bits"]
 pub mod vref_trim1;
-#[doc = "VREF Trim bits\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [vref_trim2](vref_trim2) module"]
+#[doc = "VREF Trim bits\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [vref_trim2](vref_trim2) module"]
 pub type VREF_TRIM2 = crate::Reg<u32, _VREF_TRIM2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -75,7 +75,7 @@ impl crate::Readable for VREF_TRIM2 {}
 impl crate::Writable for VREF_TRIM2 {}
 #[doc = "VREF Trim bits"]
 pub mod vref_trim2;
-#[doc = "VREF Trim bits\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [vref_trim3](vref_trim3) module"]
+#[doc = "VREF Trim bits\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [vref_trim3](vref_trim3) module"]
 pub type VREF_TRIM3 = crate::Reg<u32, _VREF_TRIM3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -86,7 +86,7 @@ impl crate::Readable for VREF_TRIM3 {}
 impl crate::Writable for VREF_TRIM3 {}
 #[doc = "VREF Trim bits"]
 pub mod vref_trim3;
-#[doc = "IZTAT Trim bits\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [iztat_trim0](iztat_trim0) module"]
+#[doc = "IZTAT Trim bits\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iztat_trim0](iztat_trim0) module"]
 pub type IZTAT_TRIM0 = crate::Reg<u32, _IZTAT_TRIM0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -97,7 +97,7 @@ impl crate::Readable for IZTAT_TRIM0 {}
 impl crate::Writable for IZTAT_TRIM0 {}
 #[doc = "IZTAT Trim bits"]
 pub mod iztat_trim0;
-#[doc = "IZTAT Trim bits\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [iztat_trim1](iztat_trim1) module"]
+#[doc = "IZTAT Trim bits\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iztat_trim1](iztat_trim1) module"]
 pub type IZTAT_TRIM1 = crate::Reg<u32, _IZTAT_TRIM1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -108,7 +108,7 @@ impl crate::Readable for IZTAT_TRIM1 {}
 impl crate::Writable for IZTAT_TRIM1 {}
 #[doc = "IZTAT Trim bits"]
 pub mod iztat_trim1;
-#[doc = "IPTAT Trim bits\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [iptat_trim0](iptat_trim0) module"]
+#[doc = "IPTAT Trim bits\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iptat_trim0](iptat_trim0) module"]
 pub type IPTAT_TRIM0 = crate::Reg<u32, _IPTAT_TRIM0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -119,7 +119,7 @@ impl crate::Readable for IPTAT_TRIM0 {}
 impl crate::Writable for IPTAT_TRIM0 {}
 #[doc = "IPTAT Trim bits"]
 pub mod iptat_trim0;
-#[doc = "ICTAT Trim bits\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ictat_trim0](ictat_trim0) module"]
+#[doc = "ICTAT Trim bits\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ictat_trim0](ictat_trim0) module"]
 pub type ICTAT_TRIM0 = crate::Reg<u32, _ICTAT_TRIM0>;
 #[allow(missing_docs)]
 #[doc(hidden)]

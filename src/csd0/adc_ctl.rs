@@ -26,25 +26,21 @@ impl<'a> ADC_TIME_W<'a> {
 }
 #[doc = "Enable ADC measurement. When enabled the ADC sequencer will be started when the main sequencer goes to the SAMPLE_NORM state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum ADC_MODE_A {
     #[doc = "0: No ADC measurement"]
-    OFF,
+    OFF = 0,
     #[doc = "1: Count time A to bring Cref1 + Cref2 up from Vssa to Vrefhi with IDACB"]
-    VREF_CNT,
+    VREF_CNT = 1,
     #[doc = "2: Count time B to bring Cref1 + Cref2 back up to Vrefhi with IDACB (after bringing them down for time A/2 cycles with IDACB sinking)"]
-    VREF_BY2_CNT,
+    VREF_BY2_CNT = 2,
     #[doc = "3: Determine HSCMP polarity and count time C to source/sink Cref1 + Cref2 from Vin to Vrefhi."]
-    VIN_CNT,
+    VIN_CNT = 3,
 }
 impl From<ADC_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: ADC_MODE_A) -> Self {
-        match variant {
-            ADC_MODE_A::OFF => 0,
-            ADC_MODE_A::VREF_CNT => 1,
-            ADC_MODE_A::VREF_BY2_CNT => 2,
-            ADC_MODE_A::VIN_CNT => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `ADC_MODE`"]

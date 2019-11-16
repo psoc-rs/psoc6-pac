@@ -36,7 +36,7 @@ pub struct RegisterBlock {
     #[doc = "0x74 - Sequencer program control 5"]
     pub seq_program_ctl_5: SEQ_PROGRAM_CTL_5,
 }
-#[doc = "Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctl](ctl) module"]
+#[doc = "Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctl](ctl) module"]
 pub type CTL = crate::Reg<u32, _CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -47,7 +47,7 @@ impl crate::Readable for CTL {}
 impl crate::Writable for CTL {}
 #[doc = "Control"]
 pub mod ctl;
-#[doc = "Command\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cmd](cmd) module"]
+#[doc = "Command\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmd](cmd) module"]
 pub type CMD = crate::Reg<u32, _CMD>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -58,7 +58,7 @@ impl crate::Readable for CMD {}
 impl crate::Writable for CMD {}
 #[doc = "Command"]
 pub mod cmd;
-#[doc = "Sequencer Default value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [seq_default](seq_default) module"]
+#[doc = "Sequencer Default value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq_default](seq_default) module"]
 pub type SEQ_DEFAULT = crate::Reg<u32, _SEQ_DEFAULT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -69,7 +69,7 @@ impl crate::Readable for SEQ_DEFAULT {}
 impl crate::Writable for SEQ_DEFAULT {}
 #[doc = "Sequencer Default value"]
 pub mod seq_default;
-#[doc = "Sequencer read control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [seq_read_ctl_0](seq_read_ctl_0) module"]
+#[doc = "Sequencer read control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq_read_ctl_0](seq_read_ctl_0) module"]
 pub type SEQ_READ_CTL_0 = crate::Reg<u32, _SEQ_READ_CTL_0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -80,7 +80,7 @@ impl crate::Readable for SEQ_READ_CTL_0 {}
 impl crate::Writable for SEQ_READ_CTL_0 {}
 #[doc = "Sequencer read control 0"]
 pub mod seq_read_ctl_0;
-#[doc = "Sequencer read control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [seq_read_ctl_1](seq_read_ctl_1) module"]
+#[doc = "Sequencer read control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq_read_ctl_1](seq_read_ctl_1) module"]
 pub type SEQ_READ_CTL_1 = crate::Reg<u32, _SEQ_READ_CTL_1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -91,7 +91,7 @@ impl crate::Readable for SEQ_READ_CTL_1 {}
 impl crate::Writable for SEQ_READ_CTL_1 {}
 #[doc = "Sequencer read control 1"]
 pub mod seq_read_ctl_1;
-#[doc = "Sequencer read control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [seq_read_ctl_2](seq_read_ctl_2) module"]
+#[doc = "Sequencer read control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq_read_ctl_2](seq_read_ctl_2) module"]
 pub type SEQ_READ_CTL_2 = crate::Reg<u32, _SEQ_READ_CTL_2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -102,7 +102,7 @@ impl crate::Readable for SEQ_READ_CTL_2 {}
 impl crate::Writable for SEQ_READ_CTL_2 {}
 #[doc = "Sequencer read control 2"]
 pub mod seq_read_ctl_2;
-#[doc = "Sequencer read control 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [seq_read_ctl_3](seq_read_ctl_3) module"]
+#[doc = "Sequencer read control 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq_read_ctl_3](seq_read_ctl_3) module"]
 pub type SEQ_READ_CTL_3 = crate::Reg<u32, _SEQ_READ_CTL_3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -113,7 +113,7 @@ impl crate::Readable for SEQ_READ_CTL_3 {}
 impl crate::Writable for SEQ_READ_CTL_3 {}
 #[doc = "Sequencer read control 3"]
 pub mod seq_read_ctl_3;
-#[doc = "Sequencer read control 4\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [seq_read_ctl_4](seq_read_ctl_4) module"]
+#[doc = "Sequencer read control 4\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq_read_ctl_4](seq_read_ctl_4) module"]
 pub type SEQ_READ_CTL_4 = crate::Reg<u32, _SEQ_READ_CTL_4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -124,7 +124,7 @@ impl crate::Readable for SEQ_READ_CTL_4 {}
 impl crate::Writable for SEQ_READ_CTL_4 {}
 #[doc = "Sequencer read control 4"]
 pub mod seq_read_ctl_4;
-#[doc = "Sequencer read control 5\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [seq_read_ctl_5](seq_read_ctl_5) module"]
+#[doc = "Sequencer read control 5\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq_read_ctl_5](seq_read_ctl_5) module"]
 pub type SEQ_READ_CTL_5 = crate::Reg<u32, _SEQ_READ_CTL_5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -135,7 +135,7 @@ impl crate::Readable for SEQ_READ_CTL_5 {}
 impl crate::Writable for SEQ_READ_CTL_5 {}
 #[doc = "Sequencer read control 5"]
 pub mod seq_read_ctl_5;
-#[doc = "Sequencer program control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [seq_program_ctl_0](seq_program_ctl_0) module"]
+#[doc = "Sequencer program control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq_program_ctl_0](seq_program_ctl_0) module"]
 pub type SEQ_PROGRAM_CTL_0 = crate::Reg<u32, _SEQ_PROGRAM_CTL_0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -146,7 +146,7 @@ impl crate::Readable for SEQ_PROGRAM_CTL_0 {}
 impl crate::Writable for SEQ_PROGRAM_CTL_0 {}
 #[doc = "Sequencer program control 0"]
 pub mod seq_program_ctl_0;
-#[doc = "Sequencer program control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [seq_program_ctl_1](seq_program_ctl_1) module"]
+#[doc = "Sequencer program control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq_program_ctl_1](seq_program_ctl_1) module"]
 pub type SEQ_PROGRAM_CTL_1 = crate::Reg<u32, _SEQ_PROGRAM_CTL_1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -157,7 +157,7 @@ impl crate::Readable for SEQ_PROGRAM_CTL_1 {}
 impl crate::Writable for SEQ_PROGRAM_CTL_1 {}
 #[doc = "Sequencer program control 1"]
 pub mod seq_program_ctl_1;
-#[doc = "Sequencer program control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [seq_program_ctl_2](seq_program_ctl_2) module"]
+#[doc = "Sequencer program control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq_program_ctl_2](seq_program_ctl_2) module"]
 pub type SEQ_PROGRAM_CTL_2 = crate::Reg<u32, _SEQ_PROGRAM_CTL_2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -168,7 +168,7 @@ impl crate::Readable for SEQ_PROGRAM_CTL_2 {}
 impl crate::Writable for SEQ_PROGRAM_CTL_2 {}
 #[doc = "Sequencer program control 2"]
 pub mod seq_program_ctl_2;
-#[doc = "Sequencer program control 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [seq_program_ctl_3](seq_program_ctl_3) module"]
+#[doc = "Sequencer program control 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq_program_ctl_3](seq_program_ctl_3) module"]
 pub type SEQ_PROGRAM_CTL_3 = crate::Reg<u32, _SEQ_PROGRAM_CTL_3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -179,7 +179,7 @@ impl crate::Readable for SEQ_PROGRAM_CTL_3 {}
 impl crate::Writable for SEQ_PROGRAM_CTL_3 {}
 #[doc = "Sequencer program control 3"]
 pub mod seq_program_ctl_3;
-#[doc = "Sequencer program control 4\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [seq_program_ctl_4](seq_program_ctl_4) module"]
+#[doc = "Sequencer program control 4\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq_program_ctl_4](seq_program_ctl_4) module"]
 pub type SEQ_PROGRAM_CTL_4 = crate::Reg<u32, _SEQ_PROGRAM_CTL_4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -190,7 +190,7 @@ impl crate::Readable for SEQ_PROGRAM_CTL_4 {}
 impl crate::Writable for SEQ_PROGRAM_CTL_4 {}
 #[doc = "Sequencer program control 4"]
 pub mod seq_program_ctl_4;
-#[doc = "Sequencer program control 5\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [seq_program_ctl_5](seq_program_ctl_5) module"]
+#[doc = "Sequencer program control 5\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq_program_ctl_5](seq_program_ctl_5) module"]
 pub type SEQ_PROGRAM_CTL_5 = crate::Reg<u32, _SEQ_PROGRAM_CTL_5>;
 #[allow(missing_docs)]
 #[doc(hidden)]

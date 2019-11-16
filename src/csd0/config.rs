@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CONFIG {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IREF_SEL_A {
     #[doc = "0: N/A"]
-    IREF_SRSS,
+    IREF_SRSS = 0,
     #[doc = "1: N/A"]
-    IREF_PASS,
+    IREF_PASS = 1,
 }
 impl From<IREF_SEL_A> for bool {
     #[inline(always)]
     fn from(variant: IREF_SEL_A) -> Self {
-        match variant {
-            IREF_SEL_A::IREF_SRSS => false,
-            IREF_SEL_A::IREF_PASS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `IREF_SEL`"]
@@ -104,25 +101,21 @@ impl<'a> FILTER_DELAY_W<'a> {
 }
 #[doc = "Configures the delay between shield clock and sensor clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SHIELD_DELAY_A {
     #[doc = "0: Delay line is off; sensor clock = shield clock"]
-    OFF,
+    OFF = 0,
     #[doc = "1: shield clock is delayed by 5ns delay  w.r.t sensor clock"]
-    D5NS,
+    D5NS = 1,
     #[doc = "2: shield clock is delayed by 10ns delay  w.r.t sensor clock"]
-    D10NS,
+    D10NS = 2,
     #[doc = "3: shield clock is delayed by 20ns delay  w.r.t sensor clock"]
-    D20NS,
+    D20NS = 3,
 }
 impl From<SHIELD_DELAY_A> for u8 {
     #[inline(always)]
     fn from(variant: SHIELD_DELAY_A) -> Self {
-        match variant {
-            SHIELD_DELAY_A::OFF => 0,
-            SHIELD_DELAY_A::D5NS => 1,
-            SHIELD_DELAY_A::D10NS => 2,
-            SHIELD_DELAY_A::D20NS => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SHIELD_DELAY`"]
@@ -227,17 +220,14 @@ impl<'a> SENSE_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FULL_WAVE_A {
     #[doc = "0: Half Wave mode"]
-    HALFWAVE,
+    HALFWAVE = 0,
     #[doc = "1: Full Wave mode"]
-    FULLWAVE,
+    FULLWAVE = 1,
 }
 impl From<FULL_WAVE_A> for bool {
     #[inline(always)]
     fn from(variant: FULL_WAVE_A) -> Self {
-        match variant {
-            FULL_WAVE_A::HALFWAVE => false,
-            FULL_WAVE_A::FULLWAVE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FULL_WAVE`"]
@@ -305,17 +295,14 @@ impl<'a> FULL_WAVE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MUTUAL_CAP_A {
     #[doc = "0: Self-cap mode"]
-    SELFCAP,
+    SELFCAP = 0,
     #[doc = "1: Mutual-cap mode"]
-    MUTUALCAP,
+    MUTUALCAP = 1,
 }
 impl From<MUTUAL_CAP_A> for bool {
     #[inline(always)]
     fn from(variant: MUTUAL_CAP_A) -> Self {
-        match variant {
-            MUTUAL_CAP_A::SELFCAP => false,
-            MUTUAL_CAP_A::MUTUALCAP => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MUTUAL_CAP`"]
@@ -383,17 +370,14 @@ impl<'a> MUTUAL_CAP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CSX_DUAL_CNT_A {
     #[doc = "0: N/A"]
-    ONE,
+    ONE = 0,
     #[doc = "1: N/A"]
-    TWO,
+    TWO = 1,
 }
 impl From<CSX_DUAL_CNT_A> for bool {
     #[inline(always)]
     fn from(variant: CSX_DUAL_CNT_A) -> Self {
-        match variant {
-            CSX_DUAL_CNT_A::ONE => false,
-            CSX_DUAL_CNT_A::TWO => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CSX_DUAL_CNT`"]
@@ -461,17 +445,14 @@ impl<'a> CSX_DUAL_CNT_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DSI_COUNT_SEL_A {
     #[doc = "0: N/A"]
-    CSD_RESULT,
+    CSD_RESULT = 0,
     #[doc = "1: N/A"]
-    ADC_RESULT,
+    ADC_RESULT = 1,
 }
 impl From<DSI_COUNT_SEL_A> for bool {
     #[inline(always)]
     fn from(variant: DSI_COUNT_SEL_A) -> Self {
-        match variant {
-            DSI_COUNT_SEL_A::CSD_RESULT => false,
-            DSI_COUNT_SEL_A::ADC_RESULT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DSI_COUNT_SEL`"]

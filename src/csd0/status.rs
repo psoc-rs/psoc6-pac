@@ -6,17 +6,14 @@ pub type CSD_SENSE_R = crate::R<bool, bool>;
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSCMP_OUT_A {
     #[doc = "0: N/A"]
-    C_LT_VREF,
+    C_LT_VREF = 0,
     #[doc = "1: N/A"]
-    C_GT_VREF,
+    C_GT_VREF = 1,
 }
 impl From<HSCMP_OUT_A> for bool {
     #[inline(always)]
     fn from(variant: HSCMP_OUT_A) -> Self {
-        match variant {
-            HSCMP_OUT_A::C_LT_VREF => false,
-            HSCMP_OUT_A::C_GT_VREF => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HSCMP_OUT`"]

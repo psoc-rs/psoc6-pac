@@ -146,25 +146,21 @@ impl<'a> OA1_DSI_LEVEL_W<'a> {
 }
 #[doc = "Opamp1 comparator edge detect for interrupt and pulse mode of DSI (trigger)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum OA1_COMPINT_A {
     #[doc = "0: Disabled, no interrupts will be detected"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Rising edge"]
-    RISING,
+    RISING = 1,
     #[doc = "2: Falling edge"]
-    FALLING,
+    FALLING = 2,
     #[doc = "3: Both rising and falling edges"]
-    BOTH,
+    BOTH = 3,
 }
 impl From<OA1_COMPINT_A> for u8 {
     #[inline(always)]
     fn from(variant: OA1_COMPINT_A) -> Self {
-        match variant {
-            OA1_COMPINT_A::DISABLE => 0,
-            OA1_COMPINT_A::RISING => 1,
-            OA1_COMPINT_A::FALLING => 2,
-            OA1_COMPINT_A::BOTH => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `OA1_COMPINT`"]

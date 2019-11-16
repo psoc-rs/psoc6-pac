@@ -12,25 +12,21 @@ impl crate::ResetValue for super::CLOCK_CTL {
 }
 #[doc = "PDM CLK (FPDM_CLK) (1st divider): This configures a frequency of PDM CLK. The configured frequency is used to operate PDM core. I.e. the frequency is input to MCLKQ_CLOCK_DIV register. Note: configure a frequency of PDM CLK as lower than or equal 50MHz with this divider.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CLK_CLOCK_DIV_A {
     #[doc = "0: Divide by 1"]
-    DIVBY1,
+    DIVBY1 = 0,
     #[doc = "1: Divide by 2 (no 50 percent duty cycle)"]
-    DIVBY2,
+    DIVBY2 = 1,
     #[doc = "2: Divide by 3 (no 50 percent duty cycle)"]
-    DIVBY3,
+    DIVBY3 = 2,
     #[doc = "3: Divide by 4 (no 50 percent duty cycle)"]
-    DIVBY4,
+    DIVBY4 = 3,
 }
 impl From<CLK_CLOCK_DIV_A> for u8 {
     #[inline(always)]
     fn from(variant: CLK_CLOCK_DIV_A) -> Self {
-        match variant {
-            CLK_CLOCK_DIV_A::DIVBY1 => 0,
-            CLK_CLOCK_DIV_A::DIVBY2 => 1,
-            CLK_CLOCK_DIV_A::DIVBY3 => 2,
-            CLK_CLOCK_DIV_A::DIVBY4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CLK_CLOCK_DIV`"]
@@ -109,25 +105,21 @@ impl<'a> CLK_CLOCK_DIV_W<'a> {
 }
 #[doc = "MCLKQ divider (2nd divider) (Note: These bits are connected to AR36U12.PDM_CORE2_CFG.DIV_MCLKQ)\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MCLKQ_CLOCK_DIV_A {
     #[doc = "0: Divide by 1"]
-    DIVBY1,
+    DIVBY1 = 0,
     #[doc = "1: Divide by 2 (no 50 percent duty cycle)"]
-    DIVBY2,
+    DIVBY2 = 1,
     #[doc = "2: Divide by 3 (no 50 percent duty cycle)"]
-    DIVBY3,
+    DIVBY3 = 2,
     #[doc = "3: Divide by 4 (no 50 percent duty cycle)"]
-    DIVBY4,
+    DIVBY4 = 3,
 }
 impl From<MCLKQ_CLOCK_DIV_A> for u8 {
     #[inline(always)]
     fn from(variant: MCLKQ_CLOCK_DIV_A) -> Self {
-        match variant {
-            MCLKQ_CLOCK_DIV_A::DIVBY1 => 0,
-            MCLKQ_CLOCK_DIV_A::DIVBY2 => 1,
-            MCLKQ_CLOCK_DIV_A::DIVBY3 => 2,
-            MCLKQ_CLOCK_DIV_A::DIVBY4 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MCLKQ_CLOCK_DIV`"]

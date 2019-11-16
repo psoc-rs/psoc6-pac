@@ -191,7 +191,7 @@ pub struct PPU_GR {
 #[doc = r"Register block"]
 #[doc = "PPU structure with fixed/constant address for a peripheral group"]
 pub mod ppu_gr;
-#[doc = "Divider command register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [div_cmd](div_cmd) module"]
+#[doc = "Divider command register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [div_cmd](div_cmd) module"]
 pub type DIV_CMD = crate::Reg<u32, _DIV_CMD>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -202,7 +202,7 @@ impl crate::Readable for DIV_CMD {}
 impl crate::Writable for DIV_CMD {}
 #[doc = "Divider command register"]
 pub mod div_cmd;
-#[doc = "Divider control register (for 8.0 divider)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [div_8_ctl](div_8_ctl) module"]
+#[doc = "Divider control register (for 8.0 divider)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [div_8_ctl](div_8_ctl) module"]
 pub type DIV_8_CTL = crate::Reg<u32, _DIV_8_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -213,7 +213,7 @@ impl crate::Readable for DIV_8_CTL {}
 impl crate::Writable for DIV_8_CTL {}
 #[doc = "Divider control register (for 8.0 divider)"]
 pub mod div_8_ctl;
-#[doc = "Divider control register (for 16.0 divider)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [div_16_ctl](div_16_ctl) module"]
+#[doc = "Divider control register (for 16.0 divider)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [div_16_ctl](div_16_ctl) module"]
 pub type DIV_16_CTL = crate::Reg<u32, _DIV_16_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -224,7 +224,7 @@ impl crate::Readable for DIV_16_CTL {}
 impl crate::Writable for DIV_16_CTL {}
 #[doc = "Divider control register (for 16.0 divider)"]
 pub mod div_16_ctl;
-#[doc = "Divider control register (for 16.5 divider)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [div_16_5_ctl](div_16_5_ctl) module"]
+#[doc = "Divider control register (for 16.5 divider)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [div_16_5_ctl](div_16_5_ctl) module"]
 pub type DIV_16_5_CTL = crate::Reg<u32, _DIV_16_5_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -235,7 +235,7 @@ impl crate::Readable for DIV_16_5_CTL {}
 impl crate::Writable for DIV_16_5_CTL {}
 #[doc = "Divider control register (for 16.5 divider)"]
 pub mod div_16_5_ctl;
-#[doc = "Divider control register (for 24.5 divider)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [div_24_5_ctl](div_24_5_ctl) module"]
+#[doc = "Divider control register (for 24.5 divider)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [div_24_5_ctl](div_24_5_ctl) module"]
 pub type DIV_24_5_CTL = crate::Reg<u32, _DIV_24_5_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -246,7 +246,7 @@ impl crate::Readable for DIV_24_5_CTL {}
 impl crate::Writable for DIV_24_5_CTL {}
 #[doc = "Divider control register (for 24.5 divider)"]
 pub mod div_24_5_ctl;
-#[doc = "Clock control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [clock_ctl](clock_ctl) module"]
+#[doc = "Clock control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clock_ctl](clock_ctl) module"]
 pub type CLOCK_CTL = crate::Reg<u32, _CLOCK_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -257,7 +257,7 @@ impl crate::Readable for CLOCK_CTL {}
 impl crate::Writable for CLOCK_CTL {}
 #[doc = "Clock control register"]
 pub mod clock_ctl;
-#[doc = "Trigger command register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [tr_cmd](tr_cmd) module"]
+#[doc = "Trigger command register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tr_cmd](tr_cmd) module"]
 pub type TR_CMD = crate::Reg<u32, _TR_CMD>;
 #[allow(missing_docs)]
 #[doc(hidden)]

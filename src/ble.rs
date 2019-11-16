@@ -1,4 +1,4 @@
-use self::rcb::RCBLL;
+use crate::ble::rcb::RCBLL;
 
 #[doc = r"Register block"]
 #[repr(C)]

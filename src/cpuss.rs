@@ -106,7 +106,7 @@ pub struct RegisterBlock {
     #[doc = "0xf004 - RAM trim control"]
     pub trim_ram_ctl: TRIM_RAM_CTL,
 }
-#[doc = "CM0+ control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm0_ctl](cm0_ctl) module"]
+#[doc = "CM0+ control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm0_ctl](cm0_ctl) module"]
 pub type CM0_CTL = crate::Reg<u32, _CM0_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -117,7 +117,7 @@ impl crate::Readable for CM0_CTL {}
 impl crate::Writable for CM0_CTL {}
 #[doc = "CM0+ control"]
 pub mod cm0_ctl;
-#[doc = "CM0+ status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm0_status](cm0_status) module"]
+#[doc = "CM0+ status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm0_status](cm0_status) module"]
 pub type CM0_STATUS = crate::Reg<u32, _CM0_STATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -126,7 +126,7 @@ pub struct _CM0_STATUS;
 impl crate::Readable for CM0_STATUS {}
 #[doc = "CM0+ status"]
 pub mod cm0_status;
-#[doc = "CM0+ clock control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm0_clock_ctl](cm0_clock_ctl) module"]
+#[doc = "CM0+ clock control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm0_clock_ctl](cm0_clock_ctl) module"]
 pub type CM0_CLOCK_CTL = crate::Reg<u32, _CM0_CLOCK_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -137,7 +137,7 @@ impl crate::Readable for CM0_CLOCK_CTL {}
 impl crate::Writable for CM0_CLOCK_CTL {}
 #[doc = "CM0+ clock control"]
 pub mod cm0_clock_ctl;
-#[doc = "CM0+ interrupt control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm0_int_ctl0](cm0_int_ctl0) module"]
+#[doc = "CM0+ interrupt control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm0_int_ctl0](cm0_int_ctl0) module"]
 pub type CM0_INT_CTL0 = crate::Reg<u32, _CM0_INT_CTL0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -148,7 +148,7 @@ impl crate::Readable for CM0_INT_CTL0 {}
 impl crate::Writable for CM0_INT_CTL0 {}
 #[doc = "CM0+ interrupt control 0"]
 pub mod cm0_int_ctl0;
-#[doc = "CM0+ interrupt control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm0_int_ctl1](cm0_int_ctl1) module"]
+#[doc = "CM0+ interrupt control 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm0_int_ctl1](cm0_int_ctl1) module"]
 pub type CM0_INT_CTL1 = crate::Reg<u32, _CM0_INT_CTL1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -159,7 +159,7 @@ impl crate::Readable for CM0_INT_CTL1 {}
 impl crate::Writable for CM0_INT_CTL1 {}
 #[doc = "CM0+ interrupt control 1"]
 pub mod cm0_int_ctl1;
-#[doc = "CM0+ interrupt control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm0_int_ctl2](cm0_int_ctl2) module"]
+#[doc = "CM0+ interrupt control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm0_int_ctl2](cm0_int_ctl2) module"]
 pub type CM0_INT_CTL2 = crate::Reg<u32, _CM0_INT_CTL2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -170,7 +170,7 @@ impl crate::Readable for CM0_INT_CTL2 {}
 impl crate::Writable for CM0_INT_CTL2 {}
 #[doc = "CM0+ interrupt control 2"]
 pub mod cm0_int_ctl2;
-#[doc = "CM0+ interrupt control 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm0_int_ctl3](cm0_int_ctl3) module"]
+#[doc = "CM0+ interrupt control 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm0_int_ctl3](cm0_int_ctl3) module"]
 pub type CM0_INT_CTL3 = crate::Reg<u32, _CM0_INT_CTL3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -181,7 +181,7 @@ impl crate::Readable for CM0_INT_CTL3 {}
 impl crate::Writable for CM0_INT_CTL3 {}
 #[doc = "CM0+ interrupt control 3"]
 pub mod cm0_int_ctl3;
-#[doc = "CM0+ interrupt control 4\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm0_int_ctl4](cm0_int_ctl4) module"]
+#[doc = "CM0+ interrupt control 4\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm0_int_ctl4](cm0_int_ctl4) module"]
 pub type CM0_INT_CTL4 = crate::Reg<u32, _CM0_INT_CTL4>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -192,7 +192,7 @@ impl crate::Readable for CM0_INT_CTL4 {}
 impl crate::Writable for CM0_INT_CTL4 {}
 #[doc = "CM0+ interrupt control 4"]
 pub mod cm0_int_ctl4;
-#[doc = "CM0+ interrupt control 5\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm0_int_ctl5](cm0_int_ctl5) module"]
+#[doc = "CM0+ interrupt control 5\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm0_int_ctl5](cm0_int_ctl5) module"]
 pub type CM0_INT_CTL5 = crate::Reg<u32, _CM0_INT_CTL5>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -203,7 +203,7 @@ impl crate::Readable for CM0_INT_CTL5 {}
 impl crate::Writable for CM0_INT_CTL5 {}
 #[doc = "CM0+ interrupt control 5"]
 pub mod cm0_int_ctl5;
-#[doc = "CM0+ interrupt control 6\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm0_int_ctl6](cm0_int_ctl6) module"]
+#[doc = "CM0+ interrupt control 6\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm0_int_ctl6](cm0_int_ctl6) module"]
 pub type CM0_INT_CTL6 = crate::Reg<u32, _CM0_INT_CTL6>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -214,7 +214,7 @@ impl crate::Readable for CM0_INT_CTL6 {}
 impl crate::Writable for CM0_INT_CTL6 {}
 #[doc = "CM0+ interrupt control 6"]
 pub mod cm0_int_ctl6;
-#[doc = "CM0+ interrupt control 7\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm0_int_ctl7](cm0_int_ctl7) module"]
+#[doc = "CM0+ interrupt control 7\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm0_int_ctl7](cm0_int_ctl7) module"]
 pub type CM0_INT_CTL7 = crate::Reg<u32, _CM0_INT_CTL7>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -225,7 +225,7 @@ impl crate::Readable for CM0_INT_CTL7 {}
 impl crate::Writable for CM0_INT_CTL7 {}
 #[doc = "CM0+ interrupt control 7"]
 pub mod cm0_int_ctl7;
-#[doc = "CM4 power control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm4_pwr_ctl](cm4_pwr_ctl) module"]
+#[doc = "CM4 power control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm4_pwr_ctl](cm4_pwr_ctl) module"]
 pub type CM4_PWR_CTL = crate::Reg<u32, _CM4_PWR_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -236,7 +236,7 @@ impl crate::Readable for CM4_PWR_CTL {}
 impl crate::Writable for CM4_PWR_CTL {}
 #[doc = "CM4 power control"]
 pub mod cm4_pwr_ctl;
-#[doc = "CM4 power control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm4_pwr_delay_ctl](cm4_pwr_delay_ctl) module"]
+#[doc = "CM4 power control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm4_pwr_delay_ctl](cm4_pwr_delay_ctl) module"]
 pub type CM4_PWR_DELAY_CTL = crate::Reg<u32, _CM4_PWR_DELAY_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -247,7 +247,7 @@ impl crate::Readable for CM4_PWR_DELAY_CTL {}
 impl crate::Writable for CM4_PWR_DELAY_CTL {}
 #[doc = "CM4 power control"]
 pub mod cm4_pwr_delay_ctl;
-#[doc = "CM4 status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm4_status](cm4_status) module"]
+#[doc = "CM4 status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm4_status](cm4_status) module"]
 pub type CM4_STATUS = crate::Reg<u32, _CM4_STATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -256,7 +256,7 @@ pub struct _CM4_STATUS;
 impl crate::Readable for CM4_STATUS {}
 #[doc = "CM4 status"]
 pub mod cm4_status;
-#[doc = "CM4 clock control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm4_clock_ctl](cm4_clock_ctl) module"]
+#[doc = "CM4 clock control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm4_clock_ctl](cm4_clock_ctl) module"]
 pub type CM4_CLOCK_CTL = crate::Reg<u32, _CM4_CLOCK_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -267,7 +267,7 @@ impl crate::Readable for CM4_CLOCK_CTL {}
 impl crate::Writable for CM4_CLOCK_CTL {}
 #[doc = "CM4 clock control"]
 pub mod cm4_clock_ctl;
-#[doc = "CM4 NMI control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm4_nmi_ctl](cm4_nmi_ctl) module"]
+#[doc = "CM4 NMI control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm4_nmi_ctl](cm4_nmi_ctl) module"]
 pub type CM4_NMI_CTL = crate::Reg<u32, _CM4_NMI_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -278,7 +278,7 @@ impl crate::Readable for CM4_NMI_CTL {}
 impl crate::Writable for CM4_NMI_CTL {}
 #[doc = "CM4 NMI control"]
 pub mod cm4_nmi_ctl;
-#[doc = "RAM 0 control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ram0_ctl0](ram0_ctl0) module"]
+#[doc = "RAM 0 control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ram0_ctl0](ram0_ctl0) module"]
 pub type RAM0_CTL0 = crate::Reg<u32, _RAM0_CTL0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -289,7 +289,7 @@ impl crate::Readable for RAM0_CTL0 {}
 impl crate::Writable for RAM0_CTL0 {}
 #[doc = "RAM 0 control 0"]
 pub mod ram0_ctl0;
-#[doc = "RAM 0 power control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ram0_pwr_macro_ctl](ram0_pwr_macro_ctl) module"]
+#[doc = "RAM 0 power control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ram0_pwr_macro_ctl](ram0_pwr_macro_ctl) module"]
 pub type RAM0_PWR_MACRO_CTL = crate::Reg<u32, _RAM0_PWR_MACRO_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -300,7 +300,7 @@ impl crate::Readable for RAM0_PWR_MACRO_CTL {}
 impl crate::Writable for RAM0_PWR_MACRO_CTL {}
 #[doc = "RAM 0 power control"]
 pub mod ram0_pwr_macro_ctl;
-#[doc = "RAM 1 control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ram1_ctl0](ram1_ctl0) module"]
+#[doc = "RAM 1 control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ram1_ctl0](ram1_ctl0) module"]
 pub type RAM1_CTL0 = crate::Reg<u32, _RAM1_CTL0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -311,7 +311,7 @@ impl crate::Readable for RAM1_CTL0 {}
 impl crate::Writable for RAM1_CTL0 {}
 #[doc = "RAM 1 control 0"]
 pub mod ram1_ctl0;
-#[doc = "RAM1 power control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ram1_pwr_ctl](ram1_pwr_ctl) module"]
+#[doc = "RAM1 power control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ram1_pwr_ctl](ram1_pwr_ctl) module"]
 pub type RAM1_PWR_CTL = crate::Reg<u32, _RAM1_PWR_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -322,7 +322,7 @@ impl crate::Readable for RAM1_PWR_CTL {}
 impl crate::Writable for RAM1_PWR_CTL {}
 #[doc = "RAM1 power control"]
 pub mod ram1_pwr_ctl;
-#[doc = "RAM 2 control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ram2_ctl0](ram2_ctl0) module"]
+#[doc = "RAM 2 control 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ram2_ctl0](ram2_ctl0) module"]
 pub type RAM2_CTL0 = crate::Reg<u32, _RAM2_CTL0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -333,7 +333,7 @@ impl crate::Readable for RAM2_CTL0 {}
 impl crate::Writable for RAM2_CTL0 {}
 #[doc = "RAM 2 control 0"]
 pub mod ram2_ctl0;
-#[doc = "RAM2 power control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ram2_pwr_ctl](ram2_pwr_ctl) module"]
+#[doc = "RAM2 power control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ram2_pwr_ctl](ram2_pwr_ctl) module"]
 pub type RAM2_PWR_CTL = crate::Reg<u32, _RAM2_PWR_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -344,7 +344,7 @@ impl crate::Readable for RAM2_PWR_CTL {}
 impl crate::Writable for RAM2_PWR_CTL {}
 #[doc = "RAM2 power control"]
 pub mod ram2_pwr_ctl;
-#[doc = "Power up delay used for all SRAM power domains\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ram_pwr_delay_ctl](ram_pwr_delay_ctl) module"]
+#[doc = "Power up delay used for all SRAM power domains\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ram_pwr_delay_ctl](ram_pwr_delay_ctl) module"]
 pub type RAM_PWR_DELAY_CTL = crate::Reg<u32, _RAM_PWR_DELAY_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -355,7 +355,7 @@ impl crate::Readable for RAM_PWR_DELAY_CTL {}
 impl crate::Writable for RAM_PWR_DELAY_CTL {}
 #[doc = "Power up delay used for all SRAM power domains"]
 pub mod ram_pwr_delay_ctl;
-#[doc = "ROM control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [rom_ctl](rom_ctl) module"]
+#[doc = "ROM control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rom_ctl](rom_ctl) module"]
 pub type ROM_CTL = crate::Reg<u32, _ROM_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -366,7 +366,7 @@ impl crate::Readable for ROM_CTL {}
 impl crate::Writable for ROM_CTL {}
 #[doc = "ROM control"]
 pub mod rom_ctl;
-#[doc = "UDB power control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [udb_pwr_ctl](udb_pwr_ctl) module"]
+#[doc = "UDB power control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [udb_pwr_ctl](udb_pwr_ctl) module"]
 pub type UDB_PWR_CTL = crate::Reg<u32, _UDB_PWR_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -377,7 +377,7 @@ impl crate::Readable for UDB_PWR_CTL {}
 impl crate::Writable for UDB_PWR_CTL {}
 #[doc = "UDB power control"]
 pub mod udb_pwr_ctl;
-#[doc = "UDB power control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [udb_pwr_delay_ctl](udb_pwr_delay_ctl) module"]
+#[doc = "UDB power control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [udb_pwr_delay_ctl](udb_pwr_delay_ctl) module"]
 pub type UDB_PWR_DELAY_CTL = crate::Reg<u32, _UDB_PWR_DELAY_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -388,7 +388,7 @@ impl crate::Readable for UDB_PWR_DELAY_CTL {}
 impl crate::Writable for UDB_PWR_DELAY_CTL {}
 #[doc = "UDB power control"]
 pub mod udb_pwr_delay_ctl;
-#[doc = "Debug port status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dp_status](dp_status) module"]
+#[doc = "Debug port status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dp_status](dp_status) module"]
 pub type DP_STATUS = crate::Reg<u32, _DP_STATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -397,7 +397,7 @@ pub struct _DP_STATUS;
 impl crate::Readable for DP_STATUS {}
 #[doc = "Debug port status"]
 pub mod dp_status;
-#[doc = "Buffer control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [buff_ctl](buff_ctl) module"]
+#[doc = "Buffer control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buff_ctl](buff_ctl) module"]
 pub type BUFF_CTL = crate::Reg<u32, _BUFF_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -408,7 +408,7 @@ impl crate::Readable for BUFF_CTL {}
 impl crate::Writable for BUFF_CTL {}
 #[doc = "Buffer control"]
 pub mod buff_ctl;
-#[doc = "DDFT control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ddft_ctl](ddft_ctl) module"]
+#[doc = "DDFT control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ddft_ctl](ddft_ctl) module"]
 pub type DDFT_CTL = crate::Reg<u32, _DDFT_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -419,7 +419,7 @@ impl crate::Readable for DDFT_CTL {}
 impl crate::Writable for DDFT_CTL {}
 #[doc = "DDFT control"]
 pub mod ddft_ctl;
-#[doc = "SysTick timer control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [systick_ctl](systick_ctl) module"]
+#[doc = "SysTick timer control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [systick_ctl](systick_ctl) module"]
 pub type SYSTICK_CTL = crate::Reg<u32, _SYSTICK_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -430,7 +430,7 @@ impl crate::Readable for SYSTICK_CTL {}
 impl crate::Writable for SYSTICK_CTL {}
 #[doc = "SysTick timer control"]
 pub mod systick_ctl;
-#[doc = "CM0+ vector table base\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm0_vector_table_base](cm0_vector_table_base) module"]
+#[doc = "CM0+ vector table base\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm0_vector_table_base](cm0_vector_table_base) module"]
 pub type CM0_VECTOR_TABLE_BASE = crate::Reg<u32, _CM0_VECTOR_TABLE_BASE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -441,7 +441,7 @@ impl crate::Readable for CM0_VECTOR_TABLE_BASE {}
 impl crate::Writable for CM0_VECTOR_TABLE_BASE {}
 #[doc = "CM0+ vector table base"]
 pub mod cm0_vector_table_base;
-#[doc = "CM4 vector table base\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm4_vector_table_base](cm4_vector_table_base) module"]
+#[doc = "CM4 vector table base\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm4_vector_table_base](cm4_vector_table_base) module"]
 pub type CM4_VECTOR_TABLE_BASE = crate::Reg<u32, _CM4_VECTOR_TABLE_BASE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -452,7 +452,7 @@ impl crate::Readable for CM4_VECTOR_TABLE_BASE {}
 impl crate::Writable for CM4_VECTOR_TABLE_BASE {}
 #[doc = "CM4 vector table base"]
 pub mod cm4_vector_table_base;
-#[doc = "CM0+ protection context 0 handler\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm0_pc0_handler](cm0_pc0_handler) module"]
+#[doc = "CM0+ protection context 0 handler\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm0_pc0_handler](cm0_pc0_handler) module"]
 pub type CM0_PC0_HANDLER = crate::Reg<u32, _CM0_PC0_HANDLER>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -463,7 +463,7 @@ impl crate::Readable for CM0_PC0_HANDLER {}
 impl crate::Writable for CM0_PC0_HANDLER {}
 #[doc = "CM0+ protection context 0 handler"]
 pub mod cm0_pc0_handler;
-#[doc = "Identity\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [identity](identity) module"]
+#[doc = "Identity\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [identity](identity) module"]
 pub type IDENTITY = crate::Reg<u32, _IDENTITY>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -472,7 +472,7 @@ pub struct _IDENTITY;
 impl crate::Readable for IDENTITY {}
 #[doc = "Identity"]
 pub mod identity;
-#[doc = "Protection status\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [protection](protection) module"]
+#[doc = "Protection status\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [protection](protection) module"]
 pub type PROTECTION = crate::Reg<u32, _PROTECTION>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -483,7 +483,7 @@ impl crate::Readable for PROTECTION {}
 impl crate::Writable for PROTECTION {}
 #[doc = "Protection status"]
 pub mod protection;
-#[doc = "CM0+ NMI control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cm0_nmi_ctl](cm0_nmi_ctl) module"]
+#[doc = "CM0+ NMI control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cm0_nmi_ctl](cm0_nmi_ctl) module"]
 pub type CM0_NMI_CTL = crate::Reg<u32, _CM0_NMI_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -494,7 +494,7 @@ impl crate::Readable for CM0_NMI_CTL {}
 impl crate::Writable for CM0_NMI_CTL {}
 #[doc = "CM0+ NMI control"]
 pub mod cm0_nmi_ctl;
-#[doc = "Memory BIST status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [mbist_stat](mbist_stat) module"]
+#[doc = "Memory BIST status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mbist_stat](mbist_stat) module"]
 pub type MBIST_STAT = crate::Reg<u32, _MBIST_STAT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -503,7 +503,7 @@ pub struct _MBIST_STAT;
 impl crate::Readable for MBIST_STAT {}
 #[doc = "Memory BIST status"]
 pub mod mbist_stat;
-#[doc = "ROM trim control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [trim_rom_ctl](trim_rom_ctl) module"]
+#[doc = "ROM trim control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [trim_rom_ctl](trim_rom_ctl) module"]
 pub type TRIM_ROM_CTL = crate::Reg<u32, _TRIM_ROM_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -514,7 +514,7 @@ impl crate::Readable for TRIM_ROM_CTL {}
 impl crate::Writable for TRIM_ROM_CTL {}
 #[doc = "ROM trim control"]
 pub mod trim_rom_ctl;
-#[doc = "RAM trim control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [trim_ram_ctl](trim_ram_ctl) module"]
+#[doc = "RAM trim control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [trim_ram_ctl](trim_ram_ctl) module"]
 pub type TRIM_RAM_CTL = crate::Reg<u32, _TRIM_RAM_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]

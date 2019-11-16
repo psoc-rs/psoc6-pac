@@ -276,22 +276,19 @@ impl<'a> LOOPBACK_W<'a> {
 }
 #[doc = "N/A\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: SPI Motorola submode. In master mode, when not transmitting data (Slave SELECT is inactive), SCLK is stable at CPOL. In slave mode, when not selected, SCLK is ignored; i.e. it can be either stable or clocking. In master mode, when there is no data to transmit (TX FIFO is empty), Slave SELECT is inactive."]
-    SPI_MOTOROLA,
+    SPI_MOTOROLA = 0,
     #[doc = "1: SPI Texas Instruments submode. In master mode, when not transmitting data, SCLK is stable at '0'. In slave mode, when not selected, SCLK is ignored; i.e. it can be either stable or clocking. In master mode, when there is no data to transmit (TX FIFO is empty), Slave SELECT is inactive; i.e. no pulse is generated."]
-    SPI_TI,
+    SPI_TI = 1,
     #[doc = "2: SPI National Semiconducturs submode. In master mode, when not transmitting data, SCLK is stable at '0'. In slave mode, when not selected, SCLK is ignored; i.e. it can be either stable or clocking. In master mode, when there is no data to transmit (TX FIFO is empty), Slave SELECT is inactive."]
-    SPI_NS,
+    SPI_NS = 2,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::SPI_MOTOROLA => 0,
-            MODE_A::SPI_TI => 1,
-            MODE_A::SPI_NS => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]

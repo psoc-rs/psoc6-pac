@@ -14,17 +14,14 @@ impl crate::ResetValue for super::HSCMP {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSCMP_EN_A {
     #[doc = "0: Disable comparator, output is zero"]
-    OFF,
+    OFF = 0,
     #[doc = "1: On, regular operation. Note that CONFIG.LP_MODE determines the power mode level"]
-    ON,
+    ON = 1,
 }
 impl From<HSCMP_EN_A> for bool {
     #[inline(always)]
     fn from(variant: HSCMP_EN_A) -> Self {
-        match variant {
-            HSCMP_EN_A::OFF => false,
-            HSCMP_EN_A::ON => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `HSCMP_EN`"]

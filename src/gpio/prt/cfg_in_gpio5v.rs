@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CFG_IN_GPIO5V {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VTRIP_SEL0_1_A {
     #[doc = "0: Input buffer not compatible with automotive (elevated Vil) interfaces."]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Input buffer compatible with automotive (elevated Vil) interfaces."]
-    AUTO,
+    AUTO = 1,
 }
 impl From<VTRIP_SEL0_1_A> for bool {
     #[inline(always)]
     fn from(variant: VTRIP_SEL0_1_A) -> Self {
-        match variant {
-            VTRIP_SEL0_1_A::DISABLE => false,
-            VTRIP_SEL0_1_A::AUTO => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `VTRIP_SEL0_1`"]

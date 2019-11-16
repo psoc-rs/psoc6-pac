@@ -58,7 +58,7 @@ pub struct CNT {
 #[doc = r"Register block"]
 #[doc = "Timer/Counter/PWM Counter Module"]
 pub mod cnt;
-#[doc = "TCPWM control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctrl](ctrl) module"]
+#[doc = "TCPWM control register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](ctrl) module"]
 pub type CTRL = crate::Reg<u32, _CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -69,7 +69,7 @@ impl crate::Readable for CTRL {}
 impl crate::Writable for CTRL {}
 #[doc = "TCPWM control register"]
 pub mod ctrl;
-#[doc = "TCPWM control clear register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctrl_clr](ctrl_clr) module"]
+#[doc = "TCPWM control clear register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl_clr](ctrl_clr) module"]
 pub type CTRL_CLR = crate::Reg<u32, _CTRL_CLR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -80,7 +80,7 @@ impl crate::Readable for CTRL_CLR {}
 impl crate::Writable for CTRL_CLR {}
 #[doc = "TCPWM control clear register"]
 pub mod ctrl_clr;
-#[doc = "TCPWM control set register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctrl_set](ctrl_set) module"]
+#[doc = "TCPWM control set register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl_set](ctrl_set) module"]
 pub type CTRL_SET = crate::Reg<u32, _CTRL_SET>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -91,7 +91,7 @@ impl crate::Readable for CTRL_SET {}
 impl crate::Writable for CTRL_SET {}
 #[doc = "TCPWM control set register"]
 pub mod ctrl_set;
-#[doc = "TCPWM capture command register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cmd_capture](cmd_capture) module"]
+#[doc = "TCPWM capture command register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmd_capture](cmd_capture) module"]
 pub type CMD_CAPTURE = crate::Reg<u32, _CMD_CAPTURE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -102,7 +102,7 @@ impl crate::Readable for CMD_CAPTURE {}
 impl crate::Writable for CMD_CAPTURE {}
 #[doc = "TCPWM capture command register"]
 pub mod cmd_capture;
-#[doc = "TCPWM reload command register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cmd_reload](cmd_reload) module"]
+#[doc = "TCPWM reload command register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmd_reload](cmd_reload) module"]
 pub type CMD_RELOAD = crate::Reg<u32, _CMD_RELOAD>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -113,7 +113,7 @@ impl crate::Readable for CMD_RELOAD {}
 impl crate::Writable for CMD_RELOAD {}
 #[doc = "TCPWM reload command register"]
 pub mod cmd_reload;
-#[doc = "TCPWM stop command register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cmd_stop](cmd_stop) module"]
+#[doc = "TCPWM stop command register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmd_stop](cmd_stop) module"]
 pub type CMD_STOP = crate::Reg<u32, _CMD_STOP>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -124,7 +124,7 @@ impl crate::Readable for CMD_STOP {}
 impl crate::Writable for CMD_STOP {}
 #[doc = "TCPWM stop command register"]
 pub mod cmd_stop;
-#[doc = "TCPWM start command register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cmd_start](cmd_start) module"]
+#[doc = "TCPWM start command register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmd_start](cmd_start) module"]
 pub type CMD_START = crate::Reg<u32, _CMD_START>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -135,7 +135,7 @@ impl crate::Readable for CMD_START {}
 impl crate::Writable for CMD_START {}
 #[doc = "TCPWM start command register"]
 pub mod cmd_start;
-#[doc = "TCPWM Counter interrupt cause register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intr_cause](intr_cause) module"]
+#[doc = "TCPWM Counter interrupt cause register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_cause](intr_cause) module"]
 pub type INTR_CAUSE = crate::Reg<u32, _INTR_CAUSE>;
 #[allow(missing_docs)]
 #[doc(hidden)]

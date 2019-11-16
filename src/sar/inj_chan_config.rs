@@ -26,34 +26,27 @@ impl<'a> INJ_PIN_ADDR_W<'a> {
 }
 #[doc = "Address of the port that contains the pin to be sampled by this channel.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum INJ_PORT_ADDR_A {
     #[doc = "0: SARMUX pins."]
-    SARMUX,
+    SARMUX = 0,
     #[doc = "1: CTB0"]
-    CTB0,
+    CTB0 = 1,
     #[doc = "2: CTB1"]
-    CTB1,
+    CTB1 = 2,
     #[doc = "3: CTB2"]
-    CTB2,
+    CTB2 = 3,
     #[doc = "4: CTB3"]
-    CTB3,
+    CTB3 = 4,
     #[doc = "6: AROUTE virtual port"]
-    AROUTE_VIRT,
+    AROUTE_VIRT = 6,
     #[doc = "7: SARMUX virtual port"]
-    SARMUX_VIRT,
+    SARMUX_VIRT = 7,
 }
 impl From<INJ_PORT_ADDR_A> for u8 {
     #[inline(always)]
     fn from(variant: INJ_PORT_ADDR_A) -> Self {
-        match variant {
-            INJ_PORT_ADDR_A::SARMUX => 0,
-            INJ_PORT_ADDR_A::CTB0 => 1,
-            INJ_PORT_ADDR_A::CTB1 => 2,
-            INJ_PORT_ADDR_A::CTB2 => 3,
-            INJ_PORT_ADDR_A::CTB3 => 4,
-            INJ_PORT_ADDR_A::AROUTE_VIRT => 6,
-            INJ_PORT_ADDR_A::SARMUX_VIRT => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `INJ_PORT_ADDR`"]

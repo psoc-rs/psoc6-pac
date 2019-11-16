@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CTL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum XIP_MODE_A {
     #[doc = "0: '0': MMIO mode. Individual MMIO accesses to TX and RX FIFOs are used to generate a sequence of SPI transfers. This mode of operation allows for large flexibility in terms of the SPI transfers that can be generated."]
-    MMIO_MODE,
+    MMIO_MODE = 0,
     #[doc = "1: 1': XIP mode. eXecute-In-Place mode: incoming read and write transfers over the AHB-Lite bus infrastructure are automatically translated in SPI transfers to read data from and write data to a device. This mode of operation allow for efficient device read and write operations. This mode is only supported in SPI_MODE."]
-    XIP_MODE,
+    XIP_MODE = 1,
 }
 impl From<XIP_MODE_A> for bool {
     #[inline(always)]
     fn from(variant: XIP_MODE_A) -> Self {
-        match variant {
-            XIP_MODE_A::MMIO_MODE => false,
-            XIP_MODE_A::XIP_MODE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `XIP_MODE`"]
@@ -120,17 +117,14 @@ impl<'a> DESELECT_DELAY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BLOCK_A {
     #[doc = "0: 0': Generate an AHB-Lite bus error. This option is useful when SW decides to use polling on STATUS.TR_BUSY to determine if a interface transfer is no longer busy (transfer is completed). This option adds SW complexity, but limits the number of AHB-Lite wait states (and limits ISR latency)."]
-    BUS_ERROR,
+    BUS_ERROR = 0,
     #[doc = "1: 1': Introduce wait states. This setting potentially locks up the AHB-Lite infrastructure and may increase the CPU interrupt latency.This option is useful when SW performs TX/RX data FIFO accesses immediately after a command is setup using the TX format FIFO. This option has low SW complexity, but may result in a significant number of AHB-Lite wait states (and may increase ISR latency)."]
-    WAIT_STATES,
+    WAIT_STATES = 1,
 }
 impl From<BLOCK_A> for bool {
     #[inline(always)]
     fn from(variant: BLOCK_A) -> Self {
-        match variant {
-            BLOCK_A::BUS_ERROR => false,
-            BLOCK_A::WAIT_STATES => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `BLOCK`"]
@@ -198,17 +192,14 @@ impl<'a> BLOCK_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENABLED_A {
     #[doc = "0: N/A"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: N/A"]
-    ENABLED,
+    ENABLED = 1,
 }
 impl From<ENABLED_A> for bool {
     #[inline(always)]
     fn from(variant: ENABLED_A) -> Self {
-        match variant {
-            ENABLED_A::DISABLED => false,
-            ENABLED_A::ENABLED => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ENABLED`"]

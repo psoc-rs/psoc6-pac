@@ -12,25 +12,21 @@ impl crate::ResetValue for super::TR_CTRL1 {
 }
 #[doc = "A capture event will copy the counter value into the CC register.\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CAPTURE_EDGE_A {
     #[doc = "0: Rising edge. Any rising edge generates an event."]
-    RISING_EDGE,
+    RISING_EDGE = 0,
     #[doc = "1: Falling edge. Any falling edge generates an event."]
-    FALLING_EDGE,
+    FALLING_EDGE = 1,
     #[doc = "2: Rising AND falling edge. Any odd amount of edges generates an event."]
-    BOTH_EDGES,
+    BOTH_EDGES = 2,
     #[doc = "3: No edge detection, use trigger as is."]
-    NO_EDGE_DET,
+    NO_EDGE_DET = 3,
 }
 impl From<CAPTURE_EDGE_A> for u8 {
     #[inline(always)]
     fn from(variant: CAPTURE_EDGE_A) -> Self {
-        match variant {
-            CAPTURE_EDGE_A::RISING_EDGE => 0,
-            CAPTURE_EDGE_A::FALLING_EDGE => 1,
-            CAPTURE_EDGE_A::BOTH_EDGES => 2,
-            CAPTURE_EDGE_A::NO_EDGE_DET => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CAPTURE_EDGE`"]
@@ -109,25 +105,21 @@ impl<'a> CAPTURE_EDGE_W<'a> {
 }
 #[doc = "A counter event will increase or decrease the counter by '1'.\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum COUNT_EDGE_A {
     #[doc = "0: Rising edge. Any rising edge generates an event."]
-    RISING_EDGE,
+    RISING_EDGE = 0,
     #[doc = "1: Falling edge. Any falling edge generates an event."]
-    FALLING_EDGE,
+    FALLING_EDGE = 1,
     #[doc = "2: Rising AND falling edge. Any odd amount of edges generates an event."]
-    BOTH_EDGES,
+    BOTH_EDGES = 2,
     #[doc = "3: No edge detection, use trigger as is."]
-    NO_EDGE_DET,
+    NO_EDGE_DET = 3,
 }
 impl From<COUNT_EDGE_A> for u8 {
     #[inline(always)]
     fn from(variant: COUNT_EDGE_A) -> Self {
-        match variant {
-            COUNT_EDGE_A::RISING_EDGE => 0,
-            COUNT_EDGE_A::FALLING_EDGE => 1,
-            COUNT_EDGE_A::BOTH_EDGES => 2,
-            COUNT_EDGE_A::NO_EDGE_DET => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `COUNT_EDGE`"]
@@ -206,25 +198,21 @@ impl<'a> COUNT_EDGE_W<'a> {
 }
 #[doc = "A reload event will initialize the counter. When counting up, the counter is initialized to '0'. When counting down, the counter is initialized with PERIOD.\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RELOAD_EDGE_A {
     #[doc = "0: Rising edge. Any rising edge generates an event."]
-    RISING_EDGE,
+    RISING_EDGE = 0,
     #[doc = "1: Falling edge. Any falling edge generates an event."]
-    FALLING_EDGE,
+    FALLING_EDGE = 1,
     #[doc = "2: Rising AND falling edge. Any odd amount of edges generates an event."]
-    BOTH_EDGES,
+    BOTH_EDGES = 2,
     #[doc = "3: No edge detection, use trigger as is."]
-    NO_EDGE_DET,
+    NO_EDGE_DET = 3,
 }
 impl From<RELOAD_EDGE_A> for u8 {
     #[inline(always)]
     fn from(variant: RELOAD_EDGE_A) -> Self {
-        match variant {
-            RELOAD_EDGE_A::RISING_EDGE => 0,
-            RELOAD_EDGE_A::FALLING_EDGE => 1,
-            RELOAD_EDGE_A::BOTH_EDGES => 2,
-            RELOAD_EDGE_A::NO_EDGE_DET => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RELOAD_EDGE`"]
@@ -303,25 +291,21 @@ impl<'a> RELOAD_EDGE_W<'a> {
 }
 #[doc = "A stop event, will stop the counter; i.e. it will no longer be running. Stopping will NOT disable the counter.\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum STOP_EDGE_A {
     #[doc = "0: Rising edge. Any rising edge generates an event."]
-    RISING_EDGE,
+    RISING_EDGE = 0,
     #[doc = "1: Falling edge. Any falling edge generates an event."]
-    FALLING_EDGE,
+    FALLING_EDGE = 1,
     #[doc = "2: Rising AND falling edge. Any odd amount of edges generates an event."]
-    BOTH_EDGES,
+    BOTH_EDGES = 2,
     #[doc = "3: No edge detection, use trigger as is."]
-    NO_EDGE_DET,
+    NO_EDGE_DET = 3,
 }
 impl From<STOP_EDGE_A> for u8 {
     #[inline(always)]
     fn from(variant: STOP_EDGE_A) -> Self {
-        match variant {
-            STOP_EDGE_A::RISING_EDGE => 0,
-            STOP_EDGE_A::FALLING_EDGE => 1,
-            STOP_EDGE_A::BOTH_EDGES => 2,
-            STOP_EDGE_A::NO_EDGE_DET => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `STOP_EDGE`"]
@@ -400,25 +384,21 @@ impl<'a> STOP_EDGE_W<'a> {
 }
 #[doc = "A start event will start the counter; i.e. the counter will become running. Starting does NOT enable the counter. A start event will not initialize the counter whereas the reload event does.\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum START_EDGE_A {
     #[doc = "0: Rising edge. Any rising edge generates an event."]
-    RISING_EDGE,
+    RISING_EDGE = 0,
     #[doc = "1: Falling edge. Any falling edge generates an event."]
-    FALLING_EDGE,
+    FALLING_EDGE = 1,
     #[doc = "2: Rising AND falling edge. Any odd amount of edges generates an event."]
-    BOTH_EDGES,
+    BOTH_EDGES = 2,
     #[doc = "3: No edge detection, use trigger as is."]
-    NO_EDGE_DET,
+    NO_EDGE_DET = 3,
 }
 impl From<START_EDGE_A> for u8 {
     #[inline(always)]
     fn from(variant: START_EDGE_A) -> Self {
-        match variant {
-            START_EDGE_A::RISING_EDGE => 0,
-            START_EDGE_A::FALLING_EDGE => 1,
-            START_EDGE_A::BOTH_EDGES => 2,
-            START_EDGE_A::NO_EDGE_DET => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `START_EDGE`"]

@@ -62,17 +62,14 @@ impl<'a> HS_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LCD_MODE_A {
     #[doc = "0: Select Low Speed (32kHz) Generator (Works in Active, Sleep and DeepSleep power modes)."]
-    LS,
+    LS = 0,
     #[doc = "1: Select High Speed (system clock) Generator (Works in Active and Sleep power modes only)."]
-    HS,
+    HS = 1,
 }
 impl From<LCD_MODE_A> for bool {
     #[inline(always)]
     fn from(variant: LCD_MODE_A) -> Self {
-        match variant {
-            LCD_MODE_A::LS => false,
-            LCD_MODE_A::HS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `LCD_MODE`"]
@@ -140,17 +137,14 @@ impl<'a> LCD_MODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TYPE_A {
     #[doc = "0: Type A - Each frame addresses each COM pin only once with a balanced (DC=0) waveform."]
-    TYPE_A,
+    TYPE_A = 0,
     #[doc = "1: Type B - Each frame addresses each COM pin twice in sequence with a positive and negative waveform that together are balanced (DC=0)."]
-    TYPE_B,
+    TYPE_B = 1,
 }
 impl From<TYPE_A> for bool {
     #[inline(always)]
     fn from(variant: TYPE_A) -> Self {
-        match variant {
-            TYPE_A::TYPE_A => false,
-            TYPE_A::TYPE_B => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TYPE`"]
@@ -218,17 +212,14 @@ impl<'a> TYPE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OP_MODE_A {
     #[doc = "0: PWM Mode"]
-    PWM,
+    PWM = 0,
     #[doc = "1: Digital Correlation Mode"]
-    CORRELATION,
+    CORRELATION = 1,
 }
 impl From<OP_MODE_A> for bool {
     #[inline(always)]
     fn from(variant: OP_MODE_A) -> Self {
-        match variant {
-            OP_MODE_A::PWM => false,
-            OP_MODE_A::CORRELATION => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `OP_MODE`"]
@@ -294,25 +285,21 @@ impl<'a> OP_MODE_W<'a> {
 }
 #[doc = "PWM bias selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BIAS_A {
     #[doc = "0: 1/2 Bias"]
-    HALF,
+    HALF = 0,
     #[doc = "1: 1/3 Bias"]
-    THIRD,
+    THIRD = 1,
     #[doc = "2: 1/4 Bias (not supported by LS generator)"]
-    FOURTH,
+    FOURTH = 2,
     #[doc = "3: 1/5 Bias (not supported by LS generator)"]
-    FIFTH,
+    FIFTH = 3,
 }
 impl From<BIAS_A> for u8 {
     #[inline(always)]
     fn from(variant: BIAS_A) -> Self {
-        match variant {
-            BIAS_A::HALF => 0,
-            BIAS_A::THIRD => 1,
-            BIAS_A::FOURTH => 2,
-            BIAS_A::FIFTH => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BIAS`"]

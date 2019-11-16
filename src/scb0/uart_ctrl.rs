@@ -36,22 +36,19 @@ impl<'a> LOOPBACK_W<'a> {
 }
 #[doc = "N/A\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: N/A"]
-    UART_STD,
+    UART_STD = 0,
     #[doc = "1: N/A"]
-    UART_SMARTCARD,
+    UART_SMARTCARD = 1,
     #[doc = "2: Infrared Data Association (IrDA) submode. Return to Zero modulation scheme. In this mode, the oversampling factor should be 16, that is OVS should be set to 15."]
-    UART_IRDA,
+    UART_IRDA = 2,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::UART_STD => 0,
-            MODE_A::UART_SMARTCARD => 1,
-            MODE_A::UART_IRDA => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]
