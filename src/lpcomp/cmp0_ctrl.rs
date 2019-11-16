@@ -12,25 +12,21 @@ impl crate::ResetValue for super::CMP0_CTRL {
 }
 #[doc = "Operating mode for the comparator\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE0_A {
     #[doc = "0: Off"]
-    OFF,
+    OFF = 0,
     #[doc = "1: Ultra lowpower operating mode (uses less power, < 300nA), must be used for DeepSleep or Hibernate. Only in this mode a local iref will be used."]
-    ULP,
+    ULP = 1,
     #[doc = "2: Low Power operating mode (uses more power, <10uA @@@ TBD). In this mode the iref from SRSS will be used."]
-    LP,
+    LP = 2,
     #[doc = "3: Normal, full speed power operating mode (uses <150uA). In this mode the iref from SRSS will be used."]
-    NORMAL,
+    NORMAL = 3,
 }
 impl From<MODE0_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE0_A) -> Self {
-        match variant {
-            MODE0_A::OFF => 0,
-            MODE0_A::ULP => 1,
-            MODE0_A::LP => 2,
-            MODE0_A::NORMAL => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE0`"]
@@ -133,25 +129,21 @@ impl<'a> HYST0_W<'a> {
 }
 #[doc = "Sets which edge will trigger an IRQ\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum INTTYPE0_A {
     #[doc = "0: Disabled, no interrupts will be detected"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Rising edge"]
-    RISING,
+    RISING = 1,
     #[doc = "2: Falling edge"]
-    FALLING,
+    FALLING = 2,
     #[doc = "3: Both rising and falling edges"]
-    BOTH,
+    BOTH = 3,
 }
 impl From<INTTYPE0_A> for u8 {
     #[inline(always)]
     fn from(variant: INTTYPE0_A) -> Self {
-        match variant {
-            INTTYPE0_A::DISABLE => 0,
-            INTTYPE0_A::RISING => 1,
-            INTTYPE0_A::FALLING => 2,
-            INTTYPE0_A::BOTH => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `INTTYPE0`"]

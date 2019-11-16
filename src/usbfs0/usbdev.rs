@@ -1,4 +1,4 @@
-#[doc = "Control End point EP0 Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ep0_dr](ep0_dr) module"]
+#[doc = "Control End point EP0 Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ep0_dr](ep0_dr) module"]
 pub type EP0_DR = crate::Reg<u32, _EP0_DR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -9,7 +9,7 @@ impl crate::Readable for EP0_DR {}
 impl crate::Writable for EP0_DR {}
 #[doc = "Control End point EP0 Data Register"]
 pub mod ep0_dr;
-#[doc = "USB control 0 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cr0](cr0) module"]
+#[doc = "USB control 0 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cr0](cr0) module"]
 pub type CR0 = crate::Reg<u32, _CR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -20,7 +20,7 @@ impl crate::Readable for CR0 {}
 impl crate::Writable for CR0 {}
 #[doc = "USB control 0 Register"]
 pub mod cr0;
-#[doc = "USB control 1 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cr1](cr1) module"]
+#[doc = "USB control 1 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cr1](cr1) module"]
 pub type CR1 = crate::Reg<u32, _CR1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -31,7 +31,7 @@ impl crate::Readable for CR1 {}
 impl crate::Writable for CR1 {}
 #[doc = "USB control 1 Register"]
 pub mod cr1;
-#[doc = "USB SIE Data Endpoints Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep_int_en](sie_ep_int_en) module"]
+#[doc = "USB SIE Data Endpoints Interrupt Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep_int_en](sie_ep_int_en) module"]
 pub type SIE_EP_INT_EN = crate::Reg<u32, _SIE_EP_INT_EN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -42,7 +42,7 @@ impl crate::Readable for SIE_EP_INT_EN {}
 impl crate::Writable for SIE_EP_INT_EN {}
 #[doc = "USB SIE Data Endpoints Interrupt Enable Register"]
 pub mod sie_ep_int_en;
-#[doc = "USB SIE Data Endpoint Interrupt Status\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep_int_sr](sie_ep_int_sr) module"]
+#[doc = "USB SIE Data Endpoint Interrupt Status\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep_int_sr](sie_ep_int_sr) module"]
 pub type SIE_EP_INT_SR = crate::Reg<u32, _SIE_EP_INT_SR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -53,7 +53,7 @@ impl crate::Readable for SIE_EP_INT_SR {}
 impl crate::Writable for SIE_EP_INT_SR {}
 #[doc = "USB SIE Data Endpoint Interrupt Status"]
 pub mod sie_ep_int_sr;
-#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep1_cnt0](sie_ep1_cnt0) module"]
+#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep1_cnt0](sie_ep1_cnt0) module"]
 pub type SIE_EP1_CNT0 = crate::Reg<u32, _SIE_EP1_CNT0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -64,7 +64,7 @@ impl crate::Readable for SIE_EP1_CNT0 {}
 impl crate::Writable for SIE_EP1_CNT0 {}
 #[doc = "Non-control endpoint count register"]
 pub mod sie_ep1_cnt0;
-#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep1_cnt1](sie_ep1_cnt1) module"]
+#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep1_cnt1](sie_ep1_cnt1) module"]
 pub type SIE_EP1_CNT1 = crate::Reg<u32, _SIE_EP1_CNT1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -75,7 +75,7 @@ impl crate::Readable for SIE_EP1_CNT1 {}
 impl crate::Writable for SIE_EP1_CNT1 {}
 #[doc = "Non-control endpoint count register"]
 pub mod sie_ep1_cnt1;
-#[doc = "Non-control endpoint's control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep1_cr0](sie_ep1_cr0) module"]
+#[doc = "Non-control endpoint's control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep1_cr0](sie_ep1_cr0) module"]
 pub type SIE_EP1_CR0 = crate::Reg<u32, _SIE_EP1_CR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -86,7 +86,7 @@ impl crate::Readable for SIE_EP1_CR0 {}
 impl crate::Writable for SIE_EP1_CR0 {}
 #[doc = "Non-control endpoint's control Register"]
 pub mod sie_ep1_cr0;
-#[doc = "USBIO Control 0 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usbio_cr0](usbio_cr0) module"]
+#[doc = "USBIO Control 0 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usbio_cr0](usbio_cr0) module"]
 pub type USBIO_CR0 = crate::Reg<u32, _USBIO_CR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -97,7 +97,7 @@ impl crate::Readable for USBIO_CR0 {}
 impl crate::Writable for USBIO_CR0 {}
 #[doc = "USBIO Control 0 Register"]
 pub mod usbio_cr0;
-#[doc = "USBIO control 2 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usbio_cr2](usbio_cr2) module"]
+#[doc = "USBIO control 2 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usbio_cr2](usbio_cr2) module"]
 pub type USBIO_CR2 = crate::Reg<u32, _USBIO_CR2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -108,7 +108,7 @@ impl crate::Readable for USBIO_CR2 {}
 impl crate::Writable for USBIO_CR2 {}
 #[doc = "USBIO control 2 Register"]
 pub mod usbio_cr2;
-#[doc = "USBIO control 1 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usbio_cr1](usbio_cr1) module"]
+#[doc = "USBIO control 1 Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usbio_cr1](usbio_cr1) module"]
 pub type USBIO_CR1 = crate::Reg<u32, _USBIO_CR1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -119,7 +119,7 @@ impl crate::Readable for USBIO_CR1 {}
 impl crate::Writable for USBIO_CR1 {}
 #[doc = "USBIO control 1 Register"]
 pub mod usbio_cr1;
-#[doc = "USB Dynamic reconfiguration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dyn_reconfig](dyn_reconfig) module"]
+#[doc = "USB Dynamic reconfiguration register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dyn_reconfig](dyn_reconfig) module"]
 pub type DYN_RECONFIG = crate::Reg<u32, _DYN_RECONFIG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -130,7 +130,7 @@ impl crate::Readable for DYN_RECONFIG {}
 impl crate::Writable for DYN_RECONFIG {}
 #[doc = "USB Dynamic reconfiguration register"]
 pub mod dyn_reconfig;
-#[doc = "Start Of Frame Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sof0](sof0) module"]
+#[doc = "Start Of Frame Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sof0](sof0) module"]
 pub type SOF0 = crate::Reg<u32, _SOF0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -139,7 +139,7 @@ pub struct _SOF0;
 impl crate::Readable for SOF0 {}
 #[doc = "Start Of Frame Register"]
 pub mod sof0;
-#[doc = "Start Of Frame Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sof1](sof1) module"]
+#[doc = "Start Of Frame Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sof1](sof1) module"]
 pub type SOF1 = crate::Reg<u32, _SOF1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -148,7 +148,7 @@ pub struct _SOF1;
 impl crate::Readable for SOF1 {}
 #[doc = "Start Of Frame Register"]
 pub mod sof1;
-#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep2_cnt0](sie_ep2_cnt0) module"]
+#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep2_cnt0](sie_ep2_cnt0) module"]
 pub type SIE_EP2_CNT0 = crate::Reg<u32, _SIE_EP2_CNT0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -159,7 +159,7 @@ impl crate::Readable for SIE_EP2_CNT0 {}
 impl crate::Writable for SIE_EP2_CNT0 {}
 #[doc = "Non-control endpoint count register"]
 pub mod sie_ep2_cnt0;
-#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep2_cnt1](sie_ep2_cnt1) module"]
+#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep2_cnt1](sie_ep2_cnt1) module"]
 pub type SIE_EP2_CNT1 = crate::Reg<u32, _SIE_EP2_CNT1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -170,7 +170,7 @@ impl crate::Readable for SIE_EP2_CNT1 {}
 impl crate::Writable for SIE_EP2_CNT1 {}
 #[doc = "Non-control endpoint count register"]
 pub mod sie_ep2_cnt1;
-#[doc = "Non-control endpoint's control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep2_cr0](sie_ep2_cr0) module"]
+#[doc = "Non-control endpoint's control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep2_cr0](sie_ep2_cr0) module"]
 pub type SIE_EP2_CR0 = crate::Reg<u32, _SIE_EP2_CR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -181,7 +181,7 @@ impl crate::Readable for SIE_EP2_CR0 {}
 impl crate::Writable for SIE_EP2_CR0 {}
 #[doc = "Non-control endpoint's control Register"]
 pub mod sie_ep2_cr0;
-#[doc = "Oscillator lock data register 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [osclk_dr0](osclk_dr0) module"]
+#[doc = "Oscillator lock data register 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [osclk_dr0](osclk_dr0) module"]
 pub type OSCLK_DR0 = crate::Reg<u32, _OSCLK_DR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -190,7 +190,7 @@ pub struct _OSCLK_DR0;
 impl crate::Readable for OSCLK_DR0 {}
 #[doc = "Oscillator lock data register 0"]
 pub mod osclk_dr0;
-#[doc = "Oscillator lock data register 1\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [osclk_dr1](osclk_dr1) module"]
+#[doc = "Oscillator lock data register 1\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [osclk_dr1](osclk_dr1) module"]
 pub type OSCLK_DR1 = crate::Reg<u32, _OSCLK_DR1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -199,7 +199,7 @@ pub struct _OSCLK_DR1;
 impl crate::Readable for OSCLK_DR1 {}
 #[doc = "Oscillator lock data register 1"]
 pub mod osclk_dr1;
-#[doc = "Endpoint0 control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ep0_cr](ep0_cr) module"]
+#[doc = "Endpoint0 control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ep0_cr](ep0_cr) module"]
 pub type EP0_CR = crate::Reg<u32, _EP0_CR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -210,7 +210,7 @@ impl crate::Readable for EP0_CR {}
 impl crate::Writable for EP0_CR {}
 #[doc = "Endpoint0 control Register"]
 pub mod ep0_cr;
-#[doc = "Endpoint0 count Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ep0_cnt](ep0_cnt) module"]
+#[doc = "Endpoint0 count Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ep0_cnt](ep0_cnt) module"]
 pub type EP0_CNT = crate::Reg<u32, _EP0_CNT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -221,7 +221,7 @@ impl crate::Readable for EP0_CNT {}
 impl crate::Writable for EP0_CNT {}
 #[doc = "Endpoint0 count Register"]
 pub mod ep0_cnt;
-#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep3_cnt0](sie_ep3_cnt0) module"]
+#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep3_cnt0](sie_ep3_cnt0) module"]
 pub type SIE_EP3_CNT0 = crate::Reg<u32, _SIE_EP3_CNT0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -232,7 +232,7 @@ impl crate::Readable for SIE_EP3_CNT0 {}
 impl crate::Writable for SIE_EP3_CNT0 {}
 #[doc = "Non-control endpoint count register"]
 pub mod sie_ep3_cnt0;
-#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep3_cnt1](sie_ep3_cnt1) module"]
+#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep3_cnt1](sie_ep3_cnt1) module"]
 pub type SIE_EP3_CNT1 = crate::Reg<u32, _SIE_EP3_CNT1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -243,7 +243,7 @@ impl crate::Readable for SIE_EP3_CNT1 {}
 impl crate::Writable for SIE_EP3_CNT1 {}
 #[doc = "Non-control endpoint count register"]
 pub mod sie_ep3_cnt1;
-#[doc = "Non-control endpoint's control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep3_cr0](sie_ep3_cr0) module"]
+#[doc = "Non-control endpoint's control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep3_cr0](sie_ep3_cr0) module"]
 pub type SIE_EP3_CR0 = crate::Reg<u32, _SIE_EP3_CR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -254,7 +254,7 @@ impl crate::Readable for SIE_EP3_CR0 {}
 impl crate::Writable for SIE_EP3_CR0 {}
 #[doc = "Non-control endpoint's control Register"]
 pub mod sie_ep3_cr0;
-#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep4_cnt0](sie_ep4_cnt0) module"]
+#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep4_cnt0](sie_ep4_cnt0) module"]
 pub type SIE_EP4_CNT0 = crate::Reg<u32, _SIE_EP4_CNT0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -265,7 +265,7 @@ impl crate::Readable for SIE_EP4_CNT0 {}
 impl crate::Writable for SIE_EP4_CNT0 {}
 #[doc = "Non-control endpoint count register"]
 pub mod sie_ep4_cnt0;
-#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep4_cnt1](sie_ep4_cnt1) module"]
+#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep4_cnt1](sie_ep4_cnt1) module"]
 pub type SIE_EP4_CNT1 = crate::Reg<u32, _SIE_EP4_CNT1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -276,7 +276,7 @@ impl crate::Readable for SIE_EP4_CNT1 {}
 impl crate::Writable for SIE_EP4_CNT1 {}
 #[doc = "Non-control endpoint count register"]
 pub mod sie_ep4_cnt1;
-#[doc = "Non-control endpoint's control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep4_cr0](sie_ep4_cr0) module"]
+#[doc = "Non-control endpoint's control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep4_cr0](sie_ep4_cr0) module"]
 pub type SIE_EP4_CR0 = crate::Reg<u32, _SIE_EP4_CR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -287,7 +287,7 @@ impl crate::Readable for SIE_EP4_CR0 {}
 impl crate::Writable for SIE_EP4_CR0 {}
 #[doc = "Non-control endpoint's control Register"]
 pub mod sie_ep4_cr0;
-#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep5_cnt0](sie_ep5_cnt0) module"]
+#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep5_cnt0](sie_ep5_cnt0) module"]
 pub type SIE_EP5_CNT0 = crate::Reg<u32, _SIE_EP5_CNT0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -298,7 +298,7 @@ impl crate::Readable for SIE_EP5_CNT0 {}
 impl crate::Writable for SIE_EP5_CNT0 {}
 #[doc = "Non-control endpoint count register"]
 pub mod sie_ep5_cnt0;
-#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep5_cnt1](sie_ep5_cnt1) module"]
+#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep5_cnt1](sie_ep5_cnt1) module"]
 pub type SIE_EP5_CNT1 = crate::Reg<u32, _SIE_EP5_CNT1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -309,7 +309,7 @@ impl crate::Readable for SIE_EP5_CNT1 {}
 impl crate::Writable for SIE_EP5_CNT1 {}
 #[doc = "Non-control endpoint count register"]
 pub mod sie_ep5_cnt1;
-#[doc = "Non-control endpoint's control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep5_cr0](sie_ep5_cr0) module"]
+#[doc = "Non-control endpoint's control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep5_cr0](sie_ep5_cr0) module"]
 pub type SIE_EP5_CR0 = crate::Reg<u32, _SIE_EP5_CR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -320,7 +320,7 @@ impl crate::Readable for SIE_EP5_CR0 {}
 impl crate::Writable for SIE_EP5_CR0 {}
 #[doc = "Non-control endpoint's control Register"]
 pub mod sie_ep5_cr0;
-#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep6_cnt0](sie_ep6_cnt0) module"]
+#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep6_cnt0](sie_ep6_cnt0) module"]
 pub type SIE_EP6_CNT0 = crate::Reg<u32, _SIE_EP6_CNT0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -331,7 +331,7 @@ impl crate::Readable for SIE_EP6_CNT0 {}
 impl crate::Writable for SIE_EP6_CNT0 {}
 #[doc = "Non-control endpoint count register"]
 pub mod sie_ep6_cnt0;
-#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep6_cnt1](sie_ep6_cnt1) module"]
+#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep6_cnt1](sie_ep6_cnt1) module"]
 pub type SIE_EP6_CNT1 = crate::Reg<u32, _SIE_EP6_CNT1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -342,7 +342,7 @@ impl crate::Readable for SIE_EP6_CNT1 {}
 impl crate::Writable for SIE_EP6_CNT1 {}
 #[doc = "Non-control endpoint count register"]
 pub mod sie_ep6_cnt1;
-#[doc = "Non-control endpoint's control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep6_cr0](sie_ep6_cr0) module"]
+#[doc = "Non-control endpoint's control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep6_cr0](sie_ep6_cr0) module"]
 pub type SIE_EP6_CR0 = crate::Reg<u32, _SIE_EP6_CR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -353,7 +353,7 @@ impl crate::Readable for SIE_EP6_CR0 {}
 impl crate::Writable for SIE_EP6_CR0 {}
 #[doc = "Non-control endpoint's control Register"]
 pub mod sie_ep6_cr0;
-#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep7_cnt0](sie_ep7_cnt0) module"]
+#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep7_cnt0](sie_ep7_cnt0) module"]
 pub type SIE_EP7_CNT0 = crate::Reg<u32, _SIE_EP7_CNT0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -364,7 +364,7 @@ impl crate::Readable for SIE_EP7_CNT0 {}
 impl crate::Writable for SIE_EP7_CNT0 {}
 #[doc = "Non-control endpoint count register"]
 pub mod sie_ep7_cnt0;
-#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep7_cnt1](sie_ep7_cnt1) module"]
+#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep7_cnt1](sie_ep7_cnt1) module"]
 pub type SIE_EP7_CNT1 = crate::Reg<u32, _SIE_EP7_CNT1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -375,7 +375,7 @@ impl crate::Readable for SIE_EP7_CNT1 {}
 impl crate::Writable for SIE_EP7_CNT1 {}
 #[doc = "Non-control endpoint count register"]
 pub mod sie_ep7_cnt1;
-#[doc = "Non-control endpoint's control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep7_cr0](sie_ep7_cr0) module"]
+#[doc = "Non-control endpoint's control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep7_cr0](sie_ep7_cr0) module"]
 pub type SIE_EP7_CR0 = crate::Reg<u32, _SIE_EP7_CR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -386,7 +386,7 @@ impl crate::Readable for SIE_EP7_CR0 {}
 impl crate::Writable for SIE_EP7_CR0 {}
 #[doc = "Non-control endpoint's control Register"]
 pub mod sie_ep7_cr0;
-#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep8_cnt0](sie_ep8_cnt0) module"]
+#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep8_cnt0](sie_ep8_cnt0) module"]
 pub type SIE_EP8_CNT0 = crate::Reg<u32, _SIE_EP8_CNT0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -397,7 +397,7 @@ impl crate::Readable for SIE_EP8_CNT0 {}
 impl crate::Writable for SIE_EP8_CNT0 {}
 #[doc = "Non-control endpoint count register"]
 pub mod sie_ep8_cnt0;
-#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep8_cnt1](sie_ep8_cnt1) module"]
+#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep8_cnt1](sie_ep8_cnt1) module"]
 pub type SIE_EP8_CNT1 = crate::Reg<u32, _SIE_EP8_CNT1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -408,7 +408,7 @@ impl crate::Readable for SIE_EP8_CNT1 {}
 impl crate::Writable for SIE_EP8_CNT1 {}
 #[doc = "Non-control endpoint count register"]
 pub mod sie_ep8_cnt1;
-#[doc = "Non-control endpoint's control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sie_ep8_cr0](sie_ep8_cr0) module"]
+#[doc = "Non-control endpoint's control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep8_cr0](sie_ep8_cr0) module"]
 pub type SIE_EP8_CR0 = crate::Reg<u32, _SIE_EP8_CR0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -419,7 +419,7 @@ impl crate::Readable for SIE_EP8_CR0 {}
 impl crate::Writable for SIE_EP8_CR0 {}
 #[doc = "Non-control endpoint's control Register"]
 pub mod sie_ep8_cr0;
-#[doc = "Endpoint Configuration Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep1_cfg](arb_ep1_cfg) module"]
+#[doc = "Endpoint Configuration Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep1_cfg](arb_ep1_cfg) module"]
 pub type ARB_EP1_CFG = crate::Reg<u32, _ARB_EP1_CFG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -430,7 +430,7 @@ impl crate::Readable for ARB_EP1_CFG {}
 impl crate::Writable for ARB_EP1_CFG {}
 #[doc = "Endpoint Configuration Register *1"]
 pub mod arb_ep1_cfg;
-#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep1_int_en](arb_ep1_int_en) module"]
+#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep1_int_en](arb_ep1_int_en) module"]
 pub type ARB_EP1_INT_EN = crate::Reg<u32, _ARB_EP1_INT_EN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -441,7 +441,7 @@ impl crate::Readable for ARB_EP1_INT_EN {}
 impl crate::Writable for ARB_EP1_INT_EN {}
 #[doc = "Endpoint Interrupt Enable Register *1"]
 pub mod arb_ep1_int_en;
-#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep1_sr](arb_ep1_sr) module"]
+#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep1_sr](arb_ep1_sr) module"]
 pub type ARB_EP1_SR = crate::Reg<u32, _ARB_EP1_SR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -452,7 +452,7 @@ impl crate::Readable for ARB_EP1_SR {}
 impl crate::Writable for ARB_EP1_SR {}
 #[doc = "Endpoint Interrupt Enable Register *1"]
 pub mod arb_ep1_sr;
-#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw1_wa](arb_rw1_wa) module"]
+#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw1_wa](arb_rw1_wa) module"]
 pub type ARB_RW1_WA = crate::Reg<u32, _ARB_RW1_WA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -463,7 +463,7 @@ impl crate::Readable for ARB_RW1_WA {}
 impl crate::Writable for ARB_RW1_WA {}
 #[doc = "Endpoint Write Address value *1"]
 pub mod arb_rw1_wa;
-#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw1_wa_msb](arb_rw1_wa_msb) module"]
+#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw1_wa_msb](arb_rw1_wa_msb) module"]
 pub type ARB_RW1_WA_MSB = crate::Reg<u32, _ARB_RW1_WA_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -474,7 +474,7 @@ impl crate::Readable for ARB_RW1_WA_MSB {}
 impl crate::Writable for ARB_RW1_WA_MSB {}
 #[doc = "Endpoint Write Address value *1"]
 pub mod arb_rw1_wa_msb;
-#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw1_ra](arb_rw1_ra) module"]
+#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw1_ra](arb_rw1_ra) module"]
 pub type ARB_RW1_RA = crate::Reg<u32, _ARB_RW1_RA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -485,7 +485,7 @@ impl crate::Readable for ARB_RW1_RA {}
 impl crate::Writable for ARB_RW1_RA {}
 #[doc = "Endpoint Read Address value *1"]
 pub mod arb_rw1_ra;
-#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw1_ra_msb](arb_rw1_ra_msb) module"]
+#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw1_ra_msb](arb_rw1_ra_msb) module"]
 pub type ARB_RW1_RA_MSB = crate::Reg<u32, _ARB_RW1_RA_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -496,7 +496,7 @@ impl crate::Readable for ARB_RW1_RA_MSB {}
 impl crate::Writable for ARB_RW1_RA_MSB {}
 #[doc = "Endpoint Read Address value *1"]
 pub mod arb_rw1_ra_msb;
-#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw1_dr](arb_rw1_dr) module"]
+#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw1_dr](arb_rw1_dr) module"]
 pub type ARB_RW1_DR = crate::Reg<u32, _ARB_RW1_DR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -507,7 +507,7 @@ impl crate::Readable for ARB_RW1_DR {}
 impl crate::Writable for ARB_RW1_DR {}
 #[doc = "Endpoint Data Register"]
 pub mod arb_rw1_dr;
-#[doc = "Dedicated Endpoint Buffer Size Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [buf_size](buf_size) module"]
+#[doc = "Dedicated Endpoint Buffer Size Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf_size](buf_size) module"]
 pub type BUF_SIZE = crate::Reg<u32, _BUF_SIZE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -518,7 +518,7 @@ impl crate::Readable for BUF_SIZE {}
 impl crate::Writable for BUF_SIZE {}
 #[doc = "Dedicated Endpoint Buffer Size Register *1"]
 pub mod buf_size;
-#[doc = "Endpoint Active Indication Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ep_active](ep_active) module"]
+#[doc = "Endpoint Active Indication Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ep_active](ep_active) module"]
 pub type EP_ACTIVE = crate::Reg<u32, _EP_ACTIVE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -529,7 +529,7 @@ impl crate::Readable for EP_ACTIVE {}
 impl crate::Writable for EP_ACTIVE {}
 #[doc = "Endpoint Active Indication Register *1"]
 pub mod ep_active;
-#[doc = "Endpoint Type (IN/OUT) Indication *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ep_type](ep_type) module"]
+#[doc = "Endpoint Type (IN/OUT) Indication *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ep_type](ep_type) module"]
 pub type EP_TYPE = crate::Reg<u32, _EP_TYPE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -540,7 +540,7 @@ impl crate::Readable for EP_TYPE {}
 impl crate::Writable for EP_TYPE {}
 #[doc = "Endpoint Type (IN/OUT) Indication *1"]
 pub mod ep_type;
-#[doc = "Endpoint Configuration Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep2_cfg](arb_ep2_cfg) module"]
+#[doc = "Endpoint Configuration Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep2_cfg](arb_ep2_cfg) module"]
 pub type ARB_EP2_CFG = crate::Reg<u32, _ARB_EP2_CFG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -551,7 +551,7 @@ impl crate::Readable for ARB_EP2_CFG {}
 impl crate::Writable for ARB_EP2_CFG {}
 #[doc = "Endpoint Configuration Register *1"]
 pub mod arb_ep2_cfg;
-#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep2_int_en](arb_ep2_int_en) module"]
+#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep2_int_en](arb_ep2_int_en) module"]
 pub type ARB_EP2_INT_EN = crate::Reg<u32, _ARB_EP2_INT_EN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -562,7 +562,7 @@ impl crate::Readable for ARB_EP2_INT_EN {}
 impl crate::Writable for ARB_EP2_INT_EN {}
 #[doc = "Endpoint Interrupt Enable Register *1"]
 pub mod arb_ep2_int_en;
-#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep2_sr](arb_ep2_sr) module"]
+#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep2_sr](arb_ep2_sr) module"]
 pub type ARB_EP2_SR = crate::Reg<u32, _ARB_EP2_SR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -573,7 +573,7 @@ impl crate::Readable for ARB_EP2_SR {}
 impl crate::Writable for ARB_EP2_SR {}
 #[doc = "Endpoint Interrupt Enable Register *1"]
 pub mod arb_ep2_sr;
-#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw2_wa](arb_rw2_wa) module"]
+#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw2_wa](arb_rw2_wa) module"]
 pub type ARB_RW2_WA = crate::Reg<u32, _ARB_RW2_WA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -584,7 +584,7 @@ impl crate::Readable for ARB_RW2_WA {}
 impl crate::Writable for ARB_RW2_WA {}
 #[doc = "Endpoint Write Address value *1"]
 pub mod arb_rw2_wa;
-#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw2_wa_msb](arb_rw2_wa_msb) module"]
+#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw2_wa_msb](arb_rw2_wa_msb) module"]
 pub type ARB_RW2_WA_MSB = crate::Reg<u32, _ARB_RW2_WA_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -595,7 +595,7 @@ impl crate::Readable for ARB_RW2_WA_MSB {}
 impl crate::Writable for ARB_RW2_WA_MSB {}
 #[doc = "Endpoint Write Address value *1"]
 pub mod arb_rw2_wa_msb;
-#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw2_ra](arb_rw2_ra) module"]
+#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw2_ra](arb_rw2_ra) module"]
 pub type ARB_RW2_RA = crate::Reg<u32, _ARB_RW2_RA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -606,7 +606,7 @@ impl crate::Readable for ARB_RW2_RA {}
 impl crate::Writable for ARB_RW2_RA {}
 #[doc = "Endpoint Read Address value *1"]
 pub mod arb_rw2_ra;
-#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw2_ra_msb](arb_rw2_ra_msb) module"]
+#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw2_ra_msb](arb_rw2_ra_msb) module"]
 pub type ARB_RW2_RA_MSB = crate::Reg<u32, _ARB_RW2_RA_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -617,7 +617,7 @@ impl crate::Readable for ARB_RW2_RA_MSB {}
 impl crate::Writable for ARB_RW2_RA_MSB {}
 #[doc = "Endpoint Read Address value *1"]
 pub mod arb_rw2_ra_msb;
-#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw2_dr](arb_rw2_dr) module"]
+#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw2_dr](arb_rw2_dr) module"]
 pub type ARB_RW2_DR = crate::Reg<u32, _ARB_RW2_DR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -628,7 +628,7 @@ impl crate::Readable for ARB_RW2_DR {}
 impl crate::Writable for ARB_RW2_DR {}
 #[doc = "Endpoint Data Register"]
 pub mod arb_rw2_dr;
-#[doc = "Arbiter Configuration Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_cfg](arb_cfg) module"]
+#[doc = "Arbiter Configuration Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_cfg](arb_cfg) module"]
 pub type ARB_CFG = crate::Reg<u32, _ARB_CFG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -639,7 +639,7 @@ impl crate::Readable for ARB_CFG {}
 impl crate::Writable for ARB_CFG {}
 #[doc = "Arbiter Configuration Register *1"]
 pub mod arb_cfg;
-#[doc = "USB Block Clock Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [usb_clk_en](usb_clk_en) module"]
+#[doc = "USB Block Clock Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usb_clk_en](usb_clk_en) module"]
 pub type USB_CLK_EN = crate::Reg<u32, _USB_CLK_EN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -650,7 +650,7 @@ impl crate::Readable for USB_CLK_EN {}
 impl crate::Writable for USB_CLK_EN {}
 #[doc = "USB Block Clock Enable Register"]
 pub mod usb_clk_en;
-#[doc = "Arbiter Interrupt Enable *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_int_en](arb_int_en) module"]
+#[doc = "Arbiter Interrupt Enable *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_int_en](arb_int_en) module"]
 pub type ARB_INT_EN = crate::Reg<u32, _ARB_INT_EN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -661,7 +661,7 @@ impl crate::Readable for ARB_INT_EN {}
 impl crate::Writable for ARB_INT_EN {}
 #[doc = "Arbiter Interrupt Enable *1"]
 pub mod arb_int_en;
-#[doc = "Arbiter Interrupt Status *1\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_int_sr](arb_int_sr) module"]
+#[doc = "Arbiter Interrupt Status *1\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_int_sr](arb_int_sr) module"]
 pub type ARB_INT_SR = crate::Reg<u32, _ARB_INT_SR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -670,7 +670,7 @@ pub struct _ARB_INT_SR;
 impl crate::Readable for ARB_INT_SR {}
 #[doc = "Arbiter Interrupt Status *1"]
 pub mod arb_int_sr;
-#[doc = "Endpoint Configuration Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep3_cfg](arb_ep3_cfg) module"]
+#[doc = "Endpoint Configuration Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep3_cfg](arb_ep3_cfg) module"]
 pub type ARB_EP3_CFG = crate::Reg<u32, _ARB_EP3_CFG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -681,7 +681,7 @@ impl crate::Readable for ARB_EP3_CFG {}
 impl crate::Writable for ARB_EP3_CFG {}
 #[doc = "Endpoint Configuration Register *1"]
 pub mod arb_ep3_cfg;
-#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep3_int_en](arb_ep3_int_en) module"]
+#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep3_int_en](arb_ep3_int_en) module"]
 pub type ARB_EP3_INT_EN = crate::Reg<u32, _ARB_EP3_INT_EN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -692,7 +692,7 @@ impl crate::Readable for ARB_EP3_INT_EN {}
 impl crate::Writable for ARB_EP3_INT_EN {}
 #[doc = "Endpoint Interrupt Enable Register *1"]
 pub mod arb_ep3_int_en;
-#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep3_sr](arb_ep3_sr) module"]
+#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep3_sr](arb_ep3_sr) module"]
 pub type ARB_EP3_SR = crate::Reg<u32, _ARB_EP3_SR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -703,7 +703,7 @@ impl crate::Readable for ARB_EP3_SR {}
 impl crate::Writable for ARB_EP3_SR {}
 #[doc = "Endpoint Interrupt Enable Register *1"]
 pub mod arb_ep3_sr;
-#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw3_wa](arb_rw3_wa) module"]
+#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw3_wa](arb_rw3_wa) module"]
 pub type ARB_RW3_WA = crate::Reg<u32, _ARB_RW3_WA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -714,7 +714,7 @@ impl crate::Readable for ARB_RW3_WA {}
 impl crate::Writable for ARB_RW3_WA {}
 #[doc = "Endpoint Write Address value *1"]
 pub mod arb_rw3_wa;
-#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw3_wa_msb](arb_rw3_wa_msb) module"]
+#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw3_wa_msb](arb_rw3_wa_msb) module"]
 pub type ARB_RW3_WA_MSB = crate::Reg<u32, _ARB_RW3_WA_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -725,7 +725,7 @@ impl crate::Readable for ARB_RW3_WA_MSB {}
 impl crate::Writable for ARB_RW3_WA_MSB {}
 #[doc = "Endpoint Write Address value *1"]
 pub mod arb_rw3_wa_msb;
-#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw3_ra](arb_rw3_ra) module"]
+#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw3_ra](arb_rw3_ra) module"]
 pub type ARB_RW3_RA = crate::Reg<u32, _ARB_RW3_RA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -736,7 +736,7 @@ impl crate::Readable for ARB_RW3_RA {}
 impl crate::Writable for ARB_RW3_RA {}
 #[doc = "Endpoint Read Address value *1"]
 pub mod arb_rw3_ra;
-#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw3_ra_msb](arb_rw3_ra_msb) module"]
+#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw3_ra_msb](arb_rw3_ra_msb) module"]
 pub type ARB_RW3_RA_MSB = crate::Reg<u32, _ARB_RW3_RA_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -747,7 +747,7 @@ impl crate::Readable for ARB_RW3_RA_MSB {}
 impl crate::Writable for ARB_RW3_RA_MSB {}
 #[doc = "Endpoint Read Address value *1"]
 pub mod arb_rw3_ra_msb;
-#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw3_dr](arb_rw3_dr) module"]
+#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw3_dr](arb_rw3_dr) module"]
 pub type ARB_RW3_DR = crate::Reg<u32, _ARB_RW3_DR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -758,7 +758,7 @@ impl crate::Readable for ARB_RW3_DR {}
 impl crate::Writable for ARB_RW3_DR {}
 #[doc = "Endpoint Data Register"]
 pub mod arb_rw3_dr;
-#[doc = "Common Area Write Address *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cwa](cwa) module"]
+#[doc = "Common Area Write Address *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cwa](cwa) module"]
 pub type CWA = crate::Reg<u32, _CWA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -769,7 +769,7 @@ impl crate::Readable for CWA {}
 impl crate::Writable for CWA {}
 #[doc = "Common Area Write Address *1"]
 pub mod cwa;
-#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cwa_msb](cwa_msb) module"]
+#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cwa_msb](cwa_msb) module"]
 pub type CWA_MSB = crate::Reg<u32, _CWA_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -780,7 +780,7 @@ impl crate::Readable for CWA_MSB {}
 impl crate::Writable for CWA_MSB {}
 #[doc = "Endpoint Read Address value *1"]
 pub mod cwa_msb;
-#[doc = "Endpoint Configuration Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep4_cfg](arb_ep4_cfg) module"]
+#[doc = "Endpoint Configuration Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep4_cfg](arb_ep4_cfg) module"]
 pub type ARB_EP4_CFG = crate::Reg<u32, _ARB_EP4_CFG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -791,7 +791,7 @@ impl crate::Readable for ARB_EP4_CFG {}
 impl crate::Writable for ARB_EP4_CFG {}
 #[doc = "Endpoint Configuration Register *1"]
 pub mod arb_ep4_cfg;
-#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep4_int_en](arb_ep4_int_en) module"]
+#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep4_int_en](arb_ep4_int_en) module"]
 pub type ARB_EP4_INT_EN = crate::Reg<u32, _ARB_EP4_INT_EN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -802,7 +802,7 @@ impl crate::Readable for ARB_EP4_INT_EN {}
 impl crate::Writable for ARB_EP4_INT_EN {}
 #[doc = "Endpoint Interrupt Enable Register *1"]
 pub mod arb_ep4_int_en;
-#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep4_sr](arb_ep4_sr) module"]
+#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep4_sr](arb_ep4_sr) module"]
 pub type ARB_EP4_SR = crate::Reg<u32, _ARB_EP4_SR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -813,7 +813,7 @@ impl crate::Readable for ARB_EP4_SR {}
 impl crate::Writable for ARB_EP4_SR {}
 #[doc = "Endpoint Interrupt Enable Register *1"]
 pub mod arb_ep4_sr;
-#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw4_wa](arb_rw4_wa) module"]
+#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw4_wa](arb_rw4_wa) module"]
 pub type ARB_RW4_WA = crate::Reg<u32, _ARB_RW4_WA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -824,7 +824,7 @@ impl crate::Readable for ARB_RW4_WA {}
 impl crate::Writable for ARB_RW4_WA {}
 #[doc = "Endpoint Write Address value *1"]
 pub mod arb_rw4_wa;
-#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw4_wa_msb](arb_rw4_wa_msb) module"]
+#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw4_wa_msb](arb_rw4_wa_msb) module"]
 pub type ARB_RW4_WA_MSB = crate::Reg<u32, _ARB_RW4_WA_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -835,7 +835,7 @@ impl crate::Readable for ARB_RW4_WA_MSB {}
 impl crate::Writable for ARB_RW4_WA_MSB {}
 #[doc = "Endpoint Write Address value *1"]
 pub mod arb_rw4_wa_msb;
-#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw4_ra](arb_rw4_ra) module"]
+#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw4_ra](arb_rw4_ra) module"]
 pub type ARB_RW4_RA = crate::Reg<u32, _ARB_RW4_RA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -846,7 +846,7 @@ impl crate::Readable for ARB_RW4_RA {}
 impl crate::Writable for ARB_RW4_RA {}
 #[doc = "Endpoint Read Address value *1"]
 pub mod arb_rw4_ra;
-#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw4_ra_msb](arb_rw4_ra_msb) module"]
+#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw4_ra_msb](arb_rw4_ra_msb) module"]
 pub type ARB_RW4_RA_MSB = crate::Reg<u32, _ARB_RW4_RA_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -857,7 +857,7 @@ impl crate::Readable for ARB_RW4_RA_MSB {}
 impl crate::Writable for ARB_RW4_RA_MSB {}
 #[doc = "Endpoint Read Address value *1"]
 pub mod arb_rw4_ra_msb;
-#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw4_dr](arb_rw4_dr) module"]
+#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw4_dr](arb_rw4_dr) module"]
 pub type ARB_RW4_DR = crate::Reg<u32, _ARB_RW4_DR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -868,7 +868,7 @@ impl crate::Readable for ARB_RW4_DR {}
 impl crate::Writable for ARB_RW4_DR {}
 #[doc = "Endpoint Data Register"]
 pub mod arb_rw4_dr;
-#[doc = "DMA Burst / Threshold Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dma_thres](dma_thres) module"]
+#[doc = "DMA Burst / Threshold Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_thres](dma_thres) module"]
 pub type DMA_THRES = crate::Reg<u32, _DMA_THRES>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -879,7 +879,7 @@ impl crate::Readable for DMA_THRES {}
 impl crate::Writable for DMA_THRES {}
 #[doc = "DMA Burst / Threshold Configuration"]
 pub mod dma_thres;
-#[doc = "DMA Burst / Threshold Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dma_thres_msb](dma_thres_msb) module"]
+#[doc = "DMA Burst / Threshold Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_thres_msb](dma_thres_msb) module"]
 pub type DMA_THRES_MSB = crate::Reg<u32, _DMA_THRES_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -890,7 +890,7 @@ impl crate::Readable for DMA_THRES_MSB {}
 impl crate::Writable for DMA_THRES_MSB {}
 #[doc = "DMA Burst / Threshold Configuration"]
 pub mod dma_thres_msb;
-#[doc = "Endpoint Configuration Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep5_cfg](arb_ep5_cfg) module"]
+#[doc = "Endpoint Configuration Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep5_cfg](arb_ep5_cfg) module"]
 pub type ARB_EP5_CFG = crate::Reg<u32, _ARB_EP5_CFG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -901,7 +901,7 @@ impl crate::Readable for ARB_EP5_CFG {}
 impl crate::Writable for ARB_EP5_CFG {}
 #[doc = "Endpoint Configuration Register *1"]
 pub mod arb_ep5_cfg;
-#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep5_int_en](arb_ep5_int_en) module"]
+#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep5_int_en](arb_ep5_int_en) module"]
 pub type ARB_EP5_INT_EN = crate::Reg<u32, _ARB_EP5_INT_EN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -912,7 +912,7 @@ impl crate::Readable for ARB_EP5_INT_EN {}
 impl crate::Writable for ARB_EP5_INT_EN {}
 #[doc = "Endpoint Interrupt Enable Register *1"]
 pub mod arb_ep5_int_en;
-#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep5_sr](arb_ep5_sr) module"]
+#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep5_sr](arb_ep5_sr) module"]
 pub type ARB_EP5_SR = crate::Reg<u32, _ARB_EP5_SR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -923,7 +923,7 @@ impl crate::Readable for ARB_EP5_SR {}
 impl crate::Writable for ARB_EP5_SR {}
 #[doc = "Endpoint Interrupt Enable Register *1"]
 pub mod arb_ep5_sr;
-#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw5_wa](arb_rw5_wa) module"]
+#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw5_wa](arb_rw5_wa) module"]
 pub type ARB_RW5_WA = crate::Reg<u32, _ARB_RW5_WA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -934,7 +934,7 @@ impl crate::Readable for ARB_RW5_WA {}
 impl crate::Writable for ARB_RW5_WA {}
 #[doc = "Endpoint Write Address value *1"]
 pub mod arb_rw5_wa;
-#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw5_wa_msb](arb_rw5_wa_msb) module"]
+#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw5_wa_msb](arb_rw5_wa_msb) module"]
 pub type ARB_RW5_WA_MSB = crate::Reg<u32, _ARB_RW5_WA_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -945,7 +945,7 @@ impl crate::Readable for ARB_RW5_WA_MSB {}
 impl crate::Writable for ARB_RW5_WA_MSB {}
 #[doc = "Endpoint Write Address value *1"]
 pub mod arb_rw5_wa_msb;
-#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw5_ra](arb_rw5_ra) module"]
+#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw5_ra](arb_rw5_ra) module"]
 pub type ARB_RW5_RA = crate::Reg<u32, _ARB_RW5_RA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -956,7 +956,7 @@ impl crate::Readable for ARB_RW5_RA {}
 impl crate::Writable for ARB_RW5_RA {}
 #[doc = "Endpoint Read Address value *1"]
 pub mod arb_rw5_ra;
-#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw5_ra_msb](arb_rw5_ra_msb) module"]
+#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw5_ra_msb](arb_rw5_ra_msb) module"]
 pub type ARB_RW5_RA_MSB = crate::Reg<u32, _ARB_RW5_RA_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -967,7 +967,7 @@ impl crate::Readable for ARB_RW5_RA_MSB {}
 impl crate::Writable for ARB_RW5_RA_MSB {}
 #[doc = "Endpoint Read Address value *1"]
 pub mod arb_rw5_ra_msb;
-#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw5_dr](arb_rw5_dr) module"]
+#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw5_dr](arb_rw5_dr) module"]
 pub type ARB_RW5_DR = crate::Reg<u32, _ARB_RW5_DR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -978,7 +978,7 @@ impl crate::Readable for ARB_RW5_DR {}
 impl crate::Writable for ARB_RW5_DR {}
 #[doc = "Endpoint Data Register"]
 pub mod arb_rw5_dr;
-#[doc = "Bus Reset Count Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [bus_rst_cnt](bus_rst_cnt) module"]
+#[doc = "Bus Reset Count Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [bus_rst_cnt](bus_rst_cnt) module"]
 pub type BUS_RST_CNT = crate::Reg<u32, _BUS_RST_CNT>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -989,7 +989,7 @@ impl crate::Readable for BUS_RST_CNT {}
 impl crate::Writable for BUS_RST_CNT {}
 #[doc = "Bus Reset Count Register"]
 pub mod bus_rst_cnt;
-#[doc = "Endpoint Configuration Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep6_cfg](arb_ep6_cfg) module"]
+#[doc = "Endpoint Configuration Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep6_cfg](arb_ep6_cfg) module"]
 pub type ARB_EP6_CFG = crate::Reg<u32, _ARB_EP6_CFG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1000,7 +1000,7 @@ impl crate::Readable for ARB_EP6_CFG {}
 impl crate::Writable for ARB_EP6_CFG {}
 #[doc = "Endpoint Configuration Register *1"]
 pub mod arb_ep6_cfg;
-#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep6_int_en](arb_ep6_int_en) module"]
+#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep6_int_en](arb_ep6_int_en) module"]
 pub type ARB_EP6_INT_EN = crate::Reg<u32, _ARB_EP6_INT_EN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1011,7 +1011,7 @@ impl crate::Readable for ARB_EP6_INT_EN {}
 impl crate::Writable for ARB_EP6_INT_EN {}
 #[doc = "Endpoint Interrupt Enable Register *1"]
 pub mod arb_ep6_int_en;
-#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep6_sr](arb_ep6_sr) module"]
+#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep6_sr](arb_ep6_sr) module"]
 pub type ARB_EP6_SR = crate::Reg<u32, _ARB_EP6_SR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1022,7 +1022,7 @@ impl crate::Readable for ARB_EP6_SR {}
 impl crate::Writable for ARB_EP6_SR {}
 #[doc = "Endpoint Interrupt Enable Register *1"]
 pub mod arb_ep6_sr;
-#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw6_wa](arb_rw6_wa) module"]
+#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw6_wa](arb_rw6_wa) module"]
 pub type ARB_RW6_WA = crate::Reg<u32, _ARB_RW6_WA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1033,7 +1033,7 @@ impl crate::Readable for ARB_RW6_WA {}
 impl crate::Writable for ARB_RW6_WA {}
 #[doc = "Endpoint Write Address value *1"]
 pub mod arb_rw6_wa;
-#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw6_wa_msb](arb_rw6_wa_msb) module"]
+#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw6_wa_msb](arb_rw6_wa_msb) module"]
 pub type ARB_RW6_WA_MSB = crate::Reg<u32, _ARB_RW6_WA_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1044,7 +1044,7 @@ impl crate::Readable for ARB_RW6_WA_MSB {}
 impl crate::Writable for ARB_RW6_WA_MSB {}
 #[doc = "Endpoint Write Address value *1"]
 pub mod arb_rw6_wa_msb;
-#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw6_ra](arb_rw6_ra) module"]
+#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw6_ra](arb_rw6_ra) module"]
 pub type ARB_RW6_RA = crate::Reg<u32, _ARB_RW6_RA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1055,7 +1055,7 @@ impl crate::Readable for ARB_RW6_RA {}
 impl crate::Writable for ARB_RW6_RA {}
 #[doc = "Endpoint Read Address value *1"]
 pub mod arb_rw6_ra;
-#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw6_ra_msb](arb_rw6_ra_msb) module"]
+#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw6_ra_msb](arb_rw6_ra_msb) module"]
 pub type ARB_RW6_RA_MSB = crate::Reg<u32, _ARB_RW6_RA_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1066,7 +1066,7 @@ impl crate::Readable for ARB_RW6_RA_MSB {}
 impl crate::Writable for ARB_RW6_RA_MSB {}
 #[doc = "Endpoint Read Address value *1"]
 pub mod arb_rw6_ra_msb;
-#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw6_dr](arb_rw6_dr) module"]
+#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw6_dr](arb_rw6_dr) module"]
 pub type ARB_RW6_DR = crate::Reg<u32, _ARB_RW6_DR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1077,7 +1077,7 @@ impl crate::Readable for ARB_RW6_DR {}
 impl crate::Writable for ARB_RW6_DR {}
 #[doc = "Endpoint Data Register"]
 pub mod arb_rw6_dr;
-#[doc = "Endpoint Configuration Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep7_cfg](arb_ep7_cfg) module"]
+#[doc = "Endpoint Configuration Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep7_cfg](arb_ep7_cfg) module"]
 pub type ARB_EP7_CFG = crate::Reg<u32, _ARB_EP7_CFG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1088,7 +1088,7 @@ impl crate::Readable for ARB_EP7_CFG {}
 impl crate::Writable for ARB_EP7_CFG {}
 #[doc = "Endpoint Configuration Register *1"]
 pub mod arb_ep7_cfg;
-#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep7_int_en](arb_ep7_int_en) module"]
+#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep7_int_en](arb_ep7_int_en) module"]
 pub type ARB_EP7_INT_EN = crate::Reg<u32, _ARB_EP7_INT_EN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1099,7 +1099,7 @@ impl crate::Readable for ARB_EP7_INT_EN {}
 impl crate::Writable for ARB_EP7_INT_EN {}
 #[doc = "Endpoint Interrupt Enable Register *1"]
 pub mod arb_ep7_int_en;
-#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep7_sr](arb_ep7_sr) module"]
+#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep7_sr](arb_ep7_sr) module"]
 pub type ARB_EP7_SR = crate::Reg<u32, _ARB_EP7_SR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1110,7 +1110,7 @@ impl crate::Readable for ARB_EP7_SR {}
 impl crate::Writable for ARB_EP7_SR {}
 #[doc = "Endpoint Interrupt Enable Register *1"]
 pub mod arb_ep7_sr;
-#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw7_wa](arb_rw7_wa) module"]
+#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw7_wa](arb_rw7_wa) module"]
 pub type ARB_RW7_WA = crate::Reg<u32, _ARB_RW7_WA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1121,7 +1121,7 @@ impl crate::Readable for ARB_RW7_WA {}
 impl crate::Writable for ARB_RW7_WA {}
 #[doc = "Endpoint Write Address value *1"]
 pub mod arb_rw7_wa;
-#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw7_wa_msb](arb_rw7_wa_msb) module"]
+#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw7_wa_msb](arb_rw7_wa_msb) module"]
 pub type ARB_RW7_WA_MSB = crate::Reg<u32, _ARB_RW7_WA_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1132,7 +1132,7 @@ impl crate::Readable for ARB_RW7_WA_MSB {}
 impl crate::Writable for ARB_RW7_WA_MSB {}
 #[doc = "Endpoint Write Address value *1"]
 pub mod arb_rw7_wa_msb;
-#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw7_ra](arb_rw7_ra) module"]
+#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw7_ra](arb_rw7_ra) module"]
 pub type ARB_RW7_RA = crate::Reg<u32, _ARB_RW7_RA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1143,7 +1143,7 @@ impl crate::Readable for ARB_RW7_RA {}
 impl crate::Writable for ARB_RW7_RA {}
 #[doc = "Endpoint Read Address value *1"]
 pub mod arb_rw7_ra;
-#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw7_ra_msb](arb_rw7_ra_msb) module"]
+#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw7_ra_msb](arb_rw7_ra_msb) module"]
 pub type ARB_RW7_RA_MSB = crate::Reg<u32, _ARB_RW7_RA_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1154,7 +1154,7 @@ impl crate::Readable for ARB_RW7_RA_MSB {}
 impl crate::Writable for ARB_RW7_RA_MSB {}
 #[doc = "Endpoint Read Address value *1"]
 pub mod arb_rw7_ra_msb;
-#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw7_dr](arb_rw7_dr) module"]
+#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw7_dr](arb_rw7_dr) module"]
 pub type ARB_RW7_DR = crate::Reg<u32, _ARB_RW7_DR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1165,7 +1165,7 @@ impl crate::Readable for ARB_RW7_DR {}
 impl crate::Writable for ARB_RW7_DR {}
 #[doc = "Endpoint Data Register"]
 pub mod arb_rw7_dr;
-#[doc = "Endpoint Configuration Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep8_cfg](arb_ep8_cfg) module"]
+#[doc = "Endpoint Configuration Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep8_cfg](arb_ep8_cfg) module"]
 pub type ARB_EP8_CFG = crate::Reg<u32, _ARB_EP8_CFG>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1176,7 +1176,7 @@ impl crate::Readable for ARB_EP8_CFG {}
 impl crate::Writable for ARB_EP8_CFG {}
 #[doc = "Endpoint Configuration Register *1"]
 pub mod arb_ep8_cfg;
-#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep8_int_en](arb_ep8_int_en) module"]
+#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep8_int_en](arb_ep8_int_en) module"]
 pub type ARB_EP8_INT_EN = crate::Reg<u32, _ARB_EP8_INT_EN>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1187,7 +1187,7 @@ impl crate::Readable for ARB_EP8_INT_EN {}
 impl crate::Writable for ARB_EP8_INT_EN {}
 #[doc = "Endpoint Interrupt Enable Register *1"]
 pub mod arb_ep8_int_en;
-#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_ep8_sr](arb_ep8_sr) module"]
+#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep8_sr](arb_ep8_sr) module"]
 pub type ARB_EP8_SR = crate::Reg<u32, _ARB_EP8_SR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1198,7 +1198,7 @@ impl crate::Readable for ARB_EP8_SR {}
 impl crate::Writable for ARB_EP8_SR {}
 #[doc = "Endpoint Interrupt Enable Register *1"]
 pub mod arb_ep8_sr;
-#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw8_wa](arb_rw8_wa) module"]
+#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw8_wa](arb_rw8_wa) module"]
 pub type ARB_RW8_WA = crate::Reg<u32, _ARB_RW8_WA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1209,7 +1209,7 @@ impl crate::Readable for ARB_RW8_WA {}
 impl crate::Writable for ARB_RW8_WA {}
 #[doc = "Endpoint Write Address value *1"]
 pub mod arb_rw8_wa;
-#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw8_wa_msb](arb_rw8_wa_msb) module"]
+#[doc = "Endpoint Write Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw8_wa_msb](arb_rw8_wa_msb) module"]
 pub type ARB_RW8_WA_MSB = crate::Reg<u32, _ARB_RW8_WA_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1220,7 +1220,7 @@ impl crate::Readable for ARB_RW8_WA_MSB {}
 impl crate::Writable for ARB_RW8_WA_MSB {}
 #[doc = "Endpoint Write Address value *1"]
 pub mod arb_rw8_wa_msb;
-#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw8_ra](arb_rw8_ra) module"]
+#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw8_ra](arb_rw8_ra) module"]
 pub type ARB_RW8_RA = crate::Reg<u32, _ARB_RW8_RA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1231,7 +1231,7 @@ impl crate::Readable for ARB_RW8_RA {}
 impl crate::Writable for ARB_RW8_RA {}
 #[doc = "Endpoint Read Address value *1"]
 pub mod arb_rw8_ra;
-#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw8_ra_msb](arb_rw8_ra_msb) module"]
+#[doc = "Endpoint Read Address value *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw8_ra_msb](arb_rw8_ra_msb) module"]
 pub type ARB_RW8_RA_MSB = crate::Reg<u32, _ARB_RW8_RA_MSB>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1242,7 +1242,7 @@ impl crate::Readable for ARB_RW8_RA_MSB {}
 impl crate::Writable for ARB_RW8_RA_MSB {}
 #[doc = "Endpoint Read Address value *1"]
 pub mod arb_rw8_ra_msb;
-#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw8_dr](arb_rw8_dr) module"]
+#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw8_dr](arb_rw8_dr) module"]
 pub type ARB_RW8_DR = crate::Reg<u32, _ARB_RW8_DR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1253,7 +1253,7 @@ impl crate::Readable for ARB_RW8_DR {}
 impl crate::Writable for ARB_RW8_DR {}
 #[doc = "Endpoint Data Register"]
 pub mod arb_rw8_dr;
-#[doc = "DATA\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [mem_data](mem_data) module"]
+#[doc = "DATA\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mem_data](mem_data) module"]
 pub type MEM_DATA = crate::Reg<u32, _MEM_DATA>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1264,7 +1264,7 @@ impl crate::Readable for MEM_DATA {}
 impl crate::Writable for MEM_DATA {}
 #[doc = "DATA"]
 pub mod mem_data;
-#[doc = "Start Of Frame Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [sof16](sof16) module"]
+#[doc = "Start Of Frame Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sof16](sof16) module"]
 pub type SOF16 = crate::Reg<u32, _SOF16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1273,7 +1273,7 @@ pub struct _SOF16;
 impl crate::Readable for SOF16 {}
 #[doc = "Start Of Frame Register"]
 pub mod sof16;
-#[doc = "Oscillator lock data register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [osclk_dr16](osclk_dr16) module"]
+#[doc = "Oscillator lock data register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [osclk_dr16](osclk_dr16) module"]
 pub type OSCLK_DR16 = crate::Reg<u32, _OSCLK_DR16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1282,7 +1282,7 @@ pub struct _OSCLK_DR16;
 impl crate::Readable for OSCLK_DR16 {}
 #[doc = "Oscillator lock data register"]
 pub mod osclk_dr16;
-#[doc = "Endpoint Write Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw1_wa16](arb_rw1_wa16) module"]
+#[doc = "Endpoint Write Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw1_wa16](arb_rw1_wa16) module"]
 pub type ARB_RW1_WA16 = crate::Reg<u32, _ARB_RW1_WA16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1293,7 +1293,7 @@ impl crate::Readable for ARB_RW1_WA16 {}
 impl crate::Writable for ARB_RW1_WA16 {}
 #[doc = "Endpoint Write Address value"]
 pub mod arb_rw1_wa16;
-#[doc = "Endpoint Read Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw1_ra16](arb_rw1_ra16) module"]
+#[doc = "Endpoint Read Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw1_ra16](arb_rw1_ra16) module"]
 pub type ARB_RW1_RA16 = crate::Reg<u32, _ARB_RW1_RA16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1304,7 +1304,7 @@ impl crate::Readable for ARB_RW1_RA16 {}
 impl crate::Writable for ARB_RW1_RA16 {}
 #[doc = "Endpoint Read Address value"]
 pub mod arb_rw1_ra16;
-#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw1_dr16](arb_rw1_dr16) module"]
+#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw1_dr16](arb_rw1_dr16) module"]
 pub type ARB_RW1_DR16 = crate::Reg<u32, _ARB_RW1_DR16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1315,7 +1315,7 @@ impl crate::Readable for ARB_RW1_DR16 {}
 impl crate::Writable for ARB_RW1_DR16 {}
 #[doc = "Endpoint Data Register"]
 pub mod arb_rw1_dr16;
-#[doc = "Endpoint Write Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw2_wa16](arb_rw2_wa16) module"]
+#[doc = "Endpoint Write Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw2_wa16](arb_rw2_wa16) module"]
 pub type ARB_RW2_WA16 = crate::Reg<u32, _ARB_RW2_WA16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1326,7 +1326,7 @@ impl crate::Readable for ARB_RW2_WA16 {}
 impl crate::Writable for ARB_RW2_WA16 {}
 #[doc = "Endpoint Write Address value"]
 pub mod arb_rw2_wa16;
-#[doc = "Endpoint Read Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw2_ra16](arb_rw2_ra16) module"]
+#[doc = "Endpoint Read Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw2_ra16](arb_rw2_ra16) module"]
 pub type ARB_RW2_RA16 = crate::Reg<u32, _ARB_RW2_RA16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1337,7 +1337,7 @@ impl crate::Readable for ARB_RW2_RA16 {}
 impl crate::Writable for ARB_RW2_RA16 {}
 #[doc = "Endpoint Read Address value"]
 pub mod arb_rw2_ra16;
-#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw2_dr16](arb_rw2_dr16) module"]
+#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw2_dr16](arb_rw2_dr16) module"]
 pub type ARB_RW2_DR16 = crate::Reg<u32, _ARB_RW2_DR16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1348,7 +1348,7 @@ impl crate::Readable for ARB_RW2_DR16 {}
 impl crate::Writable for ARB_RW2_DR16 {}
 #[doc = "Endpoint Data Register"]
 pub mod arb_rw2_dr16;
-#[doc = "Endpoint Write Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw3_wa16](arb_rw3_wa16) module"]
+#[doc = "Endpoint Write Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw3_wa16](arb_rw3_wa16) module"]
 pub type ARB_RW3_WA16 = crate::Reg<u32, _ARB_RW3_WA16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1359,7 +1359,7 @@ impl crate::Readable for ARB_RW3_WA16 {}
 impl crate::Writable for ARB_RW3_WA16 {}
 #[doc = "Endpoint Write Address value"]
 pub mod arb_rw3_wa16;
-#[doc = "Endpoint Read Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw3_ra16](arb_rw3_ra16) module"]
+#[doc = "Endpoint Read Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw3_ra16](arb_rw3_ra16) module"]
 pub type ARB_RW3_RA16 = crate::Reg<u32, _ARB_RW3_RA16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1370,7 +1370,7 @@ impl crate::Readable for ARB_RW3_RA16 {}
 impl crate::Writable for ARB_RW3_RA16 {}
 #[doc = "Endpoint Read Address value"]
 pub mod arb_rw3_ra16;
-#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw3_dr16](arb_rw3_dr16) module"]
+#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw3_dr16](arb_rw3_dr16) module"]
 pub type ARB_RW3_DR16 = crate::Reg<u32, _ARB_RW3_DR16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1381,7 +1381,7 @@ impl crate::Readable for ARB_RW3_DR16 {}
 impl crate::Writable for ARB_RW3_DR16 {}
 #[doc = "Endpoint Data Register"]
 pub mod arb_rw3_dr16;
-#[doc = "Common Area Write Address\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [cwa16](cwa16) module"]
+#[doc = "Common Area Write Address\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cwa16](cwa16) module"]
 pub type CWA16 = crate::Reg<u32, _CWA16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1392,7 +1392,7 @@ impl crate::Readable for CWA16 {}
 impl crate::Writable for CWA16 {}
 #[doc = "Common Area Write Address"]
 pub mod cwa16;
-#[doc = "Endpoint Write Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw4_wa16](arb_rw4_wa16) module"]
+#[doc = "Endpoint Write Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw4_wa16](arb_rw4_wa16) module"]
 pub type ARB_RW4_WA16 = crate::Reg<u32, _ARB_RW4_WA16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1403,7 +1403,7 @@ impl crate::Readable for ARB_RW4_WA16 {}
 impl crate::Writable for ARB_RW4_WA16 {}
 #[doc = "Endpoint Write Address value"]
 pub mod arb_rw4_wa16;
-#[doc = "Endpoint Read Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw4_ra16](arb_rw4_ra16) module"]
+#[doc = "Endpoint Read Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw4_ra16](arb_rw4_ra16) module"]
 pub type ARB_RW4_RA16 = crate::Reg<u32, _ARB_RW4_RA16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1414,7 +1414,7 @@ impl crate::Readable for ARB_RW4_RA16 {}
 impl crate::Writable for ARB_RW4_RA16 {}
 #[doc = "Endpoint Read Address value"]
 pub mod arb_rw4_ra16;
-#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw4_dr16](arb_rw4_dr16) module"]
+#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw4_dr16](arb_rw4_dr16) module"]
 pub type ARB_RW4_DR16 = crate::Reg<u32, _ARB_RW4_DR16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1425,7 +1425,7 @@ impl crate::Readable for ARB_RW4_DR16 {}
 impl crate::Writable for ARB_RW4_DR16 {}
 #[doc = "Endpoint Data Register"]
 pub mod arb_rw4_dr16;
-#[doc = "DMA Burst / Threshold Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [dma_thres16](dma_thres16) module"]
+#[doc = "DMA Burst / Threshold Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dma_thres16](dma_thres16) module"]
 pub type DMA_THRES16 = crate::Reg<u32, _DMA_THRES16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1436,7 +1436,7 @@ impl crate::Readable for DMA_THRES16 {}
 impl crate::Writable for DMA_THRES16 {}
 #[doc = "DMA Burst / Threshold Configuration"]
 pub mod dma_thres16;
-#[doc = "Endpoint Write Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw5_wa16](arb_rw5_wa16) module"]
+#[doc = "Endpoint Write Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw5_wa16](arb_rw5_wa16) module"]
 pub type ARB_RW5_WA16 = crate::Reg<u32, _ARB_RW5_WA16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1447,7 +1447,7 @@ impl crate::Readable for ARB_RW5_WA16 {}
 impl crate::Writable for ARB_RW5_WA16 {}
 #[doc = "Endpoint Write Address value"]
 pub mod arb_rw5_wa16;
-#[doc = "Endpoint Read Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw5_ra16](arb_rw5_ra16) module"]
+#[doc = "Endpoint Read Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw5_ra16](arb_rw5_ra16) module"]
 pub type ARB_RW5_RA16 = crate::Reg<u32, _ARB_RW5_RA16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1458,7 +1458,7 @@ impl crate::Readable for ARB_RW5_RA16 {}
 impl crate::Writable for ARB_RW5_RA16 {}
 #[doc = "Endpoint Read Address value"]
 pub mod arb_rw5_ra16;
-#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw5_dr16](arb_rw5_dr16) module"]
+#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw5_dr16](arb_rw5_dr16) module"]
 pub type ARB_RW5_DR16 = crate::Reg<u32, _ARB_RW5_DR16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1469,7 +1469,7 @@ impl crate::Readable for ARB_RW5_DR16 {}
 impl crate::Writable for ARB_RW5_DR16 {}
 #[doc = "Endpoint Data Register"]
 pub mod arb_rw5_dr16;
-#[doc = "Endpoint Write Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw6_wa16](arb_rw6_wa16) module"]
+#[doc = "Endpoint Write Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw6_wa16](arb_rw6_wa16) module"]
 pub type ARB_RW6_WA16 = crate::Reg<u32, _ARB_RW6_WA16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1480,7 +1480,7 @@ impl crate::Readable for ARB_RW6_WA16 {}
 impl crate::Writable for ARB_RW6_WA16 {}
 #[doc = "Endpoint Write Address value"]
 pub mod arb_rw6_wa16;
-#[doc = "Endpoint Read Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw6_ra16](arb_rw6_ra16) module"]
+#[doc = "Endpoint Read Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw6_ra16](arb_rw6_ra16) module"]
 pub type ARB_RW6_RA16 = crate::Reg<u32, _ARB_RW6_RA16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1491,7 +1491,7 @@ impl crate::Readable for ARB_RW6_RA16 {}
 impl crate::Writable for ARB_RW6_RA16 {}
 #[doc = "Endpoint Read Address value"]
 pub mod arb_rw6_ra16;
-#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw6_dr16](arb_rw6_dr16) module"]
+#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw6_dr16](arb_rw6_dr16) module"]
 pub type ARB_RW6_DR16 = crate::Reg<u32, _ARB_RW6_DR16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1502,7 +1502,7 @@ impl crate::Readable for ARB_RW6_DR16 {}
 impl crate::Writable for ARB_RW6_DR16 {}
 #[doc = "Endpoint Data Register"]
 pub mod arb_rw6_dr16;
-#[doc = "Endpoint Write Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw7_wa16](arb_rw7_wa16) module"]
+#[doc = "Endpoint Write Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw7_wa16](arb_rw7_wa16) module"]
 pub type ARB_RW7_WA16 = crate::Reg<u32, _ARB_RW7_WA16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1513,7 +1513,7 @@ impl crate::Readable for ARB_RW7_WA16 {}
 impl crate::Writable for ARB_RW7_WA16 {}
 #[doc = "Endpoint Write Address value"]
 pub mod arb_rw7_wa16;
-#[doc = "Endpoint Read Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw7_ra16](arb_rw7_ra16) module"]
+#[doc = "Endpoint Read Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw7_ra16](arb_rw7_ra16) module"]
 pub type ARB_RW7_RA16 = crate::Reg<u32, _ARB_RW7_RA16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1524,7 +1524,7 @@ impl crate::Readable for ARB_RW7_RA16 {}
 impl crate::Writable for ARB_RW7_RA16 {}
 #[doc = "Endpoint Read Address value"]
 pub mod arb_rw7_ra16;
-#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw7_dr16](arb_rw7_dr16) module"]
+#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw7_dr16](arb_rw7_dr16) module"]
 pub type ARB_RW7_DR16 = crate::Reg<u32, _ARB_RW7_DR16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1535,7 +1535,7 @@ impl crate::Readable for ARB_RW7_DR16 {}
 impl crate::Writable for ARB_RW7_DR16 {}
 #[doc = "Endpoint Data Register"]
 pub mod arb_rw7_dr16;
-#[doc = "Endpoint Write Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw8_wa16](arb_rw8_wa16) module"]
+#[doc = "Endpoint Write Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw8_wa16](arb_rw8_wa16) module"]
 pub type ARB_RW8_WA16 = crate::Reg<u32, _ARB_RW8_WA16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1546,7 +1546,7 @@ impl crate::Readable for ARB_RW8_WA16 {}
 impl crate::Writable for ARB_RW8_WA16 {}
 #[doc = "Endpoint Write Address value"]
 pub mod arb_rw8_wa16;
-#[doc = "Endpoint Read Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw8_ra16](arb_rw8_ra16) module"]
+#[doc = "Endpoint Read Address value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw8_ra16](arb_rw8_ra16) module"]
 pub type ARB_RW8_RA16 = crate::Reg<u32, _ARB_RW8_RA16>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -1557,7 +1557,7 @@ impl crate::Readable for ARB_RW8_RA16 {}
 impl crate::Writable for ARB_RW8_RA16 {}
 #[doc = "Endpoint Read Address value"]
 pub mod arb_rw8_ra16;
-#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [arb_rw8_dr16](arb_rw8_dr16) module"]
+#[doc = "Endpoint Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_rw8_dr16](arb_rw8_dr16) module"]
 pub type ARB_RW8_DR16 = crate::Reg<u32, _ARB_RW8_DR16>;
 #[allow(missing_docs)]
 #[doc(hidden)]

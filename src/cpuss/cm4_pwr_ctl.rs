@@ -12,25 +12,21 @@ impl crate::ResetValue for super::CM4_PWR_CTL {
 }
 #[doc = "Set Power mode for CM4\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PWR_MODE_A {
     #[doc = "0: Switch CM4 off\nPower off, clock off, isolate, reset and no retain."]
-    OFF,
+    OFF = 0,
     #[doc = "1: Reset CM4\nClock off, no isolated, no retain and reset.\n\nNote: The CM4 CPU has a AIRCR.SYSRESETREQ register field that allows the CM4 to reset the complete device (RESET only resets the CM4), resulting in a warm boot."]
-    RESET,
+    RESET = 1,
     #[doc = "2: Put CM4 in Retained mode\nThis can only become effective if CM4 is in SleepDeep mode. Check PWR_DONE flag to see if CM4 RETAINED state has been reached.\nPower off, clock off, isolate, no reset and retain."]
-    RETAINED,
+    RETAINED = 2,
     #[doc = "3: Switch CM4 on.\nPower on, clock on, no isolate, no reset and no retain."]
-    ENABLED,
+    ENABLED = 3,
 }
 impl From<PWR_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: PWR_MODE_A) -> Self {
-        match variant {
-            PWR_MODE_A::OFF => 0,
-            PWR_MODE_A::RESET => 1,
-            PWR_MODE_A::RETAINED => 2,
-            PWR_MODE_A::ENABLED => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PWR_MODE`"]

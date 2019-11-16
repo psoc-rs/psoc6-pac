@@ -12,28 +12,23 @@ impl crate::ResetValue for super::CLK_PATH_SELECT {
 }
 #[doc = "Selects a source for clock PATH<i>. Note that not all products support all clock sources. Selecting a clock source that is not supported will result in undefined behavior.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PATH_MUX_A {
     #[doc = "0: IMO - Internal R/C Oscillator"]
-    IMO,
+    IMO = 0,
     #[doc = "1: EXTCLK - External Clock Pin"]
-    EXTCLK,
+    EXTCLK = 1,
     #[doc = "2: ECO - External-Crystal Oscillator"]
-    ECO,
+    ECO = 2,
     #[doc = "3: ALTHF - Alternate High-Frequency clock input (product-specific clock)"]
-    ALTHF,
+    ALTHF = 3,
     #[doc = "4: DSI_MUX - Output of DSI mux for this path.  Using a DSI source directly as root of HFCLK will result in undefined behavior."]
-    DSI_MUX,
+    DSI_MUX = 4,
 }
 impl From<PATH_MUX_A> for u8 {
     #[inline(always)]
     fn from(variant: PATH_MUX_A) -> Self {
-        match variant {
-            PATH_MUX_A::IMO => 0,
-            PATH_MUX_A::EXTCLK => 1,
-            PATH_MUX_A::ECO => 2,
-            PATH_MUX_A::ALTHF => 3,
-            PATH_MUX_A::DSI_MUX => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PATH_MUX`"]

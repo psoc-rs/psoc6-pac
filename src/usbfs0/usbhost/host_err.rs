@@ -12,25 +12,21 @@ impl crate::ResetValue for super::HOST_ERR {
 }
 #[doc = "These flags indicate the status of a handshake packet to be sent or received. These flags are set to 'NULL' when no handshake occurs due to an error or when a SOF token has been ended with the TKNEN bit of the Host Token Endpoint Register (HOST_TOKEN). These bits are updated when sending or receiving has been ended. HS bits change values '11' under the following condition. However, if HS bits are written except the following conditions, the values are ignored. - HS bits indicate values except '11' and write the value '11' to HS bits. Note: This bit is set to the initial value when the RST bit of the Host Control 1 Register (HOST_CTL1) is set to '1'.\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HS_A {
     #[doc = "0: Acknowledge Packet"]
-    ACK,
+    ACK = 0,
     #[doc = "1: Non-Acknowledge Packet"]
-    NAK,
+    NAK = 1,
     #[doc = "2: Stall Packet"]
-    STALL,
+    STALL = 2,
     #[doc = "3: Null Packet"]
-    NULL,
+    NULL = 3,
 }
 impl From<HS_A> for u8 {
     #[inline(always)]
     fn from(variant: HS_A) -> Self {
-        match variant {
-            HS_A::ACK => 0,
-            HS_A::NAK => 1,
-            HS_A::STALL => 2,
-            HS_A::NULL => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HS`"]

@@ -12,37 +12,29 @@ impl crate::ResetValue for super::CLK_OUTPUT_FAST {
 }
 #[doc = "Select signal for fast clock output #0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FAST_SEL0_A {
     #[doc = "0: Disabled - output is 0.  For power savings, clocks are blocked before entering any muxes, including PATH_SEL0 and HFCLK_SEL0."]
-    NC,
+    NC = 0,
     #[doc = "1: External Crystal Oscillator (ECO)"]
-    ECO,
+    ECO = 1,
     #[doc = "2: External clock input (EXTCLK)"]
-    EXTCLK,
+    EXTCLK = 2,
     #[doc = "3: Alternate High-Frequency (ALTHF) clock input to SRSS"]
-    ALTHF,
+    ALTHF = 3,
     #[doc = "4: Timer clock.  It is grouped with the fast clocks because it may be a gated version of a fast clock, and therefore may have a short high pulse."]
-    TIMERCLK,
+    TIMERCLK = 4,
     #[doc = "5: Selects the clock path chosen by PATH_SEL0 field"]
-    PATH_SEL0,
+    PATH_SEL0 = 5,
     #[doc = "6: Selects the output of the HFCLK_SEL0 mux"]
-    HFCLK_SEL0,
+    HFCLK_SEL0 = 6,
     #[doc = "7: Selects the output of CLK_OUTPUT_SLOW.SLOW_SEL0"]
-    SLOW_SEL0,
+    SLOW_SEL0 = 7,
 }
 impl From<FAST_SEL0_A> for u8 {
     #[inline(always)]
     fn from(variant: FAST_SEL0_A) -> Self {
-        match variant {
-            FAST_SEL0_A::NC => 0,
-            FAST_SEL0_A::ECO => 1,
-            FAST_SEL0_A::EXTCLK => 2,
-            FAST_SEL0_A::ALTHF => 3,
-            FAST_SEL0_A::TIMERCLK => 4,
-            FAST_SEL0_A::PATH_SEL0 => 5,
-            FAST_SEL0_A::HFCLK_SEL0 => 6,
-            FAST_SEL0_A::SLOW_SEL0 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FAST_SEL0`"]
@@ -192,37 +184,29 @@ impl<'a> HFCLK_SEL0_W<'a> {
 }
 #[doc = "Select signal for fast clock output #1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum FAST_SEL1_A {
     #[doc = "0: Disabled - output is 0.  For power savings, clocks are blocked before entering any muxes, including PATH_SEL1 and HFCLK_SEL1."]
-    NC,
+    NC = 0,
     #[doc = "1: External Crystal Oscillator (ECO)"]
-    ECO,
+    ECO = 1,
     #[doc = "2: External clock input (EXTCLK)"]
-    EXTCLK,
+    EXTCLK = 2,
     #[doc = "3: Alternate High-Frequency (ALTHF) clock input to SRSS"]
-    ALTHF,
+    ALTHF = 3,
     #[doc = "4: Timer clock.  It is grouped with the fast clocks because it may be a gated version of a fast clock, and therefore may have a short high pulse."]
-    TIMERCLK,
+    TIMERCLK = 4,
     #[doc = "5: Selects the clock path chosen by PATH_SEL1 field"]
-    PATH_SEL1,
+    PATH_SEL1 = 5,
     #[doc = "6: Selects the output of the HFCLK_SEL1 mux"]
-    HFCLK_SEL1,
+    HFCLK_SEL1 = 6,
     #[doc = "7: Selects the output of CLK_OUTPUT_SLOW.SLOW_SEL1"]
-    SLOW_SEL1,
+    SLOW_SEL1 = 7,
 }
 impl From<FAST_SEL1_A> for u8 {
     #[inline(always)]
     fn from(variant: FAST_SEL1_A) -> Self {
-        match variant {
-            FAST_SEL1_A::NC => 0,
-            FAST_SEL1_A::ECO => 1,
-            FAST_SEL1_A::EXTCLK => 2,
-            FAST_SEL1_A::ALTHF => 3,
-            FAST_SEL1_A::TIMERCLK => 4,
-            FAST_SEL1_A::PATH_SEL1 => 5,
-            FAST_SEL1_A::HFCLK_SEL1 => 6,
-            FAST_SEL1_A::SLOW_SEL1 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `FAST_SEL1`"]

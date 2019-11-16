@@ -14,17 +14,14 @@ impl crate::ResetValue for super::EP_TYPE {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EP1_TYP_A {
     #[doc = "0: IN outpoint"]
-    EP_IN,
+    EP_IN = 0,
     #[doc = "1: OUT outpoint"]
-    EP_OUT,
+    EP_OUT = 1,
 }
 impl From<EP1_TYP_A> for bool {
     #[inline(always)]
     fn from(variant: EP1_TYP_A) -> Self {
-        match variant {
-            EP1_TYP_A::EP_IN => false,
-            EP1_TYP_A::EP_OUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EP1_TYP`"]
@@ -92,17 +89,14 @@ impl<'a> EP1_TYP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EP2_TYP_A {
     #[doc = "0: IN outpoint"]
-    EP_IN,
+    EP_IN = 0,
     #[doc = "1: OUT outpoint"]
-    EP_OUT,
+    EP_OUT = 1,
 }
 impl From<EP2_TYP_A> for bool {
     #[inline(always)]
     fn from(variant: EP2_TYP_A) -> Self {
-        match variant {
-            EP2_TYP_A::EP_IN => false,
-            EP2_TYP_A::EP_OUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EP2_TYP`"]
@@ -170,17 +164,14 @@ impl<'a> EP2_TYP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EP3_TYP_A {
     #[doc = "0: IN outpoint"]
-    EP_IN,
+    EP_IN = 0,
     #[doc = "1: OUT outpoint"]
-    EP_OUT,
+    EP_OUT = 1,
 }
 impl From<EP3_TYP_A> for bool {
     #[inline(always)]
     fn from(variant: EP3_TYP_A) -> Self {
-        match variant {
-            EP3_TYP_A::EP_IN => false,
-            EP3_TYP_A::EP_OUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EP3_TYP`"]
@@ -248,17 +239,14 @@ impl<'a> EP3_TYP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EP4_TYP_A {
     #[doc = "0: IN outpoint"]
-    EP_IN,
+    EP_IN = 0,
     #[doc = "1: OUT outpoint"]
-    EP_OUT,
+    EP_OUT = 1,
 }
 impl From<EP4_TYP_A> for bool {
     #[inline(always)]
     fn from(variant: EP4_TYP_A) -> Self {
-        match variant {
-            EP4_TYP_A::EP_IN => false,
-            EP4_TYP_A::EP_OUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EP4_TYP`"]
@@ -326,17 +314,14 @@ impl<'a> EP4_TYP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EP5_TYP_A {
     #[doc = "0: IN outpoint"]
-    EP_IN,
+    EP_IN = 0,
     #[doc = "1: OUT outpoint"]
-    EP_OUT,
+    EP_OUT = 1,
 }
 impl From<EP5_TYP_A> for bool {
     #[inline(always)]
     fn from(variant: EP5_TYP_A) -> Self {
-        match variant {
-            EP5_TYP_A::EP_IN => false,
-            EP5_TYP_A::EP_OUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EP5_TYP`"]
@@ -404,17 +389,14 @@ impl<'a> EP5_TYP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EP6_TYP_A {
     #[doc = "0: IN outpoint"]
-    EP_IN,
+    EP_IN = 0,
     #[doc = "1: OUT outpoint"]
-    EP_OUT,
+    EP_OUT = 1,
 }
 impl From<EP6_TYP_A> for bool {
     #[inline(always)]
     fn from(variant: EP6_TYP_A) -> Self {
-        match variant {
-            EP6_TYP_A::EP_IN => false,
-            EP6_TYP_A::EP_OUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EP6_TYP`"]
@@ -482,17 +464,14 @@ impl<'a> EP6_TYP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EP7_TYP_A {
     #[doc = "0: IN outpoint"]
-    EP_IN,
+    EP_IN = 0,
     #[doc = "1: OUT outpoint"]
-    EP_OUT,
+    EP_OUT = 1,
 }
 impl From<EP7_TYP_A> for bool {
     #[inline(always)]
     fn from(variant: EP7_TYP_A) -> Self {
-        match variant {
-            EP7_TYP_A::EP_IN => false,
-            EP7_TYP_A::EP_OUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EP7_TYP`"]
@@ -560,17 +539,14 @@ impl<'a> EP7_TYP_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EP8_TYP_A {
     #[doc = "0: IN outpoint"]
-    EP_IN,
+    EP_IN = 0,
     #[doc = "1: OUT outpoint"]
-    EP_OUT,
+    EP_OUT = 1,
 }
 impl From<EP8_TYP_A> for bool {
     #[inline(always)]
     fn from(variant: EP8_TYP_A) -> Self {
-        match variant {
-            EP8_TYP_A::EP_IN => false,
-            EP8_TYP_A::EP_OUT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `EP8_TYP`"]

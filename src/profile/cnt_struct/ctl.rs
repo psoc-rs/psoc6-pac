@@ -36,37 +36,29 @@ impl<'a> CNT_DURATION_W<'a> {
 }
 #[doc = "This field specifies the reference clock used for a counting time base when counting durations. Has no effect when CTL.CNT_DURATION=0.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum REF_CLK_SEL_A {
     #[doc = "0: Timer clock (divided or undivided high frequency clock, e.g. from IMO). Selection is done in SRSS register CLK_TIMER_CTL.TIMER_SEL."]
-    CLK_TIMER,
+    CLK_TIMER = 0,
     #[doc = "1: IMO - Internal Main Oscillator"]
-    CLK_IMO,
+    CLK_IMO = 1,
     #[doc = "2: ECO - External-Crystal Oscillator"]
-    CLK_ECO,
+    CLK_ECO = 2,
     #[doc = "3: Low frequency clock (ILO, WCO or ALTLF).\nSelection is done in SRSS register CLK_SELECT.LFCLK_SEL."]
-    CLK_LF,
+    CLK_LF = 3,
     #[doc = "4: High frequuency clock ('clk_hfx')."]
-    CLK_HF,
+    CLK_HF = 4,
     #[doc = "5: Peripheral clock ('clk_peri')."]
-    CLK_PERI,
+    CLK_PERI = 5,
     #[doc = "6: N/A"]
-    RSVD_6,
+    RSVD_6 = 6,
     #[doc = "7: N/A"]
-    RSVD_7,
+    RSVD_7 = 7,
 }
 impl From<REF_CLK_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: REF_CLK_SEL_A) -> Self {
-        match variant {
-            REF_CLK_SEL_A::CLK_TIMER => 0,
-            REF_CLK_SEL_A::CLK_IMO => 1,
-            REF_CLK_SEL_A::CLK_ECO => 2,
-            REF_CLK_SEL_A::CLK_LF => 3,
-            REF_CLK_SEL_A::CLK_HF => 4,
-            REF_CLK_SEL_A::CLK_PERI => 5,
-            REF_CLK_SEL_A::RSVD_6 => 6,
-            REF_CLK_SEL_A::RSVD_7 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `REF_CLK_SEL`"]

@@ -204,25 +204,21 @@ impl<'a> SLOW7_W<'a> {
 }
 #[doc = "Sets the GPIO drive strength for IO pin 0\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DRIVE_SEL0_A {
     #[doc = "0: Full drive strength: GPIO drives current at its max rated spec."]
-    FULL_DRIVE,
+    FULL_DRIVE = 0,
     #[doc = "1: 1/2 drive strength: GPIO drives current at 1/2 of its max rated spec"]
-    ONE_HALF_DRIVE,
+    ONE_HALF_DRIVE = 1,
     #[doc = "2: 1/4 drive strength: GPIO drives current at 1/4 of its max rated spec."]
-    ONE_QUARTER_DRIVE,
+    ONE_QUARTER_DRIVE = 2,
     #[doc = "3: 1/8 drive strength: GPIO drives current at 1/8 of its max rated spec."]
-    ONE_EIGHTH_DRIVE,
+    ONE_EIGHTH_DRIVE = 3,
 }
 impl From<DRIVE_SEL0_A> for u8 {
     #[inline(always)]
     fn from(variant: DRIVE_SEL0_A) -> Self {
-        match variant {
-            DRIVE_SEL0_A::FULL_DRIVE => 0,
-            DRIVE_SEL0_A::ONE_HALF_DRIVE => 1,
-            DRIVE_SEL0_A::ONE_QUARTER_DRIVE => 2,
-            DRIVE_SEL0_A::ONE_EIGHTH_DRIVE => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DRIVE_SEL0`"]

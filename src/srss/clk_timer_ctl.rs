@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CLK_TIMER_CTL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TIMER_SEL_A {
     #[doc = "0: IMO - Internal Main Oscillator"]
-    IMO,
+    IMO = 0,
     #[doc = "1: Select the output of the predivider configured by TIMER_HF0_DIV."]
-    HF0_DIV,
+    HF0_DIV = 1,
 }
 impl From<TIMER_SEL_A> for bool {
     #[inline(always)]
     fn from(variant: TIMER_SEL_A) -> Self {
-        match variant {
-            TIMER_SEL_A::IMO => false,
-            TIMER_SEL_A::HF0_DIV => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `TIMER_SEL`"]
@@ -90,25 +87,21 @@ impl<'a> TIMER_SEL_W<'a> {
 }
 #[doc = "Predivider used when HF0_DIV is selected in TIMER_SEL. If HFCLK0 frequency is less than 100MHz and has approximately 50 percent duty cycle, then no division is required (NO_DIV). Otherwise, select a divide ratio of 2, 4, or 8 before selected HF0_DIV as the timer clock.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TIMER_HF0_DIV_A {
     #[doc = "0: Transparent mode, feed through selected clock source w/o dividing or correcting duty cycle."]
-    NO_DIV,
+    NO_DIV = 0,
     #[doc = "1: Divide HFCLK0 by 2."]
-    DIV_BY_2,
+    DIV_BY_2 = 1,
     #[doc = "2: Divide HFCLK0 by 4."]
-    DIV_BY_4,
+    DIV_BY_4 = 2,
     #[doc = "3: Divide HFCLK0 by 8."]
-    DIV_BY_8,
+    DIV_BY_8 = 3,
 }
 impl From<TIMER_HF0_DIV_A> for u8 {
     #[inline(always)]
     fn from(variant: TIMER_HF0_DIV_A) -> Self {
-        match variant {
-            TIMER_HF0_DIV_A::NO_DIV => 0,
-            TIMER_HF0_DIV_A::DIV_BY_2 => 1,
-            TIMER_HF0_DIV_A::DIV_BY_4 => 2,
-            TIMER_HF0_DIV_A::DIV_BY_8 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TIMER_HF0_DIV`"]

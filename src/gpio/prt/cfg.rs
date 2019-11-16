@@ -12,37 +12,29 @@ impl crate::ResetValue for super::CFG {
 }
 #[doc = "The GPIO drive mode for IO pin 0. Resistive pull-up and pull-down is selected in the drive mode. Note: when initializing IO's that are connected to a live bus (such as I2C), make sure the peripheral and HSIOM (HSIOM_PRT_SELx) is properly configured before turning the IO on here to avoid producing glitches on the bus. Note: that peripherals other than GPIO & UDB/DSI directly control both the output and output-enable of the output buffer (peripherals can drive strong 0 or strong 1 in any mode except OFF='0'). Note: D_OUT, D_OUT_EN are pins of GPIO cell.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DRIVE_MODE0_A {
     #[doc = "0: Output buffer is off creating a high impedance input\nD_OUT = '0': High Impedance\nD_OUT = '1': High Impedance"]
-    HIGHZ,
+    HIGHZ = 0,
     #[doc = "1: N/A"]
-    RSVD,
+    RSVD = 1,
     #[doc = "2: Resistive pull up\n\nFor GPIO & UDB/DSI peripherals:\nWhen D_OUT_EN = 1:\n   D_OUT = '0': Strong pull down\n   D_OUT = '1': Weak/resistive pull up\nWhen D_OUT_EN = 0:\n   D_OUT = '0': High impedance\n   D_OUT = '1': High impedance\n\nFor peripherals other than GPIO & UDB/DSI:\nWhen D_OUT_EN = 1:\n   D_OUT = '0': Strong pull down\n   D_OUT = '1': Strong pull up\nWhen D_OUT_EN = 0:\n   D_OUT = '0': Weak/resistive pull up\n   D_OUT = '1': Weak/resistive pull up"]
-    PULLUP,
+    PULLUP = 2,
     #[doc = "3: Resistive pull down\n\nFor GPIO & UDB/DSI peripherals:\nWhen D_OUT_EN = 1:\n   D_OUT = '0': Weak/resistive pull down\n   D_OUT = '1': Strong pull up\nWhen D_OUT_EN = 0:\n   D_OUT = '0': High impedance\n   D_OUT = '1': High impedance\n\nFor peripherals other than GPIO & UDB/DSI:\nWhen D_OUT_EN = 1:\n   D_OUT = '0': Strong pull down\n   D_OUT = '1': Strong pull up\nWhen D_OUT_EN = 0:\n   D_OUT = '0': Weak/resistive pull down\n   D_OUT = '1': Weak/resistive pull down"]
-    PULLDOWN,
+    PULLDOWN = 3,
     #[doc = "4: Open drain, drives low\n\nFor GPIO & UDB/DSI peripherals:\nWhen D_OUT_EN = 1:\n   D_OUT = '0': Strong pull down\n   D_OUT = '1': High Impedance\nWhen D_OUT_EN = 0:\n   D_OUT = '0': High impedance\n   D_OUT = '1': High impedance\n\nFor peripherals other than GPIO & UDB/DSI:\nWhen D_OUT_EN = 1:\n   D_OUT = '0': Strong pull down\n   D_OUT = '1': Strong pull up\nWhen D_OUT_EN = 0:\n   D_OUT = '0': High Impedance\n   D_OUT = '1': High Impedance"]
-    OD_DRIVESLOW,
+    OD_DRIVESLOW = 4,
     #[doc = "5: Open drain, drives high\n\nFor GPIO & UDB/DSI peripherals:\nWhen D_OUT_EN = 1:\n   D_OUT = '0': High Impedance\n   D_OUT = '1': Strong pull up\nWhen D_OUT_EN = 0:\n   D_OUT = '0': High impedance\n   D_OUT = '1': High impedance\n\nFor peripherals other than GPIO & UDB/DSI:\nWhen D_OUT_EN = 1:\n   D_OUT = '0': Strong pull down\n   D_OUT = '1': Strong pull up\nWhen D_OUT_EN = 0:\n   D_OUT = '0': High Impedance\n   D_OUT = '1': High Impedance"]
-    OD_DRIVESHIGH,
+    OD_DRIVESHIGH = 5,
     #[doc = "6: Strong D_OUTput buffer\n\nFor GPIO & UDB/DSI peripherals:\nWhen D_OUT_EN = 1:\n   D_OUT = '0': Strong pull down\n   D_OUT = '1': Strong pull up\nWhen D_OUT_EN = 0:\n   D_OUT = '0': High impedance\n   D_OUT = '1': High impedance\n\nFor peripherals other than GPIO & UDB/DSI:\nWhen D_OUT_EN = 1:\n   D_OUT = '0': Strong pull down\n   D_OUT = '1': Strong pull up\nWhen D_OUT_EN = 0:\n   D_OUT = '0': High Impedance\n   D_OUT = '1': High Impedance"]
-    STRONG,
+    STRONG = 6,
     #[doc = "7: Pull up or pull down\n\nFor GPIO & UDB/DSI peripherals:\nWhen D_OUT_EN = '0':\n    GPIO_DSI_OUT = '0': Weak/resistive pull down\n    GPIO_DSI_OUT = '1': Weak/resistive pull up\nwhere 'GPIO_DSI_OUT' is a function of PORT_SEL, OUT & DSI_DATA_OUT.\n\nFor peripherals other than GPIO & UDB/DSI:\nWhen D_OUT_EN = 1:\n   D_OUT = '0': Strong pull down\n   D_OUT = '1': Strong pull up\nWhen D_OUT_EN = 0:\n    D_OUT = '0': Weak/resistive pull down\n    D_OUT = '1': Weak/resistive pull up"]
-    PULLUP_DOWN,
+    PULLUP_DOWN = 7,
 }
 impl From<DRIVE_MODE0_A> for u8 {
     #[inline(always)]
     fn from(variant: DRIVE_MODE0_A) -> Self {
-        match variant {
-            DRIVE_MODE0_A::HIGHZ => 0,
-            DRIVE_MODE0_A::RSVD => 1,
-            DRIVE_MODE0_A::PULLUP => 2,
-            DRIVE_MODE0_A::PULLDOWN => 3,
-            DRIVE_MODE0_A::OD_DRIVESLOW => 4,
-            DRIVE_MODE0_A::OD_DRIVESHIGH => 5,
-            DRIVE_MODE0_A::STRONG => 6,
-            DRIVE_MODE0_A::PULLUP_DOWN => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DRIVE_MODE0`"]

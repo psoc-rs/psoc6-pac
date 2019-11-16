@@ -12,127 +12,89 @@ impl crate::ResetValue for super::STATUS {
 }
 #[doc = "The fault source index for which fault information is captured in DATA0 through DATA3. The fault information is fault source specific and described below. Note: this register field (and associated fault source data in DATA0 through DATA3) should only be considered valid, when VALID is '1'.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum IDX_A {
     #[doc = "0: Bus master 0 MPU/SMPU.\nDATA0\\[31:0\\]: Violating address.\nDATA1\\[0\\]: User read.\nDATA1\\[1\\]: User write.\nDATA1\\[2\\]: User execute.\nDATA1\\[3\\]: Privileged read.\nDATA1\\[4\\]: Privileged write.\nDATA1\\[5\\]: Privileged execute.\nDATA1\\[6\\]: Non-secure.\nDATA1\\[11:8\\]: Master identifier.\nDATA1\\[15:12\\]: Protection context identifier.\nDATA1\\[31\\]: '0' MPU violation; '1': SMPU violation."]
-    MPU_0,
+    MPU_0 = 0,
     #[doc = "1: Bus master 1 MPU. See MPU_0 description."]
-    MPU_1,
+    MPU_1 = 1,
     #[doc = "2: Bus master 2 MPU. See MPU_0 description."]
-    MPU_2,
+    MPU_2 = 2,
     #[doc = "3: Bus master 3 MPU. See MPU_0 description."]
-    MPU_3,
+    MPU_3 = 3,
     #[doc = "4: Bus master 4 MPU. See MPU_0 description."]
-    MPU_4,
+    MPU_4 = 4,
     #[doc = "5: Bus master 5 MPU. See MPU_0 description."]
-    MPU_5,
+    MPU_5 = 5,
     #[doc = "6: Bus master 6 MPU. See MPU_0 description."]
-    MPU_6,
+    MPU_6 = 6,
     #[doc = "7: Bus master 7 MPU. See MPU_0 description."]
-    MPU_7,
+    MPU_7 = 7,
     #[doc = "8: Bus master 8 MPU. See MPU_0 description."]
-    MPU_8,
+    MPU_8 = 8,
     #[doc = "9: Bus master 9 MPU. See MPU_0 description."]
-    MPU_9,
+    MPU_9 = 9,
     #[doc = "10: Bus master 10 MPU. See MPU_0 description."]
-    MPU_10,
+    MPU_10 = 10,
     #[doc = "11: Bus master 11 MPU. See MPU_0 description."]
-    MPU_11,
+    MPU_11 = 11,
     #[doc = "12: Bus master 12 MPU. See MPU_0 description."]
-    MPU_12,
+    MPU_12 = 12,
     #[doc = "13: Bus master 13 MPU. See MPU_0 description."]
-    MPU_13,
+    MPU_13 = 13,
     #[doc = "14: Bus master 14 MPU. See MPU_0 description."]
-    MPU_14,
+    MPU_14 = 14,
     #[doc = "15: Bus master 15 MPU. See MPU_0 description."]
-    MPU_15,
+    MPU_15 = 15,
     #[doc = "16: CM4 system bus AHB-Lite interface MPU. See MPU_0 description."]
-    CM4_SYS_MPU,
+    CM4_SYS_MPU = 16,
     #[doc = "28: Peripheral master interface 0 PPU.\nDATA0\\[31:0\\]: Violating address.\nDATA1\\[0\\]: User read.\nDATA1\\[1\\]: User write.\nDATA1\\[2\\]: User execute.\nDATA1\\[3\\]: Privileged read.\nDATA1\\[4\\]: Privileged write.\nDATA1\\[5\\]: Privileged execute.\nDATA1\\[6\\]: Non-secure.\nDATA1\\[11:8\\]: Master identifier.\nDATA1\\[15:12\\]: Protection context identifier.\nDATA1\\[31\\]: '0': PPU violation, '1': peripheral bus error."]
-    MS_PPU_0,
+    MS_PPU_0 = 28,
     #[doc = "29: Peripheral master interface 0 PPU. See MS_PPU_0 description."]
-    MS_PPU_1,
+    MS_PPU_1 = 29,
     #[doc = "30: Peripheral master interface 1 PPU. See MS_PPU_0 description."]
-    MS_PPU_2,
+    MS_PPU_2 = 30,
     #[doc = "31: Peripheral master interface 2 PPU. See MS_PPU_0 description."]
-    MS_PPU_3,
+    MS_PPU_3 = 31,
     #[doc = "32: Peripheral group 0 PPU.\nDATA0\\[31:0\\]: Violating address.\nDATA1\\[0\\]: User read.\nDATA1\\[1\\]: User write.\nDATA1\\[2\\]: User execute.\nDATA1\\[3\\]: Privileged read.\nDATA1\\[4\\]: Privileged write.\nDATA1\\[5\\]: Privileged execute.\nDATA1\\[6\\]: Non-secure.\nDATA1\\[11:8\\]: Master identifier.\nDATA1\\[15:12\\]: Protection context identifier.\nDATA1\\[31:30\\]: '0': PPU violation, '1': timeout detected, '2': peripheral bus error."]
-    GROUP_PPU_0,
+    GROUP_PPU_0 = 32,
     #[doc = "33: Peripheral group 1 PPU. See GROUP_PPU_0 description."]
-    GROUP_PPU_1,
+    GROUP_PPU_1 = 33,
     #[doc = "34: Peripheral group 2 PPU. See GROUP_PPU_0 description."]
-    GROUP_PPU_2,
+    GROUP_PPU_2 = 34,
     #[doc = "35: Peripheral group 3 PPU. See GROUP_PPU_0 description."]
-    GROUP_PPU_3,
+    GROUP_PPU_3 = 35,
     #[doc = "36: Peripheral group 4 PPU. See GROUP_PPU_0 description."]
-    GROUP_PPU_4,
+    GROUP_PPU_4 = 36,
     #[doc = "37: Peripheral group 5 PPU. See GROUP_PPU_0 description."]
-    GROUP_PPU_5,
+    GROUP_PPU_5 = 37,
     #[doc = "38: Peripheral group 6 PPU. See GROUP_PPU_0 description."]
-    GROUP_PPU_6,
+    GROUP_PPU_6 = 38,
     #[doc = "39: Peripheral group 7 PPU. See GROUP_PPU_0 description."]
-    GROUP_PPU_7,
+    GROUP_PPU_7 = 39,
     #[doc = "40: Peripheral group 8 PPU. See GROUP_PPU_0 description."]
-    GROUP_PPU_8,
+    GROUP_PPU_8 = 40,
     #[doc = "41: Peripheral group 9 PPU. See GROUP_PPU_0 description."]
-    GROUP_PPU_9,
+    GROUP_PPU_9 = 41,
     #[doc = "42: Peripheral group 10 PPU. See GROUP_PPU_0 description."]
-    GROUP_PPU_10,
+    GROUP_PPU_10 = 42,
     #[doc = "43: Peripheral group 11 PPU. See GROUP_PPU_0 description."]
-    GROUP_PPU_11,
+    GROUP_PPU_11 = 43,
     #[doc = "44: Peripheral group 12 PPU. See GROUP_PPU_0 description."]
-    GROUP_PPU_12,
+    GROUP_PPU_12 = 44,
     #[doc = "45: Peripheral group 13 PPU. See GROUP_PPU_0 description."]
-    GROUP_PPU_13,
+    GROUP_PPU_13 = 45,
     #[doc = "46: Peripheral group 14 PPU. See GROUP_PPU_0 description."]
-    GROUP_PPU_14,
+    GROUP_PPU_14 = 46,
     #[doc = "47: Peripheral group 15 PPU. See GROUP_PPU_0 description."]
-    GROUP_PPU_15,
+    GROUP_PPU_15 = 47,
     #[doc = "50: Flash controller, main interface, bus error:\nFAULT_DATA0\\[31:0\\]: Violating address.\nFAULT_DATA1\\[31\\]: '0': FLASH macro interface bus error; '1': memory hole.\nFAULT_DATA1\\[15:12\\]: Protection context identifier.\nFAULT_DATA1\\[11:8\\]: Master identifier."]
-    FLASHC_MAIN_BUS_ERROR,
+    FLASHC_MAIN_BUS_ERROR = 50,
 }
 impl From<IDX_A> for u8 {
     #[inline(always)]
     fn from(variant: IDX_A) -> Self {
-        match variant {
-            IDX_A::MPU_0 => 0,
-            IDX_A::MPU_1 => 1,
-            IDX_A::MPU_2 => 2,
-            IDX_A::MPU_3 => 3,
-            IDX_A::MPU_4 => 4,
-            IDX_A::MPU_5 => 5,
-            IDX_A::MPU_6 => 6,
-            IDX_A::MPU_7 => 7,
-            IDX_A::MPU_8 => 8,
-            IDX_A::MPU_9 => 9,
-            IDX_A::MPU_10 => 10,
-            IDX_A::MPU_11 => 11,
-            IDX_A::MPU_12 => 12,
-            IDX_A::MPU_13 => 13,
-            IDX_A::MPU_14 => 14,
-            IDX_A::MPU_15 => 15,
-            IDX_A::CM4_SYS_MPU => 16,
-            IDX_A::MS_PPU_0 => 28,
-            IDX_A::MS_PPU_1 => 29,
-            IDX_A::MS_PPU_2 => 30,
-            IDX_A::MS_PPU_3 => 31,
-            IDX_A::GROUP_PPU_0 => 32,
-            IDX_A::GROUP_PPU_1 => 33,
-            IDX_A::GROUP_PPU_2 => 34,
-            IDX_A::GROUP_PPU_3 => 35,
-            IDX_A::GROUP_PPU_4 => 36,
-            IDX_A::GROUP_PPU_5 => 37,
-            IDX_A::GROUP_PPU_6 => 38,
-            IDX_A::GROUP_PPU_7 => 39,
-            IDX_A::GROUP_PPU_8 => 40,
-            IDX_A::GROUP_PPU_9 => 41,
-            IDX_A::GROUP_PPU_10 => 42,
-            IDX_A::GROUP_PPU_11 => 43,
-            IDX_A::GROUP_PPU_12 => 44,
-            IDX_A::GROUP_PPU_13 => 45,
-            IDX_A::GROUP_PPU_14 => 46,
-            IDX_A::GROUP_PPU_15 => 47,
-            IDX_A::FLASHC_MAIN_BUS_ERROR => 50,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `IDX`"]

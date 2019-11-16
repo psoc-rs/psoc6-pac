@@ -1,5 +1,5 @@
-use self::mpu::MPU_STRUCT;
-use self::smpu::SMPU_STRUCT;
+use crate::prot::mpu::MPU_STRUCT;
+use crate::prot::smpu::SMPU_STRUCT;
 
 #[doc = r"Register block"]
 #[repr(C)]

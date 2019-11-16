@@ -26,37 +26,29 @@ impl<'a> ENDPT_W<'a> {
 }
 #[doc = "These bits send a token according to the settings. After operation has been ended, the TKNEN bit is set to '000', and the CMPIRQ bit of the Interrupt USB Host Register (INTR_USBHOST) is set to '1'. The settings of the TGGL and ENDPT bits are ignored when sending a SOF token. Notes: - This bit is set to the initial value when the RST bit of the Host Control 1 Register (HOST_CTL1) is set to '1'. - The PRE packet isn't supported. - Do not set '100' to the TKNEN bit when the SOFBUSY bit of the Host Status Register (HOST_STATUS) is '1' - Change the USB to the USB Host before writing data to this bit. - When issuing a token again after the token interrupt flag (CMPIRQ) has been set to '1', wait for 3 cycles or more after a USB transfer clock (12 MHz in the full-speed mode, 1.5 MHz in the low-speed mode) was output, then write data to this bit. - Read the value of TKNEN bit if a new value is written in it .Continue writing in this bit until a retrieved value equals a new value written in. During this checking process, it is needed to prevent any interrupt. - Take the following steps when CMPIRQ bit of Interrupt USB Host Register (INTR_USBHOST) is set to '1' by finishing IN token or Isochronous IN token. 1. Read HS bit of Host Error Status Register (HOST_ERR), then set CMPIRQ bit to '0'. 2. Set EPn bit of Host DMA Enable Register (HOST_DMA_ENBL) (n=1 or 2) to '1' if HS bit of Host Error Status Register (HOST_ERR) is equal to '00' and wait until EPn bit of Host DMA Data Request Register (HOST_DMA_DREQ) changes to '1'. Finish the IN token processing if HS bit is not equal to '00'. 3. Read the received data if EPn bit of Host DMA Data Requet (HOST_DMA_DREQ) (n=1 or 2) changes to '1'.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum TKNEN_A {
     #[doc = "0: Sends no data."]
-    NONE,
+    NONE = 0,
     #[doc = "1: Sends SETUP token."]
-    SETUP,
+    SETUP = 1,
     #[doc = "2: Sends IN token."]
-    IN,
+    IN = 2,
     #[doc = "3: Sends OUT token."]
-    OUT,
+    OUT = 3,
     #[doc = "4: Sends SOF token."]
-    SOF,
+    SOF = 4,
     #[doc = "5: Sends Isochronous IN."]
-    ISO_IN,
+    ISO_IN = 5,
     #[doc = "6: Sends Isochronous OUT."]
-    ISO_OUT,
+    ISO_OUT = 6,
     #[doc = "7: N/A"]
-    RSV,
+    RSV = 7,
 }
 impl From<TKNEN_A> for u8 {
     #[inline(always)]
     fn from(variant: TKNEN_A) -> Self {
-        match variant {
-            TKNEN_A::NONE => 0,
-            TKNEN_A::SETUP => 1,
-            TKNEN_A::IN => 2,
-            TKNEN_A::OUT => 3,
-            TKNEN_A::SOF => 4,
-            TKNEN_A::ISO_IN => 5,
-            TKNEN_A::ISO_OUT => 6,
-            TKNEN_A::RSV => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `TKNEN`"]

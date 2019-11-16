@@ -12,37 +12,29 @@ impl crate::ResetValue for super::CTRL {
 }
 #[doc = "VREF buffer low power mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PWR_CTRL_VREF_A {
     #[doc = "0: full power  (100 percent) (default), bypass cap, max clk_sar is 18MHz."]
-    PWR_100,
+    PWR_100 = 0,
     #[doc = "1: 80 percent power"]
-    PWR_80,
+    PWR_80 = 1,
     #[doc = "2: 60 percent power"]
-    PWR_60,
+    PWR_60 = 2,
     #[doc = "3: 50 percent power"]
-    PWR_50,
+    PWR_50 = 3,
     #[doc = "4: 40 percent power"]
-    PWR_40,
+    PWR_40 = 4,
     #[doc = "5: 30 percent power"]
-    PWR_30,
+    PWR_30 = 5,
     #[doc = "6: 20 percent power"]
-    PWR_20,
+    PWR_20 = 6,
     #[doc = "7: 10 percent power"]
-    PWR_10,
+    PWR_10 = 7,
 }
 impl From<PWR_CTRL_VREF_A> for u8 {
     #[inline(always)]
     fn from(variant: PWR_CTRL_VREF_A) -> Self {
-        match variant {
-            PWR_CTRL_VREF_A::PWR_100 => 0,
-            PWR_CTRL_VREF_A::PWR_80 => 1,
-            PWR_CTRL_VREF_A::PWR_60 => 2,
-            PWR_CTRL_VREF_A::PWR_50 => 3,
-            PWR_CTRL_VREF_A::PWR_40 => 4,
-            PWR_CTRL_VREF_A::PWR_30 => 5,
-            PWR_CTRL_VREF_A::PWR_20 => 6,
-            PWR_CTRL_VREF_A::PWR_10 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PWR_CTRL_VREF`"]
@@ -165,37 +157,29 @@ impl<'a> PWR_CTRL_VREF_W<'a> {
 }
 #[doc = "SARADC internal VREF selection.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum VREF_SEL_A {
     #[doc = "0: VREF0 from PRB (VREF buffer on)"]
-    VREF0,
+    VREF0 = 0,
     #[doc = "1: VREF1 from PRB (VREF buffer on)"]
-    VREF1,
+    VREF1 = 1,
     #[doc = "2: VREF2 from PRB (VREF buffer on)"]
-    VREF2,
+    VREF2 = 2,
     #[doc = "3: VREF from AROUTE (VREF buffer on)"]
-    VREF_AROUTE,
+    VREF_AROUTE = 3,
     #[doc = "4: 1.024V from BandGap (VREF buffer on)"]
-    VBGR,
+    VBGR = 4,
     #[doc = "5: External precision Vref direct from a pin (low impedance path)."]
-    VREF_EXT,
+    VREF_EXT = 5,
     #[doc = "6: Vdda/2  (VREF buffer on)"]
-    VDDA_DIV_2,
+    VDDA_DIV_2 = 6,
     #[doc = "7: Vdda."]
-    VDDA,
+    VDDA = 7,
 }
 impl From<VREF_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: VREF_SEL_A) -> Self {
-        match variant {
-            VREF_SEL_A::VREF0 => 0,
-            VREF_SEL_A::VREF1 => 1,
-            VREF_SEL_A::VREF2 => 2,
-            VREF_SEL_A::VREF_AROUTE => 3,
-            VREF_SEL_A::VBGR => 4,
-            VREF_SEL_A::VREF_EXT => 5,
-            VREF_SEL_A::VDDA_DIV_2 => 6,
-            VREF_SEL_A::VDDA => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `VREF_SEL`"]
@@ -342,37 +326,29 @@ impl<'a> VREF_BYP_CAP_EN_W<'a> {
 }
 #[doc = "SARADC internal NEG selection for Single ended conversion\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum NEG_SEL_A {
     #[doc = "0: NEG input of SARADC is connected to 'vssa_kelvin', gives more precision around zero. Note this opens both SARADC internal switches, therefore use this value to insert a break-before-make cycle on those switches when SWITCH_DISABLE is high."]
-    VSSA_KELVIN,
+    VSSA_KELVIN = 0,
     #[doc = "1: NEG input of SARADC is connected to VSSA in AROUTE close to the SARADC"]
-    ART_VSSA,
+    ART_VSSA = 1,
     #[doc = "2: NEG input of SARADC is connected to P1 pin of SARMUX"]
-    P1,
+    P1 = 2,
     #[doc = "3: NEG input of SARADC is connected to P3 pin of SARMUX"]
-    P3,
+    P3 = 3,
     #[doc = "4: NEG input of SARADC is connected to P5 pin of SARMUX"]
-    P5,
+    P5 = 4,
     #[doc = "5: NEG input of SARADC is connected to P7 pin of SARMUX"]
-    P7,
+    P7 = 5,
     #[doc = "6: NEG input of SARADC is connected to an ACORE in AROUTE"]
-    ACORE,
+    ACORE = 6,
     #[doc = "7: NEG input of SARADC is shorted with VREF input of SARADC."]
-    VREF,
+    VREF = 7,
 }
 impl From<NEG_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: NEG_SEL_A) -> Self {
-        match variant {
-            NEG_SEL_A::VSSA_KELVIN => 0,
-            NEG_SEL_A::ART_VSSA => 1,
-            NEG_SEL_A::P1 => 2,
-            NEG_SEL_A::P3 => 3,
-            NEG_SEL_A::P5 => 4,
-            NEG_SEL_A::P7 => 5,
-            NEG_SEL_A::ACORE => 6,
-            NEG_SEL_A::VREF => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `NEG_SEL`"]
@@ -519,25 +495,21 @@ impl<'a> SAR_HW_CTRL_NEGVREF_W<'a> {
 }
 #[doc = "Set the comparator latch delay in accordance with SAR conversion rate\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum COMP_DLY_A {
     #[doc = "0: 2.5ns delay, use this for 2.5Msps"]
-    D2P5,
+    D2P5 = 0,
     #[doc = "1: 4.0ns delay, use this for 2.0Msps"]
-    D4,
+    D4 = 1,
     #[doc = "2: 10ns delay, use this for 1.5Msps"]
-    D10,
+    D10 = 2,
     #[doc = "3: 12ns delay, use this for 1.0Msps or less"]
-    D12,
+    D12 = 3,
 }
 impl From<COMP_DLY_A> for u8 {
     #[inline(always)]
     fn from(variant: COMP_DLY_A) -> Self {
-        match variant {
-            COMP_DLY_A::D2P5 => 0,
-            COMP_DLY_A::D4 => 1,
-            COMP_DLY_A::D10 => 2,
-            COMP_DLY_A::D12 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `COMP_DLY`"]
@@ -678,37 +650,29 @@ impl<'a> REFBUF_EN_W<'a> {
 }
 #[doc = "Comparator power mode. (Sample rate TBD)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum COMP_PWR_A {
     #[doc = "0: Power = 100 percent, use this for >2000Ksps"]
-    P100,
+    P100 = 0,
     #[doc = "1: Power = 80 percent, use this for 1500-2000Ksps"]
-    P80,
+    P80 = 1,
     #[doc = "2: Power = 60 percent, use this for 1000-1500Ksps"]
-    P60,
+    P60 = 2,
     #[doc = "3: Power = 50 percent, use this for 500-1000Ksps"]
-    P50,
+    P50 = 3,
     #[doc = "4: Power = 40 percent, use this for 250-500Ksps"]
-    P40,
+    P40 = 4,
     #[doc = "5: Power = 30 percent, use this for 100-250Ksps"]
-    P30,
+    P30 = 5,
     #[doc = "6: Power = 20 percent, use this for 100-250Ksps (TBD!)"]
-    P20,
+    P20 = 6,
     #[doc = "7: Power = 10 percent, use this for <100Ksps"]
-    P10,
+    P10 = 7,
 }
 impl From<COMP_PWR_A> for u8 {
     #[inline(always)]
     fn from(variant: COMP_PWR_A) -> Self {
-        match variant {
-            COMP_PWR_A::P100 => 0,
-            COMP_PWR_A::P80 => 1,
-            COMP_PWR_A::P60 => 2,
-            COMP_PWR_A::P50 => 3,
-            COMP_PWR_A::P40 => 4,
-            COMP_PWR_A::P30 => 5,
-            COMP_PWR_A::P20 => 6,
-            COMP_PWR_A::P10 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `COMP_PWR`"]

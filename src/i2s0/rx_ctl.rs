@@ -14,17 +14,14 @@ impl crate::ResetValue for super::RX_CTL {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum B_CLOCK_INV_A {
     #[doc = "0: SDI received at SCK rising edge when RX_CTL.SCKO_POL=0"]
-    RISING_EDGE_RX,
+    RISING_EDGE_RX = 0,
     #[doc = "1: SDI received at SCK falling edge when RX_CTL.SCKO_POL=0"]
-    FALLING_EDGE_RX,
+    FALLING_EDGE_RX = 1,
 }
 impl From<B_CLOCK_INV_A> for bool {
     #[inline(always)]
     fn from(variant: B_CLOCK_INV_A) -> Self {
-        match variant {
-            B_CLOCK_INV_A::RISING_EDGE_RX => false,
-            B_CLOCK_INV_A::FALLING_EDGE_RX => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `B_CLOCK_INV`"]
@@ -90,37 +87,29 @@ impl<'a> B_CLOCK_INV_W<'a> {
 }
 #[doc = "Specifies number of channels per frame: Note: only '2channels' is supported during Left Justfied or I2S mode. Hence software must set '1' to this field in the modes. (Note: These bits are connected to AR38U12.RX_CFG.RX_CHSET)\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH_NR_A {
     #[doc = "0: 1 channel"]
-    CH_NUM1,
+    CH_NUM1 = 0,
     #[doc = "1: 2 channels"]
-    CH_NUM2,
+    CH_NUM2 = 1,
     #[doc = "2: 3 channels"]
-    CH_NUM3,
+    CH_NUM3 = 2,
     #[doc = "3: 4 channels"]
-    CH_NUM4,
+    CH_NUM4 = 3,
     #[doc = "4: 5 channels"]
-    CH_NUM5,
+    CH_NUM5 = 4,
     #[doc = "5: 6 channels"]
-    CH_NUM6,
+    CH_NUM6 = 5,
     #[doc = "6: 7 channels"]
-    CH_NUM7,
+    CH_NUM7 = 6,
     #[doc = "7: 8 channels"]
-    CH_NUM8,
+    CH_NUM8 = 7,
 }
 impl From<CH_NR_A> for u8 {
     #[inline(always)]
     fn from(variant: CH_NR_A) -> Self {
-        match variant {
-            CH_NR_A::CH_NUM1 => 0,
-            CH_NR_A::CH_NUM2 => 1,
-            CH_NR_A::CH_NUM3 => 2,
-            CH_NR_A::CH_NUM4 => 3,
-            CH_NR_A::CH_NUM5 => 4,
-            CH_NR_A::CH_NUM6 => 5,
-            CH_NR_A::CH_NUM7 => 6,
-            CH_NR_A::CH_NUM8 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH_NR`"]
@@ -245,17 +234,14 @@ impl<'a> CH_NR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MS_A {
     #[doc = "0: Slave"]
-    SLAVE,
+    SLAVE = 0,
     #[doc = "1: Master"]
-    MASTER,
+    MASTER = 1,
 }
 impl From<MS_A> for bool {
     #[inline(always)]
     fn from(variant: MS_A) -> Self {
-        match variant {
-            MS_A::SLAVE => false,
-            MS_A::MASTER => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `MS`"]
@@ -321,25 +307,21 @@ impl<'a> MS_W<'a> {
 }
 #[doc = "Select I2S, left-justified or TDM: (Note: These bits are connected to AR38U12.RX_CFG.RX_I2S_MODE)\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum I2S_MODE_A {
     #[doc = "0: Left Justified"]
-    LEFT_JUSTIFIED,
+    LEFT_JUSTIFIED = 0,
     #[doc = "1: I2S mode"]
-    I2S,
+    I2S = 1,
     #[doc = "2: TDM mode A, the 1st Channel align to WSO\nRising Edge"]
-    TDM_A,
+    TDM_A = 2,
     #[doc = "3: TDM mode B, the 1st Channel align to WSO\nRising edge with1 SCK Delay"]
-    TDM_B,
+    TDM_B = 3,
 }
 impl From<I2S_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: I2S_MODE_A) -> Self {
-        match variant {
-            I2S_MODE_A::LEFT_JUSTIFIED => 0,
-            I2S_MODE_A::I2S => 1,
-            I2S_MODE_A::TDM_A => 2,
-            I2S_MODE_A::TDM_B => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `I2S_MODE`"]
@@ -420,17 +402,14 @@ impl<'a> I2S_MODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WS_PULSE_A {
     #[doc = "0: Pulse width is 1 SCK period"]
-    SCK_PERIOD,
+    SCK_PERIOD = 0,
     #[doc = "1: Pulse width is 1 channel length"]
-    CH_LENGTH,
+    CH_LENGTH = 1,
 }
 impl From<WS_PULSE_A> for bool {
     #[inline(always)]
     fn from(variant: WS_PULSE_A) -> Self {
-        match variant {
-            WS_PULSE_A::SCK_PERIOD => false,
-            WS_PULSE_A::CH_LENGTH => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WS_PULSE`"]
@@ -520,31 +499,25 @@ impl<'a> WD_EN_W<'a> {
 }
 #[doc = "Channel length in number of bits: Note: - When this field is configured to '6' or '7', the length is set to 32-bit (same as '5'). - When TDM mode, must be 32-bit length to this field. (Note: These bits are connected to AR38U12.RX_CFG.RX_CHLEN)\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CH_LEN_A {
     #[doc = "0: 8-bit"]
-    BIT_LEN8,
+    BIT_LEN8 = 0,
     #[doc = "1: 16-bit"]
-    BIT_LEN16,
+    BIT_LEN16 = 1,
     #[doc = "2: 18-bit"]
-    BIT_LEN18,
+    BIT_LEN18 = 2,
     #[doc = "3: 20-bit"]
-    BIT_LEN20,
+    BIT_LEN20 = 3,
     #[doc = "4: 24-bit"]
-    BIT_LEN24,
+    BIT_LEN24 = 4,
     #[doc = "5: 32-bit"]
-    BIT_LEN32,
+    BIT_LEN32 = 5,
 }
 impl From<CH_LEN_A> for u8 {
     #[inline(always)]
     fn from(variant: CH_LEN_A) -> Self {
-        match variant {
-            CH_LEN_A::BIT_LEN8 => 0,
-            CH_LEN_A::BIT_LEN16 => 1,
-            CH_LEN_A::BIT_LEN18 => 2,
-            CH_LEN_A::BIT_LEN20 => 3,
-            CH_LEN_A::BIT_LEN24 => 4,
-            CH_LEN_A::BIT_LEN32 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CH_LEN`"]
@@ -644,31 +617,25 @@ impl<'a> CH_LEN_W<'a> {
 }
 #[doc = "Word length in number of bits: Note: - When this field is configured to '6' or '7', the length is set to 32-bit (same as '5'). - Don't configure this field as beyond Channel length. (Note: These bits are connected to AR38U12.RX_CFG.RX_IWL)\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum WORD_LEN_A {
     #[doc = "0: 8-bit"]
-    BIT_LEN8,
+    BIT_LEN8 = 0,
     #[doc = "1: 16-bit"]
-    BIT_LEN16,
+    BIT_LEN16 = 1,
     #[doc = "2: 18-bit"]
-    BIT_LEN18,
+    BIT_LEN18 = 2,
     #[doc = "3: 20-bit"]
-    BIT_LEN20,
+    BIT_LEN20 = 3,
     #[doc = "4: 24-bit"]
-    BIT_LEN24,
+    BIT_LEN24 = 4,
     #[doc = "5: 32-bit"]
-    BIT_LEN32,
+    BIT_LEN32 = 5,
 }
 impl From<WORD_LEN_A> for u8 {
     #[inline(always)]
     fn from(variant: WORD_LEN_A) -> Self {
-        match variant {
-            WORD_LEN_A::BIT_LEN8 => 0,
-            WORD_LEN_A::BIT_LEN16 => 1,
-            WORD_LEN_A::BIT_LEN18 => 2,
-            WORD_LEN_A::BIT_LEN20 => 3,
-            WORD_LEN_A::BIT_LEN24 => 4,
-            WORD_LEN_A::BIT_LEN32 => 5,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `WORD_LEN`"]

@@ -23,7 +23,7 @@ pub struct RegisterBlock {
     #[doc = "0x104 - Next DAC value (double buffering)"]
     pub ctdac_val_nxt: CTDAC_VAL_NXT,
 }
-#[doc = "Global CTDAC control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctdac_ctrl](ctdac_ctrl) module"]
+#[doc = "Global CTDAC control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctdac_ctrl](ctdac_ctrl) module"]
 pub type CTDAC_CTRL = crate::Reg<u32, _CTDAC_CTRL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -34,7 +34,7 @@ impl crate::Readable for CTDAC_CTRL {}
 impl crate::Writable for CTDAC_CTRL {}
 #[doc = "Global CTDAC control"]
 pub mod ctdac_ctrl;
-#[doc = "Interrupt request register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intr](intr) module"]
+#[doc = "Interrupt request register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr](intr) module"]
 pub type INTR = crate::Reg<u32, _INTR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -45,7 +45,7 @@ impl crate::Readable for INTR {}
 impl crate::Writable for INTR {}
 #[doc = "Interrupt request register"]
 pub mod intr;
-#[doc = "Interrupt request set register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intr_set](intr_set) module"]
+#[doc = "Interrupt request set register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_set](intr_set) module"]
 pub type INTR_SET = crate::Reg<u32, _INTR_SET>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -56,7 +56,7 @@ impl crate::Readable for INTR_SET {}
 impl crate::Writable for INTR_SET {}
 #[doc = "Interrupt request set register"]
 pub mod intr_set;
-#[doc = "Interrupt request mask\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intr_mask](intr_mask) module"]
+#[doc = "Interrupt request mask\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_mask](intr_mask) module"]
 pub type INTR_MASK = crate::Reg<u32, _INTR_MASK>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -67,7 +67,7 @@ impl crate::Readable for INTR_MASK {}
 impl crate::Writable for INTR_MASK {}
 #[doc = "Interrupt request mask"]
 pub mod intr_mask;
-#[doc = "Interrupt request masked\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intr_masked](intr_masked) module"]
+#[doc = "Interrupt request masked\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_masked](intr_masked) module"]
 pub type INTR_MASKED = crate::Reg<u32, _INTR_MASKED>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -76,7 +76,7 @@ pub struct _INTR_MASKED;
 impl crate::Readable for INTR_MASKED {}
 #[doc = "Interrupt request masked"]
 pub mod intr_masked;
-#[doc = "CTDAC switch control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctdac_sw](ctdac_sw) module"]
+#[doc = "CTDAC switch control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctdac_sw](ctdac_sw) module"]
 pub type CTDAC_SW = crate::Reg<u32, _CTDAC_SW>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -87,7 +87,7 @@ impl crate::Readable for CTDAC_SW {}
 impl crate::Writable for CTDAC_SW {}
 #[doc = "CTDAC switch control"]
 pub mod ctdac_sw;
-#[doc = "CTDAC switch control clear\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctdac_sw_clear](ctdac_sw_clear) module"]
+#[doc = "CTDAC switch control clear\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctdac_sw_clear](ctdac_sw_clear) module"]
 pub type CTDAC_SW_CLEAR = crate::Reg<u32, _CTDAC_SW_CLEAR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -98,7 +98,7 @@ impl crate::Readable for CTDAC_SW_CLEAR {}
 impl crate::Writable for CTDAC_SW_CLEAR {}
 #[doc = "CTDAC switch control clear"]
 pub mod ctdac_sw_clear;
-#[doc = "DAC Value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctdac_val](ctdac_val) module"]
+#[doc = "DAC Value\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctdac_val](ctdac_val) module"]
 pub type CTDAC_VAL = crate::Reg<u32, _CTDAC_VAL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -109,7 +109,7 @@ impl crate::Readable for CTDAC_VAL {}
 impl crate::Writable for CTDAC_VAL {}
 #[doc = "DAC Value"]
 pub mod ctdac_val;
-#[doc = "Next DAC value (double buffering)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctdac_val_nxt](ctdac_val_nxt) module"]
+#[doc = "Next DAC value (double buffering)\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctdac_val_nxt](ctdac_val_nxt) module"]
 pub type CTDAC_VAL_NXT = crate::Reg<u32, _CTDAC_VAL_NXT>;
 #[allow(missing_docs)]
 #[doc(hidden)]

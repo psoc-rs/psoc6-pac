@@ -12,37 +12,29 @@ impl crate::ResetValue for super::OA_RES0_CTRL {
 }
 #[doc = "Opamp0 power level, assumes Cload=15pF for the (internal only) 1x driver or 50pF for the (external) 10x driver\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum OA0_PWR_MODE_A {
     #[doc = "0: Off"]
-    OFF,
+    OFF = 0,
     #[doc = "1: Low power mode (IDD: 350uA, GBW: 1MHz for both 1x/10x)"]
-    LOW,
+    LOW = 1,
     #[doc = "2: Medium power mode (IDD: 600uA, GBW: 3MHz for 1x & 2.5MHz for 10x)"]
-    MEDIUM,
+    MEDIUM = 2,
     #[doc = "3: High power mode for highest GBW (IDD: 1500uA, GBW: 8MHz for 1x & 6MHz for 10x)"]
-    HIGH,
+    HIGH = 3,
     #[doc = "4: N/A"]
-    RSVD,
+    RSVD = 4,
     #[doc = "5: Power Saver Low power mode (IDD: ~20uA with 1uA bias from AREF, GBW: ~100kHz for 1x/10x, offset correcting IDAC is disabled)"]
-    PS_LOW,
+    PS_LOW = 5,
     #[doc = "6: Power Saver Medium power mode (IDD: ~40uA with 1uA bias from AREF, GBW: ~100kHz for 1x/10x, offset correcting IDAC is enabled)"]
-    PS_MEDIUM,
+    PS_MEDIUM = 6,
     #[doc = "7: Power Saver Medium power mode (IDD: ~60uA with 1uA bias from AREF, GBW: ~200kHz for 1x/10x, offset correcting IDAC is enabled)"]
-    PS_HIGH,
+    PS_HIGH = 7,
 }
 impl From<OA0_PWR_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: OA0_PWR_MODE_A) -> Self {
-        match variant {
-            OA0_PWR_MODE_A::OFF => 0,
-            OA0_PWR_MODE_A::LOW => 1,
-            OA0_PWR_MODE_A::MEDIUM => 2,
-            OA0_PWR_MODE_A::HIGH => 3,
-            OA0_PWR_MODE_A::RSVD => 4,
-            OA0_PWR_MODE_A::PS_LOW => 5,
-            OA0_PWR_MODE_A::PS_MEDIUM => 6,
-            OA0_PWR_MODE_A::PS_HIGH => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `OA0_PWR_MODE`"]
@@ -285,25 +277,21 @@ impl<'a> OA0_DSI_LEVEL_W<'a> {
 }
 #[doc = "Opamp0 comparator edge detect for interrupt and pulse mode of DSI (trigger)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum OA0_COMPINT_A {
     #[doc = "0: Disabled, no interrupts will be detected"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: Rising edge"]
-    RISING,
+    RISING = 1,
     #[doc = "2: Falling edge"]
-    FALLING,
+    FALLING = 2,
     #[doc = "3: Both rising and falling edges"]
-    BOTH,
+    BOTH = 3,
 }
 impl From<OA0_COMPINT_A> for u8 {
     #[inline(always)]
     fn from(variant: OA0_COMPINT_A) -> Self {
-        match variant {
-            OA0_COMPINT_A::DISABLE => 0,
-            OA0_COMPINT_A::RISING => 1,
-            OA0_COMPINT_A::FALLING => 2,
-            OA0_COMPINT_A::BOTH => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `OA0_COMPINT`"]

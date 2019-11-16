@@ -12,25 +12,21 @@ impl crate::ResetValue for super::CLK_SELECT {
 }
 #[doc = "Select source for LFCLK. Note that not all products support all clock sources. Selecting a clock source that is not supported will result in undefined behavior. Writes to this field are ignored unless the WDT is unlocked using WDT_LOCK register.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LFCLK_SEL_A {
     #[doc = "0: ILO - Internal Low-speed Oscillator"]
-    ILO,
+    ILO = 0,
     #[doc = "1: WCO - Watch-Crystal Oscillator.  Requires Backup domain to be present and properly configured (including external watch crystal, if used)."]
-    WCO,
+    WCO = 1,
     #[doc = "2: ALTLF - Alternate Low-Frequency Clock.  Capability is product-specific"]
-    ALTLF,
+    ALTLF = 2,
     #[doc = "3: PILO - Precision ILO. If present, it works in DEEPSLEEP and higher modes.  Does not work in HIBERNATE mode."]
-    PILO,
+    PILO = 3,
 }
 impl From<LFCLK_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: LFCLK_SEL_A) -> Self {
-        match variant {
-            LFCLK_SEL_A::ILO => 0,
-            LFCLK_SEL_A::WCO => 1,
-            LFCLK_SEL_A::ALTLF => 2,
-            LFCLK_SEL_A::PILO => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LFCLK_SEL`"]
@@ -123,28 +119,23 @@ impl<'a> PUMP_SEL_W<'a> {
 }
 #[doc = "Division ratio for PUMPCLK. Uses selected PUMP_SEL clock as the source.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PUMP_DIV_A {
     #[doc = "0: Transparent mode, feed through selected clock source w/o dividing."]
-    NO_DIV,
+    NO_DIV = 0,
     #[doc = "1: Divide selected clock source by 2"]
-    DIV_BY_2,
+    DIV_BY_2 = 1,
     #[doc = "2: Divide selected clock source by 4"]
-    DIV_BY_4,
+    DIV_BY_4 = 2,
     #[doc = "3: Divide selected clock source by 8"]
-    DIV_BY_8,
+    DIV_BY_8 = 3,
     #[doc = "4: Divide selected clock source by 16"]
-    DIV_BY_16,
+    DIV_BY_16 = 4,
 }
 impl From<PUMP_DIV_A> for u8 {
     #[inline(always)]
     fn from(variant: PUMP_DIV_A) -> Self {
-        match variant {
-            PUMP_DIV_A::NO_DIV => 0,
-            PUMP_DIV_A::DIV_BY_2 => 1,
-            PUMP_DIV_A::DIV_BY_4 => 2,
-            PUMP_DIV_A::DIV_BY_8 => 3,
-            PUMP_DIV_A::DIV_BY_16 => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PUMP_DIV`"]

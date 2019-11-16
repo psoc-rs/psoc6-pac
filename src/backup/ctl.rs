@@ -36,19 +36,17 @@ impl<'a> WCO_EN_W<'a> {
 }
 #[doc = "Clock select for BAK clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CLK_SEL_A {
     #[doc = "0: Watch-crystal oscillator input."]
-    WCO,
+    WCO = 0,
     #[doc = "1: This allows to use the LFCLK selection as an alternate backup domain clock.  Note that LFCLK is not available in all power modes, and clock glitches can propagate into the backup logic when the clock is stopped.  For this reason, if the WCO is intended as the clock source then choose it directly instead of routing through LFCLK."]
-    ALTBAK,
+    ALTBAK = 1,
 }
 impl From<CLK_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: CLK_SEL_A) -> Self {
-        match variant {
-            CLK_SEL_A::WCO => 0,
-            CLK_SEL_A::ALTBAK => 1,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CLK_SEL`"]

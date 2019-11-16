@@ -62,17 +62,14 @@ impl<'a> DMA_REQ_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CRC_BYPASS_A {
     #[doc = "0: No CRC bypass; CRC bytes will be written to memory and Termin will be generated for the CRC byte/s"]
-    CRC_NORMAL,
+    CRC_NORMAL = 0,
     #[doc = "1: CRC Bypass Set; CRC bytes will not be written into memory and Termin will be generated for the last data byte/s"]
-    CRC_BYPASS,
+    CRC_BYPASS = 1,
 }
 impl From<CRC_BYPASS_A> for bool {
     #[inline(always)]
     fn from(variant: CRC_BYPASS_A) -> Self {
-        match variant {
-            CRC_BYPASS_A::CRC_NORMAL => false,
-            CRC_BYPASS_A::CRC_BYPASS => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CRC_BYPASS`"]
@@ -140,17 +137,14 @@ impl<'a> CRC_BYPASS_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RESET_PTR_A {
     #[doc = "0: Do not Reset Pointer; Krypton Backward compatibility mode"]
-    RESET_KRYPTON,
+    RESET_KRYPTON = 0,
     #[doc = "1: Reset Pointer; recommended value for reduction of CPU Configuration Writes."]
-    RESET_NORMAL,
+    RESET_NORMAL = 1,
 }
 impl From<RESET_PTR_A> for bool {
     #[inline(always)]
     fn from(variant: RESET_PTR_A) -> Self {
-        match variant {
-            RESET_PTR_A::RESET_KRYPTON => false,
-            RESET_PTR_A::RESET_NORMAL => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `RESET_PTR`"]

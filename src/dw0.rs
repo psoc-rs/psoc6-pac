@@ -58,7 +58,7 @@ pub struct CH_STRUCT {
 #[doc = r"Register block"]
 #[doc = "DW channel structure"]
 pub mod ch_struct;
-#[doc = "Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [ctl](ctl) module"]
+#[doc = "Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctl](ctl) module"]
 pub type CTL = crate::Reg<u32, _CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -69,7 +69,7 @@ impl crate::Readable for CTL {}
 impl crate::Writable for CTL {}
 #[doc = "Control"]
 pub mod ctl;
-#[doc = "Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [status](status) module"]
+#[doc = "Status\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](status) module"]
 pub type STATUS = crate::Reg<u32, _STATUS>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -78,7 +78,7 @@ pub struct _STATUS;
 impl crate::Readable for STATUS {}
 #[doc = "Status"]
 pub mod status;
-#[doc = "Pending channels\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [pending](pending) module"]
+#[doc = "Pending channels\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pending](pending) module"]
 pub type PENDING = crate::Reg<u32, _PENDING>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -87,7 +87,7 @@ pub struct _PENDING;
 impl crate::Readable for PENDING {}
 #[doc = "Pending channels"]
 pub mod pending;
-#[doc = "System interrupt control\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [status_intr](status_intr) module"]
+#[doc = "System interrupt control\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status_intr](status_intr) module"]
 pub type STATUS_INTR = crate::Reg<u32, _STATUS_INTR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -96,7 +96,7 @@ pub struct _STATUS_INTR;
 impl crate::Readable for STATUS_INTR {}
 #[doc = "System interrupt control"]
 pub mod status_intr;
-#[doc = "Status of interrupts masked\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [status_intr_masked](status_intr_masked) module"]
+#[doc = "Status of interrupts masked\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status_intr_masked](status_intr_masked) module"]
 pub type STATUS_INTR_MASKED = crate::Reg<u32, _STATUS_INTR_MASKED>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -105,7 +105,7 @@ pub struct _STATUS_INTR_MASKED;
 impl crate::Readable for STATUS_INTR_MASKED {}
 #[doc = "Status of interrupts masked"]
 pub mod status_intr_masked;
-#[doc = "Active descriptor control\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [act_descr_ctl](act_descr_ctl) module"]
+#[doc = "Active descriptor control\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [act_descr_ctl](act_descr_ctl) module"]
 pub type ACT_DESCR_CTL = crate::Reg<u32, _ACT_DESCR_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -114,7 +114,7 @@ pub struct _ACT_DESCR_CTL;
 impl crate::Readable for ACT_DESCR_CTL {}
 #[doc = "Active descriptor control"]
 pub mod act_descr_ctl;
-#[doc = "Active descriptor source\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [act_descr_src](act_descr_src) module"]
+#[doc = "Active descriptor source\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [act_descr_src](act_descr_src) module"]
 pub type ACT_DESCR_SRC = crate::Reg<u32, _ACT_DESCR_SRC>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -123,7 +123,7 @@ pub struct _ACT_DESCR_SRC;
 impl crate::Readable for ACT_DESCR_SRC {}
 #[doc = "Active descriptor source"]
 pub mod act_descr_src;
-#[doc = "Active descriptor destination\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [act_descr_dst](act_descr_dst) module"]
+#[doc = "Active descriptor destination\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [act_descr_dst](act_descr_dst) module"]
 pub type ACT_DESCR_DST = crate::Reg<u32, _ACT_DESCR_DST>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -132,7 +132,7 @@ pub struct _ACT_DESCR_DST;
 impl crate::Readable for ACT_DESCR_DST {}
 #[doc = "Active descriptor destination"]
 pub mod act_descr_dst;
-#[doc = "Active descriptor X loop control\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [act_descr_x_ctl](act_descr_x_ctl) module"]
+#[doc = "Active descriptor X loop control\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [act_descr_x_ctl](act_descr_x_ctl) module"]
 pub type ACT_DESCR_X_CTL = crate::Reg<u32, _ACT_DESCR_X_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -141,7 +141,7 @@ pub struct _ACT_DESCR_X_CTL;
 impl crate::Readable for ACT_DESCR_X_CTL {}
 #[doc = "Active descriptor X loop control"]
 pub mod act_descr_x_ctl;
-#[doc = "Active descriptor Y loop control\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [act_descr_y_ctl](act_descr_y_ctl) module"]
+#[doc = "Active descriptor Y loop control\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [act_descr_y_ctl](act_descr_y_ctl) module"]
 pub type ACT_DESCR_Y_CTL = crate::Reg<u32, _ACT_DESCR_Y_CTL>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -150,7 +150,7 @@ pub struct _ACT_DESCR_Y_CTL;
 impl crate::Readable for ACT_DESCR_Y_CTL {}
 #[doc = "Active descriptor Y loop control"]
 pub mod act_descr_y_ctl;
-#[doc = "Active descriptor next pointer\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [act_descr_next_ptr](act_descr_next_ptr) module"]
+#[doc = "Active descriptor next pointer\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [act_descr_next_ptr](act_descr_next_ptr) module"]
 pub type ACT_DESCR_NEXT_PTR = crate::Reg<u32, _ACT_DESCR_NEXT_PTR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -159,7 +159,7 @@ pub struct _ACT_DESCR_NEXT_PTR;
 impl crate::Readable for ACT_DESCR_NEXT_PTR {}
 #[doc = "Active descriptor next pointer"]
 pub mod act_descr_next_ptr;
-#[doc = "Active source\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [act_src](act_src) module"]
+#[doc = "Active source\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [act_src](act_src) module"]
 pub type ACT_SRC = crate::Reg<u32, _ACT_SRC>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -168,7 +168,7 @@ pub struct _ACT_SRC;
 impl crate::Readable for ACT_SRC {}
 #[doc = "Active source"]
 pub mod act_src;
-#[doc = "Active destination\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [act_dst](act_dst) module"]
+#[doc = "Active destination\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [act_dst](act_dst) module"]
 pub type ACT_DST = crate::Reg<u32, _ACT_DST>;
 #[allow(missing_docs)]
 #[doc(hidden)]

@@ -12,34 +12,27 @@ impl crate::ResetValue for super::DFT_CTL {
 }
 #[doc = "DDFT output select signal\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DDFT_OUT_SEL_A {
     #[doc = "0: Nothing connected, output 0"]
-    OFF,
+    OFF = 0,
     #[doc = "1: Single Ended output of DP"]
-    DP_SE,
+    DP_SE = 1,
     #[doc = "2: Single Ended output of DM"]
-    DM_SE,
+    DM_SE = 2,
     #[doc = "3: Output Enable"]
-    TXOE,
+    TXOE = 3,
     #[doc = "4: Differential Receiver output"]
-    RCV_DF,
+    RCV_DF = 4,
     #[doc = "5: GPIO output of DP"]
-    GPIO_DP_OUT,
+    GPIO_DP_OUT = 5,
     #[doc = "6: GPIO output of DM"]
-    GPIO_DM_OUT,
+    GPIO_DM_OUT = 6,
 }
 impl From<DDFT_OUT_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: DDFT_OUT_SEL_A) -> Self {
-        match variant {
-            DDFT_OUT_SEL_A::OFF => 0,
-            DDFT_OUT_SEL_A::DP_SE => 1,
-            DDFT_OUT_SEL_A::DM_SE => 2,
-            DDFT_OUT_SEL_A::TXOE => 3,
-            DDFT_OUT_SEL_A::RCV_DF => 4,
-            DDFT_OUT_SEL_A::GPIO_DP_OUT => 5,
-            DDFT_OUT_SEL_A::GPIO_DM_OUT => 6,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DDFT_OUT_SEL`"]
@@ -150,22 +143,19 @@ impl<'a> DDFT_OUT_SEL_W<'a> {
 }
 #[doc = "DDFT input select signal\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DDFT_IN_SEL_A {
     #[doc = "0: Nothing connected, output 0"]
-    OFF,
+    OFF = 0,
     #[doc = "1: GPIO input of DP"]
-    GPIO_DP_IN,
+    GPIO_DP_IN = 1,
     #[doc = "2: GPIO input of DM"]
-    GPIO_DM_IN,
+    GPIO_DM_IN = 2,
 }
 impl From<DDFT_IN_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: DDFT_IN_SEL_A) -> Self {
-        match variant {
-            DDFT_IN_SEL_A::OFF => 0,
-            DDFT_IN_SEL_A::GPIO_DP_IN => 1,
-            DDFT_IN_SEL_A::GPIO_DM_IN => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DDFT_IN_SEL`"]

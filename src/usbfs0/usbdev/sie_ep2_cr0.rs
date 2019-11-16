@@ -12,52 +12,39 @@ impl crate::ResetValue for super::SIE_EP2_CR0 {
 }
 #[doc = "The mode controls how the USB SIE responds to traffic and how the USB SIE changes the mode of that endpoint as a result of host packets to the endpoint.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Ignore all USB traffic to this endpoint"]
-    DISABLE,
+    DISABLE = 0,
     #[doc = "1: SETUP: Accept\nIN: NAK\nOUT:  NAK"]
-    NAK_INOUT,
+    NAK_INOUT = 1,
     #[doc = "2: SETUP: Accept\nIN: STALL\nOUT:  ACK 0B tokens, NAK others"]
-    STATUS_OUT_ONLY,
+    STATUS_OUT_ONLY = 2,
     #[doc = "3: SETUP: Accept\nIN: STALL\nOUT:  STALL"]
-    STALL_INOUT,
+    STALL_INOUT = 3,
     #[doc = "5: SETUP: Ignore\nIN: Ignore\nOUT:  Accept Isochronous OUT token"]
-    ISO_OUT,
+    ISO_OUT = 5,
     #[doc = "6: SETUP: Accept\nIN: Respond with 0B data\nOUT:  Stall"]
-    STATUS_IN_ONLY,
+    STATUS_IN_ONLY = 6,
     #[doc = "7: SETUP: Ignore\nIN: Accept Isochronous IN token\nOUT:  Ignore"]
-    ISO_IN,
+    ISO_IN = 7,
     #[doc = "8: SETUP: Ignore\nIN: Ignore\nOUT:  NAK"]
-    NAK_OUT,
+    NAK_OUT = 8,
     #[doc = "9: SETUP: Ignore\nIN: Ignore\nOUT:  Accept data and ACK if STALL=0, STALL otherwise.\nChange to MODE=8 after one succesfull OUT token."]
-    ACK_OUT,
+    ACK_OUT = 9,
     #[doc = "11: SETUP: Accept\nIN: Respond with 0B data\nOUT:  Accept data"]
-    ACK_OUT_STATUS_IN,
+    ACK_OUT_STATUS_IN = 11,
     #[doc = "12: SETUP: Ignore\nIN: NAK\nOUT:  Ignore"]
-    NAK_IN,
+    NAK_IN = 12,
     #[doc = "13: SETUP: Ignore\nIN: Respond to IN with data if STALL=0, STALL otherwise\nOUT:  Ignore"]
-    ACK_IN,
+    ACK_IN = 13,
     #[doc = "15: SETUP: Accept\nIN: Respond to IN with data\nOUT:  ACK 0B tokens, NAK others"]
-    ACK_IN_STATUS_OUT,
+    ACK_IN_STATUS_OUT = 15,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::DISABLE => 0,
-            MODE_A::NAK_INOUT => 1,
-            MODE_A::STATUS_OUT_ONLY => 2,
-            MODE_A::STALL_INOUT => 3,
-            MODE_A::ISO_OUT => 5,
-            MODE_A::STATUS_IN_ONLY => 6,
-            MODE_A::ISO_IN => 7,
-            MODE_A::NAK_OUT => 8,
-            MODE_A::ACK_OUT => 9,
-            MODE_A::ACK_OUT_STATUS_IN => 11,
-            MODE_A::NAK_IN => 12,
-            MODE_A::ACK_IN => 13,
-            MODE_A::ACK_IN_STATUS_OUT => 15,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]
@@ -236,17 +223,14 @@ impl<'a> MODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ACKED_TXN_A {
     #[doc = "0: No ACK'd transactions since bit was last cleared."]
-    ACKED_NO,
+    ACKED_NO = 0,
     #[doc = "1: Indicates a transaction ended with an ACK."]
-    ACKED_YES,
+    ACKED_YES = 1,
 }
 impl From<ACKED_TXN_A> for bool {
     #[inline(always)]
     fn from(variant: ACKED_TXN_A) -> Self {
-        match variant {
-            ACKED_TXN_A::ACKED_NO => false,
-            ACKED_TXN_A::ACKED_YES => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `ACKED_TXN`"]

@@ -28,17 +28,14 @@ impl<'a> VAL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POL_DYN_A {
     #[doc = "0: N/A"]
-    STATIC,
+    STATIC = 0,
     #[doc = "1: N/A"]
-    DYNAMIC,
+    DYNAMIC = 1,
 }
 impl From<POL_DYN_A> for bool {
     #[inline(always)]
     fn from(variant: POL_DYN_A) -> Self {
-        match variant {
-            POL_DYN_A::STATIC => false,
-            POL_DYN_A::DYNAMIC => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `POL_DYN`"]
@@ -104,25 +101,21 @@ impl<'a> POL_DYN_W<'a> {
 }
 #[doc = "N/A\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum POLARITY_A {
     #[doc = "0: Normal: sensor switching between Vssio and Cmod.   For non-CSD application, IDAC1 will source current."]
-    VSSA_SRC,
+    VSSA_SRC = 0,
     #[doc = "1: Inverted: sensor switch between Vddio and Cmod.  For non-CSD application, IDAC1 will sink current."]
-    VDDA_SNK,
+    VDDA_SNK = 1,
     #[doc = "2: N/A"]
-    SENSE,
+    SENSE = 2,
     #[doc = "3: N/A"]
-    SENSE_INV,
+    SENSE_INV = 3,
 }
 impl From<POLARITY_A> for u8 {
     #[inline(always)]
     fn from(variant: POLARITY_A) -> Self {
-        match variant {
-            POLARITY_A::VSSA_SRC => 0,
-            POLARITY_A::VDDA_SNK => 1,
-            POLARITY_A::SENSE => 2,
-            POLARITY_A::SENSE_INV => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `POLARITY`"]
@@ -201,25 +194,21 @@ impl<'a> POLARITY_W<'a> {
 }
 #[doc = "N/A\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum BAL_MODE_A {
     #[doc = "0: N/A"]
-    FULL,
+    FULL = 0,
     #[doc = "1: N/A"]
-    PHI1,
+    PHI1 = 1,
     #[doc = "2: N/A"]
-    PHI2,
+    PHI2 = 2,
     #[doc = "3: N/A"]
-    PHI1_2,
+    PHI1_2 = 3,
 }
 impl From<BAL_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: BAL_MODE_A) -> Self {
-        match variant {
-            BAL_MODE_A::FULL => 0,
-            BAL_MODE_A::PHI1 => 1,
-            BAL_MODE_A::PHI2 => 2,
-            BAL_MODE_A::PHI1_2 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `BAL_MODE`"]
@@ -298,25 +287,21 @@ impl<'a> BAL_MODE_W<'a> {
 }
 #[doc = "N/A\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LEG1_MODE_A {
     #[doc = "0: N/A"]
-    GP_STATIC,
+    GP_STATIC = 0,
     #[doc = "1: N/A"]
-    GP,
+    GP = 1,
     #[doc = "2: N/A"]
-    CSD_STATIC,
+    CSD_STATIC = 2,
     #[doc = "3: N/A"]
-    CSD,
+    CSD = 3,
 }
 impl From<LEG1_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: LEG1_MODE_A) -> Self {
-        match variant {
-            LEG1_MODE_A::GP_STATIC => 0,
-            LEG1_MODE_A::GP => 1,
-            LEG1_MODE_A::CSD_STATIC => 2,
-            LEG1_MODE_A::CSD => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LEG1_MODE`"]
@@ -395,25 +380,21 @@ impl<'a> LEG1_MODE_W<'a> {
 }
 #[doc = "N/A\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum LEG2_MODE_A {
     #[doc = "0: N/A"]
-    GP_STATIC,
+    GP_STATIC = 0,
     #[doc = "1: N/A"]
-    GP,
+    GP = 1,
     #[doc = "2: N/A"]
-    CSD_STATIC,
+    CSD_STATIC = 2,
     #[doc = "3: N/A"]
-    CSD,
+    CSD = 3,
 }
 impl From<LEG2_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: LEG2_MODE_A) -> Self {
-        match variant {
-            LEG2_MODE_A::GP_STATIC => 0,
-            LEG2_MODE_A::GP => 1,
-            LEG2_MODE_A::CSD_STATIC => 2,
-            LEG2_MODE_A::CSD => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `LEG2_MODE`"]
@@ -516,22 +497,19 @@ impl<'a> DSI_CTRL_EN_W<'a> {
 }
 #[doc = "N/A\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RANGE_A {
     #[doc = "0: N/A"]
-    IDAC_LO,
+    IDAC_LO = 0,
     #[doc = "1: N/A"]
-    IDAC_MED,
+    IDAC_MED = 1,
     #[doc = "2: N/A"]
-    IDAC_HI,
+    IDAC_HI = 2,
 }
 impl From<RANGE_A> for u8 {
     #[inline(always)]
     fn from(variant: RANGE_A) -> Self {
-        match variant {
-            RANGE_A::IDAC_LO => 0,
-            RANGE_A::IDAC_MED => 1,
-            RANGE_A::IDAC_HI => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RANGE`"]

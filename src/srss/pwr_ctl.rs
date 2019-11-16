@@ -12,25 +12,21 @@ impl crate::ResetValue for super::PWR_CTL {
 }
 #[doc = "Current power mode of the device. LPACTIVE/LPSLEEP are implemented as firmware configuration of multiple registers and are reported here as ACTIVE/SLEEP, respectively. Note that this field cannot be read in all power modes on actual silicon.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum POWER_MODE_A {
     #[doc = "0: System is resetting."]
-    RESET,
+    RESET = 0,
     #[doc = "1: At least one CPU is running."]
-    ACTIVE,
+    ACTIVE = 1,
     #[doc = "2: No CPUs are running.  Peripherals may be running."]
-    SLEEP,
+    SLEEP = 2,
     #[doc = "3: Main high-frequency clock is off; low speed clocks are available.  Communication interface clocks may be present."]
-    DEEPSLEEP,
+    DEEPSLEEP = 3,
 }
 impl From<POWER_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: POWER_MODE_A) -> Self {
-        match variant {
-            POWER_MODE_A::RESET => 0,
-            POWER_MODE_A::ACTIVE => 1,
-            POWER_MODE_A::SLEEP => 2,
-            POWER_MODE_A::DEEPSLEEP => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `POWER_MODE`"]
@@ -72,17 +68,14 @@ impl POWER_MODE_R {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DEBUG_SESSION_A {
     #[doc = "0: No debug session active"]
-    NO_SESSION,
+    NO_SESSION = 0,
     #[doc = "1: Debug session is active.  Power modes behave differently to keep the debug session active."]
-    SESSION_ACTIVE,
+    SESSION_ACTIVE = 1,
 }
 impl From<DEBUG_SESSION_A> for bool {
     #[inline(always)]
     fn from(variant: DEBUG_SESSION_A) -> Self {
-        match variant {
-            DEBUG_SESSION_A::NO_SESSION => false,
-            DEBUG_SESSION_A::SESSION_ACTIVE => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `DEBUG_SESSION`"]

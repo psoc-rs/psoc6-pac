@@ -12,73 +12,53 @@ impl crate::ResetValue for super::CLK_DSI_SELECT {
 }
 #[doc = "Selects a DSI source or low frequency clock for use in a clock path. The output of this mux can be selected for clock PATH<i> using CLK_SELECT_PATH register. Using the output of this mux as HFCLK source will result in undefined behavior. It can be used to clocks to DSI or to the reference inputs of FLL/PLL, subject to the frequency limits of those circuits. This mux is not glitch free, so do not change the selection while it is an actively selected clock.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum DSI_MUX_A {
     #[doc = "0: DSI0 - dsi_out\\[0\\]"]
-    DSI_OUT0,
+    DSI_OUT0 = 0,
     #[doc = "1: DSI1 - dsi_out\\[1\\]"]
-    DSI_OUT1,
+    DSI_OUT1 = 1,
     #[doc = "2: DSI2 - dsi_out\\[2\\]"]
-    DSI_OUT2,
+    DSI_OUT2 = 2,
     #[doc = "3: DSI3 - dsi_out\\[3\\]"]
-    DSI_OUT3,
+    DSI_OUT3 = 3,
     #[doc = "4: DSI4 - dsi_out\\[4\\]"]
-    DSI_OUT4,
+    DSI_OUT4 = 4,
     #[doc = "5: DSI5 - dsi_out\\[5\\]"]
-    DSI_OUT5,
+    DSI_OUT5 = 5,
     #[doc = "6: DSI6 - dsi_out\\[6\\]"]
-    DSI_OUT6,
+    DSI_OUT6 = 6,
     #[doc = "7: DSI7 - dsi_out\\[7\\]"]
-    DSI_OUT7,
+    DSI_OUT7 = 7,
     #[doc = "8: DSI8 - dsi_out\\[8\\]"]
-    DSI_OUT8,
+    DSI_OUT8 = 8,
     #[doc = "9: DSI9 - dsi_out\\[9\\]"]
-    DSI_OUT9,
+    DSI_OUT9 = 9,
     #[doc = "10: DSI10 - dsi_out\\[10\\]"]
-    DSI_OUT10,
+    DSI_OUT10 = 10,
     #[doc = "11: DSI11 - dsi_out\\[11\\]"]
-    DSI_OUT11,
+    DSI_OUT11 = 11,
     #[doc = "12: DSI12 - dsi_out\\[12\\]"]
-    DSI_OUT12,
+    DSI_OUT12 = 12,
     #[doc = "13: DSI13 - dsi_out\\[13\\]"]
-    DSI_OUT13,
+    DSI_OUT13 = 13,
     #[doc = "14: DSI14 - dsi_out\\[14\\]"]
-    DSI_OUT14,
+    DSI_OUT14 = 14,
     #[doc = "15: DSI15 - dsi_out\\[15\\]"]
-    DSI_OUT15,
+    DSI_OUT15 = 15,
     #[doc = "16: ILO - Internal Low-speed Oscillator"]
-    ILO,
+    ILO = 16,
     #[doc = "17: WCO - Watch-Crystal Oscillator"]
-    WCO,
+    WCO = 17,
     #[doc = "18: ALTLF - Alternate Low-Frequency Clock"]
-    ALTLF,
+    ALTLF = 18,
     #[doc = "19: PILO - Precision Internal Low-speed Oscillator"]
-    PILO,
+    PILO = 19,
 }
 impl From<DSI_MUX_A> for u8 {
     #[inline(always)]
     fn from(variant: DSI_MUX_A) -> Self {
-        match variant {
-            DSI_MUX_A::DSI_OUT0 => 0,
-            DSI_MUX_A::DSI_OUT1 => 1,
-            DSI_MUX_A::DSI_OUT2 => 2,
-            DSI_MUX_A::DSI_OUT3 => 3,
-            DSI_MUX_A::DSI_OUT4 => 4,
-            DSI_MUX_A::DSI_OUT5 => 5,
-            DSI_MUX_A::DSI_OUT6 => 6,
-            DSI_MUX_A::DSI_OUT7 => 7,
-            DSI_MUX_A::DSI_OUT8 => 8,
-            DSI_MUX_A::DSI_OUT9 => 9,
-            DSI_MUX_A::DSI_OUT10 => 10,
-            DSI_MUX_A::DSI_OUT11 => 11,
-            DSI_MUX_A::DSI_OUT12 => 12,
-            DSI_MUX_A::DSI_OUT13 => 13,
-            DSI_MUX_A::DSI_OUT14 => 14,
-            DSI_MUX_A::DSI_OUT15 => 15,
-            DSI_MUX_A::ILO => 16,
-            DSI_MUX_A::WCO => 17,
-            DSI_MUX_A::ALTLF => 18,
-            DSI_MUX_A::PILO => 19,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `DSI_MUX`"]

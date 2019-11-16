@@ -36,11 +36,16 @@ The MSRV is also explicitly tested against in [.travis.yml](.travis.yml).
 
 To regenerate the bindings, make sure that the current versions of `svd2rust`
 and `form` are installed, and that you're on the current stable Rust version.
-Then run these commands to regenerate the bindings:
+
+> __NOTE__: The unreleased version of `svd2rust` is required to generate the
+> bindings currently. You can install this version via the following command:
+>
+> ```
+> cargo install --git https://github.com/rust-embedded/svd2rust.git --force svd2rust
+> ```
+
+Then run this script to regenerate the bindings:
 
 ```
-svd2rust -i svd/psoc63.svd
-rm -rf src
-form -i lib.rs -o src/ && rm lib.rs
-cargo fmt
+./generate.sh
 ```

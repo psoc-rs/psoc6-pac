@@ -14,17 +14,14 @@ impl crate::ResetValue for super::CSDCMP {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CSDCMP_EN_A {
     #[doc = "0: Disable comparator, output is zero"]
-    OFF,
+    OFF = 0,
     #[doc = "1: On, regular operation. Note that CONFIG.LP_MODE determines the power mode level"]
-    ON,
+    ON = 1,
 }
 impl From<CSDCMP_EN_A> for bool {
     #[inline(always)]
     fn from(variant: CSDCMP_EN_A) -> Self {
-        match variant {
-            CSDCMP_EN_A::OFF => false,
-            CSDCMP_EN_A::ON => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CSDCMP_EN`"]
@@ -90,22 +87,19 @@ impl<'a> CSDCMP_EN_W<'a> {
 }
 #[doc = "Select which IDAC polarity to use to detect CSDCMP triggering\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum POLARITY_SEL_A {
     #[doc = "0: Use idaca_pol (firmware setting with CSX and optionally DSI mixed in) to determine the direction, this is the most common use-case, used for normal CSD and normal CSX"]
-    IDACA_POL,
+    IDACA_POL = 0,
     #[doc = "1: Use idacb_pol (firmware setting with optional DSI mixed in) to determine the direction, this is only used for normal CSD if IDACB is used i.s.o. IDACA (not common)"]
-    IDACB_POL,
+    IDACB_POL = 1,
     #[doc = "2: Use the expression (csd_sense ? idaca_pol : idacb_pol)  to determine the direction, this is only useful for the CSX with DUAL_IDAC use-case"]
-    DUAL_POL,
+    DUAL_POL = 2,
 }
 impl From<POLARITY_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: POLARITY_SEL_A) -> Self {
-        match variant {
-            POLARITY_SEL_A::IDACA_POL => 0,
-            POLARITY_SEL_A::IDACB_POL => 1,
-            POLARITY_SEL_A::DUAL_POL => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `POLARITY_SEL`"]
@@ -172,25 +166,21 @@ impl<'a> POLARITY_SEL_W<'a> {
 }
 #[doc = "Select in what phase(s) the comparator is active, typically set to match the BAL_MODE of the used IDAC. Note, this also determines when a bad conversion is detected, namely at the beginning and end of the comparator active phase (also taking into account FILTER_DELAY and non-overlap).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CMP_PHASE_A {
     #[doc = "0: Comparator is active from start of Phi2 and kept active into Phi1. Intended usage: legacy CSD for balancing over a full csd_sense period (non-overlap should be turned off)"]
-    FULL,
+    FULL = 0,
     #[doc = "1: Comparator is active during Phi1 only. Currently no known use-case."]
-    PHI1,
+    PHI1 = 1,
     #[doc = "2: Comparator is active during Phi2 only. Intended usage: CSD Low EMI."]
-    PHI2,
+    PHI2 = 2,
     #[doc = "3: Comparator is activated at the start of both Phi1 and Phi2 (non-overlap should be enabled). Intended usage: CSX, or Full-Wave."]
-    PHI1_2,
+    PHI1_2 = 3,
 }
 impl From<CMP_PHASE_A> for u8 {
     #[inline(always)]
     fn from(variant: CMP_PHASE_A) -> Self {
-        match variant {
-            CMP_PHASE_A::FULL => 0,
-            CMP_PHASE_A::PHI1 => 1,
-            CMP_PHASE_A::PHI2 => 2,
-            CMP_PHASE_A::PHI1_2 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CMP_PHASE`"]
@@ -271,17 +261,14 @@ impl<'a> CMP_PHASE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMP_MODE_A {
     #[doc = "0: CSD mode: output the filtered sample signal on dsi_sample_out"]
-    CSD,
+    CSD = 0,
     #[doc = "1: General Purpose mode: output the unfiltered sample unfiltered comparator output, either asynchronous or flopped."]
-    GP,
+    GP = 1,
 }
 impl From<CMP_MODE_A> for bool {
     #[inline(always)]
     fn from(variant: CMP_MODE_A) -> Self {
-        match variant {
-            CMP_MODE_A::CSD => false,
-            CMP_MODE_A::GP => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `CMP_MODE`"]
@@ -349,17 +336,14 @@ impl<'a> CMP_MODE_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FEEDBACK_MODE_A {
     #[doc = "0: Use feedback from sampling flip-flop (used in most modes)."]
-    FLOP,
+    FLOP = 0,
     #[doc = "1: Use feedback from comparator directly (used in single Cmod mutual cap sensing only)"]
-    COMP,
+    COMP = 1,
 }
 impl From<FEEDBACK_MODE_A> for bool {
     #[inline(always)]
     fn from(variant: FEEDBACK_MODE_A) -> Self {
-        match variant {
-            FEEDBACK_MODE_A::FLOP => false,
-            FEEDBACK_MODE_A::COMP => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `FEEDBACK_MODE`"]

@@ -12,25 +12,21 @@ impl crate::ResetValue for super::DATA_CTL {
 }
 #[doc = "PCM Word Length in number of bits: (Note: These bits are connected to AR36U12.PDM_CORE2_CFG.PCM_IWL)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum WORD_LEN_A {
     #[doc = "0: 16-bit"]
-    BIT_LEN16,
+    BIT_LEN16 = 0,
     #[doc = "1: 18-bit"]
-    BIT_LEN18,
+    BIT_LEN18 = 1,
     #[doc = "2: 20-bit"]
-    BIT_LEN20,
+    BIT_LEN20 = 2,
     #[doc = "3: 24-bit"]
-    BIT_LEN24,
+    BIT_LEN24 = 3,
 }
 impl From<WORD_LEN_A> for u8 {
     #[inline(always)]
     fn from(variant: WORD_LEN_A) -> Self {
-        match variant {
-            WORD_LEN_A::BIT_LEN16 => 0,
-            WORD_LEN_A::BIT_LEN18 => 1,
-            WORD_LEN_A::BIT_LEN20 => 2,
-            WORD_LEN_A::BIT_LEN24 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `WORD_LEN`"]

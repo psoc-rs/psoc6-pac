@@ -12,25 +12,21 @@ impl crate::ResetValue for super::MCWDT_CONFIG {
 }
 #[doc = "Watchdog Counter Action on Match. Action is taken on the next increment after the values match (WDT_CTR0=WDT_MATCH0).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum WDT_MODE0_A {
     #[doc = "0: Do nothing"]
-    NOTHING,
+    NOTHING = 0,
     #[doc = "1: Assert WDT_INTx"]
-    INT,
+    INT = 1,
     #[doc = "2: Assert WDT Reset"]
-    RESET,
+    RESET = 2,
     #[doc = "3: Assert WDT_INTx, assert WDT Reset after 3rd unhandled interrupt"]
-    INT_THEN_RESET,
+    INT_THEN_RESET = 3,
 }
 impl From<WDT_MODE0_A> for u8 {
     #[inline(always)]
     fn from(variant: WDT_MODE0_A) -> Self {
-        match variant {
-            WDT_MODE0_A::NOTHING => 0,
-            WDT_MODE0_A::INT => 1,
-            WDT_MODE0_A::RESET => 2,
-            WDT_MODE0_A::INT_THEN_RESET => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `WDT_MODE0`"]
@@ -157,25 +153,21 @@ impl<'a> WDT_CASCADE0_1_W<'a> {
 }
 #[doc = "Watchdog Counter Action on Match. Action is taken on the next increment after the values match (WDT_CTR1=WDT_MATCH1).\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum WDT_MODE1_A {
     #[doc = "0: Do nothing"]
-    NOTHING,
+    NOTHING = 0,
     #[doc = "1: Assert WDT_INTx"]
-    INT,
+    INT = 1,
     #[doc = "2: Assert WDT Reset"]
-    RESET,
+    RESET = 2,
     #[doc = "3: Assert WDT_INTx, assert WDT Reset after 3rd unhandled interrupt"]
-    INT_THEN_RESET,
+    INT_THEN_RESET = 3,
 }
 impl From<WDT_MODE1_A> for u8 {
     #[inline(always)]
     fn from(variant: WDT_MODE1_A) -> Self {
-        match variant {
-            WDT_MODE1_A::NOTHING => 0,
-            WDT_MODE1_A::INT => 1,
-            WDT_MODE1_A::RESET => 2,
-            WDT_MODE1_A::INT_THEN_RESET => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `WDT_MODE1`"]
@@ -304,17 +296,14 @@ impl<'a> WDT_CASCADE1_2_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WDT_MODE2_A {
     #[doc = "0: Free running counter with no interrupt requests"]
-    NOTHING,
+    NOTHING = 0,
     #[doc = "1: Free running counter with interrupt request that occurs one LFCLK cycle after the specified bit in CTR2 toggles (see WDT_BITS2)."]
-    INT,
+    INT = 1,
 }
 impl From<WDT_MODE2_A> for bool {
     #[inline(always)]
     fn from(variant: WDT_MODE2_A) -> Self {
-        match variant {
-            WDT_MODE2_A::NOTHING => false,
-            WDT_MODE2_A::INT => true,
-        }
+        variant as u8 != 0
     }
 }
 #[doc = "Reader of field `WDT_MODE2`"]

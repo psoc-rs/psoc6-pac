@@ -12,25 +12,21 @@ impl crate::ResetValue for super::MODE_CTL {
 }
 #[doc = "Specifies PCM output channels as mono or stereo: (Note: These bits are connected to AR36U12.PDM_CORE2_CFG.PCM_CHSET)\n\nValue on reset: 3"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum PCM_CH_SET_A {
     #[doc = "0: Channel disabled"]
-    DISABLED,
+    DISABLED = 0,
     #[doc = "1: Mono left channel enable"]
-    MONO_L,
+    MONO_L = 1,
     #[doc = "2: Mono right channel enable"]
-    MONO_R,
+    MONO_R = 2,
     #[doc = "3: Stereo channel enable"]
-    STEREO,
+    STEREO = 3,
 }
 impl From<PCM_CH_SET_A> for u8 {
     #[inline(always)]
     fn from(variant: PCM_CH_SET_A) -> Self {
-        match variant {
-            PCM_CH_SET_A::DISABLED => 0,
-            PCM_CH_SET_A::MONO_L => 1,
-            PCM_CH_SET_A::MONO_R => 2,
-            PCM_CH_SET_A::STEREO => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `PCM_CH_SET`"]
@@ -133,37 +129,29 @@ impl<'a> SWAP_LR_W<'a> {
 }
 #[doc = "Set time step for gain change during PGA or soft mute operation in number of 1/a sampling rate. (Note: These bits are connected to AR36U12.PDM_CORE_CFG.S_CYCLES)\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum S_CYCLES_A {
     #[doc = "0: 64steps"]
-    STEP_NUM64,
+    STEP_NUM64 = 0,
     #[doc = "1: 96steps"]
-    STEP_NUM96,
+    STEP_NUM96 = 1,
     #[doc = "2: 128steps"]
-    STEP_NUM128,
+    STEP_NUM128 = 2,
     #[doc = "3: 160steps"]
-    STEP_NUM160,
+    STEP_NUM160 = 3,
     #[doc = "4: 192steps"]
-    STEP_NUM192,
+    STEP_NUM192 = 4,
     #[doc = "5: 256steps"]
-    STEP_NUM256,
+    STEP_NUM256 = 5,
     #[doc = "6: 384steps"]
-    STEP_NUM384,
+    STEP_NUM384 = 6,
     #[doc = "7: 512steps"]
-    STEP_NUM512,
+    STEP_NUM512 = 7,
 }
 impl From<S_CYCLES_A> for u8 {
     #[inline(always)]
     fn from(variant: S_CYCLES_A) -> Self {
-        match variant {
-            S_CYCLES_A::STEP_NUM64 => 0,
-            S_CYCLES_A::STEP_NUM96 => 1,
-            S_CYCLES_A::STEP_NUM128 => 2,
-            S_CYCLES_A::STEP_NUM160 => 3,
-            S_CYCLES_A::STEP_NUM192 => 4,
-            S_CYCLES_A::STEP_NUM256 => 5,
-            S_CYCLES_A::STEP_NUM384 => 6,
-            S_CYCLES_A::STEP_NUM512 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `S_CYCLES`"]
@@ -286,37 +274,29 @@ impl<'a> S_CYCLES_W<'a> {
 }
 #[doc = "Phase difference from the rising edge of internal sampler clock (CLK_IS) to that of PDM_CKO clock: (Note: These bits are connected to AR36U12.PDM_CORE2_CFG.PDMCKO_DLY)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum CKO_DELAY_A {
     #[doc = "0: CLK_IS is 3*PDM_CLK period early"]
-    ADV3,
+    ADV3 = 0,
     #[doc = "1: CLK_IS is 2*PDM_CLK period early"]
-    ADV2,
+    ADV2 = 1,
     #[doc = "2: CLK_IS is 1*PDM_CLK period early"]
-    ADV1,
+    ADV1 = 2,
     #[doc = "3: CLK_IS is the same as PDM_CKO"]
-    NO_DELAY,
+    NO_DELAY = 3,
     #[doc = "4: CLK_IS is 1*PDM_CLK period late"]
-    DLY1,
+    DLY1 = 4,
     #[doc = "5: CLK_IS is 2*PDM_CLK period late"]
-    DLY2,
+    DLY2 = 5,
     #[doc = "6: CLK_IS is 3*PDM_CLK period late"]
-    DLY3,
+    DLY3 = 6,
     #[doc = "7: CLK_IS is 4*PDM_CLK period late"]
-    DLY4,
+    DLY4 = 7,
 }
 impl From<CKO_DELAY_A> for u8 {
     #[inline(always)]
     fn from(variant: CKO_DELAY_A) -> Self {
-        match variant {
-            CKO_DELAY_A::ADV3 => 0,
-            CKO_DELAY_A::ADV2 => 1,
-            CKO_DELAY_A::ADV1 => 2,
-            CKO_DELAY_A::NO_DELAY => 3,
-            CKO_DELAY_A::DLY1 => 4,
-            CKO_DELAY_A::DLY2 => 5,
-            CKO_DELAY_A::DLY3 => 6,
-            CKO_DELAY_A::DLY4 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `CKO_DELAY`"]

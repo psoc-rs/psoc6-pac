@@ -1,4 +1,4 @@
-#[doc = "Port selection 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [port_sel0](port_sel0) module"]
+#[doc = "Port selection 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [port_sel0](port_sel0) module"]
 pub type PORT_SEL0 = crate::Reg<u32, _PORT_SEL0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -9,7 +9,7 @@ impl crate::Readable for PORT_SEL0 {}
 impl crate::Writable for PORT_SEL0 {}
 #[doc = "Port selection 0"]
 pub mod port_sel0;
-#[doc = "Port selection 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [port_sel1](port_sel1) module"]
+#[doc = "Port selection 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [port_sel1](port_sel1) module"]
 pub type PORT_SEL1 = crate::Reg<u32, _PORT_SEL1>;
 #[allow(missing_docs)]
 #[doc(hidden)]

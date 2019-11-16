@@ -12,109 +12,77 @@ impl crate::ResetValue for super::PORT_SEL0 {
 }
 #[doc = "Selects connection for IO pin 0 route.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum IO0_SEL_A {
     #[doc = "0: GPIO controls 'out'"]
-    GPIO,
+    GPIO = 0,
     #[doc = "1: GPIO controls 'out', DSI controls 'output enable'"]
-    GPIO_DSI,
+    GPIO_DSI = 1,
     #[doc = "2: DSI controls 'out' and 'output enable'"]
-    DSI_DSI,
+    DSI_DSI = 2,
     #[doc = "3: DSI controls 'out', GPIO controls 'output enable'"]
-    DSI_GPIO,
+    DSI_GPIO = 3,
     #[doc = "4: Analog mux bus A"]
-    AMUXA,
+    AMUXA = 4,
     #[doc = "5: Analog mux bus B"]
-    AMUXB,
+    AMUXB = 5,
     #[doc = "6: Analog mux bus A, DSI control"]
-    AMUXA_DSI,
+    AMUXA_DSI = 6,
     #[doc = "7: Analog mux bus B, DSI control"]
-    AMUXB_DSI,
+    AMUXB_DSI = 7,
     #[doc = "8: Active functionality 0"]
-    ACT_0,
+    ACT_0 = 8,
     #[doc = "9: Active functionality 1"]
-    ACT_1,
+    ACT_1 = 9,
     #[doc = "10: Active functionality 2"]
-    ACT_2,
+    ACT_2 = 10,
     #[doc = "11: Active functionality 3"]
-    ACT_3,
+    ACT_3 = 11,
     #[doc = "12: DeepSleep functionality 0"]
-    DS_0,
+    DS_0 = 12,
     #[doc = "13: DeepSleep functionality 1"]
-    DS_1,
+    DS_1 = 13,
     #[doc = "14: DeepSleep functionality 2"]
-    DS_2,
+    DS_2 = 14,
     #[doc = "15: DeepSleep functionality 3"]
-    DS_3,
+    DS_3 = 15,
     #[doc = "16: Active functionality 4"]
-    ACT_4,
+    ACT_4 = 16,
     #[doc = "17: Active functionality 5"]
-    ACT_5,
+    ACT_5 = 17,
     #[doc = "18: Active functionality 6"]
-    ACT_6,
+    ACT_6 = 18,
     #[doc = "19: Active functionality 7"]
-    ACT_7,
+    ACT_7 = 19,
     #[doc = "20: Active functionality 8"]
-    ACT_8,
+    ACT_8 = 20,
     #[doc = "21: Active functionality 9"]
-    ACT_9,
+    ACT_9 = 21,
     #[doc = "22: Active functionality 10"]
-    ACT_10,
+    ACT_10 = 22,
     #[doc = "23: Active functionality 11"]
-    ACT_11,
+    ACT_11 = 23,
     #[doc = "24: Active functionality 12"]
-    ACT_12,
+    ACT_12 = 24,
     #[doc = "25: Active functionality 13"]
-    ACT_13,
+    ACT_13 = 25,
     #[doc = "26: Active functionality 14"]
-    ACT_14,
+    ACT_14 = 26,
     #[doc = "27: Active functionality 15"]
-    ACT_15,
+    ACT_15 = 27,
     #[doc = "28: DeepSleep functionality 4"]
-    DS_4,
+    DS_4 = 28,
     #[doc = "29: DeepSleep functionality 5"]
-    DS_5,
+    DS_5 = 29,
     #[doc = "30: DeepSleep functionality 6"]
-    DS_6,
+    DS_6 = 30,
     #[doc = "31: DeepSleep functionality 7"]
-    DS_7,
+    DS_7 = 31,
 }
 impl From<IO0_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: IO0_SEL_A) -> Self {
-        match variant {
-            IO0_SEL_A::GPIO => 0,
-            IO0_SEL_A::GPIO_DSI => 1,
-            IO0_SEL_A::DSI_DSI => 2,
-            IO0_SEL_A::DSI_GPIO => 3,
-            IO0_SEL_A::AMUXA => 4,
-            IO0_SEL_A::AMUXB => 5,
-            IO0_SEL_A::AMUXA_DSI => 6,
-            IO0_SEL_A::AMUXB_DSI => 7,
-            IO0_SEL_A::ACT_0 => 8,
-            IO0_SEL_A::ACT_1 => 9,
-            IO0_SEL_A::ACT_2 => 10,
-            IO0_SEL_A::ACT_3 => 11,
-            IO0_SEL_A::DS_0 => 12,
-            IO0_SEL_A::DS_1 => 13,
-            IO0_SEL_A::DS_2 => 14,
-            IO0_SEL_A::DS_3 => 15,
-            IO0_SEL_A::ACT_4 => 16,
-            IO0_SEL_A::ACT_5 => 17,
-            IO0_SEL_A::ACT_6 => 18,
-            IO0_SEL_A::ACT_7 => 19,
-            IO0_SEL_A::ACT_8 => 20,
-            IO0_SEL_A::ACT_9 => 21,
-            IO0_SEL_A::ACT_10 => 22,
-            IO0_SEL_A::ACT_11 => 23,
-            IO0_SEL_A::ACT_12 => 24,
-            IO0_SEL_A::ACT_13 => 25,
-            IO0_SEL_A::ACT_14 => 26,
-            IO0_SEL_A::ACT_15 => 27,
-            IO0_SEL_A::DS_4 => 28,
-            IO0_SEL_A::DS_5 => 29,
-            IO0_SEL_A::DS_6 => 30,
-            IO0_SEL_A::DS_7 => 31,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `IO0_SEL`"]

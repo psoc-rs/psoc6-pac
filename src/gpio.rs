@@ -103,7 +103,7 @@ pub struct PRT {
 #[doc = r"Register block"]
 #[doc = "GPIO port registers"]
 pub mod prt;
-#[doc = "Interrupt port cause register 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intr_cause0](intr_cause0) module"]
+#[doc = "Interrupt port cause register 0\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_cause0](intr_cause0) module"]
 pub type INTR_CAUSE0 = crate::Reg<u32, _INTR_CAUSE0>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -112,7 +112,7 @@ pub struct _INTR_CAUSE0;
 impl crate::Readable for INTR_CAUSE0 {}
 #[doc = "Interrupt port cause register 0"]
 pub mod intr_cause0;
-#[doc = "Interrupt port cause register 1\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intr_cause1](intr_cause1) module"]
+#[doc = "Interrupt port cause register 1\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_cause1](intr_cause1) module"]
 pub type INTR_CAUSE1 = crate::Reg<u32, _INTR_CAUSE1>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -121,7 +121,7 @@ pub struct _INTR_CAUSE1;
 impl crate::Readable for INTR_CAUSE1 {}
 #[doc = "Interrupt port cause register 1"]
 pub mod intr_cause1;
-#[doc = "Interrupt port cause register 2\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intr_cause2](intr_cause2) module"]
+#[doc = "Interrupt port cause register 2\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_cause2](intr_cause2) module"]
 pub type INTR_CAUSE2 = crate::Reg<u32, _INTR_CAUSE2>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -130,7 +130,7 @@ pub struct _INTR_CAUSE2;
 impl crate::Readable for INTR_CAUSE2 {}
 #[doc = "Interrupt port cause register 2"]
 pub mod intr_cause2;
-#[doc = "Interrupt port cause register 3\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [intr_cause3](intr_cause3) module"]
+#[doc = "Interrupt port cause register 3\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_cause3](intr_cause3) module"]
 pub type INTR_CAUSE3 = crate::Reg<u32, _INTR_CAUSE3>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -139,7 +139,7 @@ pub struct _INTR_CAUSE3;
 impl crate::Readable for INTR_CAUSE3 {}
 #[doc = "Interrupt port cause register 3"]
 pub mod intr_cause3;
-#[doc = "Extern power supply detection register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [vdd_active](vdd_active) module"]
+#[doc = "Extern power supply detection register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [vdd_active](vdd_active) module"]
 pub type VDD_ACTIVE = crate::Reg<u32, _VDD_ACTIVE>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -148,7 +148,7 @@ pub struct _VDD_ACTIVE;
 impl crate::Readable for VDD_ACTIVE {}
 #[doc = "Extern power supply detection register"]
 pub mod vdd_active;
-#[doc = "Supply detection interrupt register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [vdd_intr](vdd_intr) module"]
+#[doc = "Supply detection interrupt register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [vdd_intr](vdd_intr) module"]
 pub type VDD_INTR = crate::Reg<u32, _VDD_INTR>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -159,7 +159,7 @@ impl crate::Readable for VDD_INTR {}
 impl crate::Writable for VDD_INTR {}
 #[doc = "Supply detection interrupt register"]
 pub mod vdd_intr;
-#[doc = "Supply detection interrupt mask register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [vdd_intr_mask](vdd_intr_mask) module"]
+#[doc = "Supply detection interrupt mask register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [vdd_intr_mask](vdd_intr_mask) module"]
 pub type VDD_INTR_MASK = crate::Reg<u32, _VDD_INTR_MASK>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -170,7 +170,7 @@ impl crate::Readable for VDD_INTR_MASK {}
 impl crate::Writable for VDD_INTR_MASK {}
 #[doc = "Supply detection interrupt mask register"]
 pub mod vdd_intr_mask;
-#[doc = "Supply detection interrupt masked register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [vdd_intr_masked](vdd_intr_masked) module"]
+#[doc = "Supply detection interrupt masked register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [vdd_intr_masked](vdd_intr_masked) module"]
 pub type VDD_INTR_MASKED = crate::Reg<u32, _VDD_INTR_MASKED>;
 #[allow(missing_docs)]
 #[doc(hidden)]
@@ -179,7 +179,7 @@ pub struct _VDD_INTR_MASKED;
 impl crate::Readable for VDD_INTR_MASKED {}
 #[doc = "Supply detection interrupt masked register"]
 pub mod vdd_intr_masked;
-#[doc = "Supply detection interrupt set register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about avaliable fields see [vdd_intr_set](vdd_intr_set) module"]
+#[doc = "Supply detection interrupt set register\n\nThis register you can [`read`](crate::generic::Reg::read), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [vdd_intr_set](vdd_intr_set) module"]
 pub type VDD_INTR_SET = crate::Reg<u32, _VDD_INTR_SET>;
 #[allow(missing_docs)]
 #[doc(hidden)]

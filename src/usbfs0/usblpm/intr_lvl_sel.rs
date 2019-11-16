@@ -12,25 +12,21 @@ impl crate::ResetValue for super::INTR_LVL_SEL {
 }
 #[doc = "USB SOF Interrupt level select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum SOF_LVL_SEL_A {
     #[doc = "0: High priority interrupt"]
-    HI,
+    HI = 0,
     #[doc = "1: Medium priority interrupt"]
-    MED,
+    MED = 1,
     #[doc = "2: Low priority interrupt"]
-    LO,
+    LO = 2,
     #[doc = "3: illegal"]
-    RSVD,
+    RSVD = 3,
 }
 impl From<SOF_LVL_SEL_A> for u8 {
     #[inline(always)]
     fn from(variant: SOF_LVL_SEL_A) -> Self {
-        match variant {
-            SOF_LVL_SEL_A::HI => 0,
-            SOF_LVL_SEL_A::MED => 1,
-            SOF_LVL_SEL_A::LO => 2,
-            SOF_LVL_SEL_A::RSVD => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `SOF_LVL_SEL`"]

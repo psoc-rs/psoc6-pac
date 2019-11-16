@@ -26,28 +26,23 @@ impl<'a> HVLVD1_TRIPSEL_W<'a> {
 }
 #[doc = "Source selection for HVLVD1\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum HVLVD1_SRCSEL_A {
     #[doc = "0: Select VDDD"]
-    VDDD,
+    VDDD = 0,
     #[doc = "1: Select AMUXBUSA (VDDD branch)"]
-    AMUXBUSA,
+    AMUXBUSA = 1,
     #[doc = "2: N/A"]
-    RSVD,
+    RSVD = 2,
     #[doc = "3: N/A"]
-    VDDIO,
+    VDDIO = 3,
     #[doc = "4: Select AMUXBUSB (VDDD branch)"]
-    AMUXBUSB,
+    AMUXBUSB = 4,
 }
 impl From<HVLVD1_SRCSEL_A> for u8 {
     #[inline(always)]
     fn from(variant: HVLVD1_SRCSEL_A) -> Self {
-        match variant {
-            HVLVD1_SRCSEL_A::VDDD => 0,
-            HVLVD1_SRCSEL_A::AMUXBUSA => 1,
-            HVLVD1_SRCSEL_A::RSVD => 2,
-            HVLVD1_SRCSEL_A::VDDIO => 3,
-            HVLVD1_SRCSEL_A::AMUXBUSB => 4,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `HVLVD1_SRCSEL`"]

@@ -12,25 +12,21 @@ impl crate::ResetValue for super::SW_RES {
 }
 #[doc = "Select resistance or low EMI (slow ramp) for the HCAV switch\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RES_HCAV_A {
     #[doc = "0: Low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Medium"]
-    MED,
+    MED = 1,
     #[doc = "2: High"]
-    HIGH,
+    HIGH = 2,
     #[doc = "3: Low EMI (slow ramp: 3 switches closed by fixed delay line)"]
-    LOWEMI,
+    LOWEMI = 3,
 }
 impl From<RES_HCAV_A> for u8 {
     #[inline(always)]
     fn from(variant: RES_HCAV_A) -> Self {
-        match variant {
-            RES_HCAV_A::LOW => 0,
-            RES_HCAV_A::MED => 1,
-            RES_HCAV_A::HIGH => 2,
-            RES_HCAV_A::LOWEMI => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RES_HCAV`"]
@@ -151,25 +147,21 @@ impl<'a> RES_HCBG_W<'a> {
 }
 #[doc = "Select resistance for the corresponding switch\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum RES_F1PM_A {
     #[doc = "0: Low"]
-    LOW,
+    LOW = 0,
     #[doc = "1: Medium"]
-    MED,
+    MED = 1,
     #[doc = "2: High"]
-    HIGH,
+    HIGH = 2,
     #[doc = "3: N/A"]
-    RSVD,
+    RSVD = 3,
 }
 impl From<RES_F1PM_A> for u8 {
     #[inline(always)]
     fn from(variant: RES_F1PM_A) -> Self {
-        match variant {
-            RES_F1PM_A::LOW => 0,
-            RES_F1PM_A::MED => 1,
-            RES_F1PM_A::HIGH => 2,
-            RES_F1PM_A::RSVD => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `RES_F1PM`"]

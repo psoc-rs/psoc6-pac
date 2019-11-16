@@ -108,37 +108,29 @@ impl<'a> PWM_STOP_ON_KILL_W<'a> {
 }
 #[doc = "Generic 8-bit control field. In PWM_DT mode, this field is used to determine the dead time: amount of dead time cycles in the counter clock domain. In all other modes, the lower 3 bits of this field determine pre-scaling of the selected counter clock.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum GENERIC_A {
     #[doc = "0: Divide by 1 (other-than-PWM_DT mode)"]
-    DIVBY1,
+    DIVBY1 = 0,
     #[doc = "1: Divide by 2 (other-than-PWM_DT mode)"]
-    DIVBY2,
+    DIVBY2 = 1,
     #[doc = "2: Divide by 4 (other-than-PWM_DT mode)"]
-    DIVBY4,
+    DIVBY4 = 2,
     #[doc = "3: Divide by 8 (other-than-PWM_DT mode)"]
-    DIVBY8,
+    DIVBY8 = 3,
     #[doc = "4: Divide by 16 (other-than-PWM_DT mode)"]
-    DIVBY16,
+    DIVBY16 = 4,
     #[doc = "5: Divide by 32 (other-than-PWM_DT mode)"]
-    DIVBY32,
+    DIVBY32 = 5,
     #[doc = "6: Divide by 64 (other-than-PWM_DT mode)"]
-    DIVBY64,
+    DIVBY64 = 6,
     #[doc = "7: Divide by 128 (other-than-PWM_DT mode)"]
-    DIVBY128,
+    DIVBY128 = 7,
 }
 impl From<GENERIC_A> for u8 {
     #[inline(always)]
     fn from(variant: GENERIC_A) -> Self {
-        match variant {
-            GENERIC_A::DIVBY1 => 0,
-            GENERIC_A::DIVBY2 => 1,
-            GENERIC_A::DIVBY4 => 2,
-            GENERIC_A::DIVBY8 => 3,
-            GENERIC_A::DIVBY16 => 4,
-            GENERIC_A::DIVBY32 => 5,
-            GENERIC_A::DIVBY64 => 6,
-            GENERIC_A::DIVBY128 => 7,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `GENERIC`"]
@@ -260,25 +252,21 @@ impl<'a> GENERIC_W<'a> {
 }
 #[doc = "Determines counter direction.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum UP_DOWN_MODE_A {
     #[doc = "0: Count up (to PERIOD). An overflow event is generated when the counter changes from a state in which COUNTER equals PERIOD. A terminal count event is generated when the counter changes from a state in which COUNTER equals PERIOD."]
-    COUNT_UP,
+    COUNT_UP = 0,
     #[doc = "1: Count down (to '0'). An underflow event is generated when  the counter changes from a state in which COUNTER equals '0'. A terminal count event is generated when the counter changes from a state in which COUNTER equals '0'."]
-    COUNT_DOWN,
+    COUNT_DOWN = 1,
     #[doc = "2: Count up (to PERIOD), then count down (to '0'). An overflow event is generated when the counter changes from a state in which COUNTER equals PERIOD. An underflow event is generated when the counter changes from a state in which COUNTER equals '0'. A terminal count event is generated when the counter changes from a state in which COUNTER equals '0'."]
-    COUNT_UPDN1,
+    COUNT_UPDN1 = 2,
     #[doc = "3: Count up (to PERIOD), then count down (to '0'). An overflow event is generated when the counter changes from a state in which COUNTER equals PERIOD. An underflow event is generated when the counter changes from a state in which COUNTER equals '0'. A terminal count event is generated when the counter changes from a state in which COUNTER equals '0' AND when the counter changes from a state in which COUNTER equals PERIOD (this counter direction can be used for PWM functionality with asymmetrical updates)."]
-    COUNT_UPDN2,
+    COUNT_UPDN2 = 3,
 }
 impl From<UP_DOWN_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: UP_DOWN_MODE_A) -> Self {
-        match variant {
-            UP_DOWN_MODE_A::COUNT_UP => 0,
-            UP_DOWN_MODE_A::COUNT_DOWN => 1,
-            UP_DOWN_MODE_A::COUNT_UPDN1 => 2,
-            UP_DOWN_MODE_A::COUNT_UPDN2 => 3,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `UP_DOWN_MODE`"]
@@ -381,22 +369,19 @@ impl<'a> ONE_SHOT_W<'a> {
 }
 #[doc = "In QUAD mode selects quadrature encoding mode (X1/X2/X4). In PWM, PWM_DT and PWM_PR modes, these two bits can be used to invert 'dt_line_out' and 'dt_line_compl_out'. Inversion is the last step in generation of 'dt_line_out' and 'dt_line_compl_out'; i.e. a disabled output line 'dt_line_out' has the value QUADRATURE_MODE\\[0\\] and a disabled output line 'dt_line_compl_out' has the value QUADRATURE_MODE\\[1\\].\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum QUADRATURE_MODE_A {
     #[doc = "0: X1 encoding (QUAD mode)"]
-    X1,
+    X1 = 0,
     #[doc = "1: X2 encoding (QUAD mode)"]
-    X2,
+    X2 = 1,
     #[doc = "2: X4 encoding (QUAD mode)"]
-    X4,
+    X4 = 2,
 }
 impl From<QUADRATURE_MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: QUADRATURE_MODE_A) -> Self {
-        match variant {
-            QUADRATURE_MODE_A::X1 => 0,
-            QUADRATURE_MODE_A::X2 => 1,
-            QUADRATURE_MODE_A::X4 => 2,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `QUADRATURE_MODE`"]
@@ -463,31 +448,25 @@ impl<'a> QUADRATURE_MODE_W<'a> {
 }
 #[doc = "Counter mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Timer mode"]
-    TIMER,
+    TIMER = 0,
     #[doc = "2: Capture mode"]
-    CAPTURE,
+    CAPTURE = 2,
     #[doc = "3: Quadrature encoding mode"]
-    QUAD,
+    QUAD = 3,
     #[doc = "4: Pulse width modulation (PWM) mode"]
-    PWM,
+    PWM = 4,
     #[doc = "5: PWM with deadtime insertion mode"]
-    PWM_DT,
+    PWM_DT = 5,
     #[doc = "6: Pseudo random pulse width modulation"]
-    PWM_PR,
+    PWM_PR = 6,
 }
 impl From<MODE_A> for u8 {
     #[inline(always)]
     fn from(variant: MODE_A) -> Self {
-        match variant {
-            MODE_A::TIMER => 0,
-            MODE_A::CAPTURE => 2,
-            MODE_A::QUAD => 3,
-            MODE_A::PWM => 4,
-            MODE_A::PWM_DT => 5,
-            MODE_A::PWM_PR => 6,
-        }
+        variant as _
     }
 }
 #[doc = "Reader of field `MODE`"]
