@@ -1,13 +1,37 @@
-#[doc = "Reader of register CLK_TIMER_CTL"]
-pub type R = crate::R<u32, super::CLK_TIMER_CTL>;
-#[doc = "Writer for register CLK_TIMER_CTL"]
-pub type W = crate::W<u32, super::CLK_TIMER_CTL>;
-#[doc = "Register CLK_TIMER_CTL `reset()`'s with value 0x0007_0000"]
-impl crate::ResetValue for super::CLK_TIMER_CTL {
-    type Type = u32;
+#[doc = "Register `CLK_TIMER_CTL` reader"]
+pub struct R(crate::R<CLK_TIMER_CTL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CLK_TIMER_CTL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0007_0000
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CLK_TIMER_CTL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CLK_TIMER_CTL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CLK_TIMER_CTL` writer"]
+pub struct W(crate::W<CLK_TIMER_CTL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CLK_TIMER_CTL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CLK_TIMER_CTL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CLK_TIMER_CTL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Select source for TIMERCLK. The output of this mux can be further divided using TIMER_DIV.\n\nValue on reset: 0"]
@@ -24,10 +48,10 @@ impl From<TIMER_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `TIMER_SEL`"]
-pub type TIMER_SEL_R = crate::R<bool, TIMER_SEL_A>;
+#[doc = "Field `TIMER_SEL` reader - Select source for TIMERCLK. The output of this mux can be further divided using TIMER_DIV."]
+pub type TIMER_SEL_R = crate::BitReader<TIMER_SEL_A>;
 impl TIMER_SEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TIMER_SEL_A {
         match self.bits {
@@ -46,18 +70,10 @@ impl TIMER_SEL_R {
         *self == TIMER_SEL_A::HF0_DIV
     }
 }
-#[doc = "Write proxy for field `TIMER_SEL`"]
-pub struct TIMER_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMER_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TIMER_SEL_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `TIMER_SEL` writer - Select source for TIMERCLK. The output of this mux can be further divided using TIMER_DIV."]
+pub type TIMER_SEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CLK_TIMER_CTL_SPEC, TIMER_SEL_A, O>;
+impl<'a, const O: u8> TIMER_SEL_W<'a, O> {
     #[doc = "IMO - Internal Main Oscillator"]
     #[inline(always)]
     pub fn imo(self) -> &'a mut W {
@@ -67,22 +83,6 @@ impl<'a> TIMER_SEL_W<'a> {
     #[inline(always)]
     pub fn hf0_div(self) -> &'a mut W {
         self.variant(TIMER_SEL_A::HF0_DIV)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
     }
 }
 #[doc = "Predivider used when HF0_DIV is selected in TIMER_SEL. If HFCLK0 frequency is less than 100MHz and has approximately 50 percent duty cycle, then no division is required (NO_DIV). Otherwise, select a divide ratio of 2, 4, or 8 before selected HF0_DIV as the timer clock.\n\nValue on reset: 0"]
@@ -104,10 +104,10 @@ impl From<TIMER_HF0_DIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `TIMER_HF0_DIV`"]
-pub type TIMER_HF0_DIV_R = crate::R<u8, TIMER_HF0_DIV_A>;
+#[doc = "Field `TIMER_HF0_DIV` reader - Predivider used when HF0_DIV is selected in TIMER_SEL. If HFCLK0 frequency is less than 100MHz and has approximately 50 percent duty cycle, then no division is required (NO_DIV). Otherwise, select a divide ratio of 2, 4, or 8 before selected HF0_DIV as the timer clock."]
+pub type TIMER_HF0_DIV_R = crate::FieldReader<u8, TIMER_HF0_DIV_A>;
 impl TIMER_HF0_DIV_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TIMER_HF0_DIV_A {
         match self.bits {
@@ -139,18 +139,10 @@ impl TIMER_HF0_DIV_R {
         *self == TIMER_HF0_DIV_A::DIV_BY_8
     }
 }
-#[doc = "Write proxy for field `TIMER_HF0_DIV`"]
-pub struct TIMER_HF0_DIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMER_HF0_DIV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TIMER_HF0_DIV_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `TIMER_HF0_DIV` writer - Predivider used when HF0_DIV is selected in TIMER_SEL. If HFCLK0 frequency is less than 100MHz and has approximately 50 percent duty cycle, then no division is required (NO_DIV). Otherwise, select a divide ratio of 2, 4, or 8 before selected HF0_DIV as the timer clock."]
+pub type TIMER_HF0_DIV_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CLK_TIMER_CTL_SPEC, u8, TIMER_HF0_DIV_A, 2, O>;
+impl<'a, const O: u8> TIMER_HF0_DIV_W<'a, O> {
     #[doc = "Transparent mode, feed through selected clock source w/o dividing or correcting duty cycle."]
     #[inline(always)]
     pub fn no_div(self) -> &'a mut W {
@@ -171,61 +163,26 @@ impl<'a> TIMER_HF0_DIV_W<'a> {
     pub fn div_by_8(self) -> &'a mut W {
         self.variant(TIMER_HF0_DIV_A::DIV_BY_8)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
-        self.w
-    }
 }
-#[doc = "Reader of field `TIMER_DIV`"]
-pub type TIMER_DIV_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `TIMER_DIV`"]
-pub struct TIMER_DIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMER_DIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
-        self.w
-    }
-}
-#[doc = "Reader of field `ENABLE`"]
-pub type ENABLE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ENABLE`"]
-pub struct ENABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENABLE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
-        self.w
-    }
-}
+#[doc = "Field `TIMER_DIV` reader - Divide selected timer clock source by (1+TIMER_DIV). The output of this divider is TIMERCLK Allows for integer divisions in the range \\[1, 256\\]. Do not change this setting while the timer is enabled."]
+pub type TIMER_DIV_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `TIMER_DIV` writer - Divide selected timer clock source by (1+TIMER_DIV). The output of this divider is TIMERCLK Allows for integer divisions in the range \\[1, 256\\]. Do not change this setting while the timer is enabled."]
+pub type TIMER_DIV_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CLK_TIMER_CTL_SPEC, u8, u8, 8, O>;
+#[doc = "Field `ENABLE` reader - Enable for TIMERCLK. 0: TIMERCLK is off 1: TIMERCLK is enabled"]
+pub type ENABLE_R = crate::BitReader<bool>;
+#[doc = "Field `ENABLE` writer - Enable for TIMERCLK. 0: TIMERCLK is off 1: TIMERCLK is enabled"]
+pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_TIMER_CTL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Select source for TIMERCLK. The output of this mux can be further divided using TIMER_DIV."]
     #[inline(always)]
     pub fn timer_sel(&self) -> TIMER_SEL_R {
-        TIMER_SEL_R::new((self.bits & 0x01) != 0)
+        TIMER_SEL_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 8:9 - Predivider used when HF0_DIV is selected in TIMER_SEL. If HFCLK0 frequency is less than 100MHz and has approximately 50 percent duty cycle, then no division is required (NO_DIV). Otherwise, select a divide ratio of 2, 4, or 8 before selected HF0_DIV as the timer clock."]
     #[inline(always)]
     pub fn timer_hf0_div(&self) -> TIMER_HF0_DIV_R {
-        TIMER_HF0_DIV_R::new(((self.bits >> 8) & 0x03) as u8)
+        TIMER_HF0_DIV_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 16:23 - Divide selected timer clock source by (1+TIMER_DIV). The output of this divider is TIMERCLK Allows for integer divisions in the range \\[1, 256\\]. Do not change this setting while the timer is enabled."]
     #[inline(always)]
@@ -235,28 +192,54 @@ impl R {
     #[doc = "Bit 31 - Enable for TIMERCLK. 0: TIMERCLK is off 1: TIMERCLK is enabled"]
     #[inline(always)]
     pub fn enable(&self) -> ENABLE_R {
-        ENABLE_R::new(((self.bits >> 31) & 0x01) != 0)
+        ENABLE_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Select source for TIMERCLK. The output of this mux can be further divided using TIMER_DIV."]
     #[inline(always)]
-    pub fn timer_sel(&mut self) -> TIMER_SEL_W {
-        TIMER_SEL_W { w: self }
+    pub fn timer_sel(&mut self) -> TIMER_SEL_W<0> {
+        TIMER_SEL_W::new(self)
     }
     #[doc = "Bits 8:9 - Predivider used when HF0_DIV is selected in TIMER_SEL. If HFCLK0 frequency is less than 100MHz and has approximately 50 percent duty cycle, then no division is required (NO_DIV). Otherwise, select a divide ratio of 2, 4, or 8 before selected HF0_DIV as the timer clock."]
     #[inline(always)]
-    pub fn timer_hf0_div(&mut self) -> TIMER_HF0_DIV_W {
-        TIMER_HF0_DIV_W { w: self }
+    pub fn timer_hf0_div(&mut self) -> TIMER_HF0_DIV_W<8> {
+        TIMER_HF0_DIV_W::new(self)
     }
     #[doc = "Bits 16:23 - Divide selected timer clock source by (1+TIMER_DIV). The output of this divider is TIMERCLK Allows for integer divisions in the range \\[1, 256\\]. Do not change this setting while the timer is enabled."]
     #[inline(always)]
-    pub fn timer_div(&mut self) -> TIMER_DIV_W {
-        TIMER_DIV_W { w: self }
+    pub fn timer_div(&mut self) -> TIMER_DIV_W<16> {
+        TIMER_DIV_W::new(self)
     }
     #[doc = "Bit 31 - Enable for TIMERCLK. 0: TIMERCLK is off 1: TIMERCLK is enabled"]
     #[inline(always)]
-    pub fn enable(&mut self) -> ENABLE_W {
-        ENABLE_W { w: self }
+    pub fn enable(&mut self) -> ENABLE_W<31> {
+        ENABLE_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Timer Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_timer_ctl](index.html) module"]
+pub struct CLK_TIMER_CTL_SPEC;
+impl crate::RegisterSpec for CLK_TIMER_CTL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [clk_timer_ctl::R](R) reader structure"]
+impl crate::Readable for CLK_TIMER_CTL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [clk_timer_ctl::W](W) writer structure"]
+impl crate::Writable for CLK_TIMER_CTL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CLK_TIMER_CTL to value 0x0007_0000"]
+impl crate::Resettable for CLK_TIMER_CTL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0007_0000
     }
 }

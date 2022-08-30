@@ -1,20 +1,44 @@
-#[doc = "Reader of register STATUS"]
-pub type R = crate::R<u32, super::STATUS>;
-#[doc = "Writer for register STATUS"]
-pub type W = crate::W<u32, super::STATUS>;
-#[doc = "Register STATUS `reset()`'s with value 0"]
-impl crate::ResetValue for super::STATUS {
-    type Type = u32;
+#[doc = "Register `STATUS` reader"]
+pub struct R(crate::R<STATUS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<STATUS_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<STATUS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<STATUS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `STATUS` writer"]
+pub struct W(crate::W<STATUS_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<STATUS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<STATUS_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<STATUS_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "The fault source index for which fault information is captured in DATA0 through DATA3. The fault information is fault source specific and described below. Note: this register field (and associated fault source data in DATA0 through DATA3) should only be considered valid, when VALID is '1'.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum IDX_A {
-    #[doc = "0: Bus master 0 MPU/SMPU.\nDATA0\\[31:0\\]: Violating address.\nDATA1\\[0\\]: User read.\nDATA1\\[1\\]: User write.\nDATA1\\[2\\]: User execute.\nDATA1\\[3\\]: Privileged read.\nDATA1\\[4\\]: Privileged write.\nDATA1\\[5\\]: Privileged execute.\nDATA1\\[6\\]: Non-secure.\nDATA1\\[11:8\\]: Master identifier.\nDATA1\\[15:12\\]: Protection context identifier.\nDATA1\\[31\\]: '0' MPU violation; '1': SMPU violation."]
+    #[doc = "0: Bus master 0 MPU/SMPU. DATA0\\[31:0\\]: Violating address. DATA1\\[0\\]: User read. DATA1\\[1\\]: User write. DATA1\\[2\\]: User execute. DATA1\\[3\\]: Privileged read. DATA1\\[4\\]: Privileged write. DATA1\\[5\\]: Privileged execute. DATA1\\[6\\]: Non-secure. DATA1\\[11:8\\]: Master identifier. DATA1\\[15:12\\]: Protection context identifier. DATA1\\[31\\]: '0' MPU violation; '1': SMPU violation."]
     MPU_0 = 0,
     #[doc = "1: Bus master 1 MPU. See MPU_0 description."]
     MPU_1 = 1,
@@ -48,7 +72,7 @@ pub enum IDX_A {
     MPU_15 = 15,
     #[doc = "16: CM4 system bus AHB-Lite interface MPU. See MPU_0 description."]
     CM4_SYS_MPU = 16,
-    #[doc = "28: Peripheral master interface 0 PPU.\nDATA0\\[31:0\\]: Violating address.\nDATA1\\[0\\]: User read.\nDATA1\\[1\\]: User write.\nDATA1\\[2\\]: User execute.\nDATA1\\[3\\]: Privileged read.\nDATA1\\[4\\]: Privileged write.\nDATA1\\[5\\]: Privileged execute.\nDATA1\\[6\\]: Non-secure.\nDATA1\\[11:8\\]: Master identifier.\nDATA1\\[15:12\\]: Protection context identifier.\nDATA1\\[31\\]: '0': PPU violation, '1': peripheral bus error."]
+    #[doc = "28: Peripheral master interface 0 PPU. DATA0\\[31:0\\]: Violating address. DATA1\\[0\\]: User read. DATA1\\[1\\]: User write. DATA1\\[2\\]: User execute. DATA1\\[3\\]: Privileged read. DATA1\\[4\\]: Privileged write. DATA1\\[5\\]: Privileged execute. DATA1\\[6\\]: Non-secure. DATA1\\[11:8\\]: Master identifier. DATA1\\[15:12\\]: Protection context identifier. DATA1\\[31\\]: '0': PPU violation, '1': peripheral bus error."]
     MS_PPU_0 = 28,
     #[doc = "29: Peripheral master interface 0 PPU. See MS_PPU_0 description."]
     MS_PPU_1 = 29,
@@ -56,7 +80,7 @@ pub enum IDX_A {
     MS_PPU_2 = 30,
     #[doc = "31: Peripheral master interface 2 PPU. See MS_PPU_0 description."]
     MS_PPU_3 = 31,
-    #[doc = "32: Peripheral group 0 PPU.\nDATA0\\[31:0\\]: Violating address.\nDATA1\\[0\\]: User read.\nDATA1\\[1\\]: User write.\nDATA1\\[2\\]: User execute.\nDATA1\\[3\\]: Privileged read.\nDATA1\\[4\\]: Privileged write.\nDATA1\\[5\\]: Privileged execute.\nDATA1\\[6\\]: Non-secure.\nDATA1\\[11:8\\]: Master identifier.\nDATA1\\[15:12\\]: Protection context identifier.\nDATA1\\[31:30\\]: '0': PPU violation, '1': timeout detected, '2': peripheral bus error."]
+    #[doc = "32: Peripheral group 0 PPU. DATA0\\[31:0\\]: Violating address. DATA1\\[0\\]: User read. DATA1\\[1\\]: User write. DATA1\\[2\\]: User execute. DATA1\\[3\\]: Privileged read. DATA1\\[4\\]: Privileged write. DATA1\\[5\\]: Privileged execute. DATA1\\[6\\]: Non-secure. DATA1\\[11:8\\]: Master identifier. DATA1\\[15:12\\]: Protection context identifier. DATA1\\[31:30\\]: '0': PPU violation, '1': timeout detected, '2': peripheral bus error."]
     GROUP_PPU_0 = 32,
     #[doc = "33: Peripheral group 1 PPU. See GROUP_PPU_0 description."]
     GROUP_PPU_1 = 33,
@@ -88,7 +112,7 @@ pub enum IDX_A {
     GROUP_PPU_14 = 46,
     #[doc = "47: Peripheral group 15 PPU. See GROUP_PPU_0 description."]
     GROUP_PPU_15 = 47,
-    #[doc = "50: Flash controller, main interface, bus error:\nFAULT_DATA0\\[31:0\\]: Violating address.\nFAULT_DATA1\\[31\\]: '0': FLASH macro interface bus error; '1': memory hole.\nFAULT_DATA1\\[15:12\\]: Protection context identifier.\nFAULT_DATA1\\[11:8\\]: Master identifier."]
+    #[doc = "50: Flash controller, main interface, bus error: FAULT_DATA0\\[31:0\\]: Violating address. FAULT_DATA1\\[31\\]: '0': FLASH macro interface bus error; '1': memory hole. FAULT_DATA1\\[15:12\\]: Protection context identifier. FAULT_DATA1\\[11:8\\]: Master identifier."]
     FLASHC_MAIN_BUS_ERROR = 50,
 }
 impl From<IDX_A> for u8 {
@@ -97,53 +121,52 @@ impl From<IDX_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `IDX`"]
-pub type IDX_R = crate::R<u8, IDX_A>;
+#[doc = "Field `IDX` reader - The fault source index for which fault information is captured in DATA0 through DATA3. The fault information is fault source specific and described below. Note: this register field (and associated fault source data in DATA0 through DATA3) should only be considered valid, when VALID is '1'."]
+pub type IDX_R = crate::FieldReader<u8, IDX_A>;
 impl IDX_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, IDX_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<IDX_A> {
         match self.bits {
-            0 => Val(IDX_A::MPU_0),
-            1 => Val(IDX_A::MPU_1),
-            2 => Val(IDX_A::MPU_2),
-            3 => Val(IDX_A::MPU_3),
-            4 => Val(IDX_A::MPU_4),
-            5 => Val(IDX_A::MPU_5),
-            6 => Val(IDX_A::MPU_6),
-            7 => Val(IDX_A::MPU_7),
-            8 => Val(IDX_A::MPU_8),
-            9 => Val(IDX_A::MPU_9),
-            10 => Val(IDX_A::MPU_10),
-            11 => Val(IDX_A::MPU_11),
-            12 => Val(IDX_A::MPU_12),
-            13 => Val(IDX_A::MPU_13),
-            14 => Val(IDX_A::MPU_14),
-            15 => Val(IDX_A::MPU_15),
-            16 => Val(IDX_A::CM4_SYS_MPU),
-            28 => Val(IDX_A::MS_PPU_0),
-            29 => Val(IDX_A::MS_PPU_1),
-            30 => Val(IDX_A::MS_PPU_2),
-            31 => Val(IDX_A::MS_PPU_3),
-            32 => Val(IDX_A::GROUP_PPU_0),
-            33 => Val(IDX_A::GROUP_PPU_1),
-            34 => Val(IDX_A::GROUP_PPU_2),
-            35 => Val(IDX_A::GROUP_PPU_3),
-            36 => Val(IDX_A::GROUP_PPU_4),
-            37 => Val(IDX_A::GROUP_PPU_5),
-            38 => Val(IDX_A::GROUP_PPU_6),
-            39 => Val(IDX_A::GROUP_PPU_7),
-            40 => Val(IDX_A::GROUP_PPU_8),
-            41 => Val(IDX_A::GROUP_PPU_9),
-            42 => Val(IDX_A::GROUP_PPU_10),
-            43 => Val(IDX_A::GROUP_PPU_11),
-            44 => Val(IDX_A::GROUP_PPU_12),
-            45 => Val(IDX_A::GROUP_PPU_13),
-            46 => Val(IDX_A::GROUP_PPU_14),
-            47 => Val(IDX_A::GROUP_PPU_15),
-            50 => Val(IDX_A::FLASHC_MAIN_BUS_ERROR),
-            i => Res(i),
+            0 => Some(IDX_A::MPU_0),
+            1 => Some(IDX_A::MPU_1),
+            2 => Some(IDX_A::MPU_2),
+            3 => Some(IDX_A::MPU_3),
+            4 => Some(IDX_A::MPU_4),
+            5 => Some(IDX_A::MPU_5),
+            6 => Some(IDX_A::MPU_6),
+            7 => Some(IDX_A::MPU_7),
+            8 => Some(IDX_A::MPU_8),
+            9 => Some(IDX_A::MPU_9),
+            10 => Some(IDX_A::MPU_10),
+            11 => Some(IDX_A::MPU_11),
+            12 => Some(IDX_A::MPU_12),
+            13 => Some(IDX_A::MPU_13),
+            14 => Some(IDX_A::MPU_14),
+            15 => Some(IDX_A::MPU_15),
+            16 => Some(IDX_A::CM4_SYS_MPU),
+            28 => Some(IDX_A::MS_PPU_0),
+            29 => Some(IDX_A::MS_PPU_1),
+            30 => Some(IDX_A::MS_PPU_2),
+            31 => Some(IDX_A::MS_PPU_3),
+            32 => Some(IDX_A::GROUP_PPU_0),
+            33 => Some(IDX_A::GROUP_PPU_1),
+            34 => Some(IDX_A::GROUP_PPU_2),
+            35 => Some(IDX_A::GROUP_PPU_3),
+            36 => Some(IDX_A::GROUP_PPU_4),
+            37 => Some(IDX_A::GROUP_PPU_5),
+            38 => Some(IDX_A::GROUP_PPU_6),
+            39 => Some(IDX_A::GROUP_PPU_7),
+            40 => Some(IDX_A::GROUP_PPU_8),
+            41 => Some(IDX_A::GROUP_PPU_9),
+            42 => Some(IDX_A::GROUP_PPU_10),
+            43 => Some(IDX_A::GROUP_PPU_11),
+            44 => Some(IDX_A::GROUP_PPU_12),
+            45 => Some(IDX_A::GROUP_PPU_13),
+            46 => Some(IDX_A::GROUP_PPU_14),
+            47 => Some(IDX_A::GROUP_PPU_15),
+            50 => Some(IDX_A::FLASHC_MAIN_BUS_ERROR),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `MPU_0`"]
@@ -337,30 +360,10 @@ impl IDX_R {
         *self == IDX_A::FLASHC_MAIN_BUS_ERROR
     }
 }
-#[doc = "Reader of field `VALID`"]
-pub type VALID_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `VALID`"]
-pub struct VALID_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VALID_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
-        self.w
-    }
-}
+#[doc = "Field `VALID` reader - Valid indication: '0': Invalid. '1': Valid. HW sets this field to '1' when new fault source data is captured. New fault source data is ONLY captured when VALID is '0'. SW can clear this field to '0' when the fault is handled (by SW)."]
+pub type VALID_R = crate::BitReader<bool>;
+#[doc = "Field `VALID` writer - Valid indication: '0': Invalid. '1': Valid. HW sets this field to '1' when new fault source data is captured. New fault source data is ONLY captured when VALID is '0'. SW can clear this field to '0' when the fault is handled (by SW)."]
+pub type VALID_W<'a, const O: u8> = crate::BitWriter<'a, u32, STATUS_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:6 - The fault source index for which fault information is captured in DATA0 through DATA3. The fault information is fault source specific and described below. Note: this register field (and associated fault source data in DATA0 through DATA3) should only be considered valid, when VALID is '1'."]
     #[inline(always)]
@@ -370,13 +373,39 @@ impl R {
     #[doc = "Bit 31 - Valid indication: '0': Invalid. '1': Valid. HW sets this field to '1' when new fault source data is captured. New fault source data is ONLY captured when VALID is '0'. SW can clear this field to '0' when the fault is handled (by SW)."]
     #[inline(always)]
     pub fn valid(&self) -> VALID_R {
-        VALID_R::new(((self.bits >> 31) & 0x01) != 0)
+        VALID_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 31 - Valid indication: '0': Invalid. '1': Valid. HW sets this field to '1' when new fault source data is captured. New fault source data is ONLY captured when VALID is '0'. SW can clear this field to '0' when the fault is handled (by SW)."]
     #[inline(always)]
-    pub fn valid(&mut self) -> VALID_W {
-        VALID_W { w: self }
+    pub fn valid(&mut self) -> VALID_W<31> {
+        VALID_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Fault status\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]
+pub struct STATUS_SPEC;
+impl crate::RegisterSpec for STATUS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [status::R](R) reader structure"]
+impl crate::Readable for STATUS_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [status::W](W) writer structure"]
+impl crate::Writable for STATUS_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets STATUS to value 0"]
+impl crate::Resettable for STATUS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

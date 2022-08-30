@@ -1,303 +1,127 @@
-#[doc = "Reader of register CTRL"]
-pub type R = crate::R<u32, super::CTRL>;
-#[doc = "Writer for register CTRL"]
-pub type W = crate::W<u32, super::CTRL>;
-#[doc = "Register CTRL `reset()`'s with value 0x00f8_0000"]
-impl crate::ResetValue for super::CTRL {
-    type Type = u32;
+#[doc = "Register `CTRL` reader"]
+pub struct R(crate::R<CTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x00f8_0000
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `TX_CLK_EDGE`"]
-pub type TX_CLK_EDGE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `TX_CLK_EDGE`"]
-pub struct TX_CLK_EDGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TX_CLK_EDGE_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<CTRL_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-        self.w
+    fn from(reader: crate::R<CTRL_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `RX_CLK_EDGE`"]
-pub type RX_CLK_EDGE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RX_CLK_EDGE`"]
-pub struct RX_CLK_EDGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RX_CLK_EDGE_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `CTRL` writer"]
+pub struct W(crate::W<CTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CTRL_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `RX_CLK_SRC`"]
-pub type RX_CLK_SRC_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RX_CLK_SRC`"]
-pub struct RX_CLK_SRC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RX_CLK_SRC_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `SCLK_CONTINUOUS`"]
-pub type SCLK_CONTINUOUS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCLK_CONTINUOUS`"]
-pub struct SCLK_CONTINUOUS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCLK_CONTINUOUS_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<CTRL_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
+    fn from(writer: crate::W<CTRL_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `SSEL_POLARITY`"]
-pub type SSEL_POLARITY_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SSEL_POLARITY`"]
-pub struct SSEL_POLARITY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SSEL_POLARITY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
-    }
-}
-#[doc = "Reader of field `LEAD`"]
-pub type LEAD_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `LEAD`"]
-pub struct LEAD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LEAD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
-        self.w
-    }
-}
-#[doc = "Reader of field `LAG`"]
-pub type LAG_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `LAG`"]
-pub struct LAG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LAG_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
-        self.w
-    }
-}
-#[doc = "Reader of field `DIV_ENABLED`"]
-pub type DIV_ENABLED_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DIV_ENABLED`"]
-pub struct DIV_ENABLED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIV_ENABLED_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-        self.w
-    }
-}
-#[doc = "Reader of field `DIV`"]
-pub type DIV_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DIV`"]
-pub struct DIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 13)) | (((value as u32) & 0x3f) << 13);
-        self.w
-    }
-}
-#[doc = "Reader of field `ADDR_WIDTH`"]
-pub type ADDR_WIDTH_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `ADDR_WIDTH`"]
-pub struct ADDR_WIDTH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDR_WIDTH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 19)) | (((value as u32) & 0x0f) << 19);
-        self.w
-    }
-}
-#[doc = "Reader of field `DATA_WIDTH`"]
-pub type DATA_WIDTH_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DATA_WIDTH`"]
-pub struct DATA_WIDTH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATA_WIDTH_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-        self.w
-    }
-}
-#[doc = "Reader of field `ENABLED`"]
-pub type ENABLED_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ENABLED`"]
-pub struct ENABLED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENABLED_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
-        self.w
-    }
-}
+#[doc = "Field `TX_CLK_EDGE` reader - N/A"]
+pub type TX_CLK_EDGE_R = crate::BitReader<bool>;
+#[doc = "Field `TX_CLK_EDGE` writer - N/A"]
+pub type TX_CLK_EDGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `RX_CLK_EDGE` reader - N/A"]
+pub type RX_CLK_EDGE_R = crate::BitReader<bool>;
+#[doc = "Field `RX_CLK_EDGE` writer - N/A"]
+pub type RX_CLK_EDGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `RX_CLK_SRC` reader - N/A"]
+pub type RX_CLK_SRC_R = crate::BitReader<bool>;
+#[doc = "Field `RX_CLK_SRC` writer - N/A"]
+pub type RX_CLK_SRC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `SCLK_CONTINUOUS` reader - N/A"]
+pub type SCLK_CONTINUOUS_R = crate::BitReader<bool>;
+#[doc = "Field `SCLK_CONTINUOUS` writer - N/A"]
+pub type SCLK_CONTINUOUS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `SSEL_POLARITY` reader - N/A"]
+pub type SSEL_POLARITY_R = crate::BitReader<bool>;
+#[doc = "Field `SSEL_POLARITY` writer - N/A"]
+pub type SSEL_POLARITY_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `LEAD` reader - N/A"]
+pub type LEAD_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `LEAD` writer - N/A"]
+pub type LEAD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 2, O>;
+#[doc = "Field `LAG` reader - N/A"]
+pub type LAG_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `LAG` writer - N/A"]
+pub type LAG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 2, O>;
+#[doc = "Field `DIV_ENABLED` reader - N/A"]
+pub type DIV_ENABLED_R = crate::BitReader<bool>;
+#[doc = "Field `DIV_ENABLED` writer - N/A"]
+pub type DIV_ENABLED_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `DIV` reader - N/A"]
+pub type DIV_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DIV` writer - N/A"]
+pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 6, O>;
+#[doc = "Field `ADDR_WIDTH` reader - N/A"]
+pub type ADDR_WIDTH_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `ADDR_WIDTH` writer - N/A"]
+pub type ADDR_WIDTH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 4, O>;
+#[doc = "Field `DATA_WIDTH` reader - N/A"]
+pub type DATA_WIDTH_R = crate::BitReader<bool>;
+#[doc = "Field `DATA_WIDTH` writer - N/A"]
+pub type DATA_WIDTH_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `ENABLED` reader - N/A"]
+pub type ENABLED_R = crate::BitReader<bool>;
+#[doc = "Field `ENABLED` writer - N/A"]
+pub type ENABLED_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 1 - N/A"]
     #[inline(always)]
     pub fn tx_clk_edge(&self) -> TX_CLK_EDGE_R {
-        TX_CLK_EDGE_R::new(((self.bits >> 1) & 0x01) != 0)
+        TX_CLK_EDGE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - N/A"]
     #[inline(always)]
     pub fn rx_clk_edge(&self) -> RX_CLK_EDGE_R {
-        RX_CLK_EDGE_R::new(((self.bits >> 2) & 0x01) != 0)
+        RX_CLK_EDGE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - N/A"]
     #[inline(always)]
     pub fn rx_clk_src(&self) -> RX_CLK_SRC_R {
-        RX_CLK_SRC_R::new(((self.bits >> 3) & 0x01) != 0)
+        RX_CLK_SRC_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - N/A"]
     #[inline(always)]
     pub fn sclk_continuous(&self) -> SCLK_CONTINUOUS_R {
-        SCLK_CONTINUOUS_R::new(((self.bits >> 4) & 0x01) != 0)
+        SCLK_CONTINUOUS_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - N/A"]
     #[inline(always)]
     pub fn ssel_polarity(&self) -> SSEL_POLARITY_R {
-        SSEL_POLARITY_R::new(((self.bits >> 5) & 0x01) != 0)
+        SSEL_POLARITY_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 8:9 - N/A"]
     #[inline(always)]
     pub fn lead(&self) -> LEAD_R {
-        LEAD_R::new(((self.bits >> 8) & 0x03) as u8)
+        LEAD_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - N/A"]
     #[inline(always)]
     pub fn lag(&self) -> LAG_R {
-        LAG_R::new(((self.bits >> 10) & 0x03) as u8)
+        LAG_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bit 12 - N/A"]
     #[inline(always)]
     pub fn div_enabled(&self) -> DIV_ENABLED_R {
-        DIV_ENABLED_R::new(((self.bits >> 12) & 0x01) != 0)
+        DIV_ENABLED_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bits 13:18 - N/A"]
     #[inline(always)]
@@ -312,73 +136,99 @@ impl R {
     #[doc = "Bit 23 - N/A"]
     #[inline(always)]
     pub fn data_width(&self) -> DATA_WIDTH_R {
-        DATA_WIDTH_R::new(((self.bits >> 23) & 0x01) != 0)
+        DATA_WIDTH_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 31 - N/A"]
     #[inline(always)]
     pub fn enabled(&self) -> ENABLED_R {
-        ENABLED_R::new(((self.bits >> 31) & 0x01) != 0)
+        ENABLED_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 1 - N/A"]
     #[inline(always)]
-    pub fn tx_clk_edge(&mut self) -> TX_CLK_EDGE_W {
-        TX_CLK_EDGE_W { w: self }
+    pub fn tx_clk_edge(&mut self) -> TX_CLK_EDGE_W<1> {
+        TX_CLK_EDGE_W::new(self)
     }
     #[doc = "Bit 2 - N/A"]
     #[inline(always)]
-    pub fn rx_clk_edge(&mut self) -> RX_CLK_EDGE_W {
-        RX_CLK_EDGE_W { w: self }
+    pub fn rx_clk_edge(&mut self) -> RX_CLK_EDGE_W<2> {
+        RX_CLK_EDGE_W::new(self)
     }
     #[doc = "Bit 3 - N/A"]
     #[inline(always)]
-    pub fn rx_clk_src(&mut self) -> RX_CLK_SRC_W {
-        RX_CLK_SRC_W { w: self }
+    pub fn rx_clk_src(&mut self) -> RX_CLK_SRC_W<3> {
+        RX_CLK_SRC_W::new(self)
     }
     #[doc = "Bit 4 - N/A"]
     #[inline(always)]
-    pub fn sclk_continuous(&mut self) -> SCLK_CONTINUOUS_W {
-        SCLK_CONTINUOUS_W { w: self }
+    pub fn sclk_continuous(&mut self) -> SCLK_CONTINUOUS_W<4> {
+        SCLK_CONTINUOUS_W::new(self)
     }
     #[doc = "Bit 5 - N/A"]
     #[inline(always)]
-    pub fn ssel_polarity(&mut self) -> SSEL_POLARITY_W {
-        SSEL_POLARITY_W { w: self }
+    pub fn ssel_polarity(&mut self) -> SSEL_POLARITY_W<5> {
+        SSEL_POLARITY_W::new(self)
     }
     #[doc = "Bits 8:9 - N/A"]
     #[inline(always)]
-    pub fn lead(&mut self) -> LEAD_W {
-        LEAD_W { w: self }
+    pub fn lead(&mut self) -> LEAD_W<8> {
+        LEAD_W::new(self)
     }
     #[doc = "Bits 10:11 - N/A"]
     #[inline(always)]
-    pub fn lag(&mut self) -> LAG_W {
-        LAG_W { w: self }
+    pub fn lag(&mut self) -> LAG_W<10> {
+        LAG_W::new(self)
     }
     #[doc = "Bit 12 - N/A"]
     #[inline(always)]
-    pub fn div_enabled(&mut self) -> DIV_ENABLED_W {
-        DIV_ENABLED_W { w: self }
+    pub fn div_enabled(&mut self) -> DIV_ENABLED_W<12> {
+        DIV_ENABLED_W::new(self)
     }
     #[doc = "Bits 13:18 - N/A"]
     #[inline(always)]
-    pub fn div(&mut self) -> DIV_W {
-        DIV_W { w: self }
+    pub fn div(&mut self) -> DIV_W<13> {
+        DIV_W::new(self)
     }
     #[doc = "Bits 19:22 - N/A"]
     #[inline(always)]
-    pub fn addr_width(&mut self) -> ADDR_WIDTH_W {
-        ADDR_WIDTH_W { w: self }
+    pub fn addr_width(&mut self) -> ADDR_WIDTH_W<19> {
+        ADDR_WIDTH_W::new(self)
     }
     #[doc = "Bit 23 - N/A"]
     #[inline(always)]
-    pub fn data_width(&mut self) -> DATA_WIDTH_W {
-        DATA_WIDTH_W { w: self }
+    pub fn data_width(&mut self) -> DATA_WIDTH_W<23> {
+        DATA_WIDTH_W::new(self)
     }
     #[doc = "Bit 31 - N/A"]
     #[inline(always)]
-    pub fn enabled(&mut self) -> ENABLED_W {
-        ENABLED_W { w: self }
+    pub fn enabled(&mut self) -> ENABLED_W<31> {
+        ENABLED_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "RCB control register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ctrl](index.html) module"]
+pub struct CTRL_SPEC;
+impl crate::RegisterSpec for CTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ctrl::R](R) reader structure"]
+impl crate::Readable for CTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
+impl crate::Writable for CTRL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CTRL to value 0x00f8_0000"]
+impl crate::Resettable for CTRL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x00f8_0000
     }
 }

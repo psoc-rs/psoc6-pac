@@ -1,55 +1,53 @@
-use crate::ble::rcb::RCBLL;
-
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00 - Radio Control Bus (RCB) controller"]
+    #[doc = "0x00..0x148 - Radio Control Bus (RCB) controller"]
     pub rcb: RCB,
-    _reserved1: [u8; 3768usize],
-    #[doc = "0x1000 - Bluetooth Low Energy Link Layer"]
+    _reserved1: [u8; 0x0eb8],
+    #[doc = "0x1000..0x15b04 - Bluetooth Low Energy Link Layer"]
     pub blell: BLELL,
-    _reserved2: [u8; 38140usize],
-    #[doc = "0x1f000 - Bluetooth Low Energy Subsystem Miscellaneous"]
+    _reserved2: [u8; 0x94fc],
+    #[doc = "0x1f000..0x1ff38 - Bluetooth Low Energy Subsystem Miscellaneous"]
     pub bless: BLESS,
 }
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RCB {
     #[doc = "0x00 - RCB control register."]
-    pub ctrl: self::rcb::CTRL,
+    pub ctrl: crate::Reg<self::rcb::ctrl::CTRL_SPEC>,
     #[doc = "0x04 - RCB status register."]
-    pub status: self::rcb::STATUS,
-    _reserved2: [u8; 8usize],
+    pub status: crate::Reg<self::rcb::status::STATUS_SPEC>,
+    _reserved2: [u8; 0x08],
     #[doc = "0x10 - Transmitter control register."]
-    pub tx_ctrl: self::rcb::TX_CTRL,
+    pub tx_ctrl: crate::Reg<self::rcb::tx_ctrl::TX_CTRL_SPEC>,
     #[doc = "0x14 - Transmitter FIFO control register."]
-    pub tx_fifo_ctrl: self::rcb::TX_FIFO_CTRL,
+    pub tx_fifo_ctrl: crate::Reg<self::rcb::tx_fifo_ctrl::TX_FIFO_CTRL_SPEC>,
     #[doc = "0x18 - Transmitter FIFO status register."]
-    pub tx_fifo_status: self::rcb::TX_FIFO_STATUS,
+    pub tx_fifo_status: crate::Reg<self::rcb::tx_fifo_status::TX_FIFO_STATUS_SPEC>,
     #[doc = "0x1c - Transmitter FIFO write register."]
-    pub tx_fifo_wr: self::rcb::TX_FIFO_WR,
+    pub tx_fifo_wr: crate::Reg<self::rcb::tx_fifo_wr::TX_FIFO_WR_SPEC>,
     #[doc = "0x20 - Receiver control register."]
-    pub rx_ctrl: self::rcb::RX_CTRL,
+    pub rx_ctrl: crate::Reg<self::rcb::rx_ctrl::RX_CTRL_SPEC>,
     #[doc = "0x24 - Receiver FIFO control register."]
-    pub rx_fifo_ctrl: self::rcb::RX_FIFO_CTRL,
+    pub rx_fifo_ctrl: crate::Reg<self::rcb::rx_fifo_ctrl::RX_FIFO_CTRL_SPEC>,
     #[doc = "0x28 - Receiver FIFO status register."]
-    pub rx_fifo_status: self::rcb::RX_FIFO_STATUS,
+    pub rx_fifo_status: crate::Reg<self::rcb::rx_fifo_status::RX_FIFO_STATUS_SPEC>,
     #[doc = "0x2c - Receiver FIFO read register."]
-    pub rx_fifo_rd: self::rcb::RX_FIFO_RD,
+    pub rx_fifo_rd: crate::Reg<self::rcb::rx_fifo_rd::RX_FIFO_RD_SPEC>,
     #[doc = "0x30 - Receiver FIFO read register."]
-    pub rx_fifo_rd_silent: self::rcb::RX_FIFO_RD_SILENT,
-    _reserved11: [u8; 12usize],
+    pub rx_fifo_rd_silent: crate::Reg<self::rcb::rx_fifo_rd_silent::RX_FIFO_RD_SILENT_SPEC>,
+    _reserved11: [u8; 0x0c],
     #[doc = "0x40 - Master interrupt request register."]
-    pub intr: self::rcb::INTR,
+    pub intr: crate::Reg<self::rcb::intr::INTR_SPEC>,
     #[doc = "0x44 - Master interrupt set request register"]
-    pub intr_set: self::rcb::INTR_SET,
+    pub intr_set: crate::Reg<self::rcb::intr_set::INTR_SET_SPEC>,
     #[doc = "0x48 - Master interrupt mask register."]
-    pub intr_mask: self::rcb::INTR_MASK,
+    pub intr_mask: crate::Reg<self::rcb::intr_mask::INTR_MASK_SPEC>,
     #[doc = "0x4c - Master interrupt masked request register"]
-    pub intr_masked: self::rcb::INTR_MASKED,
-    _reserved15: [u8; 176usize],
-    #[doc = "0x100 - Radio Control Bus (RCB) & Link Layer controller"]
-    pub rcbll: RCBLL,
+    pub intr_masked: crate::Reg<self::rcb::intr_masked::INTR_MASKED_SPEC>,
+    _reserved15: [u8; 0xb0],
+    #[doc = "0x100..0x148 - Radio Control Bus (RCB) & Link Layer controller"]
+    pub rcbll: self::rcb::RCBLL,
 }
 #[doc = r"Register block"]
 #[doc = "Radio Control Bus (RCB) controller"]
@@ -58,459 +56,520 @@ pub mod rcb;
 #[repr(C)]
 pub struct BLELL {
     #[doc = "0x00 - Instruction Register"]
-    pub command_register: self::blell::COMMAND_REGISTER,
-    _reserved1: [u8; 4usize],
+    pub command_register: crate::Reg<self::blell::command_register::COMMAND_REGISTER_SPEC>,
+    _reserved1: [u8; 0x04],
     #[doc = "0x08 - Event(Interrupt) status and Clear register"]
-    pub event_intr: self::blell::EVENT_INTR,
-    _reserved2: [u8; 4usize],
+    pub event_intr: crate::Reg<self::blell::event_intr::EVENT_INTR_SPEC>,
+    _reserved2: [u8; 0x04],
     #[doc = "0x10 - Event indications enable."]
-    pub event_enable: self::blell::EVENT_ENABLE,
-    _reserved3: [u8; 4usize],
+    pub event_enable: crate::Reg<self::blell::event_enable::EVENT_ENABLE_SPEC>,
+    _reserved3: [u8; 0x04],
     #[doc = "0x18 - Advertising parameters register."]
-    pub adv_params: self::blell::ADV_PARAMS,
+    pub adv_params: crate::Reg<self::blell::adv_params::ADV_PARAMS_SPEC>,
     #[doc = "0x1c - Advertising interval register."]
-    pub adv_interval_timeout: self::blell::ADV_INTERVAL_TIMEOUT,
+    pub adv_interval_timeout:
+        crate::Reg<self::blell::adv_interval_timeout::ADV_INTERVAL_TIMEOUT_SPEC>,
     #[doc = "0x20 - Advertising interrupt status and Clear register"]
-    pub adv_intr: self::blell::ADV_INTR,
+    pub adv_intr: crate::Reg<self::blell::adv_intr::ADV_INTR_SPEC>,
     #[doc = "0x24 - Advertising next instant."]
-    pub adv_next_instant: self::blell::ADV_NEXT_INSTANT,
+    pub adv_next_instant: crate::Reg<self::blell::adv_next_instant::ADV_NEXT_INSTANT_SPEC>,
     #[doc = "0x28 - Scan Interval Register"]
-    pub scan_interval: self::blell::SCAN_INTERVAL,
+    pub scan_interval: crate::Reg<self::blell::scan_interval::SCAN_INTERVAL_SPEC>,
     #[doc = "0x2c - Scan window Register"]
-    pub scan_window: self::blell::SCAN_WINDOW,
+    pub scan_window: crate::Reg<self::blell::scan_window::SCAN_WINDOW_SPEC>,
     #[doc = "0x30 - Scanning parameters register"]
-    pub scan_param: self::blell::SCAN_PARAM,
-    _reserved10: [u8; 4usize],
+    pub scan_param: crate::Reg<self::blell::scan_param::SCAN_PARAM_SPEC>,
+    _reserved10: [u8; 0x04],
     #[doc = "0x38 - Scan interrupt status and Clear register"]
-    pub scan_intr: self::blell::SCAN_INTR,
+    pub scan_intr: crate::Reg<self::blell::scan_intr::SCAN_INTR_SPEC>,
     #[doc = "0x3c - Advertising next instant."]
-    pub scan_next_instant: self::blell::SCAN_NEXT_INSTANT,
+    pub scan_next_instant: crate::Reg<self::blell::scan_next_instant::SCAN_NEXT_INSTANT_SPEC>,
     #[doc = "0x40 - Initiator Interval Register"]
-    pub init_interval: self::blell::INIT_INTERVAL,
+    pub init_interval: crate::Reg<self::blell::init_interval::INIT_INTERVAL_SPEC>,
     #[doc = "0x44 - Initiator window Register"]
-    pub init_window: self::blell::INIT_WINDOW,
+    pub init_window: crate::Reg<self::blell::init_window::INIT_WINDOW_SPEC>,
     #[doc = "0x48 - Initiator parameters register"]
-    pub init_param: self::blell::INIT_PARAM,
-    _reserved15: [u8; 4usize],
+    pub init_param: crate::Reg<self::blell::init_param::INIT_PARAM_SPEC>,
+    _reserved15: [u8; 0x04],
     #[doc = "0x50 - Scan interrupt status and Clear register"]
-    pub init_intr: self::blell::INIT_INTR,
+    pub init_intr: crate::Reg<self::blell::init_intr::INIT_INTR_SPEC>,
     #[doc = "0x54 - Initiator next instant."]
-    pub init_next_instant: self::blell::INIT_NEXT_INSTANT,
+    pub init_next_instant: crate::Reg<self::blell::init_next_instant::INIT_NEXT_INSTANT_SPEC>,
     #[doc = "0x58 - Lower 16 bit random address of the device."]
-    pub device_rand_addr_l: self::blell::DEVICE_RAND_ADDR_L,
+    pub device_rand_addr_l: crate::Reg<self::blell::device_rand_addr_l::DEVICE_RAND_ADDR_L_SPEC>,
     #[doc = "0x5c - Middle 16 bit random address of the device."]
-    pub device_rand_addr_m: self::blell::DEVICE_RAND_ADDR_M,
+    pub device_rand_addr_m: crate::Reg<self::blell::device_rand_addr_m::DEVICE_RAND_ADDR_M_SPEC>,
     #[doc = "0x60 - Higher 16 bit random address of the device."]
-    pub device_rand_addr_h: self::blell::DEVICE_RAND_ADDR_H,
-    _reserved20: [u8; 4usize],
+    pub device_rand_addr_h: crate::Reg<self::blell::device_rand_addr_h::DEVICE_RAND_ADDR_H_SPEC>,
+    _reserved20: [u8; 0x04],
     #[doc = "0x68 - Lower 16 bit address of the peer device."]
-    pub peer_addr_l: self::blell::PEER_ADDR_L,
+    pub peer_addr_l: crate::Reg<self::blell::peer_addr_l::PEER_ADDR_L_SPEC>,
     #[doc = "0x6c - Middle 16 bit address of the peer device."]
-    pub peer_addr_m: self::blell::PEER_ADDR_M,
+    pub peer_addr_m: crate::Reg<self::blell::peer_addr_m::PEER_ADDR_M_SPEC>,
     #[doc = "0x70 - Higher 16 bit address of the peer device."]
-    pub peer_addr_h: self::blell::PEER_ADDR_H,
-    _reserved23: [u8; 4usize],
+    pub peer_addr_h: crate::Reg<self::blell::peer_addr_h::PEER_ADDR_H_SPEC>,
+    _reserved23: [u8; 0x04],
     #[doc = "0x78 - whitelist address type"]
-    pub wl_addr_type: self::blell::WL_ADDR_TYPE,
+    pub wl_addr_type: crate::Reg<self::blell::wl_addr_type::WL_ADDR_TYPE_SPEC>,
     #[doc = "0x7c - whitelist valid entry bit"]
-    pub wl_enable: self::blell::WL_ENABLE,
+    pub wl_enable: crate::Reg<self::blell::wl_enable::WL_ENABLE_SPEC>,
     #[doc = "0x80 - Transmit window offset"]
-    pub transmit_window_offset: self::blell::TRANSMIT_WINDOW_OFFSET,
+    pub transmit_window_offset:
+        crate::Reg<self::blell::transmit_window_offset::TRANSMIT_WINDOW_OFFSET_SPEC>,
     #[doc = "0x84 - Transmit window size"]
-    pub transmit_window_size: self::blell::TRANSMIT_WINDOW_SIZE,
+    pub transmit_window_size:
+        crate::Reg<self::blell::transmit_window_size::TRANSMIT_WINDOW_SIZE_SPEC>,
     #[doc = "0x88 - Data channel map 0 (lower word)"]
-    pub data_channels_l0: self::blell::DATA_CHANNELS_L0,
+    pub data_channels_l0: crate::Reg<self::blell::data_channels_l0::DATA_CHANNELS_L0_SPEC>,
     #[doc = "0x8c - Data channel map 0 (middle word)"]
-    pub data_channels_m0: self::blell::DATA_CHANNELS_M0,
+    pub data_channels_m0: crate::Reg<self::blell::data_channels_m0::DATA_CHANNELS_M0_SPEC>,
     #[doc = "0x90 - Data channel map 0 (upper word)"]
-    pub data_channels_h0: self::blell::DATA_CHANNELS_H0,
-    _reserved30: [u8; 4usize],
+    pub data_channels_h0: crate::Reg<self::blell::data_channels_h0::DATA_CHANNELS_H0_SPEC>,
+    _reserved30: [u8; 0x04],
     #[doc = "0x98 - Data channel map 1 (lower word)"]
-    pub data_channels_l1: self::blell::DATA_CHANNELS_L1,
+    pub data_channels_l1: crate::Reg<self::blell::data_channels_l1::DATA_CHANNELS_L1_SPEC>,
     #[doc = "0x9c - Data channel map 1 (middle word)"]
-    pub data_channels_m1: self::blell::DATA_CHANNELS_M1,
+    pub data_channels_m1: crate::Reg<self::blell::data_channels_m1::DATA_CHANNELS_M1_SPEC>,
     #[doc = "0xa0 - Data channel map 1 (upper word)"]
-    pub data_channels_h1: self::blell::DATA_CHANNELS_H1,
-    _reserved33: [u8; 4usize],
+    pub data_channels_h1: crate::Reg<self::blell::data_channels_h1::DATA_CHANNELS_H1_SPEC>,
+    _reserved33: [u8; 0x04],
     #[doc = "0xa8 - Connection interrupt status and Clear register"]
-    pub conn_intr: self::blell::CONN_INTR,
+    pub conn_intr: crate::Reg<self::blell::conn_intr::CONN_INTR_SPEC>,
     #[doc = "0xac - Connection channel status"]
-    pub conn_status: self::blell::CONN_STATUS,
+    pub conn_status: crate::Reg<self::blell::conn_status::CONN_STATUS_SPEC>,
     #[doc = "0xb0 - Connection Index register"]
-    pub conn_index: self::blell::CONN_INDEX,
-    _reserved36: [u8; 4usize],
+    pub conn_index: crate::Reg<self::blell::conn_index::CONN_INDEX_SPEC>,
+    _reserved36: [u8; 0x04],
     #[doc = "0xb8 - Wakeup configuration"]
-    pub wakeup_config: self::blell::WAKEUP_CONFIG,
-    _reserved37: [u8; 4usize],
+    pub wakeup_config: crate::Reg<self::blell::wakeup_config::WAKEUP_CONFIG_SPEC>,
+    _reserved37: [u8; 0x04],
     #[doc = "0xc0 - Wakeup control"]
-    pub wakeup_control: self::blell::WAKEUP_CONTROL,
+    pub wakeup_control: crate::Reg<self::blell::wakeup_control::WAKEUP_CONTROL_SPEC>,
     #[doc = "0xc4 - Clock control"]
-    pub clock_config: self::blell::CLOCK_CONFIG,
+    pub clock_config: crate::Reg<self::blell::clock_config::CLOCK_CONFIG_SPEC>,
     #[doc = "0xc8 - Reference Clock"]
-    pub tim_counter_l: self::blell::TIM_COUNTER_L,
+    pub tim_counter_l: crate::Reg<self::blell::tim_counter_l::TIM_COUNTER_L_SPEC>,
     #[doc = "0xcc - Wakeup configuration extended"]
-    pub wakeup_config_extd: self::blell::WAKEUP_CONFIG_EXTD,
-    _reserved41: [u8; 8usize],
+    pub wakeup_config_extd: crate::Reg<self::blell::wakeup_config_extd::WAKEUP_CONFIG_EXTD_SPEC>,
+    _reserved41: [u8; 0x08],
     #[doc = "0xd8 - BLE Time Control"]
-    pub poc_reg__tim_control: self::blell::POC_REG__TIM_CONTROL,
-    _reserved42: [u8; 4usize],
+    pub poc_reg__tim_control:
+        crate::Reg<self::blell::poc_reg__tim_control::POC_REG__TIM_CONTROL_SPEC>,
+    _reserved42: [u8; 0x04],
     #[doc = "0xe0 - Advertising data transmit FIFO. Access ADVCH_TX_FIFO."]
-    pub adv_tx_data_fifo: self::blell::ADV_TX_DATA_FIFO,
-    _reserved43: [u8; 4usize],
+    pub adv_tx_data_fifo: crate::Reg<self::blell::adv_tx_data_fifo::ADV_TX_DATA_FIFO_SPEC>,
+    _reserved43: [u8; 0x04],
     #[doc = "0xe8 - Advertising scan response data transmit FIFO. Access ADVCH_TX_FIFO."]
-    pub adv_scn_rsp_tx_fifo: self::blell::ADV_SCN_RSP_TX_FIFO,
-    _reserved44: [u8; 12usize],
+    pub adv_scn_rsp_tx_fifo: crate::Reg<self::blell::adv_scn_rsp_tx_fifo::ADV_SCN_RSP_TX_FIFO_SPEC>,
+    _reserved44: [u8; 0x0c],
     #[doc = "0xf8 - advertising scan response data receive data FIFO. Access ADVRX_FIFO."]
-    pub init_scn_adv_rx_fifo: self::blell::INIT_SCN_ADV_RX_FIFO,
-    _reserved45: [u8; 4usize],
+    pub init_scn_adv_rx_fifo:
+        crate::Reg<self::blell::init_scn_adv_rx_fifo::INIT_SCN_ADV_RX_FIFO_SPEC>,
+    _reserved45: [u8; 0x04],
     #[doc = "0x100 - Connection Interval"]
-    pub conn_interval: self::blell::CONN_INTERVAL,
+    pub conn_interval: crate::Reg<self::blell::conn_interval::CONN_INTERVAL_SPEC>,
     #[doc = "0x104 - Supervision timeout"]
-    pub sup_timeout: self::blell::SUP_TIMEOUT,
+    pub sup_timeout: crate::Reg<self::blell::sup_timeout::SUP_TIMEOUT_SPEC>,
     #[doc = "0x108 - Slave Latency"]
-    pub slave_latency: self::blell::SLAVE_LATENCY,
+    pub slave_latency: crate::Reg<self::blell::slave_latency::SLAVE_LATENCY_SPEC>,
     #[doc = "0x10c - Connection event length"]
-    pub ce_length: self::blell::CE_LENGTH,
+    pub ce_length: crate::Reg<self::blell::ce_length::CE_LENGTH_SPEC>,
     #[doc = "0x110 - Access address (lower)"]
-    pub pdu_access_addr_l_register: self::blell::PDU_ACCESS_ADDR_L_REGISTER,
+    pub pdu_access_addr_l_register:
+        crate::Reg<self::blell::pdu_access_addr_l_register::PDU_ACCESS_ADDR_L_REGISTER_SPEC>,
     #[doc = "0x114 - Access address (upper)"]
-    pub pdu_access_addr_h_register: self::blell::PDU_ACCESS_ADDR_H_REGISTER,
+    pub pdu_access_addr_h_register:
+        crate::Reg<self::blell::pdu_access_addr_h_register::PDU_ACCESS_ADDR_H_REGISTER_SPEC>,
     #[doc = "0x118 - Connection event instant"]
-    pub conn_ce_instant: self::blell::CONN_CE_INSTANT,
+    pub conn_ce_instant: crate::Reg<self::blell::conn_ce_instant::CONN_CE_INSTANT_SPEC>,
     #[doc = "0x11c - connection configuration & status register"]
-    pub ce_cnfg_sts_register: self::blell::CE_CNFG_STS_REGISTER,
+    pub ce_cnfg_sts_register:
+        crate::Reg<self::blell::ce_cnfg_sts_register::CE_CNFG_STS_REGISTER_SPEC>,
     #[doc = "0x120 - Next connection event instant"]
-    pub next_ce_instant: self::blell::NEXT_CE_INSTANT,
+    pub next_ce_instant: crate::Reg<self::blell::next_ce_instant::NEXT_CE_INSTANT_SPEC>,
     #[doc = "0x124 - connection event counter"]
-    pub conn_ce_counter: self::blell::CONN_CE_COUNTER,
+    pub conn_ce_counter: crate::Reg<self::blell::conn_ce_counter::CONN_CE_COUNTER_SPEC>,
     #[doc = "0x128 - data list sent update and status"]
-    pub data_list_sent_update__status: self::blell::DATA_LIST_SENT_UPDATE__STATUS,
+    pub data_list_sent_update__status:
+        crate::Reg<self::blell::data_list_sent_update__status::DATA_LIST_SENT_UPDATE__STATUS_SPEC>,
     #[doc = "0x12c - data list ack update and status"]
-    pub data_list_ack_update__status: self::blell::DATA_LIST_ACK_UPDATE__STATUS,
+    pub data_list_ack_update__status:
+        crate::Reg<self::blell::data_list_ack_update__status::DATA_LIST_ACK_UPDATE__STATUS_SPEC>,
     #[doc = "0x130 - connection configuration & status register"]
-    pub ce_cnfg_sts_register_ext: self::blell::CE_CNFG_STS_REGISTER_EXT,
+    pub ce_cnfg_sts_register_ext:
+        crate::Reg<self::blell::ce_cnfg_sts_register_ext::CE_CNFG_STS_REGISTER_EXT_SPEC>,
     #[doc = "0x134 - Connection extended interrupt status and Clear register"]
-    pub conn_ext_intr: self::blell::CONN_EXT_INTR,
+    pub conn_ext_intr: crate::Reg<self::blell::conn_ext_intr::CONN_EXT_INTR_SPEC>,
     #[doc = "0x138 - Connection Extended Interrupt mask"]
-    pub conn_ext_intr_mask: self::blell::CONN_EXT_INTR_MASK,
-    _reserved60: [u8; 4usize],
-    #[doc = "0x140 - Data buffer descriptor 0 to 4"]
-    pub data_mem_descriptor: [self::blell::DATA_MEM_DESCRIPTOR; 5],
-    _reserved61: [u8; 12usize],
+    pub conn_ext_intr_mask: crate::Reg<self::blell::conn_ext_intr_mask::CONN_EXT_INTR_MASK_SPEC>,
+    _reserved60: [u8; 0x04],
+    #[doc = "0x140..0x154 - Data buffer descriptor 0 to 4"]
+    pub data_mem_descriptor:
+        [crate::Reg<self::blell::data_mem_descriptor::DATA_MEM_DESCRIPTOR_SPEC>; 5],
+    _reserved61: [u8; 0x0c],
     #[doc = "0x160 - Window widen for interval"]
-    pub window_widen_intvl: self::blell::WINDOW_WIDEN_INTVL,
+    pub window_widen_intvl: crate::Reg<self::blell::window_widen_intvl::WINDOW_WIDEN_INTVL_SPEC>,
     #[doc = "0x164 - Window widen for offset"]
-    pub window_widen_winoff: self::blell::WINDOW_WIDEN_WINOFF,
-    _reserved63: [u8; 8usize],
+    pub window_widen_winoff: crate::Reg<self::blell::window_widen_winoff::WINDOW_WIDEN_WINOFF_SPEC>,
+    _reserved63: [u8; 0x08],
     #[doc = "0x170 - Direct Test Mode control"]
-    pub le_rf_test_mode: self::blell::LE_RF_TEST_MODE,
+    pub le_rf_test_mode: crate::Reg<self::blell::le_rf_test_mode::LE_RF_TEST_MODE_SPEC>,
     #[doc = "0x174 - Direct Test Mode receive packet count"]
-    pub dtm_rx_pkt_count: self::blell::DTM_RX_PKT_COUNT,
+    pub dtm_rx_pkt_count: crate::Reg<self::blell::dtm_rx_pkt_count::DTM_RX_PKT_COUNT_SPEC>,
     #[doc = "0x178 - Direct Test Mode control"]
-    pub le_rf_test_mode_ext: self::blell::LE_RF_TEST_MODE_EXT,
-    _reserved66: [u8; 12usize],
+    pub le_rf_test_mode_ext: crate::Reg<self::blell::le_rf_test_mode_ext::LE_RF_TEST_MODE_EXT_SPEC>,
+    _reserved66: [u8; 0x0c],
     #[doc = "0x188 - Channel Address register"]
-    pub txrx_hop: self::blell::TXRX_HOP,
-    _reserved67: [u8; 4usize],
+    pub txrx_hop: crate::Reg<self::blell::txrx_hop::TXRX_HOP_SPEC>,
+    _reserved67: [u8; 0x04],
     #[doc = "0x190 - Transmit/Receive data delay"]
-    pub tx_rx_on_delay: self::blell::TX_RX_ON_DELAY,
-    _reserved68: [u8; 20usize],
+    pub tx_rx_on_delay: crate::Reg<self::blell::tx_rx_on_delay::TX_RX_ON_DELAY_SPEC>,
+    _reserved68: [u8; 0x14],
     #[doc = "0x1a8 - ADV packet access code low word"]
-    pub adv_accaddr_l: self::blell::ADV_ACCADDR_L,
+    pub adv_accaddr_l: crate::Reg<self::blell::adv_accaddr_l::ADV_ACCADDR_L_SPEC>,
     #[doc = "0x1ac - ADV packet access code high word"]
-    pub adv_accaddr_h: self::blell::ADV_ACCADDR_H,
+    pub adv_accaddr_h: crate::Reg<self::blell::adv_accaddr_h::ADV_ACCADDR_H_SPEC>,
     #[doc = "0x1b0 - Advertising channel transmit power setting"]
-    pub adv_ch_tx_power_lvl_ls: self::blell::ADV_CH_TX_POWER_LVL_LS,
+    pub adv_ch_tx_power_lvl_ls:
+        crate::Reg<self::blell::adv_ch_tx_power_lvl_ls::ADV_CH_TX_POWER_LVL_LS_SPEC>,
     #[doc = "0x1b4 - Advertising channel transmit power setting extension"]
-    pub adv_ch_tx_power_lvl_ms: self::blell::ADV_CH_TX_POWER_LVL_MS,
+    pub adv_ch_tx_power_lvl_ms:
+        crate::Reg<self::blell::adv_ch_tx_power_lvl_ms::ADV_CH_TX_POWER_LVL_MS_SPEC>,
     #[doc = "0x1b8 - Connection channel transmit power setting"]
-    pub conn_ch_tx_power_lvl_ls: self::blell::CONN_CH_TX_POWER_LVL_LS,
+    pub conn_ch_tx_power_lvl_ls:
+        crate::Reg<self::blell::conn_ch_tx_power_lvl_ls::CONN_CH_TX_POWER_LVL_LS_SPEC>,
     #[doc = "0x1bc - Connection channel transmit power setting extension"]
-    pub conn_ch_tx_power_lvl_ms: self::blell::CONN_CH_TX_POWER_LVL_MS,
+    pub conn_ch_tx_power_lvl_ms:
+        crate::Reg<self::blell::conn_ch_tx_power_lvl_ms::CONN_CH_TX_POWER_LVL_MS_SPEC>,
     #[doc = "0x1c0 - Device public address lower register"]
-    pub dev_pub_addr_l: self::blell::DEV_PUB_ADDR_L,
+    pub dev_pub_addr_l: crate::Reg<self::blell::dev_pub_addr_l::DEV_PUB_ADDR_L_SPEC>,
     #[doc = "0x1c4 - Device public address middle register"]
-    pub dev_pub_addr_m: self::blell::DEV_PUB_ADDR_M,
+    pub dev_pub_addr_m: crate::Reg<self::blell::dev_pub_addr_m::DEV_PUB_ADDR_M_SPEC>,
     #[doc = "0x1c8 - Device public address higher register"]
-    pub dev_pub_addr_h: self::blell::DEV_PUB_ADDR_H,
-    _reserved77: [u8; 4usize],
+    pub dev_pub_addr_h: crate::Reg<self::blell::dev_pub_addr_h::DEV_PUB_ADDR_H_SPEC>,
+    _reserved77: [u8; 0x04],
     #[doc = "0x1d0 - Offset to first instant"]
-    pub offset_to_first_instant: self::blell::OFFSET_TO_FIRST_INSTANT,
+    pub offset_to_first_instant:
+        crate::Reg<self::blell::offset_to_first_instant::OFFSET_TO_FIRST_INSTANT_SPEC>,
     #[doc = "0x1d4 - Advertiser configuration register"]
-    pub adv_config: self::blell::ADV_CONFIG,
+    pub adv_config: crate::Reg<self::blell::adv_config::ADV_CONFIG_SPEC>,
     #[doc = "0x1d8 - Scan configuration register"]
-    pub scan_config: self::blell::SCAN_CONFIG,
+    pub scan_config: crate::Reg<self::blell::scan_config::SCAN_CONFIG_SPEC>,
     #[doc = "0x1dc - Initiator configuration register"]
-    pub init_config: self::blell::INIT_CONFIG,
+    pub init_config: crate::Reg<self::blell::init_config::INIT_CONFIG_SPEC>,
     #[doc = "0x1e0 - Connection configuration register"]
-    pub conn_config: self::blell::CONN_CONFIG,
-    _reserved82: [u8; 4usize],
+    pub conn_config: crate::Reg<self::blell::conn_config::CONN_CONFIG_SPEC>,
+    _reserved82: [u8; 0x04],
     #[doc = "0x1e8 - Connection parameter 1"]
-    pub conn_param1: self::blell::CONN_PARAM1,
+    pub conn_param1: crate::Reg<self::blell::conn_param1::CONN_PARAM1_SPEC>,
     #[doc = "0x1ec - Connection parameter 2"]
-    pub conn_param2: self::blell::CONN_PARAM2,
+    pub conn_param2: crate::Reg<self::blell::conn_param2::CONN_PARAM2_SPEC>,
     #[doc = "0x1f0 - Connection Interrupt mask"]
-    pub conn_intr_mask: self::blell::CONN_INTR_MASK,
+    pub conn_intr_mask: crate::Reg<self::blell::conn_intr_mask::CONN_INTR_MASK_SPEC>,
     #[doc = "0x1f4 - slave timing control"]
-    pub slave_timing_control: self::blell::SLAVE_TIMING_CONTROL,
+    pub slave_timing_control:
+        crate::Reg<self::blell::slave_timing_control::SLAVE_TIMING_CONTROL_SPEC>,
     #[doc = "0x1f8 - Receive trigger control"]
-    pub receive_trig_ctrl: self::blell::RECEIVE_TRIG_CTRL,
-    _reserved87: [u8; 4usize],
+    pub receive_trig_ctrl: crate::Reg<self::blell::receive_trig_ctrl::RECEIVE_TRIG_CTRL_SPEC>,
+    _reserved87: [u8; 0x04],
     #[doc = "0x200 - LL debug register 1"]
-    pub ll_dbg_1: self::blell::LL_DBG_1,
+    pub ll_dbg_1: crate::Reg<self::blell::ll_dbg_1::LL_DBG_1_SPEC>,
     #[doc = "0x204 - LL debug register 2"]
-    pub ll_dbg_2: self::blell::LL_DBG_2,
+    pub ll_dbg_2: crate::Reg<self::blell::ll_dbg_2::LL_DBG_2_SPEC>,
     #[doc = "0x208 - LL debug register 3"]
-    pub ll_dbg_3: self::blell::LL_DBG_3,
+    pub ll_dbg_3: crate::Reg<self::blell::ll_dbg_3::LL_DBG_3_SPEC>,
     #[doc = "0x20c - LL debug register 4"]
-    pub ll_dbg_4: self::blell::LL_DBG_4,
+    pub ll_dbg_4: crate::Reg<self::blell::ll_dbg_4::LL_DBG_4_SPEC>,
     #[doc = "0x210 - LL debug register 5"]
-    pub ll_dbg_5: self::blell::LL_DBG_5,
+    pub ll_dbg_5: crate::Reg<self::blell::ll_dbg_5::LL_DBG_5_SPEC>,
     #[doc = "0x214 - LL debug register 6"]
-    pub ll_dbg_6: self::blell::LL_DBG_6,
+    pub ll_dbg_6: crate::Reg<self::blell::ll_dbg_6::LL_DBG_6_SPEC>,
     #[doc = "0x218 - LL debug register 7"]
-    pub ll_dbg_7: self::blell::LL_DBG_7,
+    pub ll_dbg_7: crate::Reg<self::blell::ll_dbg_7::LL_DBG_7_SPEC>,
     #[doc = "0x21c - LL debug register 8"]
-    pub ll_dbg_8: self::blell::LL_DBG_8,
+    pub ll_dbg_8: crate::Reg<self::blell::ll_dbg_8::LL_DBG_8_SPEC>,
     #[doc = "0x220 - LL debug register 9"]
-    pub ll_dbg_9: self::blell::LL_DBG_9,
+    pub ll_dbg_9: crate::Reg<self::blell::ll_dbg_9::LL_DBG_9_SPEC>,
     #[doc = "0x224 - LL debug register 10"]
-    pub ll_dbg_10: self::blell::LL_DBG_10,
-    _reserved97: [u8; 8usize],
+    pub ll_dbg_10: crate::Reg<self::blell::ll_dbg_10::LL_DBG_10_SPEC>,
+    _reserved97: [u8; 0x08],
     #[doc = "0x230 - Lower 16 bit address of the peer device for INIT."]
-    pub peer_addr_init_l: self::blell::PEER_ADDR_INIT_L,
+    pub peer_addr_init_l: crate::Reg<self::blell::peer_addr_init_l::PEER_ADDR_INIT_L_SPEC>,
     #[doc = "0x234 - Middle 16 bit address of the peer device for INIT."]
-    pub peer_addr_init_m: self::blell::PEER_ADDR_INIT_M,
+    pub peer_addr_init_m: crate::Reg<self::blell::peer_addr_init_m::PEER_ADDR_INIT_M_SPEC>,
     #[doc = "0x238 - Higher 16 bit address of the peer device for INIT."]
-    pub peer_addr_init_h: self::blell::PEER_ADDR_INIT_H,
+    pub peer_addr_init_h: crate::Reg<self::blell::peer_addr_init_h::PEER_ADDR_INIT_H_SPEC>,
     #[doc = "0x23c - Lower 16 bits of the secondary address of the peer device for ADV_DIR."]
-    pub peer_sec_addr_adv_l: self::blell::PEER_SEC_ADDR_ADV_L,
+    pub peer_sec_addr_adv_l: crate::Reg<self::blell::peer_sec_addr_adv_l::PEER_SEC_ADDR_ADV_L_SPEC>,
     #[doc = "0x240 - Middle 16 bits of the secondary address of the peer device for ADV_DIR."]
-    pub peer_sec_addr_adv_m: self::blell::PEER_SEC_ADDR_ADV_M,
+    pub peer_sec_addr_adv_m: crate::Reg<self::blell::peer_sec_addr_adv_m::PEER_SEC_ADDR_ADV_M_SPEC>,
     #[doc = "0x244 - Higher 16 bits of the secondary address of the peer device for ADV_DIR."]
-    pub peer_sec_addr_adv_h: self::blell::PEER_SEC_ADDR_ADV_H,
+    pub peer_sec_addr_adv_h: crate::Reg<self::blell::peer_sec_addr_adv_h::PEER_SEC_ADDR_ADV_H_SPEC>,
     #[doc = "0x248 - Initiator Window NI timer control"]
-    pub init_window_timer_ctrl: self::blell::INIT_WINDOW_TIMER_CTRL,
+    pub init_window_timer_ctrl:
+        crate::Reg<self::blell::init_window_timer_ctrl::INIT_WINDOW_TIMER_CTRL_SPEC>,
     #[doc = "0x24c - Connection extended configuration register"]
-    pub conn_config_ext: self::blell::CONN_CONFIG_EXT,
-    _reserved105: [u8; 8usize],
+    pub conn_config_ext: crate::Reg<self::blell::conn_config_ext::CONN_CONFIG_EXT_SPEC>,
+    _reserved105: [u8; 0x08],
     #[doc = "0x258 - DPLL & CY Correlator configuration register"]
-    pub dpll_config: self::blell::DPLL_CONFIG,
-    _reserved106: [u8; 4usize],
+    pub dpll_config: crate::Reg<self::blell::dpll_config::DPLL_CONFIG_SPEC>,
+    _reserved106: [u8; 0x04],
     #[doc = "0x260 - Initiator Window NI instant"]
-    pub init_ni_val: self::blell::INIT_NI_VAL,
+    pub init_ni_val: crate::Reg<self::blell::init_ni_val::INIT_NI_VAL_SPEC>,
     #[doc = "0x264 - Initiator Window offset captured at conn request"]
-    pub init_window_offset: self::blell::INIT_WINDOW_OFFSET,
+    pub init_window_offset: crate::Reg<self::blell::init_window_offset::INIT_WINDOW_OFFSET_SPEC>,
     #[doc = "0x268 - Initiator Window NI anchor point captured at conn request"]
-    pub init_window_ni_anchor_pt: self::blell::INIT_WINDOW_NI_ANCHOR_PT,
-    _reserved109: [u8; 312usize],
+    pub init_window_ni_anchor_pt:
+        crate::Reg<self::blell::init_window_ni_anchor_pt::INIT_WINDOW_NI_ANCHOR_PT_SPEC>,
+    _reserved109: [u8; 0x0138],
     #[doc = "0x3a4 - Connection update new interval"]
-    pub conn_update_new_interval: self::blell::CONN_UPDATE_NEW_INTERVAL,
+    pub conn_update_new_interval:
+        crate::Reg<self::blell::conn_update_new_interval::CONN_UPDATE_NEW_INTERVAL_SPEC>,
     #[doc = "0x3a8 - Connection update new latency"]
-    pub conn_update_new_latency: self::blell::CONN_UPDATE_NEW_LATENCY,
+    pub conn_update_new_latency:
+        crate::Reg<self::blell::conn_update_new_latency::CONN_UPDATE_NEW_LATENCY_SPEC>,
     #[doc = "0x3ac - Connection update new supervision timeout"]
-    pub conn_update_new_sup_to: self::blell::CONN_UPDATE_NEW_SUP_TO,
+    pub conn_update_new_sup_to:
+        crate::Reg<self::blell::conn_update_new_sup_to::CONN_UPDATE_NEW_SUP_TO_SPEC>,
     #[doc = "0x3b0 - Connection update new Slave Latency X Conn interval Value"]
-    pub conn_update_new_sl_interval: self::blell::CONN_UPDATE_NEW_SL_INTERVAL,
-    _reserved113: [u8; 12usize],
+    pub conn_update_new_sl_interval:
+        crate::Reg<self::blell::conn_update_new_sl_interval::CONN_UPDATE_NEW_SL_INTERVAL_SPEC>,
+    _reserved113: [u8; 0x0c],
     #[doc = "0x3c0 - Connection request address word 0"]
-    pub conn_req_word0: self::blell::CONN_REQ_WORD0,
+    pub conn_req_word0: crate::Reg<self::blell::conn_req_word0::CONN_REQ_WORD0_SPEC>,
     #[doc = "0x3c4 - Connection request address word 1"]
-    pub conn_req_word1: self::blell::CONN_REQ_WORD1,
+    pub conn_req_word1: crate::Reg<self::blell::conn_req_word1::CONN_REQ_WORD1_SPEC>,
     #[doc = "0x3c8 - Connection request address word 2"]
-    pub conn_req_word2: self::blell::CONN_REQ_WORD2,
+    pub conn_req_word2: crate::Reg<self::blell::conn_req_word2::CONN_REQ_WORD2_SPEC>,
     #[doc = "0x3cc - Connection request address word 3"]
-    pub conn_req_word3: self::blell::CONN_REQ_WORD3,
+    pub conn_req_word3: crate::Reg<self::blell::conn_req_word3::CONN_REQ_WORD3_SPEC>,
     #[doc = "0x3d0 - Connection request address word 4"]
-    pub conn_req_word4: self::blell::CONN_REQ_WORD4,
+    pub conn_req_word4: crate::Reg<self::blell::conn_req_word4::CONN_REQ_WORD4_SPEC>,
     #[doc = "0x3d4 - Connection request address word 5"]
-    pub conn_req_word5: self::blell::CONN_REQ_WORD5,
+    pub conn_req_word5: crate::Reg<self::blell::conn_req_word5::CONN_REQ_WORD5_SPEC>,
     #[doc = "0x3d8 - Connection request address word 6"]
-    pub conn_req_word6: self::blell::CONN_REQ_WORD6,
+    pub conn_req_word6: crate::Reg<self::blell::conn_req_word6::CONN_REQ_WORD6_SPEC>,
     #[doc = "0x3dc - Connection request address word 7"]
-    pub conn_req_word7: self::blell::CONN_REQ_WORD7,
+    pub conn_req_word7: crate::Reg<self::blell::conn_req_word7::CONN_REQ_WORD7_SPEC>,
     #[doc = "0x3e0 - Connection request address word 8"]
-    pub conn_req_word8: self::blell::CONN_REQ_WORD8,
+    pub conn_req_word8: crate::Reg<self::blell::conn_req_word8::CONN_REQ_WORD8_SPEC>,
     #[doc = "0x3e4 - Connection request address word 9"]
-    pub conn_req_word9: self::blell::CONN_REQ_WORD9,
+    pub conn_req_word9: crate::Reg<self::blell::conn_req_word9::CONN_REQ_WORD9_SPEC>,
     #[doc = "0x3e8 - Connection request address word 10"]
-    pub conn_req_word10: self::blell::CONN_REQ_WORD10,
+    pub conn_req_word10: crate::Reg<self::blell::conn_req_word10::CONN_REQ_WORD10_SPEC>,
     #[doc = "0x3ec - Connection request address word 11"]
-    pub conn_req_word11: self::blell::CONN_REQ_WORD11,
-    _reserved125: [u8; 1556usize],
+    pub conn_req_word11: crate::Reg<self::blell::conn_req_word11::CONN_REQ_WORD11_SPEC>,
+    _reserved125: [u8; 0x0614],
     #[doc = "0xa04 - PDU response timer/Generic Timer (MMMS mode)"]
-    pub pdu_resp_timer: self::blell::PDU_RESP_TIMER,
+    pub pdu_resp_timer: crate::Reg<self::blell::pdu_resp_timer::PDU_RESP_TIMER_SPEC>,
     #[doc = "0xa08 - Next response timeout instant"]
-    pub next_resp_timer_exp: self::blell::NEXT_RESP_TIMER_EXP,
+    pub next_resp_timer_exp: crate::Reg<self::blell::next_resp_timer_exp::NEXT_RESP_TIMER_EXP_SPEC>,
     #[doc = "0xa0c - Next supervision timeout instant"]
-    pub next_sup_to: self::blell::NEXT_SUP_TO,
+    pub next_sup_to: crate::Reg<self::blell::next_sup_to::NEXT_SUP_TO_SPEC>,
     #[doc = "0xa10 - Feature enable"]
-    pub llh_feature_config: self::blell::LLH_FEATURE_CONFIG,
+    pub llh_feature_config: crate::Reg<self::blell::llh_feature_config::LLH_FEATURE_CONFIG_SPEC>,
     #[doc = "0xa14 - Window minimum step size"]
-    pub win_min_step_size: self::blell::WIN_MIN_STEP_SIZE,
+    pub win_min_step_size: crate::Reg<self::blell::win_min_step_size::WIN_MIN_STEP_SIZE_SPEC>,
     #[doc = "0xa18 - Slave window adjustment"]
-    pub slv_win_adj: self::blell::SLV_WIN_ADJ,
+    pub slv_win_adj: crate::Reg<self::blell::slv_win_adj::SLV_WIN_ADJ_SPEC>,
     #[doc = "0xa1c - Slave Latency X Conn Interval Value"]
-    pub sl_conn_interval: self::blell::SL_CONN_INTERVAL,
+    pub sl_conn_interval: crate::Reg<self::blell::sl_conn_interval::SL_CONN_INTERVAL_SPEC>,
     #[doc = "0xa20 - LE Ping connection timer address"]
-    pub le_ping_timer_addr: self::blell::LE_PING_TIMER_ADDR,
+    pub le_ping_timer_addr: crate::Reg<self::blell::le_ping_timer_addr::LE_PING_TIMER_ADDR_SPEC>,
     #[doc = "0xa24 - LE Ping connection timer offset"]
-    pub le_ping_timer_offset: self::blell::LE_PING_TIMER_OFFSET,
+    pub le_ping_timer_offset:
+        crate::Reg<self::blell::le_ping_timer_offset::LE_PING_TIMER_OFFSET_SPEC>,
     #[doc = "0xa28 - LE Ping timer next expiry instant"]
-    pub le_ping_timer_next_exp: self::blell::LE_PING_TIMER_NEXT_EXP,
+    pub le_ping_timer_next_exp:
+        crate::Reg<self::blell::le_ping_timer_next_exp::LE_PING_TIMER_NEXT_EXP_SPEC>,
     #[doc = "0xa2c - LE Ping Timer wrap count"]
-    pub le_ping_timer_wrap_count: self::blell::LE_PING_TIMER_WRAP_COUNT,
-    _reserved136: [u8; 976usize],
+    pub le_ping_timer_wrap_count:
+        crate::Reg<self::blell::le_ping_timer_wrap_count::LE_PING_TIMER_WRAP_COUNT_SPEC>,
+    _reserved136: [u8; 0x03d0],
     #[doc = "0xe00 - Transmit enable extension delay"]
-    pub tx_en_ext_delay: self::blell::TX_EN_EXT_DELAY,
+    pub tx_en_ext_delay: crate::Reg<self::blell::tx_en_ext_delay::TX_EN_EXT_DELAY_SPEC>,
     #[doc = "0xe04 - Transmit/Receive enable delay"]
-    pub tx_rx_synth_delay: self::blell::TX_RX_SYNTH_DELAY,
+    pub tx_rx_synth_delay: crate::Reg<self::blell::tx_rx_synth_delay::TX_RX_SYNTH_DELAY_SPEC>,
     #[doc = "0xe08 - External TX PA and RX LNA delay configuration"]
-    pub ext_pa_lna_dly_cnfg: self::blell::EXT_PA_LNA_DLY_CNFG,
-    _reserved139: [u8; 4usize],
+    pub ext_pa_lna_dly_cnfg: crate::Reg<self::blell::ext_pa_lna_dly_cnfg::EXT_PA_LNA_DLY_CNFG_SPEC>,
+    _reserved139: [u8; 0x04],
     #[doc = "0xe10 - Link Layer additional configuration"]
-    pub ll_config: self::blell::LL_CONFIG,
-    _reserved140: [u8; 236usize],
+    pub ll_config: crate::Reg<self::blell::ll_config::LL_CONFIG_SPEC>,
+    _reserved140: [u8; 0xec],
     #[doc = "0xf00 - LL Backward compatibility"]
-    pub ll_control: self::blell::LL_CONTROL,
+    pub ll_control: crate::Reg<self::blell::ll_control::LL_CONTROL_SPEC>,
     #[doc = "0xf04 - Device Resolvable/Non-Resolvable Private address lower register"]
-    pub dev_pa_addr_l: self::blell::DEV_PA_ADDR_L,
+    pub dev_pa_addr_l: crate::Reg<self::blell::dev_pa_addr_l::DEV_PA_ADDR_L_SPEC>,
     #[doc = "0xf08 - Device Resolvable/Non-Resolvable Private address middle register"]
-    pub dev_pa_addr_m: self::blell::DEV_PA_ADDR_M,
+    pub dev_pa_addr_m: crate::Reg<self::blell::dev_pa_addr_m::DEV_PA_ADDR_M_SPEC>,
     #[doc = "0xf0c - Device Resolvable/Non-Resolvable Private address higher register"]
-    pub dev_pa_addr_h: self::blell::DEV_PA_ADDR_H,
-    #[doc = "0xf10 - Resolving list entry control bit"]
-    pub rslv_list_enable: [self::blell::RSLV_LIST_ENABLE; 16],
-    _reserved145: [u8; 80usize],
+    pub dev_pa_addr_h: crate::Reg<self::blell::dev_pa_addr_h::DEV_PA_ADDR_H_SPEC>,
+    #[doc = "0xf10..0xf50 - Resolving list entry control bit"]
+    pub rslv_list_enable: [crate::Reg<self::blell::rslv_list_enable::RSLV_LIST_ENABLE_SPEC>; 16],
+    _reserved145: [u8; 0x50],
     #[doc = "0xfa0 - whitelist valid entry bit"]
-    pub wl_connection_status: self::blell::WL_CONNECTION_STATUS,
-    _reserved146: [u8; 2140usize],
+    pub wl_connection_status:
+        crate::Reg<self::blell::wl_connection_status::WL_CONNECTION_STATUS_SPEC>,
+    _reserved146: [u8; 0x085c],
     #[doc = "0x1800 - DLE Connection RX memory base address"]
-    pub conn_rxmem_base_addr_dle: self::blell::CONN_RXMEM_BASE_ADDR_DLE,
-    _reserved147: [u8; 4092usize],
+    pub conn_rxmem_base_addr_dle:
+        crate::Reg<self::blell::conn_rxmem_base_addr_dle::CONN_RXMEM_BASE_ADDR_DLE_SPEC>,
+    _reserved147: [u8; 0x0ffc],
     #[doc = "0x2800 - DLE Connection TX memory base address"]
-    pub conn_txmem_base_addr_dle: self::blell::CONN_TXMEM_BASE_ADDR_DLE,
-    _reserved148: [u8; 65532usize],
+    pub conn_txmem_base_addr_dle:
+        crate::Reg<self::blell::conn_txmem_base_addr_dle::CONN_TXMEM_BASE_ADDR_DLE_SPEC>,
+    _reserved148: [u8; 0xfffc],
     #[doc = "0x12800 - Connection Parameter memory base address for connection 1"]
-    pub conn_1_param_mem_base_addr: self::blell::CONN_1_PARAM_MEM_BASE_ADDR,
-    _reserved149: [u8; 124usize],
+    pub conn_1_param_mem_base_addr:
+        crate::Reg<self::blell::conn_1_param_mem_base_addr::CONN_1_PARAM_MEM_BASE_ADDR_SPEC>,
+    _reserved149: [u8; 0x7c],
     #[doc = "0x12880 - Connection Parameter memory base address for connection 2"]
-    pub conn_2_param_mem_base_addr: self::blell::CONN_2_PARAM_MEM_BASE_ADDR,
-    _reserved150: [u8; 124usize],
+    pub conn_2_param_mem_base_addr:
+        crate::Reg<self::blell::conn_2_param_mem_base_addr::CONN_2_PARAM_MEM_BASE_ADDR_SPEC>,
+    _reserved150: [u8; 0x7c],
     #[doc = "0x12900 - Connection Parameter memory base address for connection 3"]
-    pub conn_3_param_mem_base_addr: self::blell::CONN_3_PARAM_MEM_BASE_ADDR,
-    _reserved151: [u8; 124usize],
+    pub conn_3_param_mem_base_addr:
+        crate::Reg<self::blell::conn_3_param_mem_base_addr::CONN_3_PARAM_MEM_BASE_ADDR_SPEC>,
+    _reserved151: [u8; 0x7c],
     #[doc = "0x12980 - Connection Parameter memory base address for connection 4"]
-    pub conn_4_param_mem_base_addr: self::blell::CONN_4_PARAM_MEM_BASE_ADDR,
-    _reserved152: [u8; 5756usize],
+    pub conn_4_param_mem_base_addr:
+        crate::Reg<self::blell::conn_4_param_mem_base_addr::CONN_4_PARAM_MEM_BASE_ADDR_SPEC>,
+    _reserved152: [u8; 0x167c],
     #[doc = "0x14000 - Next Instant Timer"]
-    pub ni_timer: self::blell::NI_TIMER,
+    pub ni_timer: crate::Reg<self::blell::ni_timer::NI_TIMER_SPEC>,
     #[doc = "0x14004 - Micro-second Offset"]
-    pub us_offset: self::blell::US_OFFSET,
+    pub us_offset: crate::Reg<self::blell::us_offset::US_OFFSET_SPEC>,
     #[doc = "0x14008 - Next Connection"]
-    pub next_conn: self::blell::NEXT_CONN,
+    pub next_conn: crate::Reg<self::blell::next_conn::NEXT_CONN_SPEC>,
     #[doc = "0x1400c - Abort next scheduled connection"]
-    pub ni_abort: self::blell::NI_ABORT,
-    _reserved156: [u8; 16usize],
+    pub ni_abort: crate::Reg<self::blell::ni_abort::NI_ABORT_SPEC>,
+    _reserved156: [u8; 0x10],
     #[doc = "0x14020 - Connection NI Status"]
-    pub conn_ni_status: self::blell::CONN_NI_STATUS,
+    pub conn_ni_status: crate::Reg<self::blell::conn_ni_status::CONN_NI_STATUS_SPEC>,
     #[doc = "0x14024 - Next Supervision timeout Status"]
-    pub next_sup_to_status: self::blell::NEXT_SUP_TO_STATUS,
+    pub next_sup_to_status: crate::Reg<self::blell::next_sup_to_status::NEXT_SUP_TO_STATUS_SPEC>,
     #[doc = "0x14028 - Connection Status"]
-    pub mmms_conn_status: self::blell::MMMS_CONN_STATUS,
+    pub mmms_conn_status: crate::Reg<self::blell::mmms_conn_status::MMMS_CONN_STATUS_SPEC>,
     #[doc = "0x1402c - BT Slot Captured Status"]
-    pub bt_slot_capt_status: self::blell::BT_SLOT_CAPT_STATUS,
+    pub bt_slot_capt_status: crate::Reg<self::blell::bt_slot_capt_status::BT_SLOT_CAPT_STATUS_SPEC>,
     #[doc = "0x14030 - Micro-second Capture Status"]
-    pub us_capt_status: self::blell::US_CAPT_STATUS,
+    pub us_capt_status: crate::Reg<self::blell::us_capt_status::US_CAPT_STATUS_SPEC>,
     #[doc = "0x14034 - Micro-second Offset Status"]
-    pub us_offset_status: self::blell::US_OFFSET_STATUS,
+    pub us_offset_status: crate::Reg<self::blell::us_offset_status::US_OFFSET_STATUS_SPEC>,
     #[doc = "0x14038 - Accumulated Window Widen Status"]
-    pub accu_window_widen_status: self::blell::ACCU_WINDOW_WIDEN_STATUS,
+    pub accu_window_widen_status:
+        crate::Reg<self::blell::accu_window_widen_status::ACCU_WINDOW_WIDEN_STATUS_SPEC>,
     #[doc = "0x1403c - Status when early interrupt is raised"]
-    pub early_intr_status: self::blell::EARLY_INTR_STATUS,
+    pub early_intr_status: crate::Reg<self::blell::early_intr_status::EARLY_INTR_STATUS_SPEC>,
     #[doc = "0x14040 - Multi-Master Multi-Slave Config"]
-    pub mmms_config: self::blell::MMMS_CONFIG,
+    pub mmms_config: crate::Reg<self::blell::mmms_config::MMMS_CONFIG_SPEC>,
     #[doc = "0x14044 - Running US of the current BT Slot"]
-    pub us_counter: self::blell::US_COUNTER,
+    pub us_counter: crate::Reg<self::blell::us_counter::US_COUNTER_SPEC>,
     #[doc = "0x14048 - Previous captured US of the BT Slot"]
-    pub us_capt_prev: self::blell::US_CAPT_PREV,
+    pub us_capt_prev: crate::Reg<self::blell::us_capt_prev::US_CAPT_PREV_SPEC>,
     #[doc = "0x1404c - NI at early interrupt"]
-    pub early_intr_ni: self::blell::EARLY_INTR_NI,
-    _reserved168: [u8; 48usize],
+    pub early_intr_ni: crate::Reg<self::blell::early_intr_ni::EARLY_INTR_NI_SPEC>,
+    _reserved168: [u8; 0x30],
     #[doc = "0x14080 - BT slot capture for master connection creation"]
-    pub mmms_master_create_bt_capt: self::blell::MMMS_MASTER_CREATE_BT_CAPT,
+    pub mmms_master_create_bt_capt:
+        crate::Reg<self::blell::mmms_master_create_bt_capt::MMMS_MASTER_CREATE_BT_CAPT_SPEC>,
     #[doc = "0x14084 - BT slot capture for slave connection creation"]
-    pub mmms_slave_create_bt_capt: self::blell::MMMS_SLAVE_CREATE_BT_CAPT,
+    pub mmms_slave_create_bt_capt:
+        crate::Reg<self::blell::mmms_slave_create_bt_capt::MMMS_SLAVE_CREATE_BT_CAPT_SPEC>,
     #[doc = "0x14088 - Micro second capture for slave connection creation"]
-    pub mmms_slave_create_us_capt: self::blell::MMMS_SLAVE_CREATE_US_CAPT,
-    _reserved171: [u8; 116usize],
-    #[doc = "0x14100 - Data buffer descriptor 0 to 15"]
-    pub mmms_data_mem_descriptor: [self::blell::MMMS_DATA_MEM_DESCRIPTOR; 16],
-    _reserved172: [u8; 192usize],
+    pub mmms_slave_create_us_capt:
+        crate::Reg<self::blell::mmms_slave_create_us_capt::MMMS_SLAVE_CREATE_US_CAPT_SPEC>,
+    _reserved171: [u8; 0x74],
+    #[doc = "0x14100..0x14140 - Data buffer descriptor 0 to 15"]
+    pub mmms_data_mem_descriptor:
+        [crate::Reg<self::blell::mmms_data_mem_descriptor::MMMS_DATA_MEM_DESCRIPTOR_SPEC>; 16],
+    _reserved172: [u8; 0xc0],
     #[doc = "0x14200 - data list sent update and status for connection 1"]
-    pub conn_1_data_list_sent: self::blell::CONN_1_DATA_LIST_SENT,
+    pub conn_1_data_list_sent:
+        crate::Reg<self::blell::conn_1_data_list_sent::CONN_1_DATA_LIST_SENT_SPEC>,
     #[doc = "0x14204 - data list ack update and status for connection 1"]
-    pub conn_1_data_list_ack: self::blell::CONN_1_DATA_LIST_ACK,
+    pub conn_1_data_list_ack:
+        crate::Reg<self::blell::conn_1_data_list_ack::CONN_1_DATA_LIST_ACK_SPEC>,
     #[doc = "0x14208 - Connection specific pause resume for connection 1"]
-    pub conn_1_ce_data_list_cfg: self::blell::CONN_1_CE_DATA_LIST_CFG,
-    _reserved175: [u8; 4usize],
+    pub conn_1_ce_data_list_cfg:
+        crate::Reg<self::blell::conn_1_ce_data_list_cfg::CONN_1_CE_DATA_LIST_CFG_SPEC>,
+    _reserved175: [u8; 0x04],
     #[doc = "0x14210 - data list sent update and status for connection 2"]
-    pub conn_2_data_list_sent: self::blell::CONN_2_DATA_LIST_SENT,
+    pub conn_2_data_list_sent:
+        crate::Reg<self::blell::conn_2_data_list_sent::CONN_2_DATA_LIST_SENT_SPEC>,
     #[doc = "0x14214 - data list ack update and status for connection 2"]
-    pub conn_2_data_list_ack: self::blell::CONN_2_DATA_LIST_ACK,
+    pub conn_2_data_list_ack:
+        crate::Reg<self::blell::conn_2_data_list_ack::CONN_2_DATA_LIST_ACK_SPEC>,
     #[doc = "0x14218 - Connection specific pause resume for connection 2"]
-    pub conn_2_ce_data_list_cfg: self::blell::CONN_2_CE_DATA_LIST_CFG,
-    _reserved178: [u8; 4usize],
+    pub conn_2_ce_data_list_cfg:
+        crate::Reg<self::blell::conn_2_ce_data_list_cfg::CONN_2_CE_DATA_LIST_CFG_SPEC>,
+    _reserved178: [u8; 0x04],
     #[doc = "0x14220 - data list sent update and status for connection 3"]
-    pub conn_3_data_list_sent: self::blell::CONN_3_DATA_LIST_SENT,
+    pub conn_3_data_list_sent:
+        crate::Reg<self::blell::conn_3_data_list_sent::CONN_3_DATA_LIST_SENT_SPEC>,
     #[doc = "0x14224 - data list ack update and status for connection 3"]
-    pub conn_3_data_list_ack: self::blell::CONN_3_DATA_LIST_ACK,
+    pub conn_3_data_list_ack:
+        crate::Reg<self::blell::conn_3_data_list_ack::CONN_3_DATA_LIST_ACK_SPEC>,
     #[doc = "0x14228 - Connection specific pause resume for connection 3"]
-    pub conn_3_ce_data_list_cfg: self::blell::CONN_3_CE_DATA_LIST_CFG,
-    _reserved181: [u8; 4usize],
+    pub conn_3_ce_data_list_cfg:
+        crate::Reg<self::blell::conn_3_ce_data_list_cfg::CONN_3_CE_DATA_LIST_CFG_SPEC>,
+    _reserved181: [u8; 0x04],
     #[doc = "0x14230 - data list sent update and status for connection 4"]
-    pub conn_4_data_list_sent: self::blell::CONN_4_DATA_LIST_SENT,
+    pub conn_4_data_list_sent:
+        crate::Reg<self::blell::conn_4_data_list_sent::CONN_4_DATA_LIST_SENT_SPEC>,
     #[doc = "0x14234 - data list ack update and status for connection 4"]
-    pub conn_4_data_list_ack: self::blell::CONN_4_DATA_LIST_ACK,
+    pub conn_4_data_list_ack:
+        crate::Reg<self::blell::conn_4_data_list_ack::CONN_4_DATA_LIST_ACK_SPEC>,
     #[doc = "0x14238 - Connection specific pause resume for connection 4"]
-    pub conn_4_ce_data_list_cfg: self::blell::CONN_4_CE_DATA_LIST_CFG,
-    _reserved184: [u8; 452usize],
+    pub conn_4_ce_data_list_cfg:
+        crate::Reg<self::blell::conn_4_ce_data_list_cfg::CONN_4_CE_DATA_LIST_CFG_SPEC>,
+    _reserved184: [u8; 0x01c4],
     #[doc = "0x14400 - Enable bits for ADV_NI, SCAN_NI and INIT_NI"]
-    pub mmms_advch_ni_enable: self::blell::MMMS_ADVCH_NI_ENABLE,
+    pub mmms_advch_ni_enable:
+        crate::Reg<self::blell::mmms_advch_ni_enable::MMMS_ADVCH_NI_ENABLE_SPEC>,
     #[doc = "0x14404 - Next instant valid for ADV, SCAN, INIT"]
-    pub mmms_advch_ni_valid: self::blell::MMMS_ADVCH_NI_VALID,
+    pub mmms_advch_ni_valid: crate::Reg<self::blell::mmms_advch_ni_valid::MMMS_ADVCH_NI_VALID_SPEC>,
     #[doc = "0x14408 - Abort the next instant of ADV, SCAN, INIT"]
-    pub mmms_advch_ni_abort: self::blell::MMMS_ADVCH_NI_ABORT,
-    _reserved187: [u8; 4usize],
+    pub mmms_advch_ni_abort: crate::Reg<self::blell::mmms_advch_ni_abort::MMMS_ADVCH_NI_ABORT_SPEC>,
+    _reserved187: [u8; 0x04],
     #[doc = "0x14410 - Register to configure the supervision timeout for next scheduled connection"]
-    pub conn_param_next_sup_to: self::blell::CONN_PARAM_NEXT_SUP_TO,
+    pub conn_param_next_sup_to:
+        crate::Reg<self::blell::conn_param_next_sup_to::CONN_PARAM_NEXT_SUP_TO_SPEC>,
     #[doc = "0x14414 - Register to configure Accumulated window widening for next scheduled connection"]
-    pub conn_param_acc_win_widen: self::blell::CONN_PARAM_ACC_WIN_WIDEN,
-    _reserved189: [u8; 8usize],
+    pub conn_param_acc_win_widen:
+        crate::Reg<self::blell::conn_param_acc_win_widen::CONN_PARAM_ACC_WIN_WIDEN_SPEC>,
+    _reserved189: [u8; 0x08],
     #[doc = "0x14420 - Register to configure offset from connection anchor point at which connection parameter memory should be read"]
-    pub hw_load_offset: self::blell::HW_LOAD_OFFSET,
+    pub hw_load_offset: crate::Reg<self::blell::hw_load_offset::HW_LOAD_OFFSET_SPEC>,
     #[doc = "0x14424 - Random number generated by Hardware for ADV NI calculation"]
-    pub adv_rand: self::blell::ADV_RAND,
+    pub adv_rand: crate::Reg<self::blell::adv_rand::ADV_RAND_SPEC>,
     #[doc = "0x14428 - Packet Counter of packets in RX FIFO in MMMS mode"]
-    pub mmms_rx_pkt_cntr: self::blell::MMMS_RX_PKT_CNTR,
-    _reserved192: [u8; 4usize],
-    #[doc = "0x14430 - Packet Counter for Individual connection index"]
-    pub conn_rx_pkt_cntr: [self::blell::CONN_RX_PKT_CNTR; 8],
-    _reserved193: [u8; 944usize],
+    pub mmms_rx_pkt_cntr: crate::Reg<self::blell::mmms_rx_pkt_cntr::MMMS_RX_PKT_CNTR_SPEC>,
+    _reserved192: [u8; 0x04],
+    #[doc = "0x14430..0x14450 - Packet Counter for Individual connection index"]
+    pub conn_rx_pkt_cntr: [crate::Reg<self::blell::conn_rx_pkt_cntr::CONN_RX_PKT_CNTR_SPEC>; 8],
+    _reserved193: [u8; 0x03b0],
     #[doc = "0x14800 - Whitelist base address"]
-    pub whitelist_base_addr: self::blell::WHITELIST_BASE_ADDR,
-    _reserved194: [u8; 188usize],
+    pub whitelist_base_addr: crate::Reg<self::blell::whitelist_base_addr::WHITELIST_BASE_ADDR_SPEC>,
+    _reserved194: [u8; 0xbc],
     #[doc = "0x148c0 - Resolving list base address for storing Peer Identity address"]
-    pub rslv_list_peer_idntt_base_addr: self::blell::RSLV_LIST_PEER_IDNTT_BASE_ADDR,
-    _reserved195: [u8; 188usize],
+    pub rslv_list_peer_idntt_base_addr: crate::Reg<
+        self::blell::rslv_list_peer_idntt_base_addr::RSLV_LIST_PEER_IDNTT_BASE_ADDR_SPEC,
+    >,
+    _reserved195: [u8; 0xbc],
     #[doc = "0x14980 - Resolving list base address for storing resolved Peer RPA address"]
-    pub rslv_list_peer_rpa_base_addr: self::blell::RSLV_LIST_PEER_RPA_BASE_ADDR,
-    _reserved196: [u8; 188usize],
+    pub rslv_list_peer_rpa_base_addr:
+        crate::Reg<self::blell::rslv_list_peer_rpa_base_addr::RSLV_LIST_PEER_RPA_BASE_ADDR_SPEC>,
+    _reserved196: [u8; 0xbc],
     #[doc = "0x14a40 - Resolving list base address for storing Resolved received INITA RPA"]
-    pub rslv_list_rcvd_init_rpa_base_addr: self::blell::RSLV_LIST_RCVD_INIT_RPA_BASE_ADDR,
-    _reserved197: [u8; 188usize],
+    pub rslv_list_rcvd_init_rpa_base_addr: crate::Reg<
+        self::blell::rslv_list_rcvd_init_rpa_base_addr::RSLV_LIST_RCVD_INIT_RPA_BASE_ADDR_SPEC,
+    >,
+    _reserved197: [u8; 0xbc],
     #[doc = "0x14b00 - Resolving list base address for storing generated TX INITA RPA"]
-    pub rslv_list_tx_init_rpa_base_addr: self::blell::RSLV_LIST_TX_INIT_RPA_BASE_ADDR,
+    pub rslv_list_tx_init_rpa_base_addr: crate::Reg<
+        self::blell::rslv_list_tx_init_rpa_base_addr::RSLV_LIST_TX_INIT_RPA_BASE_ADDR_SPEC,
+    >,
 }
 #[doc = r"Register block"]
 #[doc = "Bluetooth Low Energy Link Layer"]
@@ -518,111 +577,112 @@ pub mod blell;
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct BLESS {
-    _reserved0: [u8; 96usize],
+    _reserved0: [u8; 0x60],
     #[doc = "0x60 - BLESS DDFT configuration register"]
-    pub ddft_config: self::bless::DDFT_CONFIG,
+    pub ddft_config: crate::Reg<self::bless::ddft_config::DDFT_CONFIG_SPEC>,
     #[doc = "0x64 - Crystal clock divider configuration register"]
-    pub xtal_clk_div_config: self::bless::XTAL_CLK_DIV_CONFIG,
+    pub xtal_clk_div_config: crate::Reg<self::bless::xtal_clk_div_config::XTAL_CLK_DIV_CONFIG_SPEC>,
     #[doc = "0x68 - Link Layer interrupt status register"]
-    pub intr_stat: self::bless::INTR_STAT,
+    pub intr_stat: crate::Reg<self::bless::intr_stat::INTR_STAT_SPEC>,
     #[doc = "0x6c - Link Layer interrupt mask register"]
-    pub intr_mask: self::bless::INTR_MASK,
+    pub intr_mask: crate::Reg<self::bless::intr_mask::INTR_MASK_SPEC>,
     #[doc = "0x70 - Link Layer primary clock enable"]
-    pub ll_clk_en: self::bless::LL_CLK_EN,
+    pub ll_clk_en: crate::Reg<self::bless::ll_clk_en::LL_CLK_EN_SPEC>,
     #[doc = "0x74 - BLESS LF clock control and BLESS revision ID indicator"]
-    pub lf_clk_ctrl: self::bless::LF_CLK_CTRL,
+    pub lf_clk_ctrl: crate::Reg<self::bless::lf_clk_ctrl::LF_CLK_CTRL_SPEC>,
     #[doc = "0x78 - External TX PA and RX LNA control"]
-    pub ext_pa_lna_ctrl: self::bless::EXT_PA_LNA_CTRL,
-    _reserved7: [u8; 4usize],
+    pub ext_pa_lna_ctrl: crate::Reg<self::bless::ext_pa_lna_ctrl::EXT_PA_LNA_CTRL_SPEC>,
+    _reserved7: [u8; 0x04],
     #[doc = "0x80 - Link Layer Last Received packet RSSI/Channel energy and channel number"]
-    pub ll_pkt_rssi_ch_energy: self::bless::LL_PKT_RSSI_CH_ENERGY,
+    pub ll_pkt_rssi_ch_energy:
+        crate::Reg<self::bless::ll_pkt_rssi_ch_energy::LL_PKT_RSSI_CH_ENERGY_SPEC>,
     #[doc = "0x84 - BT clock captured on an LL DSM exit"]
-    pub bt_clock_capt: self::bless::BT_CLOCK_CAPT,
-    _reserved9: [u8; 24usize],
+    pub bt_clock_capt: crate::Reg<self::bless::bt_clock_capt::BT_CLOCK_CAPT_SPEC>,
+    _reserved9: [u8; 0x18],
     #[doc = "0xa0 - MT Configuration Register"]
-    pub mt_cfg: self::bless::MT_CFG,
+    pub mt_cfg: crate::Reg<self::bless::mt_cfg::MT_CFG_SPEC>,
     #[doc = "0xa4 - MT Delay configuration for state transitions"]
-    pub mt_delay_cfg: self::bless::MT_DELAY_CFG,
+    pub mt_delay_cfg: crate::Reg<self::bless::mt_delay_cfg::MT_DELAY_CFG_SPEC>,
     #[doc = "0xa8 - MT Delay configuration for state transitions"]
-    pub mt_delay_cfg2: self::bless::MT_DELAY_CFG2,
+    pub mt_delay_cfg2: crate::Reg<self::bless::mt_delay_cfg2::MT_DELAY_CFG2_SPEC>,
     #[doc = "0xac - MT Delay configuration for state transitions"]
-    pub mt_delay_cfg3: self::bless::MT_DELAY_CFG3,
+    pub mt_delay_cfg3: crate::Reg<self::bless::mt_delay_cfg3::MT_DELAY_CFG3_SPEC>,
     #[doc = "0xb0 - MT Configuration Register to control VIO switches"]
-    pub mt_vio_ctrl: self::bless::MT_VIO_CTRL,
+    pub mt_vio_ctrl: crate::Reg<self::bless::mt_vio_ctrl::MT_VIO_CTRL_SPEC>,
     #[doc = "0xb4 - MT Status Register"]
-    pub mt_status: self::bless::MT_STATUS,
+    pub mt_status: crate::Reg<self::bless::mt_status::MT_STATUS_SPEC>,
     #[doc = "0xb8 - Link Layer Power Control FSM Status Register"]
-    pub pwr_ctrl_sm_st: self::bless::PWR_CTRL_SM_ST,
-    _reserved16: [u8; 4usize],
+    pub pwr_ctrl_sm_st: crate::Reg<self::bless::pwr_ctrl_sm_st::PWR_CTRL_SM_ST_SPEC>,
+    _reserved16: [u8; 0x04],
     #[doc = "0xc0 - HVLDO Configuration register"]
-    pub hvldo_ctrl: self::bless::HVLDO_CTRL,
+    pub hvldo_ctrl: crate::Reg<self::bless::hvldo_ctrl::HVLDO_CTRL_SPEC>,
     #[doc = "0xc4 - Radio Buck and Active regulator enable control"]
-    pub misc_en_ctrl: self::bless::MISC_EN_CTRL,
-    _reserved18: [u8; 8usize],
+    pub misc_en_ctrl: crate::Reg<self::bless::misc_en_ctrl::MISC_EN_CTRL_SPEC>,
+    _reserved18: [u8; 0x08],
     #[doc = "0xd0 - EFUSE mode configuration register"]
-    pub efuse_config: self::bless::EFUSE_CONFIG,
+    pub efuse_config: crate::Reg<self::bless::efuse_config::EFUSE_CONFIG_SPEC>,
     #[doc = "0xd4 - EFUSE timing control register (common for Program and Read modes)"]
-    pub efuse_tim_ctrl1: self::bless::EFUSE_TIM_CTRL1,
+    pub efuse_tim_ctrl1: crate::Reg<self::bless::efuse_tim_ctrl1::EFUSE_TIM_CTRL1_SPEC>,
     #[doc = "0xd8 - EFUSE timing control Register (for Read)"]
-    pub efuse_tim_ctrl2: self::bless::EFUSE_TIM_CTRL2,
+    pub efuse_tim_ctrl2: crate::Reg<self::bless::efuse_tim_ctrl2::EFUSE_TIM_CTRL2_SPEC>,
     #[doc = "0xdc - EFUSE timing control Register (for Program)"]
-    pub efuse_tim_ctrl3: self::bless::EFUSE_TIM_CTRL3,
+    pub efuse_tim_ctrl3: crate::Reg<self::bless::efuse_tim_ctrl3::EFUSE_TIM_CTRL3_SPEC>,
     #[doc = "0xe0 - EFUSE Lower read data"]
-    pub efuse_rdata_l: self::bless::EFUSE_RDATA_L,
+    pub efuse_rdata_l: crate::Reg<self::bless::efuse_rdata_l::EFUSE_RDATA_L_SPEC>,
     #[doc = "0xe4 - EFUSE higher read data"]
-    pub efuse_rdata_h: self::bless::EFUSE_RDATA_H,
+    pub efuse_rdata_h: crate::Reg<self::bless::efuse_rdata_h::EFUSE_RDATA_H_SPEC>,
     #[doc = "0xe8 - EFUSE lower write word"]
-    pub efuse_wdata_l: self::bless::EFUSE_WDATA_L,
+    pub efuse_wdata_l: crate::Reg<self::bless::efuse_wdata_l::EFUSE_WDATA_L_SPEC>,
     #[doc = "0xec - EFUSE higher write word"]
-    pub efuse_wdata_h: self::bless::EFUSE_WDATA_H,
+    pub efuse_wdata_h: crate::Reg<self::bless::efuse_wdata_h::EFUSE_WDATA_H_SPEC>,
     #[doc = "0xf0 - Divide by 625 for FW Use"]
-    pub div_by_625_cfg: self::bless::DIV_BY_625_CFG,
+    pub div_by_625_cfg: crate::Reg<self::bless::div_by_625_cfg::DIV_BY_625_CFG_SPEC>,
     #[doc = "0xf4 - Output of divide by 625 divider"]
-    pub div_by_625_sts: self::bless::DIV_BY_625_STS,
-    _reserved28: [u8; 8usize],
+    pub div_by_625_sts: crate::Reg<self::bless::div_by_625_sts::DIV_BY_625_STS_SPEC>,
+    _reserved28: [u8; 0x08],
     #[doc = "0x100 - Packet counter 0"]
-    pub packet_counter0: self::bless::PACKET_COUNTER0,
+    pub packet_counter0: crate::Reg<self::bless::packet_counter0::PACKET_COUNTER0_SPEC>,
     #[doc = "0x104 - Packet counter 2"]
-    pub packet_counter2: self::bless::PACKET_COUNTER2,
+    pub packet_counter2: crate::Reg<self::bless::packet_counter2::PACKET_COUNTER2_SPEC>,
     #[doc = "0x108 - Master Initialization Vector 0"]
-    pub iv_master0: self::bless::IV_MASTER0,
+    pub iv_master0: crate::Reg<self::bless::iv_master0::IV_MASTER0_SPEC>,
     #[doc = "0x10c - Slave Initialization Vector 0"]
-    pub iv_slave0: self::bless::IV_SLAVE0,
-    #[doc = "0x110 - Encryption Key register 0-3"]
-    pub enc_key: [self::bless::ENC_KEY; 4],
+    pub iv_slave0: crate::Reg<self::bless::iv_slave0::IV_SLAVE0_SPEC>,
+    #[doc = "0x110..0x120 - Encryption Key register 0-3"]
+    pub enc_key: [crate::Reg<self::bless::enc_key::ENC_KEY_SPEC>; 4],
     #[doc = "0x120 - MIC input register"]
-    pub mic_in0: self::bless::MIC_IN0,
+    pub mic_in0: crate::Reg<self::bless::mic_in0::MIC_IN0_SPEC>,
     #[doc = "0x124 - MIC output register"]
-    pub mic_out0: self::bless::MIC_OUT0,
+    pub mic_out0: crate::Reg<self::bless::mic_out0::MIC_OUT0_SPEC>,
     #[doc = "0x128 - Encryption Parameter register"]
-    pub enc_params: self::bless::ENC_PARAMS,
+    pub enc_params: crate::Reg<self::bless::enc_params::ENC_PARAMS_SPEC>,
     #[doc = "0x12c - Encryption Configuration"]
-    pub enc_config: self::bless::ENC_CONFIG,
+    pub enc_config: crate::Reg<self::bless::enc_config::ENC_CONFIG_SPEC>,
     #[doc = "0x130 - Encryption Interrupt enable"]
-    pub enc_intr_en: self::bless::ENC_INTR_EN,
+    pub enc_intr_en: crate::Reg<self::bless::enc_intr_en::ENC_INTR_EN_SPEC>,
     #[doc = "0x134 - Encryption Interrupt status and clear register"]
-    pub enc_intr: self::bless::ENC_INTR,
-    _reserved39: [u8; 8usize],
-    #[doc = "0x140 - Programmable B1 Data register (0-3)"]
-    pub b1_data_reg: [self::bless::B1_DATA_REG; 4],
+    pub enc_intr: crate::Reg<self::bless::enc_intr::ENC_INTR_SPEC>,
+    _reserved39: [u8; 0x08],
+    #[doc = "0x140..0x150 - Programmable B1 Data register (0-3)"]
+    pub b1_data_reg: [crate::Reg<self::bless::b1_data_reg::B1_DATA_REG_SPEC>; 4],
     #[doc = "0x150 - Encryption memory base address"]
-    pub enc_mem_base_addr: self::bless::ENC_MEM_BASE_ADDR,
-    _reserved41: [u8; 3500usize],
+    pub enc_mem_base_addr: crate::Reg<self::bless::enc_mem_base_addr::ENC_MEM_BASE_ADDR_SPEC>,
+    _reserved41: [u8; 0x0dac],
     #[doc = "0xf00 - LDO Trim register 0"]
-    pub trim_ldo_0: self::bless::TRIM_LDO_0,
+    pub trim_ldo_0: crate::Reg<self::bless::trim_ldo_0::TRIM_LDO_0_SPEC>,
     #[doc = "0xf04 - LDO Trim register 1"]
-    pub trim_ldo_1: self::bless::TRIM_LDO_1,
+    pub trim_ldo_1: crate::Reg<self::bless::trim_ldo_1::TRIM_LDO_1_SPEC>,
     #[doc = "0xf08 - LDO Trim register 2"]
-    pub trim_ldo_2: self::bless::TRIM_LDO_2,
+    pub trim_ldo_2: crate::Reg<self::bless::trim_ldo_2::TRIM_LDO_2_SPEC>,
     #[doc = "0xf0c - LDO Trim register 3"]
-    pub trim_ldo_3: self::bless::TRIM_LDO_3,
-    #[doc = "0xf10 - MXD die Trim registers"]
-    pub trim_mxd: [self::bless::TRIM_MXD; 4],
-    _reserved46: [u8; 16usize],
+    pub trim_ldo_3: crate::Reg<self::bless::trim_ldo_3::TRIM_LDO_3_SPEC>,
+    #[doc = "0xf10..0xf20 - MXD die Trim registers"]
+    pub trim_mxd: [crate::Reg<self::bless::trim_mxd::TRIM_MXD_SPEC>; 4],
+    _reserved46: [u8; 0x10],
     #[doc = "0xf30 - LDO Trim register 4"]
-    pub trim_ldo_4: self::bless::TRIM_LDO_4,
+    pub trim_ldo_4: crate::Reg<self::bless::trim_ldo_4::TRIM_LDO_4_SPEC>,
     #[doc = "0xf34 - LDO Trim register 5"]
-    pub trim_ldo_5: self::bless::TRIM_LDO_5,
+    pub trim_ldo_5: crate::Reg<self::bless::trim_ldo_5::TRIM_LDO_5_SPEC>,
 }
 #[doc = r"Register block"]
 #[doc = "Bluetooth Low Energy Subsystem Miscellaneous"]

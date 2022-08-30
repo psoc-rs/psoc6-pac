@@ -1,13 +1,37 @@
-#[doc = "Reader of register PORT_SEL0"]
-pub type R = crate::R<u32, super::PORT_SEL0>;
-#[doc = "Writer for register PORT_SEL0"]
-pub type W = crate::W<u32, super::PORT_SEL0>;
-#[doc = "Register PORT_SEL0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::PORT_SEL0 {
-    type Type = u32;
+#[doc = "Register `PORT_SEL0` reader"]
+pub struct R(crate::R<PORT_SEL0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PORT_SEL0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<PORT_SEL0_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<PORT_SEL0_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `PORT_SEL0` writer"]
+pub struct W(crate::W<PORT_SEL0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PORT_SEL0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<PORT_SEL0_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<PORT_SEL0_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Selects connection for IO pin 0 route.\n\nValue on reset: 0"]
@@ -85,10 +109,10 @@ impl From<IO0_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `IO0_SEL`"]
-pub type IO0_SEL_R = crate::R<u8, IO0_SEL_A>;
+#[doc = "Field `IO0_SEL` reader - Selects connection for IO pin 0 route."]
+pub type IO0_SEL_R = crate::FieldReader<u8, IO0_SEL_A>;
 impl IO0_SEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IO0_SEL_A {
         match self.bits {
@@ -288,18 +312,10 @@ impl IO0_SEL_R {
         *self == IO0_SEL_A::DS_7
     }
 }
-#[doc = "Write proxy for field `IO0_SEL`"]
-pub struct IO0_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IO0_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IO0_SEL_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `IO0_SEL` writer - Selects connection for IO pin 0 route."]
+pub type IO0_SEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PORT_SEL0_SPEC, u8, IO0_SEL_A, 5, O>;
+impl<'a, const O: u8> IO0_SEL_W<'a, O> {
     #[doc = "GPIO controls 'out'"]
     #[inline(always)]
     pub fn gpio(self) -> &'a mut W {
@@ -460,55 +476,19 @@ impl<'a> IO0_SEL_W<'a> {
     pub fn ds_7(self) -> &'a mut W {
         self.variant(IO0_SEL_A::DS_7)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | ((value as u32) & 0x1f);
-        self.w
-    }
 }
-#[doc = "Reader of field `IO1_SEL`"]
-pub type IO1_SEL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `IO1_SEL`"]
-pub struct IO1_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IO1_SEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 8)) | (((value as u32) & 0x1f) << 8);
-        self.w
-    }
-}
-#[doc = "Reader of field `IO2_SEL`"]
-pub type IO2_SEL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `IO2_SEL`"]
-pub struct IO2_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IO2_SEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 16)) | (((value as u32) & 0x1f) << 16);
-        self.w
-    }
-}
-#[doc = "Reader of field `IO3_SEL`"]
-pub type IO3_SEL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `IO3_SEL`"]
-pub struct IO3_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IO3_SEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 24)) | (((value as u32) & 0x1f) << 24);
-        self.w
-    }
-}
+#[doc = "Field `IO1_SEL` reader - Selects connection for IO pin 1 route."]
+pub type IO1_SEL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `IO1_SEL` writer - Selects connection for IO pin 1 route."]
+pub type IO1_SEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PORT_SEL0_SPEC, u8, u8, 5, O>;
+#[doc = "Field `IO2_SEL` reader - Selects connection for IO pin 2 route."]
+pub type IO2_SEL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `IO2_SEL` writer - Selects connection for IO pin 2 route."]
+pub type IO2_SEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PORT_SEL0_SPEC, u8, u8, 5, O>;
+#[doc = "Field `IO3_SEL` reader - Selects connection for IO pin 3 route."]
+pub type IO3_SEL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `IO3_SEL` writer - Selects connection for IO pin 3 route."]
+pub type IO3_SEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PORT_SEL0_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bits 0:4 - Selects connection for IO pin 0 route."]
     #[inline(always)]
@@ -534,22 +514,48 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Selects connection for IO pin 0 route."]
     #[inline(always)]
-    pub fn io0_sel(&mut self) -> IO0_SEL_W {
-        IO0_SEL_W { w: self }
+    pub fn io0_sel(&mut self) -> IO0_SEL_W<0> {
+        IO0_SEL_W::new(self)
     }
     #[doc = "Bits 8:12 - Selects connection for IO pin 1 route."]
     #[inline(always)]
-    pub fn io1_sel(&mut self) -> IO1_SEL_W {
-        IO1_SEL_W { w: self }
+    pub fn io1_sel(&mut self) -> IO1_SEL_W<8> {
+        IO1_SEL_W::new(self)
     }
     #[doc = "Bits 16:20 - Selects connection for IO pin 2 route."]
     #[inline(always)]
-    pub fn io2_sel(&mut self) -> IO2_SEL_W {
-        IO2_SEL_W { w: self }
+    pub fn io2_sel(&mut self) -> IO2_SEL_W<16> {
+        IO2_SEL_W::new(self)
     }
     #[doc = "Bits 24:28 - Selects connection for IO pin 3 route."]
     #[inline(always)]
-    pub fn io3_sel(&mut self) -> IO3_SEL_W {
-        IO3_SEL_W { w: self }
+    pub fn io3_sel(&mut self) -> IO3_SEL_W<24> {
+        IO3_SEL_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Port selection 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [port_sel0](index.html) module"]
+pub struct PORT_SEL0_SPEC;
+impl crate::RegisterSpec for PORT_SEL0_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [port_sel0::R](R) reader structure"]
+impl crate::Readable for PORT_SEL0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [port_sel0::W](W) writer structure"]
+impl crate::Writable for PORT_SEL0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PORT_SEL0 to value 0"]
+impl crate::Resettable for PORT_SEL0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

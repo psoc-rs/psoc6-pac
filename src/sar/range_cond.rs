@@ -1,13 +1,37 @@
-#[doc = "Reader of register RANGE_COND"]
-pub type R = crate::R<u32, super::RANGE_COND>;
-#[doc = "Writer for register RANGE_COND"]
-pub type W = crate::W<u32, super::RANGE_COND>;
-#[doc = "Register RANGE_COND `reset()`'s with value 0"]
-impl crate::ResetValue for super::RANGE_COND {
-    type Type = u32;
+#[doc = "Register `RANGE_COND` reader"]
+pub struct R(crate::R<RANGE_COND_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RANGE_COND_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<RANGE_COND_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<RANGE_COND_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `RANGE_COND` writer"]
+pub struct W(crate::W<RANGE_COND_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RANGE_COND_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<RANGE_COND_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<RANGE_COND_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Range condition select.\n\nValue on reset: 0"]
@@ -29,10 +53,10 @@ impl From<RANGE_COND_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `RANGE_COND`"]
-pub type RANGE_COND_R = crate::R<u8, RANGE_COND_A>;
+#[doc = "Field `RANGE_COND` reader - Range condition select."]
+pub type RANGE_COND_R = crate::FieldReader<u8, RANGE_COND_A>;
 impl RANGE_COND_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RANGE_COND_A {
         match self.bits {
@@ -64,18 +88,10 @@ impl RANGE_COND_R {
         *self == RANGE_COND_A::OUTSIDE
     }
 }
-#[doc = "Write proxy for field `RANGE_COND`"]
-pub struct RANGE_COND_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RANGE_COND_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RANGE_COND_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `RANGE_COND` writer - Range condition select."]
+pub type RANGE_COND_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, RANGE_COND_SPEC, u8, RANGE_COND_A, 2, O>;
+impl<'a, const O: u8> RANGE_COND_W<'a, O> {
     #[doc = "result < RANGE_LOW"]
     #[inline(always)]
     pub fn below(self) -> &'a mut W {
@@ -96,24 +112,44 @@ impl<'a> RANGE_COND_W<'a> {
     pub fn outside(self) -> &'a mut W {
         self.variant(RANGE_COND_A::OUTSIDE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 30)) | (((value as u32) & 0x03) << 30);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 30:31 - Range condition select."]
     #[inline(always)]
     pub fn range_cond(&self) -> RANGE_COND_R {
-        RANGE_COND_R::new(((self.bits >> 30) & 0x03) as u8)
+        RANGE_COND_R::new(((self.bits >> 30) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 30:31 - Range condition select."]
     #[inline(always)]
-    pub fn range_cond(&mut self) -> RANGE_COND_W {
-        RANGE_COND_W { w: self }
+    pub fn range_cond(&mut self) -> RANGE_COND_W<30> {
+        RANGE_COND_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Global range detect mode register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [range_cond](index.html) module"]
+pub struct RANGE_COND_SPEC;
+impl crate::RegisterSpec for RANGE_COND_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [range_cond::R](R) reader structure"]
+impl crate::Readable for RANGE_COND_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [range_cond::W](W) writer structure"]
+impl crate::Writable for RANGE_COND_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets RANGE_COND to value 0"]
+impl crate::Resettable for RANGE_COND_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

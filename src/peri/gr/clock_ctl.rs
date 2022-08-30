@@ -1,29 +1,43 @@
-#[doc = "Reader of register CLOCK_CTL"]
-pub type R = crate::R<u32, super::CLOCK_CTL>;
-#[doc = "Writer for register CLOCK_CTL"]
-pub type W = crate::W<u32, super::CLOCK_CTL>;
-#[doc = "Register CLOCK_CTL `reset()`'s with value 0"]
-impl crate::ResetValue for super::CLOCK_CTL {
-    type Type = u32;
+#[doc = "Register `CLOCK_CTL` reader"]
+pub struct R(crate::R<CLOCK_CTL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CLOCK_CTL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `INT8_DIV`"]
-pub type INT8_DIV_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `INT8_DIV`"]
-pub struct INT8_DIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INT8_DIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<CLOCK_CTL_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
-        self.w
+    fn from(reader: crate::R<CLOCK_CTL_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `CLOCK_CTL` writer"]
+pub struct W(crate::W<CLOCK_CTL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CLOCK_CTL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CLOCK_CTL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CLOCK_CTL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `INT8_DIV` reader - Specifies a group clock divider (from the peripheral clock 'clk_peri' to the group clock 'clk_group\\[3/4/5/...15\\]'). Integer division by (1+INT8_DIV). Allows for integer divisions in the range \\[1, 256\\]. Note that this field is retained. However, the counter that is used to implement the division is not and will be initialized by HW to '0' when transitioning from DeepSleep to Active power mode."]
+pub type INT8_DIV_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `INT8_DIV` writer - Specifies a group clock divider (from the peripheral clock 'clk_peri' to the group clock 'clk_group\\[3/4/5/...15\\]'). Integer division by (1+INT8_DIV). Allows for integer divisions in the range \\[1, 256\\]. Note that this field is retained. However, the counter that is used to implement the division is not and will be initialized by HW to '0' when transitioning from DeepSleep to Active power mode."]
+pub type INT8_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLOCK_CTL_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 8:15 - Specifies a group clock divider (from the peripheral clock 'clk_peri' to the group clock 'clk_group\\[3/4/5/...15\\]'). Integer division by (1+INT8_DIV). Allows for integer divisions in the range \\[1, 256\\]. Note that this field is retained. However, the counter that is used to implement the division is not and will be initialized by HW to '0' when transitioning from DeepSleep to Active power mode."]
     #[inline(always)]
@@ -34,7 +48,33 @@ impl R {
 impl W {
     #[doc = "Bits 8:15 - Specifies a group clock divider (from the peripheral clock 'clk_peri' to the group clock 'clk_group\\[3/4/5/...15\\]'). Integer division by (1+INT8_DIV). Allows for integer divisions in the range \\[1, 256\\]. Note that this field is retained. However, the counter that is used to implement the division is not and will be initialized by HW to '0' when transitioning from DeepSleep to Active power mode."]
     #[inline(always)]
-    pub fn int8_div(&mut self) -> INT8_DIV_W {
-        INT8_DIV_W { w: self }
+    pub fn int8_div(&mut self) -> INT8_DIV_W<8> {
+        INT8_DIV_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Clock control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clock_ctl](index.html) module"]
+pub struct CLOCK_CTL_SPEC;
+impl crate::RegisterSpec for CLOCK_CTL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [clock_ctl::R](R) reader structure"]
+impl crate::Readable for CLOCK_CTL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [clock_ctl::W](W) writer structure"]
+impl crate::Writable for CLOCK_CTL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CLOCK_CTL to value 0"]
+impl crate::Resettable for CLOCK_CTL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

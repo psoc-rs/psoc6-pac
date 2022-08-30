@@ -1,142 +1,123 @@
-#[doc = "Reader of register UART_TX_CTRL"]
-pub type R = crate::R<u32, super::UART_TX_CTRL>;
-#[doc = "Writer for register UART_TX_CTRL"]
-pub type W = crate::W<u32, super::UART_TX_CTRL>;
-#[doc = "Register UART_TX_CTRL `reset()`'s with value 0x02"]
-impl crate::ResetValue for super::UART_TX_CTRL {
-    type Type = u32;
+#[doc = "Register `UART_TX_CTRL` reader"]
+pub struct R(crate::R<UART_TX_CTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<UART_TX_CTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x02
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `STOP_BITS`"]
-pub type STOP_BITS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `STOP_BITS`"]
-pub struct STOP_BITS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STOP_BITS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<UART_TX_CTRL_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
-        self.w
+    fn from(reader: crate::R<UART_TX_CTRL_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `PARITY`"]
-pub type PARITY_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PARITY`"]
-pub struct PARITY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PARITY_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `UART_TX_CTRL` writer"]
+pub struct W(crate::W<UART_TX_CTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<UART_TX_CTRL_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `PARITY_ENABLED`"]
-pub type PARITY_ENABLED_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `PARITY_ENABLED`"]
-pub struct PARITY_ENABLED_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PARITY_ENABLED_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `RETRY_ON_NACK`"]
-pub type RETRY_ON_NACK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RETRY_ON_NACK`"]
-pub struct RETRY_ON_NACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RETRY_ON_NACK_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<UART_TX_CTRL_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-        self.w
+    fn from(writer: crate::W<UART_TX_CTRL_SPEC>) -> Self {
+        W(writer)
     }
 }
+#[doc = "Field `STOP_BITS` reader - Stop bits. STOP_BITS + 1 is the duration of the stop period in terms of half bit periods. Valid range is \\[1, 7\\]; i.e. a stop period should last at least one bit period."]
+pub type STOP_BITS_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `STOP_BITS` writer - Stop bits. STOP_BITS + 1 is the duration of the stop period in terms of half bit periods. Valid range is \\[1, 7\\]; i.e. a stop period should last at least one bit period."]
+pub type STOP_BITS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, UART_TX_CTRL_SPEC, u8, u8, 3, O>;
+#[doc = "Field `PARITY` reader - N/A"]
+pub type PARITY_R = crate::BitReader<bool>;
+#[doc = "Field `PARITY` writer - N/A"]
+pub type PARITY_W<'a, const O: u8> = crate::BitWriter<'a, u32, UART_TX_CTRL_SPEC, bool, O>;
+#[doc = "Field `PARITY_ENABLED` reader - N/A"]
+pub type PARITY_ENABLED_R = crate::BitReader<bool>;
+#[doc = "Field `PARITY_ENABLED` writer - N/A"]
+pub type PARITY_ENABLED_W<'a, const O: u8> = crate::BitWriter<'a, u32, UART_TX_CTRL_SPEC, bool, O>;
+#[doc = "Field `RETRY_ON_NACK` reader - N/A"]
+pub type RETRY_ON_NACK_R = crate::BitReader<bool>;
+#[doc = "Field `RETRY_ON_NACK` writer - N/A"]
+pub type RETRY_ON_NACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, UART_TX_CTRL_SPEC, bool, O>;
 impl R {
-    #[doc = "Bits 0:2 - Stop bits. STOP_BITS + 1 is the duration of the stop period in terms of halve bit periods. Valid range is \\[1, 7\\]; i.e. a stop period should last at least one bit period."]
+    #[doc = "Bits 0:2 - Stop bits. STOP_BITS + 1 is the duration of the stop period in terms of half bit periods. Valid range is \\[1, 7\\]; i.e. a stop period should last at least one bit period."]
     #[inline(always)]
     pub fn stop_bits(&self) -> STOP_BITS_R {
-        STOP_BITS_R::new((self.bits & 0x07) as u8)
+        STOP_BITS_R::new((self.bits & 7) as u8)
     }
-    #[doc = "Bit 4 - Parity bit. When '0', the transmitter generates an even parity. When '1', the transmitter generates an odd parity. Only applicable in standard UART and SmartCard submodes."]
+    #[doc = "Bit 4 - N/A"]
     #[inline(always)]
     pub fn parity(&self) -> PARITY_R {
-        PARITY_R::new(((self.bits >> 4) & 0x01) != 0)
+        PARITY_R::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - Parity generation enabled ('1') or not ('0'). Only applicable in standard UART submodes. In SmartCard submode, parity generation is always enabled through hardware. In IrDA submode, parity generation is always disabled through hardware"]
+    #[doc = "Bit 5 - N/A"]
     #[inline(always)]
     pub fn parity_enabled(&self) -> PARITY_ENABLED_R {
-        PARITY_ENABLED_R::new(((self.bits >> 5) & 0x01) != 0)
+        PARITY_ENABLED_R::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 8 - When '1', a data frame is retransmitted when a negative acknowledgement is received. Only applicable to the SmartCard submode."]
+    #[doc = "Bit 8 - N/A"]
     #[inline(always)]
     pub fn retry_on_nack(&self) -> RETRY_ON_NACK_R {
-        RETRY_ON_NACK_R::new(((self.bits >> 8) & 0x01) != 0)
+        RETRY_ON_NACK_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:2 - Stop bits. STOP_BITS + 1 is the duration of the stop period in terms of halve bit periods. Valid range is \\[1, 7\\]; i.e. a stop period should last at least one bit period."]
+    #[doc = "Bits 0:2 - Stop bits. STOP_BITS + 1 is the duration of the stop period in terms of half bit periods. Valid range is \\[1, 7\\]; i.e. a stop period should last at least one bit period."]
     #[inline(always)]
-    pub fn stop_bits(&mut self) -> STOP_BITS_W {
-        STOP_BITS_W { w: self }
+    pub fn stop_bits(&mut self) -> STOP_BITS_W<0> {
+        STOP_BITS_W::new(self)
     }
-    #[doc = "Bit 4 - Parity bit. When '0', the transmitter generates an even parity. When '1', the transmitter generates an odd parity. Only applicable in standard UART and SmartCard submodes."]
+    #[doc = "Bit 4 - N/A"]
     #[inline(always)]
-    pub fn parity(&mut self) -> PARITY_W {
-        PARITY_W { w: self }
+    pub fn parity(&mut self) -> PARITY_W<4> {
+        PARITY_W::new(self)
     }
-    #[doc = "Bit 5 - Parity generation enabled ('1') or not ('0'). Only applicable in standard UART submodes. In SmartCard submode, parity generation is always enabled through hardware. In IrDA submode, parity generation is always disabled through hardware"]
+    #[doc = "Bit 5 - N/A"]
     #[inline(always)]
-    pub fn parity_enabled(&mut self) -> PARITY_ENABLED_W {
-        PARITY_ENABLED_W { w: self }
+    pub fn parity_enabled(&mut self) -> PARITY_ENABLED_W<5> {
+        PARITY_ENABLED_W::new(self)
     }
-    #[doc = "Bit 8 - When '1', a data frame is retransmitted when a negative acknowledgement is received. Only applicable to the SmartCard submode."]
+    #[doc = "Bit 8 - N/A"]
     #[inline(always)]
-    pub fn retry_on_nack(&mut self) -> RETRY_ON_NACK_W {
-        RETRY_ON_NACK_W { w: self }
+    pub fn retry_on_nack(&mut self) -> RETRY_ON_NACK_W<8> {
+        RETRY_ON_NACK_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "UART transmitter control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [uart_tx_ctrl](index.html) module"]
+pub struct UART_TX_CTRL_SPEC;
+impl crate::RegisterSpec for UART_TX_CTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [uart_tx_ctrl::R](R) reader structure"]
+impl crate::Readable for UART_TX_CTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [uart_tx_ctrl::W](W) writer structure"]
+impl crate::Writable for UART_TX_CTRL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets UART_TX_CTRL to value 0x02"]
+impl crate::Resettable for UART_TX_CTRL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x02
     }
 }

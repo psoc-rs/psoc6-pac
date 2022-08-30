@@ -1,13 +1,37 @@
-#[doc = "Reader of register MODE_CTL"]
-pub type R = crate::R<u32, super::MODE_CTL>;
-#[doc = "Writer for register MODE_CTL"]
-pub type W = crate::W<u32, super::MODE_CTL>;
-#[doc = "Register MODE_CTL `reset()`'s with value 0x1b00_0103"]
-impl crate::ResetValue for super::MODE_CTL {
-    type Type = u32;
+#[doc = "Register `MODE_CTL` reader"]
+pub struct R(crate::R<MODE_CTL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MODE_CTL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x1b00_0103
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<MODE_CTL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<MODE_CTL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `MODE_CTL` writer"]
+pub struct W(crate::W<MODE_CTL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MODE_CTL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<MODE_CTL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<MODE_CTL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Specifies PCM output channels as mono or stereo: (Note: These bits are connected to AR36U12.PDM_CORE2_CFG.PCM_CHSET)\n\nValue on reset: 3"]
@@ -29,10 +53,10 @@ impl From<PCM_CH_SET_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PCM_CH_SET`"]
-pub type PCM_CH_SET_R = crate::R<u8, PCM_CH_SET_A>;
+#[doc = "Field `PCM_CH_SET` reader - Specifies PCM output channels as mono or stereo: (Note: These bits are connected to AR36U12.PDM_CORE2_CFG.PCM_CHSET)"]
+pub type PCM_CH_SET_R = crate::FieldReader<u8, PCM_CH_SET_A>;
 impl PCM_CH_SET_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PCM_CH_SET_A {
         match self.bits {
@@ -64,18 +88,10 @@ impl PCM_CH_SET_R {
         *self == PCM_CH_SET_A::STEREO
     }
 }
-#[doc = "Write proxy for field `PCM_CH_SET`"]
-pub struct PCM_CH_SET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PCM_CH_SET_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PCM_CH_SET_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `PCM_CH_SET` writer - Specifies PCM output channels as mono or stereo: (Note: These bits are connected to AR36U12.PDM_CORE2_CFG.PCM_CHSET)"]
+pub type PCM_CH_SET_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, MODE_CTL_SPEC, u8, PCM_CH_SET_A, 2, O>;
+impl<'a, const O: u8> PCM_CH_SET_W<'a, O> {
     #[doc = "Channel disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -96,37 +112,11 @@ impl<'a> PCM_CH_SET_W<'a> {
     pub fn stereo(self) -> &'a mut W {
         self.variant(PCM_CH_SET_A::STEREO)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
-        self.w
-    }
 }
-#[doc = "Reader of field `SWAP_LR`"]
-pub type SWAP_LR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SWAP_LR`"]
-pub struct SWAP_LR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SWAP_LR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
-    }
-}
+#[doc = "Field `SWAP_LR` reader - Input data L/R channel swap: '1': Right/Left channel recording swap '0': No Swap (Note: This bit is connected to AR36U12.PDM_CORE_CFG.LRSWAP)"]
+pub type SWAP_LR_R = crate::BitReader<bool>;
+#[doc = "Field `SWAP_LR` writer - Input data L/R channel swap: '1': Right/Left channel recording swap '0': No Swap (Note: This bit is connected to AR36U12.PDM_CORE_CFG.LRSWAP)"]
+pub type SWAP_LR_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE_CTL_SPEC, bool, O>;
 #[doc = "Set time step for gain change during PGA or soft mute operation in number of 1/a sampling rate. (Note: These bits are connected to AR36U12.PDM_CORE_CFG.S_CYCLES)\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -154,10 +144,10 @@ impl From<S_CYCLES_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `S_CYCLES`"]
-pub type S_CYCLES_R = crate::R<u8, S_CYCLES_A>;
+#[doc = "Field `S_CYCLES` reader - Set time step for gain change during PGA or soft mute operation in number of 1/a sampling rate. (Note: These bits are connected to AR36U12.PDM_CORE_CFG.S_CYCLES)"]
+pub type S_CYCLES_R = crate::FieldReader<u8, S_CYCLES_A>;
 impl S_CYCLES_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> S_CYCLES_A {
         match self.bits {
@@ -213,18 +203,10 @@ impl S_CYCLES_R {
         *self == S_CYCLES_A::STEP_NUM512
     }
 }
-#[doc = "Write proxy for field `S_CYCLES`"]
-pub struct S_CYCLES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S_CYCLES_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: S_CYCLES_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `S_CYCLES` writer - Set time step for gain change during PGA or soft mute operation in number of 1/a sampling rate. (Note: These bits are connected to AR36U12.PDM_CORE_CFG.S_CYCLES)"]
+pub type S_CYCLES_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, MODE_CTL_SPEC, u8, S_CYCLES_A, 3, O>;
+impl<'a, const O: u8> S_CYCLES_W<'a, O> {
     #[doc = "64steps"]
     #[inline(always)]
     pub fn step_num64(self) -> &'a mut W {
@@ -265,12 +247,6 @@ impl<'a> S_CYCLES_W<'a> {
     pub fn step_num512(self) -> &'a mut W {
         self.variant(S_CYCLES_A::STEP_NUM512)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
-        self.w
-    }
 }
 #[doc = "Phase difference from the rising edge of internal sampler clock (CLK_IS) to that of PDM_CKO clock: (Note: These bits are connected to AR36U12.PDM_CORE2_CFG.PDMCKO_DLY)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -299,10 +275,10 @@ impl From<CKO_DELAY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CKO_DELAY`"]
-pub type CKO_DELAY_R = crate::R<u8, CKO_DELAY_A>;
+#[doc = "Field `CKO_DELAY` reader - Phase difference from the rising edge of internal sampler clock (CLK_IS) to that of PDM_CKO clock: (Note: These bits are connected to AR36U12.PDM_CORE2_CFG.PDMCKO_DLY)"]
+pub type CKO_DELAY_R = crate::FieldReader<u8, CKO_DELAY_A>;
 impl CKO_DELAY_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CKO_DELAY_A {
         match self.bits {
@@ -358,18 +334,10 @@ impl CKO_DELAY_R {
         *self == CKO_DELAY_A::DLY4
     }
 }
-#[doc = "Write proxy for field `CKO_DELAY`"]
-pub struct CKO_DELAY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CKO_DELAY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CKO_DELAY_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `CKO_DELAY` writer - Phase difference from the rising edge of internal sampler clock (CLK_IS) to that of PDM_CKO clock: (Note: These bits are connected to AR36U12.PDM_CORE2_CFG.PDMCKO_DLY)"]
+pub type CKO_DELAY_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, MODE_CTL_SPEC, u8, CKO_DELAY_A, 3, O>;
+impl<'a, const O: u8> CKO_DELAY_W<'a, O> {
     #[doc = "CLK_IS is 3*PDM_CLK period early"]
     #[inline(always)]
     pub fn adv3(self) -> &'a mut W {
@@ -410,73 +378,40 @@ impl<'a> CKO_DELAY_W<'a> {
     pub fn dly4(self) -> &'a mut W {
         self.variant(CKO_DELAY_A::DLY4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
-        self.w
-    }
 }
-#[doc = "Reader of field `HPF_GAIN`"]
-pub type HPF_GAIN_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `HPF_GAIN`"]
-pub struct HPF_GAIN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HPF_GAIN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | (((value as u32) & 0x0f) << 24);
-        self.w
-    }
-}
-#[doc = "Reader of field `HPF_EN_N`"]
-pub type HPF_EN_N_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `HPF_EN_N`"]
-pub struct HPF_EN_N_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HPF_EN_N_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-        self.w
-    }
-}
+#[doc = "Field `HPF_GAIN` reader - Adjust high pass filter coefficients. H(Z) = (1 - Z-1 ) / \\[1 - (1- 2 -HPF_GAIN) Z-1 \\]
+(Note: These bits are connected to AR36U12.PDM_CORE_CFG.HPGAIN)"]
+pub type HPF_GAIN_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `HPF_GAIN` writer - Adjust high pass filter coefficients. H(Z) = (1 - Z-1 ) / \\[1 - (1- 2 -HPF_GAIN) Z-1 \\]
+(Note: These bits are connected to AR36U12.PDM_CORE_CFG.HPGAIN)"]
+pub type HPF_GAIN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MODE_CTL_SPEC, u8, u8, 4, O>;
+#[doc = "Field `HPF_EN_N` reader - Enable high pass filter (active low) '1': Disabled. '0': Enabled. (Note: This bit is connected to AR36U12.PDM_CORE_CFG.ADCHPD)"]
+pub type HPF_EN_N_R = crate::BitReader<bool>;
+#[doc = "Field `HPF_EN_N` writer - Enable high pass filter (active low) '1': Disabled. '0': Enabled. (Note: This bit is connected to AR36U12.PDM_CORE_CFG.ADCHPD)"]
+pub type HPF_EN_N_W<'a, const O: u8> = crate::BitWriter<'a, u32, MODE_CTL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:1 - Specifies PCM output channels as mono or stereo: (Note: These bits are connected to AR36U12.PDM_CORE2_CFG.PCM_CHSET)"]
     #[inline(always)]
     pub fn pcm_ch_set(&self) -> PCM_CH_SET_R {
-        PCM_CH_SET_R::new((self.bits & 0x03) as u8)
+        PCM_CH_SET_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 2 - Input data L/R channel swap: '1': Right/Left channel recording swap '0': No Swap (Note: This bit is connected to AR36U12.PDM_CORE_CFG.LRSWAP)"]
     #[inline(always)]
     pub fn swap_lr(&self) -> SWAP_LR_R {
-        SWAP_LR_R::new(((self.bits >> 2) & 0x01) != 0)
+        SWAP_LR_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bits 8:10 - Set time step for gain change during PGA or soft mute operation in number of 1/a sampling rate. (Note: These bits are connected to AR36U12.PDM_CORE_CFG.S_CYCLES)"]
     #[inline(always)]
     pub fn s_cycles(&self) -> S_CYCLES_R {
-        S_CYCLES_R::new(((self.bits >> 8) & 0x07) as u8)
+        S_CYCLES_R::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bits 16:18 - Phase difference from the rising edge of internal sampler clock (CLK_IS) to that of PDM_CKO clock: (Note: These bits are connected to AR36U12.PDM_CORE2_CFG.PDMCKO_DLY)"]
     #[inline(always)]
     pub fn cko_delay(&self) -> CKO_DELAY_R {
-        CKO_DELAY_R::new(((self.bits >> 16) & 0x07) as u8)
+        CKO_DELAY_R::new(((self.bits >> 16) & 7) as u8)
     }
-    #[doc = "Bits 24:27 - Adjust high pass filter coefficients. H(Z) = (1 - Z-1 ) / \\[1 - (1- 2 -HPF_GAIN) Z-1 \\] (Note: These bits are connected to AR36U12.PDM_CORE_CFG.HPGAIN)"]
+    #[doc = "Bits 24:27 - Adjust high pass filter coefficients. H(Z) = (1 - Z-1 ) / \\[1 - (1- 2 -HPF_GAIN) Z-1 \\]
+(Note: These bits are connected to AR36U12.PDM_CORE_CFG.HPGAIN)"]
     #[inline(always)]
     pub fn hpf_gain(&self) -> HPF_GAIN_R {
         HPF_GAIN_R::new(((self.bits >> 24) & 0x0f) as u8)
@@ -484,38 +419,65 @@ impl R {
     #[doc = "Bit 28 - Enable high pass filter (active low) '1': Disabled. '0': Enabled. (Note: This bit is connected to AR36U12.PDM_CORE_CFG.ADCHPD)"]
     #[inline(always)]
     pub fn hpf_en_n(&self) -> HPF_EN_N_R {
-        HPF_EN_N_R::new(((self.bits >> 28) & 0x01) != 0)
+        HPF_EN_N_R::new(((self.bits >> 28) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Specifies PCM output channels as mono or stereo: (Note: These bits are connected to AR36U12.PDM_CORE2_CFG.PCM_CHSET)"]
     #[inline(always)]
-    pub fn pcm_ch_set(&mut self) -> PCM_CH_SET_W {
-        PCM_CH_SET_W { w: self }
+    pub fn pcm_ch_set(&mut self) -> PCM_CH_SET_W<0> {
+        PCM_CH_SET_W::new(self)
     }
     #[doc = "Bit 2 - Input data L/R channel swap: '1': Right/Left channel recording swap '0': No Swap (Note: This bit is connected to AR36U12.PDM_CORE_CFG.LRSWAP)"]
     #[inline(always)]
-    pub fn swap_lr(&mut self) -> SWAP_LR_W {
-        SWAP_LR_W { w: self }
+    pub fn swap_lr(&mut self) -> SWAP_LR_W<2> {
+        SWAP_LR_W::new(self)
     }
     #[doc = "Bits 8:10 - Set time step for gain change during PGA or soft mute operation in number of 1/a sampling rate. (Note: These bits are connected to AR36U12.PDM_CORE_CFG.S_CYCLES)"]
     #[inline(always)]
-    pub fn s_cycles(&mut self) -> S_CYCLES_W {
-        S_CYCLES_W { w: self }
+    pub fn s_cycles(&mut self) -> S_CYCLES_W<8> {
+        S_CYCLES_W::new(self)
     }
     #[doc = "Bits 16:18 - Phase difference from the rising edge of internal sampler clock (CLK_IS) to that of PDM_CKO clock: (Note: These bits are connected to AR36U12.PDM_CORE2_CFG.PDMCKO_DLY)"]
     #[inline(always)]
-    pub fn cko_delay(&mut self) -> CKO_DELAY_W {
-        CKO_DELAY_W { w: self }
+    pub fn cko_delay(&mut self) -> CKO_DELAY_W<16> {
+        CKO_DELAY_W::new(self)
     }
-    #[doc = "Bits 24:27 - Adjust high pass filter coefficients. H(Z) = (1 - Z-1 ) / \\[1 - (1- 2 -HPF_GAIN) Z-1 \\] (Note: These bits are connected to AR36U12.PDM_CORE_CFG.HPGAIN)"]
+    #[doc = "Bits 24:27 - Adjust high pass filter coefficients. H(Z) = (1 - Z-1 ) / \\[1 - (1- 2 -HPF_GAIN) Z-1 \\]
+(Note: These bits are connected to AR36U12.PDM_CORE_CFG.HPGAIN)"]
     #[inline(always)]
-    pub fn hpf_gain(&mut self) -> HPF_GAIN_W {
-        HPF_GAIN_W { w: self }
+    pub fn hpf_gain(&mut self) -> HPF_GAIN_W<24> {
+        HPF_GAIN_W::new(self)
     }
     #[doc = "Bit 28 - Enable high pass filter (active low) '1': Disabled. '0': Enabled. (Note: This bit is connected to AR36U12.PDM_CORE_CFG.ADCHPD)"]
     #[inline(always)]
-    pub fn hpf_en_n(&mut self) -> HPF_EN_N_W {
-        HPF_EN_N_W { w: self }
+    pub fn hpf_en_n(&mut self) -> HPF_EN_N_W<28> {
+        HPF_EN_N_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Mode control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mode_ctl](index.html) module"]
+pub struct MODE_CTL_SPEC;
+impl crate::RegisterSpec for MODE_CTL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [mode_ctl::R](R) reader structure"]
+impl crate::Readable for MODE_CTL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [mode_ctl::W](W) writer structure"]
+impl crate::Writable for MODE_CTL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MODE_CTL to value 0x1b00_0103"]
+impl crate::Resettable for MODE_CTL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x1b00_0103
     }
 }

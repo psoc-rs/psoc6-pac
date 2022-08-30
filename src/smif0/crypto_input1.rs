@@ -1,40 +1,85 @@
-#[doc = "Reader of register CRYPTO_INPUT1"]
-pub type R = crate::R<u32, super::CRYPTO_INPUT1>;
-#[doc = "Writer for register CRYPTO_INPUT1"]
-pub type W = crate::W<u32, super::CRYPTO_INPUT1>;
-#[doc = "Register CRYPTO_INPUT1 `reset()`'s with value 0"]
-impl crate::ResetValue for super::CRYPTO_INPUT1 {
-    type Type = u32;
+#[doc = "Register `CRYPTO_INPUT1` reader"]
+pub struct R(crate::R<CRYPTO_INPUT1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CRYPTO_INPUT1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `INPUT`"]
-pub type INPUT_R = crate::R<u32, u32>;
-#[doc = "Write proxy for field `INPUT`"]
-pub struct INPUT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INPUT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<CRYPTO_INPUT1_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff_ffff) | ((value as u32) & 0xffff_ffff);
-        self.w
+    fn from(reader: crate::R<CRYPTO_INPUT1_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `CRYPTO_INPUT1` writer"]
+pub struct W(crate::W<CRYPTO_INPUT1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CRYPTO_INPUT1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CRYPTO_INPUT1_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CRYPTO_INPUT1_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `INPUT` reader - Four Bytes of the plaintext PT\\[63:32\\]
+= CRYPTO_INPUT1.INPUT\\[31:0\\]."]
+pub type INPUT_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `INPUT` writer - Four Bytes of the plaintext PT\\[63:32\\]
+= CRYPTO_INPUT1.INPUT\\[31:0\\]."]
+pub type INPUT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CRYPTO_INPUT1_SPEC, u32, u32, 32, O>;
 impl R {
-    #[doc = "Bits 0:31 - Four Bytes of the plaintext PT\\[63:32\\] = CRYPTO_INPUT1.INPUT\\[31:0\\]."]
+    #[doc = "Bits 0:31 - Four Bytes of the plaintext PT\\[63:32\\]
+= CRYPTO_INPUT1.INPUT\\[31:0\\]."]
     #[inline(always)]
     pub fn input(&self) -> INPUT_R {
-        INPUT_R::new((self.bits & 0xffff_ffff) as u32)
+        INPUT_R::new(self.bits)
     }
 }
 impl W {
-    #[doc = "Bits 0:31 - Four Bytes of the plaintext PT\\[63:32\\] = CRYPTO_INPUT1.INPUT\\[31:0\\]."]
+    #[doc = "Bits 0:31 - Four Bytes of the plaintext PT\\[63:32\\]
+= CRYPTO_INPUT1.INPUT\\[31:0\\]."]
     #[inline(always)]
-    pub fn input(&mut self) -> INPUT_W {
-        INPUT_W { w: self }
+    pub fn input(&mut self) -> INPUT_W<0> {
+        INPUT_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Cryptography input 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [crypto_input1](index.html) module"]
+pub struct CRYPTO_INPUT1_SPEC;
+impl crate::RegisterSpec for CRYPTO_INPUT1_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [crypto_input1::R](R) reader structure"]
+impl crate::Readable for CRYPTO_INPUT1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [crypto_input1::W](W) writer structure"]
+impl crate::Writable for CRYPTO_INPUT1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CRYPTO_INPUT1 to value 0"]
+impl crate::Resettable for CRYPTO_INPUT1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

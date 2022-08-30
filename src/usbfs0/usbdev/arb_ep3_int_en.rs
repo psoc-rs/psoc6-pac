@@ -1,220 +1,151 @@
-#[doc = "Reader of register ARB_EP3_INT_EN"]
-pub type R = crate::R<u32, super::ARB_EP3_INT_EN>;
-#[doc = "Writer for register ARB_EP3_INT_EN"]
-pub type W = crate::W<u32, super::ARB_EP3_INT_EN>;
-#[doc = "Register ARB_EP3_INT_EN `reset()`'s with value 0"]
-impl crate::ResetValue for super::ARB_EP3_INT_EN {
-    type Type = u32;
+#[doc = "Register `ARB_EP3_INT_EN` reader"]
+pub struct R(crate::R<ARB_EP3_INT_EN_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ARB_EP3_INT_EN_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `IN_BUF_FULL_EN`"]
-pub type IN_BUF_FULL_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `IN_BUF_FULL_EN`"]
-pub struct IN_BUF_FULL_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IN_BUF_FULL_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<ARB_EP3_INT_EN_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn from(reader: crate::R<ARB_EP3_INT_EN_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `DMA_GNT_EN`"]
-pub type DMA_GNT_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DMA_GNT_EN`"]
-pub struct DMA_GNT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA_GNT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `ARB_EP3_INT_EN` writer"]
+pub struct W(crate::W<ARB_EP3_INT_EN_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ARB_EP3_INT_EN_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `BUF_OVER_EN`"]
-pub type BUF_OVER_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `BUF_OVER_EN`"]
-pub struct BUF_OVER_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BUF_OVER_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `BUF_UNDER_EN`"]
-pub type BUF_UNDER_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `BUF_UNDER_EN`"]
-pub struct BUF_UNDER_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BUF_UNDER_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<ARB_EP3_INT_EN_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
+    fn from(writer: crate::W<ARB_EP3_INT_EN_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `ERR_INT_EN`"]
-pub type ERR_INT_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ERR_INT_EN`"]
-pub struct ERR_INT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERR_INT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
-    }
-}
-#[doc = "Reader of field `DMA_TERMIN_EN`"]
-pub type DMA_TERMIN_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DMA_TERMIN_EN`"]
-pub struct DMA_TERMIN_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA_TERMIN_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
-    }
-}
+#[doc = "Field `IN_BUF_FULL_EN` reader - IN Endpoint Local Buffer Full Enable"]
+pub type IN_BUF_FULL_EN_R = crate::BitReader<bool>;
+#[doc = "Field `IN_BUF_FULL_EN` writer - IN Endpoint Local Buffer Full Enable"]
+pub type IN_BUF_FULL_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ARB_EP3_INT_EN_SPEC, bool, O>;
+#[doc = "Field `DMA_GNT_EN` reader - Endpoint DMA Grant Enable"]
+pub type DMA_GNT_EN_R = crate::BitReader<bool>;
+#[doc = "Field `DMA_GNT_EN` writer - Endpoint DMA Grant Enable"]
+pub type DMA_GNT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARB_EP3_INT_EN_SPEC, bool, O>;
+#[doc = "Field `BUF_OVER_EN` reader - Endpoint Buffer Overflow Enable"]
+pub type BUF_OVER_EN_R = crate::BitReader<bool>;
+#[doc = "Field `BUF_OVER_EN` writer - Endpoint Buffer Overflow Enable"]
+pub type BUF_OVER_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARB_EP3_INT_EN_SPEC, bool, O>;
+#[doc = "Field `BUF_UNDER_EN` reader - Endpoint Buffer Underflow Enable"]
+pub type BUF_UNDER_EN_R = crate::BitReader<bool>;
+#[doc = "Field `BUF_UNDER_EN` writer - Endpoint Buffer Underflow Enable"]
+pub type BUF_UNDER_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARB_EP3_INT_EN_SPEC, bool, O>;
+#[doc = "Field `ERR_INT_EN` reader - Endpoint Error in Transaction Interrupt Enable"]
+pub type ERR_INT_EN_R = crate::BitReader<bool>;
+#[doc = "Field `ERR_INT_EN` writer - Endpoint Error in Transaction Interrupt Enable"]
+pub type ERR_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARB_EP3_INT_EN_SPEC, bool, O>;
+#[doc = "Field `DMA_TERMIN_EN` reader - Endpoint DMA Terminated Enable"]
+pub type DMA_TERMIN_EN_R = crate::BitReader<bool>;
+#[doc = "Field `DMA_TERMIN_EN` writer - Endpoint DMA Terminated Enable"]
+pub type DMA_TERMIN_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ARB_EP3_INT_EN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - IN Endpoint Local Buffer Full Enable"]
     #[inline(always)]
     pub fn in_buf_full_en(&self) -> IN_BUF_FULL_EN_R {
-        IN_BUF_FULL_EN_R::new((self.bits & 0x01) != 0)
+        IN_BUF_FULL_EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Endpoint DMA Grant Enable"]
     #[inline(always)]
     pub fn dma_gnt_en(&self) -> DMA_GNT_EN_R {
-        DMA_GNT_EN_R::new(((self.bits >> 1) & 0x01) != 0)
+        DMA_GNT_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Endpoint Buffer Overflow Enable"]
     #[inline(always)]
     pub fn buf_over_en(&self) -> BUF_OVER_EN_R {
-        BUF_OVER_EN_R::new(((self.bits >> 2) & 0x01) != 0)
+        BUF_OVER_EN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Endpoint Buffer Underflow Enable"]
     #[inline(always)]
     pub fn buf_under_en(&self) -> BUF_UNDER_EN_R {
-        BUF_UNDER_EN_R::new(((self.bits >> 3) & 0x01) != 0)
+        BUF_UNDER_EN_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Endpoint Error in Transaction Interrupt Enable"]
     #[inline(always)]
     pub fn err_int_en(&self) -> ERR_INT_EN_R {
-        ERR_INT_EN_R::new(((self.bits >> 4) & 0x01) != 0)
+        ERR_INT_EN_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Endpoint DMA Terminated Enable"]
     #[inline(always)]
     pub fn dma_termin_en(&self) -> DMA_TERMIN_EN_R {
-        DMA_TERMIN_EN_R::new(((self.bits >> 5) & 0x01) != 0)
+        DMA_TERMIN_EN_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - IN Endpoint Local Buffer Full Enable"]
     #[inline(always)]
-    pub fn in_buf_full_en(&mut self) -> IN_BUF_FULL_EN_W {
-        IN_BUF_FULL_EN_W { w: self }
+    pub fn in_buf_full_en(&mut self) -> IN_BUF_FULL_EN_W<0> {
+        IN_BUF_FULL_EN_W::new(self)
     }
     #[doc = "Bit 1 - Endpoint DMA Grant Enable"]
     #[inline(always)]
-    pub fn dma_gnt_en(&mut self) -> DMA_GNT_EN_W {
-        DMA_GNT_EN_W { w: self }
+    pub fn dma_gnt_en(&mut self) -> DMA_GNT_EN_W<1> {
+        DMA_GNT_EN_W::new(self)
     }
     #[doc = "Bit 2 - Endpoint Buffer Overflow Enable"]
     #[inline(always)]
-    pub fn buf_over_en(&mut self) -> BUF_OVER_EN_W {
-        BUF_OVER_EN_W { w: self }
+    pub fn buf_over_en(&mut self) -> BUF_OVER_EN_W<2> {
+        BUF_OVER_EN_W::new(self)
     }
     #[doc = "Bit 3 - Endpoint Buffer Underflow Enable"]
     #[inline(always)]
-    pub fn buf_under_en(&mut self) -> BUF_UNDER_EN_W {
-        BUF_UNDER_EN_W { w: self }
+    pub fn buf_under_en(&mut self) -> BUF_UNDER_EN_W<3> {
+        BUF_UNDER_EN_W::new(self)
     }
     #[doc = "Bit 4 - Endpoint Error in Transaction Interrupt Enable"]
     #[inline(always)]
-    pub fn err_int_en(&mut self) -> ERR_INT_EN_W {
-        ERR_INT_EN_W { w: self }
+    pub fn err_int_en(&mut self) -> ERR_INT_EN_W<4> {
+        ERR_INT_EN_W::new(self)
     }
     #[doc = "Bit 5 - Endpoint DMA Terminated Enable"]
     #[inline(always)]
-    pub fn dma_termin_en(&mut self) -> DMA_TERMIN_EN_W {
-        DMA_TERMIN_EN_W { w: self }
+    pub fn dma_termin_en(&mut self) -> DMA_TERMIN_EN_W<5> {
+        DMA_TERMIN_EN_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Endpoint Interrupt Enable Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [arb_ep3_int_en](index.html) module"]
+pub struct ARB_EP3_INT_EN_SPEC;
+impl crate::RegisterSpec for ARB_EP3_INT_EN_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [arb_ep3_int_en::R](R) reader structure"]
+impl crate::Readable for ARB_EP3_INT_EN_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [arb_ep3_int_en::W](W) writer structure"]
+impl crate::Writable for ARB_EP3_INT_EN_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ARB_EP3_INT_EN to value 0"]
+impl crate::Resettable for ARB_EP3_INT_EN_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

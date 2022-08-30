@@ -1,322 +1,192 @@
-#[doc = "Reader of register RES_CAUSE"]
-pub type R = crate::R<u32, super::RES_CAUSE>;
-#[doc = "Writer for register RES_CAUSE"]
-pub type W = crate::W<u32, super::RES_CAUSE>;
-#[doc = "Register RES_CAUSE `reset()`'s with value 0"]
-impl crate::ResetValue for super::RES_CAUSE {
-    type Type = u32;
+#[doc = "Register `RES_CAUSE` reader"]
+pub struct R(crate::R<RES_CAUSE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RES_CAUSE_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `RESET_WDT`"]
-pub type RESET_WDT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RESET_WDT`"]
-pub struct RESET_WDT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESET_WDT_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<RES_CAUSE_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn from(reader: crate::R<RES_CAUSE_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `RESET_ACT_FAULT`"]
-pub type RESET_ACT_FAULT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RESET_ACT_FAULT`"]
-pub struct RESET_ACT_FAULT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESET_ACT_FAULT_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `RES_CAUSE` writer"]
+pub struct W(crate::W<RES_CAUSE_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RES_CAUSE_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `RESET_DPSLP_FAULT`"]
-pub type RESET_DPSLP_FAULT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RESET_DPSLP_FAULT`"]
-pub struct RESET_DPSLP_FAULT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESET_DPSLP_FAULT_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `RESET_CSV_WCO_LOSS`"]
-pub type RESET_CSV_WCO_LOSS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RESET_CSV_WCO_LOSS`"]
-pub struct RESET_CSV_WCO_LOSS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESET_CSV_WCO_LOSS_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<RES_CAUSE_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
+    fn from(writer: crate::W<RES_CAUSE_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `RESET_SOFT`"]
-pub type RESET_SOFT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RESET_SOFT`"]
-pub struct RESET_SOFT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESET_SOFT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
-    }
-}
-#[doc = "Reader of field `RESET_MCWDT0`"]
-pub type RESET_MCWDT0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RESET_MCWDT0`"]
-pub struct RESET_MCWDT0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESET_MCWDT0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
-    }
-}
-#[doc = "Reader of field `RESET_MCWDT1`"]
-pub type RESET_MCWDT1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RESET_MCWDT1`"]
-pub struct RESET_MCWDT1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESET_MCWDT1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-        self.w
-    }
-}
-#[doc = "Reader of field `RESET_MCWDT2`"]
-pub type RESET_MCWDT2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RESET_MCWDT2`"]
-pub struct RESET_MCWDT2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESET_MCWDT2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-        self.w
-    }
-}
-#[doc = "Reader of field `RESET_MCWDT3`"]
-pub type RESET_MCWDT3_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RESET_MCWDT3`"]
-pub struct RESET_MCWDT3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RESET_MCWDT3_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-        self.w
-    }
-}
+#[doc = "Field `RESET_WDT` reader - A basic WatchDog Timer (WDT) reset has occurred since last power cycle."]
+pub type RESET_WDT_R = crate::BitReader<bool>;
+#[doc = "Field `RESET_WDT` writer - A basic WatchDog Timer (WDT) reset has occurred since last power cycle."]
+pub type RESET_WDT_W<'a, const O: u8> = crate::BitWriter<'a, u32, RES_CAUSE_SPEC, bool, O>;
+#[doc = "Field `RESET_ACT_FAULT` reader - Fault logging system requested a reset from its Active logic."]
+pub type RESET_ACT_FAULT_R = crate::BitReader<bool>;
+#[doc = "Field `RESET_ACT_FAULT` writer - Fault logging system requested a reset from its Active logic."]
+pub type RESET_ACT_FAULT_W<'a, const O: u8> = crate::BitWriter<'a, u32, RES_CAUSE_SPEC, bool, O>;
+#[doc = "Field `RESET_DPSLP_FAULT` reader - Fault logging system requested a reset from its DeepSleep logic."]
+pub type RESET_DPSLP_FAULT_R = crate::BitReader<bool>;
+#[doc = "Field `RESET_DPSLP_FAULT` writer - Fault logging system requested a reset from its DeepSleep logic."]
+pub type RESET_DPSLP_FAULT_W<'a, const O: u8> = crate::BitWriter<'a, u32, RES_CAUSE_SPEC, bool, O>;
+#[doc = "Field `RESET_CSV_WCO_LOSS` reader - Clock supervision logic requested a reset due to loss of a watch-crystal clock."]
+pub type RESET_CSV_WCO_LOSS_R = crate::BitReader<bool>;
+#[doc = "Field `RESET_CSV_WCO_LOSS` writer - Clock supervision logic requested a reset due to loss of a watch-crystal clock."]
+pub type RESET_CSV_WCO_LOSS_W<'a, const O: u8> = crate::BitWriter<'a, u32, RES_CAUSE_SPEC, bool, O>;
+#[doc = "Field `RESET_SOFT` reader - A CPU requested a system reset through it's SYSRESETREQ. This can be done via a debugger probe or in firmware."]
+pub type RESET_SOFT_R = crate::BitReader<bool>;
+#[doc = "Field `RESET_SOFT` writer - A CPU requested a system reset through it's SYSRESETREQ. This can be done via a debugger probe or in firmware."]
+pub type RESET_SOFT_W<'a, const O: u8> = crate::BitWriter<'a, u32, RES_CAUSE_SPEC, bool, O>;
+#[doc = "Field `RESET_MCWDT0` reader - Multi-Counter Watchdog timer reset #0 has occurred since last power cycle."]
+pub type RESET_MCWDT0_R = crate::BitReader<bool>;
+#[doc = "Field `RESET_MCWDT0` writer - Multi-Counter Watchdog timer reset #0 has occurred since last power cycle."]
+pub type RESET_MCWDT0_W<'a, const O: u8> = crate::BitWriter<'a, u32, RES_CAUSE_SPEC, bool, O>;
+#[doc = "Field `RESET_MCWDT1` reader - Multi-Counter Watchdog timer reset #1 has occurred since last power cycle."]
+pub type RESET_MCWDT1_R = crate::BitReader<bool>;
+#[doc = "Field `RESET_MCWDT1` writer - Multi-Counter Watchdog timer reset #1 has occurred since last power cycle."]
+pub type RESET_MCWDT1_W<'a, const O: u8> = crate::BitWriter<'a, u32, RES_CAUSE_SPEC, bool, O>;
+#[doc = "Field `RESET_MCWDT2` reader - Multi-Counter Watchdog timer reset #2 has occurred since last power cycle."]
+pub type RESET_MCWDT2_R = crate::BitReader<bool>;
+#[doc = "Field `RESET_MCWDT2` writer - Multi-Counter Watchdog timer reset #2 has occurred since last power cycle."]
+pub type RESET_MCWDT2_W<'a, const O: u8> = crate::BitWriter<'a, u32, RES_CAUSE_SPEC, bool, O>;
+#[doc = "Field `RESET_MCWDT3` reader - Multi-Counter Watchdog timer reset #3 has occurred since last power cycle."]
+pub type RESET_MCWDT3_R = crate::BitReader<bool>;
+#[doc = "Field `RESET_MCWDT3` writer - Multi-Counter Watchdog timer reset #3 has occurred since last power cycle."]
+pub type RESET_MCWDT3_W<'a, const O: u8> = crate::BitWriter<'a, u32, RES_CAUSE_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - A basic WatchDog Timer (WDT) reset has occurred since last power cycle."]
     #[inline(always)]
     pub fn reset_wdt(&self) -> RESET_WDT_R {
-        RESET_WDT_R::new((self.bits & 0x01) != 0)
+        RESET_WDT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Fault logging system requested a reset from its Active logic."]
     #[inline(always)]
     pub fn reset_act_fault(&self) -> RESET_ACT_FAULT_R {
-        RESET_ACT_FAULT_R::new(((self.bits >> 1) & 0x01) != 0)
+        RESET_ACT_FAULT_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Fault logging system requested a reset from its DeepSleep logic."]
     #[inline(always)]
     pub fn reset_dpslp_fault(&self) -> RESET_DPSLP_FAULT_R {
-        RESET_DPSLP_FAULT_R::new(((self.bits >> 2) & 0x01) != 0)
+        RESET_DPSLP_FAULT_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Clock supervision logic requested a reset due to loss of a watch-crystal clock."]
     #[inline(always)]
     pub fn reset_csv_wco_loss(&self) -> RESET_CSV_WCO_LOSS_R {
-        RESET_CSV_WCO_LOSS_R::new(((self.bits >> 3) & 0x01) != 0)
+        RESET_CSV_WCO_LOSS_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - A CPU requested a system reset through it's SYSRESETREQ. This can be done via a debugger probe or in firmware."]
     #[inline(always)]
     pub fn reset_soft(&self) -> RESET_SOFT_R {
-        RESET_SOFT_R::new(((self.bits >> 4) & 0x01) != 0)
+        RESET_SOFT_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Multi-Counter Watchdog timer reset #0 has occurred since last power cycle."]
     #[inline(always)]
     pub fn reset_mcwdt0(&self) -> RESET_MCWDT0_R {
-        RESET_MCWDT0_R::new(((self.bits >> 5) & 0x01) != 0)
+        RESET_MCWDT0_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Multi-Counter Watchdog timer reset #1 has occurred since last power cycle."]
     #[inline(always)]
     pub fn reset_mcwdt1(&self) -> RESET_MCWDT1_R {
-        RESET_MCWDT1_R::new(((self.bits >> 6) & 0x01) != 0)
+        RESET_MCWDT1_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Multi-Counter Watchdog timer reset #2 has occurred since last power cycle."]
     #[inline(always)]
     pub fn reset_mcwdt2(&self) -> RESET_MCWDT2_R {
-        RESET_MCWDT2_R::new(((self.bits >> 7) & 0x01) != 0)
+        RESET_MCWDT2_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Multi-Counter Watchdog timer reset #3 has occurred since last power cycle."]
     #[inline(always)]
     pub fn reset_mcwdt3(&self) -> RESET_MCWDT3_R {
-        RESET_MCWDT3_R::new(((self.bits >> 8) & 0x01) != 0)
+        RESET_MCWDT3_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - A basic WatchDog Timer (WDT) reset has occurred since last power cycle."]
     #[inline(always)]
-    pub fn reset_wdt(&mut self) -> RESET_WDT_W {
-        RESET_WDT_W { w: self }
+    pub fn reset_wdt(&mut self) -> RESET_WDT_W<0> {
+        RESET_WDT_W::new(self)
     }
     #[doc = "Bit 1 - Fault logging system requested a reset from its Active logic."]
     #[inline(always)]
-    pub fn reset_act_fault(&mut self) -> RESET_ACT_FAULT_W {
-        RESET_ACT_FAULT_W { w: self }
+    pub fn reset_act_fault(&mut self) -> RESET_ACT_FAULT_W<1> {
+        RESET_ACT_FAULT_W::new(self)
     }
     #[doc = "Bit 2 - Fault logging system requested a reset from its DeepSleep logic."]
     #[inline(always)]
-    pub fn reset_dpslp_fault(&mut self) -> RESET_DPSLP_FAULT_W {
-        RESET_DPSLP_FAULT_W { w: self }
+    pub fn reset_dpslp_fault(&mut self) -> RESET_DPSLP_FAULT_W<2> {
+        RESET_DPSLP_FAULT_W::new(self)
     }
     #[doc = "Bit 3 - Clock supervision logic requested a reset due to loss of a watch-crystal clock."]
     #[inline(always)]
-    pub fn reset_csv_wco_loss(&mut self) -> RESET_CSV_WCO_LOSS_W {
-        RESET_CSV_WCO_LOSS_W { w: self }
+    pub fn reset_csv_wco_loss(&mut self) -> RESET_CSV_WCO_LOSS_W<3> {
+        RESET_CSV_WCO_LOSS_W::new(self)
     }
     #[doc = "Bit 4 - A CPU requested a system reset through it's SYSRESETREQ. This can be done via a debugger probe or in firmware."]
     #[inline(always)]
-    pub fn reset_soft(&mut self) -> RESET_SOFT_W {
-        RESET_SOFT_W { w: self }
+    pub fn reset_soft(&mut self) -> RESET_SOFT_W<4> {
+        RESET_SOFT_W::new(self)
     }
     #[doc = "Bit 5 - Multi-Counter Watchdog timer reset #0 has occurred since last power cycle."]
     #[inline(always)]
-    pub fn reset_mcwdt0(&mut self) -> RESET_MCWDT0_W {
-        RESET_MCWDT0_W { w: self }
+    pub fn reset_mcwdt0(&mut self) -> RESET_MCWDT0_W<5> {
+        RESET_MCWDT0_W::new(self)
     }
     #[doc = "Bit 6 - Multi-Counter Watchdog timer reset #1 has occurred since last power cycle."]
     #[inline(always)]
-    pub fn reset_mcwdt1(&mut self) -> RESET_MCWDT1_W {
-        RESET_MCWDT1_W { w: self }
+    pub fn reset_mcwdt1(&mut self) -> RESET_MCWDT1_W<6> {
+        RESET_MCWDT1_W::new(self)
     }
     #[doc = "Bit 7 - Multi-Counter Watchdog timer reset #2 has occurred since last power cycle."]
     #[inline(always)]
-    pub fn reset_mcwdt2(&mut self) -> RESET_MCWDT2_W {
-        RESET_MCWDT2_W { w: self }
+    pub fn reset_mcwdt2(&mut self) -> RESET_MCWDT2_W<7> {
+        RESET_MCWDT2_W::new(self)
     }
     #[doc = "Bit 8 - Multi-Counter Watchdog timer reset #3 has occurred since last power cycle."]
     #[inline(always)]
-    pub fn reset_mcwdt3(&mut self) -> RESET_MCWDT3_W {
-        RESET_MCWDT3_W { w: self }
+    pub fn reset_mcwdt3(&mut self) -> RESET_MCWDT3_W<8> {
+        RESET_MCWDT3_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Reset Cause Observation Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [res_cause](index.html) module"]
+pub struct RES_CAUSE_SPEC;
+impl crate::RegisterSpec for RES_CAUSE_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [res_cause::R](R) reader structure"]
+impl crate::Readable for RES_CAUSE_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [res_cause::W](W) writer structure"]
+impl crate::Writable for RES_CAUSE_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets RES_CAUSE to value 0"]
+impl crate::Resettable for RES_CAUSE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

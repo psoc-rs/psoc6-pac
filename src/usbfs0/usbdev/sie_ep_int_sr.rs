@@ -1,288 +1,178 @@
-#[doc = "Reader of register SIE_EP_INT_SR"]
-pub type R = crate::R<u32, super::SIE_EP_INT_SR>;
-#[doc = "Writer for register SIE_EP_INT_SR"]
-pub type W = crate::W<u32, super::SIE_EP_INT_SR>;
-#[doc = "Register SIE_EP_INT_SR `reset()`'s with value 0"]
-impl crate::ResetValue for super::SIE_EP_INT_SR {
-    type Type = u32;
+#[doc = "Register `SIE_EP_INT_SR` reader"]
+pub struct R(crate::R<SIE_EP_INT_SR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SIE_EP_INT_SR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `EP1_INTR`"]
-pub type EP1_INTR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EP1_INTR`"]
-pub struct EP1_INTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EP1_INTR_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<SIE_EP_INT_SR_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn from(reader: crate::R<SIE_EP_INT_SR_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `EP2_INTR`"]
-pub type EP2_INTR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EP2_INTR`"]
-pub struct EP2_INTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EP2_INTR_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `SIE_EP_INT_SR` writer"]
+pub struct W(crate::W<SIE_EP_INT_SR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SIE_EP_INT_SR_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `EP3_INTR`"]
-pub type EP3_INTR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EP3_INTR`"]
-pub struct EP3_INTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EP3_INTR_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `EP4_INTR`"]
-pub type EP4_INTR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EP4_INTR`"]
-pub struct EP4_INTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EP4_INTR_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<SIE_EP_INT_SR_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
+    fn from(writer: crate::W<SIE_EP_INT_SR_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `EP5_INTR`"]
-pub type EP5_INTR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EP5_INTR`"]
-pub struct EP5_INTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EP5_INTR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
-    }
-}
-#[doc = "Reader of field `EP6_INTR`"]
-pub type EP6_INTR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EP6_INTR`"]
-pub struct EP6_INTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EP6_INTR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
-    }
-}
-#[doc = "Reader of field `EP7_INTR`"]
-pub type EP7_INTR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EP7_INTR`"]
-pub struct EP7_INTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EP7_INTR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-        self.w
-    }
-}
-#[doc = "Reader of field `EP8_INTR`"]
-pub type EP8_INTR_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EP8_INTR`"]
-pub struct EP8_INTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EP8_INTR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-        self.w
-    }
-}
+#[doc = "Field `EP1_INTR` reader - Interrupt status for EP1"]
+pub type EP1_INTR_R = crate::BitReader<bool>;
+#[doc = "Field `EP1_INTR` writer - Interrupt status for EP1"]
+pub type EP1_INTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SIE_EP_INT_SR_SPEC, bool, O>;
+#[doc = "Field `EP2_INTR` reader - Interrupt status for EP2"]
+pub type EP2_INTR_R = crate::BitReader<bool>;
+#[doc = "Field `EP2_INTR` writer - Interrupt status for EP2"]
+pub type EP2_INTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SIE_EP_INT_SR_SPEC, bool, O>;
+#[doc = "Field `EP3_INTR` reader - Interrupt status for EP3"]
+pub type EP3_INTR_R = crate::BitReader<bool>;
+#[doc = "Field `EP3_INTR` writer - Interrupt status for EP3"]
+pub type EP3_INTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SIE_EP_INT_SR_SPEC, bool, O>;
+#[doc = "Field `EP4_INTR` reader - Interrupt status for EP4"]
+pub type EP4_INTR_R = crate::BitReader<bool>;
+#[doc = "Field `EP4_INTR` writer - Interrupt status for EP4"]
+pub type EP4_INTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SIE_EP_INT_SR_SPEC, bool, O>;
+#[doc = "Field `EP5_INTR` reader - Interrupt status for EP5"]
+pub type EP5_INTR_R = crate::BitReader<bool>;
+#[doc = "Field `EP5_INTR` writer - Interrupt status for EP5"]
+pub type EP5_INTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SIE_EP_INT_SR_SPEC, bool, O>;
+#[doc = "Field `EP6_INTR` reader - Interrupt status for EP6"]
+pub type EP6_INTR_R = crate::BitReader<bool>;
+#[doc = "Field `EP6_INTR` writer - Interrupt status for EP6"]
+pub type EP6_INTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SIE_EP_INT_SR_SPEC, bool, O>;
+#[doc = "Field `EP7_INTR` reader - Interrupt status for EP7"]
+pub type EP7_INTR_R = crate::BitReader<bool>;
+#[doc = "Field `EP7_INTR` writer - Interrupt status for EP7"]
+pub type EP7_INTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SIE_EP_INT_SR_SPEC, bool, O>;
+#[doc = "Field `EP8_INTR` reader - Interrupt status for EP8"]
+pub type EP8_INTR_R = crate::BitReader<bool>;
+#[doc = "Field `EP8_INTR` writer - Interrupt status for EP8"]
+pub type EP8_INTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SIE_EP_INT_SR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Interrupt status for EP1"]
     #[inline(always)]
     pub fn ep1_intr(&self) -> EP1_INTR_R {
-        EP1_INTR_R::new((self.bits & 0x01) != 0)
+        EP1_INTR_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Interrupt status for EP2"]
     #[inline(always)]
     pub fn ep2_intr(&self) -> EP2_INTR_R {
-        EP2_INTR_R::new(((self.bits >> 1) & 0x01) != 0)
+        EP2_INTR_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Interrupt status for EP3"]
     #[inline(always)]
     pub fn ep3_intr(&self) -> EP3_INTR_R {
-        EP3_INTR_R::new(((self.bits >> 2) & 0x01) != 0)
+        EP3_INTR_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Interrupt status for EP4"]
     #[inline(always)]
     pub fn ep4_intr(&self) -> EP4_INTR_R {
-        EP4_INTR_R::new(((self.bits >> 3) & 0x01) != 0)
+        EP4_INTR_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Interrupt status for EP5"]
     #[inline(always)]
     pub fn ep5_intr(&self) -> EP5_INTR_R {
-        EP5_INTR_R::new(((self.bits >> 4) & 0x01) != 0)
+        EP5_INTR_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Interrupt status for EP6"]
     #[inline(always)]
     pub fn ep6_intr(&self) -> EP6_INTR_R {
-        EP6_INTR_R::new(((self.bits >> 5) & 0x01) != 0)
+        EP6_INTR_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Interrupt status for EP7"]
     #[inline(always)]
     pub fn ep7_intr(&self) -> EP7_INTR_R {
-        EP7_INTR_R::new(((self.bits >> 6) & 0x01) != 0)
+        EP7_INTR_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Interrupt status for EP8"]
     #[inline(always)]
     pub fn ep8_intr(&self) -> EP8_INTR_R {
-        EP8_INTR_R::new(((self.bits >> 7) & 0x01) != 0)
+        EP8_INTR_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Interrupt status for EP1"]
     #[inline(always)]
-    pub fn ep1_intr(&mut self) -> EP1_INTR_W {
-        EP1_INTR_W { w: self }
+    pub fn ep1_intr(&mut self) -> EP1_INTR_W<0> {
+        EP1_INTR_W::new(self)
     }
     #[doc = "Bit 1 - Interrupt status for EP2"]
     #[inline(always)]
-    pub fn ep2_intr(&mut self) -> EP2_INTR_W {
-        EP2_INTR_W { w: self }
+    pub fn ep2_intr(&mut self) -> EP2_INTR_W<1> {
+        EP2_INTR_W::new(self)
     }
     #[doc = "Bit 2 - Interrupt status for EP3"]
     #[inline(always)]
-    pub fn ep3_intr(&mut self) -> EP3_INTR_W {
-        EP3_INTR_W { w: self }
+    pub fn ep3_intr(&mut self) -> EP3_INTR_W<2> {
+        EP3_INTR_W::new(self)
     }
     #[doc = "Bit 3 - Interrupt status for EP4"]
     #[inline(always)]
-    pub fn ep4_intr(&mut self) -> EP4_INTR_W {
-        EP4_INTR_W { w: self }
+    pub fn ep4_intr(&mut self) -> EP4_INTR_W<3> {
+        EP4_INTR_W::new(self)
     }
     #[doc = "Bit 4 - Interrupt status for EP5"]
     #[inline(always)]
-    pub fn ep5_intr(&mut self) -> EP5_INTR_W {
-        EP5_INTR_W { w: self }
+    pub fn ep5_intr(&mut self) -> EP5_INTR_W<4> {
+        EP5_INTR_W::new(self)
     }
     #[doc = "Bit 5 - Interrupt status for EP6"]
     #[inline(always)]
-    pub fn ep6_intr(&mut self) -> EP6_INTR_W {
-        EP6_INTR_W { w: self }
+    pub fn ep6_intr(&mut self) -> EP6_INTR_W<5> {
+        EP6_INTR_W::new(self)
     }
     #[doc = "Bit 6 - Interrupt status for EP7"]
     #[inline(always)]
-    pub fn ep7_intr(&mut self) -> EP7_INTR_W {
-        EP7_INTR_W { w: self }
+    pub fn ep7_intr(&mut self) -> EP7_INTR_W<6> {
+        EP7_INTR_W::new(self)
     }
     #[doc = "Bit 7 - Interrupt status for EP8"]
     #[inline(always)]
-    pub fn ep8_intr(&mut self) -> EP8_INTR_W {
-        EP8_INTR_W { w: self }
+    pub fn ep8_intr(&mut self) -> EP8_INTR_W<7> {
+        EP8_INTR_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "USB SIE Data Endpoint Interrupt Status\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep_int_sr](index.html) module"]
+pub struct SIE_EP_INT_SR_SPEC;
+impl crate::RegisterSpec for SIE_EP_INT_SR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [sie_ep_int_sr::R](R) reader structure"]
+impl crate::Readable for SIE_EP_INT_SR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sie_ep_int_sr::W](W) writer structure"]
+impl crate::Writable for SIE_EP_INT_SR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SIE_EP_INT_SR to value 0"]
+impl crate::Resettable for SIE_EP_INT_SR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

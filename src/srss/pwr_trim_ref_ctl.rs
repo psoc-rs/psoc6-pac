@@ -1,194 +1,171 @@
-#[doc = "Reader of register PWR_TRIM_REF_CTL"]
-pub type R = crate::R<u32, super::PWR_TRIM_REF_CTL>;
-#[doc = "Writer for register PWR_TRIM_REF_CTL"]
-pub type W = crate::W<u32, super::PWR_TRIM_REF_CTL>;
-#[doc = "Register PWR_TRIM_REF_CTL `reset()`'s with value 0x70f0_0000"]
-impl crate::ResetValue for super::PWR_TRIM_REF_CTL {
-    type Type = u32;
+#[doc = "Register `PWR_TRIM_REF_CTL` reader"]
+pub struct R(crate::R<PWR_TRIM_REF_CTL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<PWR_TRIM_REF_CTL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x70f0_0000
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ACT_REF_TCTRIM`"]
-pub type ACT_REF_TCTRIM_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `ACT_REF_TCTRIM`"]
-pub struct ACT_REF_TCTRIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACT_REF_TCTRIM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<PWR_TRIM_REF_CTL_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
-        self.w
+    fn from(reader: crate::R<PWR_TRIM_REF_CTL_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `ACT_REF_ITRIM`"]
-pub type ACT_REF_ITRIM_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `ACT_REF_ITRIM`"]
-pub struct ACT_REF_ITRIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACT_REF_ITRIM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+#[doc = "Register `PWR_TRIM_REF_CTL` writer"]
+pub struct W(crate::W<PWR_TRIM_REF_CTL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<PWR_TRIM_REF_CTL_SPEC>;
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ACT_REF_ABSTRIM`"]
-pub type ACT_REF_ABSTRIM_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `ACT_REF_ABSTRIM`"]
-pub struct ACT_REF_ABSTRIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACT_REF_ABSTRIM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 8)) | (((value as u32) & 0x1f) << 8);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `ACT_REF_IBOOST`"]
-pub type ACT_REF_IBOOST_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ACT_REF_IBOOST`"]
-pub struct ACT_REF_IBOOST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACT_REF_IBOOST_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<PWR_TRIM_REF_CTL_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-        self.w
+    fn from(writer: crate::W<PWR_TRIM_REF_CTL_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `DPSLP_REF_TCTRIM`"]
-pub type DPSLP_REF_TCTRIM_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DPSLP_REF_TCTRIM`"]
-pub struct DPSLP_REF_TCTRIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DPSLP_REF_TCTRIM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | (((value as u32) & 0x0f) << 16);
-        self.w
-    }
-}
-#[doc = "Reader of field `DPSLP_REF_ABSTRIM`"]
-pub type DPSLP_REF_ABSTRIM_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DPSLP_REF_ABSTRIM`"]
-pub struct DPSLP_REF_ABSTRIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DPSLP_REF_ABSTRIM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 20)) | (((value as u32) & 0x1f) << 20);
-        self.w
-    }
-}
-#[doc = "Reader of field `DPSLP_REF_ITRIM`"]
-pub type DPSLP_REF_ITRIM_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DPSLP_REF_ITRIM`"]
-pub struct DPSLP_REF_ITRIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DPSLP_REF_ITRIM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 28)) | (((value as u32) & 0x0f) << 28);
-        self.w
-    }
-}
+#[doc = "Field `ACT_REF_TCTRIM` reader - Active-Reference temperature trim. This register is only reset by XRES/POR/BOD/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
+pub type ACT_REF_TCTRIM_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `ACT_REF_TCTRIM` writer - Active-Reference temperature trim. This register is only reset by XRES/POR/BOD/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
+pub type ACT_REF_TCTRIM_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PWR_TRIM_REF_CTL_SPEC, u8, u8, 4, O>;
+#[doc = "Field `ACT_REF_ITRIM` reader - Active-Reference current trim. This register is only reset by XRES/POR/BOD/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
+pub type ACT_REF_ITRIM_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `ACT_REF_ITRIM` writer - Active-Reference current trim. This register is only reset by XRES/POR/BOD/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
+pub type ACT_REF_ITRIM_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PWR_TRIM_REF_CTL_SPEC, u8, u8, 4, O>;
+#[doc = "Field `ACT_REF_ABSTRIM` reader - Active-Reference absolute voltage trim. This register is only reset by XRES/POR/BOD/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
+pub type ACT_REF_ABSTRIM_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `ACT_REF_ABSTRIM` writer - Active-Reference absolute voltage trim. This register is only reset by XRES/POR/BOD/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
+pub type ACT_REF_ABSTRIM_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PWR_TRIM_REF_CTL_SPEC, u8, u8, 5, O>;
+#[doc = "Field `ACT_REF_IBOOST` reader - Active-Reference current boost. This register is only reset by XRES/POR/BOD/HIBERNATE. 0: normal operation others: risk mitigation"]
+pub type ACT_REF_IBOOST_R = crate::BitReader<bool>;
+#[doc = "Field `ACT_REF_IBOOST` writer - Active-Reference current boost. This register is only reset by XRES/POR/BOD/HIBERNATE. 0: normal operation others: risk mitigation"]
+pub type ACT_REF_IBOOST_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PWR_TRIM_REF_CTL_SPEC, bool, O>;
+#[doc = "Field `DPSLP_REF_TCTRIM` reader - DeepSleep-Reference temperature trim. This register is only reset by XRES/POR/BOD/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
+pub type DPSLP_REF_TCTRIM_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DPSLP_REF_TCTRIM` writer - DeepSleep-Reference temperature trim. This register is only reset by XRES/POR/BOD/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
+pub type DPSLP_REF_TCTRIM_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PWR_TRIM_REF_CTL_SPEC, u8, u8, 4, O>;
+#[doc = "Field `DPSLP_REF_ABSTRIM` reader - DeepSleep-Reference absolute voltage trim. This register is only reset by XRES/POR/BOD/HIBERNATE."]
+pub type DPSLP_REF_ABSTRIM_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DPSLP_REF_ABSTRIM` writer - DeepSleep-Reference absolute voltage trim. This register is only reset by XRES/POR/BOD/HIBERNATE."]
+pub type DPSLP_REF_ABSTRIM_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PWR_TRIM_REF_CTL_SPEC, u8, u8, 5, O>;
+#[doc = "Field `DPSLP_REF_ITRIM` reader - DeepSleep current reference trim. This register is only reset by XRES/POR/BOD/HIBERNATE."]
+pub type DPSLP_REF_ITRIM_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DPSLP_REF_ITRIM` writer - DeepSleep current reference trim. This register is only reset by XRES/POR/BOD/HIBERNATE."]
+pub type DPSLP_REF_ITRIM_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PWR_TRIM_REF_CTL_SPEC, u8, u8, 4, O>;
 impl R {
-    #[doc = "Bits 0:3 - Active-Reference temperature trim. This register is only reset by XRES/POR/BOD/OVP/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
+    #[doc = "Bits 0:3 - Active-Reference temperature trim. This register is only reset by XRES/POR/BOD/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
     #[inline(always)]
     pub fn act_ref_tctrim(&self) -> ACT_REF_TCTRIM_R {
         ACT_REF_TCTRIM_R::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bits 4:7 - Active-Reference current trim. This register is only reset by XRES/POR/BOD/OVP/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
+    #[doc = "Bits 4:7 - Active-Reference current trim. This register is only reset by XRES/POR/BOD/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
     #[inline(always)]
     pub fn act_ref_itrim(&self) -> ACT_REF_ITRIM_R {
         ACT_REF_ITRIM_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    #[doc = "Bits 8:12 - Active-Reference absolute voltage trim. This register is only reset by XRES/POR/BOD/OVP/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
+    #[doc = "Bits 8:12 - Active-Reference absolute voltage trim. This register is only reset by XRES/POR/BOD/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
     #[inline(always)]
     pub fn act_ref_abstrim(&self) -> ACT_REF_ABSTRIM_R {
         ACT_REF_ABSTRIM_R::new(((self.bits >> 8) & 0x1f) as u8)
     }
-    #[doc = "Bit 14 - Active-Reference current boost. This register is only reset by XRES/POR/BOD/OVP/HIBERNATE. 0: normal operation others: risk mitigation"]
+    #[doc = "Bit 14 - Active-Reference current boost. This register is only reset by XRES/POR/BOD/HIBERNATE. 0: normal operation others: risk mitigation"]
     #[inline(always)]
     pub fn act_ref_iboost(&self) -> ACT_REF_IBOOST_R {
-        ACT_REF_IBOOST_R::new(((self.bits >> 14) & 0x01) != 0)
+        ACT_REF_IBOOST_R::new(((self.bits >> 14) & 1) != 0)
     }
-    #[doc = "Bits 16:19 - DeepSleep-Reference temperature trim. This register is only reset by XRES/POR/BOD/OVP/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
+    #[doc = "Bits 16:19 - DeepSleep-Reference temperature trim. This register is only reset by XRES/POR/BOD/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
     #[inline(always)]
     pub fn dpslp_ref_tctrim(&self) -> DPSLP_REF_TCTRIM_R {
         DPSLP_REF_TCTRIM_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
-    #[doc = "Bits 20:24 - DeepSleep-Reference absolute voltage trim. This register is only reset by XRES/POR/BOD/OVP/HIBERNATE."]
+    #[doc = "Bits 20:24 - DeepSleep-Reference absolute voltage trim. This register is only reset by XRES/POR/BOD/HIBERNATE."]
     #[inline(always)]
     pub fn dpslp_ref_abstrim(&self) -> DPSLP_REF_ABSTRIM_R {
         DPSLP_REF_ABSTRIM_R::new(((self.bits >> 20) & 0x1f) as u8)
     }
-    #[doc = "Bits 28:31 - DeepSleep current reference trim. This register is only reset by XRES/POR/BOD/OVP/HIBERNATE."]
+    #[doc = "Bits 28:31 - DeepSleep current reference trim. This register is only reset by XRES/POR/BOD/HIBERNATE."]
     #[inline(always)]
     pub fn dpslp_ref_itrim(&self) -> DPSLP_REF_ITRIM_R {
         DPSLP_REF_ITRIM_R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - Active-Reference temperature trim. This register is only reset by XRES/POR/BOD/OVP/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
+    #[doc = "Bits 0:3 - Active-Reference temperature trim. This register is only reset by XRES/POR/BOD/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
     #[inline(always)]
-    pub fn act_ref_tctrim(&mut self) -> ACT_REF_TCTRIM_W {
-        ACT_REF_TCTRIM_W { w: self }
+    pub fn act_ref_tctrim(&mut self) -> ACT_REF_TCTRIM_W<0> {
+        ACT_REF_TCTRIM_W::new(self)
     }
-    #[doc = "Bits 4:7 - Active-Reference current trim. This register is only reset by XRES/POR/BOD/OVP/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
+    #[doc = "Bits 4:7 - Active-Reference current trim. This register is only reset by XRES/POR/BOD/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
     #[inline(always)]
-    pub fn act_ref_itrim(&mut self) -> ACT_REF_ITRIM_W {
-        ACT_REF_ITRIM_W { w: self }
+    pub fn act_ref_itrim(&mut self) -> ACT_REF_ITRIM_W<4> {
+        ACT_REF_ITRIM_W::new(self)
     }
-    #[doc = "Bits 8:12 - Active-Reference absolute voltage trim. This register is only reset by XRES/POR/BOD/OVP/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
+    #[doc = "Bits 8:12 - Active-Reference absolute voltage trim. This register is only reset by XRES/POR/BOD/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
     #[inline(always)]
-    pub fn act_ref_abstrim(&mut self) -> ACT_REF_ABSTRIM_W {
-        ACT_REF_ABSTRIM_W { w: self }
+    pub fn act_ref_abstrim(&mut self) -> ACT_REF_ABSTRIM_W<8> {
+        ACT_REF_ABSTRIM_W::new(self)
     }
-    #[doc = "Bit 14 - Active-Reference current boost. This register is only reset by XRES/POR/BOD/OVP/HIBERNATE. 0: normal operation others: risk mitigation"]
+    #[doc = "Bit 14 - Active-Reference current boost. This register is only reset by XRES/POR/BOD/HIBERNATE. 0: normal operation others: risk mitigation"]
     #[inline(always)]
-    pub fn act_ref_iboost(&mut self) -> ACT_REF_IBOOST_W {
-        ACT_REF_IBOOST_W { w: self }
+    pub fn act_ref_iboost(&mut self) -> ACT_REF_IBOOST_W<14> {
+        ACT_REF_IBOOST_W::new(self)
     }
-    #[doc = "Bits 16:19 - DeepSleep-Reference temperature trim. This register is only reset by XRES/POR/BOD/OVP/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
+    #[doc = "Bits 16:19 - DeepSleep-Reference temperature trim. This register is only reset by XRES/POR/BOD/HIBERNATE. 0 -> default setting at POR; not for trimming use others -> normal trim range"]
     #[inline(always)]
-    pub fn dpslp_ref_tctrim(&mut self) -> DPSLP_REF_TCTRIM_W {
-        DPSLP_REF_TCTRIM_W { w: self }
+    pub fn dpslp_ref_tctrim(&mut self) -> DPSLP_REF_TCTRIM_W<16> {
+        DPSLP_REF_TCTRIM_W::new(self)
     }
-    #[doc = "Bits 20:24 - DeepSleep-Reference absolute voltage trim. This register is only reset by XRES/POR/BOD/OVP/HIBERNATE."]
+    #[doc = "Bits 20:24 - DeepSleep-Reference absolute voltage trim. This register is only reset by XRES/POR/BOD/HIBERNATE."]
     #[inline(always)]
-    pub fn dpslp_ref_abstrim(&mut self) -> DPSLP_REF_ABSTRIM_W {
-        DPSLP_REF_ABSTRIM_W { w: self }
+    pub fn dpslp_ref_abstrim(&mut self) -> DPSLP_REF_ABSTRIM_W<20> {
+        DPSLP_REF_ABSTRIM_W::new(self)
     }
-    #[doc = "Bits 28:31 - DeepSleep current reference trim. This register is only reset by XRES/POR/BOD/OVP/HIBERNATE."]
+    #[doc = "Bits 28:31 - DeepSleep current reference trim. This register is only reset by XRES/POR/BOD/HIBERNATE."]
     #[inline(always)]
-    pub fn dpslp_ref_itrim(&mut self) -> DPSLP_REF_ITRIM_W {
-        DPSLP_REF_ITRIM_W { w: self }
+    pub fn dpslp_ref_itrim(&mut self) -> DPSLP_REF_ITRIM_W<28> {
+        DPSLP_REF_ITRIM_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Reference Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pwr_trim_ref_ctl](index.html) module"]
+pub struct PWR_TRIM_REF_CTL_SPEC;
+impl crate::RegisterSpec for PWR_TRIM_REF_CTL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [pwr_trim_ref_ctl::R](R) reader structure"]
+impl crate::Readable for PWR_TRIM_REF_CTL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [pwr_trim_ref_ctl::W](W) writer structure"]
+impl crate::Writable for PWR_TRIM_REF_CTL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets PWR_TRIM_REF_CTL to value 0x70f0_0000"]
+impl crate::Resettable for PWR_TRIM_REF_CTL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x70f0_0000
     }
 }

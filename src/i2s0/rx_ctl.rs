@@ -1,13 +1,37 @@
-#[doc = "Reader of register RX_CTL"]
-pub type R = crate::R<u32, super::RX_CTL>;
-#[doc = "Writer for register RX_CTL"]
-pub type W = crate::W<u32, super::RX_CTL>;
-#[doc = "Register RX_CTL `reset()`'s with value 0x0044_0510"]
-impl crate::ResetValue for super::RX_CTL {
-    type Type = u32;
+#[doc = "Register `RX_CTL` reader"]
+pub struct R(crate::R<RX_CTL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RX_CTL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0044_0510
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<RX_CTL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<RX_CTL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `RX_CTL` writer"]
+pub struct W(crate::W<RX_CTL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RX_CTL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<RX_CTL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<RX_CTL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Serial data capture is delayed by 0.5 SCK cycles. This bit is valid only in RX master mode. When set to '1', the serial data will be captured 0.5 SCK cycles later than when set to '0'. 1) RX_CTL.SCKO_POL=0 and RX_CTL.B_CLOCK_INV=0: Serial data will be captured by the SCK rising edge 2) RX_CTL.SCKO_POL=0 and RX_CTL.B_CLOCK_INV=1: Serial data will be captured by the SCK falling edge that is 0.5 SCK cycles after the SCK rising edge in 1) 3) RX_CTL.SCKO_POL=1 and RX_CTL.B_CLOCK_INV=0: Serial data will be captured by the SCK falling edge 4) RX_CTL.SCKO_POL=1 and RX_CTL.B_CLOCK_INV=1: Serial data will be captured by the SCK rising edge that is 0.5 SCK cycles after the SCK falling edge in 3) (Note that this is only the appearance w.r.t. SCK edge, the actual capture timing is derived from an internal clock that runs 8x the SCK frequency). The word sync (RX_WS) signal is not affected by this bit setting. Note: When Slave mode, must be '0'. (Note: This bit is connected to AR38U12.TX_CFG.RX_BCLKINV)\n\nValue on reset: 0"]
@@ -24,10 +48,10 @@ impl From<B_CLOCK_INV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `B_CLOCK_INV`"]
-pub type B_CLOCK_INV_R = crate::R<bool, B_CLOCK_INV_A>;
+#[doc = "Field `B_CLOCK_INV` reader - Serial data capture is delayed by 0.5 SCK cycles. This bit is valid only in RX master mode. When set to '1', the serial data will be captured 0.5 SCK cycles later than when set to '0'. 1) RX_CTL.SCKO_POL=0 and RX_CTL.B_CLOCK_INV=0: Serial data will be captured by the SCK rising edge 2) RX_CTL.SCKO_POL=0 and RX_CTL.B_CLOCK_INV=1: Serial data will be captured by the SCK falling edge that is 0.5 SCK cycles after the SCK rising edge in 1) 3) RX_CTL.SCKO_POL=1 and RX_CTL.B_CLOCK_INV=0: Serial data will be captured by the SCK falling edge 4) RX_CTL.SCKO_POL=1 and RX_CTL.B_CLOCK_INV=1: Serial data will be captured by the SCK rising edge that is 0.5 SCK cycles after the SCK falling edge in 3) (Note that this is only the appearance w.r.t. SCK edge, the actual capture timing is derived from an internal clock that runs 8x the SCK frequency). The word sync (RX_WS) signal is not affected by this bit setting. Note: When Slave mode, must be '0'. (Note: This bit is connected to AR38U12.TX_CFG.RX_BCLKINV)"]
+pub type B_CLOCK_INV_R = crate::BitReader<B_CLOCK_INV_A>;
 impl B_CLOCK_INV_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> B_CLOCK_INV_A {
         match self.bits {
@@ -46,18 +70,9 @@ impl B_CLOCK_INV_R {
         *self == B_CLOCK_INV_A::FALLING_EDGE_RX
     }
 }
-#[doc = "Write proxy for field `B_CLOCK_INV`"]
-pub struct B_CLOCK_INV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> B_CLOCK_INV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: B_CLOCK_INV_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `B_CLOCK_INV` writer - Serial data capture is delayed by 0.5 SCK cycles. This bit is valid only in RX master mode. When set to '1', the serial data will be captured 0.5 SCK cycles later than when set to '0'. 1) RX_CTL.SCKO_POL=0 and RX_CTL.B_CLOCK_INV=0: Serial data will be captured by the SCK rising edge 2) RX_CTL.SCKO_POL=0 and RX_CTL.B_CLOCK_INV=1: Serial data will be captured by the SCK falling edge that is 0.5 SCK cycles after the SCK rising edge in 1) 3) RX_CTL.SCKO_POL=1 and RX_CTL.B_CLOCK_INV=0: Serial data will be captured by the SCK falling edge 4) RX_CTL.SCKO_POL=1 and RX_CTL.B_CLOCK_INV=1: Serial data will be captured by the SCK rising edge that is 0.5 SCK cycles after the SCK falling edge in 3) (Note that this is only the appearance w.r.t. SCK edge, the actual capture timing is derived from an internal clock that runs 8x the SCK frequency). The word sync (RX_WS) signal is not affected by this bit setting. Note: When Slave mode, must be '0'. (Note: This bit is connected to AR38U12.TX_CFG.RX_BCLKINV)"]
+pub type B_CLOCK_INV_W<'a, const O: u8> = crate::BitWriter<'a, u32, RX_CTL_SPEC, B_CLOCK_INV_A, O>;
+impl<'a, const O: u8> B_CLOCK_INV_W<'a, O> {
     #[doc = "SDI received at SCK rising edge when RX_CTL.SCKO_POL=0"]
     #[inline(always)]
     pub fn rising_edge_rx(self) -> &'a mut W {
@@ -67,22 +82,6 @@ impl<'a> B_CLOCK_INV_W<'a> {
     #[inline(always)]
     pub fn falling_edge_rx(self) -> &'a mut W {
         self.variant(B_CLOCK_INV_A::FALLING_EDGE_RX)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
     }
 }
 #[doc = "Specifies number of channels per frame: Note: only '2channels' is supported during Left Justfied or I2S mode. Hence software must set '1' to this field in the modes. (Note: These bits are connected to AR38U12.RX_CFG.RX_CHSET)\n\nValue on reset: 1"]
@@ -112,10 +111,10 @@ impl From<CH_NR_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CH_NR`"]
-pub type CH_NR_R = crate::R<u8, CH_NR_A>;
+#[doc = "Field `CH_NR` reader - Specifies number of channels per frame: Note: only '2channels' is supported during Left Justfied or I2S mode. Hence software must set '1' to this field in the modes. (Note: These bits are connected to AR38U12.RX_CFG.RX_CHSET)"]
+pub type CH_NR_R = crate::FieldReader<u8, CH_NR_A>;
 impl CH_NR_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH_NR_A {
         match self.bits {
@@ -171,18 +170,9 @@ impl CH_NR_R {
         *self == CH_NR_A::CH_NUM8
     }
 }
-#[doc = "Write proxy for field `CH_NR`"]
-pub struct CH_NR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH_NR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH_NR_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `CH_NR` writer - Specifies number of channels per frame: Note: only '2channels' is supported during Left Justfied or I2S mode. Hence software must set '1' to this field in the modes. (Note: These bits are connected to AR38U12.RX_CFG.RX_CHSET)"]
+pub type CH_NR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, RX_CTL_SPEC, u8, CH_NR_A, 3, O>;
+impl<'a, const O: u8> CH_NR_W<'a, O> {
     #[doc = "1 channel"]
     #[inline(always)]
     pub fn ch_num1(self) -> &'a mut W {
@@ -223,12 +213,6 @@ impl<'a> CH_NR_W<'a> {
     pub fn ch_num8(self) -> &'a mut W {
         self.variant(CH_NR_A::CH_NUM8)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u32) & 0x07) << 4);
-        self.w
-    }
 }
 #[doc = "Set interface in master or slave mode: (Note: This bit is connected to AR38U12.TX_CFG.RX_MS)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -244,10 +228,10 @@ impl From<MS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MS`"]
-pub type MS_R = crate::R<bool, MS_A>;
+#[doc = "Field `MS` reader - Set interface in master or slave mode: (Note: This bit is connected to AR38U12.TX_CFG.RX_MS)"]
+pub type MS_R = crate::BitReader<MS_A>;
 impl MS_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MS_A {
         match self.bits {
@@ -266,18 +250,9 @@ impl MS_R {
         *self == MS_A::MASTER
     }
 }
-#[doc = "Write proxy for field `MS`"]
-pub struct MS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MS_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `MS` writer - Set interface in master or slave mode: (Note: This bit is connected to AR38U12.TX_CFG.RX_MS)"]
+pub type MS_W<'a, const O: u8> = crate::BitWriter<'a, u32, RX_CTL_SPEC, MS_A, O>;
+impl<'a, const O: u8> MS_W<'a, O> {
     #[doc = "Slave"]
     #[inline(always)]
     pub fn slave(self) -> &'a mut W {
@@ -288,22 +263,6 @@ impl<'a> MS_W<'a> {
     pub fn master(self) -> &'a mut W {
         self.variant(MS_A::MASTER)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-        self.w
-    }
 }
 #[doc = "Select I2S, left-justified or TDM: (Note: These bits are connected to AR38U12.RX_CFG.RX_I2S_MODE)\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -313,9 +272,9 @@ pub enum I2S_MODE_A {
     LEFT_JUSTIFIED = 0,
     #[doc = "1: I2S mode"]
     I2S = 1,
-    #[doc = "2: TDM mode A, the 1st Channel align to WSO\nRising Edge"]
+    #[doc = "2: TDM mode A, the 1st Channel align to WSO Rising Edge"]
     TDM_A = 2,
-    #[doc = "3: TDM mode B, the 1st Channel align to WSO\nRising edge with1 SCK Delay"]
+    #[doc = "3: TDM mode B, the 1st Channel align to WSO Rising edge with1 SCK Delay"]
     TDM_B = 3,
 }
 impl From<I2S_MODE_A> for u8 {
@@ -324,10 +283,10 @@ impl From<I2S_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `I2S_MODE`"]
-pub type I2S_MODE_R = crate::R<u8, I2S_MODE_A>;
+#[doc = "Field `I2S_MODE` reader - Select I2S, left-justified or TDM: (Note: These bits are connected to AR38U12.RX_CFG.RX_I2S_MODE)"]
+pub type I2S_MODE_R = crate::FieldReader<u8, I2S_MODE_A>;
 impl I2S_MODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> I2S_MODE_A {
         match self.bits {
@@ -359,18 +318,10 @@ impl I2S_MODE_R {
         *self == I2S_MODE_A::TDM_B
     }
 }
-#[doc = "Write proxy for field `I2S_MODE`"]
-pub struct I2S_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> I2S_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: I2S_MODE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `I2S_MODE` writer - Select I2S, left-justified or TDM: (Note: These bits are connected to AR38U12.RX_CFG.RX_I2S_MODE)"]
+pub type I2S_MODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, RX_CTL_SPEC, u8, I2S_MODE_A, 2, O>;
+impl<'a, const O: u8> I2S_MODE_W<'a, O> {
     #[doc = "Left Justified"]
     #[inline(always)]
     pub fn left_justified(self) -> &'a mut W {
@@ -391,12 +342,6 @@ impl<'a> I2S_MODE_W<'a> {
     pub fn tdm_b(self) -> &'a mut W {
         self.variant(I2S_MODE_A::TDM_B)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
-        self.w
-    }
 }
 #[doc = "Set WS pulse width in TDM mode: (Note: This bit is connected to AR38U12.RX_CFG.RX_WS_PULSE) Note: When not TDM mode, must be '1'.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -412,10 +357,10 @@ impl From<WS_PULSE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `WS_PULSE`"]
-pub type WS_PULSE_R = crate::R<bool, WS_PULSE_A>;
+#[doc = "Field `WS_PULSE` reader - Set WS pulse width in TDM mode: (Note: This bit is connected to AR38U12.RX_CFG.RX_WS_PULSE) Note: When not TDM mode, must be '1'."]
+pub type WS_PULSE_R = crate::BitReader<WS_PULSE_A>;
 impl WS_PULSE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WS_PULSE_A {
         match self.bits {
@@ -434,18 +379,9 @@ impl WS_PULSE_R {
         *self == WS_PULSE_A::CH_LENGTH
     }
 }
-#[doc = "Write proxy for field `WS_PULSE`"]
-pub struct WS_PULSE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WS_PULSE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WS_PULSE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `WS_PULSE` writer - Set WS pulse width in TDM mode: (Note: This bit is connected to AR38U12.RX_CFG.RX_WS_PULSE) Note: When not TDM mode, must be '1'."]
+pub type WS_PULSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RX_CTL_SPEC, WS_PULSE_A, O>;
+impl<'a, const O: u8> WS_PULSE_W<'a, O> {
     #[doc = "Pulse width is 1 SCK period"]
     #[inline(always)]
     pub fn sck_period(self) -> &'a mut W {
@@ -456,47 +392,11 @@ impl<'a> WS_PULSE_W<'a> {
     pub fn ch_length(self) -> &'a mut W {
         self.variant(WS_PULSE_A::CH_LENGTH)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-        self.w
-    }
 }
-#[doc = "Reader of field `WD_EN`"]
-pub type WD_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `WD_EN`"]
-pub struct WD_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WD_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-        self.w
-    }
-}
+#[doc = "Field `WD_EN` reader - Set watchdog for 'rx_ws_in' '0': Disabled. '1': Enabled."]
+pub type WD_EN_R = crate::BitReader<bool>;
+#[doc = "Field `WD_EN` writer - Set watchdog for 'rx_ws_in' '0': Disabled. '1': Enabled."]
+pub type WD_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RX_CTL_SPEC, bool, O>;
 #[doc = "Channel length in number of bits: Note: - When this field is configured to '6' or '7', the length is set to 32-bit (same as '5'). - When TDM mode, must be 32-bit length to this field. (Note: These bits are connected to AR38U12.RX_CFG.RX_CHLEN)\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -520,21 +420,20 @@ impl From<CH_LEN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CH_LEN`"]
-pub type CH_LEN_R = crate::R<u8, CH_LEN_A>;
+#[doc = "Field `CH_LEN` reader - Channel length in number of bits: Note: - When this field is configured to '6' or '7', the length is set to 32-bit (same as '5'). - When TDM mode, must be 32-bit length to this field. (Note: These bits are connected to AR38U12.RX_CFG.RX_CHLEN)"]
+pub type CH_LEN_R = crate::FieldReader<u8, CH_LEN_A>;
 impl CH_LEN_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CH_LEN_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CH_LEN_A> {
         match self.bits {
-            0 => Val(CH_LEN_A::BIT_LEN8),
-            1 => Val(CH_LEN_A::BIT_LEN16),
-            2 => Val(CH_LEN_A::BIT_LEN18),
-            3 => Val(CH_LEN_A::BIT_LEN20),
-            4 => Val(CH_LEN_A::BIT_LEN24),
-            5 => Val(CH_LEN_A::BIT_LEN32),
-            i => Res(i),
+            0 => Some(CH_LEN_A::BIT_LEN8),
+            1 => Some(CH_LEN_A::BIT_LEN16),
+            2 => Some(CH_LEN_A::BIT_LEN18),
+            3 => Some(CH_LEN_A::BIT_LEN20),
+            4 => Some(CH_LEN_A::BIT_LEN24),
+            5 => Some(CH_LEN_A::BIT_LEN32),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `BIT_LEN8`"]
@@ -568,16 +467,9 @@ impl CH_LEN_R {
         *self == CH_LEN_A::BIT_LEN32
     }
 }
-#[doc = "Write proxy for field `CH_LEN`"]
-pub struct CH_LEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CH_LEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH_LEN_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `CH_LEN` writer - Channel length in number of bits: Note: - When this field is configured to '6' or '7', the length is set to 32-bit (same as '5'). - When TDM mode, must be 32-bit length to this field. (Note: These bits are connected to AR38U12.RX_CFG.RX_CHLEN)"]
+pub type CH_LEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RX_CTL_SPEC, u8, CH_LEN_A, 3, O>;
+impl<'a, const O: u8> CH_LEN_W<'a, O> {
     #[doc = "8-bit"]
     #[inline(always)]
     pub fn bit_len8(self) -> &'a mut W {
@@ -608,12 +500,6 @@ impl<'a> CH_LEN_W<'a> {
     pub fn bit_len32(self) -> &'a mut W {
         self.variant(CH_LEN_A::BIT_LEN32)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
-        self.w
-    }
 }
 #[doc = "Word length in number of bits: Note: - When this field is configured to '6' or '7', the length is set to 32-bit (same as '5'). - Don't configure this field as beyond Channel length. (Note: These bits are connected to AR38U12.RX_CFG.RX_IWL)\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -638,21 +524,20 @@ impl From<WORD_LEN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `WORD_LEN`"]
-pub type WORD_LEN_R = crate::R<u8, WORD_LEN_A>;
+#[doc = "Field `WORD_LEN` reader - Word length in number of bits: Note: - When this field is configured to '6' or '7', the length is set to 32-bit (same as '5'). - Don't configure this field as beyond Channel length. (Note: These bits are connected to AR38U12.RX_CFG.RX_IWL)"]
+pub type WORD_LEN_R = crate::FieldReader<u8, WORD_LEN_A>;
 impl WORD_LEN_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, WORD_LEN_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<WORD_LEN_A> {
         match self.bits {
-            0 => Val(WORD_LEN_A::BIT_LEN8),
-            1 => Val(WORD_LEN_A::BIT_LEN16),
-            2 => Val(WORD_LEN_A::BIT_LEN18),
-            3 => Val(WORD_LEN_A::BIT_LEN20),
-            4 => Val(WORD_LEN_A::BIT_LEN24),
-            5 => Val(WORD_LEN_A::BIT_LEN32),
-            i => Res(i),
+            0 => Some(WORD_LEN_A::BIT_LEN8),
+            1 => Some(WORD_LEN_A::BIT_LEN16),
+            2 => Some(WORD_LEN_A::BIT_LEN18),
+            3 => Some(WORD_LEN_A::BIT_LEN20),
+            4 => Some(WORD_LEN_A::BIT_LEN24),
+            5 => Some(WORD_LEN_A::BIT_LEN32),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `BIT_LEN8`"]
@@ -686,16 +571,10 @@ impl WORD_LEN_R {
         *self == WORD_LEN_A::BIT_LEN32
     }
 }
-#[doc = "Write proxy for field `WORD_LEN`"]
-pub struct WORD_LEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WORD_LEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WORD_LEN_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `WORD_LEN` writer - Word length in number of bits: Note: - When this field is configured to '6' or '7', the length is set to 32-bit (same as '5'). - Don't configure this field as beyond Channel length. (Note: These bits are connected to AR38U12.RX_CFG.RX_IWL)"]
+pub type WORD_LEN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, RX_CTL_SPEC, u8, WORD_LEN_A, 3, O>;
+impl<'a, const O: u8> WORD_LEN_W<'a, O> {
     #[doc = "8-bit"]
     #[inline(always)]
     pub fn bit_len8(self) -> &'a mut W {
@@ -726,196 +605,156 @@ impl<'a> WORD_LEN_W<'a> {
     pub fn bit_len32(self) -> &'a mut W {
         self.variant(WORD_LEN_A::BIT_LEN32)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 20)) | (((value as u32) & 0x07) << 20);
-        self.w
-    }
 }
-#[doc = "Reader of field `BIT_EXTENSION`"]
-pub type BIT_EXTENSION_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `BIT_EXTENSION`"]
-pub struct BIT_EXTENSION_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BIT_EXTENSION_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | (((value as u32) & 0x01) << 23);
-        self.w
-    }
-}
-#[doc = "Reader of field `SCKO_POL`"]
-pub type SCKO_POL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCKO_POL`"]
-pub struct SCKO_POL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCKO_POL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-        self.w
-    }
-}
-#[doc = "Reader of field `SCKI_POL`"]
-pub type SCKI_POL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SCKI_POL`"]
-pub struct SCKI_POL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCKI_POL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-        self.w
-    }
-}
+#[doc = "Field `BIT_EXTENSION` reader - When reception word length is shorter than the word length of RX_FIFO_RD, extension mode of upper bit should be set. '0': Extended by '0' '1': Extended by sign bit (if MSB word is '1', then it is extended by '1', if MSB is '0' then it is extended by '0')"]
+pub type BIT_EXTENSION_R = crate::BitReader<bool>;
+#[doc = "Field `BIT_EXTENSION` writer - When reception word length is shorter than the word length of RX_FIFO_RD, extension mode of upper bit should be set. '0': Extended by '0' '1': Extended by sign bit (if MSB word is '1', then it is extended by '1', if MSB is '0' then it is extended by '0')"]
+pub type BIT_EXTENSION_W<'a, const O: u8> = crate::BitWriter<'a, u32, RX_CTL_SPEC, bool, O>;
+#[doc = "Field `SCKO_POL` reader - RX master bit clock polarity. When this bit is 1, the outgoing rx_sck signal is inverted after it has been transmitted from the I2S receiver core. This bit does not affect the internal serial data capture timing. The word sync (RX_WS) signal is not affected by this bit setting.See RX_CTL.B_CLOCK_INV for more details."]
+pub type SCKO_POL_R = crate::BitReader<bool>;
+#[doc = "Field `SCKO_POL` writer - RX master bit clock polarity. When this bit is 1, the outgoing rx_sck signal is inverted after it has been transmitted from the I2S receiver core. This bit does not affect the internal serial data capture timing. The word sync (RX_WS) signal is not affected by this bit setting.See RX_CTL.B_CLOCK_INV for more details."]
+pub type SCKO_POL_W<'a, const O: u8> = crate::BitWriter<'a, u32, RX_CTL_SPEC, bool, O>;
+#[doc = "Field `SCKI_POL` reader - RX slave bit clock polarity. When this bit is 1, the incoming rx_sck signal is inverted before it is received by the I2S receiver core. This bit does not affect the internal serial data capture timing. The word sync (RX_WS) signal is not affected by this bit setting. '0': When receiver is in slave mode, serial data is sampled on the rising bit clock edge '1': When receiver is in slave mode, serial data is sampled on the falling bit clock edge"]
+pub type SCKI_POL_R = crate::BitReader<bool>;
+#[doc = "Field `SCKI_POL` writer - RX slave bit clock polarity. When this bit is 1, the incoming rx_sck signal is inverted before it is received by the I2S receiver core. This bit does not affect the internal serial data capture timing. The word sync (RX_WS) signal is not affected by this bit setting. '0': When receiver is in slave mode, serial data is sampled on the rising bit clock edge '1': When receiver is in slave mode, serial data is sampled on the falling bit clock edge"]
+pub type SCKI_POL_W<'a, const O: u8> = crate::BitWriter<'a, u32, RX_CTL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 3 - Serial data capture is delayed by 0.5 SCK cycles. This bit is valid only in RX master mode. When set to '1', the serial data will be captured 0.5 SCK cycles later than when set to '0'. 1) RX_CTL.SCKO_POL=0 and RX_CTL.B_CLOCK_INV=0: Serial data will be captured by the SCK rising edge 2) RX_CTL.SCKO_POL=0 and RX_CTL.B_CLOCK_INV=1: Serial data will be captured by the SCK falling edge that is 0.5 SCK cycles after the SCK rising edge in 1) 3) RX_CTL.SCKO_POL=1 and RX_CTL.B_CLOCK_INV=0: Serial data will be captured by the SCK falling edge 4) RX_CTL.SCKO_POL=1 and RX_CTL.B_CLOCK_INV=1: Serial data will be captured by the SCK rising edge that is 0.5 SCK cycles after the SCK falling edge in 3) (Note that this is only the appearance w.r.t. SCK edge, the actual capture timing is derived from an internal clock that runs 8x the SCK frequency). The word sync (RX_WS) signal is not affected by this bit setting. Note: When Slave mode, must be '0'. (Note: This bit is connected to AR38U12.TX_CFG.RX_BCLKINV)"]
     #[inline(always)]
     pub fn b_clock_inv(&self) -> B_CLOCK_INV_R {
-        B_CLOCK_INV_R::new(((self.bits >> 3) & 0x01) != 0)
+        B_CLOCK_INV_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:6 - Specifies number of channels per frame: Note: only '2channels' is supported during Left Justfied or I2S mode. Hence software must set '1' to this field in the modes. (Note: These bits are connected to AR38U12.RX_CFG.RX_CHSET)"]
     #[inline(always)]
     pub fn ch_nr(&self) -> CH_NR_R {
-        CH_NR_R::new(((self.bits >> 4) & 0x07) as u8)
+        CH_NR_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bit 7 - Set interface in master or slave mode: (Note: This bit is connected to AR38U12.TX_CFG.RX_MS)"]
     #[inline(always)]
     pub fn ms(&self) -> MS_R {
-        MS_R::new(((self.bits >> 7) & 0x01) != 0)
+        MS_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:9 - Select I2S, left-justified or TDM: (Note: These bits are connected to AR38U12.RX_CFG.RX_I2S_MODE)"]
     #[inline(always)]
     pub fn i2s_mode(&self) -> I2S_MODE_R {
-        I2S_MODE_R::new(((self.bits >> 8) & 0x03) as u8)
+        I2S_MODE_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bit 10 - Set WS pulse width in TDM mode: (Note: This bit is connected to AR38U12.RX_CFG.RX_WS_PULSE) Note: When not TDM mode, must be '1'."]
     #[inline(always)]
     pub fn ws_pulse(&self) -> WS_PULSE_R {
-        WS_PULSE_R::new(((self.bits >> 10) & 0x01) != 0)
+        WS_PULSE_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 13 - Set watchdog for 'rx_ws_in' '0': Disabled. '1': Enabled."]
     #[inline(always)]
     pub fn wd_en(&self) -> WD_EN_R {
-        WD_EN_R::new(((self.bits >> 13) & 0x01) != 0)
+        WD_EN_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bits 16:18 - Channel length in number of bits: Note: - When this field is configured to '6' or '7', the length is set to 32-bit (same as '5'). - When TDM mode, must be 32-bit length to this field. (Note: These bits are connected to AR38U12.RX_CFG.RX_CHLEN)"]
     #[inline(always)]
     pub fn ch_len(&self) -> CH_LEN_R {
-        CH_LEN_R::new(((self.bits >> 16) & 0x07) as u8)
+        CH_LEN_R::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bits 20:22 - Word length in number of bits: Note: - When this field is configured to '6' or '7', the length is set to 32-bit (same as '5'). - Don't configure this field as beyond Channel length. (Note: These bits are connected to AR38U12.RX_CFG.RX_IWL)"]
     #[inline(always)]
     pub fn word_len(&self) -> WORD_LEN_R {
-        WORD_LEN_R::new(((self.bits >> 20) & 0x07) as u8)
+        WORD_LEN_R::new(((self.bits >> 20) & 7) as u8)
     }
     #[doc = "Bit 23 - When reception word length is shorter than the word length of RX_FIFO_RD, extension mode of upper bit should be set. '0': Extended by '0' '1': Extended by sign bit (if MSB word is '1', then it is extended by '1', if MSB is '0' then it is extended by '0')"]
     #[inline(always)]
     pub fn bit_extension(&self) -> BIT_EXTENSION_R {
-        BIT_EXTENSION_R::new(((self.bits >> 23) & 0x01) != 0)
+        BIT_EXTENSION_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 24 - RX master bit clock polarity. When this bit is 1, the outgoing rx_sck signal is inverted after it has been transmitted from the I2S receiver core. This bit does not affect the internal serial data capture timing. The word sync (RX_WS) signal is not affected by this bit setting.See RX_CTL.B_CLOCK_INV for more details."]
     #[inline(always)]
     pub fn scko_pol(&self) -> SCKO_POL_R {
-        SCKO_POL_R::new(((self.bits >> 24) & 0x01) != 0)
+        SCKO_POL_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - RX slave bit clock polarity. When this bit is 1, the incoming rx_sck signal is inverted before it is received by the I2S receiver core. This bit does not affect the internal serial data capture timing. The word sync (RX_WS) signal is not affected by this bit setting. '0': When receiver is in slave mode, serial data is sampled on the rising bit clock edge '1': When receiver is in slave mode, serial data is sampled on the falling bit clock edge"]
     #[inline(always)]
     pub fn scki_pol(&self) -> SCKI_POL_R {
-        SCKI_POL_R::new(((self.bits >> 25) & 0x01) != 0)
+        SCKI_POL_R::new(((self.bits >> 25) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 3 - Serial data capture is delayed by 0.5 SCK cycles. This bit is valid only in RX master mode. When set to '1', the serial data will be captured 0.5 SCK cycles later than when set to '0'. 1) RX_CTL.SCKO_POL=0 and RX_CTL.B_CLOCK_INV=0: Serial data will be captured by the SCK rising edge 2) RX_CTL.SCKO_POL=0 and RX_CTL.B_CLOCK_INV=1: Serial data will be captured by the SCK falling edge that is 0.5 SCK cycles after the SCK rising edge in 1) 3) RX_CTL.SCKO_POL=1 and RX_CTL.B_CLOCK_INV=0: Serial data will be captured by the SCK falling edge 4) RX_CTL.SCKO_POL=1 and RX_CTL.B_CLOCK_INV=1: Serial data will be captured by the SCK rising edge that is 0.5 SCK cycles after the SCK falling edge in 3) (Note that this is only the appearance w.r.t. SCK edge, the actual capture timing is derived from an internal clock that runs 8x the SCK frequency). The word sync (RX_WS) signal is not affected by this bit setting. Note: When Slave mode, must be '0'. (Note: This bit is connected to AR38U12.TX_CFG.RX_BCLKINV)"]
     #[inline(always)]
-    pub fn b_clock_inv(&mut self) -> B_CLOCK_INV_W {
-        B_CLOCK_INV_W { w: self }
+    pub fn b_clock_inv(&mut self) -> B_CLOCK_INV_W<3> {
+        B_CLOCK_INV_W::new(self)
     }
     #[doc = "Bits 4:6 - Specifies number of channels per frame: Note: only '2channels' is supported during Left Justfied or I2S mode. Hence software must set '1' to this field in the modes. (Note: These bits are connected to AR38U12.RX_CFG.RX_CHSET)"]
     #[inline(always)]
-    pub fn ch_nr(&mut self) -> CH_NR_W {
-        CH_NR_W { w: self }
+    pub fn ch_nr(&mut self) -> CH_NR_W<4> {
+        CH_NR_W::new(self)
     }
     #[doc = "Bit 7 - Set interface in master or slave mode: (Note: This bit is connected to AR38U12.TX_CFG.RX_MS)"]
     #[inline(always)]
-    pub fn ms(&mut self) -> MS_W {
-        MS_W { w: self }
+    pub fn ms(&mut self) -> MS_W<7> {
+        MS_W::new(self)
     }
     #[doc = "Bits 8:9 - Select I2S, left-justified or TDM: (Note: These bits are connected to AR38U12.RX_CFG.RX_I2S_MODE)"]
     #[inline(always)]
-    pub fn i2s_mode(&mut self) -> I2S_MODE_W {
-        I2S_MODE_W { w: self }
+    pub fn i2s_mode(&mut self) -> I2S_MODE_W<8> {
+        I2S_MODE_W::new(self)
     }
     #[doc = "Bit 10 - Set WS pulse width in TDM mode: (Note: This bit is connected to AR38U12.RX_CFG.RX_WS_PULSE) Note: When not TDM mode, must be '1'."]
     #[inline(always)]
-    pub fn ws_pulse(&mut self) -> WS_PULSE_W {
-        WS_PULSE_W { w: self }
+    pub fn ws_pulse(&mut self) -> WS_PULSE_W<10> {
+        WS_PULSE_W::new(self)
     }
     #[doc = "Bit 13 - Set watchdog for 'rx_ws_in' '0': Disabled. '1': Enabled."]
     #[inline(always)]
-    pub fn wd_en(&mut self) -> WD_EN_W {
-        WD_EN_W { w: self }
+    pub fn wd_en(&mut self) -> WD_EN_W<13> {
+        WD_EN_W::new(self)
     }
     #[doc = "Bits 16:18 - Channel length in number of bits: Note: - When this field is configured to '6' or '7', the length is set to 32-bit (same as '5'). - When TDM mode, must be 32-bit length to this field. (Note: These bits are connected to AR38U12.RX_CFG.RX_CHLEN)"]
     #[inline(always)]
-    pub fn ch_len(&mut self) -> CH_LEN_W {
-        CH_LEN_W { w: self }
+    pub fn ch_len(&mut self) -> CH_LEN_W<16> {
+        CH_LEN_W::new(self)
     }
     #[doc = "Bits 20:22 - Word length in number of bits: Note: - When this field is configured to '6' or '7', the length is set to 32-bit (same as '5'). - Don't configure this field as beyond Channel length. (Note: These bits are connected to AR38U12.RX_CFG.RX_IWL)"]
     #[inline(always)]
-    pub fn word_len(&mut self) -> WORD_LEN_W {
-        WORD_LEN_W { w: self }
+    pub fn word_len(&mut self) -> WORD_LEN_W<20> {
+        WORD_LEN_W::new(self)
     }
     #[doc = "Bit 23 - When reception word length is shorter than the word length of RX_FIFO_RD, extension mode of upper bit should be set. '0': Extended by '0' '1': Extended by sign bit (if MSB word is '1', then it is extended by '1', if MSB is '0' then it is extended by '0')"]
     #[inline(always)]
-    pub fn bit_extension(&mut self) -> BIT_EXTENSION_W {
-        BIT_EXTENSION_W { w: self }
+    pub fn bit_extension(&mut self) -> BIT_EXTENSION_W<23> {
+        BIT_EXTENSION_W::new(self)
     }
     #[doc = "Bit 24 - RX master bit clock polarity. When this bit is 1, the outgoing rx_sck signal is inverted after it has been transmitted from the I2S receiver core. This bit does not affect the internal serial data capture timing. The word sync (RX_WS) signal is not affected by this bit setting.See RX_CTL.B_CLOCK_INV for more details."]
     #[inline(always)]
-    pub fn scko_pol(&mut self) -> SCKO_POL_W {
-        SCKO_POL_W { w: self }
+    pub fn scko_pol(&mut self) -> SCKO_POL_W<24> {
+        SCKO_POL_W::new(self)
     }
     #[doc = "Bit 25 - RX slave bit clock polarity. When this bit is 1, the incoming rx_sck signal is inverted before it is received by the I2S receiver core. This bit does not affect the internal serial data capture timing. The word sync (RX_WS) signal is not affected by this bit setting. '0': When receiver is in slave mode, serial data is sampled on the rising bit clock edge '1': When receiver is in slave mode, serial data is sampled on the falling bit clock edge"]
     #[inline(always)]
-    pub fn scki_pol(&mut self) -> SCKI_POL_W {
-        SCKI_POL_W { w: self }
+    pub fn scki_pol(&mut self) -> SCKI_POL_W<25> {
+        SCKI_POL_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Receiver control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rx_ctl](index.html) module"]
+pub struct RX_CTL_SPEC;
+impl crate::RegisterSpec for RX_CTL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [rx_ctl::R](R) reader structure"]
+impl crate::Readable for RX_CTL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [rx_ctl::W](W) writer structure"]
+impl crate::Writable for RX_CTL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets RX_CTL to value 0x0044_0510"]
+impl crate::Resettable for RX_CTL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0044_0510
     }
 }

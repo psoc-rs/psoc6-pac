@@ -1,186 +1,136 @@
-#[doc = "Reader of register I2C_M_CMD"]
-pub type R = crate::R<u32, super::I2C_M_CMD>;
-#[doc = "Writer for register I2C_M_CMD"]
-pub type W = crate::W<u32, super::I2C_M_CMD>;
-#[doc = "Register I2C_M_CMD `reset()`'s with value 0"]
-impl crate::ResetValue for super::I2C_M_CMD {
-    type Type = u32;
+#[doc = "Register `I2C_M_CMD` reader"]
+pub struct R(crate::R<I2C_M_CMD_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<I2C_M_CMD_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `M_START`"]
-pub type M_START_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `M_START`"]
-pub struct M_START_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> M_START_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<I2C_M_CMD_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn from(reader: crate::R<I2C_M_CMD_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `M_START_ON_IDLE`"]
-pub type M_START_ON_IDLE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `M_START_ON_IDLE`"]
-pub struct M_START_ON_IDLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> M_START_ON_IDLE_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `I2C_M_CMD` writer"]
+pub struct W(crate::W<I2C_M_CMD_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<I2C_M_CMD_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `M_ACK`"]
-pub type M_ACK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `M_ACK`"]
-pub struct M_ACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> M_ACK_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `M_NACK`"]
-pub type M_NACK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `M_NACK`"]
-pub struct M_NACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> M_NACK_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<I2C_M_CMD_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
+    fn from(writer: crate::W<I2C_M_CMD_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `M_STOP`"]
-pub type M_STOP_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `M_STOP`"]
-pub struct M_STOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> M_STOP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
-    }
-}
+#[doc = "Field `M_START` reader - When '1', transmit a START or REPEATED START. Whether a START or REPEATED START is transmitted depends on the state of the master state machine. A START is only transmitted when the master state machine is in the default state. A REPEATED START is transmitted when the master state machine is not in the default state, but is working on an ongoing transaction. The REPEATED START can only be transmitted after a NACK or ACK has been received for a transmitted data element or after a NACK has been transmitted for a received data element. When this action is performed, the hardware sets this field to '0'."]
+pub type M_START_R = crate::BitReader<bool>;
+#[doc = "Field `M_START` writer - When '1', transmit a START or REPEATED START. Whether a START or REPEATED START is transmitted depends on the state of the master state machine. A START is only transmitted when the master state machine is in the default state. A REPEATED START is transmitted when the master state machine is not in the default state, but is working on an ongoing transaction. The REPEATED START can only be transmitted after a NACK or ACK has been received for a transmitted data element or after a NACK has been transmitted for a received data element. When this action is performed, the hardware sets this field to '0'."]
+pub type M_START_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2C_M_CMD_SPEC, bool, O>;
+#[doc = "Field `M_START_ON_IDLE` reader - When '1', transmit a START as soon as the bus is idle (I2C_STATUS.BUS_BUSY is '0', note that BUSY has a default value of '0'). For bus idle detection the hardware relies on STOP detection. As a result, bus idle detection is only functional after at least one I2C bus transfer has been detected on the bus (default/reset value of BUSY is '0') . A START is only transmitted when the master state machine is in the default state. When this action is performed, the hardware sets this field to '0'."]
+pub type M_START_ON_IDLE_R = crate::BitReader<bool>;
+#[doc = "Field `M_START_ON_IDLE` writer - When '1', transmit a START as soon as the bus is idle (I2C_STATUS.BUS_BUSY is '0', note that BUSY has a default value of '0'). For bus idle detection the hardware relies on STOP detection. As a result, bus idle detection is only functional after at least one I2C bus transfer has been detected on the bus (default/reset value of BUSY is '0') . A START is only transmitted when the master state machine is in the default state. When this action is performed, the hardware sets this field to '0'."]
+pub type M_START_ON_IDLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2C_M_CMD_SPEC, bool, O>;
+#[doc = "Field `M_ACK` reader - N/A"]
+pub type M_ACK_R = crate::BitReader<bool>;
+#[doc = "Field `M_ACK` writer - N/A"]
+pub type M_ACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2C_M_CMD_SPEC, bool, O>;
+#[doc = "Field `M_NACK` reader - N/A"]
+pub type M_NACK_R = crate::BitReader<bool>;
+#[doc = "Field `M_NACK` writer - N/A"]
+pub type M_NACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2C_M_CMD_SPEC, bool, O>;
+#[doc = "Field `M_STOP` reader - N/A"]
+pub type M_STOP_R = crate::BitReader<bool>;
+#[doc = "Field `M_STOP` writer - N/A"]
+pub type M_STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2C_M_CMD_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - When '1', transmit a START or REPEATED START. Whether a START or REPEATED START is transmitted depends on the state of the master state machine. A START is only transmitted when the master state machine is in the default state. A REPEATED START is transmitted when the master state machine is not in the default state, but is working on an ongoing transaction. The REPEATED START can only be transmitted after a NACK or ACK has been received for a transmitted data element or after a NACK has been transmitted for a received data element. When this action is performed, the hardware sets this field to '0'."]
     #[inline(always)]
     pub fn m_start(&self) -> M_START_R {
-        M_START_R::new((self.bits & 0x01) != 0)
+        M_START_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - When '1', transmit a START as soon as the bus is idle (I2C_STATUS.BUS_BUSY is '0', note that BUSY has a default value of '0'). For bus idle detection the hardware relies on STOP detection. As a result, bus idle detection is only functional after at least one I2C bus transfer has been detected on the bus (default/reset value of BUSY is '0') . A START is only transmitted when the master state machine is in the default state. When this action is performed, the hardware sets this field to '0'."]
     #[inline(always)]
     pub fn m_start_on_idle(&self) -> M_START_ON_IDLE_R {
-        M_START_ON_IDLE_R::new(((self.bits >> 1) & 0x01) != 0)
+        M_START_ON_IDLE_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - When '1', attempt to transmit an acknowledgement (ACK). When this action is performed, the hardware sets this field to '0'."]
+    #[doc = "Bit 2 - N/A"]
     #[inline(always)]
     pub fn m_ack(&self) -> M_ACK_R {
-        M_ACK_R::new(((self.bits >> 2) & 0x01) != 0)
+        M_ACK_R::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - When '1', attempt to transmit a negative acknowledgement (NACK). When this action is performed, the hardware sets this field to '0'."]
+    #[doc = "Bit 3 - N/A"]
     #[inline(always)]
     pub fn m_nack(&self) -> M_NACK_R {
-        M_NACK_R::new(((self.bits >> 3) & 0x01) != 0)
+        M_NACK_R::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - When '1', attempt to transmit a STOP. When this action is performed, the hardware sets this field to '0'. I2C_M_CMD.M_START has a higher priority than this command: in situations where both a STOP and a REPEATED START could be transmitted, M_START takes precedence over M_STOP."]
+    #[doc = "Bit 4 - N/A"]
     #[inline(always)]
     pub fn m_stop(&self) -> M_STOP_R {
-        M_STOP_R::new(((self.bits >> 4) & 0x01) != 0)
+        M_STOP_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - When '1', transmit a START or REPEATED START. Whether a START or REPEATED START is transmitted depends on the state of the master state machine. A START is only transmitted when the master state machine is in the default state. A REPEATED START is transmitted when the master state machine is not in the default state, but is working on an ongoing transaction. The REPEATED START can only be transmitted after a NACK or ACK has been received for a transmitted data element or after a NACK has been transmitted for a received data element. When this action is performed, the hardware sets this field to '0'."]
     #[inline(always)]
-    pub fn m_start(&mut self) -> M_START_W {
-        M_START_W { w: self }
+    pub fn m_start(&mut self) -> M_START_W<0> {
+        M_START_W::new(self)
     }
     #[doc = "Bit 1 - When '1', transmit a START as soon as the bus is idle (I2C_STATUS.BUS_BUSY is '0', note that BUSY has a default value of '0'). For bus idle detection the hardware relies on STOP detection. As a result, bus idle detection is only functional after at least one I2C bus transfer has been detected on the bus (default/reset value of BUSY is '0') . A START is only transmitted when the master state machine is in the default state. When this action is performed, the hardware sets this field to '0'."]
     #[inline(always)]
-    pub fn m_start_on_idle(&mut self) -> M_START_ON_IDLE_W {
-        M_START_ON_IDLE_W { w: self }
+    pub fn m_start_on_idle(&mut self) -> M_START_ON_IDLE_W<1> {
+        M_START_ON_IDLE_W::new(self)
     }
-    #[doc = "Bit 2 - When '1', attempt to transmit an acknowledgement (ACK). When this action is performed, the hardware sets this field to '0'."]
+    #[doc = "Bit 2 - N/A"]
     #[inline(always)]
-    pub fn m_ack(&mut self) -> M_ACK_W {
-        M_ACK_W { w: self }
+    pub fn m_ack(&mut self) -> M_ACK_W<2> {
+        M_ACK_W::new(self)
     }
-    #[doc = "Bit 3 - When '1', attempt to transmit a negative acknowledgement (NACK). When this action is performed, the hardware sets this field to '0'."]
+    #[doc = "Bit 3 - N/A"]
     #[inline(always)]
-    pub fn m_nack(&mut self) -> M_NACK_W {
-        M_NACK_W { w: self }
+    pub fn m_nack(&mut self) -> M_NACK_W<3> {
+        M_NACK_W::new(self)
     }
-    #[doc = "Bit 4 - When '1', attempt to transmit a STOP. When this action is performed, the hardware sets this field to '0'. I2C_M_CMD.M_START has a higher priority than this command: in situations where both a STOP and a REPEATED START could be transmitted, M_START takes precedence over M_STOP."]
+    #[doc = "Bit 4 - N/A"]
     #[inline(always)]
-    pub fn m_stop(&mut self) -> M_STOP_W {
-        M_STOP_W { w: self }
+    pub fn m_stop(&mut self) -> M_STOP_W<4> {
+        M_STOP_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "I2C master command\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [i2c_m_cmd](index.html) module"]
+pub struct I2C_M_CMD_SPEC;
+impl crate::RegisterSpec for I2C_M_CMD_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [i2c_m_cmd::R](R) reader structure"]
+impl crate::Readable for I2C_M_CMD_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [i2c_m_cmd::W](W) writer structure"]
+impl crate::Writable for I2C_M_CMD_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets I2C_M_CMD to value 0"]
+impl crate::Resettable for I2C_M_CMD_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

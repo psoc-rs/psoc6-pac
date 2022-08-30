@@ -1,13 +1,37 @@
-#[doc = "Reader of register CONFIG"]
-pub type R = crate::R<u32, super::CONFIG>;
-#[doc = "Writer for register CONFIG"]
-pub type W = crate::W<u32, super::CONFIG>;
-#[doc = "Register CONFIG `reset()`'s with value 0x0400_0000"]
-impl crate::ResetValue for super::CONFIG {
-    type Type = u32;
+#[doc = "Register `CONFIG` reader"]
+pub struct R(crate::R<CONFIG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CONFIG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0400_0000
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CONFIG_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CONFIG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CONFIG` writer"]
+pub struct W(crate::W<CONFIG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CONFIG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CONFIG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CONFIG_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "N/A\n\nValue on reset: 0"]
@@ -24,10 +48,10 @@ impl From<IREF_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `IREF_SEL`"]
-pub type IREF_SEL_R = crate::R<bool, IREF_SEL_A>;
+#[doc = "Field `IREF_SEL` reader - N/A"]
+pub type IREF_SEL_R = crate::BitReader<IREF_SEL_A>;
 impl IREF_SEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IREF_SEL_A {
         match self.bits {
@@ -46,18 +70,9 @@ impl IREF_SEL_R {
         *self == IREF_SEL_A::IREF_PASS
     }
 }
-#[doc = "Write proxy for field `IREF_SEL`"]
-pub struct IREF_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IREF_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IREF_SEL_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `IREF_SEL` writer - N/A"]
+pub type IREF_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, IREF_SEL_A, O>;
+impl<'a, const O: u8> IREF_SEL_W<'a, O> {
     #[doc = "N/A"]
     #[inline(always)]
     pub fn iref_srss(self) -> &'a mut W {
@@ -68,48 +83,22 @@ impl<'a> IREF_SEL_W<'a> {
     pub fn iref_pass(self) -> &'a mut W {
         self.variant(IREF_SEL_A::IREF_PASS)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
-    }
 }
-#[doc = "Reader of field `FILTER_DELAY`"]
-pub type FILTER_DELAY_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `FILTER_DELAY`"]
-pub struct FILTER_DELAY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FILTER_DELAY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 4)) | (((value as u32) & 0x1f) << 4);
-        self.w
-    }
-}
+#[doc = "Field `FILTER_DELAY` reader - Enables the digital filtering on the CSD comparator"]
+pub type FILTER_DELAY_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `FILTER_DELAY` writer - Enables the digital filtering on the CSD comparator"]
+pub type FILTER_DELAY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CONFIG_SPEC, u8, u8, 5, O>;
 #[doc = "Configures the delay between shield clock and sensor clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum SHIELD_DELAY_A {
     #[doc = "0: Delay line is off; sensor clock = shield clock"]
     OFF = 0,
-    #[doc = "1: shield clock is delayed by 5ns delay  w.r.t sensor clock"]
+    #[doc = "1: shield clock is delayed by 5ns delay w.r.t sensor clock"]
     D5NS = 1,
-    #[doc = "2: shield clock is delayed by 10ns delay  w.r.t sensor clock"]
+    #[doc = "2: shield clock is delayed by 10ns delay w.r.t sensor clock"]
     D10NS = 2,
-    #[doc = "3: shield clock is delayed by 20ns delay  w.r.t sensor clock"]
+    #[doc = "3: shield clock is delayed by 20ns delay w.r.t sensor clock"]
     D20NS = 3,
 }
 impl From<SHIELD_DELAY_A> for u8 {
@@ -118,10 +107,10 @@ impl From<SHIELD_DELAY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `SHIELD_DELAY`"]
-pub type SHIELD_DELAY_R = crate::R<u8, SHIELD_DELAY_A>;
+#[doc = "Field `SHIELD_DELAY` reader - Configures the delay between shield clock and sensor clock"]
+pub type SHIELD_DELAY_R = crate::FieldReader<u8, SHIELD_DELAY_A>;
 impl SHIELD_DELAY_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SHIELD_DELAY_A {
         match self.bits {
@@ -153,18 +142,10 @@ impl SHIELD_DELAY_R {
         *self == SHIELD_DELAY_A::D20NS
     }
 }
-#[doc = "Write proxy for field `SHIELD_DELAY`"]
-pub struct SHIELD_DELAY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SHIELD_DELAY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SHIELD_DELAY_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `SHIELD_DELAY` writer - Configures the delay between shield clock and sensor clock"]
+pub type SHIELD_DELAY_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CONFIG_SPEC, u8, SHIELD_DELAY_A, 2, O>;
+impl<'a, const O: u8> SHIELD_DELAY_W<'a, O> {
     #[doc = "Delay line is off; sensor clock = shield clock"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -185,37 +166,11 @@ impl<'a> SHIELD_DELAY_W<'a> {
     pub fn d20ns(self) -> &'a mut W {
         self.variant(SHIELD_DELAY_A::D20NS)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
-        self.w
-    }
 }
-#[doc = "Reader of field `SENSE_EN`"]
-pub type SENSE_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SENSE_EN`"]
-pub struct SENSE_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SENSE_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-        self.w
-    }
-}
+#[doc = "Field `SENSE_EN` reader - Enables the sensor and shield clocks, CSD modulator output and turns on the IDAC compensation current as selected by CSD_IDAC."]
+pub type SENSE_EN_R = crate::BitReader<bool>;
+#[doc = "Field `SENSE_EN` writer - Enables the sensor and shield clocks, CSD modulator output and turns on the IDAC compensation current as selected by CSD_IDAC."]
+pub type SENSE_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, bool, O>;
 #[doc = "N/A\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FULL_WAVE_A {
@@ -230,10 +185,10 @@ impl From<FULL_WAVE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FULL_WAVE`"]
-pub type FULL_WAVE_R = crate::R<bool, FULL_WAVE_A>;
+#[doc = "Field `FULL_WAVE` reader - N/A"]
+pub type FULL_WAVE_R = crate::BitReader<FULL_WAVE_A>;
 impl FULL_WAVE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FULL_WAVE_A {
         match self.bits {
@@ -252,18 +207,9 @@ impl FULL_WAVE_R {
         *self == FULL_WAVE_A::FULLWAVE
     }
 }
-#[doc = "Write proxy for field `FULL_WAVE`"]
-pub struct FULL_WAVE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FULL_WAVE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FULL_WAVE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `FULL_WAVE` writer - N/A"]
+pub type FULL_WAVE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, FULL_WAVE_A, O>;
+impl<'a, const O: u8> FULL_WAVE_W<'a, O> {
     #[doc = "Half Wave mode"]
     #[inline(always)]
     pub fn halfwave(self) -> &'a mut W {
@@ -273,22 +219,6 @@ impl<'a> FULL_WAVE_W<'a> {
     #[inline(always)]
     pub fn fullwave(self) -> &'a mut W {
         self.variant(FULL_WAVE_A::FULLWAVE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-        self.w
     }
 }
 #[doc = "N/A\n\nValue on reset: 0"]
@@ -305,10 +235,10 @@ impl From<MUTUAL_CAP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `MUTUAL_CAP`"]
-pub type MUTUAL_CAP_R = crate::R<bool, MUTUAL_CAP_A>;
+#[doc = "Field `MUTUAL_CAP` reader - N/A"]
+pub type MUTUAL_CAP_R = crate::BitReader<MUTUAL_CAP_A>;
 impl MUTUAL_CAP_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MUTUAL_CAP_A {
         match self.bits {
@@ -327,18 +257,9 @@ impl MUTUAL_CAP_R {
         *self == MUTUAL_CAP_A::MUTUALCAP
     }
 }
-#[doc = "Write proxy for field `MUTUAL_CAP`"]
-pub struct MUTUAL_CAP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MUTUAL_CAP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MUTUAL_CAP_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `MUTUAL_CAP` writer - N/A"]
+pub type MUTUAL_CAP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, MUTUAL_CAP_A, O>;
+impl<'a, const O: u8> MUTUAL_CAP_W<'a, O> {
     #[doc = "Self-cap mode"]
     #[inline(always)]
     pub fn selfcap(self) -> &'a mut W {
@@ -348,22 +269,6 @@ impl<'a> MUTUAL_CAP_W<'a> {
     #[inline(always)]
     pub fn mutualcap(self) -> &'a mut W {
         self.variant(MUTUAL_CAP_A::MUTUALCAP)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-        self.w
     }
 }
 #[doc = "N/A\n\nValue on reset: 0"]
@@ -380,10 +285,10 @@ impl From<CSX_DUAL_CNT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CSX_DUAL_CNT`"]
-pub type CSX_DUAL_CNT_R = crate::R<bool, CSX_DUAL_CNT_A>;
+#[doc = "Field `CSX_DUAL_CNT` reader - N/A"]
+pub type CSX_DUAL_CNT_R = crate::BitReader<CSX_DUAL_CNT_A>;
 impl CSX_DUAL_CNT_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CSX_DUAL_CNT_A {
         match self.bits {
@@ -402,18 +307,10 @@ impl CSX_DUAL_CNT_R {
         *self == CSX_DUAL_CNT_A::TWO
     }
 }
-#[doc = "Write proxy for field `CSX_DUAL_CNT`"]
-pub struct CSX_DUAL_CNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSX_DUAL_CNT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CSX_DUAL_CNT_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `CSX_DUAL_CNT` writer - N/A"]
+pub type CSX_DUAL_CNT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CONFIG_SPEC, CSX_DUAL_CNT_A, O>;
+impl<'a, const O: u8> CSX_DUAL_CNT_W<'a, O> {
     #[doc = "N/A"]
     #[inline(always)]
     pub fn one(self) -> &'a mut W {
@@ -423,22 +320,6 @@ impl<'a> CSX_DUAL_CNT_W<'a> {
     #[inline(always)]
     pub fn two(self) -> &'a mut W {
         self.variant(CSX_DUAL_CNT_A::TWO)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-        self.w
     }
 }
 #[doc = "N/A\n\nValue on reset: 0"]
@@ -455,10 +336,10 @@ impl From<DSI_COUNT_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DSI_COUNT_SEL`"]
-pub type DSI_COUNT_SEL_R = crate::R<bool, DSI_COUNT_SEL_A>;
+#[doc = "Field `DSI_COUNT_SEL` reader - N/A"]
+pub type DSI_COUNT_SEL_R = crate::BitReader<DSI_COUNT_SEL_A>;
 impl DSI_COUNT_SEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DSI_COUNT_SEL_A {
         match self.bits {
@@ -477,18 +358,10 @@ impl DSI_COUNT_SEL_R {
         *self == DSI_COUNT_SEL_A::ADC_RESULT
     }
 }
-#[doc = "Write proxy for field `DSI_COUNT_SEL`"]
-pub struct DSI_COUNT_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSI_COUNT_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DSI_COUNT_SEL_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `DSI_COUNT_SEL` writer - N/A"]
+pub type DSI_COUNT_SEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CONFIG_SPEC, DSI_COUNT_SEL_A, O>;
+impl<'a, const O: u8> DSI_COUNT_SEL_W<'a, O> {
     #[doc = "N/A"]
     #[inline(always)]
     pub fn csd_result(self) -> &'a mut W {
@@ -499,148 +372,32 @@ impl<'a> DSI_COUNT_SEL_W<'a> {
     pub fn adc_result(self) -> &'a mut W {
         self.variant(DSI_COUNT_SEL_A::ADC_RESULT)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-        self.w
-    }
 }
-#[doc = "Reader of field `DSI_SAMPLE_EN`"]
-pub type DSI_SAMPLE_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DSI_SAMPLE_EN`"]
-pub struct DSI_SAMPLE_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSI_SAMPLE_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-        self.w
-    }
-}
-#[doc = "Reader of field `SAMPLE_SYNC`"]
-pub type SAMPLE_SYNC_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SAMPLE_SYNC`"]
-pub struct SAMPLE_SYNC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SAMPLE_SYNC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-        self.w
-    }
-}
-#[doc = "Reader of field `DSI_SENSE_EN`"]
-pub type DSI_SENSE_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DSI_SENSE_EN`"]
-pub struct DSI_SENSE_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSI_SENSE_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | (((value as u32) & 0x01) << 27);
-        self.w
-    }
-}
-#[doc = "Reader of field `LP_MODE`"]
-pub type LP_MODE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LP_MODE`"]
-pub struct LP_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LP_MODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-        self.w
-    }
-}
-#[doc = "Reader of field `ENABLE`"]
-pub type ENABLE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ENABLE`"]
-pub struct ENABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENABLE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
-        self.w
-    }
-}
+#[doc = "Field `DSI_SAMPLE_EN` reader - DSI_SAMPLE_EN = 1 -> COUNTER will count the samples generated by DSI DSI_SAMPLE_EN = 0 -> COUNTER will count the samples generated by CSD modulator"]
+pub type DSI_SAMPLE_EN_R = crate::BitReader<bool>;
+#[doc = "Field `DSI_SAMPLE_EN` writer - DSI_SAMPLE_EN = 1 -> COUNTER will count the samples generated by DSI DSI_SAMPLE_EN = 0 -> COUNTER will count the samples generated by CSD modulator"]
+pub type DSI_SAMPLE_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, bool, O>;
+#[doc = "Field `SAMPLE_SYNC` reader - N/A"]
+pub type SAMPLE_SYNC_R = crate::BitReader<bool>;
+#[doc = "Field `SAMPLE_SYNC` writer - N/A"]
+pub type SAMPLE_SYNC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, bool, O>;
+#[doc = "Field `DSI_SENSE_EN` reader - DSI_SENSE_EN = 1-> sensor clock is driven directly by DSI DSI_SENSE_EN = 0-> sensor clock is driven by PRS/divide-by-2/DIRECT_CLOCK"]
+pub type DSI_SENSE_EN_R = crate::BitReader<bool>;
+#[doc = "Field `DSI_SENSE_EN` writer - DSI_SENSE_EN = 1-> sensor clock is driven directly by DSI DSI_SENSE_EN = 0-> sensor clock is driven by PRS/divide-by-2/DIRECT_CLOCK"]
+pub type DSI_SENSE_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, bool, O>;
+#[doc = "Field `LP_MODE` reader - N/A"]
+pub type LP_MODE_R = crate::BitReader<bool>;
+#[doc = "Field `LP_MODE` writer - N/A"]
+pub type LP_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, bool, O>;
+#[doc = "Field `ENABLE` reader - N/A"]
+pub type ENABLE_R = crate::BitReader<bool>;
+#[doc = "Field `ENABLE` writer - N/A"]
+pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIG_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - N/A"]
     #[inline(always)]
     pub fn iref_sel(&self) -> IREF_SEL_R {
-        IREF_SEL_R::new((self.bits & 0x01) != 0)
+        IREF_SEL_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 4:8 - Enables the digital filtering on the CSD comparator"]
     #[inline(always)]
@@ -650,123 +407,149 @@ impl R {
     #[doc = "Bits 10:11 - Configures the delay between shield clock and sensor clock"]
     #[inline(always)]
     pub fn shield_delay(&self) -> SHIELD_DELAY_R {
-        SHIELD_DELAY_R::new(((self.bits >> 10) & 0x03) as u8)
+        SHIELD_DELAY_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bit 12 - Enables the sensor and shield clocks, CSD modulator output and turns on the IDAC compensation current as selected by CSD_IDAC."]
     #[inline(always)]
     pub fn sense_en(&self) -> SENSE_EN_R {
-        SENSE_EN_R::new(((self.bits >> 12) & 0x01) != 0)
+        SENSE_EN_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 17 - N/A"]
     #[inline(always)]
     pub fn full_wave(&self) -> FULL_WAVE_R {
-        FULL_WAVE_R::new(((self.bits >> 17) & 0x01) != 0)
+        FULL_WAVE_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - N/A"]
     #[inline(always)]
     pub fn mutual_cap(&self) -> MUTUAL_CAP_R {
-        MUTUAL_CAP_R::new(((self.bits >> 18) & 0x01) != 0)
+        MUTUAL_CAP_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - N/A"]
     #[inline(always)]
     pub fn csx_dual_cnt(&self) -> CSX_DUAL_CNT_R {
-        CSX_DUAL_CNT_R::new(((self.bits >> 19) & 0x01) != 0)
+        CSX_DUAL_CNT_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 24 - N/A"]
     #[inline(always)]
     pub fn dsi_count_sel(&self) -> DSI_COUNT_SEL_R {
-        DSI_COUNT_SEL_R::new(((self.bits >> 24) & 0x01) != 0)
+        DSI_COUNT_SEL_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - DSI_SAMPLE_EN = 1 -> COUNTER will count the samples generated by DSI DSI_SAMPLE_EN = 0 -> COUNTER will count the samples generated by CSD modulator"]
     #[inline(always)]
     pub fn dsi_sample_en(&self) -> DSI_SAMPLE_EN_R {
-        DSI_SAMPLE_EN_R::new(((self.bits >> 25) & 0x01) != 0)
+        DSI_SAMPLE_EN_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - N/A"]
     #[inline(always)]
     pub fn sample_sync(&self) -> SAMPLE_SYNC_R {
-        SAMPLE_SYNC_R::new(((self.bits >> 26) & 0x01) != 0)
+        SAMPLE_SYNC_R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bit 27 - DSI_SENSE_EN = 1-> sensor clock is driven directly by DSI DSI_SENSE_EN = 0-> sensor clock is driven by PRS/divide-by-2/DIRECT_CLOCK"]
     #[inline(always)]
     pub fn dsi_sense_en(&self) -> DSI_SENSE_EN_R {
-        DSI_SENSE_EN_R::new(((self.bits >> 27) & 0x01) != 0)
+        DSI_SENSE_EN_R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bit 30 - N/A"]
     #[inline(always)]
     pub fn lp_mode(&self) -> LP_MODE_R {
-        LP_MODE_R::new(((self.bits >> 30) & 0x01) != 0)
+        LP_MODE_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - N/A"]
     #[inline(always)]
     pub fn enable(&self) -> ENABLE_R {
-        ENABLE_R::new(((self.bits >> 31) & 0x01) != 0)
+        ENABLE_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - N/A"]
     #[inline(always)]
-    pub fn iref_sel(&mut self) -> IREF_SEL_W {
-        IREF_SEL_W { w: self }
+    pub fn iref_sel(&mut self) -> IREF_SEL_W<0> {
+        IREF_SEL_W::new(self)
     }
     #[doc = "Bits 4:8 - Enables the digital filtering on the CSD comparator"]
     #[inline(always)]
-    pub fn filter_delay(&mut self) -> FILTER_DELAY_W {
-        FILTER_DELAY_W { w: self }
+    pub fn filter_delay(&mut self) -> FILTER_DELAY_W<4> {
+        FILTER_DELAY_W::new(self)
     }
     #[doc = "Bits 10:11 - Configures the delay between shield clock and sensor clock"]
     #[inline(always)]
-    pub fn shield_delay(&mut self) -> SHIELD_DELAY_W {
-        SHIELD_DELAY_W { w: self }
+    pub fn shield_delay(&mut self) -> SHIELD_DELAY_W<10> {
+        SHIELD_DELAY_W::new(self)
     }
     #[doc = "Bit 12 - Enables the sensor and shield clocks, CSD modulator output and turns on the IDAC compensation current as selected by CSD_IDAC."]
     #[inline(always)]
-    pub fn sense_en(&mut self) -> SENSE_EN_W {
-        SENSE_EN_W { w: self }
+    pub fn sense_en(&mut self) -> SENSE_EN_W<12> {
+        SENSE_EN_W::new(self)
     }
     #[doc = "Bit 17 - N/A"]
     #[inline(always)]
-    pub fn full_wave(&mut self) -> FULL_WAVE_W {
-        FULL_WAVE_W { w: self }
+    pub fn full_wave(&mut self) -> FULL_WAVE_W<17> {
+        FULL_WAVE_W::new(self)
     }
     #[doc = "Bit 18 - N/A"]
     #[inline(always)]
-    pub fn mutual_cap(&mut self) -> MUTUAL_CAP_W {
-        MUTUAL_CAP_W { w: self }
+    pub fn mutual_cap(&mut self) -> MUTUAL_CAP_W<18> {
+        MUTUAL_CAP_W::new(self)
     }
     #[doc = "Bit 19 - N/A"]
     #[inline(always)]
-    pub fn csx_dual_cnt(&mut self) -> CSX_DUAL_CNT_W {
-        CSX_DUAL_CNT_W { w: self }
+    pub fn csx_dual_cnt(&mut self) -> CSX_DUAL_CNT_W<19> {
+        CSX_DUAL_CNT_W::new(self)
     }
     #[doc = "Bit 24 - N/A"]
     #[inline(always)]
-    pub fn dsi_count_sel(&mut self) -> DSI_COUNT_SEL_W {
-        DSI_COUNT_SEL_W { w: self }
+    pub fn dsi_count_sel(&mut self) -> DSI_COUNT_SEL_W<24> {
+        DSI_COUNT_SEL_W::new(self)
     }
     #[doc = "Bit 25 - DSI_SAMPLE_EN = 1 -> COUNTER will count the samples generated by DSI DSI_SAMPLE_EN = 0 -> COUNTER will count the samples generated by CSD modulator"]
     #[inline(always)]
-    pub fn dsi_sample_en(&mut self) -> DSI_SAMPLE_EN_W {
-        DSI_SAMPLE_EN_W { w: self }
+    pub fn dsi_sample_en(&mut self) -> DSI_SAMPLE_EN_W<25> {
+        DSI_SAMPLE_EN_W::new(self)
     }
     #[doc = "Bit 26 - N/A"]
     #[inline(always)]
-    pub fn sample_sync(&mut self) -> SAMPLE_SYNC_W {
-        SAMPLE_SYNC_W { w: self }
+    pub fn sample_sync(&mut self) -> SAMPLE_SYNC_W<26> {
+        SAMPLE_SYNC_W::new(self)
     }
     #[doc = "Bit 27 - DSI_SENSE_EN = 1-> sensor clock is driven directly by DSI DSI_SENSE_EN = 0-> sensor clock is driven by PRS/divide-by-2/DIRECT_CLOCK"]
     #[inline(always)]
-    pub fn dsi_sense_en(&mut self) -> DSI_SENSE_EN_W {
-        DSI_SENSE_EN_W { w: self }
+    pub fn dsi_sense_en(&mut self) -> DSI_SENSE_EN_W<27> {
+        DSI_SENSE_EN_W::new(self)
     }
     #[doc = "Bit 30 - N/A"]
     #[inline(always)]
-    pub fn lp_mode(&mut self) -> LP_MODE_W {
-        LP_MODE_W { w: self }
+    pub fn lp_mode(&mut self) -> LP_MODE_W<30> {
+        LP_MODE_W::new(self)
     }
     #[doc = "Bit 31 - N/A"]
     #[inline(always)]
-    pub fn enable(&mut self) -> ENABLE_W {
-        ENABLE_W { w: self }
+    pub fn enable(&mut self) -> ENABLE_W<31> {
+        ENABLE_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Configuration and Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [config](index.html) module"]
+pub struct CONFIG_SPEC;
+impl crate::RegisterSpec for CONFIG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [config::R](R) reader structure"]
+impl crate::Readable for CONFIG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [config::W](W) writer structure"]
+impl crate::Writable for CONFIG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CONFIG to value 0x0400_0000"]
+impl crate::Resettable for CONFIG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0400_0000
     }
 }

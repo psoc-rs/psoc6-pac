@@ -1,7 +1,20 @@
-#[doc = "Reader of register STATUS"]
-pub type R = crate::R<u32, super::STATUS>;
-#[doc = "Reader of field `CSD_SENSE`"]
-pub type CSD_SENSE_R = crate::R<bool, bool>;
+#[doc = "Register `STATUS` reader"]
+pub struct R(crate::R<STATUS_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<STATUS_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<STATUS_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<STATUS_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Field `CSD_SENSE` reader - Only for Debug/test purpose this internal signal (sensor clock) status can be read by CPU"]
+pub type CSD_SENSE_R = crate::BitReader<bool>;
 #[doc = "Only for Debug/test purpose the output status of CSD comparator can be read by CPU\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HSCMP_OUT_A {
@@ -16,10 +29,10 @@ impl From<HSCMP_OUT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `HSCMP_OUT`"]
-pub type HSCMP_OUT_R = crate::R<bool, HSCMP_OUT_A>;
+#[doc = "Field `HSCMP_OUT` reader - Only for Debug/test purpose the output status of CSD comparator can be read by CPU"]
+pub type HSCMP_OUT_R = crate::BitReader<HSCMP_OUT_A>;
 impl HSCMP_OUT_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HSCMP_OUT_A {
         match self.bits {
@@ -38,22 +51,38 @@ impl HSCMP_OUT_R {
         *self == HSCMP_OUT_A::C_GT_VREF
     }
 }
-#[doc = "Reader of field `CSDCMP_OUT`"]
-pub type CSDCMP_OUT_R = crate::R<bool, bool>;
+#[doc = "Field `CSDCMP_OUT` reader - Only for Debug/test purpose the output status of CSD modulator can be read by CPU"]
+pub type CSDCMP_OUT_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 1 - Only for Debug/test purpose this internal signal (sensor clock) status can be read by CPU"]
     #[inline(always)]
     pub fn csd_sense(&self) -> CSD_SENSE_R {
-        CSD_SENSE_R::new(((self.bits >> 1) & 0x01) != 0)
+        CSD_SENSE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Only for Debug/test purpose the output status of CSD comparator can be read by CPU"]
     #[inline(always)]
     pub fn hscmp_out(&self) -> HSCMP_OUT_R {
-        HSCMP_OUT_R::new(((self.bits >> 2) & 0x01) != 0)
+        HSCMP_OUT_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Only for Debug/test purpose the output status of CSD modulator can be read by CPU"]
     #[inline(always)]
     pub fn csdcmp_out(&self) -> CSDCMP_OUT_R {
-        CSDCMP_OUT_R::new(((self.bits >> 3) & 0x01) != 0)
+        CSDCMP_OUT_R::new(((self.bits >> 3) & 1) != 0)
+    }
+}
+#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [status](index.html) module"]
+pub struct STATUS_SPEC;
+impl crate::RegisterSpec for STATUS_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [status::R](R) reader structure"]
+impl crate::Readable for STATUS_SPEC {
+    type Reader = R;
+}
+#[doc = "`reset()` method sets STATUS to value 0"]
+impl crate::Resettable for STATUS_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

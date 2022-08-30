@@ -1,13 +1,37 @@
-#[doc = "Reader of register SRSS_INTR_CFG"]
-pub type R = crate::R<u32, super::SRSS_INTR_CFG>;
-#[doc = "Writer for register SRSS_INTR_CFG"]
-pub type W = crate::W<u32, super::SRSS_INTR_CFG>;
-#[doc = "Register SRSS_INTR_CFG `reset()`'s with value 0"]
-impl crate::ResetValue for super::SRSS_INTR_CFG {
-    type Type = u32;
+#[doc = "Register `SRSS_INTR_CFG` reader"]
+pub struct R(crate::R<SRSS_INTR_CFG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SRSS_INTR_CFG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<SRSS_INTR_CFG_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<SRSS_INTR_CFG_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `SRSS_INTR_CFG` writer"]
+pub struct W(crate::W<SRSS_INTR_CFG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SRSS_INTR_CFG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SRSS_INTR_CFG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SRSS_INTR_CFG_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Sets which edge(s) will trigger an IRQ for HVLVD1\n\nValue on reset: 0"]
@@ -29,10 +53,10 @@ impl From<HVLVD1_EDGE_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `HVLVD1_EDGE_SEL`"]
-pub type HVLVD1_EDGE_SEL_R = crate::R<u8, HVLVD1_EDGE_SEL_A>;
+#[doc = "Field `HVLVD1_EDGE_SEL` reader - Sets which edge(s) will trigger an IRQ for HVLVD1"]
+pub type HVLVD1_EDGE_SEL_R = crate::FieldReader<u8, HVLVD1_EDGE_SEL_A>;
 impl HVLVD1_EDGE_SEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HVLVD1_EDGE_SEL_A {
         match self.bits {
@@ -64,18 +88,10 @@ impl HVLVD1_EDGE_SEL_R {
         *self == HVLVD1_EDGE_SEL_A::BOTH
     }
 }
-#[doc = "Write proxy for field `HVLVD1_EDGE_SEL`"]
-pub struct HVLVD1_EDGE_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HVLVD1_EDGE_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HVLVD1_EDGE_SEL_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `HVLVD1_EDGE_SEL` writer - Sets which edge(s) will trigger an IRQ for HVLVD1"]
+pub type HVLVD1_EDGE_SEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, SRSS_INTR_CFG_SPEC, u8, HVLVD1_EDGE_SEL_A, 2, O>;
+impl<'a, const O: u8> HVLVD1_EDGE_SEL_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -96,24 +112,44 @@ impl<'a> HVLVD1_EDGE_SEL_W<'a> {
     pub fn both(self) -> &'a mut W {
         self.variant(HVLVD1_EDGE_SEL_A::BOTH)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Sets which edge(s) will trigger an IRQ for HVLVD1"]
     #[inline(always)]
     pub fn hvlvd1_edge_sel(&self) -> HVLVD1_EDGE_SEL_R {
-        HVLVD1_EDGE_SEL_R::new((self.bits & 0x03) as u8)
+        HVLVD1_EDGE_SEL_R::new((self.bits & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Sets which edge(s) will trigger an IRQ for HVLVD1"]
     #[inline(always)]
-    pub fn hvlvd1_edge_sel(&mut self) -> HVLVD1_EDGE_SEL_W {
-        HVLVD1_EDGE_SEL_W { w: self }
+    pub fn hvlvd1_edge_sel(&mut self) -> HVLVD1_EDGE_SEL_W<0> {
+        HVLVD1_EDGE_SEL_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "SRSS Interrupt Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srss_intr_cfg](index.html) module"]
+pub struct SRSS_INTR_CFG_SPEC;
+impl crate::RegisterSpec for SRSS_INTR_CFG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [srss_intr_cfg::R](R) reader structure"]
+impl crate::Readable for SRSS_INTR_CFG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [srss_intr_cfg::W](W) writer structure"]
+impl crate::Writable for SRSS_INTR_CFG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SRSS_INTR_CFG to value 0"]
+impl crate::Resettable for SRSS_INTR_CFG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

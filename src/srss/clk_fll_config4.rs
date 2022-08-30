@@ -1,29 +1,44 @@
-#[doc = "Reader of register CLK_FLL_CONFIG4"]
-pub type R = crate::R<u32, super::CLK_FLL_CONFIG4>;
-#[doc = "Writer for register CLK_FLL_CONFIG4"]
-pub type W = crate::W<u32, super::CLK_FLL_CONFIG4>;
-#[doc = "Register CLK_FLL_CONFIG4 `reset()`'s with value 0xff"]
-impl crate::ResetValue for super::CLK_FLL_CONFIG4 {
-    type Type = u32;
+#[doc = "Register `CLK_FLL_CONFIG4` reader"]
+pub struct R(crate::R<CLK_FLL_CONFIG4_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CLK_FLL_CONFIG4_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0xff
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `CCO_LIMIT`"]
-pub type CCO_LIMIT_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `CCO_LIMIT`"]
-pub struct CCO_LIMIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCO_LIMIT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<CLK_FLL_CONFIG4_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
-        self.w
+    fn from(reader: crate::R<CLK_FLL_CONFIG4_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `CLK_FLL_CONFIG4` writer"]
+pub struct W(crate::W<CLK_FLL_CONFIG4_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CLK_FLL_CONFIG4_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CLK_FLL_CONFIG4_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CLK_FLL_CONFIG4_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CCO_LIMIT` reader - Maximum CCO offset allowed (used to prevent FLL dynamics from selecting an CCO frequency that the logic cannot support)"]
+pub type CCO_LIMIT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `CCO_LIMIT` writer - Maximum CCO offset allowed (used to prevent FLL dynamics from selecting an CCO frequency that the logic cannot support)"]
+pub type CCO_LIMIT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CLK_FLL_CONFIG4_SPEC, u8, u8, 8, O>;
 #[doc = "Frequency range of CCO\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -36,7 +51,8 @@ pub enum CCO_RANGE_A {
     RANGE2 = 2,
     #[doc = "3: Target frequency is in range \\[113, 150) MHz"]
     RANGE3 = 3,
-    #[doc = "4: Target frequency is in range \\[150, 200\\] MHz"]
+    #[doc = "4: Target frequency is in range \\[150, 200\\]
+MHz"]
     RANGE4 = 4,
 }
 impl From<CCO_RANGE_A> for u8 {
@@ -45,20 +61,19 @@ impl From<CCO_RANGE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CCO_RANGE`"]
-pub type CCO_RANGE_R = crate::R<u8, CCO_RANGE_A>;
+#[doc = "Field `CCO_RANGE` reader - Frequency range of CCO"]
+pub type CCO_RANGE_R = crate::FieldReader<u8, CCO_RANGE_A>;
 impl CCO_RANGE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, CCO_RANGE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<CCO_RANGE_A> {
         match self.bits {
-            0 => Val(CCO_RANGE_A::RANGE0),
-            1 => Val(CCO_RANGE_A::RANGE1),
-            2 => Val(CCO_RANGE_A::RANGE2),
-            3 => Val(CCO_RANGE_A::RANGE3),
-            4 => Val(CCO_RANGE_A::RANGE4),
-            i => Res(i),
+            0 => Some(CCO_RANGE_A::RANGE0),
+            1 => Some(CCO_RANGE_A::RANGE1),
+            2 => Some(CCO_RANGE_A::RANGE2),
+            3 => Some(CCO_RANGE_A::RANGE3),
+            4 => Some(CCO_RANGE_A::RANGE4),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `RANGE0`"]
@@ -87,16 +102,10 @@ impl CCO_RANGE_R {
         *self == CCO_RANGE_A::RANGE4
     }
 }
-#[doc = "Write proxy for field `CCO_RANGE`"]
-pub struct CCO_RANGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCO_RANGE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CCO_RANGE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `CCO_RANGE` writer - Frequency range of CCO"]
+pub type CCO_RANGE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CLK_FLL_CONFIG4_SPEC, u8, CCO_RANGE_A, 3, O>;
+impl<'a, const O: u8> CCO_RANGE_W<'a, O> {
     #[doc = "Target frequency is in range \\[48, 64) MHz"]
     #[inline(always)]
     pub fn range0(self) -> &'a mut W {
@@ -117,80 +126,27 @@ impl<'a> CCO_RANGE_W<'a> {
     pub fn range3(self) -> &'a mut W {
         self.variant(CCO_RANGE_A::RANGE3)
     }
-    #[doc = "Target frequency is in range \\[150, 200\\] MHz"]
+    #[doc = "Target frequency is in range \\[150, 200\\]
+MHz"]
     #[inline(always)]
     pub fn range4(self) -> &'a mut W {
         self.variant(CCO_RANGE_A::RANGE4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
-        self.w
-    }
 }
-#[doc = "Reader of field `CCO_FREQ`"]
-pub type CCO_FREQ_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `CCO_FREQ`"]
-pub struct CCO_FREQ_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCO_FREQ_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01ff << 16)) | (((value as u32) & 0x01ff) << 16);
-        self.w
-    }
-}
-#[doc = "Reader of field `CCO_HW_UPDATE_DIS`"]
-pub type CCO_HW_UPDATE_DIS_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CCO_HW_UPDATE_DIS`"]
-pub struct CCO_HW_UPDATE_DIS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCO_HW_UPDATE_DIS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-        self.w
-    }
-}
-#[doc = "Reader of field `CCO_ENABLE`"]
-pub type CCO_ENABLE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CCO_ENABLE`"]
-pub struct CCO_ENABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCO_ENABLE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
-        self.w
-    }
-}
+#[doc = "Field `CCO_FREQ` reader - CCO frequency code. This is updated by HW when the FLL is enabled. It can be manually updated to use the CCO in an open loop configuration. The meaning of each frequency code depends on the range."]
+pub type CCO_FREQ_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `CCO_FREQ` writer - CCO frequency code. This is updated by HW when the FLL is enabled. It can be manually updated to use the CCO in an open loop configuration. The meaning of each frequency code depends on the range."]
+pub type CCO_FREQ_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CLK_FLL_CONFIG4_SPEC, u16, u16, 9, O>;
+#[doc = "Field `CCO_HW_UPDATE_DIS` reader - Disable CCO frequency update by FLL hardware 0: Hardware update of CCO settings is allowed. Use this setting for normal FLL operation. 1: Hardware update of CCO settings is disabled. Use this setting for open-loop FLL operation."]
+pub type CCO_HW_UPDATE_DIS_R = crate::BitReader<bool>;
+#[doc = "Field `CCO_HW_UPDATE_DIS` writer - Disable CCO frequency update by FLL hardware 0: Hardware update of CCO settings is allowed. Use this setting for normal FLL operation. 1: Hardware update of CCO settings is disabled. Use this setting for open-loop FLL operation."]
+pub type CCO_HW_UPDATE_DIS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CLK_FLL_CONFIG4_SPEC, bool, O>;
+#[doc = "Field `CCO_ENABLE` reader - Enable the CCO. It is required to enable the CCO before using the FLL. 0: Block is powered off 1: Block is powered on"]
+pub type CCO_ENABLE_R = crate::BitReader<bool>;
+#[doc = "Field `CCO_ENABLE` writer - Enable the CCO. It is required to enable the CCO before using the FLL. 0: Block is powered off 1: Block is powered on"]
+pub type CCO_ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_FLL_CONFIG4_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:7 - Maximum CCO offset allowed (used to prevent FLL dynamics from selecting an CCO frequency that the logic cannot support)"]
     #[inline(always)]
@@ -200,7 +156,7 @@ impl R {
     #[doc = "Bits 8:10 - Frequency range of CCO"]
     #[inline(always)]
     pub fn cco_range(&self) -> CCO_RANGE_R {
-        CCO_RANGE_R::new(((self.bits >> 8) & 0x07) as u8)
+        CCO_RANGE_R::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bits 16:24 - CCO frequency code. This is updated by HW when the FLL is enabled. It can be manually updated to use the CCO in an open loop configuration. The meaning of each frequency code depends on the range."]
     #[inline(always)]
@@ -210,38 +166,64 @@ impl R {
     #[doc = "Bit 30 - Disable CCO frequency update by FLL hardware 0: Hardware update of CCO settings is allowed. Use this setting for normal FLL operation. 1: Hardware update of CCO settings is disabled. Use this setting for open-loop FLL operation."]
     #[inline(always)]
     pub fn cco_hw_update_dis(&self) -> CCO_HW_UPDATE_DIS_R {
-        CCO_HW_UPDATE_DIS_R::new(((self.bits >> 30) & 0x01) != 0)
+        CCO_HW_UPDATE_DIS_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 31 - Enable the CCO. It is required to enable the CCO before using the FLL. 0: Block is powered off 1: Block is powered on"]
     #[inline(always)]
     pub fn cco_enable(&self) -> CCO_ENABLE_R {
-        CCO_ENABLE_R::new(((self.bits >> 31) & 0x01) != 0)
+        CCO_ENABLE_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - Maximum CCO offset allowed (used to prevent FLL dynamics from selecting an CCO frequency that the logic cannot support)"]
     #[inline(always)]
-    pub fn cco_limit(&mut self) -> CCO_LIMIT_W {
-        CCO_LIMIT_W { w: self }
+    pub fn cco_limit(&mut self) -> CCO_LIMIT_W<0> {
+        CCO_LIMIT_W::new(self)
     }
     #[doc = "Bits 8:10 - Frequency range of CCO"]
     #[inline(always)]
-    pub fn cco_range(&mut self) -> CCO_RANGE_W {
-        CCO_RANGE_W { w: self }
+    pub fn cco_range(&mut self) -> CCO_RANGE_W<8> {
+        CCO_RANGE_W::new(self)
     }
     #[doc = "Bits 16:24 - CCO frequency code. This is updated by HW when the FLL is enabled. It can be manually updated to use the CCO in an open loop configuration. The meaning of each frequency code depends on the range."]
     #[inline(always)]
-    pub fn cco_freq(&mut self) -> CCO_FREQ_W {
-        CCO_FREQ_W { w: self }
+    pub fn cco_freq(&mut self) -> CCO_FREQ_W<16> {
+        CCO_FREQ_W::new(self)
     }
     #[doc = "Bit 30 - Disable CCO frequency update by FLL hardware 0: Hardware update of CCO settings is allowed. Use this setting for normal FLL operation. 1: Hardware update of CCO settings is disabled. Use this setting for open-loop FLL operation."]
     #[inline(always)]
-    pub fn cco_hw_update_dis(&mut self) -> CCO_HW_UPDATE_DIS_W {
-        CCO_HW_UPDATE_DIS_W { w: self }
+    pub fn cco_hw_update_dis(&mut self) -> CCO_HW_UPDATE_DIS_W<30> {
+        CCO_HW_UPDATE_DIS_W::new(self)
     }
     #[doc = "Bit 31 - Enable the CCO. It is required to enable the CCO before using the FLL. 0: Block is powered off 1: Block is powered on"]
     #[inline(always)]
-    pub fn cco_enable(&mut self) -> CCO_ENABLE_W {
-        CCO_ENABLE_W { w: self }
+    pub fn cco_enable(&mut self) -> CCO_ENABLE_W<31> {
+        CCO_ENABLE_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "FLL Configuration Register 4\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_fll_config4](index.html) module"]
+pub struct CLK_FLL_CONFIG4_SPEC;
+impl crate::RegisterSpec for CLK_FLL_CONFIG4_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [clk_fll_config4::R](R) reader structure"]
+impl crate::Readable for CLK_FLL_CONFIG4_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [clk_fll_config4::W](W) writer structure"]
+impl crate::Writable for CLK_FLL_CONFIG4_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CLK_FLL_CONFIG4 to value 0xff"]
+impl crate::Resettable for CLK_FLL_CONFIG4_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xff
     }
 }

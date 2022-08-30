@@ -1,13 +1,37 @@
-#[doc = "Reader of register CSDCMP"]
-pub type R = crate::R<u32, super::CSDCMP>;
-#[doc = "Writer for register CSDCMP"]
-pub type W = crate::W<u32, super::CSDCMP>;
-#[doc = "Register CSDCMP `reset()`'s with value 0"]
-impl crate::ResetValue for super::CSDCMP {
-    type Type = u32;
+#[doc = "Register `CSDCMP` reader"]
+pub struct R(crate::R<CSDCMP_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CSDCMP_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CSDCMP_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CSDCMP_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CSDCMP` writer"]
+pub struct W(crate::W<CSDCMP_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CSDCMP_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CSDCMP_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CSDCMP_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "CSD Comparator Enable\n\nValue on reset: 0"]
@@ -24,10 +48,10 @@ impl From<CSDCMP_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CSDCMP_EN`"]
-pub type CSDCMP_EN_R = crate::R<bool, CSDCMP_EN_A>;
+#[doc = "Field `CSDCMP_EN` reader - CSD Comparator Enable"]
+pub type CSDCMP_EN_R = crate::BitReader<CSDCMP_EN_A>;
 impl CSDCMP_EN_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CSDCMP_EN_A {
         match self.bits {
@@ -46,18 +70,9 @@ impl CSDCMP_EN_R {
         *self == CSDCMP_EN_A::ON
     }
 }
-#[doc = "Write proxy for field `CSDCMP_EN`"]
-pub struct CSDCMP_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CSDCMP_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CSDCMP_EN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `CSDCMP_EN` writer - CSD Comparator Enable"]
+pub type CSDCMP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSDCMP_SPEC, CSDCMP_EN_A, O>;
+impl<'a, const O: u8> CSDCMP_EN_W<'a, O> {
     #[doc = "Disable comparator, output is zero"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -68,22 +83,6 @@ impl<'a> CSDCMP_EN_W<'a> {
     pub fn on(self) -> &'a mut W {
         self.variant(CSDCMP_EN_A::ON)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
-    }
 }
 #[doc = "Select which IDAC polarity to use to detect CSDCMP triggering\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -93,7 +92,7 @@ pub enum POLARITY_SEL_A {
     IDACA_POL = 0,
     #[doc = "1: Use idacb_pol (firmware setting with optional DSI mixed in) to determine the direction, this is only used for normal CSD if IDACB is used i.s.o. IDACA (not common)"]
     IDACB_POL = 1,
-    #[doc = "2: Use the expression (csd_sense ? idaca_pol : idacb_pol)  to determine the direction, this is only useful for the CSX with DUAL_IDAC use-case"]
+    #[doc = "2: Use the expression (csd_sense ? idaca_pol : idacb_pol) to determine the direction, this is only useful for the CSX with DUAL_IDAC use-case"]
     DUAL_POL = 2,
 }
 impl From<POLARITY_SEL_A> for u8 {
@@ -102,18 +101,17 @@ impl From<POLARITY_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `POLARITY_SEL`"]
-pub type POLARITY_SEL_R = crate::R<u8, POLARITY_SEL_A>;
+#[doc = "Field `POLARITY_SEL` reader - Select which IDAC polarity to use to detect CSDCMP triggering"]
+pub type POLARITY_SEL_R = crate::FieldReader<u8, POLARITY_SEL_A>;
 impl POLARITY_SEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, POLARITY_SEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<POLARITY_SEL_A> {
         match self.bits {
-            0 => Val(POLARITY_SEL_A::IDACA_POL),
-            1 => Val(POLARITY_SEL_A::IDACB_POL),
-            2 => Val(POLARITY_SEL_A::DUAL_POL),
-            i => Res(i),
+            0 => Some(POLARITY_SEL_A::IDACA_POL),
+            1 => Some(POLARITY_SEL_A::IDACB_POL),
+            2 => Some(POLARITY_SEL_A::DUAL_POL),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `IDACA_POL`"]
@@ -132,16 +130,10 @@ impl POLARITY_SEL_R {
         *self == POLARITY_SEL_A::DUAL_POL
     }
 }
-#[doc = "Write proxy for field `POLARITY_SEL`"]
-pub struct POLARITY_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> POLARITY_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: POLARITY_SEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `POLARITY_SEL` writer - Select which IDAC polarity to use to detect CSDCMP triggering"]
+pub type POLARITY_SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSDCMP_SPEC, u8, POLARITY_SEL_A, 2, O>;
+impl<'a, const O: u8> POLARITY_SEL_W<'a, O> {
     #[doc = "Use idaca_pol (firmware setting with CSX and optionally DSI mixed in) to determine the direction, this is the most common use-case, used for normal CSD and normal CSX"]
     #[inline(always)]
     pub fn idaca_pol(self) -> &'a mut W {
@@ -156,12 +148,6 @@ impl<'a> POLARITY_SEL_W<'a> {
     #[inline(always)]
     pub fn dual_pol(self) -> &'a mut W {
         self.variant(POLARITY_SEL_A::DUAL_POL)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
-        self.w
     }
 }
 #[doc = "Select in what phase(s) the comparator is active, typically set to match the BAL_MODE of the used IDAC. Note, this also determines when a bad conversion is detected, namely at the beginning and end of the comparator active phase (also taking into account FILTER_DELAY and non-overlap).\n\nValue on reset: 0"]
@@ -183,10 +169,10 @@ impl From<CMP_PHASE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CMP_PHASE`"]
-pub type CMP_PHASE_R = crate::R<u8, CMP_PHASE_A>;
+#[doc = "Field `CMP_PHASE` reader - Select in what phase(s) the comparator is active, typically set to match the BAL_MODE of the used IDAC. Note, this also determines when a bad conversion is detected, namely at the beginning and end of the comparator active phase (also taking into account FILTER_DELAY and non-overlap)."]
+pub type CMP_PHASE_R = crate::FieldReader<u8, CMP_PHASE_A>;
 impl CMP_PHASE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CMP_PHASE_A {
         match self.bits {
@@ -218,18 +204,10 @@ impl CMP_PHASE_R {
         *self == CMP_PHASE_A::PHI1_2
     }
 }
-#[doc = "Write proxy for field `CMP_PHASE`"]
-pub struct CMP_PHASE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMP_PHASE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CMP_PHASE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `CMP_PHASE` writer - Select in what phase(s) the comparator is active, typically set to match the BAL_MODE of the used IDAC. Note, this also determines when a bad conversion is detected, namely at the beginning and end of the comparator active phase (also taking into account FILTER_DELAY and non-overlap)."]
+pub type CMP_PHASE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CSDCMP_SPEC, u8, CMP_PHASE_A, 2, O>;
+impl<'a, const O: u8> CMP_PHASE_W<'a, O> {
     #[doc = "Comparator is active from start of Phi2 and kept active into Phi1. Intended usage: legacy CSD for balancing over a full csd_sense period (non-overlap should be turned off)"]
     #[inline(always)]
     pub fn full(self) -> &'a mut W {
@@ -250,12 +228,6 @@ impl<'a> CMP_PHASE_W<'a> {
     pub fn phi1_2(self) -> &'a mut W {
         self.variant(CMP_PHASE_A::PHI1_2)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
-        self.w
-    }
 }
 #[doc = "Select which signal to output on dsi_sample_out.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -271,10 +243,10 @@ impl From<CMP_MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `CMP_MODE`"]
-pub type CMP_MODE_R = crate::R<bool, CMP_MODE_A>;
+#[doc = "Field `CMP_MODE` reader - Select which signal to output on dsi_sample_out."]
+pub type CMP_MODE_R = crate::BitReader<CMP_MODE_A>;
 impl CMP_MODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CMP_MODE_A {
         match self.bits {
@@ -293,18 +265,9 @@ impl CMP_MODE_R {
         *self == CMP_MODE_A::GP
     }
 }
-#[doc = "Write proxy for field `CMP_MODE`"]
-pub struct CMP_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CMP_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CMP_MODE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `CMP_MODE` writer - Select which signal to output on dsi_sample_out."]
+pub type CMP_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSDCMP_SPEC, CMP_MODE_A, O>;
+impl<'a, const O: u8> CMP_MODE_W<'a, O> {
     #[doc = "CSD mode: output the filtered sample signal on dsi_sample_out"]
     #[inline(always)]
     pub fn csd(self) -> &'a mut W {
@@ -314,22 +277,6 @@ impl<'a> CMP_MODE_W<'a> {
     #[inline(always)]
     pub fn gp(self) -> &'a mut W {
         self.variant(CMP_MODE_A::GP)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-        self.w
     }
 }
 #[doc = "This bit controls whether the output directly from the comparator (csdcmp_out) or the flopped version (csdcmp_out_ff) is used. For CSD operation, the selected signal controls the IDAC(s), in GP mode the signal goes out on dsi_sample_out.\n\nValue on reset: 0"]
@@ -346,10 +293,10 @@ impl From<FEEDBACK_MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `FEEDBACK_MODE`"]
-pub type FEEDBACK_MODE_R = crate::R<bool, FEEDBACK_MODE_A>;
+#[doc = "Field `FEEDBACK_MODE` reader - This bit controls whether the output directly from the comparator (csdcmp_out) or the flopped version (csdcmp_out_ff) is used. For CSD operation, the selected signal controls the IDAC(s), in GP mode the signal goes out on dsi_sample_out."]
+pub type FEEDBACK_MODE_R = crate::BitReader<FEEDBACK_MODE_A>;
 impl FEEDBACK_MODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FEEDBACK_MODE_A {
         match self.bits {
@@ -368,18 +315,10 @@ impl FEEDBACK_MODE_R {
         *self == FEEDBACK_MODE_A::COMP
     }
 }
-#[doc = "Write proxy for field `FEEDBACK_MODE`"]
-pub struct FEEDBACK_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FEEDBACK_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FEEDBACK_MODE_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `FEEDBACK_MODE` writer - This bit controls whether the output directly from the comparator (csdcmp_out) or the flopped version (csdcmp_out_ff) is used. For CSD operation, the selected signal controls the IDAC(s), in GP mode the signal goes out on dsi_sample_out."]
+pub type FEEDBACK_MODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CSDCMP_SPEC, FEEDBACK_MODE_A, O>;
+impl<'a, const O: u8> FEEDBACK_MODE_W<'a, O> {
     #[doc = "Use feedback from sampling flip-flop (used in most modes)."]
     #[inline(always)]
     pub fn flop(self) -> &'a mut W {
@@ -390,108 +329,98 @@ impl<'a> FEEDBACK_MODE_W<'a> {
     pub fn comp(self) -> &'a mut W {
         self.variant(FEEDBACK_MODE_A::COMP)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | (((value as u32) & 0x01) << 29);
-        self.w
-    }
 }
-#[doc = "Reader of field `AZ_EN`"]
-pub type AZ_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `AZ_EN`"]
-pub struct AZ_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AZ_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
-        self.w
-    }
-}
+#[doc = "Field `AZ_EN` reader - Auto-Zero enable, allow the Sequencer to Auto-Zero this component"]
+pub type AZ_EN_R = crate::BitReader<bool>;
+#[doc = "Field `AZ_EN` writer - Auto-Zero enable, allow the Sequencer to Auto-Zero this component"]
+pub type AZ_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSDCMP_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - CSD Comparator Enable"]
     #[inline(always)]
     pub fn csdcmp_en(&self) -> CSDCMP_EN_R {
-        CSDCMP_EN_R::new((self.bits & 0x01) != 0)
+        CSDCMP_EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 4:5 - Select which IDAC polarity to use to detect CSDCMP triggering"]
     #[inline(always)]
     pub fn polarity_sel(&self) -> POLARITY_SEL_R {
-        POLARITY_SEL_R::new(((self.bits >> 4) & 0x03) as u8)
+        POLARITY_SEL_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 8:9 - Select in what phase(s) the comparator is active, typically set to match the BAL_MODE of the used IDAC. Note, this also determines when a bad conversion is detected, namely at the beginning and end of the comparator active phase (also taking into account FILTER_DELAY and non-overlap)."]
     #[inline(always)]
     pub fn cmp_phase(&self) -> CMP_PHASE_R {
-        CMP_PHASE_R::new(((self.bits >> 8) & 0x03) as u8)
+        CMP_PHASE_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bit 28 - Select which signal to output on dsi_sample_out."]
     #[inline(always)]
     pub fn cmp_mode(&self) -> CMP_MODE_R {
-        CMP_MODE_R::new(((self.bits >> 28) & 0x01) != 0)
+        CMP_MODE_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 29 - This bit controls whether the output directly from the comparator (csdcmp_out) or the flopped version (csdcmp_out_ff) is used. For CSD operation, the selected signal controls the IDAC(s), in GP mode the signal goes out on dsi_sample_out."]
     #[inline(always)]
     pub fn feedback_mode(&self) -> FEEDBACK_MODE_R {
-        FEEDBACK_MODE_R::new(((self.bits >> 29) & 0x01) != 0)
+        FEEDBACK_MODE_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 31 - Auto-Zero enable, allow the Sequencer to Auto-Zero this component"]
     #[inline(always)]
     pub fn az_en(&self) -> AZ_EN_R {
-        AZ_EN_R::new(((self.bits >> 31) & 0x01) != 0)
+        AZ_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - CSD Comparator Enable"]
     #[inline(always)]
-    pub fn csdcmp_en(&mut self) -> CSDCMP_EN_W {
-        CSDCMP_EN_W { w: self }
+    pub fn csdcmp_en(&mut self) -> CSDCMP_EN_W<0> {
+        CSDCMP_EN_W::new(self)
     }
     #[doc = "Bits 4:5 - Select which IDAC polarity to use to detect CSDCMP triggering"]
     #[inline(always)]
-    pub fn polarity_sel(&mut self) -> POLARITY_SEL_W {
-        POLARITY_SEL_W { w: self }
+    pub fn polarity_sel(&mut self) -> POLARITY_SEL_W<4> {
+        POLARITY_SEL_W::new(self)
     }
     #[doc = "Bits 8:9 - Select in what phase(s) the comparator is active, typically set to match the BAL_MODE of the used IDAC. Note, this also determines when a bad conversion is detected, namely at the beginning and end of the comparator active phase (also taking into account FILTER_DELAY and non-overlap)."]
     #[inline(always)]
-    pub fn cmp_phase(&mut self) -> CMP_PHASE_W {
-        CMP_PHASE_W { w: self }
+    pub fn cmp_phase(&mut self) -> CMP_PHASE_W<8> {
+        CMP_PHASE_W::new(self)
     }
     #[doc = "Bit 28 - Select which signal to output on dsi_sample_out."]
     #[inline(always)]
-    pub fn cmp_mode(&mut self) -> CMP_MODE_W {
-        CMP_MODE_W { w: self }
+    pub fn cmp_mode(&mut self) -> CMP_MODE_W<28> {
+        CMP_MODE_W::new(self)
     }
     #[doc = "Bit 29 - This bit controls whether the output directly from the comparator (csdcmp_out) or the flopped version (csdcmp_out_ff) is used. For CSD operation, the selected signal controls the IDAC(s), in GP mode the signal goes out on dsi_sample_out."]
     #[inline(always)]
-    pub fn feedback_mode(&mut self) -> FEEDBACK_MODE_W {
-        FEEDBACK_MODE_W { w: self }
+    pub fn feedback_mode(&mut self) -> FEEDBACK_MODE_W<29> {
+        FEEDBACK_MODE_W::new(self)
     }
     #[doc = "Bit 31 - Auto-Zero enable, allow the Sequencer to Auto-Zero this component"]
     #[inline(always)]
-    pub fn az_en(&mut self) -> AZ_EN_W {
-        AZ_EN_W { w: self }
+    pub fn az_en(&mut self) -> AZ_EN_W<31> {
+        AZ_EN_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "CSD Comparator configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csdcmp](index.html) module"]
+pub struct CSDCMP_SPEC;
+impl crate::RegisterSpec for CSDCMP_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [csdcmp::R](R) reader structure"]
+impl crate::Readable for CSDCMP_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [csdcmp::W](W) writer structure"]
+impl crate::Writable for CSDCMP_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CSDCMP to value 0"]
+impl crate::Resettable for CSDCMP_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

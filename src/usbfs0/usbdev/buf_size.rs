@@ -1,43 +1,47 @@
-#[doc = "Reader of register BUF_SIZE"]
-pub type R = crate::R<u32, super::BUF_SIZE>;
-#[doc = "Writer for register BUF_SIZE"]
-pub type W = crate::W<u32, super::BUF_SIZE>;
-#[doc = "Register BUF_SIZE `reset()`'s with value 0"]
-impl crate::ResetValue for super::BUF_SIZE {
-    type Type = u32;
+#[doc = "Register `BUF_SIZE` reader"]
+pub struct R(crate::R<BUF_SIZE_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<BUF_SIZE_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `IN_BUF`"]
-pub type IN_BUF_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `IN_BUF`"]
-pub struct IN_BUF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> IN_BUF_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<BUF_SIZE_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
-        self.w
+    fn from(reader: crate::R<BUF_SIZE_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `OUT_BUF`"]
-pub type OUT_BUF_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `OUT_BUF`"]
-pub struct OUT_BUF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OUT_BUF_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+#[doc = "Register `BUF_SIZE` writer"]
+pub struct W(crate::W<BUF_SIZE_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<BUF_SIZE_SPEC>;
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<BUF_SIZE_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<BUF_SIZE_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `IN_BUF` reader - Buffer size for IN Endpoints."]
+pub type IN_BUF_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `IN_BUF` writer - Buffer size for IN Endpoints."]
+pub type IN_BUF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BUF_SIZE_SPEC, u8, u8, 4, O>;
+#[doc = "Field `OUT_BUF` reader - Buffer size for OUT Endpoints."]
+pub type OUT_BUF_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `OUT_BUF` writer - Buffer size for OUT Endpoints."]
+pub type OUT_BUF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BUF_SIZE_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Buffer size for IN Endpoints."]
     #[inline(always)]
@@ -53,12 +57,38 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Buffer size for IN Endpoints."]
     #[inline(always)]
-    pub fn in_buf(&mut self) -> IN_BUF_W {
-        IN_BUF_W { w: self }
+    pub fn in_buf(&mut self) -> IN_BUF_W<0> {
+        IN_BUF_W::new(self)
     }
     #[doc = "Bits 4:7 - Buffer size for OUT Endpoints."]
     #[inline(always)]
-    pub fn out_buf(&mut self) -> OUT_BUF_W {
-        OUT_BUF_W { w: self }
+    pub fn out_buf(&mut self) -> OUT_BUF_W<4> {
+        OUT_BUF_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Dedicated Endpoint Buffer Size Register *1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [buf_size](index.html) module"]
+pub struct BUF_SIZE_SPEC;
+impl crate::RegisterSpec for BUF_SIZE_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [buf_size::R](R) reader structure"]
+impl crate::Readable for BUF_SIZE_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [buf_size::W](W) writer structure"]
+impl crate::Writable for BUF_SIZE_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets BUF_SIZE to value 0"]
+impl crate::Resettable for BUF_SIZE_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

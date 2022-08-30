@@ -1,29 +1,46 @@
-#[doc = "Reader of register SIE_EP3_CNT0"]
-pub type R = crate::R<u32, super::SIE_EP3_CNT0>;
-#[doc = "Writer for register SIE_EP3_CNT0"]
-pub type W = crate::W<u32, super::SIE_EP3_CNT0>;
-#[doc = "Register SIE_EP3_CNT0 `reset()`'s with value 0"]
-impl crate::ResetValue for super::SIE_EP3_CNT0 {
-    type Type = u32;
+#[doc = "Register `SIE_EP3_CNT0` reader"]
+pub struct R(crate::R<SIE_EP3_CNT0_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SIE_EP3_CNT0_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `DATA_COUNT_MSB`"]
-pub type DATA_COUNT_MSB_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DATA_COUNT_MSB`"]
-pub struct DATA_COUNT_MSB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATA_COUNT_MSB_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<SIE_EP3_CNT0_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
-        self.w
+    fn from(reader: crate::R<SIE_EP3_CNT0_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `SIE_EP3_CNT0` writer"]
+pub struct W(crate::W<SIE_EP3_CNT0_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SIE_EP3_CNT0_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<SIE_EP3_CNT0_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SIE_EP3_CNT0_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `DATA_COUNT_MSB` reader - These bits are the 3 MSb bits of an 11-bit counter. The LSb are the Data Count\\[7:0\\]
+bits of the CNT1 register. Refer to the CNT1 register for more information."]
+pub type DATA_COUNT_MSB_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DATA_COUNT_MSB` writer - These bits are the 3 MSb bits of an 11-bit counter. The LSb are the Data Count\\[7:0\\]
+bits of the CNT1 register. Refer to the CNT1 register for more information."]
+pub type DATA_COUNT_MSB_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SIE_EP3_CNT0_SPEC, u8, u8, 3, O>;
 #[doc = "This bit is used for OUT transactions only and is read only. It is cleared to '0' if CRC bit stuffing errors or PID errors occur. This bit does not update for some endpoint mode settings.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DATA_VALID_A {
@@ -38,10 +55,10 @@ impl From<DATA_VALID_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `DATA_VALID`"]
-pub type DATA_VALID_R = crate::R<bool, DATA_VALID_A>;
+#[doc = "Field `DATA_VALID` reader - This bit is used for OUT transactions only and is read only. It is cleared to '0' if CRC bit stuffing errors or PID errors occur. This bit does not update for some endpoint mode settings."]
+pub type DATA_VALID_R = crate::BitReader<DATA_VALID_A>;
 impl DATA_VALID_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DATA_VALID_A {
         match self.bits {
@@ -60,18 +77,10 @@ impl DATA_VALID_R {
         *self == DATA_VALID_A::DATA_VALID
     }
 }
-#[doc = "Write proxy for field `DATA_VALID`"]
-pub struct DATA_VALID_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATA_VALID_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DATA_VALID_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `DATA_VALID` writer - This bit is used for OUT transactions only and is read only. It is cleared to '0' if CRC bit stuffing errors or PID errors occur. This bit does not update for some endpoint mode settings."]
+pub type DATA_VALID_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SIE_EP3_CNT0_SPEC, DATA_VALID_A, O>;
+impl<'a, const O: u8> DATA_VALID_W<'a, O> {
     #[doc = "No ACK'd transactions since bit was last cleared."]
     #[inline(always)]
     pub fn data_error(self) -> &'a mut W {
@@ -82,78 +91,70 @@ impl<'a> DATA_VALID_W<'a> {
     pub fn data_valid(self) -> &'a mut W {
         self.variant(DATA_VALID_A::DATA_VALID)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-        self.w
-    }
 }
-#[doc = "Reader of field `DATA_TOGGLE`"]
-pub type DATA_TOGGLE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DATA_TOGGLE`"]
-pub struct DATA_TOGGLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATA_TOGGLE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-        self.w
-    }
-}
+#[doc = "Field `DATA_TOGGLE` reader - This bit selects the DATA packet's toggle state. For IN transactions firmware must set this bit to the expected state. For OUT transactions the hardware sets this bit to the state of the received Data Toggle bit."]
+pub type DATA_TOGGLE_R = crate::BitReader<bool>;
+#[doc = "Field `DATA_TOGGLE` writer - This bit selects the DATA packet's toggle state. For IN transactions firmware must set this bit to the expected state. For OUT transactions the hardware sets this bit to the state of the received Data Toggle bit."]
+pub type DATA_TOGGLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SIE_EP3_CNT0_SPEC, bool, O>;
 impl R {
-    #[doc = "Bits 0:2 - These bits are the 3 MSb bits of an 11-bit counter. The LSb are the Data Count\\[7:0\\] bits of the CNT1 register. Refer to the CNT1 register for more information."]
+    #[doc = "Bits 0:2 - These bits are the 3 MSb bits of an 11-bit counter. The LSb are the Data Count\\[7:0\\]
+bits of the CNT1 register. Refer to the CNT1 register for more information."]
     #[inline(always)]
     pub fn data_count_msb(&self) -> DATA_COUNT_MSB_R {
-        DATA_COUNT_MSB_R::new((self.bits & 0x07) as u8)
+        DATA_COUNT_MSB_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 6 - This bit is used for OUT transactions only and is read only. It is cleared to '0' if CRC bit stuffing errors or PID errors occur. This bit does not update for some endpoint mode settings."]
     #[inline(always)]
     pub fn data_valid(&self) -> DATA_VALID_R {
-        DATA_VALID_R::new(((self.bits >> 6) & 0x01) != 0)
+        DATA_VALID_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - This bit selects the DATA packet's toggle state. For IN transactions firmware must set this bit to the expected state. For OUT transactions the hardware sets this bit to the state of the received Data Toggle bit."]
     #[inline(always)]
     pub fn data_toggle(&self) -> DATA_TOGGLE_R {
-        DATA_TOGGLE_R::new(((self.bits >> 7) & 0x01) != 0)
+        DATA_TOGGLE_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:2 - These bits are the 3 MSb bits of an 11-bit counter. The LSb are the Data Count\\[7:0\\] bits of the CNT1 register. Refer to the CNT1 register for more information."]
+    #[doc = "Bits 0:2 - These bits are the 3 MSb bits of an 11-bit counter. The LSb are the Data Count\\[7:0\\]
+bits of the CNT1 register. Refer to the CNT1 register for more information."]
     #[inline(always)]
-    pub fn data_count_msb(&mut self) -> DATA_COUNT_MSB_W {
-        DATA_COUNT_MSB_W { w: self }
+    pub fn data_count_msb(&mut self) -> DATA_COUNT_MSB_W<0> {
+        DATA_COUNT_MSB_W::new(self)
     }
     #[doc = "Bit 6 - This bit is used for OUT transactions only and is read only. It is cleared to '0' if CRC bit stuffing errors or PID errors occur. This bit does not update for some endpoint mode settings."]
     #[inline(always)]
-    pub fn data_valid(&mut self) -> DATA_VALID_W {
-        DATA_VALID_W { w: self }
+    pub fn data_valid(&mut self) -> DATA_VALID_W<6> {
+        DATA_VALID_W::new(self)
     }
     #[doc = "Bit 7 - This bit selects the DATA packet's toggle state. For IN transactions firmware must set this bit to the expected state. For OUT transactions the hardware sets this bit to the state of the received Data Toggle bit."]
     #[inline(always)]
-    pub fn data_toggle(&mut self) -> DATA_TOGGLE_W {
-        DATA_TOGGLE_W { w: self }
+    pub fn data_toggle(&mut self) -> DATA_TOGGLE_W<7> {
+        DATA_TOGGLE_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Non-control endpoint count register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sie_ep3_cnt0](index.html) module"]
+pub struct SIE_EP3_CNT0_SPEC;
+impl crate::RegisterSpec for SIE_EP3_CNT0_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [sie_ep3_cnt0::R](R) reader structure"]
+impl crate::Readable for SIE_EP3_CNT0_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sie_ep3_cnt0::W](W) writer structure"]
+impl crate::Writable for SIE_EP3_CNT0_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SIE_EP3_CNT0 to value 0"]
+impl crate::Resettable for SIE_EP3_CNT0_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

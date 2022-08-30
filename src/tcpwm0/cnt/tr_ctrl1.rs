@@ -1,13 +1,37 @@
-#[doc = "Reader of register TR_CTRL1"]
-pub type R = crate::R<u32, super::TR_CTRL1>;
-#[doc = "Writer for register TR_CTRL1"]
-pub type W = crate::W<u32, super::TR_CTRL1>;
-#[doc = "Register TR_CTRL1 `reset()`'s with value 0x03ff"]
-impl crate::ResetValue for super::TR_CTRL1 {
-    type Type = u32;
+#[doc = "Register `TR_CTRL1` reader"]
+pub struct R(crate::R<TR_CTRL1_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<TR_CTRL1_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x03ff
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<TR_CTRL1_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<TR_CTRL1_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `TR_CTRL1` writer"]
+pub struct W(crate::W<TR_CTRL1_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<TR_CTRL1_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<TR_CTRL1_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<TR_CTRL1_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "A capture event will copy the counter value into the CC register.\n\nValue on reset: 3"]
@@ -29,10 +53,10 @@ impl From<CAPTURE_EDGE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `CAPTURE_EDGE`"]
-pub type CAPTURE_EDGE_R = crate::R<u8, CAPTURE_EDGE_A>;
+#[doc = "Field `CAPTURE_EDGE` reader - A capture event will copy the counter value into the CC register."]
+pub type CAPTURE_EDGE_R = crate::FieldReader<u8, CAPTURE_EDGE_A>;
 impl CAPTURE_EDGE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CAPTURE_EDGE_A {
         match self.bits {
@@ -64,18 +88,10 @@ impl CAPTURE_EDGE_R {
         *self == CAPTURE_EDGE_A::NO_EDGE_DET
     }
 }
-#[doc = "Write proxy for field `CAPTURE_EDGE`"]
-pub struct CAPTURE_EDGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CAPTURE_EDGE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CAPTURE_EDGE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `CAPTURE_EDGE` writer - A capture event will copy the counter value into the CC register."]
+pub type CAPTURE_EDGE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TR_CTRL1_SPEC, u8, CAPTURE_EDGE_A, 2, O>;
+impl<'a, const O: u8> CAPTURE_EDGE_W<'a, O> {
     #[doc = "Rising edge. Any rising edge generates an event."]
     #[inline(always)]
     pub fn rising_edge(self) -> &'a mut W {
@@ -95,12 +111,6 @@ impl<'a> CAPTURE_EDGE_W<'a> {
     #[inline(always)]
     pub fn no_edge_det(self) -> &'a mut W {
         self.variant(CAPTURE_EDGE_A::NO_EDGE_DET)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
-        self.w
     }
 }
 #[doc = "A counter event will increase or decrease the counter by '1'.\n\nValue on reset: 3"]
@@ -122,10 +132,10 @@ impl From<COUNT_EDGE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `COUNT_EDGE`"]
-pub type COUNT_EDGE_R = crate::R<u8, COUNT_EDGE_A>;
+#[doc = "Field `COUNT_EDGE` reader - A counter event will increase or decrease the counter by '1'."]
+pub type COUNT_EDGE_R = crate::FieldReader<u8, COUNT_EDGE_A>;
 impl COUNT_EDGE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> COUNT_EDGE_A {
         match self.bits {
@@ -157,18 +167,10 @@ impl COUNT_EDGE_R {
         *self == COUNT_EDGE_A::NO_EDGE_DET
     }
 }
-#[doc = "Write proxy for field `COUNT_EDGE`"]
-pub struct COUNT_EDGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> COUNT_EDGE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: COUNT_EDGE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `COUNT_EDGE` writer - A counter event will increase or decrease the counter by '1'."]
+pub type COUNT_EDGE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TR_CTRL1_SPEC, u8, COUNT_EDGE_A, 2, O>;
+impl<'a, const O: u8> COUNT_EDGE_W<'a, O> {
     #[doc = "Rising edge. Any rising edge generates an event."]
     #[inline(always)]
     pub fn rising_edge(self) -> &'a mut W {
@@ -188,12 +190,6 @@ impl<'a> COUNT_EDGE_W<'a> {
     #[inline(always)]
     pub fn no_edge_det(self) -> &'a mut W {
         self.variant(COUNT_EDGE_A::NO_EDGE_DET)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
-        self.w
     }
 }
 #[doc = "A reload event will initialize the counter. When counting up, the counter is initialized to '0'. When counting down, the counter is initialized with PERIOD.\n\nValue on reset: 3"]
@@ -215,10 +211,10 @@ impl From<RELOAD_EDGE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `RELOAD_EDGE`"]
-pub type RELOAD_EDGE_R = crate::R<u8, RELOAD_EDGE_A>;
+#[doc = "Field `RELOAD_EDGE` reader - A reload event will initialize the counter. When counting up, the counter is initialized to '0'. When counting down, the counter is initialized with PERIOD."]
+pub type RELOAD_EDGE_R = crate::FieldReader<u8, RELOAD_EDGE_A>;
 impl RELOAD_EDGE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RELOAD_EDGE_A {
         match self.bits {
@@ -250,18 +246,10 @@ impl RELOAD_EDGE_R {
         *self == RELOAD_EDGE_A::NO_EDGE_DET
     }
 }
-#[doc = "Write proxy for field `RELOAD_EDGE`"]
-pub struct RELOAD_EDGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RELOAD_EDGE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RELOAD_EDGE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `RELOAD_EDGE` writer - A reload event will initialize the counter. When counting up, the counter is initialized to '0'. When counting down, the counter is initialized with PERIOD."]
+pub type RELOAD_EDGE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TR_CTRL1_SPEC, u8, RELOAD_EDGE_A, 2, O>;
+impl<'a, const O: u8> RELOAD_EDGE_W<'a, O> {
     #[doc = "Rising edge. Any rising edge generates an event."]
     #[inline(always)]
     pub fn rising_edge(self) -> &'a mut W {
@@ -281,12 +269,6 @@ impl<'a> RELOAD_EDGE_W<'a> {
     #[inline(always)]
     pub fn no_edge_det(self) -> &'a mut W {
         self.variant(RELOAD_EDGE_A::NO_EDGE_DET)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
-        self.w
     }
 }
 #[doc = "A stop event, will stop the counter; i.e. it will no longer be running. Stopping will NOT disable the counter.\n\nValue on reset: 3"]
@@ -308,10 +290,10 @@ impl From<STOP_EDGE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `STOP_EDGE`"]
-pub type STOP_EDGE_R = crate::R<u8, STOP_EDGE_A>;
+#[doc = "Field `STOP_EDGE` reader - A stop event, will stop the counter; i.e. it will no longer be running. Stopping will NOT disable the counter."]
+pub type STOP_EDGE_R = crate::FieldReader<u8, STOP_EDGE_A>;
 impl STOP_EDGE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STOP_EDGE_A {
         match self.bits {
@@ -343,18 +325,10 @@ impl STOP_EDGE_R {
         *self == STOP_EDGE_A::NO_EDGE_DET
     }
 }
-#[doc = "Write proxy for field `STOP_EDGE`"]
-pub struct STOP_EDGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STOP_EDGE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: STOP_EDGE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `STOP_EDGE` writer - A stop event, will stop the counter; i.e. it will no longer be running. Stopping will NOT disable the counter."]
+pub type STOP_EDGE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TR_CTRL1_SPEC, u8, STOP_EDGE_A, 2, O>;
+impl<'a, const O: u8> STOP_EDGE_W<'a, O> {
     #[doc = "Rising edge. Any rising edge generates an event."]
     #[inline(always)]
     pub fn rising_edge(self) -> &'a mut W {
@@ -374,12 +348,6 @@ impl<'a> STOP_EDGE_W<'a> {
     #[inline(always)]
     pub fn no_edge_det(self) -> &'a mut W {
         self.variant(STOP_EDGE_A::NO_EDGE_DET)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
-        self.w
     }
 }
 #[doc = "A start event will start the counter; i.e. the counter will become running. Starting does NOT enable the counter. A start event will not initialize the counter whereas the reload event does.\n\nValue on reset: 3"]
@@ -401,10 +369,10 @@ impl From<START_EDGE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `START_EDGE`"]
-pub type START_EDGE_R = crate::R<u8, START_EDGE_A>;
+#[doc = "Field `START_EDGE` reader - A start event will start the counter; i.e. the counter will become running. Starting does NOT enable the counter. A start event will not initialize the counter whereas the reload event does."]
+pub type START_EDGE_R = crate::FieldReader<u8, START_EDGE_A>;
 impl START_EDGE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> START_EDGE_A {
         match self.bits {
@@ -436,18 +404,10 @@ impl START_EDGE_R {
         *self == START_EDGE_A::NO_EDGE_DET
     }
 }
-#[doc = "Write proxy for field `START_EDGE`"]
-pub struct START_EDGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> START_EDGE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: START_EDGE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `START_EDGE` writer - A start event will start the counter; i.e. the counter will become running. Starting does NOT enable the counter. A start event will not initialize the counter whereas the reload event does."]
+pub type START_EDGE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TR_CTRL1_SPEC, u8, START_EDGE_A, 2, O>;
+impl<'a, const O: u8> START_EDGE_W<'a, O> {
     #[doc = "Rising edge. Any rising edge generates an event."]
     #[inline(always)]
     pub fn rising_edge(self) -> &'a mut W {
@@ -468,64 +428,84 @@ impl<'a> START_EDGE_W<'a> {
     pub fn no_edge_det(self) -> &'a mut W {
         self.variant(START_EDGE_A::NO_EDGE_DET)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - A capture event will copy the counter value into the CC register."]
     #[inline(always)]
     pub fn capture_edge(&self) -> CAPTURE_EDGE_R {
-        CAPTURE_EDGE_R::new((self.bits & 0x03) as u8)
+        CAPTURE_EDGE_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - A counter event will increase or decrease the counter by '1'."]
     #[inline(always)]
     pub fn count_edge(&self) -> COUNT_EDGE_R {
-        COUNT_EDGE_R::new(((self.bits >> 2) & 0x03) as u8)
+        COUNT_EDGE_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 4:5 - A reload event will initialize the counter. When counting up, the counter is initialized to '0'. When counting down, the counter is initialized with PERIOD."]
     #[inline(always)]
     pub fn reload_edge(&self) -> RELOAD_EDGE_R {
-        RELOAD_EDGE_R::new(((self.bits >> 4) & 0x03) as u8)
+        RELOAD_EDGE_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 6:7 - A stop event, will stop the counter; i.e. it will no longer be running. Stopping will NOT disable the counter."]
     #[inline(always)]
     pub fn stop_edge(&self) -> STOP_EDGE_R {
-        STOP_EDGE_R::new(((self.bits >> 6) & 0x03) as u8)
+        STOP_EDGE_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 8:9 - A start event will start the counter; i.e. the counter will become running. Starting does NOT enable the counter. A start event will not initialize the counter whereas the reload event does."]
     #[inline(always)]
     pub fn start_edge(&self) -> START_EDGE_R {
-        START_EDGE_R::new(((self.bits >> 8) & 0x03) as u8)
+        START_EDGE_R::new(((self.bits >> 8) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - A capture event will copy the counter value into the CC register."]
     #[inline(always)]
-    pub fn capture_edge(&mut self) -> CAPTURE_EDGE_W {
-        CAPTURE_EDGE_W { w: self }
+    pub fn capture_edge(&mut self) -> CAPTURE_EDGE_W<0> {
+        CAPTURE_EDGE_W::new(self)
     }
     #[doc = "Bits 2:3 - A counter event will increase or decrease the counter by '1'."]
     #[inline(always)]
-    pub fn count_edge(&mut self) -> COUNT_EDGE_W {
-        COUNT_EDGE_W { w: self }
+    pub fn count_edge(&mut self) -> COUNT_EDGE_W<2> {
+        COUNT_EDGE_W::new(self)
     }
     #[doc = "Bits 4:5 - A reload event will initialize the counter. When counting up, the counter is initialized to '0'. When counting down, the counter is initialized with PERIOD."]
     #[inline(always)]
-    pub fn reload_edge(&mut self) -> RELOAD_EDGE_W {
-        RELOAD_EDGE_W { w: self }
+    pub fn reload_edge(&mut self) -> RELOAD_EDGE_W<4> {
+        RELOAD_EDGE_W::new(self)
     }
     #[doc = "Bits 6:7 - A stop event, will stop the counter; i.e. it will no longer be running. Stopping will NOT disable the counter."]
     #[inline(always)]
-    pub fn stop_edge(&mut self) -> STOP_EDGE_W {
-        STOP_EDGE_W { w: self }
+    pub fn stop_edge(&mut self) -> STOP_EDGE_W<6> {
+        STOP_EDGE_W::new(self)
     }
     #[doc = "Bits 8:9 - A start event will start the counter; i.e. the counter will become running. Starting does NOT enable the counter. A start event will not initialize the counter whereas the reload event does."]
     #[inline(always)]
-    pub fn start_edge(&mut self) -> START_EDGE_W {
-        START_EDGE_W { w: self }
+    pub fn start_edge(&mut self) -> START_EDGE_W<8> {
+        START_EDGE_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Counter trigger control register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tr_ctrl1](index.html) module"]
+pub struct TR_CTRL1_SPEC;
+impl crate::RegisterSpec for TR_CTRL1_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [tr_ctrl1::R](R) reader structure"]
+impl crate::Readable for TR_CTRL1_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [tr_ctrl1::W](W) writer structure"]
+impl crate::Writable for TR_CTRL1_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets TR_CTRL1 to value 0x03ff"]
+impl crate::Resettable for TR_CTRL1_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x03ff
     }
 }

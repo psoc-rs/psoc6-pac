@@ -1,29 +1,44 @@
-#[doc = "Reader of register CHAN_CONFIG[%s]"]
-pub type R = crate::R<u32, super::CHAN_CONFIG>;
-#[doc = "Writer for register CHAN_CONFIG[%s]"]
-pub type W = crate::W<u32, super::CHAN_CONFIG>;
-#[doc = "Register CHAN_CONFIG[%s] `reset()`'s with value 0"]
-impl crate::ResetValue for super::CHAN_CONFIG {
-    type Type = u32;
+#[doc = "Register `CHAN_CONFIG[%s]` reader"]
+pub struct R(crate::R<CHAN_CONFIG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CHAN_CONFIG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `POS_PIN_ADDR`"]
-pub type POS_PIN_ADDR_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `POS_PIN_ADDR`"]
-pub struct POS_PIN_ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> POS_PIN_ADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<CHAN_CONFIG_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
-        self.w
+    fn from(reader: crate::R<CHAN_CONFIG_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `CHAN_CONFIG[%s]` writer"]
+pub struct W(crate::W<CHAN_CONFIG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CHAN_CONFIG_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CHAN_CONFIG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CHAN_CONFIG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `POS_PIN_ADDR` reader - Address of the pin to be sampled by this channel (connected to Vplus)"]
+pub type POS_PIN_ADDR_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `POS_PIN_ADDR` writer - Address of the pin to be sampled by this channel (connected to Vplus)"]
+pub type POS_PIN_ADDR_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CHAN_CONFIG_SPEC, u8, u8, 3, O>;
 #[doc = "Address of the port that contains the pin to be sampled by this channel (connected to Vplus)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,10 +66,10 @@ impl From<POS_PORT_ADDR_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `POS_PORT_ADDR`"]
-pub type POS_PORT_ADDR_R = crate::R<u8, POS_PORT_ADDR_A>;
+#[doc = "Field `POS_PORT_ADDR` reader - Address of the port that contains the pin to be sampled by this channel (connected to Vplus)"]
+pub type POS_PORT_ADDR_R = crate::FieldReader<u8, POS_PORT_ADDR_A>;
 impl POS_PORT_ADDR_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> POS_PORT_ADDR_A {
         match self.bits {
@@ -110,18 +125,10 @@ impl POS_PORT_ADDR_R {
         *self == POS_PORT_ADDR_A::SARMUX_VIRT
     }
 }
-#[doc = "Write proxy for field `POS_PORT_ADDR`"]
-pub struct POS_PORT_ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> POS_PORT_ADDR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: POS_PORT_ADDR_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `POS_PORT_ADDR` writer - Address of the port that contains the pin to be sampled by this channel (connected to Vplus)"]
+pub type POS_PORT_ADDR_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CHAN_CONFIG_SPEC, u8, POS_PORT_ADDR_A, 3, O>;
+impl<'a, const O: u8> POS_PORT_ADDR_W<'a, O> {
     #[doc = "SARMUX pins."]
     #[inline(always)]
     pub fn sarmux(self) -> &'a mut W {
@@ -162,89 +169,29 @@ impl<'a> POS_PORT_ADDR_W<'a> {
     pub fn sarmux_virt(self) -> &'a mut W {
         self.variant(POS_PORT_ADDR_A::SARMUX_VIRT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | (((value as u32) & 0x07) << 4);
-        self.w
-    }
 }
-#[doc = "Reader of field `DIFFERENTIAL_EN`"]
-pub type DIFFERENTIAL_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DIFFERENTIAL_EN`"]
-pub struct DIFFERENTIAL_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIFFERENTIAL_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-        self.w
-    }
-}
-#[doc = "Reader of field `AVG_EN`"]
-pub type AVG_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `AVG_EN`"]
-pub struct AVG_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AVG_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-        self.w
-    }
-}
-#[doc = "Reader of field `SAMPLE_TIME_SEL`"]
-pub type SAMPLE_TIME_SEL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `SAMPLE_TIME_SEL`"]
-pub struct SAMPLE_TIME_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SAMPLE_TIME_SEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | (((value as u32) & 0x03) << 12);
-        self.w
-    }
-}
-#[doc = "Reader of field `NEG_PIN_ADDR`"]
-pub type NEG_PIN_ADDR_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `NEG_PIN_ADDR`"]
-pub struct NEG_PIN_ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NEG_PIN_ADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
-        self.w
-    }
-}
+#[doc = "Field `DIFFERENTIAL_EN` reader - Differential enable for this channel. If NEG_ADDR_EN=0 and this bit is 1 then POS_PIN_ADDR\\[0\\]
+is ignored and considered to be 0, i.e. POS_PIN_ADDR points to the even pin of a pin pair. In that case the even pin of the pair is connected to Vplus and the odd pin of the pair is connected to Vminus. POS_PORT_ADDR is used to identify the port that contains the pins. - 0: The voltage on the addressed pin is measured (Single-ended) and the resulting value is stored in the corresponding data register. - 1: The differential voltage on the addressed pin pair is measured and the resulting value is stored in the corresponding data register. (if NEG_ADDR_EN=0 then POS_PIN_ADDR\\[0\\]
+is ignored)."]
+pub type DIFFERENTIAL_EN_R = crate::BitReader<bool>;
+#[doc = "Field `DIFFERENTIAL_EN` writer - Differential enable for this channel. If NEG_ADDR_EN=0 and this bit is 1 then POS_PIN_ADDR\\[0\\]
+is ignored and considered to be 0, i.e. POS_PIN_ADDR points to the even pin of a pin pair. In that case the even pin of the pair is connected to Vplus and the odd pin of the pair is connected to Vminus. POS_PORT_ADDR is used to identify the port that contains the pins. - 0: The voltage on the addressed pin is measured (Single-ended) and the resulting value is stored in the corresponding data register. - 1: The differential voltage on the addressed pin pair is measured and the resulting value is stored in the corresponding data register. (if NEG_ADDR_EN=0 then POS_PIN_ADDR\\[0\\]
+is ignored)."]
+pub type DIFFERENTIAL_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHAN_CONFIG_SPEC, bool, O>;
+#[doc = "Field `AVG_EN` reader - Averaging enable for this channel. If set the AVG_CNT and AVG_SHIFT settings are used for sampling the addressed pin(s)"]
+pub type AVG_EN_R = crate::BitReader<bool>;
+#[doc = "Field `AVG_EN` writer - Averaging enable for this channel. If set the AVG_CNT and AVG_SHIFT settings are used for sampling the addressed pin(s)"]
+pub type AVG_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHAN_CONFIG_SPEC, bool, O>;
+#[doc = "Field `SAMPLE_TIME_SEL` reader - Sample time select: select which of the 4 global sample times to use for this channel"]
+pub type SAMPLE_TIME_SEL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `SAMPLE_TIME_SEL` writer - Sample time select: select which of the 4 global sample times to use for this channel"]
+pub type SAMPLE_TIME_SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CHAN_CONFIG_SPEC, u8, u8, 2, O>;
+#[doc = "Field `NEG_PIN_ADDR` reader - Address of the neg pin to be sampled by this channel."]
+pub type NEG_PIN_ADDR_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `NEG_PIN_ADDR` writer - Address of the neg pin to be sampled by this channel."]
+pub type NEG_PIN_ADDR_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CHAN_CONFIG_SPEC, u8, u8, 3, O>;
 #[doc = "Address of the neg port that contains the pin to be sampled by this channel.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -264,19 +211,18 @@ impl From<NEG_PORT_ADDR_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `NEG_PORT_ADDR`"]
-pub type NEG_PORT_ADDR_R = crate::R<u8, NEG_PORT_ADDR_A>;
+#[doc = "Field `NEG_PORT_ADDR` reader - Address of the neg port that contains the pin to be sampled by this channel."]
+pub type NEG_PORT_ADDR_R = crate::FieldReader<u8, NEG_PORT_ADDR_A>;
 impl NEG_PORT_ADDR_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, NEG_PORT_ADDR_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<NEG_PORT_ADDR_A> {
         match self.bits {
-            0 => Val(NEG_PORT_ADDR_A::SARMUX),
-            5 => Val(NEG_PORT_ADDR_A::AROUTE_VIRT2),
-            6 => Val(NEG_PORT_ADDR_A::AROUTE_VIRT1),
-            7 => Val(NEG_PORT_ADDR_A::SARMUX_VIRT),
-            i => Res(i),
+            0 => Some(NEG_PORT_ADDR_A::SARMUX),
+            5 => Some(NEG_PORT_ADDR_A::AROUTE_VIRT2),
+            6 => Some(NEG_PORT_ADDR_A::AROUTE_VIRT1),
+            7 => Some(NEG_PORT_ADDR_A::SARMUX_VIRT),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `SARMUX`"]
@@ -300,16 +246,10 @@ impl NEG_PORT_ADDR_R {
         *self == NEG_PORT_ADDR_A::SARMUX_VIRT
     }
 }
-#[doc = "Write proxy for field `NEG_PORT_ADDR`"]
-pub struct NEG_PORT_ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NEG_PORT_ADDR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: NEG_PORT_ADDR_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `NEG_PORT_ADDR` writer - Address of the neg port that contains the pin to be sampled by this channel."]
+pub type NEG_PORT_ADDR_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CHAN_CONFIG_SPEC, u8, NEG_PORT_ADDR_A, 3, O>;
+impl<'a, const O: u8> NEG_PORT_ADDR_W<'a, O> {
     #[doc = "SARMUX pins."]
     #[inline(always)]
     pub fn sarmux(self) -> &'a mut W {
@@ -330,152 +270,137 @@ impl<'a> NEG_PORT_ADDR_W<'a> {
     pub fn sarmux_virt(self) -> &'a mut W {
         self.variant(NEG_PORT_ADDR_A::SARMUX_VIRT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 20)) | (((value as u32) & 0x07) << 20);
-        self.w
-    }
 }
-#[doc = "Reader of field `NEG_ADDR_EN`"]
-pub type NEG_ADDR_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `NEG_ADDR_EN`"]
-pub struct NEG_ADDR_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NEG_ADDR_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-        self.w
-    }
-}
-#[doc = "Reader of field `DSI_OUT_EN`"]
-pub type DSI_OUT_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DSI_OUT_EN`"]
-pub struct DSI_OUT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSI_OUT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
-        self.w
-    }
-}
+#[doc = "Field `NEG_ADDR_EN` reader - 1 - The NEG_PIN_ADDR and NEG_PORT_ADDR determines what drives the Vminus pin. This is a variation of differential mode with no even-odd pair limitation 0 - The NEG_SEL determines what drives the Vminus pin."]
+pub type NEG_ADDR_EN_R = crate::BitReader<bool>;
+#[doc = "Field `NEG_ADDR_EN` writer - 1 - The NEG_PIN_ADDR and NEG_PORT_ADDR determines what drives the Vminus pin. This is a variation of differential mode with no even-odd pair limitation 0 - The NEG_SEL determines what drives the Vminus pin."]
+pub type NEG_ADDR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHAN_CONFIG_SPEC, bool, O>;
+#[doc = "Field `DSI_OUT_EN` reader - DSI data output enable for this channel. - 0: the conversion result for this channel is only stored in the channel data register and the corresponding CHAN_DATA_VALID bit is set. - 1: the conversion result for this channel is stored in the channel data register and the corresponding CHAN_DATA_VALID bit is set. The same data (same formatting), together with the channel number, is sent out on the DSI communication channel for processing in UDBs."]
+pub type DSI_OUT_EN_R = crate::BitReader<bool>;
+#[doc = "Field `DSI_OUT_EN` writer - DSI data output enable for this channel. - 0: the conversion result for this channel is only stored in the channel data register and the corresponding CHAN_DATA_VALID bit is set. - 1: the conversion result for this channel is stored in the channel data register and the corresponding CHAN_DATA_VALID bit is set. The same data (same formatting), together with the channel number, is sent out on the DSI communication channel for processing in UDBs."]
+pub type DSI_OUT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHAN_CONFIG_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - Address of the pin to be sampled by this channel (connected to Vplus)"]
     #[inline(always)]
     pub fn pos_pin_addr(&self) -> POS_PIN_ADDR_R {
-        POS_PIN_ADDR_R::new((self.bits & 0x07) as u8)
+        POS_PIN_ADDR_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 4:6 - Address of the port that contains the pin to be sampled by this channel (connected to Vplus)"]
     #[inline(always)]
     pub fn pos_port_addr(&self) -> POS_PORT_ADDR_R {
-        POS_PORT_ADDR_R::new(((self.bits >> 4) & 0x07) as u8)
+        POS_PORT_ADDR_R::new(((self.bits >> 4) & 7) as u8)
     }
-    #[doc = "Bit 8 - Differential enable for this channel. If NEG_ADDR_EN=0 and this bit is 1 then POS_PIN_ADDR\\[0\\] is ignored and considered to be 0, i.e. POS_PIN_ADDR points to the even pin of a pin pair. In that case the even pin of the pair is connected to Vplus and the odd pin of the pair is connected to Vminus. POS_PORT_ADDR is used to identify the port that contains the pins. - 0: The voltage on the addressed pin is measured (Single-ended) and the resulting value is stored in the corresponding data register. - 1: The differential voltage on the addressed pin pair is measured and the resulting value is stored in the corresponding data register. (if NEG_ADDR_EN=0 then POS_PIN_ADDR\\[0\\] is ignored)."]
+    #[doc = "Bit 8 - Differential enable for this channel. If NEG_ADDR_EN=0 and this bit is 1 then POS_PIN_ADDR\\[0\\]
+is ignored and considered to be 0, i.e. POS_PIN_ADDR points to the even pin of a pin pair. In that case the even pin of the pair is connected to Vplus and the odd pin of the pair is connected to Vminus. POS_PORT_ADDR is used to identify the port that contains the pins. - 0: The voltage on the addressed pin is measured (Single-ended) and the resulting value is stored in the corresponding data register. - 1: The differential voltage on the addressed pin pair is measured and the resulting value is stored in the corresponding data register. (if NEG_ADDR_EN=0 then POS_PIN_ADDR\\[0\\]
+is ignored)."]
     #[inline(always)]
     pub fn differential_en(&self) -> DIFFERENTIAL_EN_R {
-        DIFFERENTIAL_EN_R::new(((self.bits >> 8) & 0x01) != 0)
+        DIFFERENTIAL_EN_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 10 - Averaging enable for this channel. If set the AVG_CNT and AVG_SHIFT settings are used for sampling the addressed pin(s)"]
     #[inline(always)]
     pub fn avg_en(&self) -> AVG_EN_R {
-        AVG_EN_R::new(((self.bits >> 10) & 0x01) != 0)
+        AVG_EN_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bits 12:13 - Sample time select: select which of the 4 global sample times to use for this channel"]
     #[inline(always)]
     pub fn sample_time_sel(&self) -> SAMPLE_TIME_SEL_R {
-        SAMPLE_TIME_SEL_R::new(((self.bits >> 12) & 0x03) as u8)
+        SAMPLE_TIME_SEL_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 16:18 - Address of the neg pin to be sampled by this channel."]
     #[inline(always)]
     pub fn neg_pin_addr(&self) -> NEG_PIN_ADDR_R {
-        NEG_PIN_ADDR_R::new(((self.bits >> 16) & 0x07) as u8)
+        NEG_PIN_ADDR_R::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bits 20:22 - Address of the neg port that contains the pin to be sampled by this channel."]
     #[inline(always)]
     pub fn neg_port_addr(&self) -> NEG_PORT_ADDR_R {
-        NEG_PORT_ADDR_R::new(((self.bits >> 20) & 0x07) as u8)
+        NEG_PORT_ADDR_R::new(((self.bits >> 20) & 7) as u8)
     }
     #[doc = "Bit 24 - 1 - The NEG_PIN_ADDR and NEG_PORT_ADDR determines what drives the Vminus pin. This is a variation of differential mode with no even-odd pair limitation 0 - The NEG_SEL determines what drives the Vminus pin."]
     #[inline(always)]
     pub fn neg_addr_en(&self) -> NEG_ADDR_EN_R {
-        NEG_ADDR_EN_R::new(((self.bits >> 24) & 0x01) != 0)
+        NEG_ADDR_EN_R::new(((self.bits >> 24) & 1) != 0)
     }
-    #[doc = "Bit 31 - DSI data output enable for this channel. - 0: the conversion result for this channel is only stored in the channel data register and the corresponding CHAN_DATA_VALID bit is set. - 1: the conversion result for this channel is stored in the channel data register and the corresponding CHAN_DATA_VALID bit is set. The same data (same formating), together with the channel number, is sent out on the DSI communication channel for processing in UDBs."]
+    #[doc = "Bit 31 - DSI data output enable for this channel. - 0: the conversion result for this channel is only stored in the channel data register and the corresponding CHAN_DATA_VALID bit is set. - 1: the conversion result for this channel is stored in the channel data register and the corresponding CHAN_DATA_VALID bit is set. The same data (same formatting), together with the channel number, is sent out on the DSI communication channel for processing in UDBs."]
     #[inline(always)]
     pub fn dsi_out_en(&self) -> DSI_OUT_EN_R {
-        DSI_OUT_EN_R::new(((self.bits >> 31) & 0x01) != 0)
+        DSI_OUT_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Address of the pin to be sampled by this channel (connected to Vplus)"]
     #[inline(always)]
-    pub fn pos_pin_addr(&mut self) -> POS_PIN_ADDR_W {
-        POS_PIN_ADDR_W { w: self }
+    pub fn pos_pin_addr(&mut self) -> POS_PIN_ADDR_W<0> {
+        POS_PIN_ADDR_W::new(self)
     }
     #[doc = "Bits 4:6 - Address of the port that contains the pin to be sampled by this channel (connected to Vplus)"]
     #[inline(always)]
-    pub fn pos_port_addr(&mut self) -> POS_PORT_ADDR_W {
-        POS_PORT_ADDR_W { w: self }
+    pub fn pos_port_addr(&mut self) -> POS_PORT_ADDR_W<4> {
+        POS_PORT_ADDR_W::new(self)
     }
-    #[doc = "Bit 8 - Differential enable for this channel. If NEG_ADDR_EN=0 and this bit is 1 then POS_PIN_ADDR\\[0\\] is ignored and considered to be 0, i.e. POS_PIN_ADDR points to the even pin of a pin pair. In that case the even pin of the pair is connected to Vplus and the odd pin of the pair is connected to Vminus. POS_PORT_ADDR is used to identify the port that contains the pins. - 0: The voltage on the addressed pin is measured (Single-ended) and the resulting value is stored in the corresponding data register. - 1: The differential voltage on the addressed pin pair is measured and the resulting value is stored in the corresponding data register. (if NEG_ADDR_EN=0 then POS_PIN_ADDR\\[0\\] is ignored)."]
+    #[doc = "Bit 8 - Differential enable for this channel. If NEG_ADDR_EN=0 and this bit is 1 then POS_PIN_ADDR\\[0\\]
+is ignored and considered to be 0, i.e. POS_PIN_ADDR points to the even pin of a pin pair. In that case the even pin of the pair is connected to Vplus and the odd pin of the pair is connected to Vminus. POS_PORT_ADDR is used to identify the port that contains the pins. - 0: The voltage on the addressed pin is measured (Single-ended) and the resulting value is stored in the corresponding data register. - 1: The differential voltage on the addressed pin pair is measured and the resulting value is stored in the corresponding data register. (if NEG_ADDR_EN=0 then POS_PIN_ADDR\\[0\\]
+is ignored)."]
     #[inline(always)]
-    pub fn differential_en(&mut self) -> DIFFERENTIAL_EN_W {
-        DIFFERENTIAL_EN_W { w: self }
+    pub fn differential_en(&mut self) -> DIFFERENTIAL_EN_W<8> {
+        DIFFERENTIAL_EN_W::new(self)
     }
     #[doc = "Bit 10 - Averaging enable for this channel. If set the AVG_CNT and AVG_SHIFT settings are used for sampling the addressed pin(s)"]
     #[inline(always)]
-    pub fn avg_en(&mut self) -> AVG_EN_W {
-        AVG_EN_W { w: self }
+    pub fn avg_en(&mut self) -> AVG_EN_W<10> {
+        AVG_EN_W::new(self)
     }
     #[doc = "Bits 12:13 - Sample time select: select which of the 4 global sample times to use for this channel"]
     #[inline(always)]
-    pub fn sample_time_sel(&mut self) -> SAMPLE_TIME_SEL_W {
-        SAMPLE_TIME_SEL_W { w: self }
+    pub fn sample_time_sel(&mut self) -> SAMPLE_TIME_SEL_W<12> {
+        SAMPLE_TIME_SEL_W::new(self)
     }
     #[doc = "Bits 16:18 - Address of the neg pin to be sampled by this channel."]
     #[inline(always)]
-    pub fn neg_pin_addr(&mut self) -> NEG_PIN_ADDR_W {
-        NEG_PIN_ADDR_W { w: self }
+    pub fn neg_pin_addr(&mut self) -> NEG_PIN_ADDR_W<16> {
+        NEG_PIN_ADDR_W::new(self)
     }
     #[doc = "Bits 20:22 - Address of the neg port that contains the pin to be sampled by this channel."]
     #[inline(always)]
-    pub fn neg_port_addr(&mut self) -> NEG_PORT_ADDR_W {
-        NEG_PORT_ADDR_W { w: self }
+    pub fn neg_port_addr(&mut self) -> NEG_PORT_ADDR_W<20> {
+        NEG_PORT_ADDR_W::new(self)
     }
     #[doc = "Bit 24 - 1 - The NEG_PIN_ADDR and NEG_PORT_ADDR determines what drives the Vminus pin. This is a variation of differential mode with no even-odd pair limitation 0 - The NEG_SEL determines what drives the Vminus pin."]
     #[inline(always)]
-    pub fn neg_addr_en(&mut self) -> NEG_ADDR_EN_W {
-        NEG_ADDR_EN_W { w: self }
+    pub fn neg_addr_en(&mut self) -> NEG_ADDR_EN_W<24> {
+        NEG_ADDR_EN_W::new(self)
     }
-    #[doc = "Bit 31 - DSI data output enable for this channel. - 0: the conversion result for this channel is only stored in the channel data register and the corresponding CHAN_DATA_VALID bit is set. - 1: the conversion result for this channel is stored in the channel data register and the corresponding CHAN_DATA_VALID bit is set. The same data (same formating), together with the channel number, is sent out on the DSI communication channel for processing in UDBs."]
+    #[doc = "Bit 31 - DSI data output enable for this channel. - 0: the conversion result for this channel is only stored in the channel data register and the corresponding CHAN_DATA_VALID bit is set. - 1: the conversion result for this channel is stored in the channel data register and the corresponding CHAN_DATA_VALID bit is set. The same data (same formatting), together with the channel number, is sent out on the DSI communication channel for processing in UDBs."]
     #[inline(always)]
-    pub fn dsi_out_en(&mut self) -> DSI_OUT_EN_W {
-        DSI_OUT_EN_W { w: self }
+    pub fn dsi_out_en(&mut self) -> DSI_OUT_EN_W<31> {
+        DSI_OUT_EN_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Channel configuration register.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [chan_config](index.html) module"]
+pub struct CHAN_CONFIG_SPEC;
+impl crate::RegisterSpec for CHAN_CONFIG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [chan_config::R](R) reader structure"]
+impl crate::Readable for CHAN_CONFIG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [chan_config::W](W) writer structure"]
+impl crate::Writable for CHAN_CONFIG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CHAN_CONFIG[%s]
+to value 0"]
+impl crate::Resettable for CHAN_CONFIG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,118 +1,108 @@
-#[doc = "Reader of register SRSS_INTR_MASK"]
-pub type R = crate::R<u32, super::SRSS_INTR_MASK>;
-#[doc = "Writer for register SRSS_INTR_MASK"]
-pub type W = crate::W<u32, super::SRSS_INTR_MASK>;
-#[doc = "Register SRSS_INTR_MASK `reset()`'s with value 0"]
-impl crate::ResetValue for super::SRSS_INTR_MASK {
-    type Type = u32;
+#[doc = "Register `SRSS_INTR_MASK` reader"]
+pub struct R(crate::R<SRSS_INTR_MASK_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SRSS_INTR_MASK_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `WDT_MATCH`"]
-pub type WDT_MATCH_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `WDT_MATCH`"]
-pub struct WDT_MATCH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_MATCH_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<SRSS_INTR_MASK_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn from(reader: crate::R<SRSS_INTR_MASK_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `HVLVD1`"]
-pub type HVLVD1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `HVLVD1`"]
-pub struct HVLVD1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HVLVD1_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `SRSS_INTR_MASK` writer"]
+pub struct W(crate::W<SRSS_INTR_MASK_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SRSS_INTR_MASK_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `CLK_CAL`"]
-pub type CLK_CAL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `CLK_CAL`"]
-pub struct CLK_CAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLK_CAL_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
+impl From<crate::W<SRSS_INTR_MASK_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<SRSS_INTR_MASK_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `WDT_MATCH` reader - Mask for watchdog timer. Clearing this bit will not forward the interrupt to the CPU. It will not, however, disable the WDT reset generation on 2 missed interrupts. When WDT resets the chip, it also internally pends an interrupt that survives the reset. To prevent unintended ISR execution, clear SRSS_INTR.WDT_MATCH before setting this bit."]
+pub type WDT_MATCH_R = crate::BitReader<bool>;
+#[doc = "Field `WDT_MATCH` writer - Mask for watchdog timer. Clearing this bit will not forward the interrupt to the CPU. It will not, however, disable the WDT reset generation on 2 missed interrupts. When WDT resets the chip, it also internally pends an interrupt that survives the reset. To prevent unintended ISR execution, clear SRSS_INTR.WDT_MATCH before setting this bit."]
+pub type WDT_MATCH_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRSS_INTR_MASK_SPEC, bool, O>;
+#[doc = "Field `HVLVD1` reader - Mask for low voltage detector HVLVD1"]
+pub type HVLVD1_R = crate::BitReader<bool>;
+#[doc = "Field `HVLVD1` writer - Mask for low voltage detector HVLVD1"]
+pub type HVLVD1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRSS_INTR_MASK_SPEC, bool, O>;
+#[doc = "Field `CLK_CAL` reader - Mask for clock calibration done"]
+pub type CLK_CAL_R = crate::BitReader<bool>;
+#[doc = "Field `CLK_CAL` writer - Mask for clock calibration done"]
+pub type CLK_CAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SRSS_INTR_MASK_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 0 - Mask for watchdog timer. Clearing this bit will not forward the interrupt to the CPU. It will not, however, disable the WDT reset generation on 2 missed interrupts."]
+    #[doc = "Bit 0 - Mask for watchdog timer. Clearing this bit will not forward the interrupt to the CPU. It will not, however, disable the WDT reset generation on 2 missed interrupts. When WDT resets the chip, it also internally pends an interrupt that survives the reset. To prevent unintended ISR execution, clear SRSS_INTR.WDT_MATCH before setting this bit."]
     #[inline(always)]
     pub fn wdt_match(&self) -> WDT_MATCH_R {
-        WDT_MATCH_R::new((self.bits & 0x01) != 0)
+        WDT_MATCH_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Mask for low voltage detector HVLVD1"]
     #[inline(always)]
     pub fn hvlvd1(&self) -> HVLVD1_R {
-        HVLVD1_R::new(((self.bits >> 1) & 0x01) != 0)
+        HVLVD1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 5 - Mask for clock calibration done"]
     #[inline(always)]
     pub fn clk_cal(&self) -> CLK_CAL_R {
-        CLK_CAL_R::new(((self.bits >> 5) & 0x01) != 0)
+        CLK_CAL_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Mask for watchdog timer. Clearing this bit will not forward the interrupt to the CPU. It will not, however, disable the WDT reset generation on 2 missed interrupts."]
+    #[doc = "Bit 0 - Mask for watchdog timer. Clearing this bit will not forward the interrupt to the CPU. It will not, however, disable the WDT reset generation on 2 missed interrupts. When WDT resets the chip, it also internally pends an interrupt that survives the reset. To prevent unintended ISR execution, clear SRSS_INTR.WDT_MATCH before setting this bit."]
     #[inline(always)]
-    pub fn wdt_match(&mut self) -> WDT_MATCH_W {
-        WDT_MATCH_W { w: self }
+    pub fn wdt_match(&mut self) -> WDT_MATCH_W<0> {
+        WDT_MATCH_W::new(self)
     }
     #[doc = "Bit 1 - Mask for low voltage detector HVLVD1"]
     #[inline(always)]
-    pub fn hvlvd1(&mut self) -> HVLVD1_W {
-        HVLVD1_W { w: self }
+    pub fn hvlvd1(&mut self) -> HVLVD1_W<1> {
+        HVLVD1_W::new(self)
     }
     #[doc = "Bit 5 - Mask for clock calibration done"]
     #[inline(always)]
-    pub fn clk_cal(&mut self) -> CLK_CAL_W {
-        CLK_CAL_W { w: self }
+    pub fn clk_cal(&mut self) -> CLK_CAL_W<5> {
+        CLK_CAL_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "SRSS Interrupt Mask Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [srss_intr_mask](index.html) module"]
+pub struct SRSS_INTR_MASK_SPEC;
+impl crate::RegisterSpec for SRSS_INTR_MASK_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [srss_intr_mask::R](R) reader structure"]
+impl crate::Readable for SRSS_INTR_MASK_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [srss_intr_mask::W](W) writer structure"]
+impl crate::Writable for SRSS_INTR_MASK_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SRSS_INTR_MASK to value 0"]
+impl crate::Resettable for SRSS_INTR_MASK_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

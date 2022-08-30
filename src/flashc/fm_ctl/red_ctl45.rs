@@ -1,290 +1,125 @@
-#[doc = "Reader of register RED_CTL45"]
-pub type R = crate::R<u32, super::RED_CTL45>;
-#[doc = "Writer for register RED_CTL45"]
-pub type W = crate::W<u32, super::RED_CTL45>;
-#[doc = "Register RED_CTL45 `reset()`'s with value 0"]
-impl crate::ResetValue for super::RED_CTL45 {
-    type Type = u32;
+#[doc = "Register `RED_CTL45` reader"]
+pub struct R(crate::R<RED_CTL45_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RED_CTL45_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `DNU_45_1`"]
-pub type DNU_45_1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DNU_45_1`"]
-pub struct DNU_45_1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DNU_45_1_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<RED_CTL45_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn from(reader: crate::R<RED_CTL45_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `REG_ACT_HV`"]
-pub type REG_ACT_HV_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `REG_ACT_HV`"]
-pub struct REG_ACT_HV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> REG_ACT_HV_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `RED_CTL45` writer"]
+pub struct W(crate::W<RED_CTL45_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RED_CTL45_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `DNU_45_3`"]
-pub type DNU_45_3_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DNU_45_3`"]
-pub struct DNU_45_3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DNU_45_3_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `FDIV_TRIM_HV_0`"]
-pub type FDIV_TRIM_HV_0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `FDIV_TRIM_HV_0`"]
-pub struct FDIV_TRIM_HV_0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FDIV_TRIM_HV_0_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<RED_CTL45_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
+    fn from(writer: crate::W<RED_CTL45_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `DNU_45_5`"]
-pub type DNU_45_5_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DNU_45_5`"]
-pub struct DNU_45_5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DNU_45_5_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
-    }
-}
-#[doc = "Reader of field `FDIV_TRIM_HV_1`"]
-pub type FDIV_TRIM_HV_1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `FDIV_TRIM_HV_1`"]
-pub struct FDIV_TRIM_HV_1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FDIV_TRIM_HV_1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
-    }
-}
-#[doc = "Reader of field `DNU_45_6`"]
-pub type DNU_45_6_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DNU_45_6`"]
-pub struct DNU_45_6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DNU_45_6_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-        self.w
-    }
-}
-#[doc = "Reader of field `VLIM_TRIM_HV_0`"]
-pub type VLIM_TRIM_HV_0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `VLIM_TRIM_HV_0`"]
-pub struct VLIM_TRIM_HV_0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VLIM_TRIM_HV_0_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-        self.w
-    }
-}
-#[doc = "Reader of field `DNU_45_8`"]
-pub type DNU_45_8_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DNU_45_8`"]
-pub struct DNU_45_8_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DNU_45_8_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-        self.w
-    }
-}
-#[doc = "Reader of field `DNU_45_23_16`"]
-pub type DNU_45_23_16_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `DNU_45_23_16`"]
-pub struct DNU_45_23_16_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DNU_45_23_16_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | (((value as u32) & 0xff) << 16);
-        self.w
-    }
-}
+#[doc = "Field `DNU_45_1` reader - Not Used"]
+pub type DNU_45_1_R = crate::BitReader<bool>;
+#[doc = "Field `DNU_45_1` writer - Not Used"]
+pub type DNU_45_1_W<'a, const O: u8> = crate::BitWriter<'a, u32, RED_CTL45_SPEC, bool, O>;
+#[doc = "Field `REG_ACT_HV` reader - Forces the VBST regulator in active mode all the time"]
+pub type REG_ACT_HV_R = crate::BitReader<bool>;
+#[doc = "Field `REG_ACT_HV` writer - Forces the VBST regulator in active mode all the time"]
+pub type REG_ACT_HV_W<'a, const O: u8> = crate::BitWriter<'a, u32, RED_CTL45_SPEC, bool, O>;
+#[doc = "Field `DNU_45_3` reader - Not Used"]
+pub type DNU_45_3_R = crate::BitReader<bool>;
+#[doc = "Field `DNU_45_3` writer - Not Used"]
+pub type DNU_45_3_W<'a, const O: u8> = crate::BitWriter<'a, u32, RED_CTL45_SPEC, bool, O>;
+#[doc = "Field `FDIV_TRIM_HV_0` reader - '2b00' F = 1MHz see fdiv_trim_hv<1> value as well '2b01' F = 0.5MHz '2b10' F = 2MHz '2b11' F = 4Mhz"]
+pub type FDIV_TRIM_HV_0_R = crate::BitReader<bool>;
+#[doc = "Field `FDIV_TRIM_HV_0` writer - '2b00' F = 1MHz see fdiv_trim_hv<1> value as well '2b01' F = 0.5MHz '2b10' F = 2MHz '2b11' F = 4Mhz"]
+pub type FDIV_TRIM_HV_0_W<'a, const O: u8> = crate::BitWriter<'a, u32, RED_CTL45_SPEC, bool, O>;
+#[doc = "Field `DNU_45_5` reader - Not Used"]
+pub type DNU_45_5_R = crate::BitReader<bool>;
+#[doc = "Field `DNU_45_5` writer - Not Used"]
+pub type DNU_45_5_W<'a, const O: u8> = crate::BitWriter<'a, u32, RED_CTL45_SPEC, bool, O>;
+#[doc = "Field `FDIV_TRIM_HV_1` reader - '2b00' F = 1MHz see fdiv_trim_hv<0> value as well '2b01' F = 0.5MHz '2b10' F = 2MHz '2b11' F = 4Mhz"]
+pub type FDIV_TRIM_HV_1_R = crate::BitReader<bool>;
+#[doc = "Field `FDIV_TRIM_HV_1` writer - '2b00' F = 1MHz see fdiv_trim_hv<0> value as well '2b01' F = 0.5MHz '2b10' F = 2MHz '2b11' F = 4Mhz"]
+pub type FDIV_TRIM_HV_1_W<'a, const O: u8> = crate::BitWriter<'a, u32, RED_CTL45_SPEC, bool, O>;
+#[doc = "Field `DNU_45_6` reader - Not Used"]
+pub type DNU_45_6_R = crate::BitReader<bool>;
+#[doc = "Field `DNU_45_6` writer - Not Used"]
+pub type DNU_45_6_W<'a, const O: u8> = crate::BitWriter<'a, u32, RED_CTL45_SPEC, bool, O>;
+#[doc = "Field `VLIM_TRIM_HV_0` reader - '2b00' V2 = 650mV see vlim_trim_hv<1> value as well '2b01' V2 = 600mV '2b10' V2 = 750mV '2b11' V2 = 700mV"]
+pub type VLIM_TRIM_HV_0_R = crate::BitReader<bool>;
+#[doc = "Field `VLIM_TRIM_HV_0` writer - '2b00' V2 = 650mV see vlim_trim_hv<1> value as well '2b01' V2 = 600mV '2b10' V2 = 750mV '2b11' V2 = 700mV"]
+pub type VLIM_TRIM_HV_0_W<'a, const O: u8> = crate::BitWriter<'a, u32, RED_CTL45_SPEC, bool, O>;
+#[doc = "Field `DNU_45_8` reader - Not Used"]
+pub type DNU_45_8_R = crate::BitReader<bool>;
+#[doc = "Field `DNU_45_8` writer - Not Used"]
+pub type DNU_45_8_W<'a, const O: u8> = crate::BitWriter<'a, u32, RED_CTL45_SPEC, bool, O>;
+#[doc = "Field `DNU_45_23_16` reader - Not Used"]
+pub type DNU_45_23_16_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `DNU_45_23_16` writer - Not Used"]
+pub type DNU_45_23_16_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, RED_CTL45_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bit 0 - Not Used"]
     #[inline(always)]
     pub fn dnu_45_1(&self) -> DNU_45_1_R {
-        DNU_45_1_R::new((self.bits & 0x01) != 0)
+        DNU_45_1_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Forces the VBST regulator in active mode all the time"]
     #[inline(always)]
     pub fn reg_act_hv(&self) -> REG_ACT_HV_R {
-        REG_ACT_HV_R::new(((self.bits >> 1) & 0x01) != 0)
+        REG_ACT_HV_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Not Used"]
     #[inline(always)]
     pub fn dnu_45_3(&self) -> DNU_45_3_R {
-        DNU_45_3_R::new(((self.bits >> 2) & 0x01) != 0)
+        DNU_45_3_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - '2b00' F = 1MHz see fdiv_trim_hv<1> value as well '2b01' F = 0.5MHz '2b10' F = 2MHz '2b11' F = 4Mhz"]
     #[inline(always)]
     pub fn fdiv_trim_hv_0(&self) -> FDIV_TRIM_HV_0_R {
-        FDIV_TRIM_HV_0_R::new(((self.bits >> 3) & 0x01) != 0)
+        FDIV_TRIM_HV_0_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Not Used"]
     #[inline(always)]
     pub fn dnu_45_5(&self) -> DNU_45_5_R {
-        DNU_45_5_R::new(((self.bits >> 4) & 0x01) != 0)
+        DNU_45_5_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - '2b00' F = 1MHz see fdiv_trim_hv<0> value as well '2b01' F = 0.5MHz '2b10' F = 2MHz '2b11' F = 4Mhz"]
     #[inline(always)]
     pub fn fdiv_trim_hv_1(&self) -> FDIV_TRIM_HV_1_R {
-        FDIV_TRIM_HV_1_R::new(((self.bits >> 5) & 0x01) != 0)
+        FDIV_TRIM_HV_1_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Not Used"]
     #[inline(always)]
     pub fn dnu_45_6(&self) -> DNU_45_6_R {
-        DNU_45_6_R::new(((self.bits >> 6) & 0x01) != 0)
+        DNU_45_6_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - '2b00' V2 = 650mV see vlim_trim_hv<1> value as well '2b01' V2 = 600mV '2b10' V2 = 750mV '2b11' V2 = 700mV"]
     #[inline(always)]
     pub fn vlim_trim_hv_0(&self) -> VLIM_TRIM_HV_0_R {
-        VLIM_TRIM_HV_0_R::new(((self.bits >> 7) & 0x01) != 0)
+        VLIM_TRIM_HV_0_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Not Used"]
     #[inline(always)]
     pub fn dnu_45_8(&self) -> DNU_45_8_R {
-        DNU_45_8_R::new(((self.bits >> 8) & 0x01) != 0)
+        DNU_45_8_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bits 16:23 - Not Used"]
     #[inline(always)]
@@ -295,52 +130,78 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Not Used"]
     #[inline(always)]
-    pub fn dnu_45_1(&mut self) -> DNU_45_1_W {
-        DNU_45_1_W { w: self }
+    pub fn dnu_45_1(&mut self) -> DNU_45_1_W<0> {
+        DNU_45_1_W::new(self)
     }
     #[doc = "Bit 1 - Forces the VBST regulator in active mode all the time"]
     #[inline(always)]
-    pub fn reg_act_hv(&mut self) -> REG_ACT_HV_W {
-        REG_ACT_HV_W { w: self }
+    pub fn reg_act_hv(&mut self) -> REG_ACT_HV_W<1> {
+        REG_ACT_HV_W::new(self)
     }
     #[doc = "Bit 2 - Not Used"]
     #[inline(always)]
-    pub fn dnu_45_3(&mut self) -> DNU_45_3_W {
-        DNU_45_3_W { w: self }
+    pub fn dnu_45_3(&mut self) -> DNU_45_3_W<2> {
+        DNU_45_3_W::new(self)
     }
     #[doc = "Bit 3 - '2b00' F = 1MHz see fdiv_trim_hv<1> value as well '2b01' F = 0.5MHz '2b10' F = 2MHz '2b11' F = 4Mhz"]
     #[inline(always)]
-    pub fn fdiv_trim_hv_0(&mut self) -> FDIV_TRIM_HV_0_W {
-        FDIV_TRIM_HV_0_W { w: self }
+    pub fn fdiv_trim_hv_0(&mut self) -> FDIV_TRIM_HV_0_W<3> {
+        FDIV_TRIM_HV_0_W::new(self)
     }
     #[doc = "Bit 4 - Not Used"]
     #[inline(always)]
-    pub fn dnu_45_5(&mut self) -> DNU_45_5_W {
-        DNU_45_5_W { w: self }
+    pub fn dnu_45_5(&mut self) -> DNU_45_5_W<4> {
+        DNU_45_5_W::new(self)
     }
     #[doc = "Bit 5 - '2b00' F = 1MHz see fdiv_trim_hv<0> value as well '2b01' F = 0.5MHz '2b10' F = 2MHz '2b11' F = 4Mhz"]
     #[inline(always)]
-    pub fn fdiv_trim_hv_1(&mut self) -> FDIV_TRIM_HV_1_W {
-        FDIV_TRIM_HV_1_W { w: self }
+    pub fn fdiv_trim_hv_1(&mut self) -> FDIV_TRIM_HV_1_W<5> {
+        FDIV_TRIM_HV_1_W::new(self)
     }
     #[doc = "Bit 6 - Not Used"]
     #[inline(always)]
-    pub fn dnu_45_6(&mut self) -> DNU_45_6_W {
-        DNU_45_6_W { w: self }
+    pub fn dnu_45_6(&mut self) -> DNU_45_6_W<6> {
+        DNU_45_6_W::new(self)
     }
     #[doc = "Bit 7 - '2b00' V2 = 650mV see vlim_trim_hv<1> value as well '2b01' V2 = 600mV '2b10' V2 = 750mV '2b11' V2 = 700mV"]
     #[inline(always)]
-    pub fn vlim_trim_hv_0(&mut self) -> VLIM_TRIM_HV_0_W {
-        VLIM_TRIM_HV_0_W { w: self }
+    pub fn vlim_trim_hv_0(&mut self) -> VLIM_TRIM_HV_0_W<7> {
+        VLIM_TRIM_HV_0_W::new(self)
     }
     #[doc = "Bit 8 - Not Used"]
     #[inline(always)]
-    pub fn dnu_45_8(&mut self) -> DNU_45_8_W {
-        DNU_45_8_W { w: self }
+    pub fn dnu_45_8(&mut self) -> DNU_45_8_W<8> {
+        DNU_45_8_W::new(self)
     }
     #[doc = "Bits 16:23 - Not Used"]
     #[inline(always)]
-    pub fn dnu_45_23_16(&mut self) -> DNU_45_23_16_W {
-        DNU_45_23_16_W { w: self }
+    pub fn dnu_45_23_16(&mut self) -> DNU_45_23_16_W<16> {
+        DNU_45_23_16_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Redundancy Controll normal sectors 4,5\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [red_ctl45](index.html) module"]
+pub struct RED_CTL45_SPEC;
+impl crate::RegisterSpec for RED_CTL45_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [red_ctl45::R](R) reader structure"]
+impl crate::Readable for RED_CTL45_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [red_ctl45::W](W) writer structure"]
+impl crate::Writable for RED_CTL45_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets RED_CTL45 to value 0"]
+impl crate::Resettable for RED_CTL45_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

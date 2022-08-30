@@ -1,404 +1,255 @@
-#[doc = "Reader of register I2C_CTRL"]
-pub type R = crate::R<u32, super::I2C_CTRL>;
-#[doc = "Writer for register I2C_CTRL"]
-pub type W = crate::W<u32, super::I2C_CTRL>;
-#[doc = "Register I2C_CTRL `reset()`'s with value 0xfb88"]
-impl crate::ResetValue for super::I2C_CTRL {
-    type Type = u32;
+#[doc = "Register `I2C_CTRL` reader"]
+pub struct R(crate::R<I2C_CTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<I2C_CTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0xfb88
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `HIGH_PHASE_OVS`"]
-pub type HIGH_PHASE_OVS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `HIGH_PHASE_OVS`"]
-pub struct HIGH_PHASE_OVS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HIGH_PHASE_OVS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<I2C_CTRL_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
-        self.w
+    fn from(reader: crate::R<I2C_CTRL_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `LOW_PHASE_OVS`"]
-pub type LOW_PHASE_OVS_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `LOW_PHASE_OVS`"]
-pub struct LOW_PHASE_OVS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOW_PHASE_OVS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+#[doc = "Register `I2C_CTRL` writer"]
+pub struct W(crate::W<I2C_CTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<I2C_CTRL_SPEC>;
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | (((value as u32) & 0x0f) << 4);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `M_READY_DATA_ACK`"]
-pub type M_READY_DATA_ACK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `M_READY_DATA_ACK`"]
-pub struct M_READY_DATA_ACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> M_READY_DATA_ACK_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `M_NOT_READY_DATA_NACK`"]
-pub type M_NOT_READY_DATA_NACK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `M_NOT_READY_DATA_NACK`"]
-pub struct M_NOT_READY_DATA_NACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> M_NOT_READY_DATA_NACK_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<I2C_CTRL_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-        self.w
+    fn from(writer: crate::W<I2C_CTRL_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `S_GENERAL_IGNORE`"]
-pub type S_GENERAL_IGNORE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `S_GENERAL_IGNORE`"]
-pub struct S_GENERAL_IGNORE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S_GENERAL_IGNORE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-        self.w
-    }
-}
-#[doc = "Reader of field `S_READY_ADDR_ACK`"]
-pub type S_READY_ADDR_ACK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `S_READY_ADDR_ACK`"]
-pub struct S_READY_ADDR_ACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S_READY_ADDR_ACK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-        self.w
-    }
-}
-#[doc = "Reader of field `S_READY_DATA_ACK`"]
-pub type S_READY_DATA_ACK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `S_READY_DATA_ACK`"]
-pub struct S_READY_DATA_ACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S_READY_DATA_ACK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | (((value as u32) & 0x01) << 13);
-        self.w
-    }
-}
-#[doc = "Reader of field `S_NOT_READY_ADDR_NACK`"]
-pub type S_NOT_READY_ADDR_NACK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `S_NOT_READY_ADDR_NACK`"]
-pub struct S_NOT_READY_ADDR_NACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S_NOT_READY_ADDR_NACK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
-        self.w
-    }
-}
-#[doc = "Reader of field `S_NOT_READY_DATA_NACK`"]
-pub type S_NOT_READY_DATA_NACK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `S_NOT_READY_DATA_NACK`"]
-pub struct S_NOT_READY_DATA_NACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> S_NOT_READY_DATA_NACK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
-        self.w
-    }
-}
-#[doc = "Reader of field `LOOPBACK`"]
-pub type LOOPBACK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LOOPBACK`"]
-pub struct LOOPBACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOOPBACK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-        self.w
-    }
-}
-#[doc = "Reader of field `SLAVE_MODE`"]
-pub type SLAVE_MODE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SLAVE_MODE`"]
-pub struct SLAVE_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLAVE_MODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | (((value as u32) & 0x01) << 30);
-        self.w
-    }
-}
-#[doc = "Reader of field `MASTER_MODE`"]
-pub type MASTER_MODE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `MASTER_MODE`"]
-pub struct MASTER_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MASTER_MODE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
-        self.w
-    }
-}
+#[doc = "Field `HIGH_PHASE_OVS` reader - Serial I2C interface high phase oversampling factor. (HIGH_PHASE_OVS + 1) * clk_scb constitutes the high phase of a bit period. The valid range is \\[5, 15\\]
+with input signal median filtering and \\[4, 15\\]
+without input signal median filtering. The field is only used in master mode. In slave mode, the field is NOT used. See architecture TRM for information on slave data rate requirments."]
+pub type HIGH_PHASE_OVS_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `HIGH_PHASE_OVS` writer - Serial I2C interface high phase oversampling factor. (HIGH_PHASE_OVS + 1) * clk_scb constitutes the high phase of a bit period. The valid range is \\[5, 15\\]
+with input signal median filtering and \\[4, 15\\]
+without input signal median filtering. The field is only used in master mode. In slave mode, the field is NOT used. See architecture TRM for information on slave data rate requirments."]
+pub type HIGH_PHASE_OVS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, I2C_CTRL_SPEC, u8, u8, 4, O>;
+#[doc = "Field `LOW_PHASE_OVS` reader - Serial I2C interface low phase oversampling factor. (LOW_PHASE_OVS + 1) * clk_scb constitutes the low phase of a bit period. The valid range is \\[7, 15\\]
+with input signal median filtering and \\[6, 15\\]
+without input signal median filtering. The field is only used in master mode. In slave mode, the field is NOT used. See architecture TRM for information on slave data rate requirments."]
+pub type LOW_PHASE_OVS_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `LOW_PHASE_OVS` writer - Serial I2C interface low phase oversampling factor. (LOW_PHASE_OVS + 1) * clk_scb constitutes the low phase of a bit period. The valid range is \\[7, 15\\]
+with input signal median filtering and \\[6, 15\\]
+without input signal median filtering. The field is only used in master mode. In slave mode, the field is NOT used. See architecture TRM for information on slave data rate requirments."]
+pub type LOW_PHASE_OVS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, I2C_CTRL_SPEC, u8, u8, 4, O>;
+#[doc = "Field `M_READY_DATA_ACK` reader - When '1', a received data element by the master is immediately ACK'd when the RX FIFO is not full. When '0' the CPU is responsible for ACK/NACKing the received data frame using I2C_M_CMD.M_ACK or I2C_M_CMD.M_NACK"]
+pub type M_READY_DATA_ACK_R = crate::BitReader<bool>;
+#[doc = "Field `M_READY_DATA_ACK` writer - When '1', a received data element by the master is immediately ACK'd when the RX FIFO is not full. When '0' the CPU is responsible for ACK/NACKing the received data frame using I2C_M_CMD.M_ACK or I2C_M_CMD.M_NACK"]
+pub type M_READY_DATA_ACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2C_CTRL_SPEC, bool, O>;
+#[doc = "Field `M_NOT_READY_DATA_NACK` reader - When '1', a received data element by the master is immediately NACK'd when the RX FIFO is full. When '0', clock stretching is used instead (till the RX FIFO is no longer full)."]
+pub type M_NOT_READY_DATA_NACK_R = crate::BitReader<bool>;
+#[doc = "Field `M_NOT_READY_DATA_NACK` writer - When '1', a received data element by the master is immediately NACK'd when the RX FIFO is full. When '0', clock stretching is used instead (till the RX FIFO is no longer full)."]
+pub type M_NOT_READY_DATA_NACK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, I2C_CTRL_SPEC, bool, O>;
+#[doc = "Field `S_GENERAL_IGNORE` reader - When '1', a received general call slave address is immediately NACK'd (no ACK or clock stretching) and treated as a non matching slave address. This is useful for slaves that do not need any data supplied within the general call structure. When '0' the general call address is accepted and follows S_READY_ADDR_ACK and S_NOT_READY_ADDR_NACK"]
+pub type S_GENERAL_IGNORE_R = crate::BitReader<bool>;
+#[doc = "Field `S_GENERAL_IGNORE` writer - When '1', a received general call slave address is immediately NACK'd (no ACK or clock stretching) and treated as a non matching slave address. This is useful for slaves that do not need any data supplied within the general call structure. When '0' the general call address is accepted and follows S_READY_ADDR_ACK and S_NOT_READY_ADDR_NACK"]
+pub type S_GENERAL_IGNORE_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2C_CTRL_SPEC, bool, O>;
+#[doc = "Field `S_READY_ADDR_ACK` reader - When '1', a received (matching) slave address is immediately ACK'd when the RX FIFO is not full. In EZ and CMD_RESP mode, this field should be set to '1'. When '0' the address must be ACK/NACK'd by the CPU using I2C_S_CMD.S_ACK or I2C_S_CMD.S_NACK"]
+pub type S_READY_ADDR_ACK_R = crate::BitReader<bool>;
+#[doc = "Field `S_READY_ADDR_ACK` writer - When '1', a received (matching) slave address is immediately ACK'd when the RX FIFO is not full. In EZ and CMD_RESP mode, this field should be set to '1'. When '0' the address must be ACK/NACK'd by the CPU using I2C_S_CMD.S_ACK or I2C_S_CMD.S_NACK"]
+pub type S_READY_ADDR_ACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2C_CTRL_SPEC, bool, O>;
+#[doc = "Field `S_READY_DATA_ACK` reader - When '1', a received data element by the slave is immediately ACK'd when the RX FIFO is not full. In EZ and CMD_RESP mode, this field should be set to '1'. When '0' the data must be ACK/NACK'd by the CPU using I2C_S_CMD.S_ACK or I2C_S_CMD.S_NACK"]
+pub type S_READY_DATA_ACK_R = crate::BitReader<bool>;
+#[doc = "Field `S_READY_DATA_ACK` writer - When '1', a received data element by the slave is immediately ACK'd when the RX FIFO is not full. In EZ and CMD_RESP mode, this field should be set to '1'. When '0' the data must be ACK/NACK'd by the CPU using I2C_S_CMD.S_ACK or I2C_S_CMD.S_NACK"]
+pub type S_READY_DATA_ACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2C_CTRL_SPEC, bool, O>;
+#[doc = "Field `S_NOT_READY_ADDR_NACK` reader - Only used for FIFO mode, NOT EZ or CMD_RESP mode. Functionality is as follows: - 1: In Active/Sleep mode a received (matching) slave address is immediately NACK'd when the RX FIFO is full In DeepSleep power mode when EC_AM = '1' and EC_OP = '0' clk_scb is not avaliable, so the incoming address will be NACK'd until the clock is avaliable. Once clk_scb is avaliable the address ACK will follow S_READY_ADDR_ACK - 0: in Active/Sleep mode clock stretching is performed when the RX FIFO is full, the strech is released when the RX FIFO is no longer full. In DeepSleep power mode when EC_AM = '1' and EC_OP = '0' clk_scb is not avaliable, so the clocked will be streched on an incoming address until clk_scb is avaliable. After clk_scb is avalaible the address ACK will follow S_READY_ADDR_ACK"]
+pub type S_NOT_READY_ADDR_NACK_R = crate::BitReader<bool>;
+#[doc = "Field `S_NOT_READY_ADDR_NACK` writer - Only used for FIFO mode, NOT EZ or CMD_RESP mode. Functionality is as follows: - 1: In Active/Sleep mode a received (matching) slave address is immediately NACK'd when the RX FIFO is full In DeepSleep power mode when EC_AM = '1' and EC_OP = '0' clk_scb is not avaliable, so the incoming address will be NACK'd until the clock is avaliable. Once clk_scb is avaliable the address ACK will follow S_READY_ADDR_ACK - 0: in Active/Sleep mode clock stretching is performed when the RX FIFO is full, the strech is released when the RX FIFO is no longer full. In DeepSleep power mode when EC_AM = '1' and EC_OP = '0' clk_scb is not avaliable, so the clocked will be streched on an incoming address until clk_scb is avaliable. After clk_scb is avalaible the address ACK will follow S_READY_ADDR_ACK"]
+pub type S_NOT_READY_ADDR_NACK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, I2C_CTRL_SPEC, bool, O>;
+#[doc = "Field `S_NOT_READY_DATA_NACK` reader - Only used for FIFO mode, NOT EZ or CMD_RESP mode. Functionality is as follows: - 1: a received data element byte the slave is immediately NACK'd when the receiver FIFO is full. - 0: clock stretching is performed (till the receiver FIFO is no longer full)."]
+pub type S_NOT_READY_DATA_NACK_R = crate::BitReader<bool>;
+#[doc = "Field `S_NOT_READY_DATA_NACK` writer - Only used for FIFO mode, NOT EZ or CMD_RESP mode. Functionality is as follows: - 1: a received data element byte the slave is immediately NACK'd when the receiver FIFO is full. - 0: clock stretching is performed (till the receiver FIFO is no longer full)."]
+pub type S_NOT_READY_DATA_NACK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, I2C_CTRL_SPEC, bool, O>;
+#[doc = "Field `LOOPBACK` reader - Local loopback control (does NOT affect the information on the pins). Only applicable in master/slave mode. When '0', no loopback When '1', loopback is enabled internally in the peripheral, and as a result unaffected by other I2C devices. This allows a SCB I2C peripheral to address itself."]
+pub type LOOPBACK_R = crate::BitReader<bool>;
+#[doc = "Field `LOOPBACK` writer - Local loopback control (does NOT affect the information on the pins). Only applicable in master/slave mode. When '0', no loopback When '1', loopback is enabled internally in the peripheral, and as a result unaffected by other I2C devices. This allows a SCB I2C peripheral to address itself."]
+pub type LOOPBACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2C_CTRL_SPEC, bool, O>;
+#[doc = "Field `SLAVE_MODE` reader - N/A"]
+pub type SLAVE_MODE_R = crate::BitReader<bool>;
+#[doc = "Field `SLAVE_MODE` writer - N/A"]
+pub type SLAVE_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2C_CTRL_SPEC, bool, O>;
+#[doc = "Field `MASTER_MODE` reader - Master mode enabled ('1') or not ('0'). Note that both master and slave modes can be enabled at the same time. This allows the SCB to address itself."]
+pub type MASTER_MODE_R = crate::BitReader<bool>;
+#[doc = "Field `MASTER_MODE` writer - Master mode enabled ('1') or not ('0'). Note that both master and slave modes can be enabled at the same time. This allows the SCB to address itself."]
+pub type MASTER_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2C_CTRL_SPEC, bool, O>;
 impl R {
-    #[doc = "Bits 0:3 - Serial I2C interface high phase oversampling factor. HIGH_PHASE_OVS + 1 SCB clock periods constitute the high phase of a bit period. The valid range is \\[5, 15\\] with input signal median filtering and \\[4, 15\\] without input signal median filtering. The field is only used in master mode. In slave mode, the field is NOT used. However, there is a frequency requirement for the SCB clock wrt. the regular interface (IF) high time to guarantee functional correct behavior. With input signal median filtering, the IF high time should be >= 6 SCB clock cycles and <= 16 SCB clock cycles. Without input signal median filtering, the IF high time should be >= 5 SCB clock cycles and <= 16 SCB clock cycles."]
+    #[doc = "Bits 0:3 - Serial I2C interface high phase oversampling factor. (HIGH_PHASE_OVS + 1) * clk_scb constitutes the high phase of a bit period. The valid range is \\[5, 15\\]
+with input signal median filtering and \\[4, 15\\]
+without input signal median filtering. The field is only used in master mode. In slave mode, the field is NOT used. See architecture TRM for information on slave data rate requirments."]
     #[inline(always)]
     pub fn high_phase_ovs(&self) -> HIGH_PHASE_OVS_R {
         HIGH_PHASE_OVS_R::new((self.bits & 0x0f) as u8)
     }
-    #[doc = "Bits 4:7 - Serial I2C interface low phase oversampling factor. LOW_PHASE_OVS + 1 SCB clock periods constitute the low phase of a bit period. The valid range is \\[7, 15\\] with input signal median filtering and \\[6, 15\\] without input signal median filtering. The field is only used in master mode. In slave mode, the field is NOT used. However, there is a frequency requirement for the SCB clock wrt. the regular (no stretching) interface (IF) low time to guarantee functionally correct behavior. With input signal median filtering, the IF low time should be >= 8 SCB clock cycles and <= 16 IP clock cycles. Without input signal median filtering, the IF low time should be >= 7 SCB clock cycles and <= 16 SCB clock cycles."]
+    #[doc = "Bits 4:7 - Serial I2C interface low phase oversampling factor. (LOW_PHASE_OVS + 1) * clk_scb constitutes the low phase of a bit period. The valid range is \\[7, 15\\]
+with input signal median filtering and \\[6, 15\\]
+without input signal median filtering. The field is only used in master mode. In slave mode, the field is NOT used. See architecture TRM for information on slave data rate requirments."]
     #[inline(always)]
     pub fn low_phase_ovs(&self) -> LOW_PHASE_OVS_R {
         LOW_PHASE_OVS_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    #[doc = "Bit 8 - N/A"]
+    #[doc = "Bit 8 - When '1', a received data element by the master is immediately ACK'd when the RX FIFO is not full. When '0' the CPU is responsible for ACK/NACKing the received data frame using I2C_M_CMD.M_ACK or I2C_M_CMD.M_NACK"]
     #[inline(always)]
     pub fn m_ready_data_ack(&self) -> M_READY_DATA_ACK_R {
-        M_READY_DATA_ACK_R::new(((self.bits >> 8) & 0x01) != 0)
+        M_READY_DATA_ACK_R::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 9 - N/A"]
+    #[doc = "Bit 9 - When '1', a received data element by the master is immediately NACK'd when the RX FIFO is full. When '0', clock stretching is used instead (till the RX FIFO is no longer full)."]
     #[inline(always)]
     pub fn m_not_ready_data_nack(&self) -> M_NOT_READY_DATA_NACK_R {
-        M_NOT_READY_DATA_NACK_R::new(((self.bits >> 9) & 0x01) != 0)
+        M_NOT_READY_DATA_NACK_R::new(((self.bits >> 9) & 1) != 0)
     }
-    #[doc = "Bit 11 - N/A"]
+    #[doc = "Bit 11 - When '1', a received general call slave address is immediately NACK'd (no ACK or clock stretching) and treated as a non matching slave address. This is useful for slaves that do not need any data supplied within the general call structure. When '0' the general call address is accepted and follows S_READY_ADDR_ACK and S_NOT_READY_ADDR_NACK"]
     #[inline(always)]
     pub fn s_general_ignore(&self) -> S_GENERAL_IGNORE_R {
-        S_GENERAL_IGNORE_R::new(((self.bits >> 11) & 0x01) != 0)
+        S_GENERAL_IGNORE_R::new(((self.bits >> 11) & 1) != 0)
     }
-    #[doc = "Bit 12 - N/A"]
+    #[doc = "Bit 12 - When '1', a received (matching) slave address is immediately ACK'd when the RX FIFO is not full. In EZ and CMD_RESP mode, this field should be set to '1'. When '0' the address must be ACK/NACK'd by the CPU using I2C_S_CMD.S_ACK or I2C_S_CMD.S_NACK"]
     #[inline(always)]
     pub fn s_ready_addr_ack(&self) -> S_READY_ADDR_ACK_R {
-        S_READY_ADDR_ACK_R::new(((self.bits >> 12) & 0x01) != 0)
+        S_READY_ADDR_ACK_R::new(((self.bits >> 12) & 1) != 0)
     }
-    #[doc = "Bit 13 - N/A"]
+    #[doc = "Bit 13 - When '1', a received data element by the slave is immediately ACK'd when the RX FIFO is not full. In EZ and CMD_RESP mode, this field should be set to '1'. When '0' the data must be ACK/NACK'd by the CPU using I2C_S_CMD.S_ACK or I2C_S_CMD.S_NACK"]
     #[inline(always)]
     pub fn s_ready_data_ack(&self) -> S_READY_DATA_ACK_R {
-        S_READY_DATA_ACK_R::new(((self.bits >> 13) & 0x01) != 0)
+        S_READY_DATA_ACK_R::new(((self.bits >> 13) & 1) != 0)
     }
-    #[doc = "Bit 14 - This field is used during an address match or general call address in internally clocked mode Only used when: - EC_AM_MODE is '0', EC_OP_MODE is '0', S_GENERAL_IGNORE is '0\\] and non EZ mode. Functionality is as follows: - 1: a received (matching) slave address is immediately NACK'd when the receiver FIFO is full. - 0: clock stretching is performed (till the receiver FIFO is no longer full). For externally clocked logic (EC_AM is '1') on an address match or general call address (and S_GENERAL_IGNORE is '0'). Only used when (NOT used when EC_AM is '1' and EC_OP is '1' and address match and EZ mode): - EC_AM is '1' and EC_OP is '0'. - EC_AM is '1' and general call address match. - EC_AM is '1' and non EZ mode. Functionality is as follows: - 1: a received (matching or general) slave address is always immediately NACK'd. There are two possibilities: 1). the SCB clock is available (in Active system power mode) and it handles the rest of the current transfer. In this case the I2C master will not observe the NACK. 2).SCB clock is not present (in DeepSleep system power mode). In this case the I2C master will observe the NACK and may retry the transfer in the future (which gives the internally clocked logic the time to wake up from DeepSleep system power mode). - 0: clock stretching is performed (till the SCB clock is available). The logic will handle the ongoing transfer as soon as the clock is enabled."]
+    #[doc = "Bit 14 - Only used for FIFO mode, NOT EZ or CMD_RESP mode. Functionality is as follows: - 1: In Active/Sleep mode a received (matching) slave address is immediately NACK'd when the RX FIFO is full In DeepSleep power mode when EC_AM = '1' and EC_OP = '0' clk_scb is not avaliable, so the incoming address will be NACK'd until the clock is avaliable. Once clk_scb is avaliable the address ACK will follow S_READY_ADDR_ACK - 0: in Active/Sleep mode clock stretching is performed when the RX FIFO is full, the strech is released when the RX FIFO is no longer full. In DeepSleep power mode when EC_AM = '1' and EC_OP = '0' clk_scb is not avaliable, so the clocked will be streched on an incoming address until clk_scb is avaliable. After clk_scb is avalaible the address ACK will follow S_READY_ADDR_ACK"]
     #[inline(always)]
     pub fn s_not_ready_addr_nack(&self) -> S_NOT_READY_ADDR_NACK_R {
-        S_NOT_READY_ADDR_NACK_R::new(((self.bits >> 14) & 0x01) != 0)
+        S_NOT_READY_ADDR_NACK_R::new(((self.bits >> 14) & 1) != 0)
     }
-    #[doc = "Bit 15 - Only used when: - non EZ mode Functionality is as follows: - 1: a received data element byte the slave is immediately NACK'd when the receiver FIFO is full. - 0: clock stretching is performed (till the receiver FIFO is no longer full)."]
+    #[doc = "Bit 15 - Only used for FIFO mode, NOT EZ or CMD_RESP mode. Functionality is as follows: - 1: a received data element byte the slave is immediately NACK'd when the receiver FIFO is full. - 0: clock stretching is performed (till the receiver FIFO is no longer full)."]
     #[inline(always)]
     pub fn s_not_ready_data_nack(&self) -> S_NOT_READY_DATA_NACK_R {
-        S_NOT_READY_DATA_NACK_R::new(((self.bits >> 15) & 0x01) != 0)
+        S_NOT_READY_DATA_NACK_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 16 - Local loopback control (does NOT affect the information on the pins). Only applicable in master/slave mode. When '0', no loopback When '1', loopback is enabled internally in the peripheral, and as a result unaffected by other I2C devices. This allows a SCB I2C peripheral to address itself."]
     #[inline(always)]
     pub fn loopback(&self) -> LOOPBACK_R {
-        LOOPBACK_R::new(((self.bits >> 16) & 0x01) != 0)
+        LOOPBACK_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 30 - N/A"]
     #[inline(always)]
     pub fn slave_mode(&self) -> SLAVE_MODE_R {
-        SLAVE_MODE_R::new(((self.bits >> 30) & 0x01) != 0)
+        SLAVE_MODE_R::new(((self.bits >> 30) & 1) != 0)
     }
-    #[doc = "Bit 31 - N/A"]
+    #[doc = "Bit 31 - Master mode enabled ('1') or not ('0'). Note that both master and slave modes can be enabled at the same time. This allows the SCB to address itself."]
     #[inline(always)]
     pub fn master_mode(&self) -> MASTER_MODE_R {
-        MASTER_MODE_R::new(((self.bits >> 31) & 0x01) != 0)
+        MASTER_MODE_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - Serial I2C interface high phase oversampling factor. HIGH_PHASE_OVS + 1 SCB clock periods constitute the high phase of a bit period. The valid range is \\[5, 15\\] with input signal median filtering and \\[4, 15\\] without input signal median filtering. The field is only used in master mode. In slave mode, the field is NOT used. However, there is a frequency requirement for the SCB clock wrt. the regular interface (IF) high time to guarantee functional correct behavior. With input signal median filtering, the IF high time should be >= 6 SCB clock cycles and <= 16 SCB clock cycles. Without input signal median filtering, the IF high time should be >= 5 SCB clock cycles and <= 16 SCB clock cycles."]
+    #[doc = "Bits 0:3 - Serial I2C interface high phase oversampling factor. (HIGH_PHASE_OVS + 1) * clk_scb constitutes the high phase of a bit period. The valid range is \\[5, 15\\]
+with input signal median filtering and \\[4, 15\\]
+without input signal median filtering. The field is only used in master mode. In slave mode, the field is NOT used. See architecture TRM for information on slave data rate requirments."]
     #[inline(always)]
-    pub fn high_phase_ovs(&mut self) -> HIGH_PHASE_OVS_W {
-        HIGH_PHASE_OVS_W { w: self }
+    pub fn high_phase_ovs(&mut self) -> HIGH_PHASE_OVS_W<0> {
+        HIGH_PHASE_OVS_W::new(self)
     }
-    #[doc = "Bits 4:7 - Serial I2C interface low phase oversampling factor. LOW_PHASE_OVS + 1 SCB clock periods constitute the low phase of a bit period. The valid range is \\[7, 15\\] with input signal median filtering and \\[6, 15\\] without input signal median filtering. The field is only used in master mode. In slave mode, the field is NOT used. However, there is a frequency requirement for the SCB clock wrt. the regular (no stretching) interface (IF) low time to guarantee functionally correct behavior. With input signal median filtering, the IF low time should be >= 8 SCB clock cycles and <= 16 IP clock cycles. Without input signal median filtering, the IF low time should be >= 7 SCB clock cycles and <= 16 SCB clock cycles."]
+    #[doc = "Bits 4:7 - Serial I2C interface low phase oversampling factor. (LOW_PHASE_OVS + 1) * clk_scb constitutes the low phase of a bit period. The valid range is \\[7, 15\\]
+with input signal median filtering and \\[6, 15\\]
+without input signal median filtering. The field is only used in master mode. In slave mode, the field is NOT used. See architecture TRM for information on slave data rate requirments."]
     #[inline(always)]
-    pub fn low_phase_ovs(&mut self) -> LOW_PHASE_OVS_W {
-        LOW_PHASE_OVS_W { w: self }
+    pub fn low_phase_ovs(&mut self) -> LOW_PHASE_OVS_W<4> {
+        LOW_PHASE_OVS_W::new(self)
     }
-    #[doc = "Bit 8 - N/A"]
+    #[doc = "Bit 8 - When '1', a received data element by the master is immediately ACK'd when the RX FIFO is not full. When '0' the CPU is responsible for ACK/NACKing the received data frame using I2C_M_CMD.M_ACK or I2C_M_CMD.M_NACK"]
     #[inline(always)]
-    pub fn m_ready_data_ack(&mut self) -> M_READY_DATA_ACK_W {
-        M_READY_DATA_ACK_W { w: self }
+    pub fn m_ready_data_ack(&mut self) -> M_READY_DATA_ACK_W<8> {
+        M_READY_DATA_ACK_W::new(self)
     }
-    #[doc = "Bit 9 - N/A"]
+    #[doc = "Bit 9 - When '1', a received data element by the master is immediately NACK'd when the RX FIFO is full. When '0', clock stretching is used instead (till the RX FIFO is no longer full)."]
     #[inline(always)]
-    pub fn m_not_ready_data_nack(&mut self) -> M_NOT_READY_DATA_NACK_W {
-        M_NOT_READY_DATA_NACK_W { w: self }
+    pub fn m_not_ready_data_nack(&mut self) -> M_NOT_READY_DATA_NACK_W<9> {
+        M_NOT_READY_DATA_NACK_W::new(self)
     }
-    #[doc = "Bit 11 - N/A"]
+    #[doc = "Bit 11 - When '1', a received general call slave address is immediately NACK'd (no ACK or clock stretching) and treated as a non matching slave address. This is useful for slaves that do not need any data supplied within the general call structure. When '0' the general call address is accepted and follows S_READY_ADDR_ACK and S_NOT_READY_ADDR_NACK"]
     #[inline(always)]
-    pub fn s_general_ignore(&mut self) -> S_GENERAL_IGNORE_W {
-        S_GENERAL_IGNORE_W { w: self }
+    pub fn s_general_ignore(&mut self) -> S_GENERAL_IGNORE_W<11> {
+        S_GENERAL_IGNORE_W::new(self)
     }
-    #[doc = "Bit 12 - N/A"]
+    #[doc = "Bit 12 - When '1', a received (matching) slave address is immediately ACK'd when the RX FIFO is not full. In EZ and CMD_RESP mode, this field should be set to '1'. When '0' the address must be ACK/NACK'd by the CPU using I2C_S_CMD.S_ACK or I2C_S_CMD.S_NACK"]
     #[inline(always)]
-    pub fn s_ready_addr_ack(&mut self) -> S_READY_ADDR_ACK_W {
-        S_READY_ADDR_ACK_W { w: self }
+    pub fn s_ready_addr_ack(&mut self) -> S_READY_ADDR_ACK_W<12> {
+        S_READY_ADDR_ACK_W::new(self)
     }
-    #[doc = "Bit 13 - N/A"]
+    #[doc = "Bit 13 - When '1', a received data element by the slave is immediately ACK'd when the RX FIFO is not full. In EZ and CMD_RESP mode, this field should be set to '1'. When '0' the data must be ACK/NACK'd by the CPU using I2C_S_CMD.S_ACK or I2C_S_CMD.S_NACK"]
     #[inline(always)]
-    pub fn s_ready_data_ack(&mut self) -> S_READY_DATA_ACK_W {
-        S_READY_DATA_ACK_W { w: self }
+    pub fn s_ready_data_ack(&mut self) -> S_READY_DATA_ACK_W<13> {
+        S_READY_DATA_ACK_W::new(self)
     }
-    #[doc = "Bit 14 - This field is used during an address match or general call address in internally clocked mode Only used when: - EC_AM_MODE is '0', EC_OP_MODE is '0', S_GENERAL_IGNORE is '0\\] and non EZ mode. Functionality is as follows: - 1: a received (matching) slave address is immediately NACK'd when the receiver FIFO is full. - 0: clock stretching is performed (till the receiver FIFO is no longer full). For externally clocked logic (EC_AM is '1') on an address match or general call address (and S_GENERAL_IGNORE is '0'). Only used when (NOT used when EC_AM is '1' and EC_OP is '1' and address match and EZ mode): - EC_AM is '1' and EC_OP is '0'. - EC_AM is '1' and general call address match. - EC_AM is '1' and non EZ mode. Functionality is as follows: - 1: a received (matching or general) slave address is always immediately NACK'd. There are two possibilities: 1). the SCB clock is available (in Active system power mode) and it handles the rest of the current transfer. In this case the I2C master will not observe the NACK. 2).SCB clock is not present (in DeepSleep system power mode). In this case the I2C master will observe the NACK and may retry the transfer in the future (which gives the internally clocked logic the time to wake up from DeepSleep system power mode). - 0: clock stretching is performed (till the SCB clock is available). The logic will handle the ongoing transfer as soon as the clock is enabled."]
+    #[doc = "Bit 14 - Only used for FIFO mode, NOT EZ or CMD_RESP mode. Functionality is as follows: - 1: In Active/Sleep mode a received (matching) slave address is immediately NACK'd when the RX FIFO is full In DeepSleep power mode when EC_AM = '1' and EC_OP = '0' clk_scb is not avaliable, so the incoming address will be NACK'd until the clock is avaliable. Once clk_scb is avaliable the address ACK will follow S_READY_ADDR_ACK - 0: in Active/Sleep mode clock stretching is performed when the RX FIFO is full, the strech is released when the RX FIFO is no longer full. In DeepSleep power mode when EC_AM = '1' and EC_OP = '0' clk_scb is not avaliable, so the clocked will be streched on an incoming address until clk_scb is avaliable. After clk_scb is avalaible the address ACK will follow S_READY_ADDR_ACK"]
     #[inline(always)]
-    pub fn s_not_ready_addr_nack(&mut self) -> S_NOT_READY_ADDR_NACK_W {
-        S_NOT_READY_ADDR_NACK_W { w: self }
+    pub fn s_not_ready_addr_nack(&mut self) -> S_NOT_READY_ADDR_NACK_W<14> {
+        S_NOT_READY_ADDR_NACK_W::new(self)
     }
-    #[doc = "Bit 15 - Only used when: - non EZ mode Functionality is as follows: - 1: a received data element byte the slave is immediately NACK'd when the receiver FIFO is full. - 0: clock stretching is performed (till the receiver FIFO is no longer full)."]
+    #[doc = "Bit 15 - Only used for FIFO mode, NOT EZ or CMD_RESP mode. Functionality is as follows: - 1: a received data element byte the slave is immediately NACK'd when the receiver FIFO is full. - 0: clock stretching is performed (till the receiver FIFO is no longer full)."]
     #[inline(always)]
-    pub fn s_not_ready_data_nack(&mut self) -> S_NOT_READY_DATA_NACK_W {
-        S_NOT_READY_DATA_NACK_W { w: self }
+    pub fn s_not_ready_data_nack(&mut self) -> S_NOT_READY_DATA_NACK_W<15> {
+        S_NOT_READY_DATA_NACK_W::new(self)
     }
     #[doc = "Bit 16 - Local loopback control (does NOT affect the information on the pins). Only applicable in master/slave mode. When '0', no loopback When '1', loopback is enabled internally in the peripheral, and as a result unaffected by other I2C devices. This allows a SCB I2C peripheral to address itself."]
     #[inline(always)]
-    pub fn loopback(&mut self) -> LOOPBACK_W {
-        LOOPBACK_W { w: self }
+    pub fn loopback(&mut self) -> LOOPBACK_W<16> {
+        LOOPBACK_W::new(self)
     }
     #[doc = "Bit 30 - N/A"]
     #[inline(always)]
-    pub fn slave_mode(&mut self) -> SLAVE_MODE_W {
-        SLAVE_MODE_W { w: self }
+    pub fn slave_mode(&mut self) -> SLAVE_MODE_W<30> {
+        SLAVE_MODE_W::new(self)
     }
-    #[doc = "Bit 31 - N/A"]
+    #[doc = "Bit 31 - Master mode enabled ('1') or not ('0'). Note that both master and slave modes can be enabled at the same time. This allows the SCB to address itself."]
     #[inline(always)]
-    pub fn master_mode(&mut self) -> MASTER_MODE_W {
-        MASTER_MODE_W { w: self }
+    pub fn master_mode(&mut self) -> MASTER_MODE_W<31> {
+        MASTER_MODE_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "I2C control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [i2c_ctrl](index.html) module"]
+pub struct I2C_CTRL_SPEC;
+impl crate::RegisterSpec for I2C_CTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [i2c_ctrl::R](R) reader structure"]
+impl crate::Readable for I2C_CTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [i2c_ctrl::W](W) writer structure"]
+impl crate::Writable for I2C_CTRL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets I2C_CTRL to value 0xfb88"]
+impl crate::Resettable for I2C_CTRL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xfb88
     }
 }

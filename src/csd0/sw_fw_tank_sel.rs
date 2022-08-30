@@ -1,224 +1,167 @@
-#[doc = "Reader of register SW_FW_TANK_SEL"]
-pub type R = crate::R<u32, super::SW_FW_TANK_SEL>;
-#[doc = "Writer for register SW_FW_TANK_SEL"]
-pub type W = crate::W<u32, super::SW_FW_TANK_SEL>;
-#[doc = "Register SW_FW_TANK_SEL `reset()`'s with value 0"]
-impl crate::ResetValue for super::SW_FW_TANK_SEL {
-    type Type = u32;
+#[doc = "Register `SW_FW_TANK_SEL` reader"]
+pub struct R(crate::R<SW_FW_TANK_SEL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SW_FW_TANK_SEL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `SW_F2PT`"]
-pub type SW_F2PT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SW_F2PT`"]
-pub struct SW_F2PT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SW_F2PT_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<SW_FW_TANK_SEL_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
+    fn from(reader: crate::R<SW_FW_TANK_SEL_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `SW_F2MA`"]
-pub type SW_F2MA_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `SW_F2MA`"]
-pub struct SW_F2MA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SW_F2MA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+#[doc = "Register `SW_FW_TANK_SEL` writer"]
+pub struct W(crate::W<SW_FW_TANK_SEL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SW_FW_TANK_SEL_SPEC>;
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `SW_F2CA`"]
-pub type SW_F2CA_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `SW_F2CA`"]
-pub struct SW_F2CA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SW_F2CA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 12)) | (((value as u32) & 0x07) << 12);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `SW_F2CB`"]
-pub type SW_F2CB_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `SW_F2CB`"]
-pub struct SW_F2CB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SW_F2CB_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::W<SW_FW_TANK_SEL_SPEC>> for W {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | (((value as u32) & 0x07) << 16);
-        self.w
+    fn from(writer: crate::W<SW_FW_TANK_SEL_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `SW_C2CC`"]
-pub type SW_C2CC_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SW_C2CC`"]
-pub struct SW_C2CC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SW_C2CC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-        self.w
-    }
-}
-#[doc = "Reader of field `SW_C2CD`"]
-pub type SW_C2CD_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SW_C2CD`"]
-pub struct SW_C2CD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SW_C2CD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-        self.w
-    }
-}
-#[doc = "Reader of field `SW_C2F2`"]
-pub type SW_C2F2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `SW_C2F2`"]
-pub struct SW_C2F2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SW_C2F2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | (((value as u32) & 0x01) << 28);
-        self.w
-    }
-}
+#[doc = "Field `SW_F2PT` reader - Set corresponding switch"]
+pub type SW_F2PT_R = crate::BitReader<bool>;
+#[doc = "Field `SW_F2PT` writer - Set corresponding switch"]
+pub type SW_F2PT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SW_FW_TANK_SEL_SPEC, bool, O>;
+#[doc = "Field `SW_F2MA` reader - Select waveform for corresponding switch"]
+pub type SW_F2MA_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `SW_F2MA` writer - Select waveform for corresponding switch"]
+pub type SW_F2MA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SW_FW_TANK_SEL_SPEC, u8, u8, 3, O>;
+#[doc = "Field `SW_F2CA` reader - Select waveform for corresponding switch"]
+pub type SW_F2CA_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `SW_F2CA` writer - Select waveform for corresponding switch"]
+pub type SW_F2CA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SW_FW_TANK_SEL_SPEC, u8, u8, 3, O>;
+#[doc = "Field `SW_F2CB` reader - Select waveform for corresponding switch"]
+pub type SW_F2CB_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `SW_F2CB` writer - Select waveform for corresponding switch"]
+pub type SW_F2CB_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SW_FW_TANK_SEL_SPEC, u8, u8, 3, O>;
+#[doc = "Field `SW_C2CC` reader - Set corresponding switch"]
+pub type SW_C2CC_R = crate::BitReader<bool>;
+#[doc = "Field `SW_C2CC` writer - Set corresponding switch"]
+pub type SW_C2CC_W<'a, const O: u8> = crate::BitWriter<'a, u32, SW_FW_TANK_SEL_SPEC, bool, O>;
+#[doc = "Field `SW_C2CD` reader - Set corresponding switch"]
+pub type SW_C2CD_R = crate::BitReader<bool>;
+#[doc = "Field `SW_C2CD` writer - Set corresponding switch"]
+pub type SW_C2CD_W<'a, const O: u8> = crate::BitWriter<'a, u32, SW_FW_TANK_SEL_SPEC, bool, O>;
+#[doc = "Field `SW_C2F2` reader - Set corresponding switch"]
+pub type SW_C2F2_R = crate::BitReader<bool>;
+#[doc = "Field `SW_C2F2` writer - Set corresponding switch"]
+pub type SW_C2F2_W<'a, const O: u8> = crate::BitWriter<'a, u32, SW_FW_TANK_SEL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 4 - Set corresponding switch"]
     #[inline(always)]
     pub fn sw_f2pt(&self) -> SW_F2PT_R {
-        SW_F2PT_R::new(((self.bits >> 4) & 0x01) != 0)
+        SW_F2PT_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bits 8:10 - Select waveform for corresponding switch"]
     #[inline(always)]
     pub fn sw_f2ma(&self) -> SW_F2MA_R {
-        SW_F2MA_R::new(((self.bits >> 8) & 0x07) as u8)
+        SW_F2MA_R::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bits 12:14 - Select waveform for corresponding switch"]
     #[inline(always)]
     pub fn sw_f2ca(&self) -> SW_F2CA_R {
-        SW_F2CA_R::new(((self.bits >> 12) & 0x07) as u8)
+        SW_F2CA_R::new(((self.bits >> 12) & 7) as u8)
     }
     #[doc = "Bits 16:18 - Select waveform for corresponding switch"]
     #[inline(always)]
     pub fn sw_f2cb(&self) -> SW_F2CB_R {
-        SW_F2CB_R::new(((self.bits >> 16) & 0x07) as u8)
+        SW_F2CB_R::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bit 20 - Set corresponding switch"]
     #[inline(always)]
     pub fn sw_c2cc(&self) -> SW_C2CC_R {
-        SW_C2CC_R::new(((self.bits >> 20) & 0x01) != 0)
+        SW_C2CC_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 24 - Set corresponding switch"]
     #[inline(always)]
     pub fn sw_c2cd(&self) -> SW_C2CD_R {
-        SW_C2CD_R::new(((self.bits >> 24) & 0x01) != 0)
+        SW_C2CD_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 28 - Set corresponding switch"]
     #[inline(always)]
     pub fn sw_c2f2(&self) -> SW_C2F2_R {
-        SW_C2F2_R::new(((self.bits >> 28) & 0x01) != 0)
+        SW_C2F2_R::new(((self.bits >> 28) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 4 - Set corresponding switch"]
     #[inline(always)]
-    pub fn sw_f2pt(&mut self) -> SW_F2PT_W {
-        SW_F2PT_W { w: self }
+    pub fn sw_f2pt(&mut self) -> SW_F2PT_W<4> {
+        SW_F2PT_W::new(self)
     }
     #[doc = "Bits 8:10 - Select waveform for corresponding switch"]
     #[inline(always)]
-    pub fn sw_f2ma(&mut self) -> SW_F2MA_W {
-        SW_F2MA_W { w: self }
+    pub fn sw_f2ma(&mut self) -> SW_F2MA_W<8> {
+        SW_F2MA_W::new(self)
     }
     #[doc = "Bits 12:14 - Select waveform for corresponding switch"]
     #[inline(always)]
-    pub fn sw_f2ca(&mut self) -> SW_F2CA_W {
-        SW_F2CA_W { w: self }
+    pub fn sw_f2ca(&mut self) -> SW_F2CA_W<12> {
+        SW_F2CA_W::new(self)
     }
     #[doc = "Bits 16:18 - Select waveform for corresponding switch"]
     #[inline(always)]
-    pub fn sw_f2cb(&mut self) -> SW_F2CB_W {
-        SW_F2CB_W { w: self }
+    pub fn sw_f2cb(&mut self) -> SW_F2CB_W<16> {
+        SW_F2CB_W::new(self)
     }
     #[doc = "Bit 20 - Set corresponding switch"]
     #[inline(always)]
-    pub fn sw_c2cc(&mut self) -> SW_C2CC_W {
-        SW_C2CC_W { w: self }
+    pub fn sw_c2cc(&mut self) -> SW_C2CC_W<20> {
+        SW_C2CC_W::new(self)
     }
     #[doc = "Bit 24 - Set corresponding switch"]
     #[inline(always)]
-    pub fn sw_c2cd(&mut self) -> SW_C2CD_W {
-        SW_C2CD_W { w: self }
+    pub fn sw_c2cd(&mut self) -> SW_C2CD_W<24> {
+        SW_C2CD_W::new(self)
     }
     #[doc = "Bit 28 - Set corresponding switch"]
     #[inline(always)]
-    pub fn sw_c2f2(&mut self) -> SW_C2F2_W {
-        SW_C2F2_W { w: self }
+    pub fn sw_c2f2(&mut self) -> SW_C2F2_W<28> {
+        SW_C2F2_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Full Wave Csh_tank Switch Waveform selection\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sw_fw_tank_sel](index.html) module"]
+pub struct SW_FW_TANK_SEL_SPEC;
+impl crate::RegisterSpec for SW_FW_TANK_SEL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [sw_fw_tank_sel::R](R) reader structure"]
+impl crate::Readable for SW_FW_TANK_SEL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [sw_fw_tank_sel::W](W) writer structure"]
+impl crate::Writable for SW_FW_TANK_SEL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SW_FW_TANK_SEL to value 0"]
+impl crate::Resettable for SW_FW_TANK_SEL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }
