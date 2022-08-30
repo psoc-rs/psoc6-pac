@@ -32,6 +32,7 @@ rt = ["cortex-m-rt/device"]
 [package.metadata.release]
 tag-message = "{{version}}"
 pre-release-commit-message = "Release {{version}}"
+publish=false
 
 # Change the changelog's `Unreleased` section to refer to this release and
 # prepend a new `Unreleased` section
