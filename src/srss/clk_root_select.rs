@@ -1,16 +1,42 @@
-#[doc = "Reader of register CLK_ROOT_SELECT[%s]"]
-pub type R = crate::R<u32, super::CLK_ROOT_SELECT>;
-#[doc = "Writer for register CLK_ROOT_SELECT[%s]"]
-pub type W = crate::W<u32, super::CLK_ROOT_SELECT>;
-#[doc = "Register CLK_ROOT_SELECT[%s] `reset()`'s with value 0"]
-impl crate::ResetValue for super::CLK_ROOT_SELECT {
-    type Type = u32;
+#[doc = "Register `CLK_ROOT_SELECT[%s]` reader"]
+pub struct R(crate::R<CLK_ROOT_SELECT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CLK_ROOT_SELECT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Selects a clock path as the root of HFCLK<k> and for SRSS DSI input <k>. Use CLK_SELECT_PATH\\[i\\] to configure the desired path. Some paths may have FLL or PLL available (product-specific), and the control and bypass mux selections of these are in other registers. Configure the FLL using CLK_FLL_CONFIG register. Configure a PLL using the related CLK_PLL_CONFIG\\[k\\] register. Note that not all products support all clock sources. Selecting a clock source that is not supported will result in undefined behavior.\n\nValue on reset: 0"]
+impl From<crate::R<CLK_ROOT_SELECT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CLK_ROOT_SELECT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CLK_ROOT_SELECT[%s]` writer"]
+pub struct W(crate::W<CLK_ROOT_SELECT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CLK_ROOT_SELECT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CLK_ROOT_SELECT_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CLK_ROOT_SELECT_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Selects a clock path as the root of HFCLK<k> and for SRSS DSI input <k>. Use CLK_SELECT_PATH\\[i\\]
+to configure the desired path. Some paths may have FLL or PLL available (product-specific), and the control and bypass mux selections of these are in other registers. Configure the FLL using CLK_FLL_CONFIG register. Configure a PLL using the related CLK_PLL_CONFIG\\[k\\]
+register. Note that not all products support all clock sources. Selecting a clock source that is not supported will result in undefined behavior.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum ROOT_MUX_A {
@@ -53,10 +79,12 @@ impl From<ROOT_MUX_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ROOT_MUX`"]
-pub type ROOT_MUX_R = crate::R<u8, ROOT_MUX_A>;
+#[doc = "Field `ROOT_MUX` reader - Selects a clock path as the root of HFCLK<k> and for SRSS DSI input <k>. Use CLK_SELECT_PATH\\[i\\]
+to configure the desired path. Some paths may have FLL or PLL available (product-specific), and the control and bypass mux selections of these are in other registers. Configure the FLL using CLK_FLL_CONFIG register. Configure a PLL using the related CLK_PLL_CONFIG\\[k\\]
+register. Note that not all products support all clock sources. Selecting a clock source that is not supported will result in undefined behavior."]
+pub type ROOT_MUX_R = crate::FieldReader<u8, ROOT_MUX_A>;
 impl ROOT_MUX_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ROOT_MUX_A {
         match self.bits {
@@ -160,18 +188,12 @@ impl ROOT_MUX_R {
         *self == ROOT_MUX_A::PATH15
     }
 }
-#[doc = "Write proxy for field `ROOT_MUX`"]
-pub struct ROOT_MUX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ROOT_MUX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ROOT_MUX_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `ROOT_MUX` writer - Selects a clock path as the root of HFCLK<k> and for SRSS DSI input <k>. Use CLK_SELECT_PATH\\[i\\]
+to configure the desired path. Some paths may have FLL or PLL available (product-specific), and the control and bypass mux selections of these are in other registers. Configure the FLL using CLK_FLL_CONFIG register. Configure a PLL using the related CLK_PLL_CONFIG\\[k\\]
+register. Note that not all products support all clock sources. Selecting a clock source that is not supported will result in undefined behavior."]
+pub type ROOT_MUX_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CLK_ROOT_SELECT_SPEC, u8, ROOT_MUX_A, 4, O>;
+impl<'a, const O: u8> ROOT_MUX_W<'a, O> {
     #[doc = "Select PATH0 (can be configured for FLL)"]
     #[inline(always)]
     pub fn path0(self) -> &'a mut W {
@@ -252,12 +274,6 @@ impl<'a> ROOT_MUX_W<'a> {
     pub fn path15(self) -> &'a mut W {
         self.variant(ROOT_MUX_A::PATH15)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | ((value as u32) & 0x0f);
-        self.w
-    }
 }
 #[doc = "Selects predivider value for this clock root and DSI input.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -278,10 +294,10 @@ impl From<ROOT_DIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ROOT_DIV`"]
-pub type ROOT_DIV_R = crate::R<u8, ROOT_DIV_A>;
+#[doc = "Field `ROOT_DIV` reader - Selects predivider value for this clock root and DSI input."]
+pub type ROOT_DIV_R = crate::FieldReader<u8, ROOT_DIV_A>;
 impl ROOT_DIV_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ROOT_DIV_A {
         match self.bits {
@@ -313,18 +329,10 @@ impl ROOT_DIV_R {
         *self == ROOT_DIV_A::DIV_BY_8
     }
 }
-#[doc = "Write proxy for field `ROOT_DIV`"]
-pub struct ROOT_DIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ROOT_DIV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ROOT_DIV_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `ROOT_DIV` writer - Selects predivider value for this clock root and DSI input."]
+pub type ROOT_DIV_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CLK_ROOT_SELECT_SPEC, u8, ROOT_DIV_A, 2, O>;
+impl<'a, const O: u8> ROOT_DIV_W<'a, O> {
     #[doc = "Transparent mode, feed through selected clock source w/o dividing."]
     #[inline(always)]
     pub fn no_div(self) -> &'a mut W {
@@ -345,39 +353,15 @@ impl<'a> ROOT_DIV_W<'a> {
     pub fn div_by_8(self) -> &'a mut W {
         self.variant(ROOT_DIV_A::DIV_BY_8)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
-        self.w
-    }
 }
-#[doc = "Reader of field `ENABLE`"]
-pub type ENABLE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ENABLE`"]
-pub struct ENABLE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENABLE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
-        self.w
-    }
-}
+#[doc = "Field `ENABLE` reader - Enable for this clock root. All clock roots default to disabled (ENABLE==0) except HFCLK0, which cannot be disabled."]
+pub type ENABLE_R = crate::BitReader<bool>;
+#[doc = "Field `ENABLE` writer - Enable for this clock root. All clock roots default to disabled (ENABLE==0) except HFCLK0, which cannot be disabled."]
+pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_ROOT_SELECT_SPEC, bool, O>;
 impl R {
-    #[doc = "Bits 0:3 - Selects a clock path as the root of HFCLK<k> and for SRSS DSI input <k>. Use CLK_SELECT_PATH\\[i\\] to configure the desired path. Some paths may have FLL or PLL available (product-specific), and the control and bypass mux selections of these are in other registers. Configure the FLL using CLK_FLL_CONFIG register. Configure a PLL using the related CLK_PLL_CONFIG\\[k\\] register. Note that not all products support all clock sources. Selecting a clock source that is not supported will result in undefined behavior."]
+    #[doc = "Bits 0:3 - Selects a clock path as the root of HFCLK<k> and for SRSS DSI input <k>. Use CLK_SELECT_PATH\\[i\\]
+to configure the desired path. Some paths may have FLL or PLL available (product-specific), and the control and bypass mux selections of these are in other registers. Configure the FLL using CLK_FLL_CONFIG register. Configure a PLL using the related CLK_PLL_CONFIG\\[k\\]
+register. Note that not all products support all clock sources. Selecting a clock source that is not supported will result in undefined behavior."]
     #[inline(always)]
     pub fn root_mux(&self) -> ROOT_MUX_R {
         ROOT_MUX_R::new((self.bits & 0x0f) as u8)
@@ -385,28 +369,57 @@ impl R {
     #[doc = "Bits 4:5 - Selects predivider value for this clock root and DSI input."]
     #[inline(always)]
     pub fn root_div(&self) -> ROOT_DIV_R {
-        ROOT_DIV_R::new(((self.bits >> 4) & 0x03) as u8)
+        ROOT_DIV_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 31 - Enable for this clock root. All clock roots default to disabled (ENABLE==0) except HFCLK0, which cannot be disabled."]
     #[inline(always)]
     pub fn enable(&self) -> ENABLE_R {
-        ENABLE_R::new(((self.bits >> 31) & 0x01) != 0)
+        ENABLE_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - Selects a clock path as the root of HFCLK<k> and for SRSS DSI input <k>. Use CLK_SELECT_PATH\\[i\\] to configure the desired path. Some paths may have FLL or PLL available (product-specific), and the control and bypass mux selections of these are in other registers. Configure the FLL using CLK_FLL_CONFIG register. Configure a PLL using the related CLK_PLL_CONFIG\\[k\\] register. Note that not all products support all clock sources. Selecting a clock source that is not supported will result in undefined behavior."]
+    #[doc = "Bits 0:3 - Selects a clock path as the root of HFCLK<k> and for SRSS DSI input <k>. Use CLK_SELECT_PATH\\[i\\]
+to configure the desired path. Some paths may have FLL or PLL available (product-specific), and the control and bypass mux selections of these are in other registers. Configure the FLL using CLK_FLL_CONFIG register. Configure a PLL using the related CLK_PLL_CONFIG\\[k\\]
+register. Note that not all products support all clock sources. Selecting a clock source that is not supported will result in undefined behavior."]
     #[inline(always)]
-    pub fn root_mux(&mut self) -> ROOT_MUX_W {
-        ROOT_MUX_W { w: self }
+    pub fn root_mux(&mut self) -> ROOT_MUX_W<0> {
+        ROOT_MUX_W::new(self)
     }
     #[doc = "Bits 4:5 - Selects predivider value for this clock root and DSI input."]
     #[inline(always)]
-    pub fn root_div(&mut self) -> ROOT_DIV_W {
-        ROOT_DIV_W { w: self }
+    pub fn root_div(&mut self) -> ROOT_DIV_W<4> {
+        ROOT_DIV_W::new(self)
     }
     #[doc = "Bit 31 - Enable for this clock root. All clock roots default to disabled (ENABLE==0) except HFCLK0, which cannot be disabled."]
     #[inline(always)]
-    pub fn enable(&mut self) -> ENABLE_W {
-        ENABLE_W { w: self }
+    pub fn enable(&mut self) -> ENABLE_W<31> {
+        ENABLE_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Clock Root Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_root_select](index.html) module"]
+pub struct CLK_ROOT_SELECT_SPEC;
+impl crate::RegisterSpec for CLK_ROOT_SELECT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [clk_root_select::R](R) reader structure"]
+impl crate::Readable for CLK_ROOT_SELECT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [clk_root_select::W](W) writer structure"]
+impl crate::Writable for CLK_ROOT_SELECT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CLK_ROOT_SELECT[%s]
+to value 0"]
+impl crate::Resettable for CLK_ROOT_SELECT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

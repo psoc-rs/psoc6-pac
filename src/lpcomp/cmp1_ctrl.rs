@@ -1,13 +1,37 @@
-#[doc = "Reader of register CMP1_CTRL"]
-pub type R = crate::R<u32, super::CMP1_CTRL>;
-#[doc = "Writer for register CMP1_CTRL"]
-pub type W = crate::W<u32, super::CMP1_CTRL>;
-#[doc = "Register CMP1_CTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::CMP1_CTRL {
-    type Type = u32;
+#[doc = "Register `CMP1_CTRL` reader"]
+pub struct R(crate::R<CMP1_CTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CMP1_CTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CMP1_CTRL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CMP1_CTRL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CMP1_CTRL` writer"]
+pub struct W(crate::W<CMP1_CTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CMP1_CTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CMP1_CTRL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CMP1_CTRL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Operating mode for the comparator\n\nValue on reset: 0"]
@@ -29,10 +53,10 @@ impl From<MODE1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `MODE1`"]
-pub type MODE1_R = crate::R<u8, MODE1_A>;
+#[doc = "Field `MODE1` reader - Operating mode for the comparator"]
+pub type MODE1_R = crate::FieldReader<u8, MODE1_A>;
 impl MODE1_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE1_A {
         match self.bits {
@@ -64,18 +88,10 @@ impl MODE1_R {
         *self == MODE1_A::NORMAL
     }
 }
-#[doc = "Write proxy for field `MODE1`"]
-pub struct MODE1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MODE1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE1_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `MODE1` writer - Operating mode for the comparator"]
+pub type MODE1_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CMP1_CTRL_SPEC, u8, MODE1_A, 2, O>;
+impl<'a, const O: u8> MODE1_W<'a, O> {
     #[doc = "Off"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -96,37 +112,11 @@ impl<'a> MODE1_W<'a> {
     pub fn normal(self) -> &'a mut W {
         self.variant(MODE1_A::NORMAL)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
-        self.w
-    }
 }
-#[doc = "Reader of field `HYST1`"]
-pub type HYST1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `HYST1`"]
-pub struct HYST1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HYST1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
-    }
-}
+#[doc = "Field `HYST1` reader - Add 30mV hysteresis to the comparator 0= Disable Hysteresis 1= Enable Hysteresis"]
+pub type HYST1_R = crate::BitReader<bool>;
+#[doc = "Field `HYST1` writer - Add 30mV hysteresis to the comparator 0= Disable Hysteresis 1= Enable Hysteresis"]
+pub type HYST1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMP1_CTRL_SPEC, bool, O>;
 #[doc = "Sets which edge will trigger an IRQ\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -146,10 +136,10 @@ impl From<INTTYPE1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `INTTYPE1`"]
-pub type INTTYPE1_R = crate::R<u8, INTTYPE1_A>;
+#[doc = "Field `INTTYPE1` reader - Sets which edge will trigger an IRQ"]
+pub type INTTYPE1_R = crate::FieldReader<u8, INTTYPE1_A>;
 impl INTTYPE1_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INTTYPE1_A {
         match self.bits {
@@ -181,18 +171,10 @@ impl INTTYPE1_R {
         *self == INTTYPE1_A::BOTH
     }
 }
-#[doc = "Write proxy for field `INTTYPE1`"]
-pub struct INTTYPE1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INTTYPE1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: INTTYPE1_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `INTTYPE1` writer - Sets which edge will trigger an IRQ"]
+pub type INTTYPE1_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CMP1_CTRL_SPEC, u8, INTTYPE1_A, 2, O>;
+impl<'a, const O: u8> INTTYPE1_W<'a, O> {
     #[doc = "Disabled, no interrupts will be detected"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -213,112 +195,92 @@ impl<'a> INTTYPE1_W<'a> {
     pub fn both(self) -> &'a mut W {
         self.variant(INTTYPE1_A::BOTH)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
-        self.w
-    }
 }
-#[doc = "Reader of field `DSI_BYPASS1`"]
-pub type DSI_BYPASS1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DSI_BYPASS1`"]
-pub struct DSI_BYPASS1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSI_BYPASS1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-        self.w
-    }
-}
-#[doc = "Reader of field `DSI_LEVEL1`"]
-pub type DSI_LEVEL1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DSI_LEVEL1`"]
-pub struct DSI_LEVEL1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSI_LEVEL1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-        self.w
-    }
-}
+#[doc = "Field `DSI_BYPASS1` reader - Asynchronous: bypass comparator output synchronization for DSI output: 0=synchronize (level or pulse), 1=bypass (output async). Note that in DeepSleep mode this bit needs to be set to observe the DSI output on the dedicated pin."]
+pub type DSI_BYPASS1_R = crate::BitReader<bool>;
+#[doc = "Field `DSI_BYPASS1` writer - Asynchronous: bypass comparator output synchronization for DSI output: 0=synchronize (level or pulse), 1=bypass (output async). Note that in DeepSleep mode this bit needs to be set to observe the DSI output on the dedicated pin."]
+pub type DSI_BYPASS1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMP1_CTRL_SPEC, bool, O>;
+#[doc = "Field `DSI_LEVEL1` reader - Synchronous comparator DSI (trigger) output : 0=pulse, 1=level"]
+pub type DSI_LEVEL1_R = crate::BitReader<bool>;
+#[doc = "Field `DSI_LEVEL1` writer - Synchronous comparator DSI (trigger) output : 0=pulse, 1=level"]
+pub type DSI_LEVEL1_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMP1_CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:1 - Operating mode for the comparator"]
     #[inline(always)]
     pub fn mode1(&self) -> MODE1_R {
-        MODE1_R::new((self.bits & 0x03) as u8)
+        MODE1_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 5 - Add 30mV hysteresis to the comparator 0= Disable Hysteresis 1= Enable Hysteresis"]
     #[inline(always)]
     pub fn hyst1(&self) -> HYST1_R {
-        HYST1_R::new(((self.bits >> 5) & 0x01) != 0)
+        HYST1_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 6:7 - Sets which edge will trigger an IRQ"]
     #[inline(always)]
     pub fn inttype1(&self) -> INTTYPE1_R {
-        INTTYPE1_R::new(((self.bits >> 6) & 0x03) as u8)
+        INTTYPE1_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bit 10 - Asynchronous: bypass comparator output synchronization for DSI output: 0=synchronize (level or pulse), 1=bypass (output async). Note that in DeepSleep mode this bit needs to be set to observe the DSI output on the dedicated pin."]
     #[inline(always)]
     pub fn dsi_bypass1(&self) -> DSI_BYPASS1_R {
-        DSI_BYPASS1_R::new(((self.bits >> 10) & 0x01) != 0)
+        DSI_BYPASS1_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Synchronous comparator DSI (trigger) output : 0=pulse, 1=level"]
     #[inline(always)]
     pub fn dsi_level1(&self) -> DSI_LEVEL1_R {
-        DSI_LEVEL1_R::new(((self.bits >> 11) & 0x01) != 0)
+        DSI_LEVEL1_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:1 - Operating mode for the comparator"]
     #[inline(always)]
-    pub fn mode1(&mut self) -> MODE1_W {
-        MODE1_W { w: self }
+    pub fn mode1(&mut self) -> MODE1_W<0> {
+        MODE1_W::new(self)
     }
     #[doc = "Bit 5 - Add 30mV hysteresis to the comparator 0= Disable Hysteresis 1= Enable Hysteresis"]
     #[inline(always)]
-    pub fn hyst1(&mut self) -> HYST1_W {
-        HYST1_W { w: self }
+    pub fn hyst1(&mut self) -> HYST1_W<5> {
+        HYST1_W::new(self)
     }
     #[doc = "Bits 6:7 - Sets which edge will trigger an IRQ"]
     #[inline(always)]
-    pub fn inttype1(&mut self) -> INTTYPE1_W {
-        INTTYPE1_W { w: self }
+    pub fn inttype1(&mut self) -> INTTYPE1_W<6> {
+        INTTYPE1_W::new(self)
     }
     #[doc = "Bit 10 - Asynchronous: bypass comparator output synchronization for DSI output: 0=synchronize (level or pulse), 1=bypass (output async). Note that in DeepSleep mode this bit needs to be set to observe the DSI output on the dedicated pin."]
     #[inline(always)]
-    pub fn dsi_bypass1(&mut self) -> DSI_BYPASS1_W {
-        DSI_BYPASS1_W { w: self }
+    pub fn dsi_bypass1(&mut self) -> DSI_BYPASS1_W<10> {
+        DSI_BYPASS1_W::new(self)
     }
     #[doc = "Bit 11 - Synchronous comparator DSI (trigger) output : 0=pulse, 1=level"]
     #[inline(always)]
-    pub fn dsi_level1(&mut self) -> DSI_LEVEL1_W {
-        DSI_LEVEL1_W { w: self }
+    pub fn dsi_level1(&mut self) -> DSI_LEVEL1_W<11> {
+        DSI_LEVEL1_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Comparator 1 control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cmp1_ctrl](index.html) module"]
+pub struct CMP1_CTRL_SPEC;
+impl crate::RegisterSpec for CMP1_CTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [cmp1_ctrl::R](R) reader structure"]
+impl crate::Readable for CMP1_CTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [cmp1_ctrl::W](W) writer structure"]
+impl crate::Writable for CMP1_CTRL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CMP1_CTRL to value 0"]
+impl crate::Resettable for CMP1_CTRL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

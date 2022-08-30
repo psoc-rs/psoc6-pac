@@ -1,241 +1,171 @@
-#[doc = "Reader of register MCWDT_CTL"]
-pub type R = crate::R<u32, super::MCWDT_CTL>;
-#[doc = "Writer for register MCWDT_CTL"]
-pub type W = crate::W<u32, super::MCWDT_CTL>;
-#[doc = "Register MCWDT_CTL `reset()`'s with value 0"]
-impl crate::ResetValue for super::MCWDT_CTL {
-    type Type = u32;
+#[doc = "Register `MCWDT_CTL` reader"]
+pub struct R(crate::R<MCWDT_CTL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<MCWDT_CTL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `WDT_ENABLE0`"]
-pub type WDT_ENABLE0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `WDT_ENABLE0`"]
-pub struct WDT_ENABLE0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_ENABLE0_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<MCWDT_CTL_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn from(reader: crate::R<MCWDT_CTL_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `WDT_ENABLED0`"]
-pub type WDT_ENABLED0_R = crate::R<bool, bool>;
-#[doc = "Reader of field `WDT_RESET0`"]
-pub type WDT_RESET0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `WDT_RESET0`"]
-pub struct WDT_RESET0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_RESET0_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `MCWDT_CTL` writer"]
+pub struct W(crate::W<MCWDT_CTL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<MCWDT_CTL_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `WDT_ENABLE1`"]
-pub type WDT_ENABLE1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `WDT_ENABLE1`"]
-pub struct WDT_ENABLE1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_ENABLE1_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `WDT_ENABLED1`"]
-pub type WDT_ENABLED1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `WDT_RESET1`"]
-pub type WDT_RESET1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `WDT_RESET1`"]
-pub struct WDT_RESET1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_RESET1_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<MCWDT_CTL_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-        self.w
+    fn from(writer: crate::W<MCWDT_CTL_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `WDT_ENABLE2`"]
-pub type WDT_ENABLE2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `WDT_ENABLE2`"]
-pub struct WDT_ENABLE2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_ENABLE2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-        self.w
-    }
-}
-#[doc = "Reader of field `WDT_ENABLED2`"]
-pub type WDT_ENABLED2_R = crate::R<bool, bool>;
-#[doc = "Reader of field `WDT_RESET2`"]
-pub type WDT_RESET2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `WDT_RESET2`"]
-pub struct WDT_RESET2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDT_RESET2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-        self.w
-    }
-}
+#[doc = "Field `WDT_ENABLE0` reader - Enable subcounter 0. May take up to 2 LFCLK cycles to take effect. 0: Counter is disabled (not clocked) 1: Counter is enabled (counting up)"]
+pub type WDT_ENABLE0_R = crate::BitReader<bool>;
+#[doc = "Field `WDT_ENABLE0` writer - Enable subcounter 0. May take up to 2 LFCLK cycles to take effect. 0: Counter is disabled (not clocked) 1: Counter is enabled (counting up)"]
+pub type WDT_ENABLE0_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCWDT_CTL_SPEC, bool, O>;
+#[doc = "Field `WDT_ENABLED0` reader - Indicates actual state of counter. May lag WDT_ENABLE0 by up to two LFCLK cycles."]
+pub type WDT_ENABLED0_R = crate::BitReader<bool>;
+#[doc = "Field `WDT_RESET0` reader - Resets counter 0 back to 0000. Hardware will reset this bit after counter was reset. This will take up to one LFCLK cycle to take effect."]
+pub type WDT_RESET0_R = crate::BitReader<bool>;
+#[doc = "Field `WDT_RESET0` writer - Resets counter 0 back to 0000. Hardware will reset this bit after counter was reset. This will take up to one LFCLK cycle to take effect."]
+pub type WDT_RESET0_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCWDT_CTL_SPEC, bool, O>;
+#[doc = "Field `WDT_ENABLE1` reader - Enable subcounter 1. May take up to 2 LFCLK cycles to take effect. 0: Counter is disabled (not clocked) 1: Counter is enabled (counting up)"]
+pub type WDT_ENABLE1_R = crate::BitReader<bool>;
+#[doc = "Field `WDT_ENABLE1` writer - Enable subcounter 1. May take up to 2 LFCLK cycles to take effect. 0: Counter is disabled (not clocked) 1: Counter is enabled (counting up)"]
+pub type WDT_ENABLE1_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCWDT_CTL_SPEC, bool, O>;
+#[doc = "Field `WDT_ENABLED1` reader - Indicates actual state of counter. May lag WDT_ENABLE1 by up to two LFCLK cycles."]
+pub type WDT_ENABLED1_R = crate::BitReader<bool>;
+#[doc = "Field `WDT_RESET1` reader - Resets counter 0 back to 0000. Hardware will reset this bit after counter was reset. This will take up to one LFCLK cycle to take effect."]
+pub type WDT_RESET1_R = crate::BitReader<bool>;
+#[doc = "Field `WDT_RESET1` writer - Resets counter 0 back to 0000. Hardware will reset this bit after counter was reset. This will take up to one LFCLK cycle to take effect."]
+pub type WDT_RESET1_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCWDT_CTL_SPEC, bool, O>;
+#[doc = "Field `WDT_ENABLE2` reader - Enable subcounter 2. May take up to 2 LFCLK cycles to take effect. 0: Counter is disabled (not clocked) 1: Counter is enabled (counting up)"]
+pub type WDT_ENABLE2_R = crate::BitReader<bool>;
+#[doc = "Field `WDT_ENABLE2` writer - Enable subcounter 2. May take up to 2 LFCLK cycles to take effect. 0: Counter is disabled (not clocked) 1: Counter is enabled (counting up)"]
+pub type WDT_ENABLE2_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCWDT_CTL_SPEC, bool, O>;
+#[doc = "Field `WDT_ENABLED2` reader - Indicates actual state of counter. May lag WDT_ENABLE2 by up to two LFCLK cycles."]
+pub type WDT_ENABLED2_R = crate::BitReader<bool>;
+#[doc = "Field `WDT_RESET2` reader - Resets counter 0 back to 0000. Hardware will reset this bit after counter was reset. This will take up to one LFCLK cycle to take effect."]
+pub type WDT_RESET2_R = crate::BitReader<bool>;
+#[doc = "Field `WDT_RESET2` writer - Resets counter 0 back to 0000. Hardware will reset this bit after counter was reset. This will take up to one LFCLK cycle to take effect."]
+pub type WDT_RESET2_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCWDT_CTL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Enable subcounter 0. May take up to 2 LFCLK cycles to take effect. 0: Counter is disabled (not clocked) 1: Counter is enabled (counting up)"]
     #[inline(always)]
     pub fn wdt_enable0(&self) -> WDT_ENABLE0_R {
-        WDT_ENABLE0_R::new((self.bits & 0x01) != 0)
+        WDT_ENABLE0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Indicates actual state of counter. May lag WDT_ENABLE0 by up to two LFCLK cycles."]
     #[inline(always)]
     pub fn wdt_enabled0(&self) -> WDT_ENABLED0_R {
-        WDT_ENABLED0_R::new(((self.bits >> 1) & 0x01) != 0)
+        WDT_ENABLED0_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 3 - Resets counter 0 back to 0000. Hardware will reset this bit after counter was reset. This will take up to one LFCLK cycle to take effect."]
     #[inline(always)]
     pub fn wdt_reset0(&self) -> WDT_RESET0_R {
-        WDT_RESET0_R::new(((self.bits >> 3) & 0x01) != 0)
+        WDT_RESET0_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 8 - Enable subcounter 1. May take up to 2 LFCLK cycles to take effect. 0: Counter is disabled (not clocked) 1: Counter is enabled (counting up)"]
     #[inline(always)]
     pub fn wdt_enable1(&self) -> WDT_ENABLE1_R {
-        WDT_ENABLE1_R::new(((self.bits >> 8) & 0x01) != 0)
+        WDT_ENABLE1_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Indicates actual state of counter. May lag WDT_ENABLE1 by up to two LFCLK cycles."]
     #[inline(always)]
     pub fn wdt_enabled1(&self) -> WDT_ENABLED1_R {
-        WDT_ENABLED1_R::new(((self.bits >> 9) & 0x01) != 0)
+        WDT_ENABLED1_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 11 - Resets counter 0 back to 0000. Hardware will reset this bit after counter was reset. This will take up to one LFCLK cycle to take effect."]
     #[inline(always)]
     pub fn wdt_reset1(&self) -> WDT_RESET1_R {
-        WDT_RESET1_R::new(((self.bits >> 11) & 0x01) != 0)
+        WDT_RESET1_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 16 - Enable subcounter 2. May take up to 2 LFCLK cycles to take effect. 0: Counter is disabled (not clocked) 1: Counter is enabled (counting up)"]
     #[inline(always)]
     pub fn wdt_enable2(&self) -> WDT_ENABLE2_R {
-        WDT_ENABLE2_R::new(((self.bits >> 16) & 0x01) != 0)
+        WDT_ENABLE2_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Indicates actual state of counter. May lag WDT_ENABLE2 by up to two LFCLK cycles."]
     #[inline(always)]
     pub fn wdt_enabled2(&self) -> WDT_ENABLED2_R {
-        WDT_ENABLED2_R::new(((self.bits >> 17) & 0x01) != 0)
+        WDT_ENABLED2_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 19 - Resets counter 0 back to 0000. Hardware will reset this bit after counter was reset. This will take up to one LFCLK cycle to take effect."]
     #[inline(always)]
     pub fn wdt_reset2(&self) -> WDT_RESET2_R {
-        WDT_RESET2_R::new(((self.bits >> 19) & 0x01) != 0)
+        WDT_RESET2_R::new(((self.bits >> 19) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Enable subcounter 0. May take up to 2 LFCLK cycles to take effect. 0: Counter is disabled (not clocked) 1: Counter is enabled (counting up)"]
     #[inline(always)]
-    pub fn wdt_enable0(&mut self) -> WDT_ENABLE0_W {
-        WDT_ENABLE0_W { w: self }
+    pub fn wdt_enable0(&mut self) -> WDT_ENABLE0_W<0> {
+        WDT_ENABLE0_W::new(self)
     }
     #[doc = "Bit 3 - Resets counter 0 back to 0000. Hardware will reset this bit after counter was reset. This will take up to one LFCLK cycle to take effect."]
     #[inline(always)]
-    pub fn wdt_reset0(&mut self) -> WDT_RESET0_W {
-        WDT_RESET0_W { w: self }
+    pub fn wdt_reset0(&mut self) -> WDT_RESET0_W<3> {
+        WDT_RESET0_W::new(self)
     }
     #[doc = "Bit 8 - Enable subcounter 1. May take up to 2 LFCLK cycles to take effect. 0: Counter is disabled (not clocked) 1: Counter is enabled (counting up)"]
     #[inline(always)]
-    pub fn wdt_enable1(&mut self) -> WDT_ENABLE1_W {
-        WDT_ENABLE1_W { w: self }
+    pub fn wdt_enable1(&mut self) -> WDT_ENABLE1_W<8> {
+        WDT_ENABLE1_W::new(self)
     }
     #[doc = "Bit 11 - Resets counter 0 back to 0000. Hardware will reset this bit after counter was reset. This will take up to one LFCLK cycle to take effect."]
     #[inline(always)]
-    pub fn wdt_reset1(&mut self) -> WDT_RESET1_W {
-        WDT_RESET1_W { w: self }
+    pub fn wdt_reset1(&mut self) -> WDT_RESET1_W<11> {
+        WDT_RESET1_W::new(self)
     }
     #[doc = "Bit 16 - Enable subcounter 2. May take up to 2 LFCLK cycles to take effect. 0: Counter is disabled (not clocked) 1: Counter is enabled (counting up)"]
     #[inline(always)]
-    pub fn wdt_enable2(&mut self) -> WDT_ENABLE2_W {
-        WDT_ENABLE2_W { w: self }
+    pub fn wdt_enable2(&mut self) -> WDT_ENABLE2_W<16> {
+        WDT_ENABLE2_W::new(self)
     }
     #[doc = "Bit 19 - Resets counter 0 back to 0000. Hardware will reset this bit after counter was reset. This will take up to one LFCLK cycle to take effect."]
     #[inline(always)]
-    pub fn wdt_reset2(&mut self) -> WDT_RESET2_W {
-        WDT_RESET2_W { w: self }
+    pub fn wdt_reset2(&mut self) -> WDT_RESET2_W<19> {
+        WDT_RESET2_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Multi-Counter Watchdog Counter Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mcwdt_ctl](index.html) module"]
+pub struct MCWDT_CTL_SPEC;
+impl crate::RegisterSpec for MCWDT_CTL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [mcwdt_ctl::R](R) reader structure"]
+impl crate::Readable for MCWDT_CTL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [mcwdt_ctl::W](W) writer structure"]
+impl crate::Writable for MCWDT_CTL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets MCWDT_CTL to value 0"]
+impl crate::Resettable for MCWDT_CTL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

@@ -1,13 +1,37 @@
-#[doc = "Reader of register RAM2_PWR_CTL"]
-pub type R = crate::R<u32, super::RAM2_PWR_CTL>;
-#[doc = "Writer for register RAM2_PWR_CTL"]
-pub type W = crate::W<u32, super::RAM2_PWR_CTL>;
-#[doc = "Register RAM2_PWR_CTL `reset()`'s with value 0xfa05_0003"]
-impl crate::ResetValue for super::RAM2_PWR_CTL {
-    type Type = u32;
+#[doc = "Register `RAM2_PWR_CTL` reader"]
+pub struct R(crate::R<RAM2_PWR_CTL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<RAM2_PWR_CTL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0xfa05_0003
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<RAM2_PWR_CTL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<RAM2_PWR_CTL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `RAM2_PWR_CTL` writer"]
+pub struct W(crate::W<RAM2_PWR_CTL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<RAM2_PWR_CTL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<RAM2_PWR_CTL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<RAM2_PWR_CTL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Set Power mode for SRAM2\n\nValue on reset: 3"]
@@ -29,10 +53,10 @@ impl From<PWR_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `PWR_MODE`"]
-pub type PWR_MODE_R = crate::R<u8, PWR_MODE_A>;
+#[doc = "Field `PWR_MODE` reader - Set Power mode for SRAM2"]
+pub type PWR_MODE_R = crate::FieldReader<u8, PWR_MODE_A>;
 impl PWR_MODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PWR_MODE_A {
         match self.bits {
@@ -64,18 +88,10 @@ impl PWR_MODE_R {
         *self == PWR_MODE_A::ENABLED
     }
 }
-#[doc = "Write proxy for field `PWR_MODE`"]
-pub struct PWR_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PWR_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PWR_MODE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `PWR_MODE` writer - Set Power mode for SRAM2"]
+pub type PWR_MODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, RAM2_PWR_CTL_SPEC, u8, PWR_MODE_A, 2, O>;
+impl<'a, const O: u8> PWR_MODE_W<'a, O> {
     #[doc = "See CM4_PWR_CTL"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -96,20 +112,14 @@ impl<'a> PWR_MODE_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(PWR_MODE_A::ENABLED)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
-        self.w
-    }
 }
-#[doc = "Reader of field `VECTKEYSTAT`"]
-pub type VECTKEYSTAT_R = crate::R<u16, u16>;
+#[doc = "Field `VECTKEYSTAT` reader - Register key (to prevent accidental writes). - Should be written with a 0x05fa key value for the write to take effect. - Always reads as 0xfa05."]
+pub type VECTKEYSTAT_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:1 - Set Power mode for SRAM2"]
     #[inline(always)]
     pub fn pwr_mode(&self) -> PWR_MODE_R {
-        PWR_MODE_R::new((self.bits & 0x03) as u8)
+        PWR_MODE_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 16:31 - Register key (to prevent accidental writes). - Should be written with a 0x05fa key value for the write to take effect. - Always reads as 0xfa05."]
     #[inline(always)]
@@ -120,7 +130,33 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Set Power mode for SRAM2"]
     #[inline(always)]
-    pub fn pwr_mode(&mut self) -> PWR_MODE_W {
-        PWR_MODE_W { w: self }
+    pub fn pwr_mode(&mut self) -> PWR_MODE_W<0> {
+        PWR_MODE_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "RAM2 power control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ram2_pwr_ctl](index.html) module"]
+pub struct RAM2_PWR_CTL_SPEC;
+impl crate::RegisterSpec for RAM2_PWR_CTL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [ram2_pwr_ctl::R](R) reader structure"]
+impl crate::Readable for RAM2_PWR_CTL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [ram2_pwr_ctl::W](W) writer structure"]
+impl crate::Writable for RAM2_PWR_CTL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets RAM2_PWR_CTL to value 0xfa05_0003"]
+impl crate::Resettable for RAM2_PWR_CTL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xfa05_0003
     }
 }

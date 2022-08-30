@@ -1,13 +1,37 @@
-#[doc = "Reader of register CLK_DSI_SELECT[%s]"]
-pub type R = crate::R<u32, super::CLK_DSI_SELECT>;
-#[doc = "Writer for register CLK_DSI_SELECT[%s]"]
-pub type W = crate::W<u32, super::CLK_DSI_SELECT>;
-#[doc = "Register CLK_DSI_SELECT[%s] `reset()`'s with value 0"]
-impl crate::ResetValue for super::CLK_DSI_SELECT {
-    type Type = u32;
+#[doc = "Register `CLK_DSI_SELECT[%s]` reader"]
+pub struct R(crate::R<CLK_DSI_SELECT_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CLK_DSI_SELECT_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<CLK_DSI_SELECT_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<CLK_DSI_SELECT_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `CLK_DSI_SELECT[%s]` writer"]
+pub struct W(crate::W<CLK_DSI_SELECT_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CLK_DSI_SELECT_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CLK_DSI_SELECT_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CLK_DSI_SELECT_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Selects a DSI source or low frequency clock for use in a clock path. The output of this mux can be selected for clock PATH<i> using CLK_SELECT_PATH register. Using the output of this mux as HFCLK source will result in undefined behavior. It can be used to clocks to DSI or to the reference inputs of FLL/PLL, subject to the frequency limits of those circuits. This mux is not glitch free, so do not change the selection while it is an actively selected clock.\n\nValue on reset: 0"]
@@ -61,35 +85,34 @@ impl From<DSI_MUX_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DSI_MUX`"]
-pub type DSI_MUX_R = crate::R<u8, DSI_MUX_A>;
+#[doc = "Field `DSI_MUX` reader - Selects a DSI source or low frequency clock for use in a clock path. The output of this mux can be selected for clock PATH<i> using CLK_SELECT_PATH register. Using the output of this mux as HFCLK source will result in undefined behavior. It can be used to clocks to DSI or to the reference inputs of FLL/PLL, subject to the frequency limits of those circuits. This mux is not glitch free, so do not change the selection while it is an actively selected clock."]
+pub type DSI_MUX_R = crate::FieldReader<u8, DSI_MUX_A>;
 impl DSI_MUX_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, DSI_MUX_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DSI_MUX_A> {
         match self.bits {
-            0 => Val(DSI_MUX_A::DSI_OUT0),
-            1 => Val(DSI_MUX_A::DSI_OUT1),
-            2 => Val(DSI_MUX_A::DSI_OUT2),
-            3 => Val(DSI_MUX_A::DSI_OUT3),
-            4 => Val(DSI_MUX_A::DSI_OUT4),
-            5 => Val(DSI_MUX_A::DSI_OUT5),
-            6 => Val(DSI_MUX_A::DSI_OUT6),
-            7 => Val(DSI_MUX_A::DSI_OUT7),
-            8 => Val(DSI_MUX_A::DSI_OUT8),
-            9 => Val(DSI_MUX_A::DSI_OUT9),
-            10 => Val(DSI_MUX_A::DSI_OUT10),
-            11 => Val(DSI_MUX_A::DSI_OUT11),
-            12 => Val(DSI_MUX_A::DSI_OUT12),
-            13 => Val(DSI_MUX_A::DSI_OUT13),
-            14 => Val(DSI_MUX_A::DSI_OUT14),
-            15 => Val(DSI_MUX_A::DSI_OUT15),
-            16 => Val(DSI_MUX_A::ILO),
-            17 => Val(DSI_MUX_A::WCO),
-            18 => Val(DSI_MUX_A::ALTLF),
-            19 => Val(DSI_MUX_A::PILO),
-            i => Res(i),
+            0 => Some(DSI_MUX_A::DSI_OUT0),
+            1 => Some(DSI_MUX_A::DSI_OUT1),
+            2 => Some(DSI_MUX_A::DSI_OUT2),
+            3 => Some(DSI_MUX_A::DSI_OUT3),
+            4 => Some(DSI_MUX_A::DSI_OUT4),
+            5 => Some(DSI_MUX_A::DSI_OUT5),
+            6 => Some(DSI_MUX_A::DSI_OUT6),
+            7 => Some(DSI_MUX_A::DSI_OUT7),
+            8 => Some(DSI_MUX_A::DSI_OUT8),
+            9 => Some(DSI_MUX_A::DSI_OUT9),
+            10 => Some(DSI_MUX_A::DSI_OUT10),
+            11 => Some(DSI_MUX_A::DSI_OUT11),
+            12 => Some(DSI_MUX_A::DSI_OUT12),
+            13 => Some(DSI_MUX_A::DSI_OUT13),
+            14 => Some(DSI_MUX_A::DSI_OUT14),
+            15 => Some(DSI_MUX_A::DSI_OUT15),
+            16 => Some(DSI_MUX_A::ILO),
+            17 => Some(DSI_MUX_A::WCO),
+            18 => Some(DSI_MUX_A::ALTLF),
+            19 => Some(DSI_MUX_A::PILO),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `DSI_OUT0`"]
@@ -193,16 +216,10 @@ impl DSI_MUX_R {
         *self == DSI_MUX_A::PILO
     }
 }
-#[doc = "Write proxy for field `DSI_MUX`"]
-pub struct DSI_MUX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSI_MUX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DSI_MUX_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `DSI_MUX` writer - Selects a DSI source or low frequency clock for use in a clock path. The output of this mux can be selected for clock PATH<i> using CLK_SELECT_PATH register. Using the output of this mux as HFCLK source will result in undefined behavior. It can be used to clocks to DSI or to the reference inputs of FLL/PLL, subject to the frequency limits of those circuits. This mux is not glitch free, so do not change the selection while it is an actively selected clock."]
+pub type DSI_MUX_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CLK_DSI_SELECT_SPEC, u8, DSI_MUX_A, 5, O>;
+impl<'a, const O: u8> DSI_MUX_W<'a, O> {
     #[doc = "DSI0 - dsi_out\\[0\\]"]
     #[inline(always)]
     pub fn dsi_out0(self) -> &'a mut W {
@@ -303,12 +320,6 @@ impl<'a> DSI_MUX_W<'a> {
     pub fn pilo(self) -> &'a mut W {
         self.variant(DSI_MUX_A::PILO)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | ((value as u32) & 0x1f);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:4 - Selects a DSI source or low frequency clock for use in a clock path. The output of this mux can be selected for clock PATH<i> using CLK_SELECT_PATH register. Using the output of this mux as HFCLK source will result in undefined behavior. It can be used to clocks to DSI or to the reference inputs of FLL/PLL, subject to the frequency limits of those circuits. This mux is not glitch free, so do not change the selection while it is an actively selected clock."]
@@ -320,7 +331,34 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Selects a DSI source or low frequency clock for use in a clock path. The output of this mux can be selected for clock PATH<i> using CLK_SELECT_PATH register. Using the output of this mux as HFCLK source will result in undefined behavior. It can be used to clocks to DSI or to the reference inputs of FLL/PLL, subject to the frequency limits of those circuits. This mux is not glitch free, so do not change the selection while it is an actively selected clock."]
     #[inline(always)]
-    pub fn dsi_mux(&mut self) -> DSI_MUX_W {
-        DSI_MUX_W { w: self }
+    pub fn dsi_mux(&mut self) -> DSI_MUX_W<0> {
+        DSI_MUX_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Clock DSI Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_dsi_select](index.html) module"]
+pub struct CLK_DSI_SELECT_SPEC;
+impl crate::RegisterSpec for CLK_DSI_SELECT_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [clk_dsi_select::R](R) reader structure"]
+impl crate::Readable for CLK_DSI_SELECT_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [clk_dsi_select::W](W) writer structure"]
+impl crate::Writable for CLK_DSI_SELECT_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CLK_DSI_SELECT[%s]
+to value 0"]
+impl crate::Resettable for CLK_DSI_SELECT_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

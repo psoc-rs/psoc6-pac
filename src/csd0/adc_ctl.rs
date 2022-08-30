@@ -1,29 +1,43 @@
-#[doc = "Reader of register ADC_CTL"]
-pub type R = crate::R<u32, super::ADC_CTL>;
-#[doc = "Writer for register ADC_CTL"]
-pub type W = crate::W<u32, super::ADC_CTL>;
-#[doc = "Register ADC_CTL `reset()`'s with value 0"]
-impl crate::ResetValue for super::ADC_CTL {
-    type Type = u32;
+#[doc = "Register `ADC_CTL` reader"]
+pub struct R(crate::R<ADC_CTL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<ADC_CTL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ADC_TIME`"]
-pub type ADC_TIME_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `ADC_TIME`"]
-pub struct ADC_TIME_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC_TIME_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<ADC_CTL_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
-        self.w
+    fn from(reader: crate::R<ADC_CTL_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `ADC_CTL` writer"]
+pub struct W(crate::W<ADC_CTL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<ADC_CTL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<ADC_CTL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<ADC_CTL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ADC_TIME` reader - ADC timing -1 in csd_sense clock cycles (actual time is ADC_TIME+1 cycles), either used to discharge Cref1&2, or as the aperture to capture the input voltage on Cref1&2"]
+pub type ADC_TIME_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `ADC_TIME` writer - ADC timing -1 in csd_sense clock cycles (actual time is ADC_TIME+1 cycles), either used to discharge Cref1&2, or as the aperture to capture the input voltage on Cref1&2"]
+pub type ADC_TIME_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ADC_CTL_SPEC, u8, u8, 8, O>;
 #[doc = "Enable ADC measurement. When enabled the ADC sequencer will be started when the main sequencer goes to the SAMPLE_NORM state\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -43,10 +57,10 @@ impl From<ADC_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `ADC_MODE`"]
-pub type ADC_MODE_R = crate::R<u8, ADC_MODE_A>;
+#[doc = "Field `ADC_MODE` reader - Enable ADC measurement. When enabled the ADC sequencer will be started when the main sequencer goes to the SAMPLE_NORM state"]
+pub type ADC_MODE_R = crate::FieldReader<u8, ADC_MODE_A>;
 impl ADC_MODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC_MODE_A {
         match self.bits {
@@ -78,18 +92,10 @@ impl ADC_MODE_R {
         *self == ADC_MODE_A::VIN_CNT
     }
 }
-#[doc = "Write proxy for field `ADC_MODE`"]
-pub struct ADC_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC_MODE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `ADC_MODE` writer - Enable ADC measurement. When enabled the ADC sequencer will be started when the main sequencer goes to the SAMPLE_NORM state"]
+pub type ADC_MODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, ADC_CTL_SPEC, u8, ADC_MODE_A, 2, O>;
+impl<'a, const O: u8> ADC_MODE_W<'a, O> {
     #[doc = "No ADC measurement"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -110,12 +116,6 @@ impl<'a> ADC_MODE_W<'a> {
     pub fn vin_cnt(self) -> &'a mut W {
         self.variant(ADC_MODE_A::VIN_CNT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:7 - ADC timing -1 in csd_sense clock cycles (actual time is ADC_TIME+1 cycles), either used to discharge Cref1&2, or as the aperture to capture the input voltage on Cref1&2"]
@@ -126,18 +126,44 @@ impl R {
     #[doc = "Bits 16:17 - Enable ADC measurement. When enabled the ADC sequencer will be started when the main sequencer goes to the SAMPLE_NORM state"]
     #[inline(always)]
     pub fn adc_mode(&self) -> ADC_MODE_R {
-        ADC_MODE_R::new(((self.bits >> 16) & 0x03) as u8)
+        ADC_MODE_R::new(((self.bits >> 16) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:7 - ADC timing -1 in csd_sense clock cycles (actual time is ADC_TIME+1 cycles), either used to discharge Cref1&2, or as the aperture to capture the input voltage on Cref1&2"]
     #[inline(always)]
-    pub fn adc_time(&mut self) -> ADC_TIME_W {
-        ADC_TIME_W { w: self }
+    pub fn adc_time(&mut self) -> ADC_TIME_W<0> {
+        ADC_TIME_W::new(self)
     }
     #[doc = "Bits 16:17 - Enable ADC measurement. When enabled the ADC sequencer will be started when the main sequencer goes to the SAMPLE_NORM state"]
     #[inline(always)]
-    pub fn adc_mode(&mut self) -> ADC_MODE_W {
-        ADC_MODE_W { w: self }
+    pub fn adc_mode(&mut self) -> ADC_MODE_W<16> {
+        ADC_MODE_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "ADC Control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [adc_ctl](index.html) module"]
+pub struct ADC_CTL_SPEC;
+impl crate::RegisterSpec for ADC_CTL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [adc_ctl::R](R) reader structure"]
+impl crate::Readable for ADC_CTL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [adc_ctl::W](W) writer structure"]
+impl crate::Writable for ADC_CTL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets ADC_CTL to value 0"]
+impl crate::Resettable for ADC_CTL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

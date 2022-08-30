@@ -1,13 +1,37 @@
-#[doc = "Reader of register OA_RES0_CTRL"]
-pub type R = crate::R<u32, super::OA_RES0_CTRL>;
-#[doc = "Writer for register OA_RES0_CTRL"]
-pub type W = crate::W<u32, super::OA_RES0_CTRL>;
-#[doc = "Register OA_RES0_CTRL `reset()`'s with value 0"]
-impl crate::ResetValue for super::OA_RES0_CTRL {
-    type Type = u32;
+#[doc = "Register `OA_RES0_CTRL` reader"]
+pub struct R(crate::R<OA_RES0_CTRL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<OA_RES0_CTRL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<OA_RES0_CTRL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<OA_RES0_CTRL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `OA_RES0_CTRL` writer"]
+pub struct W(crate::W<OA_RES0_CTRL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<OA_RES0_CTRL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<OA_RES0_CTRL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<OA_RES0_CTRL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "Opamp0 power level, assumes Cload=15pF for the (internal only) 1x driver or 50pF for the (external) 10x driver\n\nValue on reset: 0"]
@@ -37,10 +61,10 @@ impl From<OA0_PWR_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `OA0_PWR_MODE`"]
-pub type OA0_PWR_MODE_R = crate::R<u8, OA0_PWR_MODE_A>;
+#[doc = "Field `OA0_PWR_MODE` reader - Opamp0 power level, assumes Cload=15pF for the (internal only) 1x driver or 50pF for the (external) 10x driver"]
+pub type OA0_PWR_MODE_R = crate::FieldReader<u8, OA0_PWR_MODE_A>;
 impl OA0_PWR_MODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OA0_PWR_MODE_A {
         match self.bits {
@@ -96,18 +120,10 @@ impl OA0_PWR_MODE_R {
         *self == OA0_PWR_MODE_A::PS_HIGH
     }
 }
-#[doc = "Write proxy for field `OA0_PWR_MODE`"]
-pub struct OA0_PWR_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OA0_PWR_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OA0_PWR_MODE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `OA0_PWR_MODE` writer - Opamp0 power level, assumes Cload=15pF for the (internal only) 1x driver or 50pF for the (external) 10x driver"]
+pub type OA0_PWR_MODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, OA_RES0_CTRL_SPEC, u8, OA0_PWR_MODE_A, 3, O>;
+impl<'a, const O: u8> OA0_PWR_MODE_W<'a, O> {
     #[doc = "Off"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -148,133 +164,29 @@ impl<'a> OA0_PWR_MODE_W<'a> {
     pub fn ps_high(self) -> &'a mut W {
         self.variant(OA0_PWR_MODE_A::PS_HIGH)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
-        self.w
-    }
 }
-#[doc = "Reader of field `OA0_DRIVE_STR_SEL`"]
-pub type OA0_DRIVE_STR_SEL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `OA0_DRIVE_STR_SEL`"]
-pub struct OA0_DRIVE_STR_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OA0_DRIVE_STR_SEL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
-    }
-}
-#[doc = "Reader of field `OA0_COMP_EN`"]
-pub type OA0_COMP_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `OA0_COMP_EN`"]
-pub struct OA0_COMP_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OA0_COMP_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
-    }
-}
-#[doc = "Reader of field `OA0_HYST_EN`"]
-pub type OA0_HYST_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `OA0_HYST_EN`"]
-pub struct OA0_HYST_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OA0_HYST_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
-    }
-}
-#[doc = "Reader of field `OA0_BYPASS_DSI_SYNC`"]
-pub type OA0_BYPASS_DSI_SYNC_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `OA0_BYPASS_DSI_SYNC`"]
-pub struct OA0_BYPASS_DSI_SYNC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OA0_BYPASS_DSI_SYNC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-        self.w
-    }
-}
-#[doc = "Reader of field `OA0_DSI_LEVEL`"]
-pub type OA0_DSI_LEVEL_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `OA0_DSI_LEVEL`"]
-pub struct OA0_DSI_LEVEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OA0_DSI_LEVEL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-        self.w
-    }
-}
+#[doc = "Field `OA0_DRIVE_STR_SEL` reader - Opamp0 output strength select 0=1x, 1=10x This setting sets specific requirements for OA0_BOOST_EN and OA0_COMP_TRIM"]
+pub type OA0_DRIVE_STR_SEL_R = crate::BitReader<bool>;
+#[doc = "Field `OA0_DRIVE_STR_SEL` writer - Opamp0 output strength select 0=1x, 1=10x This setting sets specific requirements for OA0_BOOST_EN and OA0_COMP_TRIM"]
+pub type OA0_DRIVE_STR_SEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, OA_RES0_CTRL_SPEC, bool, O>;
+#[doc = "Field `OA0_COMP_EN` reader - Opamp0 comparator enable"]
+pub type OA0_COMP_EN_R = crate::BitReader<bool>;
+#[doc = "Field `OA0_COMP_EN` writer - Opamp0 comparator enable"]
+pub type OA0_COMP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, OA_RES0_CTRL_SPEC, bool, O>;
+#[doc = "Field `OA0_HYST_EN` reader - Opamp0 hysteresis enable (10mV)"]
+pub type OA0_HYST_EN_R = crate::BitReader<bool>;
+#[doc = "Field `OA0_HYST_EN` writer - Opamp0 hysteresis enable (10mV)"]
+pub type OA0_HYST_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, OA_RES0_CTRL_SPEC, bool, O>;
+#[doc = "Field `OA0_BYPASS_DSI_SYNC` reader - Opamp0 bypass comparator output synchronization for DSI (trigger) output: 0=synchronize (level or pulse), 1=bypass (output async)"]
+pub type OA0_BYPASS_DSI_SYNC_R = crate::BitReader<bool>;
+#[doc = "Field `OA0_BYPASS_DSI_SYNC` writer - Opamp0 bypass comparator output synchronization for DSI (trigger) output: 0=synchronize (level or pulse), 1=bypass (output async)"]
+pub type OA0_BYPASS_DSI_SYNC_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, OA_RES0_CTRL_SPEC, bool, O>;
+#[doc = "Field `OA0_DSI_LEVEL` reader - Opamp0 comparator DSI (trigger) out level : 0=pulse, each time an edge is detected (see OA0_COMPINT) a pulse is sent out on DSI 1=level, DSI output is a synchronized version of the comparator output"]
+pub type OA0_DSI_LEVEL_R = crate::BitReader<bool>;
+#[doc = "Field `OA0_DSI_LEVEL` writer - Opamp0 comparator DSI (trigger) out level : 0=pulse, each time an edge is detected (see OA0_COMPINT) a pulse is sent out on DSI 1=level, DSI output is a synchronized version of the comparator output"]
+pub type OA0_DSI_LEVEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, OA_RES0_CTRL_SPEC, bool, O>;
 #[doc = "Opamp0 comparator edge detect for interrupt and pulse mode of DSI (trigger)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -294,10 +206,10 @@ impl From<OA0_COMPINT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `OA0_COMPINT`"]
-pub type OA0_COMPINT_R = crate::R<u8, OA0_COMPINT_A>;
+#[doc = "Field `OA0_COMPINT` reader - Opamp0 comparator edge detect for interrupt and pulse mode of DSI (trigger)"]
+pub type OA0_COMPINT_R = crate::FieldReader<u8, OA0_COMPINT_A>;
 impl OA0_COMPINT_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> OA0_COMPINT_A {
         match self.bits {
@@ -329,18 +241,10 @@ impl OA0_COMPINT_R {
         *self == OA0_COMPINT_A::BOTH
     }
 }
-#[doc = "Write proxy for field `OA0_COMPINT`"]
-pub struct OA0_COMPINT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OA0_COMPINT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: OA0_COMPINT_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `OA0_COMPINT` writer - Opamp0 comparator edge detect for interrupt and pulse mode of DSI (trigger)"]
+pub type OA0_COMPINT_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, OA_RES0_CTRL_SPEC, u8, OA0_COMPINT_A, 2, O>;
+impl<'a, const O: u8> OA0_COMPINT_W<'a, O> {
     #[doc = "Disabled, no interrupts will be detected"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -361,152 +265,132 @@ impl<'a> OA0_COMPINT_W<'a> {
     pub fn both(self) -> &'a mut W {
         self.variant(OA0_COMPINT_A::BOTH)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
-        self.w
-    }
 }
-#[doc = "Reader of field `OA0_PUMP_EN`"]
-pub type OA0_PUMP_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `OA0_PUMP_EN`"]
-pub struct OA0_PUMP_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OA0_PUMP_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-        self.w
-    }
-}
-#[doc = "Reader of field `OA0_BOOST_EN`"]
-pub type OA0_BOOST_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `OA0_BOOST_EN`"]
-pub struct OA0_BOOST_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> OA0_BOOST_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-        self.w
-    }
-}
+#[doc = "Field `OA0_PUMP_EN` reader - Opamp0 pump enable"]
+pub type OA0_PUMP_EN_R = crate::BitReader<bool>;
+#[doc = "Field `OA0_PUMP_EN` writer - Opamp0 pump enable"]
+pub type OA0_PUMP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, OA_RES0_CTRL_SPEC, bool, O>;
+#[doc = "Field `OA0_BOOST_EN` reader - Opamp0 gain booster enable for class A output, for risk mitigation only, not user selectable. Value depends on the drive strength setting - 1x mode: set to 1; 10x mode: set to 0"]
+pub type OA0_BOOST_EN_R = crate::BitReader<bool>;
+#[doc = "Field `OA0_BOOST_EN` writer - Opamp0 gain booster enable for class A output, for risk mitigation only, not user selectable. Value depends on the drive strength setting - 1x mode: set to 1; 10x mode: set to 0"]
+pub type OA0_BOOST_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, OA_RES0_CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - Opamp0 power level, assumes Cload=15pF for the (internal only) 1x driver or 50pF for the (external) 10x driver"]
     #[inline(always)]
     pub fn oa0_pwr_mode(&self) -> OA0_PWR_MODE_R {
-        OA0_PWR_MODE_R::new((self.bits & 0x07) as u8)
+        OA0_PWR_MODE_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bit 3 - Opamp0 output strength select 0=1x, 1=10x This setting sets specific requirements for OA0_BOOST_EN and OA0_COMP_TRIM"]
     #[inline(always)]
     pub fn oa0_drive_str_sel(&self) -> OA0_DRIVE_STR_SEL_R {
-        OA0_DRIVE_STR_SEL_R::new(((self.bits >> 3) & 0x01) != 0)
+        OA0_DRIVE_STR_SEL_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Opamp0 comparator enable"]
     #[inline(always)]
     pub fn oa0_comp_en(&self) -> OA0_COMP_EN_R {
-        OA0_COMP_EN_R::new(((self.bits >> 4) & 0x01) != 0)
+        OA0_COMP_EN_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Opamp0 hysteresis enable (10mV)"]
     #[inline(always)]
     pub fn oa0_hyst_en(&self) -> OA0_HYST_EN_R {
-        OA0_HYST_EN_R::new(((self.bits >> 5) & 0x01) != 0)
+        OA0_HYST_EN_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Opamp0 bypass comparator output synchronization for DSI (trigger) output: 0=synchronize (level or pulse), 1=bypass (output async)"]
     #[inline(always)]
     pub fn oa0_bypass_dsi_sync(&self) -> OA0_BYPASS_DSI_SYNC_R {
-        OA0_BYPASS_DSI_SYNC_R::new(((self.bits >> 6) & 0x01) != 0)
+        OA0_BYPASS_DSI_SYNC_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Opamp0 comparator DSI (trigger) out level : 0=pulse, each time an edge is detected (see OA0_COMPINT) a pulse is sent out on DSI 1=level, DSI output is a synchronized version of the comparator output"]
     #[inline(always)]
     pub fn oa0_dsi_level(&self) -> OA0_DSI_LEVEL_R {
-        OA0_DSI_LEVEL_R::new(((self.bits >> 7) & 0x01) != 0)
+        OA0_DSI_LEVEL_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:9 - Opamp0 comparator edge detect for interrupt and pulse mode of DSI (trigger)"]
     #[inline(always)]
     pub fn oa0_compint(&self) -> OA0_COMPINT_R {
-        OA0_COMPINT_R::new(((self.bits >> 8) & 0x03) as u8)
+        OA0_COMPINT_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bit 11 - Opamp0 pump enable"]
     #[inline(always)]
     pub fn oa0_pump_en(&self) -> OA0_PUMP_EN_R {
-        OA0_PUMP_EN_R::new(((self.bits >> 11) & 0x01) != 0)
+        OA0_PUMP_EN_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Opamp0 gain booster enable for class A output, for risk mitigation only, not user selectable. Value depends on the drive strength setting - 1x mode: set to 1; 10x mode: set to 0"]
     #[inline(always)]
     pub fn oa0_boost_en(&self) -> OA0_BOOST_EN_R {
-        OA0_BOOST_EN_R::new(((self.bits >> 12) & 0x01) != 0)
+        OA0_BOOST_EN_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - Opamp0 power level, assumes Cload=15pF for the (internal only) 1x driver or 50pF for the (external) 10x driver"]
     #[inline(always)]
-    pub fn oa0_pwr_mode(&mut self) -> OA0_PWR_MODE_W {
-        OA0_PWR_MODE_W { w: self }
+    pub fn oa0_pwr_mode(&mut self) -> OA0_PWR_MODE_W<0> {
+        OA0_PWR_MODE_W::new(self)
     }
     #[doc = "Bit 3 - Opamp0 output strength select 0=1x, 1=10x This setting sets specific requirements for OA0_BOOST_EN and OA0_COMP_TRIM"]
     #[inline(always)]
-    pub fn oa0_drive_str_sel(&mut self) -> OA0_DRIVE_STR_SEL_W {
-        OA0_DRIVE_STR_SEL_W { w: self }
+    pub fn oa0_drive_str_sel(&mut self) -> OA0_DRIVE_STR_SEL_W<3> {
+        OA0_DRIVE_STR_SEL_W::new(self)
     }
     #[doc = "Bit 4 - Opamp0 comparator enable"]
     #[inline(always)]
-    pub fn oa0_comp_en(&mut self) -> OA0_COMP_EN_W {
-        OA0_COMP_EN_W { w: self }
+    pub fn oa0_comp_en(&mut self) -> OA0_COMP_EN_W<4> {
+        OA0_COMP_EN_W::new(self)
     }
     #[doc = "Bit 5 - Opamp0 hysteresis enable (10mV)"]
     #[inline(always)]
-    pub fn oa0_hyst_en(&mut self) -> OA0_HYST_EN_W {
-        OA0_HYST_EN_W { w: self }
+    pub fn oa0_hyst_en(&mut self) -> OA0_HYST_EN_W<5> {
+        OA0_HYST_EN_W::new(self)
     }
     #[doc = "Bit 6 - Opamp0 bypass comparator output synchronization for DSI (trigger) output: 0=synchronize (level or pulse), 1=bypass (output async)"]
     #[inline(always)]
-    pub fn oa0_bypass_dsi_sync(&mut self) -> OA0_BYPASS_DSI_SYNC_W {
-        OA0_BYPASS_DSI_SYNC_W { w: self }
+    pub fn oa0_bypass_dsi_sync(&mut self) -> OA0_BYPASS_DSI_SYNC_W<6> {
+        OA0_BYPASS_DSI_SYNC_W::new(self)
     }
     #[doc = "Bit 7 - Opamp0 comparator DSI (trigger) out level : 0=pulse, each time an edge is detected (see OA0_COMPINT) a pulse is sent out on DSI 1=level, DSI output is a synchronized version of the comparator output"]
     #[inline(always)]
-    pub fn oa0_dsi_level(&mut self) -> OA0_DSI_LEVEL_W {
-        OA0_DSI_LEVEL_W { w: self }
+    pub fn oa0_dsi_level(&mut self) -> OA0_DSI_LEVEL_W<7> {
+        OA0_DSI_LEVEL_W::new(self)
     }
     #[doc = "Bits 8:9 - Opamp0 comparator edge detect for interrupt and pulse mode of DSI (trigger)"]
     #[inline(always)]
-    pub fn oa0_compint(&mut self) -> OA0_COMPINT_W {
-        OA0_COMPINT_W { w: self }
+    pub fn oa0_compint(&mut self) -> OA0_COMPINT_W<8> {
+        OA0_COMPINT_W::new(self)
     }
     #[doc = "Bit 11 - Opamp0 pump enable"]
     #[inline(always)]
-    pub fn oa0_pump_en(&mut self) -> OA0_PUMP_EN_W {
-        OA0_PUMP_EN_W { w: self }
+    pub fn oa0_pump_en(&mut self) -> OA0_PUMP_EN_W<11> {
+        OA0_PUMP_EN_W::new(self)
     }
     #[doc = "Bit 12 - Opamp0 gain booster enable for class A output, for risk mitigation only, not user selectable. Value depends on the drive strength setting - 1x mode: set to 1; 10x mode: set to 0"]
     #[inline(always)]
-    pub fn oa0_boost_en(&mut self) -> OA0_BOOST_EN_W {
-        OA0_BOOST_EN_W { w: self }
+    pub fn oa0_boost_en(&mut self) -> OA0_BOOST_EN_W<12> {
+        OA0_BOOST_EN_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Opamp0 and resistor0 control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [oa_res0_ctrl](index.html) module"]
+pub struct OA_RES0_CTRL_SPEC;
+impl crate::RegisterSpec for OA_RES0_CTRL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [oa_res0_ctrl::R](R) reader structure"]
+impl crate::Readable for OA_RES0_CTRL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [oa_res0_ctrl::W](W) writer structure"]
+impl crate::Writable for OA_RES0_CTRL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets OA_RES0_CTRL to value 0"]
+impl crate::Resettable for OA_RES0_CTRL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

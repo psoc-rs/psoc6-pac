@@ -1,43 +1,48 @@
-#[doc = "Reader of register CPU_WRITE_REG"]
-pub type R = crate::R<u32, super::CPU_WRITE_REG>;
-#[doc = "Writer for register CPU_WRITE_REG"]
-pub type W = crate::W<u32, super::CPU_WRITE_REG>;
-#[doc = "Register CPU_WRITE_REG `reset()`'s with value 0"]
-impl crate::ResetValue for super::CPU_WRITE_REG {
-    type Type = u32;
+#[doc = "Register `CPU_WRITE_REG` reader"]
+pub struct R(crate::R<CPU_WRITE_REG_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CPU_WRITE_REG_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ADDR`"]
-pub type ADDR_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `ADDR`"]
-pub struct ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<CPU_WRITE_REG_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
-        self.w
+    fn from(reader: crate::R<CPU_WRITE_REG_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `WRITE_DATA`"]
-pub type WRITE_DATA_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `WRITE_DATA`"]
-pub struct WRITE_DATA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WRITE_DATA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+#[doc = "Register `CPU_WRITE_REG` writer"]
+pub struct W(crate::W<CPU_WRITE_REG_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CPU_WRITE_REG_SPEC>;
     #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | (((value as u32) & 0xffff) << 16);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<CPU_WRITE_REG_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CPU_WRITE_REG_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `ADDR` reader - N/A"]
+pub type ADDR_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `ADDR` writer - N/A"]
+pub type ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CPU_WRITE_REG_SPEC, u16, u16, 16, O>;
+#[doc = "Field `WRITE_DATA` reader - N/A"]
+pub type WRITE_DATA_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `WRITE_DATA` writer - N/A"]
+pub type WRITE_DATA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CPU_WRITE_REG_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - N/A"]
     #[inline(always)]
@@ -53,12 +58,38 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - N/A"]
     #[inline(always)]
-    pub fn addr(&mut self) -> ADDR_W {
-        ADDR_W { w: self }
+    pub fn addr(&mut self) -> ADDR_W<0> {
+        ADDR_W::new(self)
     }
     #[doc = "Bits 16:31 - N/A"]
     #[inline(always)]
-    pub fn write_data(&mut self) -> WRITE_DATA_W {
-        WRITE_DATA_W { w: self }
+    pub fn write_data(&mut self) -> WRITE_DATA_W<16> {
+        WRITE_DATA_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "N/A\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cpu_write_reg](index.html) module"]
+pub struct CPU_WRITE_REG_SPEC;
+impl crate::RegisterSpec for CPU_WRITE_REG_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [cpu_write_reg::R](R) reader structure"]
+impl crate::Readable for CPU_WRITE_REG_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [cpu_write_reg::W](W) writer structure"]
+impl crate::Writable for CPU_WRITE_REG_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CPU_WRITE_REG to value 0"]
+impl crate::Resettable for CPU_WRITE_REG_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

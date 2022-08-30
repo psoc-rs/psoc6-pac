@@ -1,29 +1,43 @@
-#[doc = "Reader of register IDACB"]
-pub type R = crate::R<u32, super::IDACB>;
-#[doc = "Writer for register IDACB"]
-pub type W = crate::W<u32, super::IDACB>;
-#[doc = "Register IDACB `reset()`'s with value 0"]
-impl crate::ResetValue for super::IDACB {
-    type Type = u32;
+#[doc = "Register `IDACB` reader"]
+pub struct R(crate::R<IDACB_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<IDACB_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `VAL`"]
-pub type VAL_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `VAL`"]
-pub struct VAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> VAL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<IDACB_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7f) | ((value as u32) & 0x7f);
-        self.w
+    fn from(reader: crate::R<IDACB_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `IDACB` writer"]
+pub struct W(crate::W<IDACB_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<IDACB_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<IDACB_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<IDACB_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `VAL` reader - N/A"]
+pub type VAL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `VAL` writer - N/A"]
+pub type VAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IDACB_SPEC, u8, u8, 7, O>;
 #[doc = "N/A\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum POL_DYN_A {
@@ -38,10 +52,10 @@ impl From<POL_DYN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Reader of field `POL_DYN`"]
-pub type POL_DYN_R = crate::R<bool, POL_DYN_A>;
+#[doc = "Field `POL_DYN` reader - N/A"]
+pub type POL_DYN_R = crate::BitReader<POL_DYN_A>;
 impl POL_DYN_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> POL_DYN_A {
         match self.bits {
@@ -51,7 +65,7 @@ impl POL_DYN_R {
     }
     #[doc = "Checks if the value of the field is `STATIC`"]
     #[inline(always)]
-    pub fn is_static_(&self) -> bool {
+    pub fn is_static(&self) -> bool {
         *self == POL_DYN_A::STATIC
     }
     #[doc = "Checks if the value of the field is `DYNAMIC`"]
@@ -60,18 +74,9 @@ impl POL_DYN_R {
         *self == POL_DYN_A::DYNAMIC
     }
 }
-#[doc = "Write proxy for field `POL_DYN`"]
-pub struct POL_DYN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> POL_DYN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: POL_DYN_A) -> &'a mut W {
-        {
-            self.bit(variant.into())
-        }
-    }
+#[doc = "Field `POL_DYN` writer - N/A"]
+pub type POL_DYN_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDACB_SPEC, POL_DYN_A, O>;
+impl<'a, const O: u8> POL_DYN_W<'a, O> {
     #[doc = "N/A"]
     #[inline(always)]
     pub fn static_(self) -> &'a mut W {
@@ -82,30 +87,14 @@ impl<'a> POL_DYN_W<'a> {
     pub fn dynamic(self) -> &'a mut W {
         self.variant(POL_DYN_A::DYNAMIC)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-        self.w
-    }
 }
 #[doc = "N/A\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
 pub enum POLARITY_A {
-    #[doc = "0: Normal: sensor switching between Vssio and Cmod.   For non-CSD application, IDAC1 will source current."]
+    #[doc = "0: Normal: sensor switching between Vssio and Cmod. For non-CSD application, IDAC1 will source current."]
     VSSA_SRC = 0,
-    #[doc = "1: Inverted: sensor switch between Vddio and Cmod.  For non-CSD application, IDAC1 will sink current."]
+    #[doc = "1: Inverted: sensor switch between Vddio and Cmod. For non-CSD application, IDAC1 will sink current."]
     VDDA_SNK = 1,
     #[doc = "2: N/A"]
     SENSE = 2,
@@ -118,10 +107,10 @@ impl From<POLARITY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `POLARITY`"]
-pub type POLARITY_R = crate::R<u8, POLARITY_A>;
+#[doc = "Field `POLARITY` reader - N/A"]
+pub type POLARITY_R = crate::FieldReader<u8, POLARITY_A>;
 impl POLARITY_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> POLARITY_A {
         match self.bits {
@@ -153,18 +142,10 @@ impl POLARITY_R {
         *self == POLARITY_A::SENSE_INV
     }
 }
-#[doc = "Write proxy for field `POLARITY`"]
-pub struct POLARITY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> POLARITY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: POLARITY_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `POLARITY` writer - N/A"]
+pub type POLARITY_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDACB_SPEC, u8, POLARITY_A, 2, O>;
+impl<'a, const O: u8> POLARITY_W<'a, O> {
     #[doc = "Normal: sensor switching between Vssio and Cmod. For non-CSD application, IDAC1 will source current."]
     #[inline(always)]
     pub fn vssa_src(self) -> &'a mut W {
@@ -184,12 +165,6 @@ impl<'a> POLARITY_W<'a> {
     #[inline(always)]
     pub fn sense_inv(self) -> &'a mut W {
         self.variant(POLARITY_A::SENSE_INV)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | (((value as u32) & 0x03) << 8);
-        self.w
     }
 }
 #[doc = "N/A\n\nValue on reset: 0"]
@@ -211,10 +186,10 @@ impl From<BAL_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `BAL_MODE`"]
-pub type BAL_MODE_R = crate::R<u8, BAL_MODE_A>;
+#[doc = "Field `BAL_MODE` reader - N/A"]
+pub type BAL_MODE_R = crate::FieldReader<u8, BAL_MODE_A>;
 impl BAL_MODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BAL_MODE_A {
         match self.bits {
@@ -246,18 +221,10 @@ impl BAL_MODE_R {
         *self == BAL_MODE_A::PHI1_2
     }
 }
-#[doc = "Write proxy for field `BAL_MODE`"]
-pub struct BAL_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BAL_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BAL_MODE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `BAL_MODE` writer - N/A"]
+pub type BAL_MODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDACB_SPEC, u8, BAL_MODE_A, 2, O>;
+impl<'a, const O: u8> BAL_MODE_W<'a, O> {
     #[doc = "N/A"]
     #[inline(always)]
     pub fn full(self) -> &'a mut W {
@@ -277,12 +244,6 @@ impl<'a> BAL_MODE_W<'a> {
     #[inline(always)]
     pub fn phi1_2(self) -> &'a mut W {
         self.variant(BAL_MODE_A::PHI1_2)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 10)) | (((value as u32) & 0x03) << 10);
-        self.w
     }
 }
 #[doc = "N/A\n\nValue on reset: 0"]
@@ -304,10 +265,10 @@ impl From<LEG1_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `LEG1_MODE`"]
-pub type LEG1_MODE_R = crate::R<u8, LEG1_MODE_A>;
+#[doc = "Field `LEG1_MODE` reader - N/A"]
+pub type LEG1_MODE_R = crate::FieldReader<u8, LEG1_MODE_A>;
 impl LEG1_MODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LEG1_MODE_A {
         match self.bits {
@@ -339,18 +300,10 @@ impl LEG1_MODE_R {
         *self == LEG1_MODE_A::CSD
     }
 }
-#[doc = "Write proxy for field `LEG1_MODE`"]
-pub struct LEG1_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LEG1_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LEG1_MODE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `LEG1_MODE` writer - N/A"]
+pub type LEG1_MODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDACB_SPEC, u8, LEG1_MODE_A, 2, O>;
+impl<'a, const O: u8> LEG1_MODE_W<'a, O> {
     #[doc = "N/A"]
     #[inline(always)]
     pub fn gp_static(self) -> &'a mut W {
@@ -370,12 +323,6 @@ impl<'a> LEG1_MODE_W<'a> {
     #[inline(always)]
     pub fn csd(self) -> &'a mut W {
         self.variant(LEG1_MODE_A::CSD)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | (((value as u32) & 0x03) << 16);
-        self.w
     }
 }
 #[doc = "N/A\n\nValue on reset: 0"]
@@ -397,10 +344,10 @@ impl From<LEG2_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `LEG2_MODE`"]
-pub type LEG2_MODE_R = crate::R<u8, LEG2_MODE_A>;
+#[doc = "Field `LEG2_MODE` reader - N/A"]
+pub type LEG2_MODE_R = crate::FieldReader<u8, LEG2_MODE_A>;
 impl LEG2_MODE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LEG2_MODE_A {
         match self.bits {
@@ -432,18 +379,10 @@ impl LEG2_MODE_R {
         *self == LEG2_MODE_A::CSD
     }
 }
-#[doc = "Write proxy for field `LEG2_MODE`"]
-pub struct LEG2_MODE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LEG2_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LEG2_MODE_A) -> &'a mut W {
-        {
-            self.bits(variant.into())
-        }
-    }
+#[doc = "Field `LEG2_MODE` writer - N/A"]
+pub type LEG2_MODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, IDACB_SPEC, u8, LEG2_MODE_A, 2, O>;
+impl<'a, const O: u8> LEG2_MODE_W<'a, O> {
     #[doc = "N/A"]
     #[inline(always)]
     pub fn gp_static(self) -> &'a mut W {
@@ -464,37 +403,11 @@ impl<'a> LEG2_MODE_W<'a> {
     pub fn csd(self) -> &'a mut W {
         self.variant(LEG2_MODE_A::CSD)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 18)) | (((value as u32) & 0x03) << 18);
-        self.w
-    }
 }
-#[doc = "Reader of field `DSI_CTRL_EN`"]
-pub type DSI_CTRL_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DSI_CTRL_EN`"]
-pub struct DSI_CTRL_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSI_CTRL_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-        self.w
-    }
-}
+#[doc = "Field `DSI_CTRL_EN` reader - N/A"]
+pub type DSI_CTRL_EN_R = crate::BitReader<bool>;
+#[doc = "Field `DSI_CTRL_EN` writer - N/A"]
+pub type DSI_CTRL_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDACB_SPEC, bool, O>;
 #[doc = "N/A\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -512,18 +425,17 @@ impl From<RANGE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `RANGE`"]
-pub type RANGE_R = crate::R<u8, RANGE_A>;
+#[doc = "Field `RANGE` reader - N/A"]
+pub type RANGE_R = crate::FieldReader<u8, RANGE_A>;
 impl RANGE_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, RANGE_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<RANGE_A> {
         match self.bits {
-            0 => Val(RANGE_A::IDAC_LO),
-            1 => Val(RANGE_A::IDAC_MED),
-            2 => Val(RANGE_A::IDAC_HI),
-            i => Res(i),
+            0 => Some(RANGE_A::IDAC_LO),
+            1 => Some(RANGE_A::IDAC_MED),
+            2 => Some(RANGE_A::IDAC_HI),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `IDAC_LO`"]
@@ -542,16 +454,9 @@ impl RANGE_R {
         *self == RANGE_A::IDAC_HI
     }
 }
-#[doc = "Write proxy for field `RANGE`"]
-pub struct RANGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RANGE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RANGE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `RANGE` writer - N/A"]
+pub type RANGE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IDACB_SPEC, u8, RANGE_A, 2, O>;
+impl<'a, const O: u8> RANGE_W<'a, O> {
     #[doc = "N/A"]
     #[inline(always)]
     pub fn idac_lo(self) -> &'a mut W {
@@ -567,85 +472,19 @@ impl<'a> RANGE_W<'a> {
     pub fn idac_hi(self) -> &'a mut W {
         self.variant(RANGE_A::IDAC_HI)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 22)) | (((value as u32) & 0x03) << 22);
-        self.w
-    }
 }
-#[doc = "Reader of field `LEG1_EN`"]
-pub type LEG1_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LEG1_EN`"]
-pub struct LEG1_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LEG1_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | (((value as u32) & 0x01) << 24);
-        self.w
-    }
-}
-#[doc = "Reader of field `LEG2_EN`"]
-pub type LEG2_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LEG2_EN`"]
-pub struct LEG2_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LEG2_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | (((value as u32) & 0x01) << 25);
-        self.w
-    }
-}
-#[doc = "Reader of field `LEG3_EN`"]
-pub type LEG3_EN_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LEG3_EN`"]
-pub struct LEG3_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LEG3_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | (((value as u32) & 0x01) << 26);
-        self.w
-    }
-}
+#[doc = "Field `LEG1_EN` reader - N/A"]
+pub type LEG1_EN_R = crate::BitReader<bool>;
+#[doc = "Field `LEG1_EN` writer - N/A"]
+pub type LEG1_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDACB_SPEC, bool, O>;
+#[doc = "Field `LEG2_EN` reader - N/A"]
+pub type LEG2_EN_R = crate::BitReader<bool>;
+#[doc = "Field `LEG2_EN` writer - N/A"]
+pub type LEG2_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDACB_SPEC, bool, O>;
+#[doc = "Field `LEG3_EN` reader - N/A"]
+pub type LEG3_EN_R = crate::BitReader<bool>;
+#[doc = "Field `LEG3_EN` writer - N/A"]
+pub type LEG3_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, IDACB_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:6 - N/A"]
     #[inline(always)]
@@ -655,108 +494,134 @@ impl R {
     #[doc = "Bit 7 - N/A"]
     #[inline(always)]
     pub fn pol_dyn(&self) -> POL_DYN_R {
-        POL_DYN_R::new(((self.bits >> 7) & 0x01) != 0)
+        POL_DYN_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 8:9 - N/A"]
     #[inline(always)]
     pub fn polarity(&self) -> POLARITY_R {
-        POLARITY_R::new(((self.bits >> 8) & 0x03) as u8)
+        POLARITY_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - N/A"]
     #[inline(always)]
     pub fn bal_mode(&self) -> BAL_MODE_R {
-        BAL_MODE_R::new(((self.bits >> 10) & 0x03) as u8)
+        BAL_MODE_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bits 16:17 - N/A"]
     #[inline(always)]
     pub fn leg1_mode(&self) -> LEG1_MODE_R {
-        LEG1_MODE_R::new(((self.bits >> 16) & 0x03) as u8)
+        LEG1_MODE_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 18:19 - N/A"]
     #[inline(always)]
     pub fn leg2_mode(&self) -> LEG2_MODE_R {
-        LEG2_MODE_R::new(((self.bits >> 18) & 0x03) as u8)
+        LEG2_MODE_R::new(((self.bits >> 18) & 3) as u8)
     }
     #[doc = "Bit 21 - N/A"]
     #[inline(always)]
     pub fn dsi_ctrl_en(&self) -> DSI_CTRL_EN_R {
-        DSI_CTRL_EN_R::new(((self.bits >> 21) & 0x01) != 0)
+        DSI_CTRL_EN_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bits 22:23 - N/A"]
     #[inline(always)]
     pub fn range(&self) -> RANGE_R {
-        RANGE_R::new(((self.bits >> 22) & 0x03) as u8)
+        RANGE_R::new(((self.bits >> 22) & 3) as u8)
     }
     #[doc = "Bit 24 - N/A"]
     #[inline(always)]
     pub fn leg1_en(&self) -> LEG1_EN_R {
-        LEG1_EN_R::new(((self.bits >> 24) & 0x01) != 0)
+        LEG1_EN_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 25 - N/A"]
     #[inline(always)]
     pub fn leg2_en(&self) -> LEG2_EN_R {
-        LEG2_EN_R::new(((self.bits >> 25) & 0x01) != 0)
+        LEG2_EN_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 26 - N/A"]
     #[inline(always)]
     pub fn leg3_en(&self) -> LEG3_EN_R {
-        LEG3_EN_R::new(((self.bits >> 26) & 0x01) != 0)
+        LEG3_EN_R::new(((self.bits >> 26) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:6 - N/A"]
     #[inline(always)]
-    pub fn val(&mut self) -> VAL_W {
-        VAL_W { w: self }
+    pub fn val(&mut self) -> VAL_W<0> {
+        VAL_W::new(self)
     }
     #[doc = "Bit 7 - N/A"]
     #[inline(always)]
-    pub fn pol_dyn(&mut self) -> POL_DYN_W {
-        POL_DYN_W { w: self }
+    pub fn pol_dyn(&mut self) -> POL_DYN_W<7> {
+        POL_DYN_W::new(self)
     }
     #[doc = "Bits 8:9 - N/A"]
     #[inline(always)]
-    pub fn polarity(&mut self) -> POLARITY_W {
-        POLARITY_W { w: self }
+    pub fn polarity(&mut self) -> POLARITY_W<8> {
+        POLARITY_W::new(self)
     }
     #[doc = "Bits 10:11 - N/A"]
     #[inline(always)]
-    pub fn bal_mode(&mut self) -> BAL_MODE_W {
-        BAL_MODE_W { w: self }
+    pub fn bal_mode(&mut self) -> BAL_MODE_W<10> {
+        BAL_MODE_W::new(self)
     }
     #[doc = "Bits 16:17 - N/A"]
     #[inline(always)]
-    pub fn leg1_mode(&mut self) -> LEG1_MODE_W {
-        LEG1_MODE_W { w: self }
+    pub fn leg1_mode(&mut self) -> LEG1_MODE_W<16> {
+        LEG1_MODE_W::new(self)
     }
     #[doc = "Bits 18:19 - N/A"]
     #[inline(always)]
-    pub fn leg2_mode(&mut self) -> LEG2_MODE_W {
-        LEG2_MODE_W { w: self }
+    pub fn leg2_mode(&mut self) -> LEG2_MODE_W<18> {
+        LEG2_MODE_W::new(self)
     }
     #[doc = "Bit 21 - N/A"]
     #[inline(always)]
-    pub fn dsi_ctrl_en(&mut self) -> DSI_CTRL_EN_W {
-        DSI_CTRL_EN_W { w: self }
+    pub fn dsi_ctrl_en(&mut self) -> DSI_CTRL_EN_W<21> {
+        DSI_CTRL_EN_W::new(self)
     }
     #[doc = "Bits 22:23 - N/A"]
     #[inline(always)]
-    pub fn range(&mut self) -> RANGE_W {
-        RANGE_W { w: self }
+    pub fn range(&mut self) -> RANGE_W<22> {
+        RANGE_W::new(self)
     }
     #[doc = "Bit 24 - N/A"]
     #[inline(always)]
-    pub fn leg1_en(&mut self) -> LEG1_EN_W {
-        LEG1_EN_W { w: self }
+    pub fn leg1_en(&mut self) -> LEG1_EN_W<24> {
+        LEG1_EN_W::new(self)
     }
     #[doc = "Bit 25 - N/A"]
     #[inline(always)]
-    pub fn leg2_en(&mut self) -> LEG2_EN_W {
-        LEG2_EN_W { w: self }
+    pub fn leg2_en(&mut self) -> LEG2_EN_W<25> {
+        LEG2_EN_W::new(self)
     }
     #[doc = "Bit 26 - N/A"]
     #[inline(always)]
-    pub fn leg3_en(&mut self) -> LEG3_EN_W {
-        LEG3_EN_W { w: self }
+    pub fn leg3_en(&mut self) -> LEG3_EN_W<26> {
+        LEG3_EN_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "IDACB Configuration\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [idacb](index.html) module"]
+pub struct IDACB_SPEC;
+impl crate::RegisterSpec for IDACB_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [idacb::R](R) reader structure"]
+impl crate::Readable for IDACB_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [idacb::W](W) writer structure"]
+impl crate::Writable for IDACB_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets IDACB to value 0"]
+impl crate::Resettable for IDACB_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

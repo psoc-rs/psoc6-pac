@@ -1,152 +1,122 @@
-#[doc = "Reader of register INTR_SPI_EC"]
-pub type R = crate::R<u32, super::INTR_SPI_EC>;
-#[doc = "Writer for register INTR_SPI_EC"]
-pub type W = crate::W<u32, super::INTR_SPI_EC>;
-#[doc = "Register INTR_SPI_EC `reset()`'s with value 0"]
-impl crate::ResetValue for super::INTR_SPI_EC {
-    type Type = u32;
+#[doc = "Register `INTR_SPI_EC` reader"]
+pub struct R(crate::R<INTR_SPI_EC_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<INTR_SPI_EC_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `WAKE_UP`"]
-pub type WAKE_UP_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `WAKE_UP`"]
-pub struct WAKE_UP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WAKE_UP_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<INTR_SPI_EC_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn from(reader: crate::R<INTR_SPI_EC_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `EZ_STOP`"]
-pub type EZ_STOP_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EZ_STOP`"]
-pub struct EZ_STOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EZ_STOP_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `INTR_SPI_EC` writer"]
+pub struct W(crate::W<INTR_SPI_EC_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<INTR_SPI_EC_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `EZ_WRITE_STOP`"]
-pub type EZ_WRITE_STOP_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EZ_WRITE_STOP`"]
-pub struct EZ_WRITE_STOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EZ_WRITE_STOP_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `EZ_READ_STOP`"]
-pub type EZ_READ_STOP_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EZ_READ_STOP`"]
-pub struct EZ_READ_STOP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EZ_READ_STOP_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<INTR_SPI_EC_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
+    fn from(writer: crate::W<INTR_SPI_EC_SPEC>) -> Self {
+        W(writer)
     }
 }
+#[doc = "Field `WAKE_UP` reader - Wake up request. Active on incoming slave request. Only set when EC_AM is '1'."]
+pub type WAKE_UP_R = crate::BitReader<bool>;
+#[doc = "Field `WAKE_UP` writer - Wake up request. Active on incoming slave request. Only set when EC_AM is '1'."]
+pub type WAKE_UP_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_SPI_EC_SPEC, bool, O>;
+#[doc = "Field `EZ_STOP` reader - STOP detection. Activated on the end of a every transfer (SPI deselection). Only set in EZ and CMD_RESP mode and when EC_OP is '1'."]
+pub type EZ_STOP_R = crate::BitReader<bool>;
+#[doc = "Field `EZ_STOP` writer - STOP detection. Activated on the end of a every transfer (SPI deselection). Only set in EZ and CMD_RESP mode and when EC_OP is '1'."]
+pub type EZ_STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_SPI_EC_SPEC, bool, O>;
+#[doc = "Field `EZ_WRITE_STOP` reader - STOP detection after a write transfer occurred. Activated on the end of a write transfer (SPI deselection). This event is an indication that a buffer memory location has been written to. For EZ mode: a transfer that only writes the base address does NOT activate this event. Only set in EZ and CMD_RESP modes and when EC_OP is '1'."]
+pub type EZ_WRITE_STOP_R = crate::BitReader<bool>;
+#[doc = "Field `EZ_WRITE_STOP` writer - STOP detection after a write transfer occurred. Activated on the end of a write transfer (SPI deselection). This event is an indication that a buffer memory location has been written to. For EZ mode: a transfer that only writes the base address does NOT activate this event. Only set in EZ and CMD_RESP modes and when EC_OP is '1'."]
+pub type EZ_WRITE_STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_SPI_EC_SPEC, bool, O>;
+#[doc = "Field `EZ_READ_STOP` reader - STOP detection after a read transfer occurred. Activated on the end of a read transfer (SPI deselection). This event is an indication that a buffer memory location has been read from. Only set in EZ and CMD_RESP modes and when EC_OP is '1'."]
+pub type EZ_READ_STOP_R = crate::BitReader<bool>;
+#[doc = "Field `EZ_READ_STOP` writer - STOP detection after a read transfer occurred. Activated on the end of a read transfer (SPI deselection). This event is an indication that a buffer memory location has been read from. Only set in EZ and CMD_RESP modes and when EC_OP is '1'."]
+pub type EZ_READ_STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_SPI_EC_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 0 - Wake up request. Active on incoming slave request when externally clocked selection is '1'. Only used when CTRL.EC_AM_MODE is '1'."]
+    #[doc = "Bit 0 - Wake up request. Active on incoming slave request. Only set when EC_AM is '1'."]
     #[inline(always)]
     pub fn wake_up(&self) -> WAKE_UP_R {
-        WAKE_UP_R::new((self.bits & 0x01) != 0)
+        WAKE_UP_R::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - STOP detection. Activated on the end of a every transfer (SPI deselection). Only available in EZ and CMD_RESP mode and when CTRL.EC_OP_MODE is '1'."]
+    #[doc = "Bit 1 - STOP detection. Activated on the end of a every transfer (SPI deselection). Only set in EZ and CMD_RESP mode and when EC_OP is '1'."]
     #[inline(always)]
     pub fn ez_stop(&self) -> EZ_STOP_R {
-        EZ_STOP_R::new(((self.bits >> 1) & 0x01) != 0)
+        EZ_STOP_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - STOP detection after a write transfer occurred. Activated on the end of a write transfer (SPI deselection). This event is an indication that a buffer memory location has been written to. For EZ mode: a transfer that only writes the base address does NOT activate this event. Only used in EZ and CMD_RESP modes and when CTRL.EC_OP_MODE is '1'."]
+    #[doc = "Bit 2 - STOP detection after a write transfer occurred. Activated on the end of a write transfer (SPI deselection). This event is an indication that a buffer memory location has been written to. For EZ mode: a transfer that only writes the base address does NOT activate this event. Only set in EZ and CMD_RESP modes and when EC_OP is '1'."]
     #[inline(always)]
     pub fn ez_write_stop(&self) -> EZ_WRITE_STOP_R {
-        EZ_WRITE_STOP_R::new(((self.bits >> 2) & 0x01) != 0)
+        EZ_WRITE_STOP_R::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - STOP detection after a read transfer occurred. Activated on the end of a read transfer (SPI deselection). This event is an indication that a buffer memory location has been read from. Only used in EZ and CMD_RESP modes and when CTRL.EC_OP_MODE is '1'."]
+    #[doc = "Bit 3 - STOP detection after a read transfer occurred. Activated on the end of a read transfer (SPI deselection). This event is an indication that a buffer memory location has been read from. Only set in EZ and CMD_RESP modes and when EC_OP is '1'."]
     #[inline(always)]
     pub fn ez_read_stop(&self) -> EZ_READ_STOP_R {
-        EZ_READ_STOP_R::new(((self.bits >> 3) & 0x01) != 0)
+        EZ_READ_STOP_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 0 - Wake up request. Active on incoming slave request when externally clocked selection is '1'. Only used when CTRL.EC_AM_MODE is '1'."]
+    #[doc = "Bit 0 - Wake up request. Active on incoming slave request. Only set when EC_AM is '1'."]
     #[inline(always)]
-    pub fn wake_up(&mut self) -> WAKE_UP_W {
-        WAKE_UP_W { w: self }
+    pub fn wake_up(&mut self) -> WAKE_UP_W<0> {
+        WAKE_UP_W::new(self)
     }
-    #[doc = "Bit 1 - STOP detection. Activated on the end of a every transfer (SPI deselection). Only available in EZ and CMD_RESP mode and when CTRL.EC_OP_MODE is '1'."]
+    #[doc = "Bit 1 - STOP detection. Activated on the end of a every transfer (SPI deselection). Only set in EZ and CMD_RESP mode and when EC_OP is '1'."]
     #[inline(always)]
-    pub fn ez_stop(&mut self) -> EZ_STOP_W {
-        EZ_STOP_W { w: self }
+    pub fn ez_stop(&mut self) -> EZ_STOP_W<1> {
+        EZ_STOP_W::new(self)
     }
-    #[doc = "Bit 2 - STOP detection after a write transfer occurred. Activated on the end of a write transfer (SPI deselection). This event is an indication that a buffer memory location has been written to. For EZ mode: a transfer that only writes the base address does NOT activate this event. Only used in EZ and CMD_RESP modes and when CTRL.EC_OP_MODE is '1'."]
+    #[doc = "Bit 2 - STOP detection after a write transfer occurred. Activated on the end of a write transfer (SPI deselection). This event is an indication that a buffer memory location has been written to. For EZ mode: a transfer that only writes the base address does NOT activate this event. Only set in EZ and CMD_RESP modes and when EC_OP is '1'."]
     #[inline(always)]
-    pub fn ez_write_stop(&mut self) -> EZ_WRITE_STOP_W {
-        EZ_WRITE_STOP_W { w: self }
+    pub fn ez_write_stop(&mut self) -> EZ_WRITE_STOP_W<2> {
+        EZ_WRITE_STOP_W::new(self)
     }
-    #[doc = "Bit 3 - STOP detection after a read transfer occurred. Activated on the end of a read transfer (SPI deselection). This event is an indication that a buffer memory location has been read from. Only used in EZ and CMD_RESP modes and when CTRL.EC_OP_MODE is '1'."]
+    #[doc = "Bit 3 - STOP detection after a read transfer occurred. Activated on the end of a read transfer (SPI deselection). This event is an indication that a buffer memory location has been read from. Only set in EZ and CMD_RESP modes and when EC_OP is '1'."]
     #[inline(always)]
-    pub fn ez_read_stop(&mut self) -> EZ_READ_STOP_W {
-        EZ_READ_STOP_W { w: self }
+    pub fn ez_read_stop(&mut self) -> EZ_READ_STOP_W<3> {
+        EZ_READ_STOP_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Externally clocked SPI interrupt request\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_spi_ec](index.html) module"]
+pub struct INTR_SPI_EC_SPEC;
+impl crate::RegisterSpec for INTR_SPI_EC_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [intr_spi_ec::R](R) reader structure"]
+impl crate::Readable for INTR_SPI_EC_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [intr_spi_ec::W](W) writer structure"]
+impl crate::Writable for INTR_SPI_EC_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets INTR_SPI_EC to value 0"]
+impl crate::Resettable for INTR_SPI_EC_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

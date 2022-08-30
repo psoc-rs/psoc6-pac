@@ -1,385 +1,255 @@
-#[doc = "Reader of register INTR"]
-pub type R = crate::R<u32, super::INTR>;
-#[doc = "Writer for register INTR"]
-pub type W = crate::W<u32, super::INTR>;
-#[doc = "Register INTR `reset()`'s with value 0"]
-impl crate::ResetValue for super::INTR {
-    type Type = u32;
+#[doc = "Register `INTR` reader"]
+pub struct R(crate::R<INTR_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<INTR_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `EDGE0`"]
-pub type EDGE0_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EDGE0`"]
-pub struct EDGE0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EDGE0_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<INTR_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn from(reader: crate::R<INTR_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `EDGE1`"]
-pub type EDGE1_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EDGE1`"]
-pub struct EDGE1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EDGE1_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `INTR` writer"]
+pub struct W(crate::W<INTR_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<INTR_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `EDGE2`"]
-pub type EDGE2_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EDGE2`"]
-pub struct EDGE2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EDGE2_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `EDGE3`"]
-pub type EDGE3_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EDGE3`"]
-pub struct EDGE3_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EDGE3_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<INTR_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
+    fn from(writer: crate::W<INTR_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `EDGE4`"]
-pub type EDGE4_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EDGE4`"]
-pub struct EDGE4_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EDGE4_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
-    }
-}
-#[doc = "Reader of field `EDGE5`"]
-pub type EDGE5_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EDGE5`"]
-pub struct EDGE5_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EDGE5_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
-    }
-}
-#[doc = "Reader of field `EDGE6`"]
-pub type EDGE6_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EDGE6`"]
-pub struct EDGE6_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EDGE6_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-        self.w
-    }
-}
-#[doc = "Reader of field `EDGE7`"]
-pub type EDGE7_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EDGE7`"]
-pub struct EDGE7_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EDGE7_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-        self.w
-    }
-}
-#[doc = "Reader of field `FLT_EDGE`"]
-pub type FLT_EDGE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `FLT_EDGE`"]
-pub struct FLT_EDGE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FLT_EDGE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-        self.w
-    }
-}
-#[doc = "Reader of field `IN_IN0`"]
-pub type IN_IN0_R = crate::R<bool, bool>;
-#[doc = "Reader of field `IN_IN1`"]
-pub type IN_IN1_R = crate::R<bool, bool>;
-#[doc = "Reader of field `IN_IN2`"]
-pub type IN_IN2_R = crate::R<bool, bool>;
-#[doc = "Reader of field `IN_IN3`"]
-pub type IN_IN3_R = crate::R<bool, bool>;
-#[doc = "Reader of field `IN_IN4`"]
-pub type IN_IN4_R = crate::R<bool, bool>;
-#[doc = "Reader of field `IN_IN5`"]
-pub type IN_IN5_R = crate::R<bool, bool>;
-#[doc = "Reader of field `IN_IN6`"]
-pub type IN_IN6_R = crate::R<bool, bool>;
-#[doc = "Reader of field `IN_IN7`"]
-pub type IN_IN7_R = crate::R<bool, bool>;
-#[doc = "Reader of field `FLT_IN_IN`"]
-pub type FLT_IN_IN_R = crate::R<bool, bool>;
+#[doc = "Field `EDGE0` reader - Edge detect for IO pin 0 '0': No edge was detected on pin. '1': An edge was detected on pin."]
+pub type EDGE0_R = crate::BitReader<bool>;
+#[doc = "Field `EDGE0` writer - Edge detect for IO pin 0 '0': No edge was detected on pin. '1': An edge was detected on pin."]
+pub type EDGE0_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_SPEC, bool, O>;
+#[doc = "Field `EDGE1` reader - Edge detect for IO pin 1"]
+pub type EDGE1_R = crate::BitReader<bool>;
+#[doc = "Field `EDGE1` writer - Edge detect for IO pin 1"]
+pub type EDGE1_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_SPEC, bool, O>;
+#[doc = "Field `EDGE2` reader - Edge detect for IO pin 2"]
+pub type EDGE2_R = crate::BitReader<bool>;
+#[doc = "Field `EDGE2` writer - Edge detect for IO pin 2"]
+pub type EDGE2_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_SPEC, bool, O>;
+#[doc = "Field `EDGE3` reader - Edge detect for IO pin 3"]
+pub type EDGE3_R = crate::BitReader<bool>;
+#[doc = "Field `EDGE3` writer - Edge detect for IO pin 3"]
+pub type EDGE3_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_SPEC, bool, O>;
+#[doc = "Field `EDGE4` reader - Edge detect for IO pin 4"]
+pub type EDGE4_R = crate::BitReader<bool>;
+#[doc = "Field `EDGE4` writer - Edge detect for IO pin 4"]
+pub type EDGE4_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_SPEC, bool, O>;
+#[doc = "Field `EDGE5` reader - Edge detect for IO pin 5"]
+pub type EDGE5_R = crate::BitReader<bool>;
+#[doc = "Field `EDGE5` writer - Edge detect for IO pin 5"]
+pub type EDGE5_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_SPEC, bool, O>;
+#[doc = "Field `EDGE6` reader - Edge detect for IO pin 6"]
+pub type EDGE6_R = crate::BitReader<bool>;
+#[doc = "Field `EDGE6` writer - Edge detect for IO pin 6"]
+pub type EDGE6_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_SPEC, bool, O>;
+#[doc = "Field `EDGE7` reader - Edge detect for IO pin 7"]
+pub type EDGE7_R = crate::BitReader<bool>;
+#[doc = "Field `EDGE7` writer - Edge detect for IO pin 7"]
+pub type EDGE7_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_SPEC, bool, O>;
+#[doc = "Field `FLT_EDGE` reader - Edge detected on filtered pin selected by INTR_CFG.FLT_SEL"]
+pub type FLT_EDGE_R = crate::BitReader<bool>;
+#[doc = "Field `FLT_EDGE` writer - Edge detected on filtered pin selected by INTR_CFG.FLT_SEL"]
+pub type FLT_EDGE_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_SPEC, bool, O>;
+#[doc = "Field `IN_IN0` reader - IO pin state for pin 0"]
+pub type IN_IN0_R = crate::BitReader<bool>;
+#[doc = "Field `IN_IN1` reader - IO pin state for pin 1"]
+pub type IN_IN1_R = crate::BitReader<bool>;
+#[doc = "Field `IN_IN2` reader - IO pin state for pin 2"]
+pub type IN_IN2_R = crate::BitReader<bool>;
+#[doc = "Field `IN_IN3` reader - IO pin state for pin 3"]
+pub type IN_IN3_R = crate::BitReader<bool>;
+#[doc = "Field `IN_IN4` reader - IO pin state for pin 4"]
+pub type IN_IN4_R = crate::BitReader<bool>;
+#[doc = "Field `IN_IN5` reader - IO pin state for pin 5"]
+pub type IN_IN5_R = crate::BitReader<bool>;
+#[doc = "Field `IN_IN6` reader - IO pin state for pin 6"]
+pub type IN_IN6_R = crate::BitReader<bool>;
+#[doc = "Field `IN_IN7` reader - IO pin state for pin 7"]
+pub type IN_IN7_R = crate::BitReader<bool>;
+#[doc = "Field `FLT_IN_IN` reader - Filtered pin state for pin selected by INTR_CFG.FLT_SEL"]
+pub type FLT_IN_IN_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 0 - Edge detect for IO pin 0 '0': No edge was detected on pin. '1': An edge was detected on pin."]
     #[inline(always)]
     pub fn edge0(&self) -> EDGE0_R {
-        EDGE0_R::new((self.bits & 0x01) != 0)
+        EDGE0_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Edge detect for IO pin 1"]
     #[inline(always)]
     pub fn edge1(&self) -> EDGE1_R {
-        EDGE1_R::new(((self.bits >> 1) & 0x01) != 0)
+        EDGE1_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Edge detect for IO pin 2"]
     #[inline(always)]
     pub fn edge2(&self) -> EDGE2_R {
-        EDGE2_R::new(((self.bits >> 2) & 0x01) != 0)
+        EDGE2_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Edge detect for IO pin 3"]
     #[inline(always)]
     pub fn edge3(&self) -> EDGE3_R {
-        EDGE3_R::new(((self.bits >> 3) & 0x01) != 0)
+        EDGE3_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Edge detect for IO pin 4"]
     #[inline(always)]
     pub fn edge4(&self) -> EDGE4_R {
-        EDGE4_R::new(((self.bits >> 4) & 0x01) != 0)
+        EDGE4_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Edge detect for IO pin 5"]
     #[inline(always)]
     pub fn edge5(&self) -> EDGE5_R {
-        EDGE5_R::new(((self.bits >> 5) & 0x01) != 0)
+        EDGE5_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Edge detect for IO pin 6"]
     #[inline(always)]
     pub fn edge6(&self) -> EDGE6_R {
-        EDGE6_R::new(((self.bits >> 6) & 0x01) != 0)
+        EDGE6_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Edge detect for IO pin 7"]
     #[inline(always)]
     pub fn edge7(&self) -> EDGE7_R {
-        EDGE7_R::new(((self.bits >> 7) & 0x01) != 0)
+        EDGE7_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Edge detected on filtered pin selected by INTR_CFG.FLT_SEL"]
     #[inline(always)]
     pub fn flt_edge(&self) -> FLT_EDGE_R {
-        FLT_EDGE_R::new(((self.bits >> 8) & 0x01) != 0)
+        FLT_EDGE_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 16 - IO pin state for pin 0"]
     #[inline(always)]
     pub fn in_in0(&self) -> IN_IN0_R {
-        IN_IN0_R::new(((self.bits >> 16) & 0x01) != 0)
+        IN_IN0_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - IO pin state for pin 1"]
     #[inline(always)]
     pub fn in_in1(&self) -> IN_IN1_R {
-        IN_IN1_R::new(((self.bits >> 17) & 0x01) != 0)
+        IN_IN1_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - IO pin state for pin 2"]
     #[inline(always)]
     pub fn in_in2(&self) -> IN_IN2_R {
-        IN_IN2_R::new(((self.bits >> 18) & 0x01) != 0)
+        IN_IN2_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - IO pin state for pin 3"]
     #[inline(always)]
     pub fn in_in3(&self) -> IN_IN3_R {
-        IN_IN3_R::new(((self.bits >> 19) & 0x01) != 0)
+        IN_IN3_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 20 - IO pin state for pin 4"]
     #[inline(always)]
     pub fn in_in4(&self) -> IN_IN4_R {
-        IN_IN4_R::new(((self.bits >> 20) & 0x01) != 0)
+        IN_IN4_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - IO pin state for pin 5"]
     #[inline(always)]
     pub fn in_in5(&self) -> IN_IN5_R {
-        IN_IN5_R::new(((self.bits >> 21) & 0x01) != 0)
+        IN_IN5_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 22 - IO pin state for pin 6"]
     #[inline(always)]
     pub fn in_in6(&self) -> IN_IN6_R {
-        IN_IN6_R::new(((self.bits >> 22) & 0x01) != 0)
+        IN_IN6_R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 23 - IO pin state for pin 7"]
     #[inline(always)]
     pub fn in_in7(&self) -> IN_IN7_R {
-        IN_IN7_R::new(((self.bits >> 23) & 0x01) != 0)
+        IN_IN7_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 24 - Filtered pin state for pin selected by INTR_CFG.FLT_SEL"]
     #[inline(always)]
     pub fn flt_in_in(&self) -> FLT_IN_IN_R {
-        FLT_IN_IN_R::new(((self.bits >> 24) & 0x01) != 0)
+        FLT_IN_IN_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Edge detect for IO pin 0 '0': No edge was detected on pin. '1': An edge was detected on pin."]
     #[inline(always)]
-    pub fn edge0(&mut self) -> EDGE0_W {
-        EDGE0_W { w: self }
+    pub fn edge0(&mut self) -> EDGE0_W<0> {
+        EDGE0_W::new(self)
     }
     #[doc = "Bit 1 - Edge detect for IO pin 1"]
     #[inline(always)]
-    pub fn edge1(&mut self) -> EDGE1_W {
-        EDGE1_W { w: self }
+    pub fn edge1(&mut self) -> EDGE1_W<1> {
+        EDGE1_W::new(self)
     }
     #[doc = "Bit 2 - Edge detect for IO pin 2"]
     #[inline(always)]
-    pub fn edge2(&mut self) -> EDGE2_W {
-        EDGE2_W { w: self }
+    pub fn edge2(&mut self) -> EDGE2_W<2> {
+        EDGE2_W::new(self)
     }
     #[doc = "Bit 3 - Edge detect for IO pin 3"]
     #[inline(always)]
-    pub fn edge3(&mut self) -> EDGE3_W {
-        EDGE3_W { w: self }
+    pub fn edge3(&mut self) -> EDGE3_W<3> {
+        EDGE3_W::new(self)
     }
     #[doc = "Bit 4 - Edge detect for IO pin 4"]
     #[inline(always)]
-    pub fn edge4(&mut self) -> EDGE4_W {
-        EDGE4_W { w: self }
+    pub fn edge4(&mut self) -> EDGE4_W<4> {
+        EDGE4_W::new(self)
     }
     #[doc = "Bit 5 - Edge detect for IO pin 5"]
     #[inline(always)]
-    pub fn edge5(&mut self) -> EDGE5_W {
-        EDGE5_W { w: self }
+    pub fn edge5(&mut self) -> EDGE5_W<5> {
+        EDGE5_W::new(self)
     }
     #[doc = "Bit 6 - Edge detect for IO pin 6"]
     #[inline(always)]
-    pub fn edge6(&mut self) -> EDGE6_W {
-        EDGE6_W { w: self }
+    pub fn edge6(&mut self) -> EDGE6_W<6> {
+        EDGE6_W::new(self)
     }
     #[doc = "Bit 7 - Edge detect for IO pin 7"]
     #[inline(always)]
-    pub fn edge7(&mut self) -> EDGE7_W {
-        EDGE7_W { w: self }
+    pub fn edge7(&mut self) -> EDGE7_W<7> {
+        EDGE7_W::new(self)
     }
     #[doc = "Bit 8 - Edge detected on filtered pin selected by INTR_CFG.FLT_SEL"]
     #[inline(always)]
-    pub fn flt_edge(&mut self) -> FLT_EDGE_W {
-        FLT_EDGE_W { w: self }
+    pub fn flt_edge(&mut self) -> FLT_EDGE_W<8> {
+        FLT_EDGE_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Port interrupt status register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr](index.html) module"]
+pub struct INTR_SPEC;
+impl crate::RegisterSpec for INTR_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [intr::R](R) reader structure"]
+impl crate::Readable for INTR_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [intr::W](W) writer structure"]
+impl crate::Writable for INTR_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets INTR to value 0"]
+impl crate::Resettable for INTR_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

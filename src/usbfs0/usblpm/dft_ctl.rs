@@ -1,13 +1,37 @@
-#[doc = "Reader of register DFT_CTL"]
-pub type R = crate::R<u32, super::DFT_CTL>;
-#[doc = "Writer for register DFT_CTL"]
-pub type W = crate::W<u32, super::DFT_CTL>;
-#[doc = "Register DFT_CTL `reset()`'s with value 0"]
-impl crate::ResetValue for super::DFT_CTL {
-    type Type = u32;
+#[doc = "Register `DFT_CTL` reader"]
+pub struct R(crate::R<DFT_CTL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<DFT_CTL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl From<crate::R<DFT_CTL_SPEC>> for R {
+    #[inline(always)]
+    fn from(reader: crate::R<DFT_CTL_SPEC>) -> Self {
+        R(reader)
+    }
+}
+#[doc = "Register `DFT_CTL` writer"]
+pub struct W(crate::W<DFT_CTL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<DFT_CTL_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<DFT_CTL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<DFT_CTL_SPEC>) -> Self {
+        W(writer)
     }
 }
 #[doc = "DDFT output select signal\n\nValue on reset: 0"]
@@ -35,22 +59,21 @@ impl From<DDFT_OUT_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DDFT_OUT_SEL`"]
-pub type DDFT_OUT_SEL_R = crate::R<u8, DDFT_OUT_SEL_A>;
+#[doc = "Field `DDFT_OUT_SEL` reader - DDFT output select signal"]
+pub type DDFT_OUT_SEL_R = crate::FieldReader<u8, DDFT_OUT_SEL_A>;
 impl DDFT_OUT_SEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, DDFT_OUT_SEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DDFT_OUT_SEL_A> {
         match self.bits {
-            0 => Val(DDFT_OUT_SEL_A::OFF),
-            1 => Val(DDFT_OUT_SEL_A::DP_SE),
-            2 => Val(DDFT_OUT_SEL_A::DM_SE),
-            3 => Val(DDFT_OUT_SEL_A::TXOE),
-            4 => Val(DDFT_OUT_SEL_A::RCV_DF),
-            5 => Val(DDFT_OUT_SEL_A::GPIO_DP_OUT),
-            6 => Val(DDFT_OUT_SEL_A::GPIO_DM_OUT),
-            i => Res(i),
+            0 => Some(DDFT_OUT_SEL_A::OFF),
+            1 => Some(DDFT_OUT_SEL_A::DP_SE),
+            2 => Some(DDFT_OUT_SEL_A::DM_SE),
+            3 => Some(DDFT_OUT_SEL_A::TXOE),
+            4 => Some(DDFT_OUT_SEL_A::RCV_DF),
+            5 => Some(DDFT_OUT_SEL_A::GPIO_DP_OUT),
+            6 => Some(DDFT_OUT_SEL_A::GPIO_DM_OUT),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `OFF`"]
@@ -89,16 +112,10 @@ impl DDFT_OUT_SEL_R {
         *self == DDFT_OUT_SEL_A::GPIO_DM_OUT
     }
 }
-#[doc = "Write proxy for field `DDFT_OUT_SEL`"]
-pub struct DDFT_OUT_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DDFT_OUT_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DDFT_OUT_SEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `DDFT_OUT_SEL` writer - DDFT output select signal"]
+pub type DDFT_OUT_SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DFT_CTL_SPEC, u8, DDFT_OUT_SEL_A, 3, O>;
+impl<'a, const O: u8> DDFT_OUT_SEL_W<'a, O> {
     #[doc = "Nothing connected, output 0"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -134,12 +151,6 @@ impl<'a> DDFT_OUT_SEL_W<'a> {
     pub fn gpio_dm_out(self) -> &'a mut W {
         self.variant(DDFT_OUT_SEL_A::GPIO_DM_OUT)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
-        self.w
-    }
 }
 #[doc = "DDFT input select signal\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -158,18 +169,17 @@ impl From<DDFT_IN_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Reader of field `DDFT_IN_SEL`"]
-pub type DDFT_IN_SEL_R = crate::R<u8, DDFT_IN_SEL_A>;
+#[doc = "Field `DDFT_IN_SEL` reader - DDFT input select signal"]
+pub type DDFT_IN_SEL_R = crate::FieldReader<u8, DDFT_IN_SEL_A>;
 impl DDFT_IN_SEL_R {
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> crate::Variant<u8, DDFT_IN_SEL_A> {
-        use crate::Variant::*;
+    pub fn variant(&self) -> Option<DDFT_IN_SEL_A> {
         match self.bits {
-            0 => Val(DDFT_IN_SEL_A::OFF),
-            1 => Val(DDFT_IN_SEL_A::GPIO_DP_IN),
-            2 => Val(DDFT_IN_SEL_A::GPIO_DM_IN),
-            i => Res(i),
+            0 => Some(DDFT_IN_SEL_A::OFF),
+            1 => Some(DDFT_IN_SEL_A::GPIO_DP_IN),
+            2 => Some(DDFT_IN_SEL_A::GPIO_DM_IN),
+            _ => None,
         }
     }
     #[doc = "Checks if the value of the field is `OFF`"]
@@ -188,16 +198,10 @@ impl DDFT_IN_SEL_R {
         *self == DDFT_IN_SEL_A::GPIO_DM_IN
     }
 }
-#[doc = "Write proxy for field `DDFT_IN_SEL`"]
-pub struct DDFT_IN_SEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DDFT_IN_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DDFT_IN_SEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Field `DDFT_IN_SEL` writer - DDFT input select signal"]
+pub type DDFT_IN_SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DFT_CTL_SPEC, u8, DDFT_IN_SEL_A, 2, O>;
+impl<'a, const O: u8> DDFT_IN_SEL_W<'a, O> {
     #[doc = "Nothing connected, output 0"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -213,34 +217,54 @@ impl<'a> DDFT_IN_SEL_W<'a> {
     pub fn gpio_dm_in(self) -> &'a mut W {
         self.variant(DDFT_IN_SEL_A::GPIO_DM_IN)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 3)) | (((value as u32) & 0x03) << 3);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:2 - DDFT output select signal"]
     #[inline(always)]
     pub fn ddft_out_sel(&self) -> DDFT_OUT_SEL_R {
-        DDFT_OUT_SEL_R::new((self.bits & 0x07) as u8)
+        DDFT_OUT_SEL_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 3:4 - DDFT input select signal"]
     #[inline(always)]
     pub fn ddft_in_sel(&self) -> DDFT_IN_SEL_R {
-        DDFT_IN_SEL_R::new(((self.bits >> 3) & 0x03) as u8)
+        DDFT_IN_SEL_R::new(((self.bits >> 3) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:2 - DDFT output select signal"]
     #[inline(always)]
-    pub fn ddft_out_sel(&mut self) -> DDFT_OUT_SEL_W {
-        DDFT_OUT_SEL_W { w: self }
+    pub fn ddft_out_sel(&mut self) -> DDFT_OUT_SEL_W<0> {
+        DDFT_OUT_SEL_W::new(self)
     }
     #[doc = "Bits 3:4 - DDFT input select signal"]
     #[inline(always)]
-    pub fn ddft_in_sel(&mut self) -> DDFT_IN_SEL_W {
-        DDFT_IN_SEL_W { w: self }
+    pub fn ddft_in_sel(&mut self) -> DDFT_IN_SEL_W<3> {
+        DDFT_IN_SEL_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "DFT control\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dft_ctl](index.html) module"]
+pub struct DFT_CTL_SPEC;
+impl crate::RegisterSpec for DFT_CTL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [dft_ctl::R](R) reader structure"]
+impl crate::Readable for DFT_CTL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [dft_ctl::W](W) writer structure"]
+impl crate::Writable for DFT_CTL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets DFT_CTL to value 0"]
+impl crate::Resettable for DFT_CTL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

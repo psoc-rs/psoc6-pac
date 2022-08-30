@@ -1,43 +1,48 @@
-#[doc = "Reader of register TRIM_LDO_3"]
-pub type R = crate::R<u32, super::TRIM_LDO_3>;
-#[doc = "Writer for register TRIM_LDO_3"]
-pub type W = crate::W<u32, super::TRIM_LDO_3>;
-#[doc = "Register TRIM_LDO_3 `reset()`'s with value 0x10"]
-impl crate::ResetValue for super::TRIM_LDO_3 {
-    type Type = u32;
+#[doc = "Register `TRIM_LDO_3` reader"]
+pub struct R(crate::R<TRIM_LDO_3_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<TRIM_LDO_3_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x10
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `LVDET`"]
-pub type LVDET_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `LVDET`"]
-pub struct LVDET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LVDET_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<TRIM_LDO_3_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | ((value as u32) & 0x1f);
-        self.w
+    fn from(reader: crate::R<TRIM_LDO_3_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `SLOPE_SB_BMULT`"]
-pub type SLOPE_SB_BMULT_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `SLOPE_SB_BMULT`"]
-pub struct SLOPE_SB_BMULT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLOPE_SB_BMULT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+#[doc = "Register `TRIM_LDO_3` writer"]
+pub struct W(crate::W<TRIM_LDO_3_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<TRIM_LDO_3_SPEC>;
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 5)) | (((value as u32) & 0x03) << 5);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<TRIM_LDO_3_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<TRIM_LDO_3_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `LVDET` reader - To trim the trip points of the LV-Detect block"]
+pub type LVDET_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `LVDET` writer - To trim the trip points of the LV-Detect block"]
+pub type LVDET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TRIM_LDO_3_SPEC, u8, u8, 5, O>;
+#[doc = "Field `SLOPE_SB_BMULT` reader - To trim standby regulator beta-multiplier temp-co slope"]
+pub type SLOPE_SB_BMULT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `SLOPE_SB_BMULT` writer - To trim standby regulator beta-multiplier temp-co slope"]
+pub type SLOPE_SB_BMULT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TRIM_LDO_3_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 0:4 - To trim the trip points of the LV-Detect block"]
     #[inline(always)]
@@ -47,18 +52,44 @@ impl R {
     #[doc = "Bits 5:6 - To trim standby regulator beta-multiplier temp-co slope"]
     #[inline(always)]
     pub fn slope_sb_bmult(&self) -> SLOPE_SB_BMULT_R {
-        SLOPE_SB_BMULT_R::new(((self.bits >> 5) & 0x03) as u8)
+        SLOPE_SB_BMULT_R::new(((self.bits >> 5) & 3) as u8)
     }
 }
 impl W {
     #[doc = "Bits 0:4 - To trim the trip points of the LV-Detect block"]
     #[inline(always)]
-    pub fn lvdet(&mut self) -> LVDET_W {
-        LVDET_W { w: self }
+    pub fn lvdet(&mut self) -> LVDET_W<0> {
+        LVDET_W::new(self)
     }
     #[doc = "Bits 5:6 - To trim standby regulator beta-multiplier temp-co slope"]
     #[inline(always)]
-    pub fn slope_sb_bmult(&mut self) -> SLOPE_SB_BMULT_W {
-        SLOPE_SB_BMULT_W { w: self }
+    pub fn slope_sb_bmult(&mut self) -> SLOPE_SB_BMULT_W<5> {
+        SLOPE_SB_BMULT_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "LDO Trim register 3\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [trim_ldo_3](index.html) module"]
+pub struct TRIM_LDO_3_SPEC;
+impl crate::RegisterSpec for TRIM_LDO_3_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [trim_ldo_3::R](R) reader structure"]
+impl crate::Readable for TRIM_LDO_3_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [trim_ldo_3::W](W) writer structure"]
+impl crate::Writable for TRIM_LDO_3_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets TRIM_LDO_3 to value 0x10"]
+impl crate::Resettable for TRIM_LDO_3_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x10
     }
 }

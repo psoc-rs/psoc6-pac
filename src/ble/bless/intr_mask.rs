@@ -1,458 +1,253 @@
-#[doc = "Reader of register INTR_MASK"]
-pub type R = crate::R<u32, super::INTR_MASK>;
-#[doc = "Writer for register INTR_MASK"]
-pub type W = crate::W<u32, super::INTR_MASK>;
-#[doc = "Register INTR_MASK `reset()`'s with value 0"]
-impl crate::ResetValue for super::INTR_MASK {
-    type Type = u32;
+#[doc = "Register `INTR_MASK` reader"]
+pub struct R(crate::R<INTR_MASK_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<INTR_MASK_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `DSM_EXIT`"]
-pub type DSM_EXIT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DSM_EXIT`"]
-pub struct DSM_EXIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSM_EXIT_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::R<INTR_MASK_SPEC>> for R {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
-        self.w
+    fn from(reader: crate::R<INTR_MASK_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `DSM_ENTERED_INTR_MASK`"]
-pub type DSM_ENTERED_INTR_MASK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DSM_ENTERED_INTR_MASK`"]
-pub struct DSM_ENTERED_INTR_MASK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSM_ENTERED_INTR_MASK_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `INTR_MASK` writer"]
+pub struct W(crate::W<INTR_MASK_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<INTR_MASK_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `DSM_EXITED_INTR_MASK`"]
-pub type DSM_EXITED_INTR_MASK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DSM_EXITED_INTR_MASK`"]
-pub struct DSM_EXITED_INTR_MASK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSM_EXITED_INTR_MASK_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `XTAL_ON_INTR_MASK`"]
-pub type XTAL_ON_INTR_MASK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `XTAL_ON_INTR_MASK`"]
-pub struct XTAL_ON_INTR_MASK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XTAL_ON_INTR_MASK_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<INTR_MASK_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
-        self.w
+    fn from(writer: crate::W<INTR_MASK_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `RCBLL_INTR_MASK`"]
-pub type RCBLL_INTR_MASK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RCBLL_INTR_MASK`"]
-pub struct RCBLL_INTR_MASK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCBLL_INTR_MASK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
-        self.w
-    }
-}
-#[doc = "Reader of field `BLERD_ACTIVE_INTR_MASK`"]
-pub type BLERD_ACTIVE_INTR_MASK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `BLERD_ACTIVE_INTR_MASK`"]
-pub struct BLERD_ACTIVE_INTR_MASK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BLERD_ACTIVE_INTR_MASK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
-        self.w
-    }
-}
-#[doc = "Reader of field `RCB_INTR_MASK`"]
-pub type RCB_INTR_MASK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `RCB_INTR_MASK`"]
-pub struct RCB_INTR_MASK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCB_INTR_MASK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
-        self.w
-    }
-}
-#[doc = "Reader of field `LL_INTR_MASK`"]
-pub type LL_INTR_MASK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `LL_INTR_MASK`"]
-pub struct LL_INTR_MASK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LL_INTR_MASK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
-        self.w
-    }
-}
-#[doc = "Reader of field `GPIO_INTR_MASK`"]
-pub type GPIO_INTR_MASK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `GPIO_INTR_MASK`"]
-pub struct GPIO_INTR_MASK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> GPIO_INTR_MASK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
-        self.w
-    }
-}
-#[doc = "Reader of field `EFUSE_INTR_MASK`"]
-pub type EFUSE_INTR_MASK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `EFUSE_INTR_MASK`"]
-pub struct EFUSE_INTR_MASK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> EFUSE_INTR_MASK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
-        self.w
-    }
-}
-#[doc = "Reader of field `ENC_INTR_MASK`"]
-pub type ENC_INTR_MASK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ENC_INTR_MASK`"]
-pub struct ENC_INTR_MASK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENC_INTR_MASK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
-        self.w
-    }
-}
-#[doc = "Reader of field `HVLDO_LV_DETECT_POS_MASK`"]
-pub type HVLDO_LV_DETECT_POS_MASK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `HVLDO_LV_DETECT_POS_MASK`"]
-pub struct HVLDO_LV_DETECT_POS_MASK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HVLDO_LV_DETECT_POS_MASK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
-        self.w
-    }
-}
-#[doc = "Reader of field `HVLDO_LV_DETECT_NEG_MASK`"]
-pub type HVLDO_LV_DETECT_NEG_MASK_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `HVLDO_LV_DETECT_NEG_MASK`"]
-pub struct HVLDO_LV_DETECT_NEG_MASK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HVLDO_LV_DETECT_NEG_MASK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
-        self.w
-    }
-}
+#[doc = "Field `DSM_EXIT` reader - When the Link Layer is in Deep Sleep Mode, firmware can set this bit to wake the Link Layer."]
+pub type DSM_EXIT_R = crate::BitReader<bool>;
+#[doc = "Field `DSM_EXIT` writer - When the Link Layer is in Deep Sleep Mode, firmware can set this bit to wake the Link Layer."]
+pub type DSM_EXIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_MASK_SPEC, bool, O>;
+#[doc = "Field `DSM_ENTERED_INTR_MASK` reader - Masks the DSM Entered Interrupt, when disabled."]
+pub type DSM_ENTERED_INTR_MASK_R = crate::BitReader<bool>;
+#[doc = "Field `DSM_ENTERED_INTR_MASK` writer - Masks the DSM Entered Interrupt, when disabled."]
+pub type DSM_ENTERED_INTR_MASK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, INTR_MASK_SPEC, bool, O>;
+#[doc = "Field `DSM_EXITED_INTR_MASK` reader - Masks the DSM Exited Interrupt, when disabled."]
+pub type DSM_EXITED_INTR_MASK_R = crate::BitReader<bool>;
+#[doc = "Field `DSM_EXITED_INTR_MASK` writer - Masks the DSM Exited Interrupt, when disabled."]
+pub type DSM_EXITED_INTR_MASK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, INTR_MASK_SPEC, bool, O>;
+#[doc = "Field `XTAL_ON_INTR_MASK` reader - Masks the Crystal Stable Interrupt, when disabled."]
+pub type XTAL_ON_INTR_MASK_R = crate::BitReader<bool>;
+#[doc = "Field `XTAL_ON_INTR_MASK` writer - Masks the Crystal Stable Interrupt, when disabled."]
+pub type XTAL_ON_INTR_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_MASK_SPEC, bool, O>;
+#[doc = "Field `RCBLL_INTR_MASK` reader - Mask for RCBLL interrupt"]
+pub type RCBLL_INTR_MASK_R = crate::BitReader<bool>;
+#[doc = "Field `RCBLL_INTR_MASK` writer - Mask for RCBLL interrupt"]
+pub type RCBLL_INTR_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_MASK_SPEC, bool, O>;
+#[doc = "Field `BLERD_ACTIVE_INTR_MASK` reader - Mask for CYBLERD55 Active Interrupt"]
+pub type BLERD_ACTIVE_INTR_MASK_R = crate::BitReader<bool>;
+#[doc = "Field `BLERD_ACTIVE_INTR_MASK` writer - Mask for CYBLERD55 Active Interrupt"]
+pub type BLERD_ACTIVE_INTR_MASK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, INTR_MASK_SPEC, bool, O>;
+#[doc = "Field `RCB_INTR_MASK` reader - Mask for RCB interrupt"]
+pub type RCB_INTR_MASK_R = crate::BitReader<bool>;
+#[doc = "Field `RCB_INTR_MASK` writer - Mask for RCB interrupt"]
+pub type RCB_INTR_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_MASK_SPEC, bool, O>;
+#[doc = "Field `LL_INTR_MASK` reader - Mask for LL interrupt"]
+pub type LL_INTR_MASK_R = crate::BitReader<bool>;
+#[doc = "Field `LL_INTR_MASK` writer - Mask for LL interrupt"]
+pub type LL_INTR_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_MASK_SPEC, bool, O>;
+#[doc = "Field `GPIO_INTR_MASK` reader - Mask for GPIO interrupt"]
+pub type GPIO_INTR_MASK_R = crate::BitReader<bool>;
+#[doc = "Field `GPIO_INTR_MASK` writer - Mask for GPIO interrupt"]
+pub type GPIO_INTR_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_MASK_SPEC, bool, O>;
+#[doc = "Field `EFUSE_INTR_MASK` reader - This bit enables the efuse interrupt to firmware"]
+pub type EFUSE_INTR_MASK_R = crate::BitReader<bool>;
+#[doc = "Field `EFUSE_INTR_MASK` writer - This bit enables the efuse interrupt to firmware"]
+pub type EFUSE_INTR_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_MASK_SPEC, bool, O>;
+#[doc = "Field `ENC_INTR_MASK` reader - Mask for Encryption interrupt"]
+pub type ENC_INTR_MASK_R = crate::BitReader<bool>;
+#[doc = "Field `ENC_INTR_MASK` writer - Mask for Encryption interrupt"]
+pub type ENC_INTR_MASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, INTR_MASK_SPEC, bool, O>;
+#[doc = "Field `HVLDO_LV_DETECT_POS_MASK` reader - Mask for HVLDO LV Detector Rise edge interrupt"]
+pub type HVLDO_LV_DETECT_POS_MASK_R = crate::BitReader<bool>;
+#[doc = "Field `HVLDO_LV_DETECT_POS_MASK` writer - Mask for HVLDO LV Detector Rise edge interrupt"]
+pub type HVLDO_LV_DETECT_POS_MASK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, INTR_MASK_SPEC, bool, O>;
+#[doc = "Field `HVLDO_LV_DETECT_NEG_MASK` reader - Mask for HVLDO LV Detector Fall edge interrupt"]
+pub type HVLDO_LV_DETECT_NEG_MASK_R = crate::BitReader<bool>;
+#[doc = "Field `HVLDO_LV_DETECT_NEG_MASK` writer - Mask for HVLDO LV Detector Fall edge interrupt"]
+pub type HVLDO_LV_DETECT_NEG_MASK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, INTR_MASK_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - When the Link Layer is in Deep Sleep Mode, firmware can set this bit to wake the Link Layer."]
     #[inline(always)]
     pub fn dsm_exit(&self) -> DSM_EXIT_R {
-        DSM_EXIT_R::new((self.bits & 0x01) != 0)
+        DSM_EXIT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Masks the DSM Entered Interrupt, when disabled."]
     #[inline(always)]
     pub fn dsm_entered_intr_mask(&self) -> DSM_ENTERED_INTR_MASK_R {
-        DSM_ENTERED_INTR_MASK_R::new(((self.bits >> 1) & 0x01) != 0)
+        DSM_ENTERED_INTR_MASK_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Masks the DSM Exited Interrupt, when disabled."]
     #[inline(always)]
     pub fn dsm_exited_intr_mask(&self) -> DSM_EXITED_INTR_MASK_R {
-        DSM_EXITED_INTR_MASK_R::new(((self.bits >> 2) & 0x01) != 0)
+        DSM_EXITED_INTR_MASK_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Masks the Crystal Stable Interrupt, when disabled."]
     #[inline(always)]
     pub fn xtal_on_intr_mask(&self) -> XTAL_ON_INTR_MASK_R {
-        XTAL_ON_INTR_MASK_R::new(((self.bits >> 3) & 0x01) != 0)
+        XTAL_ON_INTR_MASK_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Mask for RCBLL interrupt"]
     #[inline(always)]
     pub fn rcbll_intr_mask(&self) -> RCBLL_INTR_MASK_R {
-        RCBLL_INTR_MASK_R::new(((self.bits >> 4) & 0x01) != 0)
+        RCBLL_INTR_MASK_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Mask for CYBLERD55 Active Interrupt"]
     #[inline(always)]
     pub fn blerd_active_intr_mask(&self) -> BLERD_ACTIVE_INTR_MASK_R {
-        BLERD_ACTIVE_INTR_MASK_R::new(((self.bits >> 5) & 0x01) != 0)
+        BLERD_ACTIVE_INTR_MASK_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Mask for RCB interrupt"]
     #[inline(always)]
     pub fn rcb_intr_mask(&self) -> RCB_INTR_MASK_R {
-        RCB_INTR_MASK_R::new(((self.bits >> 6) & 0x01) != 0)
+        RCB_INTR_MASK_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Mask for LL interrupt"]
     #[inline(always)]
     pub fn ll_intr_mask(&self) -> LL_INTR_MASK_R {
-        LL_INTR_MASK_R::new(((self.bits >> 7) & 0x01) != 0)
+        LL_INTR_MASK_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Mask for GPIO interrupt"]
     #[inline(always)]
     pub fn gpio_intr_mask(&self) -> GPIO_INTR_MASK_R {
-        GPIO_INTR_MASK_R::new(((self.bits >> 8) & 0x01) != 0)
+        GPIO_INTR_MASK_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - This bit enables the efuse interrupt to firmware"]
     #[inline(always)]
     pub fn efuse_intr_mask(&self) -> EFUSE_INTR_MASK_R {
-        EFUSE_INTR_MASK_R::new(((self.bits >> 9) & 0x01) != 0)
+        EFUSE_INTR_MASK_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Mask for Encryption interrupt"]
     #[inline(always)]
     pub fn enc_intr_mask(&self) -> ENC_INTR_MASK_R {
-        ENC_INTR_MASK_R::new(((self.bits >> 10) & 0x01) != 0)
+        ENC_INTR_MASK_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Mask for HVLDO LV Detector Rise edge interrupt"]
     #[inline(always)]
     pub fn hvldo_lv_detect_pos_mask(&self) -> HVLDO_LV_DETECT_POS_MASK_R {
-        HVLDO_LV_DETECT_POS_MASK_R::new(((self.bits >> 11) & 0x01) != 0)
+        HVLDO_LV_DETECT_POS_MASK_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Mask for HVLDO LV Detector Fall edge interrupt"]
     #[inline(always)]
     pub fn hvldo_lv_detect_neg_mask(&self) -> HVLDO_LV_DETECT_NEG_MASK_R {
-        HVLDO_LV_DETECT_NEG_MASK_R::new(((self.bits >> 12) & 0x01) != 0)
+        HVLDO_LV_DETECT_NEG_MASK_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - When the Link Layer is in Deep Sleep Mode, firmware can set this bit to wake the Link Layer."]
     #[inline(always)]
-    pub fn dsm_exit(&mut self) -> DSM_EXIT_W {
-        DSM_EXIT_W { w: self }
+    pub fn dsm_exit(&mut self) -> DSM_EXIT_W<0> {
+        DSM_EXIT_W::new(self)
     }
     #[doc = "Bit 1 - Masks the DSM Entered Interrupt, when disabled."]
     #[inline(always)]
-    pub fn dsm_entered_intr_mask(&mut self) -> DSM_ENTERED_INTR_MASK_W {
-        DSM_ENTERED_INTR_MASK_W { w: self }
+    pub fn dsm_entered_intr_mask(&mut self) -> DSM_ENTERED_INTR_MASK_W<1> {
+        DSM_ENTERED_INTR_MASK_W::new(self)
     }
     #[doc = "Bit 2 - Masks the DSM Exited Interrupt, when disabled."]
     #[inline(always)]
-    pub fn dsm_exited_intr_mask(&mut self) -> DSM_EXITED_INTR_MASK_W {
-        DSM_EXITED_INTR_MASK_W { w: self }
+    pub fn dsm_exited_intr_mask(&mut self) -> DSM_EXITED_INTR_MASK_W<2> {
+        DSM_EXITED_INTR_MASK_W::new(self)
     }
     #[doc = "Bit 3 - Masks the Crystal Stable Interrupt, when disabled."]
     #[inline(always)]
-    pub fn xtal_on_intr_mask(&mut self) -> XTAL_ON_INTR_MASK_W {
-        XTAL_ON_INTR_MASK_W { w: self }
+    pub fn xtal_on_intr_mask(&mut self) -> XTAL_ON_INTR_MASK_W<3> {
+        XTAL_ON_INTR_MASK_W::new(self)
     }
     #[doc = "Bit 4 - Mask for RCBLL interrupt"]
     #[inline(always)]
-    pub fn rcbll_intr_mask(&mut self) -> RCBLL_INTR_MASK_W {
-        RCBLL_INTR_MASK_W { w: self }
+    pub fn rcbll_intr_mask(&mut self) -> RCBLL_INTR_MASK_W<4> {
+        RCBLL_INTR_MASK_W::new(self)
     }
     #[doc = "Bit 5 - Mask for CYBLERD55 Active Interrupt"]
     #[inline(always)]
-    pub fn blerd_active_intr_mask(&mut self) -> BLERD_ACTIVE_INTR_MASK_W {
-        BLERD_ACTIVE_INTR_MASK_W { w: self }
+    pub fn blerd_active_intr_mask(&mut self) -> BLERD_ACTIVE_INTR_MASK_W<5> {
+        BLERD_ACTIVE_INTR_MASK_W::new(self)
     }
     #[doc = "Bit 6 - Mask for RCB interrupt"]
     #[inline(always)]
-    pub fn rcb_intr_mask(&mut self) -> RCB_INTR_MASK_W {
-        RCB_INTR_MASK_W { w: self }
+    pub fn rcb_intr_mask(&mut self) -> RCB_INTR_MASK_W<6> {
+        RCB_INTR_MASK_W::new(self)
     }
     #[doc = "Bit 7 - Mask for LL interrupt"]
     #[inline(always)]
-    pub fn ll_intr_mask(&mut self) -> LL_INTR_MASK_W {
-        LL_INTR_MASK_W { w: self }
+    pub fn ll_intr_mask(&mut self) -> LL_INTR_MASK_W<7> {
+        LL_INTR_MASK_W::new(self)
     }
     #[doc = "Bit 8 - Mask for GPIO interrupt"]
     #[inline(always)]
-    pub fn gpio_intr_mask(&mut self) -> GPIO_INTR_MASK_W {
-        GPIO_INTR_MASK_W { w: self }
+    pub fn gpio_intr_mask(&mut self) -> GPIO_INTR_MASK_W<8> {
+        GPIO_INTR_MASK_W::new(self)
     }
     #[doc = "Bit 9 - This bit enables the efuse interrupt to firmware"]
     #[inline(always)]
-    pub fn efuse_intr_mask(&mut self) -> EFUSE_INTR_MASK_W {
-        EFUSE_INTR_MASK_W { w: self }
+    pub fn efuse_intr_mask(&mut self) -> EFUSE_INTR_MASK_W<9> {
+        EFUSE_INTR_MASK_W::new(self)
     }
     #[doc = "Bit 10 - Mask for Encryption interrupt"]
     #[inline(always)]
-    pub fn enc_intr_mask(&mut self) -> ENC_INTR_MASK_W {
-        ENC_INTR_MASK_W { w: self }
+    pub fn enc_intr_mask(&mut self) -> ENC_INTR_MASK_W<10> {
+        ENC_INTR_MASK_W::new(self)
     }
     #[doc = "Bit 11 - Mask for HVLDO LV Detector Rise edge interrupt"]
     #[inline(always)]
-    pub fn hvldo_lv_detect_pos_mask(&mut self) -> HVLDO_LV_DETECT_POS_MASK_W {
-        HVLDO_LV_DETECT_POS_MASK_W { w: self }
+    pub fn hvldo_lv_detect_pos_mask(&mut self) -> HVLDO_LV_DETECT_POS_MASK_W<11> {
+        HVLDO_LV_DETECT_POS_MASK_W::new(self)
     }
     #[doc = "Bit 12 - Mask for HVLDO LV Detector Fall edge interrupt"]
     #[inline(always)]
-    pub fn hvldo_lv_detect_neg_mask(&mut self) -> HVLDO_LV_DETECT_NEG_MASK_W {
-        HVLDO_LV_DETECT_NEG_MASK_W { w: self }
+    pub fn hvldo_lv_detect_neg_mask(&mut self) -> HVLDO_LV_DETECT_NEG_MASK_W<12> {
+        HVLDO_LV_DETECT_NEG_MASK_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Link Layer interrupt mask register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [intr_mask](index.html) module"]
+pub struct INTR_MASK_SPEC;
+impl crate::RegisterSpec for INTR_MASK_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [intr_mask::R](R) reader structure"]
+impl crate::Readable for INTR_MASK_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [intr_mask::W](W) writer structure"]
+impl crate::Writable for INTR_MASK_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets INTR_MASK to value 0"]
+impl crate::Resettable for INTR_MASK_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0
     }
 }

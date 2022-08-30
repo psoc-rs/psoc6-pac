@@ -1,67 +1,53 @@
-#[doc = "Reader of register CLK_TRIM_CCO_CTL"]
-pub type R = crate::R<u32, super::CLK_TRIM_CCO_CTL>;
-#[doc = "Writer for register CLK_TRIM_CCO_CTL"]
-pub type W = crate::W<u32, super::CLK_TRIM_CCO_CTL>;
-#[doc = "Register CLK_TRIM_CCO_CTL `reset()`'s with value 0xa700_0020"]
-impl crate::ResetValue for super::CLK_TRIM_CCO_CTL {
-    type Type = u32;
+#[doc = "Register `CLK_TRIM_CCO_CTL` reader"]
+pub struct R(crate::R<CLK_TRIM_CCO_CTL_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<CLK_TRIM_CCO_CTL_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0xa700_0020
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `CCO_RCSTRIM`"]
-pub type CCO_RCSTRIM_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `CCO_RCSTRIM`"]
-pub struct CCO_RCSTRIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCO_RCSTRIM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<CLK_TRIM_CCO_CTL_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
-        self.w
+    fn from(reader: crate::R<CLK_TRIM_CCO_CTL_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `CCO_STABLE_CNT`"]
-pub type CCO_STABLE_CNT_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `CCO_STABLE_CNT`"]
-pub struct CCO_STABLE_CNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCO_STABLE_CNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+#[doc = "Register `CLK_TRIM_CCO_CTL` writer"]
+pub struct W(crate::W<CLK_TRIM_CCO_CTL_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<CLK_TRIM_CCO_CTL_SPEC>;
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 24)) | (((value as u32) & 0x3f) << 24);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `ENABLE_CNT`"]
-pub type ENABLE_CNT_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `ENABLE_CNT`"]
-pub struct ENABLE_CNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ENABLE_CNT_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
+impl From<crate::W<CLK_TRIM_CCO_CTL_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<CLK_TRIM_CCO_CTL_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `CCO_RCSTRIM` reader - CCO reference current source trim."]
+pub type CCO_RCSTRIM_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `CCO_RCSTRIM` writer - CCO reference current source trim."]
+pub type CCO_RCSTRIM_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CLK_TRIM_CCO_CTL_SPEC, u8, u8, 6, O>;
+#[doc = "Field `CCO_STABLE_CNT` reader - Terminal count for the stabilization counter from CCO_ENABLE until stable."]
+pub type CCO_STABLE_CNT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `CCO_STABLE_CNT` writer - Terminal count for the stabilization counter from CCO_ENABLE until stable."]
+pub type CCO_STABLE_CNT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CLK_TRIM_CCO_CTL_SPEC, u8, u8, 6, O>;
+#[doc = "Field `ENABLE_CNT` reader - Enables the automatic stabilization counter."]
+pub type ENABLE_CNT_R = crate::BitReader<bool>;
+#[doc = "Field `ENABLE_CNT` writer - Enables the automatic stabilization counter."]
+pub type ENABLE_CNT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK_TRIM_CCO_CTL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:5 - CCO reference current source trim."]
     #[inline(always)]
@@ -76,23 +62,49 @@ impl R {
     #[doc = "Bit 31 - Enables the automatic stabilization counter."]
     #[inline(always)]
     pub fn enable_cnt(&self) -> ENABLE_CNT_R {
-        ENABLE_CNT_R::new(((self.bits >> 31) & 0x01) != 0)
+        ENABLE_CNT_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 0:5 - CCO reference current source trim."]
     #[inline(always)]
-    pub fn cco_rcstrim(&mut self) -> CCO_RCSTRIM_W {
-        CCO_RCSTRIM_W { w: self }
+    pub fn cco_rcstrim(&mut self) -> CCO_RCSTRIM_W<0> {
+        CCO_RCSTRIM_W::new(self)
     }
     #[doc = "Bits 24:29 - Terminal count for the stabilization counter from CCO_ENABLE until stable."]
     #[inline(always)]
-    pub fn cco_stable_cnt(&mut self) -> CCO_STABLE_CNT_W {
-        CCO_STABLE_CNT_W { w: self }
+    pub fn cco_stable_cnt(&mut self) -> CCO_STABLE_CNT_W<24> {
+        CCO_STABLE_CNT_W::new(self)
     }
     #[doc = "Bit 31 - Enables the automatic stabilization counter."]
     #[inline(always)]
-    pub fn enable_cnt(&mut self) -> ENABLE_CNT_W {
-        ENABLE_CNT_W { w: self }
+    pub fn enable_cnt(&mut self) -> ENABLE_CNT_W<31> {
+        ENABLE_CNT_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "CCO Trim Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [clk_trim_cco_ctl](index.html) module"]
+pub struct CLK_TRIM_CCO_CTL_SPEC;
+impl crate::RegisterSpec for CLK_TRIM_CCO_CTL_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [clk_trim_cco_ctl::R](R) reader structure"]
+impl crate::Readable for CLK_TRIM_CCO_CTL_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [clk_trim_cco_ctl::W](W) writer structure"]
+impl crate::Writable for CLK_TRIM_CCO_CTL_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets CLK_TRIM_CCO_CTL to value 0xa700_0020"]
+impl crate::Resettable for CLK_TRIM_CCO_CTL_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0xa700_0020
     }
 }

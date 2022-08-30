@@ -1,29 +1,44 @@
-#[doc = "Reader of register HW_LOAD_OFFSET"]
-pub type R = crate::R<u32, super::HW_LOAD_OFFSET>;
-#[doc = "Writer for register HW_LOAD_OFFSET"]
-pub type W = crate::W<u32, super::HW_LOAD_OFFSET>;
-#[doc = "Register HW_LOAD_OFFSET `reset()`'s with value 0x04"]
-impl crate::ResetValue for super::HW_LOAD_OFFSET {
-    type Type = u32;
+#[doc = "Register `HW_LOAD_OFFSET` reader"]
+pub struct R(crate::R<HW_LOAD_OFFSET_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<HW_LOAD_OFFSET_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x04
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `LOAD_OFFSET`"]
-pub type LOAD_OFFSET_R = crate::R<u8, u8>;
-#[doc = "Write proxy for field `LOAD_OFFSET`"]
-pub struct LOAD_OFFSET_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LOAD_OFFSET_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<HW_LOAD_OFFSET_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | ((value as u32) & 0x1f);
-        self.w
+    fn from(reader: crate::R<HW_LOAD_OFFSET_SPEC>) -> Self {
+        R(reader)
     }
 }
+#[doc = "Register `HW_LOAD_OFFSET` writer"]
+pub struct W(crate::W<HW_LOAD_OFFSET_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<HW_LOAD_OFFSET_SPEC>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl core::ops::DerefMut for W {
+    #[inline(always)]
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
+    }
+}
+impl From<crate::W<HW_LOAD_OFFSET_SPEC>> for W {
+    #[inline(always)]
+    fn from(writer: crate::W<HW_LOAD_OFFSET_SPEC>) -> Self {
+        W(writer)
+    }
+}
+#[doc = "Field `LOAD_OFFSET` reader - Load Offset in us before connection event at which the connection parameters are loaded from memory, granularity is in 1us"]
+pub type LOAD_OFFSET_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `LOAD_OFFSET` writer - Load Offset in us before connection event at which the connection parameters are loaded from memory, granularity is in 1us"]
+pub type LOAD_OFFSET_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HW_LOAD_OFFSET_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bits 0:4 - Load Offset in us before connection event at which the connection parameters are loaded from memory, granularity is in 1us"]
     #[inline(always)]
@@ -34,7 +49,33 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Load Offset in us before connection event at which the connection parameters are loaded from memory, granularity is in 1us"]
     #[inline(always)]
-    pub fn load_offset(&mut self) -> LOAD_OFFSET_W {
-        LOAD_OFFSET_W { w: self }
+    pub fn load_offset(&mut self) -> LOAD_OFFSET_W<0> {
+        LOAD_OFFSET_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Register to configure offset from connection anchor point at which connection parameter memory should be read\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hw_load_offset](index.html) module"]
+pub struct HW_LOAD_OFFSET_SPEC;
+impl crate::RegisterSpec for HW_LOAD_OFFSET_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [hw_load_offset::R](R) reader structure"]
+impl crate::Readable for HW_LOAD_OFFSET_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [hw_load_offset::W](W) writer structure"]
+impl crate::Writable for HW_LOAD_OFFSET_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets HW_LOAD_OFFSET to value 0x04"]
+impl crate::Resettable for HW_LOAD_OFFSET_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x04
     }
 }

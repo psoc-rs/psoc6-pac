@@ -1,11 +1,11 @@
 [package]
 name = "psoc6-pac"
-version = "0.0.0"
-authors = ["Jonas Schievink <jonasschievink@gmail.com>"]
+version = "0.0.1"
+authors = ["Jonas Schievink <jonasschievink@gmail.com>", "Dave Humphries <humphriesdj@gmail.com"]
 edition = "2018"
 description = "Peripheral Access Crate for Cypress PSoC 6 MCUs"
 documentation = "https://docs.rs/psoc6-pac/"
-repository = "https://github.com/jonas-schievink/psoc6-pac.git"
+repository = "https://github.com/diagonalDave/psoc6-pac.git"
 keywords = ["cypress", "psoc6", "pac"]
 categories = ["embedded"]
 readme = "README.md"
@@ -13,7 +13,7 @@ license = "0BSD"
 exclude = ["svd"]
 
 [badges]
-travis-ci = { repository = "jonas-schievink/psoc6-pac" }
+travis-ci = { repository = "diagonalDave/psoc6-pac" }
 maintenance = { status = "actively-developed" }
 
 [dependencies]
@@ -31,7 +31,6 @@ rt = ["cortex-m-rt/device"]
 # cargo-release configuration
 [package.metadata.release]
 tag-message = "{{version}}"
-no-dev-version = true
 pre-release-commit-message = "Release {{version}}"
 
 # Change the changelog's `Unreleased` section to refer to this release and
@@ -44,7 +43,7 @@ replace = """
 
 No changes.
 
-## [{{version}} - {{date}}](https://github.com/jonas-schievink/psoc6-pac/releases/tag/{{version}})
+## [{{version}} - {{date}}](https://github.com/diagonalDave/psoc6-pac/releases/tag/{{version}})
 """
 
 # Bump the version inside the example manifest in `README.md`

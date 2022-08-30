@@ -1,223 +1,81 @@
-#[doc = "Reader of register SEQ_READ_CTL_2"]
-pub type R = crate::R<u32, super::SEQ_READ_CTL_2>;
-#[doc = "Writer for register SEQ_READ_CTL_2"]
-pub type W = crate::W<u32, super::SEQ_READ_CTL_2>;
-#[doc = "Register SEQ_READ_CTL_2 `reset()`'s with value 0x0056_0001"]
-impl crate::ResetValue for super::SEQ_READ_CTL_2 {
-    type Type = u32;
+#[doc = "Register `SEQ_READ_CTL_2` reader"]
+pub struct R(crate::R<SEQ_READ_CTL_2_SPEC>);
+impl core::ops::Deref for R {
+    type Target = crate::R<SEQ_READ_CTL_2_SPEC>;
     #[inline(always)]
-    fn reset_value() -> Self::Type {
-        0x0056_0001
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `CYCLES`"]
-pub type CYCLES_R = crate::R<u16, u16>;
-#[doc = "Write proxy for field `CYCLES`"]
-pub struct CYCLES_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CYCLES_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
+impl From<crate::R<SEQ_READ_CTL_2_SPEC>> for R {
     #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | ((value as u32) & 0x03ff);
-        self.w
+    fn from(reader: crate::R<SEQ_READ_CTL_2_SPEC>) -> Self {
+        R(reader)
     }
 }
-#[doc = "Reader of field `STROBE_A`"]
-pub type STROBE_A_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `STROBE_A`"]
-pub struct STROBE_A_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STROBE_A_W<'a> {
-    #[doc = r"Sets the field bit"]
+#[doc = "Register `SEQ_READ_CTL_2` writer"]
+pub struct W(crate::W<SEQ_READ_CTL_2_SPEC>);
+impl core::ops::Deref for W {
+    type Target = crate::W<SEQ_READ_CTL_2_SPEC>;
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | (((value as u32) & 0x01) << 16);
-        self.w
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Reader of field `STROBE_B`"]
-pub type STROBE_B_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `STROBE_B`"]
-pub struct STROBE_B_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STROBE_B_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl core::ops::DerefMut for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | (((value as u32) & 0x01) << 17);
-        self.w
+    fn deref_mut(&mut self) -> &mut Self::Target {
+        &mut self.0
     }
 }
-#[doc = "Reader of field `STROBE_C`"]
-pub type STROBE_C_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `STROBE_C`"]
-pub struct STROBE_C_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STROBE_C_W<'a> {
-    #[doc = r"Sets the field bit"]
+impl From<crate::W<SEQ_READ_CTL_2_SPEC>> for W {
     #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | (((value as u32) & 0x01) << 18);
-        self.w
+    fn from(writer: crate::W<SEQ_READ_CTL_2_SPEC>) -> Self {
+        W(writer)
     }
 }
-#[doc = "Reader of field `STROBE_D`"]
-pub type STROBE_D_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `STROBE_D`"]
-pub struct STROBE_D_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STROBE_D_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | (((value as u32) & 0x01) << 19);
-        self.w
-    }
-}
-#[doc = "Reader of field `STROBE_E`"]
-pub type STROBE_E_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `STROBE_E`"]
-pub struct STROBE_E_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STROBE_E_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | (((value as u32) & 0x01) << 20);
-        self.w
-    }
-}
-#[doc = "Reader of field `STROBE_F`"]
-pub type STROBE_F_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `STROBE_F`"]
-pub struct STROBE_F_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STROBE_F_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | (((value as u32) & 0x01) << 21);
-        self.w
-    }
-}
-#[doc = "Reader of field `STROBE_G`"]
-pub type STROBE_G_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `STROBE_G`"]
-pub struct STROBE_G_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STROBE_G_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | (((value as u32) & 0x01) << 22);
-        self.w
-    }
-}
-#[doc = "Reader of field `DONE`"]
-pub type DONE_R = crate::R<bool, bool>;
-#[doc = "Write proxy for field `DONE`"]
-pub struct DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | (((value as u32) & 0x01) << 31);
-        self.w
-    }
-}
+#[doc = "Field `CYCLES` reader - Number of IP clock cycles (minus 1). This field is in the range of \\[0, 1023\\], allowing for a time of \\[1, 1024\\]
+IP clock cycles."]
+pub type CYCLES_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `CYCLES` writer - Number of IP clock cycles (minus 1). This field is in the range of \\[0, 1023\\], allowing for a time of \\[1, 1024\\]
+IP clock cycles."]
+pub type CYCLES_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SEQ_READ_CTL_2_SPEC, u16, u16, 10, O>;
+#[doc = "Field `STROBE_A` reader - Specifies value of eFUSE control signal strobe_f"]
+pub type STROBE_A_R = crate::BitReader<bool>;
+#[doc = "Field `STROBE_A` writer - Specifies value of eFUSE control signal strobe_f"]
+pub type STROBE_A_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEQ_READ_CTL_2_SPEC, bool, O>;
+#[doc = "Field `STROBE_B` reader - Specifies value of eFUSEcontrol signal strobe_b"]
+pub type STROBE_B_R = crate::BitReader<bool>;
+#[doc = "Field `STROBE_B` writer - Specifies value of eFUSEcontrol signal strobe_b"]
+pub type STROBE_B_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEQ_READ_CTL_2_SPEC, bool, O>;
+#[doc = "Field `STROBE_C` reader - Specifies value of eFUSE control signal strobe_c"]
+pub type STROBE_C_R = crate::BitReader<bool>;
+#[doc = "Field `STROBE_C` writer - Specifies value of eFUSE control signal strobe_c"]
+pub type STROBE_C_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEQ_READ_CTL_2_SPEC, bool, O>;
+#[doc = "Field `STROBE_D` reader - Specifies value of eFUSE control signal strobe_d"]
+pub type STROBE_D_R = crate::BitReader<bool>;
+#[doc = "Field `STROBE_D` writer - Specifies value of eFUSE control signal strobe_d"]
+pub type STROBE_D_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEQ_READ_CTL_2_SPEC, bool, O>;
+#[doc = "Field `STROBE_E` reader - Specifies value of eFUSE control signal strobe_e"]
+pub type STROBE_E_R = crate::BitReader<bool>;
+#[doc = "Field `STROBE_E` writer - Specifies value of eFUSE control signal strobe_e"]
+pub type STROBE_E_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEQ_READ_CTL_2_SPEC, bool, O>;
+#[doc = "Field `STROBE_F` reader - Specifies value of eFUSE control signal strobe_f"]
+pub type STROBE_F_R = crate::BitReader<bool>;
+#[doc = "Field `STROBE_F` writer - Specifies value of eFUSE control signal strobe_f"]
+pub type STROBE_F_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEQ_READ_CTL_2_SPEC, bool, O>;
+#[doc = "Field `STROBE_G` reader - Specifies value of eFUSE control signal strobe_g"]
+pub type STROBE_G_R = crate::BitReader<bool>;
+#[doc = "Field `STROBE_G` writer - Specifies value of eFUSE control signal strobe_g"]
+pub type STROBE_G_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEQ_READ_CTL_2_SPEC, bool, O>;
+#[doc = "Field `DONE` reader - When set to 1 indicates that the Read cycle ends when the current cycle count reaches 0."]
+pub type DONE_R = crate::BitReader<bool>;
+#[doc = "Field `DONE` writer - When set to 1 indicates that the Read cycle ends when the current cycle count reaches 0."]
+pub type DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEQ_READ_CTL_2_SPEC, bool, O>;
 impl R {
-    #[doc = "Bits 0:9 - Number of IP clock cycles (minus 1). This field is in the range of \\[0, 1023\\], allowing for a time of \\[1, 1024\\] IP clock cycles."]
+    #[doc = "Bits 0:9 - Number of IP clock cycles (minus 1). This field is in the range of \\[0, 1023\\], allowing for a time of \\[1, 1024\\]
+IP clock cycles."]
     #[inline(always)]
     pub fn cycles(&self) -> CYCLES_R {
         CYCLES_R::new((self.bits & 0x03ff) as u16)
@@ -225,88 +83,115 @@ impl R {
     #[doc = "Bit 16 - Specifies value of eFUSE control signal strobe_f"]
     #[inline(always)]
     pub fn strobe_a(&self) -> STROBE_A_R {
-        STROBE_A_R::new(((self.bits >> 16) & 0x01) != 0)
+        STROBE_A_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Specifies value of eFUSEcontrol signal strobe_b"]
     #[inline(always)]
     pub fn strobe_b(&self) -> STROBE_B_R {
-        STROBE_B_R::new(((self.bits >> 17) & 0x01) != 0)
+        STROBE_B_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Specifies value of eFUSE control signal strobe_c"]
     #[inline(always)]
     pub fn strobe_c(&self) -> STROBE_C_R {
-        STROBE_C_R::new(((self.bits >> 18) & 0x01) != 0)
+        STROBE_C_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Specifies value of eFUSE control signal strobe_d"]
     #[inline(always)]
     pub fn strobe_d(&self) -> STROBE_D_R {
-        STROBE_D_R::new(((self.bits >> 19) & 0x01) != 0)
+        STROBE_D_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 20 - Specifies value of eFUSE control signal strobe_e"]
     #[inline(always)]
     pub fn strobe_e(&self) -> STROBE_E_R {
-        STROBE_E_R::new(((self.bits >> 20) & 0x01) != 0)
+        STROBE_E_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - Specifies value of eFUSE control signal strobe_f"]
     #[inline(always)]
     pub fn strobe_f(&self) -> STROBE_F_R {
-        STROBE_F_R::new(((self.bits >> 21) & 0x01) != 0)
+        STROBE_F_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 22 - Specifies value of eFUSE control signal strobe_g"]
     #[inline(always)]
     pub fn strobe_g(&self) -> STROBE_G_R {
-        STROBE_G_R::new(((self.bits >> 22) & 0x01) != 0)
+        STROBE_G_R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 31 - When set to 1 indicates that the Read cycle ends when the current cycle count reaches 0."]
     #[inline(always)]
     pub fn done(&self) -> DONE_R {
-        DONE_R::new(((self.bits >> 31) & 0x01) != 0)
+        DONE_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bits 0:9 - Number of IP clock cycles (minus 1). This field is in the range of \\[0, 1023\\], allowing for a time of \\[1, 1024\\] IP clock cycles."]
+    #[doc = "Bits 0:9 - Number of IP clock cycles (minus 1). This field is in the range of \\[0, 1023\\], allowing for a time of \\[1, 1024\\]
+IP clock cycles."]
     #[inline(always)]
-    pub fn cycles(&mut self) -> CYCLES_W {
-        CYCLES_W { w: self }
+    pub fn cycles(&mut self) -> CYCLES_W<0> {
+        CYCLES_W::new(self)
     }
     #[doc = "Bit 16 - Specifies value of eFUSE control signal strobe_f"]
     #[inline(always)]
-    pub fn strobe_a(&mut self) -> STROBE_A_W {
-        STROBE_A_W { w: self }
+    pub fn strobe_a(&mut self) -> STROBE_A_W<16> {
+        STROBE_A_W::new(self)
     }
     #[doc = "Bit 17 - Specifies value of eFUSEcontrol signal strobe_b"]
     #[inline(always)]
-    pub fn strobe_b(&mut self) -> STROBE_B_W {
-        STROBE_B_W { w: self }
+    pub fn strobe_b(&mut self) -> STROBE_B_W<17> {
+        STROBE_B_W::new(self)
     }
     #[doc = "Bit 18 - Specifies value of eFUSE control signal strobe_c"]
     #[inline(always)]
-    pub fn strobe_c(&mut self) -> STROBE_C_W {
-        STROBE_C_W { w: self }
+    pub fn strobe_c(&mut self) -> STROBE_C_W<18> {
+        STROBE_C_W::new(self)
     }
     #[doc = "Bit 19 - Specifies value of eFUSE control signal strobe_d"]
     #[inline(always)]
-    pub fn strobe_d(&mut self) -> STROBE_D_W {
-        STROBE_D_W { w: self }
+    pub fn strobe_d(&mut self) -> STROBE_D_W<19> {
+        STROBE_D_W::new(self)
     }
     #[doc = "Bit 20 - Specifies value of eFUSE control signal strobe_e"]
     #[inline(always)]
-    pub fn strobe_e(&mut self) -> STROBE_E_W {
-        STROBE_E_W { w: self }
+    pub fn strobe_e(&mut self) -> STROBE_E_W<20> {
+        STROBE_E_W::new(self)
     }
     #[doc = "Bit 21 - Specifies value of eFUSE control signal strobe_f"]
     #[inline(always)]
-    pub fn strobe_f(&mut self) -> STROBE_F_W {
-        STROBE_F_W { w: self }
+    pub fn strobe_f(&mut self) -> STROBE_F_W<21> {
+        STROBE_F_W::new(self)
     }
     #[doc = "Bit 22 - Specifies value of eFUSE control signal strobe_g"]
     #[inline(always)]
-    pub fn strobe_g(&mut self) -> STROBE_G_W {
-        STROBE_G_W { w: self }
+    pub fn strobe_g(&mut self) -> STROBE_G_W<22> {
+        STROBE_G_W::new(self)
     }
     #[doc = "Bit 31 - When set to 1 indicates that the Read cycle ends when the current cycle count reaches 0."]
     #[inline(always)]
-    pub fn done(&mut self) -> DONE_W {
-        DONE_W { w: self }
+    pub fn done(&mut self) -> DONE_W<31> {
+        DONE_W::new(self)
+    }
+    #[doc = "Writes raw bits to the register."]
+    #[inline(always)]
+    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
+        self.0.bits(bits);
+        self
+    }
+}
+#[doc = "Sequencer read control 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [seq_read_ctl_2](index.html) module"]
+pub struct SEQ_READ_CTL_2_SPEC;
+impl crate::RegisterSpec for SEQ_READ_CTL_2_SPEC {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [seq_read_ctl_2::R](R) reader structure"]
+impl crate::Readable for SEQ_READ_CTL_2_SPEC {
+    type Reader = R;
+}
+#[doc = "`write(|w| ..)` method takes [seq_read_ctl_2::W](W) writer structure"]
+impl crate::Writable for SEQ_READ_CTL_2_SPEC {
+    type Writer = W;
+}
+#[doc = "`reset()` method sets SEQ_READ_CTL_2 to value 0x0056_0001"]
+impl crate::Resettable for SEQ_READ_CTL_2_SPEC {
+    #[inline(always)]
+    fn reset_value() -> Self::Ux {
+        0x0056_0001
     }
 }
