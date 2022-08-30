@@ -21,8 +21,11 @@ Add an entry to your `Cargo.toml`:
 psoc6-pac = "0.0.1"
 ```
 
-Check the [API Documentation](https://docs.rs/psoc6-pac/) for how to use the
-crate's functionality.
+To generate the documentation, clone the repo then
+```
+cd <to psoc6-pac folder>
+cargo doc --open
+```
 
 ## Rust version support
 
@@ -33,19 +36,17 @@ these 3 versions are still supported.
 The MSRV is also explicitly tested against in [.travis.yml](.travis.yml).
 
 ## Development
+To simplify initial development the pac is targeting the CY8CPROTO-063-BLE board. This board uses the psoc6_01.svd with both generate scripts hardcoding this version. This version is also used by the CY8CKIT-062-BLE Pioneer board.
 
-To regenerate the bindings, make sure that the current versions of `svd2rust`
+To regenerate the bindings, ensure that the current versions of `svd2rust`
 and `form` are installed, and that you're on the current stable Rust version.
 
-> __NOTE__: The unreleased version of `svd2rust` is required to generate the
-> bindings currently. You can install this version via the following command:
->
-> ```
-> cargo install --git https://github.com/rust-embedded/svd2rust.git --force svd2rust
-> ```
-
-Then run this script to regenerate the bindings:
+Then run either run generate.sh or generate.bat (Windows) to regenerate the bindings:
 
 ```
 ./generate.sh
+```
+or
+```
+>generate.bat
 ```
