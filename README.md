@@ -18,7 +18,7 @@ Add an entry to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-psoc6-pac = "0.0.0"
+psoc6-pac = "0.0.1"
 ```
 
 Check the [API Documentation](https://docs.rs/psoc6-pac/) for how to use the
