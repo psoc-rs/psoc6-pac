@@ -18,15 +18,22 @@ maintenance = { status = "actively-developed" }
 
 [dependencies]
 bare-metal = "0.2.5"
-cortex-m = "0.6.1"
+cortex-m = "0.7.6"
 vcell = "0.1.2"
 
 [dependencies.cortex-m-rt]
 optional = true
-version = "0.6.10"
+version = "0.7.1"
 
 [features]
+default = ["rt"]
 rt = ["cortex-m-rt/device"]
+cm0 = []
+cm4 = []
+
+[package.metadata.docs.rs]
+features = ['rt', 'cm0', 'cm4']
+
 
 # cargo-release configuration
 [package.metadata.release]
