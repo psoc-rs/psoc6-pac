@@ -32,6 +32,222 @@ pub use cortex_m_rt::interrupt;
 use generic::*;
 #[doc = r"Common register and bit access and modify traits"]
 pub mod generic;
+#[cfg(feature = "cm0")]
+#[cfg(feature = "rt")]
+extern "C" {
+  /* ARM Cortex-M0+ NVIC Mux inputs. Allow routing of device interrupts to the CM0+ NVIC */
+  fn NVIC_MUX0_IRQn_DS();      
+  fn NVIC_MUX1_IRQn_DS();      
+  fn NVIC_MUX2_IRQn_DS();      
+  fn NVIC_MUX3_IRQn_DS();      
+  fn NVIC_MUX4_IRQn_DS();      
+  fn NVIC_MUX5_IRQn_DS();      
+  fn NVIC_MUX6_IRQn_DS();      
+  fn NVIC_MUX7_IRQn_DS();      
+  fn NVIC_MUX8_IRQn();         
+  fn NVIC_MUX9_IRQn();         
+  fn NVIC_MUX10_IRQn();        
+  fn NVIC_MUX11_IRQn();        
+  fn NVIC_MUX12_IRQn();        
+  fn NVIC_MUX13_IRQn();        
+  fn NVIC_MUX14_IRQn();        
+  fn NVIC_MUX15_IRQn();        
+  fn NVIC_MUX16_IRQn();        
+  fn NVIC_MUX17_IRQn();        
+  fn NVIC_MUX18_IRQn();        
+  fn NVIC_MUX19_IRQn();        
+  fn NVIC_MUX20_IRQn();        
+  fn NVIC_MUX21_IRQn();        
+  fn NVIC_MUX22_IRQn();        
+  fn NVIC_MUX23_IRQn();        
+  fn NVIC_MUX24_IRQn();        
+  fn NVIC_MUX25_IRQn();        
+  fn NVIC_MUX26_IRQn();        
+  fn NVIC_MUX27_IRQn();        
+  fn NVIC_MUX28_IRQn();        
+  fn NVIC_MUX29_IRQn();        
+  fn NVIC_MUX30_IRQn();        
+  fn NVIC_MUX31_IRQn();        
+}
+
+#[cfg(feature = "cm0")]
+#[cfg(feature = "rt")]
+#[doc(hidden)]
+#[link_section = ".vector_table.interrupts"]
+#[no_mangle]
+pub static __INTERRUPTS: [Vector; 32] = [
+    Vector {
+        _handler: NVIC_MUX0_IRQn_DS,
+    },
+    Vector {
+        _handler: NVIC_MUX1_IRQn_DS,
+    },
+    Vector {
+        _handler: NVIC_MUX2_IRQn_DS,
+    },
+    Vector {
+        _handler: NVIC_MUX3_IRQn_DS,
+    },
+    Vector {
+        _handler: NVIC_MUX4_IRQn_DS,
+    },
+    Vector {
+        _handler:  NVIC_MUX5_IRQn_DS,
+    },              
+    Vector {        
+        _handler:  NVIC_MUX6_IRQn_DS,
+    },                 
+    Vector {           
+        _handler:  NVIC_MUX7_IRQn_DS,
+    },                
+    Vector {          
+        _handler:  NVIC_MUX8_IRQn,                  
+    },                
+    Vector {          
+        _handler:     NVIC_MUX9_IRQn,
+    },                
+    Vector {          
+        _handler:     NVIC_MUX10_IRQn,
+    },                
+    Vector {          
+        _handler:     NVIC_MUX11_IRQn,
+    },                
+    Vector {          
+        _handler:     NVIC_MUX12_IRQn,
+    },                
+    Vector {          
+        _handler:     NVIC_MUX13_IRQn,
+    },                
+    Vector {          
+        _handler:     NVIC_MUX14_IRQn,
+    },
+      Vector {
+        _handler: NVIC_MUX15_IRQn,
+    },
+    Vector {
+        _handler: NVIC_MUX16_IRQn,
+    },
+    Vector {
+        _handler: NVIC_MUX17_IRQn,
+    },
+    Vector {
+        _handler: NVIC_MUX18_IRQn,
+    },
+    Vector {
+        _handler: NVIC_MUX19_IRQn,
+    },
+    Vector {
+        _handler:  NVIC_MUX20_IRQn,
+    },              
+    Vector {        
+        _handler:  NVIC_MUX21_IRQn,
+    },                 
+    Vector {           
+        _handler:  NVIC_MUX22_IRQn,
+    },                
+    Vector {          
+        _handler:  NVIC_MUX23_IRQn,                  
+    },                
+    Vector {          
+        _handler:     NVIC_MUX24_IRQn,
+    },                
+    Vector {          
+        _handler:     NVIC_MUX25_IRQn,
+    },                
+    Vector {          
+        _handler:     NVIC_MUX26_IRQn,
+    },                
+    Vector {          
+        _handler:     NVIC_MUX27_IRQn,
+    },                
+    Vector {          
+        _handler:     NVIC_MUX28_IRQn,
+    },                
+    Vector {          
+        _handler:     NVIC_MUX29_IRQn,
+    },                 
+    Vector {          
+        _handler:     NVIC_MUX30_IRQn,
+    },                
+    Vector {          
+        _handler:     NVIC_MUX31_IRQn,
+    },                
+   
+];
+
+#[cfg(feature = "cm0")]
+#[doc = r"Enumeration of all the CM0+ interrupts."]
+#[derive(Copy, Clone, Debug, PartialEq, Eq)]
+#[repr(u16)]
+pub enum Interrupt {
+    #[doc  = "0 - NVIC Mux Interrupt #0"]
+    NVIC_MUX0_IRQn = 0,
+    #[doc  = "1 - NVIC Mux Interrupt #1"]
+    NVIC_MUX1_IRQn = 1,
+    #[doc  = "2 - NVIC Mux Interrupt #2"]
+    NVIC_MUX2_IRQn = 2,
+    #[doc  = "3 - NVIC Mux Interrupt #3"]
+    NVIC_MUX3_IRQn = 3,
+    #[doc  = "4 - NVIC Mux Interrupt #4"]
+    NVIC_MUX4_IRQn = 4,
+    #[doc  = "5 - NVIC Mux Interrupt #5"]
+    NVIC_MUX5_IRQn = 5,
+    #[doc  = "6 - NVIC Mux Interrupt #6"]
+    NVIC_MUX6_IRQn = 6,
+    #[doc  = "7 - NVIC Mux Interrupt #7"]
+    NVIC_MUX7_IRQn = 7,
+    #[doc  = "8 - NVIC Mux Interrupt #8"]
+    NVIC_MUX8_IRQn = 8,
+    #[doc  = "9 - NVIC Mux Interrupt #9"]
+    NVIC_MUX9_IRQn = 9,
+    #[doc  = "10 - NVIC Mux Interrupt #10"]
+    NVIC_MUX10_IRQn = 10,
+    #[doc  = "11 - NVIC Mux Interrupt #11"]
+    NVIC_MUX11_IRQn = 11,
+    #[doc  = "12 - NVIC Mux Interrupt #12"]
+    NVIC_MUX12_IRQn = 12,
+    #[doc  = "13 - NVIC Mux Interrupt #13"]
+    NVIC_MUX13_IRQn = 13,
+    #[doc  = "14 - NVIC Mux Interrupt #14"]
+    NVIC_MUX14_IRQn = 14,
+    #[doc  = "15 - NVIC Mux Interrupt #15"]
+    NVIC_MUX15_IRQn = 15,
+    #[doc  = "16 - NVIC Mux Interrupt #16"]
+    NVIC_MUX16_IRQn = 16,
+    #[doc  = "17 - NVIC Mux Interrupt #17"]
+    NVIC_MUX17_IRQn = 17,
+    #[doc  = "18 - NVIC Mux Interrupt #18"]
+    NVIC_MUX18_IRQn = 18,
+    #[doc  = "19 - NVIC Mux Interrupt #19"]
+    NVIC_MUX19_IRQn = 19,
+    #[doc  = "20 - NVIC Mux Interrupt #20"]
+    NVIC_MUX20_IRQn = 20,
+    #[doc  = "21 - NVIC Mux Interrupt #21"]
+    NVIC_MUX21_IRQn = 21,
+    #[doc  = "22 - NVIC Mux Interrupt #22"]
+    NVIC_MUX22_IRQn = 22,
+    #[doc  = "23 - NVIC Mux Interrupt #23"]
+    NVIC_MUX23_IRQn = 23,
+    #[doc  = "24 - NVIC Mux Interrupt #24"]
+    NVIC_MUX24_IRQn = 24,
+    #[doc  = "25 - NVIC Mux Interrupt #25"]
+    NVIC_MUX25_IRQn = 25,
+    #[doc  = "26 - NVIC Mux Interrupt #26"]
+    NVIC_MUX26_IRQn = 26,
+    #[doc  = "27 - NVIC Mux Interrupt #27"]
+    NVIC_MUX27_IRQn = 27,
+    #[doc  = "28 - NVIC Mux Interrupt #28"]
+    NVIC_MUX28_IRQn = 28,
+    #[doc  = "29 - NVIC Mux Interrupt #29"]
+    NVIC_MUX29_IRQn = 29,
+    #[doc  = "30 - NVIC Mux Interrupt #30"]
+    NVIC_MUX30_IRQn = 30,
+    #[doc  = "31 - NVIC Mux Interrupt #31"]
+    NVIC_MUX31_IRQn = 31,
+}   
+
+
+#[cfg(feature = "cm4")]
 #[cfg(feature = "rt")]
 extern "C" {
     fn IOSS_INTERRUPTS_GPIO_0();
@@ -187,6 +403,8 @@ pub union Vector {
     _handler: unsafe extern "C" fn(),
     _reserved: u32,
 }
+
+#[cfg(feature = "cm4")]
 #[cfg(feature = "rt")]
 #[doc(hidden)]
 #[link_section = ".vector_table.interrupts"]
@@ -634,6 +852,9 @@ pub static __INTERRUPTS: [Vector; 147] = [
         _handler: PASS_INTERRUPT_DACS,
     },
 ];
+
+#[cfg(feature = "cm4")]
+#[cfg(feature = "rt")]
 #[doc = r"Enumeration of all the interrupts."]
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
 #[repr(u16)]
