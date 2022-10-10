@@ -26,13 +26,11 @@ optional = true
 version = "0.7.1"
 
 [features]
-default = ["rt"]
 rt = ["cortex-m-rt/device"]
-cm0 = []
-cm4 = []
+
 
 [package.metadata.docs.rs]
-features = ['rt', 'cm0', 'cm4']
+features = ['rt']
 
 
 # cargo-release configuration

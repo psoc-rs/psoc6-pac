@@ -22,17 +22,20 @@ use core::marker::PhantomData;
 use core::ops::Deref;
 #[doc = r"Number available in the NVIC for configuring priority"]
 pub const NVIC_PRIO_BITS: u8 = 3;
+
 #[cfg(feature = "rt")]
 pub use self::Interrupt as interrupt;
 pub use cortex_m::peripheral::Peripherals as CorePeripherals;
 pub use cortex_m::peripheral::{CBP, CPUID, DCB, DWT, FPB, FPU, ITM, MPU, NVIC, SCB, SYST, TPIU};
+
 #[cfg(feature = "rt")]
 pub use cortex_m_rt::interrupt;
 #[allow(unused_imports)]
 use generic::*;
 #[doc = r"Common register and bit access and modify traits"]
 pub mod generic;
-#[cfg(feature = "cm0")]
+
+#[cfg(armv6m)]
 #[cfg(feature = "rt")]
 extern "C" {
   /* ARM Cortex-M0+ NVIC Mux inputs. Allow routing of device interrupts to the CM0+ NVIC */
@@ -70,7 +73,7 @@ extern "C" {
   fn NVIC_MUX31_IRQn();        
 }
 
-#[cfg(feature = "cm0")]
+#[cfg(armv6m)]
 #[cfg(feature = "rt")]
 #[doc(hidden)]
 #[link_section = ".vector_table.interrupts"]
@@ -175,7 +178,8 @@ pub static __INTERRUPTS: [Vector; 32] = [
    
 ];
 
-#[cfg(feature = "cm0")]
+#[cfg(armv6m)]
+#[cfg(feature = "rt")]
 #[doc = r"Enumeration of all the CM0+ interrupts."]
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
 #[repr(u16)]
@@ -246,8 +250,7 @@ pub enum Interrupt {
     NVIC_MUX31_IRQn = 31,
 }   
 
-
-#[cfg(feature = "cm4")]
+#[cfg(armv7em)]
 #[cfg(feature = "rt")]
 extern "C" {
     fn IOSS_INTERRUPTS_GPIO_0();
@@ -398,13 +401,14 @@ extern "C" {
     fn USB_INTERRUPT_LO();
     fn PASS_INTERRUPT_DACS();
 }
+
 #[doc(hidden)]
 pub union Vector {
     _handler: unsafe extern "C" fn(),
     _reserved: u32,
 }
 
-#[cfg(feature = "cm4")]
+#[cfg(armv7em)]
 #[cfg(feature = "rt")]
 #[doc(hidden)]
 #[link_section = ".vector_table.interrupts"]
@@ -853,7 +857,7 @@ pub static __INTERRUPTS: [Vector; 147] = [
     },
 ];
 
-#[cfg(feature = "cm4")]
+#[cfg(armv7em)]
 #[cfg(feature = "rt")]
 #[doc = r"Enumeration of all the interrupts."]
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
@@ -1154,6 +1158,8 @@ pub enum Interrupt {
     #[doc = "146 - Consolidated interrrupt for all DACs"]
     PASS_INTERRUPT_DACS = 146,
 }
+
+#[cfg(feature = "rt")]
 unsafe impl cortex_m::interrupt::InterruptNumber for Interrupt {
     #[inline(always)]
     fn number(self) -> u16 {
