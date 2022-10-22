@@ -18,7 +18,7 @@ Add an entry to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-psoc6-pac = "0.0.1"
+psoc6-pac = "0.1.1"
 ```
 
 To generate the documentation, clone the repo then
@@ -41,6 +41,8 @@ To simplify initial development the pac is targeting the CY8CPROTO-063-BLE board
 To regenerate the bindings, ensure that the current versions of `svd2rust`
 and `form` are installed, and that you're on the current stable Rust version.
 
+Then open lib.rs and copy all blocks prepended with #[cfg(not(armv7em))] (all CM0+ specific blocks). To another file.
+
 Then run either run generate.sh or generate.bat (Windows) to regenerate the bindings:
 
 ```
@@ -50,3 +52,9 @@ or
 ```
 >generate.bat
 ```
+
+Then copy the #[cfg(not(armv7em))] blocks back into the file.
+
+Removing this manual step is on the todo list.
+
+Forgetting this step will cause a compile error when enabling the rt feature and compiling for the CM0+.
