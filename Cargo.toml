@@ -1,6 +1,6 @@
 [package]
 name = "psoc6-pac"
-version = "0.0.1"
+version = "0.1.1"
 authors = ["Jonas Schievink <jonasschievink@gmail.com>", "Dave Humphries <humphriesdj@gmail.com"]
 edition = "2018"
 description = "Peripheral Access Crate for Cypress PSoC 6 MCUs"
@@ -47,7 +47,7 @@ search  = "## Unreleased\n"
 replace = """
 ## Unreleased
 
-No changes.
+1. Provided CM0+ interrupts gated by #[cfg(armv6m)] - these have been added by hand so it the pac is regenerated they will need to be reinstated.
 
 ## [{{version}} - {{date}}](https://github.com/diagonalDave/psoc6-pac/releases/tag/{{version}})
 """
