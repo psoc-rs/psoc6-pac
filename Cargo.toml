@@ -5,15 +5,15 @@ authors = ["Jonas Schievink <jonasschievink@gmail.com>", "Dave Humphries <humphr
 edition = "2018"
 description = "Peripheral Access Crate for Cypress PSoC 6 MCUs"
 documentation = "https://docs.rs/psoc6-pac/"
-repository = "https://github.com/diagonalDave/psoc6-pac.git"
-keywords = ["cypress", "psoc6", "pac"]
+repository = "https://github.com/psoc-rs/psoc6-pac"
+keywords = ["cypress", "psoc6", "pac", "Rust"]
 categories = ["embedded"]
 readme = "README.md"
 license = "0BSD"
 exclude = ["svd"]
 
 [badges]
-travis-ci = { repository = "diagonalDave/psoc6-pac" }
+travis-ci = { repository = "psoc6-rs/psoc6-pac" }
 maintenance = { status = "actively-developed" }
 
 [dependencies]
@@ -47,7 +47,7 @@ search  = "## Unreleased\n"
 replace = """
 ## Unreleased
 
-1. Provided CM0+ interrupts gated by #[cfg(armv6m)] - these have been added by hand so it the pac is regenerated they will need to be reinstated.
+1. Provided CM0+ interrupts gated by #[cfg(armv6m)] - these have been added by hand so if the pac is regenerated they will need to be reinstated.
 
 ## [{{version}} - {{date}}](https://github.com/diagonalDave/psoc6-pac/releases/tag/{{version}})
 """
