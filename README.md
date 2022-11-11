@@ -18,7 +18,7 @@ Add an entry to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-psoc6-pac = "0.1.1"
+psoc6-pac = "0.0.1"
 ```
 
 To generate the documentation, clone the repo then
